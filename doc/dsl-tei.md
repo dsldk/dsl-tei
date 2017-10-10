@@ -1174,6 +1174,11 @@ tekst suppleret af redaktøren. I [Dipl. Dan.
 
 	Oc weth<ex>e</ex>r kende hwn sigh ...
 
+Dette gengives typisk således:
+
+> Oc weth*e*r kende hwn sigh ...
+
+
 <!--Elementet implementeres typisk som `em`-elementer i HTML.
 
 	Oc weth<em>e</em>r kende hwn sigh ...
