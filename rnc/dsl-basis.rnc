@@ -1,0 +1,222 @@
+default namespace = "http://www.tei-c.org/ns/1.0"
+
+start =
+  element TEI {
+    element teiHeader {
+      element fileDesc {
+        element titleStmt {
+          element title { text },
+          element editor {
+            element name {
+              attribute xml:id { xsd:NCName },
+              persName
+            }
+          },
+          element funder { xsd:NCName }
+        },
+        extent,
+        element publicationStmt {
+          element publisher { text },
+          element pubPlace { xsd:NCName },
+          date,
+          idno+,
+          element availability {
+            attribute status { xsd:NCName },
+            ab
+          }
+        },
+        element sourceDesc {
+          element listWit {
+            element witness {
+              attribute xml:id { xsd:NCName }?,
+              (bibl
+               | element msDesc {
+                   element msIdentifier {
+                     element settlement { xsd:NCName },
+                     element repository { text },
+                     element collection { xsd:NCName },
+                     idno,
+                     element msName { text }+
+                   },
+                   element msContents {
+                     element summary { text },
+                     element msItemStruct { empty }
+                   },
+                   element physDesc {
+                     element objectDesc {
+                       element supportDesc {
+                         attribute material { xsd:NCName },
+                         element support { ab },
+                         extent,
+                         element condition { ab }
+                       },
+                       element layoutDesc { ab }
+                     },
+                     element handDesc {
+                       element handNote { ab }
+                     },
+                     element additions { ab },
+                     element sealDesc {
+                       element seal {
+                         attribute n { xsd:integer },
+                         attribute type { xsd:NCName },
+                         ab
+                       }+
+                     }
+                   },
+                   element history { ab },
+                   element additional {
+                     element listBibl { bibl+ }
+                   }
+                 })
+            }+
+          }
+        }
+      },
+      element encodingDesc {
+        element samplingDecl { ab },
+        element projectDesc { ab },
+        element appInfo {
+          element application {
+            attribute ident { xsd:NCName },
+            attribute subtype { xsd:NCName },
+            attribute type { xsd:NCName },
+            attribute version { xsd:integer },
+            attribute xml:id { xsd:NCName },
+            element desc { xsd:NCName }
+          }
+        }
+      },
+      element profileDesc {
+        element creation { date, placeName },
+        element langUsage {
+          element language {
+            attribute ident { xsd:NCName }
+          }
+        },
+        element textClass {
+          element keywords {
+            element term { xsd:NCName }
+          }
+        }
+      },
+      element revisionDesc {
+        element change {
+          attribute when { xsd:NMTOKEN },
+          attribute who { text },
+          text
+        }+
+      }
+    },
+    element facsimile {
+      element graphic {
+        attribute url { xsd:NCName }
+      }
+    },
+    element text {
+      element front {
+        element titlePage {
+          element docTitle {
+            element titlePart {
+              attribute type { xsd:NCName }?,
+              text
+            }+
+          },
+          element byline { text }
+        },
+        \div+,
+        element epigraph { cit }
+      },
+      element body { \div+ }
+    }
+  }
+persName =
+  element persName {
+    attribute key { xsd:NCName }?,
+    attribute type { xsd:NCName }?,
+    (text
+     | element forename {
+         attribute type { xsd:NCName },
+         xsd:NCName
+       }
+     | element surname { xsd:NCName })+
+  }
+extent =
+  element extent {
+    (text
+     | element dimensions {
+         attribute unit { xsd:NCName },
+         element height { text },
+         element width { xsd:decimal }
+       }
+     | element num {
+         attribute n { xsd:NCName },
+         xsd:integer
+       })+
+  }
+date =
+  element date {
+    attribute cert { xsd:NCName }?,
+    attribute notAfter { xsd:date }?,
+    attribute notBefore { xsd:date }?,
+    attribute when { xsd:date }?,
+    text
+  }
+idno =
+  element idno {
+    attribute type { xsd:NCName }?,
+    text
+  }
+ab = element ab { (text | bibl | q)+ }
+bibl =
+  element bibl {
+    attribute xml:id { xsd:NCName }?,
+    (text
+     | persName
+     | element hi {
+         attribute rend { xsd:NCName },
+         xsd:NCName
+       })+
+  }
+placeName =
+  element placeName {
+    attribute key { xsd:NCName }?,
+    text
+  }
+\div =
+  element div {
+    attribute type { xsd:NCName }?,
+    attribute xml:lang { xsd:NCName }?,
+    (\div
+     | p
+     | element head { text })*
+  }
+cit =
+  element cit {
+    element quote { (text | p)+ },
+    bibl
+  }
+q = element q { text }
+p =
+  element p {
+    attribute n { text }?,
+    attribute rend { xsd:NCName }?,
+    (text
+     | bibl
+     | cit
+     | persName
+     | placeName
+     | element app {
+         element lem { text },
+         element rdg {
+           attribute wit { text }?,
+           (text | q)+
+         }
+       }
+     | element damage { xsd:NCName }
+     | element note {
+         attribute type { xsd:NCName }?,
+         attribute xml:id { xsd:NCName }?,
+         (text | q)+
+       })+
+  }

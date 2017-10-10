@@ -1,0 +1,1308 @@
+% *Dsl-basis -- retningslinjer for digital udgivelse af det Danske Sprog- og Litteraturselskabs tekster*
+
+# Indledning
+
+	<!--2017-03-21, th, denne version af retningslinjerne for brug af DSL-basis 
+	    er en ufuldstændig og ikke gennemredigeret kladde. Den bør derfor bruges
+	    forsigtigt -->
+
+Nærværende rapport definerer et basisformat for det Danske Sprog- og
+Litteraturselskabs (DSL) digitale udgivelser. Med *basis* menes den
+grundlæggende opmærkning, som projekternes produkter forventes at
+indeholde. Formatet defineres på grundlag af et sæt retningslinjer for
+opmærkning af tekst- og metadata defineret af konsortiet Text Encoding
+Initiative (<https://www.tei-c.org>).[^a] 
+
+[^a]: [http://www.tei-c.org](http://www.tei-c.org). Den nuværende
+version af TEI's retningslinjer, TEI P5, er den femte. 'P5' refererer
+således til *Proposal 5*.
+
+Hovedbegrundelsen for at definere et fælles opmærkningsformat er at
+skabe et fælles grundlag for værktøjer og procedurer, der bearbejder
+disse.
+
+# 1 Et `dsl-basis`-dokument
+
+Et DSL-TEI-dokument er et XML-dokument med rodelementet `TEI` og
+attributtet `@xmlns` (*XML namespace*) udfyldt med værdien 
+`http://www.tei-c.org/ns/1.0`: 
+
+	<TEI xmlns="http://www.tei-c.org/ns/1.0">
+	  ...
+	</TEI>
+
+I overensstemmelse med TEI P5 indeholder rodelementet `TEI` følgende
+tre komponenter: 
+
+`teiHeader`
+:	(*TEI header*) leverer metadata til beskrivelse af den
+	digitale ressource i bibliografisk, kodnings- og
+	udviklingsmæssig henseende. Jf. 2 Metadata.
+
+`facsimile`
+:	indeholder en digital billedgengivelse af den tekst, der
+	beskrives under `teiHeader` og formidles under `text`. Jf. 3
+	Faksimiler
+
+`text`
+:	indeholder ét værk, hvad enten dette udgøres af en 
+	tekstmæssig enhed (fx én roman, novelle, brev) eller 
+	er en helhed bestående flere tekster (fx en samling 
+	essays, digte, noveller). Jf. 4 Tekst.
+
+Elementerne disponeres således: 
+
+	<TEI xmlns="http://www.tei-c.org/ns/1.0">
+	  <teiHeader>...</teiHeader>
+	  <facsimile>...</facsimile>
+	  <text>...</text>
+	</TEI>
+
+# 2 Metadata
+
+`teiHeader` samler metadata, der er nødvendige i udgivelsen af
+en tekst. Disse leverer 
+
+* bibliografisk beskrivelse af det digitale værk
+* redegørelse for anvendt praksis ved dokumentets kodning
+* klassifikation af sprog og genre
+* dokumentets ændringshistorik
+
+<!--
+Til `teiHeader` knytter sig atributtet `@type`, som i DSL-TEI skal have
+værdien `text`.[^1] 
+
+		<teiHeader type="text"> ... </teiHeader>
+
+[^1]: If. TEI P5 har typebestemmelsen to mulige værdier, hhv. `corpus`
+til tekstkorpora eller `text` til udgivelser, hvis tekst har
+enhedspræg. Da DSL's korpusudgivelser ikke benytter TEI, er kun
+værdien `text` tilladt i DSL-TEI.
+-->
+
+Under `teiHeader` findes fire hovedelementer:
+
+`fileDesc`
+:	(*file description*), indeholder komplet bibliografisk 
+	beskrivelse af dokumentets tekstdel
+
+`encodingDesc`
+:	(*encoding description*), beskriver forholdet mellem den 
+	digitale tekst og kildegrundlaget
+
+`profileDesc`
+:	(*text-profile description*), beskriver andre aspekter af 
+	teksten, fx sprogbrug, genre eller genstandsfelt
+
+`revisionDesc`
+:	(*revision description*), indeholder opsummering af 
+	ændringer af filen
+
+De fire elementer fordeler sig således:
+
+	  <teiHeader>
+	    <fileDesc>...</fileDesc>
+	    <encodingDesc>...</encodingDesc>
+	    <profileDesc>...</profileDesc>
+	    <revisionDesc>...</revisionDesc>
+	  </teiHeader>
+
+## 2.1 Filbeskrivelsen (`fileDesc`)
+
+Metadatasektionens første del er `fileDesc` (*file description*), som
+indeholder information til identifikation, katalogisering og
+fyldestgørende beskrivelse af filen. `fileDesc` indeholder følgende
+elementer:
+
+`titleStmt` 
+:	(*title statement*), angivelse af titel, en eller flere 
+	forfattere og/eller redaktører samt evt. bevillingsgivere
+
+`extent`
+:	beskriver omtrentlig størrelse på en tekst lagret på et
+	medie (fx filstørrelse, antal ord) eller i en trykt udgivelse
+	(fx antal sider)
+
+`publicationStmt`
+:	(*publication statement*) angiver, hvem der har ansvaret for
+	udgivelsen af den digitale tekst og vilkår for distribution af
+	samme
+
+`sourceDesc`
+:	(*source description*) beskriver den kilde, fra hvilken den
+	digitale tekst er afledt, fx om den har digitalt eller analogt forlæg.
+
+
+### 2.1.1 Titel (`titleStmt`)
+
+Titelangivelsen (`titleStmt`) indeholder et `title`-element,
+efterfulgt af et eller flere `author`-, `editor`-, og
+`funder`-elementer. 
+
+		<titleStmt>
+		  <title> Mit Livs Legende </title>
+		  <author> Johannes Jørgensen </author>
+		  <editor xml:id="ei"> Elise Iuul </editor>
+		  <editor xml:id="hw"> Henrik Wivel </editor>
+		  <funder> Carlsbergfondet </funder>
+		</titleStmt>
+
+
+### 2.1.2 Omfang (`extent`)
+
+	<!-- skal udfyldes -->
+
+### 2.1.3 Om udgivelsen (`publicationStmt`)
+
+Udgivelsesangivelsen, `publicationStmt` (*publication statement*),
+samler navn på udgiver, samt *hvor* og *hvornår* filen er publiceret.
+Endelig meddeles, under hvilke vilkår den udgives. `publicationStmt`
+indeholder fem elementer:
+
+`publisher`
+:	udgiver. Værdien af elementet sættes som udgangspunkt til
+	`dsl`
+
+`pubPlace`
+:	udgivelsessted. Elementets grundværdi er `kbh`
+
+`date`
+:	udgivelsesdato angives i ISO 8601-formatet YYYY-MM-DD
+
+`idno`
+:	identifikationsnummer er en unik værdi. I DD opbygget efter
+	formen *YYYYMMDDddd*.
+
+`availability`
+:	tilgængelighed. Elementet indeholder `@status="restricted"`
+
+De fem elementtyper kan være organiseret således:
+
+	<publicationStmt>
+	  <publisher>dsl|empty|nil</publisher>
+	  <pubPlace>kbh</pubPlace>
+	  <date>yyyy-mm-dd</date>
+	  <idno></idno>
+	  <availability status="restricted">
+	    <ab>Copyright 2015, Society for Danish Language and
+		Literature</ab>
+  	  </availability>
+	</publicationStmt>
+
+### 2.1.4 Om forlægget (`sourceDesc`)
+
+Til beskrivelse af en udgaves forlæg benyttes elementet `sourceDesc`
+(*source description*) med det underordnede element `listWit`
+(*witness list*). Alt efter antallet af forlæg indeholder `listWit` et
+tilsvarende antal sideordnede *tekstvidne*elementer (`witness`).
+
+	...
+	</publicationStmt>
+	<sourceDesc>
+	  <listWit>
+	    <witness>...</witness>
+	    <witness>...</witness>
+	    ...
+	  </listWit>
+	</sourceDesc> 
+	...
+
+For at kunne identificere det enkelte tekstvidne indeholder elementet
+`witness` et obligatorisk `@xml:id`-attribut. I dette attribut
+indsættes en bogstavværdi, fx `A`, `B`, `C`, som fungerer som
+reference i eksempelvis tekstkritiske noter.[^ui]
+
+[^ui]: Et originalt manuskript betegnes ved et stort bogstav, fx `A`.
+Et manuskript afledt af originalen `A` betegnes `Aa`, og et manuskript
+afledt af `Aa` betegnes `Aa1`. Koncepter betegnes ved små bogstaver.
+Således er et koncept til `A` betegnet ved `a`. 
+
+I eksemplet nedenfor ses to sideordnede originalhåndskrifter, hhv. `A`
+og `B`: 
+
+	<listWit>
+	  <witness xml:id="A">
+	    <msDesc> ...  </msDesc>
+	  </witness>
+	  <witness xml:id="B">
+	    <msDesc> ... </msDesc>
+	  </witness>
+	  ...
+	</listWit>
+
+Da tekster kan have både håndskrevne manuskripter og trykte udgaver
+som forlæg, kan der under `witness` forekomme to slags elementer: 
+
+`bibl`
+:	(*bibliographic citation*) indeholder en løst struktureret
+	bibliografisk henvisning, hvis bestanddele kan opmærkes efter 
+	behov. Se 2.1.5.
+
+`msDesc`
+:	(*manuscript description*) indeholder en beskrivelse af ét
+	manuskript eller tekstbærende genstand. Se 2.1.6.
+
+
+### 2.1.5 Beskrivelse af trykte forlæg
+
+Et `bibl`-element indeholder en bibliografisk henvisning, som kan
+struktureres efter behov. Elementet kan indeholde et `@xml:id` udfyldt
+med en unik id.
+
+ 
+
+<!-- skal udfyldes -->
+
+### 2.1.6 Beskrivelse af manuskripter
+
+Til udgivelse af tekster med håndskrevne forlæg hører en beskrivelse
+af håndskriftet: hvor det befinder sig, dets indhold, tilstand,
+historie, og endelig om det er omtalt eller udgivet tidligere.
+`msDesc` indeholder derfor fem elementer:
+
+`msIdentifier`
+:	(*manuscript identifier*) identifikation af håndskriftet
+
+`msContents`
+:	(*manuscript contens*) resumé af håndskriftets saglige indhold
+
+`physDesc`
+:	(*physical description*) beskrivelse af håndskriftets fysiske tilstand
+
+`history`
+:	redegørelse for håndkskriftets proveniens
+
+`additional`
+:	bibliografiske oplysninger om håndskriftet
+
+
+Manuskriptbeskrivelsen har denne struktur:
+
+	<msDesc>
+	  <msIdentifier> ... </msIdentifier>
+	  <msContents> ... </msContents>
+	  <physDesc> ... </physDesc>
+	  <history> ... </history>
+	  <additional> ... </additional>
+	</msDesc>
+	
+
+#### 2.1.6.1 Identifikation af håndskriftet (`msIdentifier`)
+
+Til identifikation af et tekstvidne anvendes følgende fem elementer:
+
+`settlement`
+:	stedet, hvor håndskriftet opbevares
+
+`repository`
+:	institutionen, som opbevarer håndskriftet  
+
+`collection`
+:	den samling, i hvilken håndskriftet indgår
+
+`idno`
+:	det nummer, der identificerer håndskriftet i samlingen
+
+`msName`
+:	(*manuscript name*) alternativ betegnelse for håndskriftet
+
+Et eksempel findes her:
+	
+	<msDesc>
+	  <msIdentifier>
+	    <settlement> København </settlement>
+	    <repository> Det Kongelige Bibliotek </repository>
+	    <collection> NKS </collection>
+	    <idno> 1234 </idno>
+   	    <msName> Æbelholtbogen </msName>
+	  </msIdentifier>
+	  ...
+
+#### 2.1.6.2 Indhold (`msContents`)
+
+Elementet `msContents` leverer et sammendrag, `summary`, af
+tekstvidnets indhold. Feltet benyttes til de såkaldte regester i
+*Diplomatarium Danicum* og i brevudgaver til at angive afsender og
+modtager. 
+
+Eksempler:
+
+	<msContents>
+	  <summary> Mikkel Jakobsen forpligter sig til ikke at 
+	    afhænde Fårtoftgård til andre end provsten i 
+	    Vestervig </summary>
+	</msContents>
+
+	
+#### 2.1.6.3 Fysisk tilstand (`physDesc`)
+
+Beskrivelsen af et tekstvidnes fysiske tilstand falder i fem dele: 
+
+`objectDesc`
+:	beskrivelse af det fysiske objekt, 
+
+`handDesc`
+:	beskrivelse af skriver, skriftform og lign. 
+
+`additions`
+:	tilføjelser til teksten
+
+`sealDesc`
+:	beskrivelse af segl
+
+`history`
+:	tekstvidnets historie
+
+Elementerne fordeler sig således:
+
+	<physDesc>
+	  <objectDesc> ... </objectDesc>
+	  <handDesc> ... </handDesc>
+	  <additions> ... </additions>
+	  <sealDesc> ... </sealDesc>
+	</physDesc>
+
+##### Den tekstbærende genstand (`objectDesc`)
+
+`objectDesc` underordner elementet `supportDesc` (*support
+description*), som indeholder information om den genstand, som er
+bærer af teksten. Elementet har attributtet `@material` til angivelse
+af objektets materiale.
+
+	<objectDesc>
+	  <supportDesc material="...">
+	    ...
+	  </supportDesc>
+	</objectDesc>
+
+Attributtet `@material` kan have følgende gyldige værdier:
+
+-----------------------------------------------------------------
+**Attribut: `@material`**  **Værdi**    **Betydning**
+-------------------------- ------------ ---------------------------
+                           mixed        objekt af blandet materiale
+
+                           paper        objekt af papir
+
+                           parch        objekt af pergament
+
+                           nil          materialet uafklaret
+
+                           empty        materialet irrelevant
+
+-----------------------------------------------------------------
+
+
+Under `supportDesc` findes tre elementer, der beskriver genstandens
+materiale, fysiske mål og tilstand:
+
+`support`
+:	Beskrivelse i prosaform af den tekstbærende genstand
+
+`extent`
+:	fysiske mål i cm
+
+`condition`
+:	manuskriptets tilstand
+
+Her ses et eksempel på udfyldt `supportDesc`: 
+
+	<supportDesc material="parch">
+	  <support>
+	      <ab> Pergament </ab>
+	  </support>
+	  <extent>
+	    <dimensions unit="cm">
+	      <width>25</width>
+	      <height>11</height>
+	    </dimensions>
+	  </extent>
+	  <condition>
+	    <ab>Beskadiget af fugt i venstre side</ab>
+	  </condition>
+	</supportDesc>
+
+##### Skriftform og skriver (`handDesc`)
+
+`handDesc`-elementet beskriver tekstvidnets skriftlige udtryk, fx
+hvilken slags skrift der er anvendt, og hvem der har skrevet det. Det
+indeholder et `handNote`-element, som igen underordner et eller flere
+`ab`-elementer.
+
+Eksempel:
+
+	<handDesc>
+	  <handNote>
+	    <ab> Afskrift fra det 18. årh. af Langebek </ab>
+	  </handNote>
+	</handDesc>
+
+##### Påskrifter og andre tilføjelser til teksten (`additions`)
+
+Elementet `additions` indeholder en angivelse af væsentlige
+tilføjelser på tekstvidnet. Disse tilføjelser indskrives i et
+`ab`-element således at selve tilføjelsen står i et `q`-element
+(*quote*) på følgende måde:
+
+	<additions>
+	  <ab> På bagsiden påskriften: <q>Skipt</q>, derefter 
+	    med anden hånd: <q>paa Raasserydh</q>
+	  </ab>
+	</additions>
+
+Jf. <http://diplomatarium.dk/dokument/14070207001>
+
+##### Seglbeskrivelse (`sealDesc`)
+
+Ved beseglede tekstvidner beskrives seglene under elementet `sealDesc`
+(*seal description*). Hvert segl har sit eget `seal`-element, som
+identificeres med et nummer, som angives som værdi af attributtet `@n`
+(number). Seglene tælles fra venstre mod højre. I det omfang seglet i
+forvejen er beskrevet i de danske seglværker, angives dette.
+
+	<sealDesc>
+	  <seal n="1" type="pendant">
+	    <ab> ...</ab>
+	  </seal>
+	    ...
+	</sealDesc>
+
+Nedenfor ses eksempel på segl hvis pergamentsrem bærer en
+påskrift:[^er]
+
+[^er]: jf. Diplomatarium Danicum <http://diplomatarium.dk/dokument/14190518001>
+
+	<seal n="1" type="pendant">
+	  <ab>Bomærke af mørkt voks i perg.rem med tekst 
+	    <q>allæ the gothg<damage><ex>er</ex></damage>ning<ex>e</ex> 
+	      som gyørthæ æræ oc</q>
+	  </ab>
+	</seal>
+
+#### 2.1.6.4 Proveniens (`history`)
+
+Tekstvidnets historie angives under `history`-elementet. Hvis
+tekstvidnet vides at være tabt, registreret eller nævnt, angives dette
+her.
+
+	...
+	<history>
+	  <ab>Tabt. Registreret i bla bla</ab>
+	</history>
+	...
+
+#### 2.1.6.5 Bibliografiske oplysninger om tekstvidnet (`additional`) 
+
+Elementet `additional` kombinerer bibliografisk information med
+administrative oplysninger. Elementet indholder et obligatorisk
+`listBibl`-element, som samler en eller flere `bibl`-elementer
+(*bibliographic citation*), jf. 2.1.5.
+
+	<additional>
+	  <listBibl>
+	    <bibl> Weibull, Dipl. Dioc. Lund. III 299-300 nr. 286 </bibl>
+	    <bibl> Vejledende Arkivreg. XVIII 284 nr. 364 </bibl>
+	    ...
+	  </listBibl>
+	</additional>
+
+## 2.2 Det digitale produkt (`encodingDesc`)
+
+TEI-headerens anden komponent er `encodingDesc`-elementet, som
+dokumenterer forholdet mellem den opmærkede tekst og dennes kilde. Her
+angives de for transkriptionen styrende principper. Elementet
+`encodingDesc` indholder følgende elementer:
+
+`samplingDecl`
+:	(*sampling declaration*) indeholder en angivelse af den metode, der er anvendt i transkriptionen af værket
+
+`projectDesc`
+:	(*project description*) beskriver formålet med opmærkningen af filen
+
+`appInfo`
+:	(*application information*) optager information om de applikationer, der har behandlet teksten i filen
+
+### 2.2.1 samplingDecl
+
+Elementet optager oplysninger om eventuelle udeladelser af dele af
+teksten, fx om der er tale om en fuld transkription eller et
+sammendrag.
+
+En del af *Diplomatarium Danicum*s tekster udgøres af såkaldte
+hanserecesser, referater fra hansestædernes repræsentantskabsmøder.
+Herfra optages kun de passager af relevans for danske forhold.
+Andre tekster hvis indhold kun er af perifer interesse for udgivelsen
+kan optages i udtog.
+
+Elementet `samplingDecl` kan have følgende gyldige værdier:
+
+-----------------------------------------------------------------
+**Element: `samplingDecl`**  **Værdi**    **Betydning**
+---------------------------  ------------ ---------------------------
+                             version      teksten er fuldstændig
+
+                             excerpt      teksten er et udtog
+
+                             nil          sagen uafklaret
+
+                             empty        sagen irrelevant
+
+-----------------------------------------------------------------
+
+
+### 2.2.2 `projectDesc`
+
+Under elementet `projectDesc` angives hvilket projekt, der danner
+ramme for etableringen af filen. Det anbefales, at værdien af dette
+element er fast defineret, fx i henhold til projektets gruppeid inden
+for DSL.
+
+	<projectDesc>
+	  <ab> dd-5 </ab>
+	</projectDesc> 
+
+### 2.2.3 `appInfo`
+
+For at kunne følge med i hvordan teksten er behandlet angives under
+`appInfo`-elementet hvilke værktøjer og procedurer 
+
+	<!-- udfyldes -->
+
+## 2.3 `profileDesc`
+
+Under `profileDesc` 
+
+`creation`
+:	tid og sted for etablering af teksten
+
+`langUsage`
+:	sprog
+
+`textClass`
+:	genre, tema
+
+### 2.3.1 Tid og sted for etablering af teksten
+
+### 2.3.2 Sprog
+
+Elementet `langUsage` (*language usage*) samler et eller flere
+`language`-elementer. Hvert `language`-element har attributtet
+`@ident` (*identity*), hvis værdi er en sprogkode konstrueret i
+overensstemmelse med BCP 47[^qa] og om muligt følger standarden ISO
+639-1[^qb]
+
+[^qa]: jf. <https://tools.ietf.org/html/bcp47>
+[^qb]: jf. <http://www-01.sil.org/iso639-3/codes.asp>
+
+	<langUsage>
+	  <language ident="da" />
+	</langUsage>
+
+-----------------------------------------------------------------
+**Attribut: `@ident`**  **Værdi**  **ISO 639** **Betydning**
+---------------------- ----------- ----------- ------------------------
+                        da          ja         dansk
+
+                        de          ja         tysk
+
+                        en          ja         engelsk
+
+                        fr          ja         fransk
+
+                        gda         -          gammeldansk
+
+                        gmh         -          middelhøjtysk
+
+                        gml         -          middelnedertysk
+
+                        la          ja         latin
+
+                        xda         -          ældre nydansk
+
+                        xno         -          normannerfransk
+
+-----------------------------------------------------------------
+
+
+### 2.3.3 Klassifikation
+
+Emne- og genreklassifikation kan ske på følgende måde vha. elementet
+`textClass`. `textClass` indeholder et `keywords`-element, som samler
+et eller flere `term`-elementer, som hver især indeholder et nøgleord. 
+
+	<textClass>
+	  <keywords>
+	    <term> jura </term>
+	  </keywords>
+	</textClass>
+
+## 2.4 `revisionDesc`
+
+Under `revisionDesc` kan væsentlige ændringer registreres vha.
+`change`-elementer udfyldt på følgende måde:
+
+	<revisionDesc>
+ 	  <change when="2013-09-19" who="#pbh">Filen etableret</change>
+	  <change when="2015-10-05" who="#alk">1. korrektur</change>
+	  <change when="2015-10-19" who="#mh">2. korrektur</change>
+	  <change when="2015-10-20" who="#alk">3. korrektur</change>
+	</revisionDesc>
+
+
+# 3 Faksimiler
+
+Elementet `facsimile` samler et eller flere `graphic`-elementer:
+
+	<facsimile>
+	  <graphic url="nil"/>
+	</facsimile>
+	
+	<!-- udfyldes -->
+
+# 4 Tekst
+
+Den tredje hovedbestanddel af et TEI-dokument, elementet `text`,
+indeholder en tekst, som enten er en *enhed* (roman, novelle, brev og
+lignende), eller udgør en *helhed* som en essay- eller digtsamling. 
+
+Tekster med trykt eller håndskrevet forlæg kan ofte opdeles i tre
+komponenter: Først optræder oplysninger om værkets titel, forfatter,
+udgivelsessted; dernæst følger teksten, og til sidst finder vi
+registre, noter og lignende.  For at kunne bearbejde disse komponenter
+særskilt er elementet `text` inddelt som følger:
+
+`front` 
+:	(*front matter*), præliminære oplysninger i form af titelblad, 
+	forside og forord, se 4.1 
+
+`body` 
+:	(*text body*), den centrale komponent, indeholder selve teksten, se. 4.2
+
+`back` 
+:	(*back matter*), eventuelle appendices og fortegnelser, som 
+	følger efter teksten, se 4.3
+
+## 4.1 Indledende oplysninger (`front`)
+
+Til behandling af titelblade, forsider, dedikationer og forord i
+trykte forlæg anvendes `front`, under hvilket følgende elementer
+forekommer:
+
+`titlePage`
+:	titelbladets struktur i form af titel, undertitel, byline og lign.
+
+`div type="preface"`
+:	forord til teksten
+
+### 4.1.1 Titelblad (`titlePage`)
+
+Et titelblad i et tryk eller håndskrift beskrives under elementet `titlePage`
+med følgende underelementer:
+
+`docTitle`
+:	(*document title*), beskrivelse af værkets titel, indeholder 
+	et eller flere elementer af typen `titlePart`
+
+`byline`
+:	oplysninger om værkets ophav i form af forfatter, redaktør eller udgiver
+
+`epigraph`
+:	påskrift, typisk i form af et motto og/eller citat fra et 
+	andet værk
+
+`docImprint`
+:	såkaldt *imprimatur*, navn på udgiver, trykker eller
+	distributør
+
+#### 4.1.1.1 Titel (`docTitle`)
+
+`docTitle` samler et eller flere `titlePart`-elementer. Forekommer
+undertitler, angives disse med `titlePart type="sub"` (*subtitle*).
+Her et eksempel på enkel `docTitle` i Jakob Knudsen, *Sind*:
+	
+	<docTitle>
+	  <titlePart>Sind</titlePart>
+	</docTitle>
+
+I Holbergs *Peder Paars* opdeles titlen derimod i hoved- og
+undertitel:
+
+	<docTitle>
+	  <titlePart>Peder Paars</titlePart>
+	  <titlePart type="sub">Poema Heroico-comicum</titlePart>
+	</docTitle>
+
+#### 4.1.1.2 Byline
+
+En *byline* gengiver i bred forstand værkets ophavsmand, hvad enten
+der er tale om en forfatter, en fotograf eller en illustrator.
+Nedenfor ses byline fra Holbergs *Peder Paars* med pseudonymet Hans
+Mikkelsen:
+
+	<byline> af Hans Michelsen </byline>
+
+#### 4.1.1.3 Påskrift
+
+En påskrift i form af et citat optages vha. elementet `epigraph`
+kombineret med `cit`, `quote` samt opmærkning til vers, jf. 4.3.3
+eller prosa, se 4.3.2. Nedenstående eksempel er en påskrift fra Ludvig
+Holbergs *Peder Paars*
+
+	<epigraph>
+	  <cit>
+	    <quote>
+	      <lg>
+	        <l>Nihil est, Antipho,</l>
+	        <l>Qvin male narrando possit Depravarier.</l>
+	        <l>Tu id qvod boni est Excerpis.</l>
+	      </lg>
+	    </quote>
+	    <bibl>Terent: Phorm: Act: 4. Sc: 4.</bibl>
+	  </cit>
+	</epigraph>
+
+Eksempel på opmærkning af prosa findes i Georg Brandes,
+Hovedstrømninger:
+
+	<epigraph>
+	  <cit>
+	    <quote>
+	      <p>There is no philosophy possible, where fear of
+	         consequences is a stronger principle than love 
+	         of truth.</p>
+	    </quote>
+	    <bibl>John Stuart Mill</bibl>
+	  </cit>
+	</epigraph> 
+
+#### 4.1.1.4 Imprimatur
+
+Et imprimatur[^qw] indeholder typisk tid, sted og udgiverens navn.
+Nedenfor ses imprimatur fra Holbergs *Peder Paars*, som dog kun angiver
+trykåret:
+
+[^qw]: af lat. konjunktiv: *må trykkes*.
+	<docImprint>
+	  Tryckt Aar <date>1720</date>.
+	</docImprint>
+
+## 4.2 Tekstens struktur (`body` og `div`)
+
+Udgivelsens centrale del udgøres af elementet `body` (*text body*),
+som indeholder teksten, hvad enten den er inddelt i bøger eller sange
+eller dele og kapitler.  Virkemidlet til beskrivelse af en teksts
+disposition er elementet `div` (*division*), som er et rekursivt
+element, idet det kan inddeles med andre `div`-elementer til en
+hvilken som helst dybde.
+
+En tekst med tre kapitler kan fx struktureres sådan: 
+
+	<body>
+	  <div> ... </div>
+	  <div> ... </div>
+	  <div> ... </div>
+	</body>
+
+En tekst med to dele, som hver indeholder et antal kapitler
+struktureres således:
+
+	<body>
+	  <div>
+	    <div> ... </div>
+	    <div> ... </div>
+	     ... 
+	  </div>
+	  <div>
+	    <div> ... </div>
+	    <div> ... </div>
+	    ...
+	  </div>
+	</body>
+
+### 4.2.1 Parallelle tekster
+
+Ved tekster, der som *Diplomatarium Danicum* ledsages af oversættelse,
+og synoptiske udgaver, rummer `body` to dele: først en `div` med
+grundteksten kendetegnet ved attributtet `@xml:id="basetext"`, dernæst
+en `div` med oversættelsen med `@xml:id="translation"`.
+
+	<body>
+	  <div xml:id="basetext">...  </div>
+	  <div xml:id="translation"> ... </div>
+	</body>
+
+### 4.2.2 Deltitelblade
+
+Deltitelblade opmærkes som `div`-elementer med attributten `@type`
+udfyldt med værdien `half-title`. Et eksempel fra Brandes
+Hovedstrømninger bd. 4
+
+	...
+	    </epigraph>
+	  </front>
+	<body>
+	  <div type="half-title">
+	    <head><pb n="[3]" />Naturalismen i England</head>
+	  </div>
+	  ...
+
+## 4.3 Andre strukturelle elementer
+
+Tekstinddelingselementet `div` kan indeholde følgende elementer:
+
+`div`
+:	(*text division*) indeholder en del af en tekst. Jf. 3.2.
+
+`head`
+:	(*heading*), overskrift, som enten i forvejen optræder i 
+	tekstens forlæg eller suppleres af udgiveren. Hvis overskriften 
+	suppleres af redaktionen, udvides `head`-elementet med `@type="add"`
+
+`epigraph`
+:	anvendes til mottoer i begyndelsen af en tekstdel, jf. 4.1.1.3
+
+`p`
+:	(*paragraph*), afsnit i prosa, se 3.3.2
+
+`lg`
+:	(*line group*), strofe i poesi, se 3.3.3
+
+
+`pb`
+:	(*page break*), sideskift
+
+### 4.3.1 Overskrifter
+
+DSL-TEI håndterer to slags overskrifter vha. elementet `head`
+(*heading*): 1. eksisterende overskrifter og 2. supplerende
+overskrifter.
+
+Eksisterende overskrifter angives
+
+	<head type="orig">...</head>
+
+
+Supplerende overskrifter angives
+
+	<head type="add">...</head>
+	<!--udfyldes-->
+
+### 4.3.2 Prosa
+
+Under hierarkiet af `body`- og `div`-elementer segmenteres prosatekst
+i sideordnede afsnit vha. elementet `p` (*paragraph*). Om nødvendigt,
+kan et `p`-element gengive typografiske variationer i form af venstre-
+eller højrestillet tekst.  I så fald udvides `p` med attributtet
+`@rend` (*rendition*), som udfyldes med én af følgende gyldige
+værdier:
+
+`center`
+:	centreret tekst
+
+`right` 
+:	højrestillet tekst
+
+I Herman Bangs Breve,
+[19120106001](http://bangsbreve.dk/dokument/19120106001) højrestilles
+tidsfæstelsen i et brev således
+
+	...
+	<p rend="right">Søndag.</p>
+        <p>Jeg kom igaar ikke længere...
+
+
+### 4.3.3 Vers
+
+Til opmærkning af vers og strofer anvendes hhv. elementet `lg` (*line
+group*) og `l` (*line*). Når verslinjen er brudt, markeres dette vha.
+et `lb`-element (*line break*). Selv hvor der kun optræder en enkelt
+verslinje, anbefales det at bruge `lg` som wrapper.
+
+Elementet `lg` kan udvides med attributtet `@rend` og værdierne
+`center` og `right` for hhv. centreret og højrestillet tekst.
+
+
+-----------------------------------------------------------------
+**Attribut: `@rend`**      **Værdi**    **Betydning**
+-------------------------- ------------ ---------------------------
+                           center        Teksten i `lg` centreres
+
+                           indent[1-10]  Teksten i `lg` indrykkes
+
+                           right         Teksten i `lg` højrestilles
+
+-----------------------------------------------------------------
+
+For at gengive typografisk ekspressivitet kan et `l`-element forsynes
+med attributtet `@rend`.
+
+I Brandes *Hovedstrømninger bd. 5* citeres:
+
+	<lg>
+          <l rend="indent1">Derpaa</l>
+          <l rend="indent2">gik</l>
+          <l rend="indent3">vor</l>
+          <l rend="indent4">Helt</l>
+          <l rend="indent5">ganske</l>
+          <l rend="indent6">nedslaaet</l>
+          <l rend="indent7">ned</l>
+          <l rend="indent8">ad</l>
+          <l rend="indent9">Trapperne</l>
+        </lg>
+
+NB! For at opnå kontrol med indrykningen transformeres hvert `l` til et
+HTML `p` forsynet med `@class="indent1"`.
+
+### 4.3.4 Drama
+<!--tilføjet 2017-02-10 -->
+
+Til drama anvendes elementet `sp` (*speech*) til gengivelse af
+hver enkelt replik i en dramatisk tekst. Under `sp` optræder altid et
+`speaker`-element med karakterens navn efterfulgt af enten prosa- (jf.
+4.3.2) eller vers-opmærkning, jf. 4.3.3. 
+
+`sp`
+:	(*speech*) rummer en individuel replik i drama
+
+`speaker`
+:	navnet på karakteren
+
+`stage`
+:	regibemærkning
+
+#### 4.3.4.1 Citation af dramatisk litteratur
+
+Når dramatisk litteratur citeres, anvendes elementet `cit` med de to
+sidestillede elementer: `quote` og `bibl`. Nedenstående eksempel er
+fra Georg Brandes, Hovedstrømninger, bd. 1:
+	
+	... </p>
+	<cit>
+	  </quote>
+	    <sp>
+	      <speaker>Herkules</speaker>
+	      <p>Hvor er Wieland? Der staaer han. Han, naa, han er 
+	         lille nok, saadan havde jeg netop forestillet mig 
+	         ham. Er I den Mand, som altid fører Hercules i Munden?</p>
+	    </sp>
+	    <sp>
+	      <speaker>Wieland</speaker>
+	      <stage>(vigende tilbage)</stage>
+	      <p>Jeg har Intet at gjøre med Jer, Colos.</p>
+	    </sp>
+	    <sp>
+	      <speaker>Herkules</speaker>
+              <p>Hvad nu, bliv kun!</p>
+	    </sp>
+	    ...
+	  </quote>
+	  <bibl></bibl>
+	</cit>
+	<p> ...
+
+### 4.3.5 Elementer på tekstniveau
+
+På tekstniveau forekommer følgende elementer:
+
+`hi`
+:	fremhævet tekst, se 4.3.5.1
+
+`cit`
+:	(*cited quotation*), citatnote, se 4.3.5.2
+
+`app`
+:	(*apparatus entry*), tekskritisk note, se 4.3.5.3
+
+
+`damage`
+:	læsion i manuskript, se 4.3.5.4
+
+
+`supplied`
+:	tilføjelser (konjekturer), som skønnes nødvendige 
+	for tekstens mening, se 4.3.5.5
+
+`gap`
+:	tekst som udelades, se 4.3.5.6
+
+`figure`
+:	grafisk element i den løbende tekst, se 4.3.5.7
+
+`ex`
+:	opløsning af forkortelse, se 4.3.5.8
+
+`note`
+:	note eller tilføjelse, se 4.3.5.9
+
+`pb`
+:	sideskift i forlæg, se X.X.X.X
+
+`persName`
+:	personnavn, se 4.3.5.10
+
+`placeName`
+:	stednavn, se 4.3.5.11
+
+`ref`
+:	(*reference*), krydshenvisning, se 4.3.5.12
+
+#### 4.3.5.1 Fremhævet tekst og andre typografiske afvigelser
+
+Til gengivelse af fremhævet tekst benyttes elementet `hi`
+(*highlighted*) med `@rend` (*rendition*), der beskriver tekstens
+visuelle udtryk. Følgende attributværdier er tilladt:
+
+`italic` 
+:	kursiv
+
+`small` 
+:	petit skriftsnit
+
+`spaced`
+:	spatieret
+
+`strong`
+:	fed skrift
+
+`sublinear`
+:	lavstillet tekst
+
+`supralinear`
+:	højtstillet tekst
+
+#### 4.3.5.2 Citater
+
+Citater bringes i elementet `cit` (*cited quotation*), som indholder
+følgende elementer:
+
+`quote`
+:	citatet
+
+`bibl`
+:	(*bibliographic entry*) 
+
+
+**Eksempler**
+
+I [Herman Bangs Breve,
+19120106001](http://bangsbreve.dk/dokument/19120106001) optræder
+følgende:
+
+	... havde jo adskilligt 
+	  <app>
+	    <lem>at at</lem>
+	    <rdg>Dittografi, fejlagtigt skrevet i forbindelse med 
+	         et sideskift i brevet</rdg>
+	  </app>
+	tænke paa
+
+Her bør teksten emenderes, således at dittografien kun beskrives i
+`rdg`, altså som
+
+	... havde jo adskilligt 
+	  <app>
+	    <lem>at</lem>
+	    <rdg><q>at at</q> Dittografi, fejlagtigt skrevet i forbindelse med 
+	         et sideskift i brevet</rdg>
+	  </app>
+	tænke paa
+
+#### 4.3.5.3 Tekstkritik
+
+Formålet med et tekstkritisk apparat er at vise læseren usikre
+læsemåder, og hvilke dele af teksten skyldes emendering. Hertil
+anvendes elementet:
+
+`app`
+:	(*apparatus entry*) indeholder én post i et tekstkritisk 
+	apparat. Et `app`-element indeholder altid ét `lem` (*lemma*) 
+	og et til flere elementer af typen `rdg` (*reading*). 
+	Bemærk, at dette element ikke er at forveksle med `note`, 
+	jf. X.X.
+
+Et `app`-element samler de to elementer:
+
+`lem`
+:	(*lemma*) indeholder den tekst, til hvilken der findes en
+	variant. `lem` kan indholde attributtet `@wit` med en eller
+	flere blanktegnsadskilte sigelværdier, som alle indledes med #. 
+
+`rdg`
+:	(*reading*) indeholder et alternativ til teksten i lemmaet.
+	Læsemåder fra andre tekstvidner citeres altid vha. elementet 
+	`q` (*quoted*). `rdg` kan indholde attributtet `@wit` med en
+	eller flere blanktegnsadskilte sigelværdier, som alle indledes
+	med #.
+
+I Georg Brandes Hovedstrømninger bd. 2 findes denne tekstkritiske
+note:
+
+I nedenstående eksempel 
+([Dipl. Dan.  14250712001](http://diplomatarium.dk/dokument/14250712001)) 
+tilbyder et andet tekstvidne, *Aa*, et alternativ i form af 'tenebitur'
+til hovedvidnets læsning 'detinebitur':
+
+	... quibus episcopus captus 
+	  <app>
+	    <lem> detinebitur </lem>
+	    <rdg wit="#Aa"> <q>tenebitur</q></rdg>
+	  </app> 
+	seu ipse ...
+
+Eksempel fra Saxo Grammaticus 6,3 1 (bd. 1 s. 392)
+
+> Denique peragrata Suetia fabri penates ingressus uicinum 
+> limini locum occupat &lt;caput&gt; pilleolo, ne proderetur, 
+> obscurante.  
+
+Passagen kan opmærkes således:
+
+	Denique peragrata Suetia fabri penates ingressus uicinum
+	limini locum occupat 
+	  <app>
+	    <lem resp="#Gertz">
+	      <supplied>caput</supplied>
+	    </lem>
+	    <rdg>
+	      <note>uocem <q>caput</q> post <q>occupat</q> quasi
+	            per haplographiam omissam add. Gertz</note>
+	    </rdg>
+	  </app> pilleolo, ne proderetur, obscurante.
+
+Forslag til gengivelse i kritisk apparat:
+
+> &lt;caput&gt;] *Gertz*. *Uocem* caput *post* occupat *quasi per
+> haplographiam omissam add. Gertz.*
+	
+#### 4.3.5.4 Læsioner
+
+Hvis tekstvidnet er beskadiget, anvendes elementet `damage`, typisk
+under lemmaet i en tekstkritisk note. I nedenstående eksempel ([Dipl.
+Dan. 14450205001 ](http://diplomatarium.dk/dokument/14450205001)) kan
+teksten suppleres vha. det andet tekstvidne *Aa*: 
+
+	perpetui vicarii i sa<ex>m</ex>me stæth wore 
+	  <app>
+	    <lem>ski<damage>cket</damage>he</lem>
+	    <rdg wit="#A">Lakune A; <q>skickethe</q> Aa</rdg>
+	  </app> gothe beskethne me<ex>n</ex> ...
+
+#### 4.3.5.5 Konjekturer
+
+Til markering af tekst, som suppleres af redaktøren, anvendes
+elementet `supplied`. Nedenstående eksempel kommer fra [Dipl. Dan.
+14461229001](http://diplomatarium.dk/dokument/14461229001):
+
+	... presentibus 
+	  <app>
+	    <lem>e<supplied>s</supplied>t</lem>
+	    <rdg> <q>et</q> Weibull, l.c</rdg>
+	  </app> 
+	appensum ...
+
+#### 4.3.5.6 Udeladelser
+
+Såfremt redaktøren ønsker at udelade tekst, kan dette gøres vha.
+elementet `gap`. Et eksempel fra *Diplomatarium Danicum*, hvor
+oversættelsen udelades i projektperioden 2017-2021:
+
+	...
+	<p n="b#1">
+          <gap>I perioden 1. januar 2017 til 30. juni 2021 vil
+	    redaktionen udelukkende udarbejde tekster.</gap>
+        </p>
+
+
+#### 4.3.5.7 Grafik
+
+Til gengivelse af grafiske elementer i den løbende tekst anvendes
+elementet `figure`. Elementet forsynes altid med underelementet
+`figDesc`.
+
+#### 4.3.5.8 Opløsning af abbreviaturer
+
+Til optagelse af middelalderlige forkortelser og deres opløsninger
+anvendes elementet `ex` (*editorial expansion*), som udfyldes med
+tekst suppleret af redaktøren. I [Dipl. Dan.
+14151114001](http://diplomatarium.dk/dokument/14151114001) forekommer:
+
+	Oc weth<ex>e</ex>r kende hwn sigh ...
+
+<!--Elementet implementeres typisk som `em`-elementer i HTML.
+
+	Oc weth<em>e</em>r kende hwn sigh ...
+
+-->
+
+#### 4.3.5.9 Noter
+
+Fodnoter i den løbende tekst beskrives vha. elementet `note`
+med attributtet `@place` udfyldt med værdien `bottom`. Et eksempel fra
+Georg Brandes, Hovedstrømninger 1
+
+	... Tid Poesi og Malerkunst sine 
+	Personer?<note place="bottom">Hettner: »<bibl>Litteraturgeschichte 
+	des 18ten Jahrhunderts</bibl>« passim.</note> Hvad ...
+
+ 
+#### 4.3.5.10 Personnavne
+
+Personnavne opmærkes i den løbende tekst vha. elementet `persName` med
+attributtet `@key` udfyldt med en unik id. Et eksempel fra Georg
+Brandes, Hovedstrømninger 1
+
+	I alle vore litterære Bevægelser i dette Aarhundredes Begyndelse, 
+	i <persName key="adam-oehlenschlager">Oehlenschlägers</persName> 
+	Poesier, i <persName key="n-f-s-grundtvig">Grundtvigs</persName>
+	Prædikener, i ... 
+
+**Fiktive personer**. Såfremt der er behov for at opmærke **fiktive
+personer**, anvendes `persName` med to attributter: 1. `@key` udfyldt
+med en unik id, og 2. `@type` udfyldt med værdien `fictional`.
+
+
+#### 4.3.5.11 Stednavne
+
+Stednavne opmærkes i den løbende tekst vha. elementet `placeName` med
+attributtet `@key` udfyldt med en unik id. Et eksempel fra Georg
+Brandes, Hovedstrømninger 1
+
+	... Ideer fra <placeName key="tyskland">Tydskland</placeName>, 
+	Revolutionens fra <placeName key="frankrig">Frankrig</placeName>
+	...
+
+
+#### 4.3.5.12 Krydshenvisninger
+
+Henvisninger til andre ressourcer indsættes i elementet `ref` på
+følgende måde:
+
+	... <ref target="14091009001">14091009001</ref> ...
+
+#### 4.3.5.13 Sideskift i forlæg
+
+Sideskift i forlæg markeres med det lukkede element `pb` (*page-break*).
+Elementet kan indeholde tre attributter:
+
+`@ed`
+:	*edition* udfyldes med sigelværdien for det tekstvidne, der
+	transkriberes fra
+
+`@n`
+:	*number* udfyldes med tekstvidnets sidetal. Såfremt
+	tekstvidnet ikke indeholder paginering sættes sidetallet i
+	skarpe parenteser, jf. `n="[2]"`
+
+`@facs`
+:	*facsimile* udfyldes med en fil-id for den tilknyttede faksimile
+
+<!--
+* Skal initialer kunne opmærkes (argumenter for eller imod)
+* Understreget tekst
+* Gennemstreget tekst
+-->
+
+
+
+
+

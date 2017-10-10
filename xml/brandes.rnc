@@ -1,0 +1,105 @@
+default namespace = "http://www.tei-c.org/ns/1.0"
+
+start =
+  element TEI {
+    element teiHeader {
+      element fileDesc {
+        element titleStmt {
+          element title { empty }
+        },
+        element publicationStmt {
+          element publisher { xsd:NCName },
+          element pubPlace { xsd:NCName },
+          element date { xsd:date },
+          element idno { empty },
+          element availability {
+            attribute status { xsd:NCName },
+            element ab { text }
+          }
+        },
+        element sourceDesc {
+          element listWit {
+            element witness { bibl }
+          }
+        }
+      }
+    },
+    element text {
+      element front {
+        element titlePage {
+          element docTitle {
+            element titlePart {
+              attribute type { xsd:NCName }?,
+              text
+            }+
+          },
+          element byline { text }
+        },
+        \div+,
+        epigraph
+      },
+      element body { \div+ }
+    }
+  }
+bibl = element bibl { (text | persName)+ }
+\div =
+  element div {
+    attribute type { xsd:NCName }?,
+    (cit
+     | \div
+     | epigraph
+     | lg
+     | note
+     | p
+     | pb
+     | element head { (text | pb)+ })*
+  }
+epigraph = element epigraph { cit }
+persName =
+  element persName {
+    attribute type { xsd:NCName }?,
+    text
+  }
+pb =
+  element pb {
+    attribute n { text },
+    attribute rend { xsd:NMTOKEN }?
+  }
+p =
+  element p {
+    attribute rend { xsd:NCName }?,
+    (text
+     | bibl
+     | lg
+     | note
+     | pb
+     | persName
+     | element hi {
+         attribute rend { xsd:NCName },
+         (text | bibl)+
+       }
+     | element placeName { xsd:NCName })+
+  }
+lg =
+  element lg {
+    element l { (text | bibl | note | pb)+ }+
+  }
+note =
+  element note {
+    attribute rend { xsd:NCName }?,
+    attribute type { xsd:NCName }?,
+    (text | bibl | lg | persName)+
+  }
+cit =
+  element cit {
+    element quote {
+      lg
+      | element sp {
+          element speaker { (text | pb)+ },
+          element stage { text }?,
+          p
+        }+
+      | p+
+    },
+    bibl?
+  }
