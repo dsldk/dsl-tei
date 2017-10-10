@@ -269,17 +269,11 @@ historie, og endelig om det er omtalt eller udgivet tidligere.
 `msIdentifier`
 :	(*manuscript identifier*) identifikation af håndskriftet
 
-`msContents`
-:	(*manuscript contens*) resumé af håndskriftets saglige indhold
-
 `physDesc`
 :	(*physical description*) beskrivelse af håndskriftets fysiske tilstand
 
 `history`
 :	redegørelse for håndkskriftets proveniens
-
-`additional`
-:	bibliografiske oplysninger om håndskriftet
 
 
 Manuskriptbeskrivelsen har denne struktur:
@@ -289,7 +283,6 @@ Manuskriptbeskrivelsen har denne struktur:
 	  <msContents> ... </msContents>
 	  <physDesc> ... </physDesc>
 	  <history> ... </history>
-	  <additional> ... </additional>
 	</msDesc>
 	
 
@@ -324,25 +317,10 @@ Et eksempel findes her:
 	  </msIdentifier>
 	  ...
 
-#### 2.1.6.2 Indhold (`msContents`)
-
-Elementet `msContents` leverer et sammendrag, `summary`, af
-tekstvidnets indhold. Feltet benyttes til de såkaldte regester i
-*Diplomatarium Danicum* og i brevudgaver til at angive afsender og
-modtager. 
-
-Eksempler:
-
-	<msContents>
-	  <summary> Mikkel Jakobsen forpligter sig til ikke at 
-	    afhænde Fårtoftgård til andre end provsten i 
-	    Vestervig </summary>
-	</msContents>
-
 	
-#### 2.1.6.3 Fysisk tilstand (`physDesc`)
+#### 2.1.6.2 Fysisk tilstand (`physDesc`)
 
-Beskrivelsen af et tekstvidnes fysiske tilstand falder i fem dele: 
+Beskrivelsen af et tekstvidnes fysiske tilstand falder i seks dele: 
 
 `objectDesc`
 :	beskrivelse af det fysiske objekt, 
@@ -485,7 +463,7 @@ påskrift:[^er]
 	  </ab>
 	</seal>
 
-#### 2.1.6.4 Proveniens (`history`)
+#### 2.1.6.3 Proveniens (`history`)
 
 Tekstvidnets historie angives under `history`-elementet. Hvis
 tekstvidnet vides at være tabt, registreret eller nævnt, angives dette
@@ -497,11 +475,9 @@ her.
 	</history>
 	...
 
-#### 2.1.6.5 Bibliografiske oplysninger om tekstvidnet (`additional`) 
+#### 2.1.7 Bibliografiske oplysninger om tekstvidnet (`listBibl`) 
 
-Elementet `additional` kombinerer bibliografisk information med
-administrative oplysninger. Elementet indholder et obligatorisk
-`listBibl`-element, som samler en eller flere `bibl`-elementer
+I `listBibl`-element, som samler en eller flere `bibl`-elementer
 (*bibliographic citation*), jf. 2.1.5.
 
 	<additional>
@@ -511,6 +487,7 @@ administrative oplysninger. Elementet indholder et obligatorisk
 	    ...
 	  </listBibl>
 	</additional>
+
 
 ## 2.2 Det digitale produkt (`encodingDesc`)
 
@@ -581,15 +558,24 @@ Under `profileDesc`
 `creation`
 :	tid og sted for etablering af teksten
 
+`abstract`
+:	kort resumé af tekstens indhold
+
 `langUsage`
 :	sprog
 
 `textClass`
 :	genre, tema
 
-### 2.3.1 Tid og sted for etablering af teksten
+### 2.3.1 Tid og sted for etablering af teksten (`creation`)
 
-### 2.3.2 Sprog
+### 2.3.2 Resumé af indholdet (`abstract`)
+
+Til brug i søgeresultatlister er det en fordel, at der under titlen
+optræder et resumé af tekstens indhold. Et sådan kan gives i elementet
+`abstract` med et eller flere underordnede `ab`-elementer.
+
+### 2.3.2 Sprog (`langUsage`)
 
 Elementet `langUsage` (*language usage*) samler et eller flere
 `language`-elementer. Hvert `language`-element har attributtet
