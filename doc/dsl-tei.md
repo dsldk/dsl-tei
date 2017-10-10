@@ -191,10 +191,11 @@ De fem elementtyper kan være organiseret således:
 
 ### 2.1.4 Om forlægget (`sourceDesc`)
 
-Til beskrivelse af en udgaves forlæg benyttes elementet `sourceDesc`
-(*source description*) med det underordnede element `listWit`
-(*witness list*). Alt efter antallet af forlæg indeholder `listWit` et
-tilsvarende antal sideordnede *tekstvidne*elementer (`witness`).
+Til beskrivelse af en udgaves kilder benyttes elementet `sourceDesc`
+(*source description*) med de underordnede elementer `listWit` (*witness
+list*), der indeholder ét eller flere tekstvidne-elementer (`witness`),
+og et `listBibl` (*bibliographic list*), i hvilket supplerende
+bibliografiske oplysninger kan gives i ét eller flere `bibl`-elementer.
 
 	...
 	</publicationStmt>
@@ -204,6 +205,10 @@ tilsvarende antal sideordnede *tekstvidne*elementer (`witness`).
 	    <witness>...</witness>
 	    ...
 	  </listWit>
+	  <listBibl>
+	    <bibl>...</bibl>
+	    <bibl>...</bibl>
+	    ...
 	</sourceDesc> 
 	...
 
@@ -247,7 +252,8 @@ som forlæg, kan der under `witness` forekomme to slags elementer:
 
 Et `bibl`-element indeholder en bibliografisk henvisning, som kan
 struktureres efter behov. Elementet kan indeholde et `@xml:id` udfyldt
-med en unik id.
+med en unik id, således at man kan referere til kilden i tekstkritiske
+noter.
 
  
 
