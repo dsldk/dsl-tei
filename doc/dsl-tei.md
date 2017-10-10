@@ -1248,12 +1248,12 @@ Georg Brandes, Hovedstrømninger 1
 #### 4.3.5.10 Personnavne
 
 Personnavne opmærkes i den løbende tekst vha. elementet `persName` med
-attributtet `@key` udfyldt med en unik id. Et eksempel fra Georg
+attributtet `@ref` (*reference*) udfyldt med en unik id. Et eksempel fra Georg
 Brandes, Hovedstrømninger 1
 
 	I alle vore litterære Bevægelser i dette Aarhundredes Begyndelse, 
-	i <persName key="adam-oehlenschlager">Oehlenschlägers</persName> 
-	Poesier, i <persName key="n-f-s-grundtvig">Grundtvigs</persName>
+	i <persName ref="adam-oehlenschlager">Oehlenschlägers</persName> 
+	Poesier, i <persName ref="n-f-s-grundtvig">Grundtvigs</persName>
 	Prædikener, i ... 
 
 **Fiktive personer**. Såfremt der er behov for at opmærke **fiktive
@@ -1264,11 +1264,11 @@ med en unik id, og 2. `@type` udfyldt med værdien `fictional`.
 #### 4.3.5.11 Stednavne
 
 Stednavne opmærkes i den løbende tekst vha. elementet `placeName` med
-attributtet `@key` udfyldt med en unik id. Et eksempel fra Georg
+attributtet `@ref` udfyldt med en unik id. Et eksempel fra Georg
 Brandes, Hovedstrømninger 1
 
-	... Ideer fra <placeName key="tyskland">Tydskland</placeName>, 
-	Revolutionens fra <placeName key="frankrig">Frankrig</placeName>
+	... Ideer fra <placeName ref="tyskland">Tydskland</placeName>, 
+	Revolutionens fra <placeName ref="frankrig">Frankrig</placeName>
 	...
 
 
