@@ -71,7 +71,7 @@ enhedspræg. Da DSL's korpusudgivelser ikke benytter TEI, er kun
 værdien `text` tilladt i DSL-TEI.
 -->
 
-Under `teiHeader` findes fire hovedelementer:
+Under `teiHeader` findes tilsvarende fire hovedelementer:
 
 1. `fileDesc` (*file description*), indeholder komplet bibliografisk beskrivelse af dokumentets tekstdel
 2. `encodingDesc` (*encoding description*), beskriver forholdet mellem den digitale tekst og kildegrundlaget
@@ -143,7 +143,7 @@ De fem elementtyper organiseres således:
   	  </availability>
 	</publicationStmt>
 
-### 2.1.4 Om forlægget (`sourceDesc`)
+### 2.1.4 Udgivelsens kilder (`sourceDesc`)
 
 Til beskrivelse af en udgaves kilder benyttes elementet `sourceDesc`
 (*source description*) med de underordnede elementer `listWit` (*witness
