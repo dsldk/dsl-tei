@@ -34,21 +34,14 @@ attributtet `@xmlns` (*XML namespace*) udfyldt med værdien
 I overensstemmelse med TEI P5 indeholder rodelementet `TEI` følgende
 tre komponenter: 
 
-1 `teiHeader`
-:	(*TEI header*) leverer metadata til beskrivelse af den
-	digitale ressource i bibliografisk, kodnings- og
-	udviklingsmæssig henseende. Jf. 2 Metadata.
-
-2 `facsimile`
-:	indeholder en digital billedgengivelse af den tekst, der
-	beskrives under `teiHeader` og formidles under `text`. Jf. 3
-	Faksimiler
-
-3 `text`
-:	indeholder ét værk, hvad enten dette udgøres af en 
-	tekstmæssig enhed (fx én roman, novelle, brev) eller 
-	er en helhed bestående flere tekster (fx en samling 
-	essays, digte, noveller). Jf. 4 Tekst.
+1. `teiHeader` (*TEI header*) leverer metadata til beskrivelse af den
+  digitale ressource i bibliografisk, kodnings- og udviklingsmæssig 
+  henseende. Jf. 2 Metadata.
+2. `facsimile` indeholder en digital billedgengivelse af den tekst, der
+  beskrives under `teiHeader` og formidles under `text`. Jf. 3 Faksimiler
+3. `text` indeholder ét værk, hvad enten dette udgøres af en tekstmæssig 
+  enhed (fx én roman, novelle, brev) eller er en helhed bestående af flere 
+  tekster (fx en samling essays, digte, noveller). Jf. 4 Tekst.
 
 Elementerne disponeres således: 
 
