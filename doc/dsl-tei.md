@@ -1,5 +1,3 @@
-% *Dsl-basis -- retningslinjer for digital udgivelse af det Danske Sprog- og Litteraturselskabs tekster*
-
 # Indledning
 
 	<!--2017-03-21, th, denne version af retningslinjerne for brug af DSL-basis 
@@ -21,7 +19,7 @@ Hovedbegrundelsen for at definere et fælles opmærkningsformat er at
 skabe et fælles grundlag for værktøjer og procedurer, der bearbejder
 disse.
 
-# 1 Et `dsl-basis`-dokument
+# 1 Et `dsl-tei`-dokument
 
 Et DSL-TEI-dokument er et XML-dokument med rodelementet `TEI` og
 attributtet `@xmlns` (*XML namespace*) udfyldt med værdien 
@@ -53,7 +51,7 @@ Elementerne disponeres således:
 
 # 2 Metadata
 
-`teiHeader` samler metadata, der er nødvendige i udgivelsen af
+Elementet `teiHeader` samler metadata, der er nødvendige i udgivelsen af
 en tekst. Disse leverer 
 
 * bibliografisk beskrivelse af det digitale værk
@@ -75,21 +73,10 @@ værdien `text` tilladt i DSL-TEI.
 
 Under `teiHeader` findes fire hovedelementer:
 
-`fileDesc`
-:	(*file description*), indeholder komplet bibliografisk 
-	beskrivelse af dokumentets tekstdel
-
-`encodingDesc`
-:	(*encoding description*), beskriver forholdet mellem den 
-	digitale tekst og kildegrundlaget
-
-`profileDesc`
-:	(*text-profile description*), beskriver andre aspekter af 
-	teksten, fx sprogbrug, genre eller genstandsfelt
-
-`revisionDesc`
-:	(*revision description*), indeholder opsummering af 
-	ændringer af filen
+1. `fileDesc` (*file description*), indeholder komplet bibliografisk beskrivelse af dokumentets tekstdel
+2. `encodingDesc` (*encoding description*), beskriver forholdet mellem den digitale tekst og kildegrundlaget
+3. `profileDesc` (*text-profile description*), beskriver andre aspekter af teksten, fx sprogbrug, genre eller genstandsfelt
+4. `revisionDesc` (*revision description*), indeholder opsummering af ændringer af filen
 
 De fire elementer fordeler sig således:
 
@@ -107,24 +94,10 @@ indeholder information til identifikation, katalogisering og
 fyldestgørende beskrivelse af filen. `fileDesc` indeholder følgende
 elementer:
 
-`titleStmt` 
-:	(*title statement*), angivelse af titel, en eller flere 
-	forfattere og/eller redaktører samt evt. bevillingsgivere
-
-`extent`
-:	beskriver omtrentlig størrelse på en tekst lagret på et
-	medie (fx filstørrelse, antal ord) eller i en trykt udgivelse
-	(fx antal sider)
-
-`publicationStmt`
-:	(*publication statement*) angiver, hvem der har ansvaret for
-	udgivelsen af den digitale tekst og vilkår for distribution af
-	samme
-
-`sourceDesc`
-:	(*source description*) beskriver den kilde, fra hvilken den
-	digitale tekst er afledt, fx om den har digitalt eller analogt forlæg.
-
+1. `titleStmt` (*title statement*), angivelse af titel, en eller flere forfattere og/eller redaktører samt evt. bevillingsgivere
+2. `extent` beskriver omtrentlig størrelse på en tekst lagret på et medie (fx filstørrelse, antal ord) eller i en trykt udgivelse (fx antal sider)
+3. `publicationStmt` (*publication statement*) angiver, hvem der har ansvaret for udgivelsen af den digitale tekst og vilkår for distribution af samme
+4. `sourceDesc` (*source description*) beskriver den kilde, fra hvilken den digitale tekst er afledt, fx om den har digitalt eller analogt forlæg.
 
 ### 2.1.1 Titel (`titleStmt`)
 
@@ -140,7 +113,6 @@ efterfulgt af et eller flere `author`-, `editor`-, og
 		  <funder> Carlsbergfondet </funder>
 		</titleStmt>
 
-
 ### 2.1.2 Omfang (`extent`)
 
 	<!-- skal udfyldes -->
@@ -152,24 +124,13 @@ samler navn på udgiver, samt *hvor* og *hvornår* filen er publiceret.
 Endelig meddeles, under hvilke vilkår den udgives. `publicationStmt`
 indeholder fem elementer:
 
-`publisher`
-:	udgiver. Værdien af elementet sættes som udgangspunkt til
-	`dsl`
+1. `publisher` udgiver. Værdien af elementet sættes som udgangspunkt til `dsl`
+2. `pubPlace` udgivelsessted. Elementets grundværdi er `kbh`
+3. `date` udgivelsesdato angives i ISO 8601-formatet YYYY-MM-DD
+4. `idno` identifikationsnummer er en unik værdi. I DD opbygget efter formen *YYYYMMDDddd*.
+5. `availability` tilgængelighed. Elementet indeholder `@status="restricted"`
 
-`pubPlace`
-:	udgivelsessted. Elementets grundværdi er `kbh`
-
-`date`
-:	udgivelsesdato angives i ISO 8601-formatet YYYY-MM-DD
-
-`idno`
-:	identifikationsnummer er en unik værdi. I DD opbygget efter
-	formen *YYYYMMDDddd*.
-
-`availability`
-:	tilgængelighed. Elementet indeholder `@status="restricted"`
-
-De fem elementtyper kan være organiseret således:
+De fem elementtyper organiseres således:
 
 	<publicationStmt>
 	  <publisher>dsl|empty|nil</publisher>
