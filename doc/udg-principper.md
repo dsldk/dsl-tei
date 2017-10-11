@@ -5,8 +5,7 @@ tekstudgaver produceret i Det Danske Sprog- og Litteraturselskab.
 Formålet er at sikre:
 
 1. lettere vej til dokumentation af DSL's udgivelser
-2. sammenlignelige, veldokumenterede og dermed brugervenlige
-   ressourcer
+2. sammenlignelige, veldokumenterede og brugervenlige ressourcer
 3. lettere vedligeholdelse af færdige udgivelser
 
 Principperne er opstillet af DSL's medarbejdere ved en workshop 22. 
