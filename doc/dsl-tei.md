@@ -146,10 +146,13 @@ De fem elementtyper organiseres således:
 ### 2.1.4 Udgivelsens kilder (`sourceDesc`)
 
 Til beskrivelse af en udgaves kilder benyttes elementet `sourceDesc`
-(*source description*) med de underordnede elementer `listWit` (*witness
-list*), der indeholder ét eller flere tekstvidne-elementer (`witness`),
-og et `listBibl` (*bibliographic list*), i hvilket supplerende
-bibliografiske oplysninger kan gives i ét eller flere `bibl`-elementer.
+(*source description*) med de underordnede elementer 
+
+1. **obligatorisk** `listWit` (*witness list*) indeholder ét eller 
+  flere obligatoriske tekstvidne-elementer (`witness`)
+2. **fakultativt** `listBibl` (*bibliographic list*), indeholder 
+  supplerende bibliografiske oplysninger kan gives i ét eller flere 
+  `bibl`-elementer.
 
 	...
 	</publicationStmt>
@@ -166,15 +169,15 @@ bibliografiske oplysninger kan gives i ét eller flere `bibl`-elementer.
 	</sourceDesc> 
 	...
 
-For at kunne identificere det enkelte tekstvidne indeholder elementet
+Til identifikation af det enkelte tekstvidne indeholder elementet
 `witness` et obligatorisk `@xml:id`-attribut. I dette attribut
 indsættes en bogstavværdi, fx `A`, `B`, `C`, som fungerer som
-reference i eksempelvis tekstkritiske noter.[^ui]
+reference i tekstkritiske noter.
 
-[^ui]: Et originalt manuskript betegnes ved et stort bogstav, fx `A`.
-Et manuskript afledt af originalen `A` betegnes `Aa`, og et manuskript
-afledt af `Aa` betegnes `Aa1`. Koncepter betegnes ved små bogstaver.
-Således er et koncept til `A` betegnet ved `a`. 
+> *Note:* Et originalt manuskript betegnes ved et stort bogstav, fx `A`.
+> Et manuskript afledt af originalen `A` betegnes `Aa`, og et manuskript
+> afledt af `Aa` betegnes `Aa1`. Koncepter betegnes ved små bogstaver.
+> Således er et koncept til `A` betegnet ved `a`. 
 
 I eksemplet nedenfor ses to sideordnede originalhåndskrifter, hhv. `A`
 og `B`: 
