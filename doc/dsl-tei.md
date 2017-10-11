@@ -176,30 +176,18 @@ Elementerne disponeres således:
 > afledt af `Aa` betegnes `Aa1`. Koncepter betegnes ved små bogstaver.
 > Således er et koncept til `A` betegnet ved `a`. 
 
-I eksemplet nedenfor ses to sideordnede originalhåndskrifter, hhv. `A`
-og `B`: 
+#### To anvendelser af witness-elementet
 
-	<listWit>
-	  <witness xml:id="A">
-	    <msDesc> ...  </msDesc>
-	  </witness>
-	  <witness xml:id="B">
-	    <msDesc> ... </msDesc>
-	  </witness>
-	  ...
-	</listWit>
+Alt efter hvilken slags kilde der ligger til grund for teksten kan
+`witness`-elementet rumme to slags elementer:
 
-Da tekster kan have både håndskrevne manuskripter og trykte udgaver
-som forlæg, kan der under `witness` forekomme to slags elementer: 
-
-`bibl`
-:	(*bibliographic citation*) indeholder en løst struktureret
-	bibliografisk henvisning, hvis bestanddele kan opmærkes efter 
-	behov. Se 2.1.5.
-
-`msDesc`
-:	(*manuscript description*) indeholder en beskrivelse af ét
-	manuskript eller tekstbærende genstand. Se 2.1.6.
+1. `bibl` (*bibliographic citation*) indeholder en løst struktureret
+  bibliografisk henvisning, hvis bestanddele kan opmærkes efter 
+  behov. Denne praksis benyttes typisk, når kilden er et moderne tryk, se 2.1.5.
+2. `msDesc` (*manuscript description*) indeholder en beskrivelse af ét
+  manuskript eller tekstbærende genstand. Denne praksis benyttes til
+  håndskrevne kilder, inkunabler og tidlige tryk, som findes i
+  biblioteker og arkiver. Se 2.1.6.
 
 
 ### 2.1.5 Beskrivelse af trykte forlæg
