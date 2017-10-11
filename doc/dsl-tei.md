@@ -884,15 +884,15 @@ med attributtet `@rend`.
 
 I Brandes *Hovedstrømninger bd. 5* citeres:
 
-|Derpaa
-| gik 
-|  vor 
-|   Helt 
-|    ganske 
-|     nedslaaet 
-|      ned 
-|       ad 
-|        Trapperne
+	Derpaa
+	 gik 
+	  vor	 
+	   Helt 
+	    ganske 
+	     nedslaaet 
+	      ned 
+	       ad 
+	        Trapperne
 
 	<lg>
           <l rend="indent1">Derpaa</l>
