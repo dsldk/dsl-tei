@@ -171,11 +171,6 @@ Elementerne disponeres således:
 	    ...
 	</sourceDesc> 
 
-Til identifikation af det enkelte tekstvidne indeholder elementet
-`witness` et obligatorisk `@xml:id`-attribut. I dette attribut
-indsættes en bogstavværdi, fx `A`, `B`, `C`, som fungerer som
-reference i tekstkritiske noter.
-
 > *Note:* Et originalt manuskript betegnes ved et stort bogstav, fx `A`.
 > Et manuskript afledt af originalen `A` betegnes `Aa`, og et manuskript
 > afledt af `Aa` betegnes `Aa1`. Koncepter betegnes ved små bogstaver.
