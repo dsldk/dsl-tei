@@ -150,16 +150,17 @@ Til beskrivelse af en udgaves kilder benyttes elementet `sourceDesc`
 
 1. **obligatorisk** `listWit` (*witness list*) indeholder ét eller 
   flere obligatoriske tekstvidne-elementer (`witness`). Bemærk, at
-  hvert `witness`-element har et `@xml:id`-attribut til
-  identifikation. I dette attribut indsættes en bogstavværdi, `A`, 
-  `B`, `C`, som fungerer som reference i tekstkritiske noter.
+  hvert `witness`-element har et `@xml:id`-attribut til identifikation. 
+  Heri indsættes en bogstavværdi, fx `A`, `B`, `C`, som fungerer som 
+  reference i tekstkritiske noter.
 2. **fakultativt** `listBibl` (*bibliographic list*), indeholder 
   supplerende bibliografiske oplysninger kan gives i ét eller flere 
   `bibl`-elementer
 
-> *Note:* Denne underinddeling sikrer, at de kilder der er med til at 
-> konstituere teksten kan behandles som *tekstvidner* og kan adskilles fra øvrige
-> bibliografiske referencer, herunder artikler og monografier og andre
+> *Note:* En underinddeling med obligatorisk `listWit` og fakultativt
+> `listBibl` sikrer, at de kilder, der konstituerer teksten, kan 
+> behandles som *tekstvidner* og kan adskilles fra øvrige
+> bibliografiske referencer såsom artikler og monografier og andre
 > værker, som nævnes i forbindelse med udgivelsen.
 
 Elementerne disponeres således:
@@ -201,8 +202,6 @@ Et `bibl`-element indeholder en bibliografisk henvisning, som kan
 struktureres efter behov. Elementet kan indeholde et `@xml:id` udfyldt
 med en unik id, således at man kan referere til kilden i tekstkritiske
 noter.
-
- 
 
 <!-- skal udfyldes -->
 
