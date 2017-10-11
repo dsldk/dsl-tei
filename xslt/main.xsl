@@ -175,6 +175,12 @@
                             <xsl:apply-templates select="//tei:app" mode="apparatusCriticus"/>
                         </div>
                     </xsl:if>
+                    <xsl:if test="//tei:cit">
+                        <div>
+                            <h2>Citater</h2>
+                            <xsl:apply-templates select="//tei:cit" mode="quotationApparatus"/>
+                        </div>
+                    </xsl:if>
 
                     <!--<xsl:if test="//tei:note[@type='add']">
                     <div>

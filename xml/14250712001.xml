@@ -36,7 +36,7 @@
                                         <witness xml:id="A">
                                                 <msDesc>
                                                   <msIdentifier>
-                                                  <settlement>Lund</settlement>
+                                                  <settlement>Lund test</settlement>
                                                   <repository>Lunde Kapitels Arkiv</repository>
                                                   <collection>empty</collection>
                                                   <idno>empty</idno>
@@ -612,7 +612,6 @@
                 </front>
                 <body>
                         <div xml:lang="la">
-                                <head/>
                                 <p n="a#1">In nomine sancte et individue trinitatis patris et filii
                                         et spiritus sancti amen/ <persName>Petrus</persName> dei
                                         gratia archiepiscopus Lundensis Swecie primas et apostolice
@@ -651,9 +650,10 @@
                                                 <persName>Petrum</persName> quondam Lundensem
                                         archiepiscopum predecessorem nostrum in concilio provinciali
                                         Helsingburgis per ipsum celebrato <cit>
-                                                <quote>articulos</quote>
+                                                <quote>articulos dette er citat i løbende tekst</quote>
                                                 <bibl>Dipl. Dan. 3. rk. II nr. 153</bibl>
-                                        </cit> innovamus ♦</p>
+				</cit> innovamus ♦</p>
+				<cit><quote>dette er et citat som blok</quote><bibl>Chaucer</bibl></cit>
                                 <p n="a#3">&lt;1&gt; Primo ut siquis in hoc sacrilegii genus
                                         irrepserit quod aliquem <bibl xml:id="sldke-djk">ælsdklæk</bibl> episcopum provincie Daciane
                                         hostiliter fuerit insecutus vel percusserit aut ceperit seu
