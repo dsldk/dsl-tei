@@ -1,4 +1,7 @@
-# Udfærdigelse af udgivelsesprincipper til udgaver i DSL-regi
+# Udgivelsesprincipper for DSL-udgaver
+
+I dette dokument opstilles en liste over udgivelsesprincipper for
+tekstudgaver produceret i Det Danske Sprog- og Litteraturselskab. 
 
 
 ## 1 Udgavens indhold
