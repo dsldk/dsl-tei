@@ -152,8 +152,7 @@ Til beskrivelse af en udgaves kilder benyttes elementet `sourceDesc`
   flere obligatoriske tekstvidne-elementer (`witness`)
 2. **fakultativt** `listBibl` (*bibliographic list*), indeholder 
   supplerende bibliografiske oplysninger kan gives i ét eller flere 
-  `bibl`-elementer.
-
+  `bibl`-elementer
 
 	<sourceDesc>
 	  <listWit>
@@ -166,7 +165,6 @@ Til beskrivelse af en udgaves kilder benyttes elementet `sourceDesc`
 	    <bibl>...</bibl>
 	    ...
 	</sourceDesc> 
-
 
 Til identifikation af det enkelte tekstvidne indeholder elementet
 `witness` et obligatorisk `@xml:id`-attribut. I dette attribut
