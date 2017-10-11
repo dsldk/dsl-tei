@@ -157,6 +157,11 @@ Til beskrivelse af en udgaves kilder benyttes elementet `sourceDesc`
   supplerende bibliografiske oplysninger kan gives i ét eller flere 
   `bibl`-elementer
 
+> *Note:* Denne underinddeling sikrer, at de kilder der er med til at 
+> konstituere teksten kan behandles som *tekstvidner* og kan adskilles fra øvrige
+> bibliografiske referencer, herunder artikler og monografier og andre
+> værker, som nævnes i forbindelse med udgivelsen.
+
 Elementerne disponeres således:
 
 	<sourceDesc>
@@ -176,9 +181,9 @@ Elementerne disponeres således:
 > afledt af `Aa` betegnes `Aa1`. Koncepter betegnes ved små bogstaver.
 > Således er et koncept til `A` betegnet ved `a`. 
 
-#### To anvendelser af witness-elementet
+#### To anvendelser af `witness`-elementet
 
-Alt efter hvilken slags kilde der ligger til grund for teksten kan
+Alt efter hvilken slags kilde der ligger til grund for teksten, kan
 `witness`-elementet rumme to slags elementer:
 
 1. `bibl` (*bibliographic citation*) indeholder en løst struktureret
