@@ -1057,26 +1057,17 @@ Her bør teksten emenderes, således at dittografien kun beskrives i
 
 Formålet med et tekstkritisk apparat er at vise læseren usikre
 læsemåder, og hvilke dele af teksten skyldes emendering. Hertil
-anvendes elementet:
-
-`app`
-:	(*apparatus entry*) indeholder én post i et tekstkritisk 
-	apparat. Et `app`-element indeholder altid ét `lem` (*lemma*) 
-	og et til flere elementer af typen `rdg` (*reading*). 
-	Bemærk, at dette element ikke er at forveksle med `note`, 
-	jf. X.X.
+anvendes elementet: `app` (*apparatus entry*), indeholder én 
+post i et tekstkritisk apparat. 
 
 Et `app`-element samler de to elementer:
 
-`lem`
-:	(*lemma*) indeholder den tekst, til hvilken der findes en
-	variant. `lem` kan indholde attributtet `@wit` med en eller
-	flere blanktegnsadskilte sigelværdier, som alle indledes med #. 
-
-`rdg`
-:	(*reading*) indeholder et alternativ til teksten i lemmaet.
-	`rdg` kan indholde attributtet `@wit` med en eller flere 
-	blanktegnsadskilte sigelværdier, som alle indledes med #.
+1. `lem` (*lemma*) indeholder den tekst, til hvilken der findes en
+  variant. `lem` kan indholde attributtet `@wit` med en eller flere 
+  blanktegnsadskilte sigelværdier, som alle indledes med #. 
+2. `rdg` (*reading*) indeholder et alternativ til teksten i lemmaet.
+  `rdg` kan indholde attributtet `@wit` med en eller flere sigelreferencer. 
+  Hver sigelreference indledes med # og adskilles ved blanktegn.
 
 Denne praksis illustreres i Georg Brandes Hovedstrømninger bd. 2 med denne tekstkritiske
 note:
@@ -1091,7 +1082,7 @@ følgende måde
 
 > Alexandre] *SS*, *Fu*, *1923-24*, Alexander *A*, *B*.
 
-I nedenstående eksempel ([Dipl. Dan.  14250712001](http://diplomatarium.dk/dokument/14250712001)) 
+I nedenstående eksempel ([Dipl. Dan. 14250712001](http://diplomatarium.dk/dokument/14250712001)) 
 tilbyder et andet tekstvidne, *Aa*, et alternativ i form af 'tenebitur'
 til hovedvidnets læsning 'detinebitur':
 
@@ -1102,13 +1093,14 @@ til hovedvidnets læsning 'detinebitur':
 	  </app> 
 	seu ipse ...
 
-Eksempel fra Saxo Grammaticus 6,3 1 (bd. 1 s. 392)
+Til forklaring af emendationer kan udgiveren supplere `rdg` med elementet `note`. 
+Nedenstående eksempel er fra Saxo Grammaticus 6,3,1 (bd. 1 s. 392)
 
 > Denique peragrata Suetia fabri penates ingressus uicinum 
 > limini locum occupat &lt;caput&gt; pilleolo, ne proderetur, 
 > obscurante.  
 
-Passagen kan opmærkes således:
+Passagen opmærkes således:
 
 	Denique peragrata Suetia fabri penates ingressus uicinum
 	limini locum occupat 
