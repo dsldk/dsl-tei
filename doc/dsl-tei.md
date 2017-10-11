@@ -1075,23 +1075,30 @@ Et `app`-element samler de to elementer:
 
 `rdg`
 :	(*reading*) indeholder et alternativ til teksten i lemmaet.
-	Læsemåder fra andre tekstvidner citeres altid vha. elementet 
-	`q` (*quoted*). `rdg` kan indholde attributtet `@wit` med en
-	eller flere blanktegnsadskilte sigelværdier, som alle indledes
-	med #.
+	`rdg` kan indholde attributtet `@wit` med en eller flere 
+	blanktegnsadskilte sigelværdier, som alle indledes med #.
 
-I Georg Brandes Hovedstrømninger bd. 2 findes denne tekstkritiske
+Denne praksis illustreres i Georg Brandes Hovedstrømninger bd. 2 med denne tekstkritiske
 note:
 
-I nedenstående eksempel 
-([Dipl. Dan.  14250712001](http://diplomatarium.dk/dokument/14250712001)) 
+	<app>
+	  <lem wit="#SS #Fu #1923-24">Alexandre</lem>
+	  <rdg wit="#A #B">Alexander</rdg>
+	</app>
+
+Dette gengives i overenstemmelse med DSL's udgivelsesprincipper på
+følgende måde
+
+> Alexandre] *SS*, *Fu*, *1923-24*, Alexander *A*, *B*.
+
+I nedenstående eksempel ([Dipl. Dan.  14250712001](http://diplomatarium.dk/dokument/14250712001)) 
 tilbyder et andet tekstvidne, *Aa*, et alternativ i form af 'tenebitur'
 til hovedvidnets læsning 'detinebitur':
 
 	... quibus episcopus captus 
 	  <app>
 	    <lem> detinebitur </lem>
-	    <rdg wit="#Aa"> <q>tenebitur</q></rdg>
+	    <rdg wit="#Aa"> tenebitur </rdg>
 	  </app> 
 	seu ipse ...
 
