@@ -1,8 +1,7 @@
 # dsl-tei
 
-I dette repositorium, <https://github.com/dsldk/dsl-tei>, findes det nødvendige 
-materiale i forbindelse med udarbejdelse af udgivelser i Det Danske Sprog- og 
-Litteraturselskab, DSL.
+I dette repositorium, <https://github.com/dsldk/dsl-tei>, findes materiale til 
+brug i udarbejdelse af udgivelser i Det Danske Sprog- og Litteraturselskab, DSL.
 
 * css -- stylesheets som benyttes til visning af HTML-dokumenter, som
   befinder sig html-mappen
