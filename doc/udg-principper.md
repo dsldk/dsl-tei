@@ -1,16 +1,23 @@
 # Udgivelsesprincipper for DSL-udgaver
 
 I dette dokument opstilles en liste over udgivelsesprincipper for
-tekstudgaver produceret i Det Danske Sprog- og Litteraturselskab. 
+tekstudgaver produceret i Det Danske Sprog- og Litteraturselskab.
+Principperne er opstillet af DSL's medarbejdere ved en workshop 22. 
+maj 2017 og efterfølgende justeret af DSL's bestyrelse ved et
+seminar 19. september 2017.
 
 
 ## 1 Udgavens indhold
 
 Her gives en klassifikation, af hvilken type er udgaven er, fx
 tekstkritisk udgave, studieudgave, digital, analog, hybrid. Eksempler: 
-Holberg-projektet: : “LHS er tekstkritisk udgave af Holbergs samlede
-forfatterskab ...”. Dipl. Dan.: “Som hovedregel medtages alle breve og diplomer, der
-vedrører Danmark …”
+Holberg-projektet:
+
+> LHS er tekstkritisk udgave af Holbergs samlede forfatterskab ...
+
+Diplomatarium Danicum:
+
+> Som hovedregel medtages alle breve og diplomer, der vedrører Danmark ...
 
 ## 2 Udgavens omfang
 
