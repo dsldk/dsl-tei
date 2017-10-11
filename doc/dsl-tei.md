@@ -154,6 +154,7 @@ Til beskrivelse af en udgaves kilder benyttes elementet `sourceDesc`
   supplerende bibliografiske oplysninger kan gives i ét eller flere 
   `bibl`-elementer.
 
+
 	...
 	</publicationStmt>
 	<sourceDesc>
@@ -168,6 +169,7 @@ Til beskrivelse af en udgaves kilder benyttes elementet `sourceDesc`
 	    ...
 	</sourceDesc> 
 	...
+
 
 Til identifikation af det enkelte tekstvidne indeholder elementet
 `witness` et obligatorisk `@xml:id`-attribut. I dette attribut
