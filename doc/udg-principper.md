@@ -2,6 +2,13 @@
 
 I dette dokument opstilles en liste over udgivelsesprincipper for
 tekstudgaver produceret i Det Danske Sprog- og Litteraturselskab.
+Formålet er at sikre:
+
+1. lettere vej til dokumentation af DSL's udgivelser
+2. sammenlignelige, veldokumenterede og dermed brugervenlige
+   ressourcer
+3. lettere vedligeholdelse af færdige udgivelser
+
 Principperne er opstillet af DSL's medarbejdere ved en workshop 22. 
 maj 2017 og efterfølgende justeret af DSL's bestyrelse ved et
 seminar 19. september 2017.
