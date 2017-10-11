@@ -154,6 +154,8 @@ Til beskrivelse af en udgaves kilder benyttes elementet `sourceDesc`
   supplerende bibliografiske oplysninger kan gives i ét eller flere 
   `bibl`-elementer
 
+Elementeren disponeres således:
+
 	<sourceDesc>
 	  <listWit>
 	    <witness>...</witness>
