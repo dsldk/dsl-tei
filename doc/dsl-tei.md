@@ -894,6 +894,8 @@ I Brandes *Hovedstrømninger bd. 5* citeres:
 	       ad 
 	        Trapperne
 
+Effekten opnås gennem følgende opmærkning:
+
 	<lg>
           <l rend="indent1">Derpaa</l>
           <l rend="indent2">gik</l>
