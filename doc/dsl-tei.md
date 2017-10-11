@@ -155,8 +155,6 @@ Til beskrivelse af en udgaves kilder benyttes elementet `sourceDesc`
   `bibl`-elementer.
 
 
-	...
-	</publicationStmt>
 	<sourceDesc>
 	  <listWit>
 	    <witness>...</witness>
@@ -168,7 +166,6 @@ Til beskrivelse af en udgaves kilder benyttes elementet `sourceDesc`
 	    <bibl>...</bibl>
 	    ...
 	</sourceDesc> 
-	...
 
 
 Til identifikation af det enkelte tekstvidne indeholder elementet
