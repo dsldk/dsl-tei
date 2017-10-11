@@ -884,6 +884,16 @@ med attributtet `@rend`.
 
 I Brandes *Hovedstrømninger bd. 5* citeres:
 
+|Derpaa
+| gik 
+|  vor 
+|   Helt 
+|    ganske 
+|     nedslaaet 
+|      ned 
+|       ad 
+|        Trapperne
+
 	<lg>
           <l rend="indent1">Derpaa</l>
           <l rend="indent2">gik</l>
@@ -1057,27 +1067,28 @@ Her bør teksten emenderes, således at dittografien kun beskrives i
 
 Formålet med et tekstkritisk apparat er at vise læseren usikre
 læsemåder, og hvilke dele af teksten skyldes emendering. Hertil
-anvendes elementet: `app` (*apparatus entry*), indeholder én 
+anvendes elementet: `app` (*apparatus entry*), som indeholder én 
 post i et tekstkritisk apparat. 
 
-Et `app`-element samler de to elementer:
+Et `app`-element samler to elementer:
 
 1. `lem` (*lemma*) indeholder den tekst, til hvilken der findes en
   variant. `lem` kan indholde attributtet `@wit` med en eller flere 
   blanktegnsadskilte sigelværdier, som alle indledes med #. 
-2. `rdg` (*reading*) indeholder et alternativ til teksten i lemmaet.
-  `rdg` kan indholde attributtet `@wit` med en eller flere sigelreferencer. 
-  Hver sigelreference indledes med # og adskilles ved blanktegn.
+2. `rdg` (*reading*) indeholder et alternativ til lemmaets tekst.
+  `rdg` kan indholde attributtet `@wit` med en eller flere referencer 
+  til sigler for de manuskripter, i hvilke læsningen optræder. Hver 
+  sigelreference indledes med # og adskilles ved blanktegn.
 
-Denne praksis illustreres i Georg Brandes Hovedstrømninger bd. 2 med denne tekstkritiske
-note:
+Denne praksis illustreres i Georg Brandes *Hovedstrømninger* bd. 2 
+med denne tekstkritiske note:
 
 	<app>
 	  <lem wit="#SS #Fu #1923-24">Alexandre</lem>
 	  <rdg wit="#A #B">Alexander</rdg>
 	</app>
 
-Dette gengives i overenstemmelse med DSL's udgivelsesprincipper på
+I overenstemmelse med DSL's udgivelsesprincipper udtrykkes dette på
 følgende måde
 
 > Alexandre] *SS*, *Fu*, *1923-24*, Alexander *A*, *B*.
