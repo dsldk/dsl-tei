@@ -94,14 +94,14 @@
 
     <xsl:template
         match="
-            *[not(node()) and not(attribute())]
+            *[not(node()) and not(attribute()) and not(comment())]
             |
             *[node()/self::text() = 'empty']
             "/>
 
 
     <!-- Match root element -->
-    <xsl:template match="comment()"/>
+    <!--<xsl:template match="comment()"/>-->
     <xsl:template match="/">
         <xsl:apply-templates select="tei:TEI"/>
     </xsl:template>
