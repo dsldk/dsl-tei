@@ -266,22 +266,13 @@ Et eksempel findes her:
 	
 #### 2.1.6.2 Fysisk tilstand (`physDesc`)
 
-Beskrivelsen af et tekstvidnes fysiske tilstand falder i seks dele: 
+Beskrivelsen af et tekstvidnes fysiske tilstand falder i fem dele: 
 
-`objectDesc`
-:	beskrivelse af det fysiske objekt, 
-
-`handDesc`
-:	beskrivelse af skriver, skriftform og lign. 
-
-`additions`
-:	tilføjelser til teksten
-
-`sealDesc`
-:	beskrivelse af segl
-
-`history`
-:	tekstvidnets historie
+1. `objectDesc`, beskrivelse af det fysiske objekt 
+2. `handDesc`, beskrivelse af skriver, skriftform og lign. 
+3. `additions`, tilføjelser til teksten
+4. `sealDesc`, beskrivelse af segl
+5. `history` tekstvidnets historie
 
 Elementerne fordeler sig således:
 
@@ -290,14 +281,15 @@ Elementerne fordeler sig således:
 	  <handDesc> ... </handDesc>
 	  <additions> ... </additions>
 	  <sealDesc> ... </sealDesc>
+	  <history> ... </history>
 	</physDesc>
 
 ##### Den tekstbærende genstand (`objectDesc`)
 
 `objectDesc` underordner elementet `supportDesc` (*support
-description*), som indeholder information om den genstand, som er
-bærer af teksten. Elementet har attributtet `@material` til angivelse
-af objektets materiale.
+description*) med information om den genstand, som er bærer
+af teksten. Elementet har attributtet `@material` til angivelse af
+objektets materiale.
 
 	<objectDesc>
 	  <supportDesc material="...">
@@ -326,16 +318,11 @@ Attributtet `@material` kan have følgende gyldige værdier:
 Under `supportDesc` findes tre elementer, der beskriver genstandens
 materiale, fysiske mål og tilstand:
 
-`support`
-:	Beskrivelse i prosaform af den tekstbærende genstand
+1. `support`, beskrivelse i prosaform af den tekstbærende genstand
+2. `extent`, den tekstbærende genstands fysiske mål i cm
+3. `condition`, den tekstbærende genstands tilstand
 
-`extent`
-:	fysiske mål i cm
-
-`condition`
-:	manuskriptets tilstand
-
-Her ses et eksempel på udfyldt `supportDesc`: 
+Her ses et eksempel på udfyldt `supportDesc` fra Diplomatarium Danicum: 
 
 	<supportDesc material="parch">
 	  <support>
@@ -354,10 +341,9 @@ Her ses et eksempel på udfyldt `supportDesc`:
 
 ##### Skriftform og skriver (`handDesc`)
 
-`handDesc`-elementet beskriver tekstvidnets skriftlige udtryk, fx
-hvilken slags skrift der er anvendt, og hvem der har skrevet det. Det
-indeholder et `handNote`-element, som igen underordner et eller flere
-`ab`-elementer.
+`handDesc`-elementet beskriver tekstvidnets skriftlige udtryk herunder
+skrifttype og hvem der skrevet det. `handDesc` indeholder et 
+`handNote`-element, som igen underordner et eller flere `ab`-elementer.
 
 Eksempel:
 
@@ -369,7 +355,7 @@ Eksempel:
 
 ##### Påskrifter og andre tilføjelser til teksten (`additions`)
 
-Elementet `additions` indeholder en angivelse af væsentlige
+Elementet `additions` indeholder angivelse af væsentlige
 tilføjelser på tekstvidnet. Disse tilføjelser indskrives i et
 `ab`-element således at selve tilføjelsen står i et `q`-element
 (*quote*) på følgende måde:
@@ -398,9 +384,7 @@ forvejen er beskrevet i de danske seglværker, angives dette.
 	</sealDesc>
 
 Nedenfor ses eksempel på segl hvis pergamentsrem bærer en
-påskrift:[^er]
-
-[^er]: jf. Diplomatarium Danicum <http://diplomatarium.dk/dokument/14190518001>
+påskrift, jf. Diplomatarium Danicum <http://diplomatarium.dk/dokument/14190518001>
 
 	<seal n="1" type="pendant">
 	  <ab>Bomærke af mørkt voks i perg.rem med tekst 
@@ -637,20 +621,31 @@ forekommer:
 Et titelblad i et tryk eller håndskrift beskrives under elementet `titlePage`
 med følgende underelementer:
 
-`docTitle`
-:	(*document title*), beskrivelse af værkets titel, indeholder 
-	et eller flere elementer af typen `titlePart`
+1. `docTitle` (*document title*), beskrivelse af værkets titel, indeholder et eller flere elementer af typen `titlePart`
+2. `byline`, oplysninger om værkets ophav i form af forfatter, redaktør eller udgiver
+3. `epigraph`, påskrift, typisk i form af et motto og/eller citat fra et andet værk
+4. `docImprint`, navn på udgiver, trykker eller distributør
 
-`byline`
-:	oplysninger om værkets ophav i form af forfatter, redaktør eller udgiver
+Et eksempel findes i Georg Brandes Hovedstrømninger
 
-`epigraph`
-:	påskrift, typisk i form af et motto og/eller citat fra et 
-	andet værk
-
-`docImprint`
-:	såkaldt *imprimatur*, navn på udgiver, trykker eller
-	distributør
+	<titlePage>
+	  <pb n="[1]"/>
+	  <docTitle>
+	    <titlePart>Hovedstrømninger i det 19de Aarhundredes Litteratur.</titlePart>
+	    <titlePart type="desc">Forelæsninger holdte ved Kjøbenhavns Universitet i 
+	      Efteraarshalvaaret 1871</titlePart>
+	  </docTitle>
+	  <byline>af <lb/> G. Brandes.</byline>
+	  <docTitle>
+	    <titlePart type="sub">Emigrantlitteraturen.</titlePart>
+	  </docTitle>
+	  <docImprint>
+	    <pubPlace>Kjøbenhavn.</pubPlace>
+	    <publisher>Forlagt af den Gyldendalske Boghandel (F. Hegel).</publisher>
+	    <publisher>Græbes Bogtrykkeri.</publisher>
+	    <docDate>1872.</docDate>
+	  </docImprint>
+	</titlePage>
 
 #### 4.1.1.1 Titel (`docTitle`)
 
