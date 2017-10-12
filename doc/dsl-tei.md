@@ -957,6 +957,10 @@ På tekstniveau forekommer følgende elementer:
 `hi`
 :	fremhævet tekst, se 4.3.5.1
 
+`bibl`
+:	(*bibliographic citation*), indeholder en løst-struktureret
+	bibliografisk henvisning i den løbende tekst, se X.X.X.X
+
 `cit`
 :	(*cited quotation*), citatnote, se 4.3.5.2
 
@@ -1257,7 +1261,16 @@ Elementet kan indeholde tre attributter:
 * Gennemstreget tekst
 -->
 
+#### 4.3.5.14 Bibliografiske henvisninger
 
+Henvisninger til værker i den løbende tekst mærkes med elementet
+`bibl` (*bibliographic citation*). Elementet kan rumme attributtet
+`@ref`, hvis værdi enten peger på 1. dokumentets egen bibliografi
+eller 2. en ekstern database.
 
+Et eksempel fra Georg Brandes *Hovedstrømninger*, bd. 1:
+
+	Martensens »Speculative Dogmatik« afløses af den 
+	»<bibl ref="martensen-den-christelige-dogmatik">Christelige Dogmatik</bibl>«.
 
 
