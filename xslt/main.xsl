@@ -78,30 +78,19 @@
     <xsl:output method="html" encoding="UTF-8" indent="yes"/>
     <xsl:strip-space elements="*"/>
     <xsl:preserve-space elements="tei:p"/>
-
     <!-- Create identity template -->
-    <xsl:template match="node() | @*">
+    <xsl:template match="node()|@*">
         <xsl:copy>
-            <xsl:apply-templates select="node() | @*"/>
+            <xsl:apply-templates select="node()|@*"/>
         </xsl:copy>
     </xsl:template>
-
     <!-- Override identity template, so that only 
         1. elements both not containing children 
         + not containing an attribute, and
         2. elements not containing value 'empty' 
-        are copied -->
-
-    <xsl:template
-        match="
-            *[not(node()) and not(attribute()) and not(comment())]
-            |
-            *[node()/self::text() = 'empty']
-            "/>
-
-
+	are copied -->
+    <xsl:template match="*[node()/self::text() = 'empty'] | comment()" priority="1"/>
     <!-- Match root element -->
-    <!--<xsl:template match="comment()"/>-->
     <xsl:template match="/">
         <xsl:apply-templates select="tei:TEI"/>
     </xsl:template>
