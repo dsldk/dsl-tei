@@ -405,9 +405,9 @@ her.
 	</history>
 	...
 
-#### 2.1.7 Bibliografiske oplysninger om tekstvidnet (`listBibl`) 
+#### 2.1.7 Bibliografiske oplysninger om teksten (`listBibl`) 
 
-I `listBibl`-element, som samler en eller flere `bibl`-elementer
+I `listBibl`-element samles et eller flere `bibl`-elementer
 (*bibliographic citation*), jf. 2.1.5.
 
 	<additional>
