@@ -610,11 +610,8 @@ Til behandling af titelblade, forsider, dedikationer og forord i
 trykte forlæg anvendes `front`, under hvilket følgende elementer
 forekommer:
 
-`titlePage`
-:	titelbladets struktur i form af titel, undertitel, byline og lign.
-
-`div type="preface"`
-:	forord til teksten
+1. `titlePage`,	titelbladets struktur i form af titel, undertitel, byline og lign.
+2. `div type="preface"`, forord til teksten
 
 ### 4.1.1 Titelblad (`titlePage`)
 
