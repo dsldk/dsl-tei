@@ -426,14 +426,9 @@ dokumenterer forholdet mellem den opmærkede tekst og dennes kilde. Her
 angives de for transkriptionen styrende principper. Elementet
 `encodingDesc` indholder følgende elementer:
 
-`samplingDecl`
-:	(*sampling declaration*) indeholder en angivelse af den metode, der er anvendt i transkriptionen af værket
-
-`projectDesc`
-:	(*project description*) beskriver formålet med opmærkningen af filen
-
-`appInfo`
-:	(*application information*) optager information om de applikationer, der har behandlet teksten i filen
+1. `samplingDecl` (*sampling declaration*) indeholder en angivelse af den metode, der er anvendt i transkriptionen af værket
+2. `projectDesc` (*project description*) beskriver formålet med opmærkningen af filen
+3. `appInfo` (*application information*) optager information om de applikationer, der har behandlet teksten i filen
 
 ### 2.2.1 samplingDecl
 
