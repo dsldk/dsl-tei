@@ -227,20 +227,11 @@ Manuskriptbeskrivelsen har denne struktur:
 
 Til identifikation af et tekstvidne anvendes følgende fem elementer:
 
-`settlement`
-:	stedet, hvor håndskriftet opbevares
-
-`repository`
-:	institutionen, som opbevarer håndskriftet  
-
-`collection`
-:	den samling, i hvilken håndskriftet indgår
-
-`idno`
-:	det nummer, der identificerer håndskriftet i samlingen
-
-`msName`
-:	(*manuscript name*) alternativ betegnelse for håndskriftet
+1. `settlement`, stedet, hvor håndskriftet opbevares
+2. `repository`, institutionen, som opbevarer håndskriftet  
+3. `collection`, den samling, i hvilken håndskriftet indgår
+4. `idno`, det nummer, der identificerer håndskriftet i samlingen
+5. `msName` (*manuscript name*), en alternativ betegnelse for håndskriftet
 
 Et eksempel findes her:
 	
