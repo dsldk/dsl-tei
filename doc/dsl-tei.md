@@ -208,25 +208,16 @@ noter.
 ### 2.1.6 Beskrivelse af manuskripter
 
 Til udgivelse af tekster med håndskrevne forlæg hører en beskrivelse
-af håndskriftet: hvor det befinder sig, dets indhold, tilstand,
-historie, og endelig om det er omtalt eller udgivet tidligere.
-`msDesc` indeholder derfor fem elementer:
+af håndskriftet: hvor det befinder sig, dets tilstand og historie. `msDesc` indeholder tre elementer:
 
-`msIdentifier`
-:	(*manuscript identifier*) identifikation af håndskriftet
-
-`physDesc`
-:	(*physical description*) beskrivelse af håndskriftets fysiske tilstand
-
-`history`
-:	redegørelse for håndkskriftets proveniens
-
+1. `msIdentifier` (*manuscript identifier*), identifikation af håndskriftet
+2. `physDesc` (*physical description*), beskrivelse af håndskriftets fysiske tilstand
+3. `history`, en redegørelse for håndkskriftets proveniens
 
 Manuskriptbeskrivelsen har denne struktur:
 
 	<msDesc>
 	  <msIdentifier> ... </msIdentifier>
-	  <msContents> ... </msContents>
 	  <physDesc> ... </physDesc>
 	  <history> ... </history>
 	</msDesc>
