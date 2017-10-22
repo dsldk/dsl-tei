@@ -354,7 +354,7 @@ Jf. <http://diplomatarium.dk/dokument/14070207001>
 
 Ved beseglede tekstvidner beskrives seglene under elementet `sealDesc`
 (*seal description*). Hvert segl har sit eget `seal`-element, som
-identificeres med et nummer, som angives som værdi af attributtet `@n`
+identificeres med et nummer angivet som værdi i attributtet `@n`
 (number). Seglene tælles fra venstre mod højre. I det omfang seglet i
 forvejen er beskrevet i de danske seglværker, angives dette.
 
