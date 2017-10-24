@@ -387,16 +387,16 @@ her.
 
 #### 2.1.7 Bibliografiske oplysninger om teksten (`listBibl`) 
 
-I `listBibl`-element samles et eller flere `bibl`-elementer
+Efter `listWit` følger et `listBibl`-element samles et eller flere `bibl`-elementer
 (*bibliographic citation*), jf. 2.1.5.
 
-	<additional>
+	  </listWit>
 	  <listBibl>
 	    <bibl> Weibull, Dipl. Dioc. Lund. III 299-300 nr. 286 </bibl>
 	    <bibl> Vejledende Arkivreg. XVIII 284 nr. 364 </bibl>
 	    ...
 	  </listBibl>
-	</additional>
+	</sourceDesc>
 
 
 ## 2.2 Det digitale produkt (`encodingDesc`)
