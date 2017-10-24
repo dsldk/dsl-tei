@@ -254,7 +254,6 @@ Beskrivelsen af et tekstvidnes fysiske tilstand falder i fem dele:
 2. `handDesc`, beskrivelse af skriver, skriftform og lign. 
 3. `additions`, tilføjelser til teksten
 4. `sealDesc`, beskrivelse af segl
-5. `history` tekstvidnets historie
 
 Elementerne fordeler sig således:
 
@@ -263,7 +262,6 @@ Elementerne fordeler sig således:
 	  <handDesc> ... </handDesc>
 	  <additions> ... </additions>
 	  <sealDesc> ... </sealDesc>
-	  <history> ... </history>
 	</physDesc>
 
 ##### Den tekstbærende genstand (`objectDesc`)
