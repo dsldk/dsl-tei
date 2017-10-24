@@ -387,8 +387,9 @@ her.
 
 #### 2.1.7 Bibliografiske oplysninger om teksten (`listBibl`) 
 
-Efter `listWit` følger et `listBibl`-element samles et eller flere `bibl`-elementer
-(*bibliographic citation*), jf. 2.1.5.
+Efter `listWit` følger et `listBibl`-element som sidste del af
+`sourceDesc`. Her samles et eller flere `bibl`-elementer (*bibliographic
+citation*), jf. 2.1.5.
 
 	  </listWit>
 	  <listBibl>
@@ -397,7 +398,6 @@ Efter `listWit` følger et `listBibl`-element samles et eller flere `bibl`-eleme
 	    ...
 	  </listBibl>
 	</sourceDesc>
-
 
 ## 2.2 Det digitale produkt (`encodingDesc`)
 
