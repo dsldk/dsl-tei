@@ -248,7 +248,7 @@ Et eksempel findes her:
 	
 #### 2.1.6.2 Fysisk tilstand (`physDesc`)
 
-Beskrivelsen af et tekstvidnes fysiske tilstand falder i fem dele: 
+Beskrivelsen af et tekstvidnes fysiske tilstand falder i fire dele: 
 
 1. `objectDesc`, beskrivelse af det fysiske objekt 
 2. `handDesc`, beskrivelse af skriver, skriftform og lign. 
