@@ -29,16 +29,30 @@
     <xsl:template match="tei:textClass"/>
     <!--Filters for text level -->
     <xsl:template match="tei:app">
-	    <xsl:apply-templates select="tei:lem/text()"/>
+	    <xsl:apply-templates select="tei:lem"/>
+    </xsl:template>
+    <xsl:template match="tei:lem">
+      <xsl:apply-templates/>
     </xsl:template>
     <xsl:template match="tei:cit">
       <xsl:apply-templates select="tei:quote/text()"/>
     </xsl:template>
-    <xsl:template match="tei:text//tei:persName | 
-	    tei:text//tei:placeName | 
-	    tei:ref | tei:damage | tei:supplied |
-	    tei:ex">
+    <!-- Strip figure descs -->
+    <xsl:template match="//tei:figure"/>
+    <!-- damage: apply whatever templates are within -->
+    <xsl:template match="//tei:damage">
+      <xsl:apply-templates/>
+    </xsl:template>
+    <xsl:template match="//tei:hi"><xsl:apply-templates/></xsl:template>
+    <xsl:template match="//tei:ref | //tei:ex">
       <xsl:apply-templates select="text()"/>
     </xsl:template>
     <xsl:template match="tei:note"/>
+    <xsl:template match="//tei:text//tei:persName"><xsl:apply-templates/></xsl:template>
+    <xsl:template match="//tei:text//tei:placeName"><xsl:apply-templates/></xsl:template>
+    <xsl:template match="//tei:supplied">
+      <xsl:apply-templates/>
+    </xsl:template>
+    <!--Strip some unnecessary attributes -->
+    <xsl:template match="@n|@type"/>
 </xsl:stylesheet>
