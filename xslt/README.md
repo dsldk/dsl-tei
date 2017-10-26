@@ -2,7 +2,7 @@ I mappen <https://github.com/dsldk/dsl-tei/tree/master/xslt> findes
 XSLT-stilark til transformation af dokumenter, der validerer med
 dsl-tei.rnc. Mappen indeholder følgende to stylesheets:
 
-1. `main.xsl` -- hovedstilark for en lang række moduler, som genererer
+1. `main.xsl` -- hovedstilark for en række moduler, som genererer
    HTML-version af et TEI-DSL-dokument. Formålet er at levere en
    redaktionel kopi af teksten til gennemlæsning og korrektur 
 2. `filter.xsl` -- enkeltstående stilark, der bortfiltrerer forskellige
