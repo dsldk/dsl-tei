@@ -16,8 +16,8 @@ seminar 19. september 2017.
 ## 1 Udgavens indhold
 
 Her gives en klassifikation, af hvilken type er udgaven er, fx
-tekstkritisk udgave, studieudgave, digital, analog, hybrid. Eksempler: 
-Holberg-projektet:
+tekstkritisk udgave, historisk-kritisk udgave, studieudgave, digital,
+analog, hybrid. Eksempler: Holberg-projektet:
 
 > LHS er tekstkritisk udgave af Holbergs samlede forfatterskab ...
 
