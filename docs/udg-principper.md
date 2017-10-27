@@ -13,11 +13,15 @@ maj 2017 og efterfølgende justeret af DSL's bestyrelse ved et
 seminar 19. september 2017.
 
 
-## 1 Udgavens indhold
+## 1 Udgavens indhold, form og type
 
-Her gives en klassifikation af udgavens form (digital, analog), type
-(historisk-kritisk) og eventuelle ledsagende funktioner (kommentarer,
-oversættelser, registre m.v.). 
+Her gives en klassifikation af udgavens saglige indhold, form (digital,
+analog), type (historisk-kritisk) og eventuelle ledsagende funktioner
+(kommentarer, oversættelser, registre m.v.).
+
+### Indhold
+
+<!--udfyldes-->
 
 ### Form
 
