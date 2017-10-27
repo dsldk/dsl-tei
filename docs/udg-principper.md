@@ -15,13 +15,27 @@ seminar 19. september 2017.
 
 ## 1 Udgavens indhold
 
-Her gives en klassifikation, af hvilken type er udgaven er, fx
-tekstkritisk udgave, historisk-kritisk udgave, studieudgave, digital,
-analog, hybrid. 
+Her gives en klassifikation af udgavens form (digital, analog), type
+(historisk-kritisk) og eventuelle ledsagende funktioner (kommentarer,
+oversættelser, registre m.v.). 
 
-### Definitioner
+### Form
+
+* digital udgave
+* trykt udgave
+
+### Type
 
 * **historisk-kritisk udgave**, videnskabelig tekstudgave, der dokumenterer etableringen af en tekst fra de ældste foreliggende kilder til den endelige udgave.
+
+### Ledsagende funktioner
+
+Der skal desuden redegøres for, om udgaven er
+
+* kommenteret
+* oversat
+* moderniseret
+* indexeret
 
 Eksempler: Holberg-projektet:
 
