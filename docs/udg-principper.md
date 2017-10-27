@@ -68,10 +68,6 @@ antal.
 
 ## 4 Tekstgrundlag
 
-Der redegøres her for tekstens konstitution, fx om man lægger en
-bestemt udgave til grund eller fx antager et koncept, der går forud
-for en udgave.  
-
 ### 4.1 Håndskrifter
 
 ### 4.2 Trykte forlæg
