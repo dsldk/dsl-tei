@@ -146,12 +146,15 @@ i 6.2-9 for de rettelser, der dokumenteres i tekstkritiske noter.
 
 Følgende fejl i trykte forlæg rettes stiltiende:
 
-* læderede typer, hvor det let kan afgøres hvilken type, der er tale
-  om
-* skævhed i sats, fx skævt placeret punktum eller komma
-* manglende mellemrum mellem ord
+* læderede typer, hvis slags let lader sig afklare
+* skævhed i sats, fx skævt placeret interpunktionstegn
+* manglende mellemrum eller bindestreg mellem ord
 * mellemrum mellem et ords slutbogstav og interpunktion
+* fejl i sidetal og notenummerering
 
+#### Manuskripter
+
+<!--Skriv om stiltiende rettelser i manuskripter-->
 
 ### 6.2 Fejl i sats eller af skriver
 
