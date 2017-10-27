@@ -158,14 +158,31 @@ Følgende fejl i trykte forlæg rettes stiltiende:
 
 ### 6.2 Fejl i sats eller af skriver
 
+Indlysende sætter- eller skriverfejl kan dokumenteres i forenklet
+form, således at blot grundtekstens fejlagtige læsning anføres i den
+tekstkritiske note.
+
+> I *Barselsstuen* (I 1) rettes *hyorpaa* til *hvorpaa*, hvilket i
+> den tekstkritiske note gengives
+>
+> hvorpaa] hyorpaa *A*.
+
+
 ### 6.3 Tilblivelsesvarianter i manuskripter
 
-Brug af standardvokabular:
+Tilblivelsesvarianter, dvs. ændringer foretaget i løbet af
+skriveprocessen, dokumenteres i tekstkritiske noter, hvis de er
+relevante for valg af læsemåde.
 
-* rettet fra
-* tilføjet over linjen
-* tilføjet i margin
-* ulæseligt
+Tilblivelsesvarianter beskrivers vha. et standardvokabular:
+
+* *rettet fra*. Hvis det kan afgøres at en rettelse er foretaget under
+  skrivningen markeres det med tilføjelsen *in scribendo*
+* *foran er slettet* bruges, når en passage er slettet og ikke
+  erstattet af noget semantisk tilsvarende
+* *tilføjet over linjen*
+* *tilføjet i margin*
+* *ulæseligt*
 
 ### 6.4 Indskud og rettelser
 
