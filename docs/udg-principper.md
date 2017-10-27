@@ -142,9 +142,13 @@ i 6.2-9 for de rettelser, der dokumenteres i tekstkritiske noter.
 
 ### 6.1 Stiltiende rettelser
 
+Ikke alle udgivelser opererer med stiltiende rettelser. I serien
+Danske Klassikere angives således samtlige rettelser uanset hvor
+banale de er.
+
 #### Trykte forlæg
 
-Følgende fejl i trykte forlæg rettes stiltiende:
+Følgende fejl i trykte forlæg rettes undertiden stiltiende:
 
 * læderede typer, hvis slags let lader sig afklare
 * skævhed i sats, fx skævt placeret interpunktionstegn
@@ -162,8 +166,8 @@ Indlysende sætter- eller skriverfejl kan dokumenteres i forenklet
 form, således at blot grundtekstens fejlagtige læsning anføres i den
 tekstkritiske note.
 
-> I *Barselsstuen* (I 1) rettes *hyorpaa* til *hvorpaa*, hvilket i
-> den tekstkritiske note gengives
+> I Ludvig Holbergs *Barselsstuen* (I 1) rettes *hyorpaa* til *hvorpaa*,
+> hvilket i den tekstkritiske note gengives
 >
 > hvorpaa] hyorpaa *A*.
 
@@ -208,6 +212,12 @@ tekstkritiske noter, fx
 
 Uforståelige ord markeres med et crux foran ordet. Uforståelige passager
 markeres med crux før og efter passagen.
+
+### 6.9 Sagfejl
+
+Sagfejl såsom forkert angivne titler eller navne, forveksling af
+historiske begivenheder o.l. rettes ikke, men kan kommenteres i en
+note.
 
 ## 7 Varianter
 
