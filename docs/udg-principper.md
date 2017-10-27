@@ -28,6 +28,7 @@ oversættelser, registre m.v.).
 ### Type
 
 * **historisk-kritisk udgave**, videnskabelig tekstudgave, der dokumenterer etableringen af en tekst fra de ældste foreliggende kilder til den endelige udgave.
+* **oversættelse**
 
 ### Ledsagende funktioner
 
