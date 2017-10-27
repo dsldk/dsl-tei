@@ -36,12 +36,10 @@ analog), type (historisk-kritisk) og eventuelle ledsagende funktioner
 
 ### Ledsagende funktioner
 
-Der skal desuden redegøres for, om udgaven er
-
-* kommenteret
-* oversat
-* moderniseret
-* indexeret
+* kommentarer
+* oversættelse
+* modernisering
+* indeksering
 
 Eksempler: Holberg-projektet:
 
@@ -53,8 +51,7 @@ Diplomatarium Danicum:
 
 ## 2 Udgavens omfang
 
-Her angives det nuværende antal tekster og eventuelt det endelige
-antal.
+Angiv det endelige antal tekster i udgivelsen.
 
 ## 3 Systematik
 
