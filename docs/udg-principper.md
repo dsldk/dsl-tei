@@ -137,9 +137,25 @@ forlægget?
 
 ## 6 Emendation
 
-### 6.1 Fejl i sats eller af skriver
+Først redegøres i 6.1 for rettelser der foretages stiltiende; dernæst
+i 6.2-9 for de rettelser, der dokumenteres i tekstkritiske noter.
 
-### 6.2 Tilblivelsesvarianter i manuskripter
+### 6.1 Stiltiende rettelser
+
+#### Trykte forlæg
+
+Følgende fejl i trykte forlæg rettes stiltiende:
+
+* læderede typer, hvor det let kan afgøres hvilken type, der er tale
+  om
+* skævhed i sats, fx skævt placeret punktum eller komma
+* manglende mellemrum mellem ord
+* mellemrum mellem et ords slutbogstav og interpunktion
+
+
+### 6.2 Fejl i sats eller af skriver
+
+### 6.3 Tilblivelsesvarianter i manuskripter
 
 Brug af standardvokabular:
 
@@ -148,19 +164,19 @@ Brug af standardvokabular:
 * tilføjet i margin
 * ulæseligt
 
-### 6.3 Indskud og rettelser
+### 6.4 Indskud og rettelser
 
 Konventionen er at benytte trekantede parenteser “<...>” til
 bogstaver, ord eller passager tilføjet til den overleverede tekst ved
 konjektur eller en parallel kilde.
 
-### 6.4 Overspringelser
+### 6.5 Overspringelser
 
-### 6.5 Beskadigelser 
+### 6.6 Beskadigelser 
 
 [...]
 
-### 6.6 Åbne pladser og rasurer
+### 6.7 Åbne pladser og rasurer
 
 Blev i trykt udgave af Dipl. Dan. gengivet ved spatium. Det er ikke
 muligt i digitale udgaver. I middelaldertekster forklares den slags i
@@ -168,7 +184,7 @@ tekstkritiske noter, fx
 
 > fiyrtiw] *på rasur med anden hånd*
 
-### 6.7 Uforståelige læsemåder
+### 6.8 Uforståelige læsemåder
 
 Uforståelige ord markeres med et crux foran ordet. Uforståelige passager
 markeres med crux før og efter passagen.
