@@ -143,8 +143,8 @@ i 6.2-9 for de rettelser, der dokumenteres i tekstkritiske noter.
 ### 6.1 Stiltiende rettelser
 
 Ikke alle udgivelser opererer med stiltiende rettelser. I serien
-Danske Klassikere angives således samtlige rettelser uanset hvor
-banale de er.
+Danske Klassikere angives således samtlige rettelser uanset graden af 
+banalitet.
 
 #### Trykte forlæg
 
