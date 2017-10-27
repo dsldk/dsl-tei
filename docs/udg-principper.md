@@ -170,8 +170,8 @@ tekstkritiske noter, fx
 
 ### 6.7 Uforståelige læsemåder
 
-Brug af crux foran et uforståeligt ord eller omkring
-uforståelige passager.
+Uforståelige ord markeres med et crux foran ordet. Uforståelige passager
+markeres med crux før og efter passagen.
 
 ## 7 Varianter
 
