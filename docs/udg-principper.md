@@ -58,9 +58,13 @@ antal.
 
 ## 3 Systematik
 
-Ordnes udgaven alfabetisk efter titel eller forfatter, eller ordnes
-den kronologisk? Hvis den ordnes efter titel, anføres, om titlerne er
-bibliografisk nøjagtige eller er kortformer.
+* alfabetisk, herunder
+	- efter titel (desuden om titlen er bibliografisk nøjagtig
+	  eller en kortform)
+	- efter forfatter
+* kronologisk
+	- efter dato
+	- efter periode
 
 ## 4 Tekstgrundlag
 
