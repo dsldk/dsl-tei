@@ -21,8 +21,9 @@ oversættelser, registre m.v.).
 
 ### Form
 
-* digital udgave
-* trykt udgave
+* digital udgave, tekstudgave, bestående af data, som lagres
+  og håndteres vha. en computer.
+* trykt udgave, tekstudgave, som er udgivet i bogform.
 
 ### Type
 
