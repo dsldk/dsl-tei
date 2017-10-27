@@ -22,7 +22,7 @@ analog, hybrid.
 ### Definitioner
 
 historisk-kritisk udgave
-:	videnskabelig tekstudgave, der dokumenterer etableringen af en tekst fra de ældste foreliggende kilder til den endelige udgave.
+: videnskabelig tekstudgave, der dokumenterer etableringen af en tekst fra de ældste foreliggende kilder til den endelige udgave.
 
 Eksempler: Holberg-projektet:
 
