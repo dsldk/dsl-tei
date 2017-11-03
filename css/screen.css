@@ -144,85 +144,85 @@ li > p {
 p.title{
     margin-left: 1.5em;
 }
-p.indent1{
+div.indent1{
     text-indent: 1em;
     margin: 0.2em 0 0.2em;
 }
-p.indent2{
+div.indent2{
     text-indent: 2em;
     margin: 0.2em 0 0.2em;
 }
-p.indent3{
+div.indent3{
     text-indent: 3em;
     margin: 0.2em 0 0.2em;
 
 }
-p.indent4{
+div.indent4{
     text-indent: 4em;
     margin: 0.2em 0 0.2em;
 
 }
-p.indent5{
+div.indent5{
     text-indent: 5em;
     margin: 0.2em 0 0.2em;
 
 }
-p.indent6{
+div.indent6{
     text-indent: 6em;
     margin: 0.2em 0 0.2em;
 
 }
-p.indent7{
+div.indent7{
     text-indent: 7em;
     margin: 0.2em 0 0.2em;
 
 }
-p.indent8{
+div.indent8{
     text-indent: 8em;
     margin: 0.2em 0 0.2em;
 
 }
-p.indent9{
+div.indent9{
     text-indent: 9em;
     margin: 0.2em 0 0.2em;
 
 }
-p.indent10{
+div.indent10{
     text-indent: 10em;
     margin: 0.2em 0 0.2em;
 
 }
-p.indent11{
+div.indent11{
     text-indent: 11em;
     margin: 0.2em 0 0.2em;
 
 }
-p.indent12{
+div.indent12{
     text-indent: 12em;
     margin: 0.2em 0 0.2em;
 
 }
-p.indent13{
+div.indent13{
     text-indent: 13em;
     margin: 0.2em 0 0.2em;
 
 }
-p.indent14{
+div.indent14{
     text-indent: 14em;
     margin: 0.2em 0 0.2em;
 
 }
-p.indent15{
+div.indent15{
     text-indent: 15em;
     margin: 0.2em 0 0.2em;
 
 }
-p.align-last-right{
+div.align-last-right{
     margin: 0.2em 0 0.2em;
     text-align:justify;
     text-align-last:right;
 }
-p.verse-line{
+div.verse-line{
     margin: 0.2em 0 0.2em;
 }
 
