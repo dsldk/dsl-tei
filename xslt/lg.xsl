@@ -22,14 +22,14 @@
     <xsl:template match="tei:lg">
         <xsl:choose>
             <xsl:when test="@rend = 'center'">
-                <p class="poetry-center">
+                <div class="poetry-center">
                     <xsl:apply-templates/>
-                </p>
+                </div>
             </xsl:when>
             <xsl:when test="@rend = 'right'">
-                <p class="poetry-right">
+                <div class="poetry-right">
                     <xsl:apply-templates/>
-                </p>
+                </div>
             </xsl:when>
             <xsl:otherwise>
                 <div class="poetry">

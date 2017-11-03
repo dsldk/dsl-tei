@@ -103,7 +103,7 @@
                 </p>
             </xsl:when>
             <xsl:otherwise>
-                <p class="verse-line"><xsl:apply-templates/></p>
+                <div class="verse-line"><xsl:apply-templates/></div>
                 <!--<br/>-->
             </xsl:otherwise>
         </xsl:choose>
