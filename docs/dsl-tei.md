@@ -1170,6 +1170,9 @@ Georg Brandes, Hovedstrømninger 1
 	Personer?<note place="bottom">Hettner: »<bibl>Litteraturgeschichte 
 	des 18ten Jahrhunderts</bibl>« passim.</note> Hvad ...
 
+Marginalnoter mærkes på samme måde med `@place` udfyldt med hhv.
+`margin`, `margin-left` eller `margin-right`.
+
  
 #### 4.3.5.10 Personnavne
 
