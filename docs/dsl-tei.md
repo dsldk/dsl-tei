@@ -786,10 +786,17 @@ Eksisterende overskrifter angives
 
 	<head type="orig">...</head>
 
+Eksisterende underoverskrifter angives således:
+
+	<head type="orig-sub">...</head>
 
 Supplerende overskrifter angives
 
 	<head type="add">...</head>
+
+Supplerende underoverskrifter angives
+
+	<head type="add-sub">...</head>
 	<!--udfyldes-->
 
 ### 4.3.2 Prosa
