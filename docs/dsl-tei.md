@@ -880,10 +880,10 @@ HTML `p` forsynet med `@class="indent1"`.
 ### 4.3.4 Drama
 <!--tilføjet 2017-02-10 -->
 
-Til drama anvendes elementet `sp` (*speech*) til gengivelse af
-hver enkelt replik i en dramatisk tekst. Under `sp` optræder altid et
-`speaker`-element med karakterens navn efterfulgt af enten prosa- (jf.
-4.3.2) eller vers-opmærkning, jf. 4.3.3. 
+Til drama anvendes elementet `sp` (*speech*) til gengivelse af en
+replik i et skuespil. Under `sp` optræder altid et `speaker`-element
+med karakterens navn efterfulgt af enten prosa- (jf. 4.3.2) eller
+vers-opmærkning, jf. 4.3.3.
 
 `sp`
 :	(*speech*) rummer en individuel replik i drama
