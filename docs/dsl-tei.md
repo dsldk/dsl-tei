@@ -474,6 +474,14 @@ Under `profileDesc`
 
 ### 2.3.1 Tid og sted for etablering af teksten (`creation`)
 
+Elementet `creation` indeholder to elementer 
+
+`date`
+:	dato i ISO-format
+
+`placeName`
+:	navnet på det sted, et brev er udstedt eller en tekst er affattet
+
 ### 2.3.2 Resumé af indholdet (`abstract`)
 
 Til brug i søgeresultatlister er det en fordel, at der under titlen
