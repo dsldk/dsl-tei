@@ -482,6 +482,8 @@ Elementet `creation` indeholder to elementer
 `placeName`
 :	navnet på det sted, et brev er udstedt eller en tekst er affattet
 
+<!--udfyld-->
+
 ### 2.3.2 Resumé af indholdet (`abstract`)
 
 Til brug i søgeresultatlister er det en fordel, at der under titlen
