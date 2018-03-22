@@ -593,10 +593,11 @@ særskilt er elementet `text` inddelt som følger:
 
 Til behandling af titelblade, forsider, dedikationer og forord i
 trykte forlæg anvendes `front`, under hvilket følgende elementer
-forekommer:
+kan forekomme:
 
 1. `titlePage`,	titelbladets struktur i form af titel, undertitel, byline og lign.
 2. `div type="preface"`, forord til teksten
+3. `div type="toc", indholdsfortegnelse
 
 ### 4.1.1 Titelblad (`titlePage`)
 
@@ -700,6 +701,17 @@ trykåret:
 	<docImprint>
 	  Tryckt Aar <date>1720</date>.
 	</docImprint>
+
+### 4.1.2 Indholdsfortegnelse
+
+Indholdsfortegnelse er et `div`-element med attributtet `@type` udfyldt
+med værdien `toc` (table of contents). Selve indholdsfortegnelsen
+opmærkes som en liste, dvs. `list`, jf. XXX
+
+### 4.1.3 Forord
+
+Forord opmærkes som et `div`-element med `@type` udfyldt med værdien
+`preface`. <!--udfyld og giv eksempler-->
 
 ## 4.2 Tekstens struktur (`body` og `div`)
 
