@@ -1171,10 +1171,11 @@ elementet `figure`. Elementet forsynes altid med underelementet
 
 #### 4.3.5.8 Opløsning af abbreviaturer
 
-Til optagelse af middelalderlige forkortelser og deres opløsninger
-anvendes elementet `ex` (*editorial expansion*), som udfyldes med
-tekst suppleret af redaktøren. I [Dipl. Dan.
-14151114001](http://diplomatarium.dk/dokument/14151114001) forekommer:
+Til optagelse af forkortelser og deres opløsninger i typisk
+middelalderlige håndskrifter og tidlige tryk anvendes elementet `ex`
+(*editorial expansion*), som udfyldes med tekst suppleret af redaktøren.
+I [Dipl. Dan. 14151114001](http://diplomatarium.dk/dokument/14151114001)
+forekommer:
 
 	Oc weth<ex>e</ex>r kende hwn sigh ...
 
