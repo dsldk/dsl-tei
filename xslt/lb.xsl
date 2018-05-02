@@ -20,6 +20,6 @@
         </xd:desc>
     </xd:doc>
     <xsl:template match="tei:lb">
-        <br/>
+	<!--<br/>-->
     </xsl:template>
 </xsl:stylesheet>
