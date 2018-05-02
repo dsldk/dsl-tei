@@ -21,6 +21,7 @@
     </xd:doc>
     <xsl:template match="tei:item">
         <li>
+	    <xsl:if test="@n"><xsl:value-of select="@n"/><xsl:text> </xsl:text></xsl:if>
             <xsl:apply-templates/>
         </li>
     </xsl:template>
