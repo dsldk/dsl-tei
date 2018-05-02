@@ -788,6 +788,9 @@ Tekstinddelingselementet `div` kan indeholde følgende elementer:
 `epigraph`
 :	anvendes til mottoer i begyndelsen af en tekstdel, jf. 4.1.1.3
 
+`list`
+:	(*list*), lister, nummererede/unummererede, se 3.3
+
 `p`
 :	(*paragraph*), afsnit i prosa, se 3.3.2
 
@@ -946,43 +949,59 @@ fra Georg Brandes, Hovedstrømninger, bd. 1:
 	</cit>
 	<p> ...
 
-### 4.3.5 Elementer på tekstniveau
+### 4.3.5 Lister
+
+Lister gengives ved elementet `list`, som underordner et eller
+flere `item`-elementer. Hvis listen i forlægget er ordnet, benyttes
+attributten `@rend` med værdien `simple`. Hvert `item`-element udvides i
+så fald med attributten `@n` udfyldt med en værdi i form af eksempelvis
+et tal eller et litra. Et eksempel fra Hans Thomsens Den danske
+Psalmebog
+
+	<list rend="simple">
+	  <item n="1.">Til at ære / loffue oc prise Gud met saadanne <lb/>Gudelige loffsange.</item>
+	  <item n="2.">Til at lære / forfremme oc beuare her met <lb/>Guds ord iblant eder. 
+	  ...
+	</list>
+
+
+### 4.3.6 Elementer på tekstniveau
 
 På tekstniveau forekommer følgende elementer:
 
 `hi`
-:	fremhævet tekst, se 4.3.5.1
+:	fremhævet tekst, se 4.3.6.1
 
 `bibl`
 :	(*bibliographic citation*), indeholder en løst-struktureret
 	bibliografisk henvisning i den løbende tekst, se X.X.X.X
 
 `cit`
-:	(*cited quotation*), citatnote, se 4.3.5.2
+:	(*cited quotation*), citatnote, se 4.3.6.2
 
 `app`
-:	(*apparatus entry*), tekskritisk note, se 4.3.5.3
+:	(*apparatus entry*), tekskritisk note, se 4.3.6.3
 
 
 `damage`
-:	læsion i manuskript, se 4.3.5.4
+:	læsion i manuskript, se 4.3.6.4
 
 
 `supplied`
 :	tilføjelser (konjekturer), som skønnes nødvendige 
-	for tekstens mening, se 4.3.5.5
+	for tekstens mening, se 4.3.6.5
 
 `gap`
-:	tekst som udelades, se 4.3.5.6
+:	tekst som udelades, se 4.3.6.6
 
 `figure`
-:	grafisk element i den løbende tekst, se 4.3.5.7
+:	grafisk element i den løbende tekst, se 4.3.6.7
 
 `ex`
-:	opløsning af forkortelse, se 4.3.5.8
+:	opløsning af forkortelse, se 4.3.6.8
 
 `note`
-:	note eller tilføjelse, se 4.3.5.9
+:	note eller tilføjelse, se 4.3.6.9
 
 `pb`
 :	sideskift i forlæg, se X.X.X.X
