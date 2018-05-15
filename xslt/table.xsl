@@ -19,60 +19,19 @@
             <xd:copyright>2010, Society for Danish Language and Literature</xd:copyright>
         </xd:desc>
     </xd:doc>
-    <xsl:template match="tei:div">
-        <xsl:apply-templates
-            select="tei:head | tei:div | tei:p | tei:lg | tei:list | tei:epigraph | tei:sp | tei:table | tei:cit"/>
-    </xsl:template>
-
-    <xsl:template match="tei:div/tei:div">
-        <xsl:apply-templates select="tei:head | tei:p | tei:lg | tei:list | tei:epigraph | tei:sp | tei:table | tei:cit"/>
-    </xsl:template>
-
-    <xsl:template match="tei:div[@type = 'advert']">
-        <div class="metadata">
-            <span class="caption">Advert: </span>
+    <xsl:template match="tei:table">
+        <table>
             <xsl:apply-templates/>
-        </div>
+        </table>
     </xsl:template>
-
-    <xsl:template match="tei:div[@type = 'dedication']">
-        <div class="metadata">
-            <span class="caption">Dedication: </span>
+    <xsl:template match="tei:row">
+        <tr>
             <xsl:apply-templates/>
-        </div>
+        </tr>
     </xsl:template>
-
-    <xsl:template match="tei:div[@type = 'epilogue']">
-        <div class="metadata">
-            <span class="caption">Epilogue: </span>
+    <xsl:template match="tei:cell">
+        <td>
             <xsl:apply-templates/>
-        </div>
-    </xsl:template>
-
-    <xsl:template match="tei:div[@type = 'half-title']">
-        <div class="titlePage">
-            <xsl:apply-templates/>
-        </div>
-    </xsl:template>
-
-    <xsl:template match="tei:div[@type = 'letter']">
-        <div class="letter">
-            <xsl:apply-templates/>
-        </div>
-    </xsl:template>
-
-    <xsl:template match="tei:div[@type = 'preface']">
-        <div class="metadata">
-            <span class="caption">Preface: </span>
-            <h3>
-                <xsl:apply-templates select="tei:head"/>
-            </h3>
-            <xsl:apply-templates select="tei:p | tei:signed"/>
-        </div>
-    </xsl:template>
-    <xsl:template match="tei:div[@type = 'toc']">
-        <div class="toc">
-            <xsl:apply-templates/>
-        </div>
+        </td>
     </xsl:template>
 </xsl:stylesheet>

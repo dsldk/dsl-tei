@@ -69,6 +69,7 @@
     <xsl:include href="supplied.xsl"/>
     <xsl:include href="support.xsl"/>
     <xsl:include href="supportDesc.xsl"/>
+    <xsl:include href="table.xsl"/>
     <xsl:include href="text.xsl"/>
     <xsl:include href="textClass.xsl"/>
     <xsl:include href="title.xsl"/>

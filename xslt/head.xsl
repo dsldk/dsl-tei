@@ -19,16 +19,21 @@
             <xd:copyright>2010, Society for Danish Language and Literature</xd:copyright>
         </xd:desc>
     </xd:doc>
-    <xsl:template match="tei:body/tei:div/tei:head">
+    <xsl:template match="tei:front/tei:div/tei:head | tei:body/tei:div/tei:head | tei:back/tei:div/tei:head">
         <h1>
             <xsl:apply-templates/>
         </h1>
     </xsl:template>
 
-    <xsl:template match="tei:body/tei:div/tei:div/tei:head">
+    <xsl:template match="tei:front/tei:div/tei:div/tei:head | tei:body/tei:div/tei:div/tei:head | tei:back/tei:div/tei:div/tei:head">
         <h2>
             <xsl:apply-templates/>
         </h2>
+    </xsl:template>
+    <xsl:template match="tei:front/tei:div/tei:div/tei:div/tei:head | tei:body/tei:div/tei:div/tei:div/tei:head | tei:back/tei:div/tei:div/tei:div/tei:head">
+        <h3>
+            <xsl:apply-templates/>
+        </h3>
     </xsl:template>
     <xsl:template match="tei:lg/tei:head">
         <p class="center">
