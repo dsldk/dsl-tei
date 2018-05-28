@@ -71,8 +71,9 @@
         </div>
     </xsl:template>
     <xsl:template match="tei:div[@type = 'toc']">
-        <div class="toc">
-            <xsl:apply-templates/>
+	<div class="metadata">
+	    <span class="caption">Table of contents: </span>
+	      <xsl:apply-templates/>
         </div>
     </xsl:template>
 </xsl:stylesheet>
