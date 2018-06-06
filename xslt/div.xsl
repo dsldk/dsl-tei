@@ -34,6 +34,12 @@
             <xsl:apply-templates/>
         </div>
     </xsl:template>
+    <xsl:template match="tei:div[@type = 'calendar']">
+	<div class="metadata">
+	    <span class="caption">Calendar: </span>
+	      <xsl:apply-templates/>
+        </div>
+    </xsl:template>
 
     <xsl:template match="tei:div[@type = 'dedication']">
         <div class="metadata">
@@ -67,7 +73,7 @@
             <h3>
                 <xsl:apply-templates select="tei:head"/>
             </h3>
-            <xsl:apply-templates select="tei:p | tei:signed"/>
+            <xsl:apply-templates select="tei:div | tei:p | tei:signed"/>
         </div>
     </xsl:template>
     <xsl:template match="tei:div[@type = 'toc']">

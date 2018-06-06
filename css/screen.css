@@ -15,6 +15,7 @@ h1{
     margin: 1em 0;
     position: relative;
 }
+
 div.metadata{
     margin: 1.9em 0;
     margin-bottom: 2.7em;
@@ -33,6 +34,14 @@ div.poetry{
     font-size: 95%;
 }
 
+table, th, td {
+    border: 1px solid black;
+}
+
+th, td {
+    padding: 15px;
+}
+
 ul.simple-list{
     list-style-type: none;
 }
@@ -41,6 +50,10 @@ li > p {
     margin: 0.5em;
 }
 
+.editorial {
+    color: gray;
+    font-family: Arial, sans-serif;
+}
 .speech{
     position: relative;
 }
@@ -62,7 +75,7 @@ li > p {
     position: relative;
 }
 .caption{
-    font: Verdana, sans-serif;
+    font-family: Arial, sans-serif;
     display: block;
     left: -6em;
     width: 6em;
@@ -85,6 +98,12 @@ li > p {
 }
 .legacy-page-break{
 }
+
+/*.metadata{
+    color: gray;
+    font: Verdana, sans-serif;
+}*/
+
 .meta-head{
     color: gray;
     font: Verdana, sans-serif;

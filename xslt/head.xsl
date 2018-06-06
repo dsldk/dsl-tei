@@ -19,25 +19,71 @@
             <xd:copyright>2010, Society for Danish Language and Literature</xd:copyright>
         </xd:desc>
     </xd:doc>
-    <xsl:template match="tei:front/tei:div/tei:head | tei:body/tei:div/tei:head | tei:back/tei:div/tei:head">
-        <h1>
-            <xsl:apply-templates/>
-        </h1>
+    <xsl:template
+        match="tei:front/tei:div/tei:head | tei:body/tei:div/tei:head | tei:back/tei:div/tei:head">
+        <xsl:choose>
+            <xsl:when test="@type = 'add'">
+                <h1 class="editorial">
+                    <xsl:apply-templates/>
+                </h1>
+            </xsl:when>
+            <xsl:when test="@type = 'original'">
+                <h1>
+                    <xsl:apply-templates/>
+                </h1>
+            </xsl:when>
+            <xsl:otherwise>
+                <h1>
+                    <xsl:apply-templates/>
+                </h1>
+            </xsl:otherwise>
+        </xsl:choose>
     </xsl:template>
-
-    <xsl:template match="tei:front/tei:div/tei:div/tei:head | tei:body/tei:div/tei:div/tei:head | tei:back/tei:div/tei:div/tei:head">
-        <h2>
-            <xsl:apply-templates/>
-        </h2>
+    <xsl:template
+        match="tei:front/tei:div/tei:div/tei:head | tei:body/tei:div/tei:div/tei:head | tei:back/tei:div/tei:div/tei:head">
+        <xsl:choose>
+            <xsl:when test="@type = 'add'">
+                <h2 class="metadata">
+                    <xsl:apply-templates/>
+                </h2>
+            </xsl:when>
+            <xsl:when test="@type = 'original'">
+                <h2>
+                    <xsl:apply-templates/>
+                </h2>
+            </xsl:when>
+            <xsl:otherwise>
+                <h2>
+                    <xsl:apply-templates/>
+                </h2>
+            </xsl:otherwise>
+        </xsl:choose>
     </xsl:template>
-    <xsl:template match="tei:front/tei:div/tei:div/tei:div/tei:head | tei:body/tei:div/tei:div/tei:div/tei:head | tei:back/tei:div/tei:div/tei:div/tei:head">
-        <h3>
-            <xsl:apply-templates/>
-        </h3>
+    <xsl:template
+        match="tei:front/tei:div/tei:div/tei:div/tei:head | tei:body/tei:div/tei:div/tei:div/tei:head | tei:back/tei:div/tei:div/tei:div/tei:head">
+        <xsl:choose>
+            <xsl:when test="@type = 'add'">
+                <h3 class="metadata">
+                    <xsl:apply-templates/>
+                </h3>
+            </xsl:when>
+            <xsl:when test="@type = 'original'">
+                <h3>
+                    <xsl:apply-templates/>
+                </h3>
+            </xsl:when>
+            <xsl:otherwise>
+                <h3>
+                    <xsl:apply-templates/>
+                </h3>
+            </xsl:otherwise>
+        </xsl:choose>
     </xsl:template>
     <xsl:template match="tei:lg/tei:head">
         <p class="center">
-            <strong><xsl:apply-templates/></strong>
+            <strong>
+                <xsl:apply-templates/>
+            </strong>
         </p>
     </xsl:template>
 </xsl:stylesheet>

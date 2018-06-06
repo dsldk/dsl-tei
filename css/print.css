@@ -32,6 +32,14 @@ div.poetry{
     font-size: 85%;
 }
 
+table, th, td {
+    border: 1px solid black;
+}
+
+th, td {
+    padding: 15px;
+}
+
 ul.simple-list{
     list-style-type: none;
 }
