@@ -1015,6 +1015,9 @@ På tekstniveau forekommer følgende elementer:
 `ref`
 :	(*reference*), krydshenvisning, se 4.3.5.12
 
+`title`
+:	titel på et værk, se 4.X.X.X
+
 #### 4.3.5.1 Fremhævet tekst og andre typografiske afvigelser
 
 Til gengivelse af fremhævet tekst benyttes elementet `hi`
@@ -1292,4 +1295,8 @@ Et eksempel fra Georg Brandes *Hovedstrømninger*, bd. 1:
 	Martensens »Speculative Dogmatik« afløses af den 
 	»<bibl ref="martensen-den-christelige-dogmatik">Christelige Dogmatik</bibl>«.
 
+#### 4.3.5.X Værktitler
 
+Henvisninger til værker i løbende tekst opmærkes vha. elementet `title`,
+som yderligere kan udvides med attributten `@ref`. Eksempler kan
+findes i Hans Thomissøns Den danske Psalmebog. <!-- uddyb-->
