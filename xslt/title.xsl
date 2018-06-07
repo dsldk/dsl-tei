@@ -23,12 +23,17 @@
         <strong>Publikation: </strong>
         <xsl:apply-templates/>
     </xsl:template>
-    <xsl:template match="tei:body/tei:div//tei:title">
+    <xsl:template match="tei:body/tei:div//tei:p/tei:title">
         <p class="title">
             <strong>
                 <xsl:apply-templates/>
             </strong>
         </p>
+    </xsl:template>
+    <xsl:template match="tei:head/tei:title">
+        <em>
+            <xsl:apply-templates/>
+        </em>
     </xsl:template>
     <xsl:template match="tei:quote/tei:title">
         <strong>
