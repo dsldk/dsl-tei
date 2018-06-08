@@ -20,12 +20,11 @@
         </xd:desc>
     </xd:doc>
     <xsl:template match="tei:div">
-        <xsl:apply-templates
-            select="tei:head | tei:div | tei:p | tei:lg | tei:list | tei:epigraph | tei:sp | tei:table | tei:cit"/>
+        <xsl:apply-templates select="tei:head | tei:div | tei:p | tei:lg | tei:list | tei:epigraph | tei:sp | tei:table | tei:cit"/>
     </xsl:template>
 
     <xsl:template match="tei:div/tei:div">
-        <xsl:apply-templates select="tei:head | tei:p | tei:lg | tei:list | tei:epigraph | tei:sp | tei:table | tei:cit"/>
+        <xsl:apply-templates select="tei:div | tei:head | tei:p | tei:lg | tei:list | tei:epigraph | tei:sp | tei:table | tei:cit"/>
     </xsl:template>
 
     <xsl:template match="tei:div[@type = 'advert']">
@@ -76,6 +75,7 @@
             <xsl:apply-templates select="tei:div | tei:p | tei:signed"/>
         </div>
     </xsl:template>
+
     <xsl:template match="tei:div[@type = 'toc']">
 	<div class="metadata">
 	    <span class="caption">Table of contents: </span>
