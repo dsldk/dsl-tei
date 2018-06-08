@@ -20,9 +20,24 @@
         </xd:desc>
     </xd:doc>
     <xsl:template match="tei:table">
-        <table>
-            <xsl:apply-templates/>
-        </table>
+        <xsl:apply-templates select="tei:head"/>
+        <xsl:choose>
+            <xsl:when test="@rend='borders'">
+                <table class="borders">
+                    <xsl:apply-templates/>
+                </table>   
+            </xsl:when>
+            <xsl:when test="@rend='no-borders'">
+                <table class="no-borders">
+                    <xsl:apply-templates/>
+                </table>
+            </xsl:when>
+            <xsl:otherwise>
+                <table>
+                    <xsl:apply-templates/>
+                </table>
+            </xsl:otherwise>
+        </xsl:choose>
     </xsl:template>
     <xsl:template match="tei:row">
         <tr>
@@ -30,8 +45,17 @@
         </tr>
     </xsl:template>
     <xsl:template match="tei:cell">
-        <td>
-            <xsl:apply-templates/>
-        </td>
+        <xsl:choose>
+            <xsl:when test="@role='label'">
+                <th>
+                    <xsl:apply-templates/>
+                </th>
+            </xsl:when>
+            <xsl:otherwise>
+                <td>
+                    <xsl:apply-templates/>
+                </td>
+            </xsl:otherwise>
+        </xsl:choose>
     </xsl:template>
 </xsl:stylesheet>
