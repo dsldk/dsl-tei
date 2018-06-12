@@ -72,7 +72,7 @@
             <h3>
                 <xsl:apply-templates select="tei:head"/>
             </h3>
-            <xsl:apply-templates select="tei:div | tei:p | tei:signed"/>
+            <xsl:apply-templates select="tei:div | tei:lg | tei:p | tei:signed"/>
         </div>
     </xsl:template>
 
