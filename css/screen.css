@@ -1,12 +1,17 @@
 
 body{
+    font-family: Georgia, Times New Roman;
+    font-size: 14px;
+    letter-spacing: 0.2px;
+    line-height: 1.5;
     margin-bottom: 0px;
     margin-left: auto;
     margin-right: auto;
     margin-top: 5em;
-    max-width: 50em;
-    width: 28em;
+    max-width: 53em;
+    width: 33em;
     text-align: justify;
+    text-rendering: optimizeLegibility;
 }
 blockquote{
     margin: 0.2em 0.7em 0.2em 0.7em;
@@ -35,7 +40,12 @@ div.poetry{
 }
 
 table, th, td {
-    border: 1px solid black;
+    border: 0.05em solid gray;
+    border-spacing: 0;
+    border-collapse: collapse;
+    box-sizing: border-box;
+    /*width: 100%;*/
+    overflow: auto;
 }
 
 th, td {
