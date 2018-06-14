@@ -3,7 +3,7 @@ html{
 }
 body{
     font-family: Georgia, Times New Roman, sans-serif;
-    font-size: 16px;
+    font-size: 18px;
     letter-spacing: 0.2px;
     line-height: 1.5;
     margin-bottom: 0px;
@@ -11,7 +11,7 @@ body{
     margin-right: auto;
     margin-top: 5em;
     max-width: 53em;
-    width: 33em;
+    width: 36em;
     text-align: justify;
     text-rendering: optimizeLegibility;
 }
@@ -19,6 +19,7 @@ blockquote{
     margin: 0.2em 0.7em 0.2em 0.7em;
 }
 h1, h2, h3, h4, h5 {
+    letter-spacing: -0.01em;
     margin: 1em 0;
     position: relative;
     text-align: left;
@@ -63,6 +64,11 @@ li > p {
     margin: 0.5em;
 }
 
+#text-container{
+    border-right: 0.03em solid gray;
+    padding: 0.5em 0.7em 0.5em 0.7em;
+}
+
 .editorial {
     color: gray;
     font-family: Arial, sans-serif;
@@ -88,14 +94,16 @@ li > p {
     position: relative;
 }
 .caption{
-    font-family: Arial, sans-serif;
+    font-family: Helvetica, Arial, sans-serif;
     display: block;
-    left: -6em;
-    width: 6em;
+    /*left: -6em;*/
+    right: -11em;
+    width: 7em;
     position: absolute;
     top: 0;
-    font-size: 1em;
-    text-align: center;
+    font-size: 0.7em;
+    padding-top: 0.8em;
+    text-align: left;
     color: #999;
 }
 
@@ -122,15 +130,19 @@ li > p {
     font: Verdana, sans-serif;
 }
 .page-break-mark{
-    font-size: 12px;
+    font-size: 14px;
     font-weight: normal;
     color: #999;
+    /*margin: 0 0 0.5em 0;*/
+    padding: 0 0 0 0;
 }
 .page-break-value{
+    font-family: Helvetica, Arial, sans-serif;
     vertical-align: inherit;
     font-size: 12px;
     font-weight: normal;
-    left: -30px;
+    left: -45px;
+    padding: 0.8em 0 0 0;
     position: absolute;
     width: 29px;
     color: #999;
@@ -158,6 +170,21 @@ li > p {
 .signature{
     text-align: right;
 }
+.summary{
+    background: #fafafa;
+    border-right: 1px solid rgba(0,0,0,.07);
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    left: -1;
+    position: absolute;
+    top: 0;
+    width: 260px;
+    z-index:1;
+}
+
+.toc{
+    list-style: none;
+}
+
 .titlePage{
     text-align: center;
 }

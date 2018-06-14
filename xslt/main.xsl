@@ -115,6 +115,14 @@
                 </link>
             </head>
             <body>
+                <div class="summary">
+                    <nav role="navigation">
+                        <ul class="toc">
+                            <li>1. Indledning</li>
+                            <li>2. Metadata</li>
+                        </ul>
+                    </nav>
+                </div>
                 <!--
                 Lav indholdsfortegnelse her
                 <div id="toc">
@@ -150,7 +158,7 @@
                     <div>
                         <xsl:apply-templates select="tei:teiHeader/tei:fileDesc/tei:sourceDesc"/>
                     </div>
-                    <div>
+                    <div id="text-container">
                         <xsl:apply-templates select="tei:text"/>
                     </div>
                     <xsl:if test="//tei:note">

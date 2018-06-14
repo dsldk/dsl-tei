@@ -21,13 +21,13 @@
     </xd:doc>
     <xsl:template match="tei:pb">
         <span class="legacy-page-break">
-            <span class="page-break-mark">|<xsl:value-of select="@n"/>|</span>
-            <!--This section was used for<span class="page-break-value">             
+            <span class="page-break-mark">|<!--<xsl:value-of select="@n"/>|--></span>
+            <!--This section was used for--><span class="page-break-value">             
                 <xsl:attribute name="id">
                     <xsl:value-of select="@n"/>
                 </xsl:attribute>
                 <xsl:value-of select="@ed"/><xsl:value-of select="@n"/>
-            </span>-->
+            </span>
         </span>
     </xsl:template>
 </xsl:stylesheet>
