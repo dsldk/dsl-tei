@@ -46,9 +46,35 @@
     <xsl:template match="tei:cell">
         <xsl:choose>
             <xsl:when test="@role = 'label'">
+                <xsl:choose>
+                    <xsl:when test="@cols">
+                        <th>
+                            <xsl:attribute name="colspan">
+                                <xsl:value-of select="@cols"/>
+                            </xsl:attribute>
+                            <xsl:apply-templates/>
+                        </th>
+                    </xsl:when>
+                </xsl:choose>
                 <th>
                     <xsl:apply-templates/>
                 </th>
+            </xsl:when>
+            <xsl:when test="@cols">
+                <td>
+                    <xsl:attribute name="colspan">
+                        <xsl:value-of select="@cols"/>
+                    </xsl:attribute>
+                    <xsl:apply-templates/>
+                </td>
+            </xsl:when>
+            <xsl:when test="@rows">
+                <td>
+                    <xsl:attribute name="rowspan">
+                        <xsl:value-of select="@rows"/>
+                    </xsl:attribute>
+                    <xsl:apply-templates/>
+                </td>
             </xsl:when>
             <xsl:otherwise>
                 <td>
