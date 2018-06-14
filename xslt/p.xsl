@@ -26,31 +26,31 @@
         <xsl:choose>
             <xsl:when test="@rend = 'center'">
                 <p class="prose-center">
-                    <span class="p-number">
+                    <!--<span class="p-number">
                         <xsl:attribute name="id">
                             <xsl:value-of select="$para-number"/>
                         </xsl:attribute> ¶<xsl:value-of select="$para-number"/>
-                    </span>
+                    </span>-->
                     <xsl:apply-templates/>
                 </p>
             </xsl:when>
             <xsl:when test="@rend = 'right'">
                 <p class="prose-right">
-                    <span class="p-number">
+                    <!--<span class="p-number">
                         <xsl:attribute name="id">
                             <xsl:value-of select="$para-number"/>
                         </xsl:attribute> ¶<xsl:value-of select="$para-number"/>
-                    </span>
+                    </span>-->
                     <xsl:apply-templates/>
                 </p>
             </xsl:when>
             <xsl:otherwise>
                 <p>
-                    <span class="p-number">
+                    <!--<span class="p-number">
                         <xsl:attribute name="id">
                             <xsl:value-of select="$para-number"/>
                         </xsl:attribute> ¶<xsl:value-of select="$para-number"/>
-                    </span>
+                    </span>-->
                     <xsl:apply-templates/>
                 </p>
             </xsl:otherwise>
