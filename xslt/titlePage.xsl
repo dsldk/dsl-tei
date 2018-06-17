@@ -20,7 +20,7 @@
         </xd:desc>
     </xd:doc>
     <xsl:template match="tei:titlePage">
-        <div class="titlePage">
+        <div id="titlepage-section" class="titlePage">
             <!--<span class="caption">Title: </span>-->
             <xsl:apply-templates/>
         </div>

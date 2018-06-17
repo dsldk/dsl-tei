@@ -80,9 +80,9 @@
     <xsl:strip-space elements="*"/>
     <xsl:preserve-space elements="tei:p"/>
     <!-- Create identity template -->
-    <xsl:template match="node()|@*">
+    <xsl:template match="node() | @*">
         <xsl:copy>
-            <xsl:apply-templates select="node()|@*"/>
+            <xsl:apply-templates select="node() | @*"/>
         </xsl:copy>
     </xsl:template>
     <!-- Override identity template, so that only 
@@ -118,74 +118,144 @@
                 <div class="summary">
                     <nav role="navigation">
                         <ul class="toc">
+                            <xsl:choose>
+                                <xsl:when test="//tei:fileDesc//tei:title">
+                                    <li class="">
+                                        <a href=".">
+                                            <xsl:value-of select="//tei:fileDesc//tei:title"/>
+                                        </a>
+                                    </li>
+                                    <li class="divider"/>
+                                </xsl:when>
+                                <xsl:otherwise>
+                                    <li>Title missing</li>
+                                </xsl:otherwise>
+                            </xsl:choose>
+                            <xsl:if test="//tei:teiHeader">
+                                <li class="chapter">
+                                    <a href="#metadata-section">Metadata</a>
+                                </li>
+                            </xsl:if>
+                            <xsl:if test="//tei:titlePage">
+                                <li>
+                                    <a href="#titlepage-section">Title page</a>
+                                </li>
+                            </xsl:if>
+
+                            <xsl:for-each select="//tei:front/tei:div">
+                                <xsl:variable name="section-id">
+                                    <xsl:value-of select="@xml:id"/>
+                                </xsl:variable>
+                                <li>
+                                    <a href="#{$section-id}">
+                                        <xsl:value-of select="tei:head[@type = 'add']"/>
+                                    </a>
+                                </li>
+                            </xsl:for-each>
+                            <xsl:for-each select="//tei:body/tei:div">
+                                <xsl:variable name="section-id">
+                                    <xsl:value-of select="@xml:id"/>
+                                </xsl:variable>
+                                <li>
+                                    <a href="#{$section-id}">
+                                        <xsl:if test="@n">
+                                            <b>
+                                               <xsl:value-of select="@n"/>&#8194; 
+                                            </b>
+                                        </xsl:if>
+                                        <xsl:value-of select="tei:head[@type = 'add']"/>
+                                    </a>
+                                </li>
+                            </xsl:for-each>
+
+                            <!--<xsl:choose>
+                                <xsl:when test="//tei:teiHeader">
+                                    <li class="chapter">
+                                        <a href="#metadata-section">Metadata</a>
+                                    </li>
+                                </xsl:when>
+                            </xsl:choose>
+                            <xsl:choose>
+                                <xsl:when test="//tei:titlePage">
+                                    <li class="chapter">
+                                        <a href="#titlepage-section">Title page</a>
+                                    </li>
+                                </xsl:when>
+                            </xsl:choose>
                             <li>1. Indledning</li>
-                            <li>2. Metadata</li>
+                            <li>2. Metadata</li>-->
                         </ul>
                     </nav>
                 </div>
-                <!--
-                Lav indholdsfortegnelse her
-                <div id="toc">
-                    <h3>Indhold</h3>
-                    <ul>
-                        <xsl:if test="tei:teiHeader">
-                            <li><a href="">Metadata</a></li>
-                        </xsl:if>
-                        <xsl:if test="tei:text">
-                            <li><a href="">Tekst</a></li>
-                        </xsl:if>
-                    </ul>
-                
-                </div>-->
-                <div class="content">
-                    <div>
-                        <p> Denne fil, <code><xsl:value-of
-                                    select="tei:teiHeader//tei:publicationStmt/tei:idno[1]"
-                                />.xml</code>, er en DSL-basis-version (v. 0.1) af
-                                    <strong><xsl:value-of select="tei:teiHeader//tei:title"
-                                /></strong> finansieret af <xsl:value-of
-                                select="tei:teiHeader//tei:titleStmt/tei:funder"/></p>
-                        <p> Redaktør: <xsl:value-of
-                                select="tei:teiHeader//tei:editor/tei:name/@xml:id"/></p>
-                        <p> Dokumentets historik: </p>
-                    </div>
-                    <div>
-                        <xsl:apply-templates select="tei:teiHeader/tei:encodingDesc"/>
-                    </div>
-                    <div>
-                        <xsl:apply-templates select="tei:teiHeader/tei:profileDesc"/>
-                    </div>
-                    <div>
-                        <xsl:apply-templates select="tei:teiHeader/tei:fileDesc/tei:sourceDesc"/>
-                    </div>
-                    <div id="text-container">
-                        <xsl:apply-templates select="tei:text"/>
-                    </div>
-                    <xsl:if test="//tei:note">
-                        <div>
-                            <h2>Fodnoter</h2>
-                            <xsl:apply-templates select="//tei:note[@place='bottom']" mode="footnoteApparatus"/>
-                        </div>
-                    </xsl:if>
-                    <xsl:if test="//tei:app">
-                        <div>
-                            <h2>Kritisk apparat</h2>
-                            <xsl:apply-templates select="//tei:app" mode="apparatusCriticus"/>
-                        </div>
-                    </xsl:if>
-                    <xsl:if test="//tei:cit">
-                        <div>
-                            <h2>Citater</h2>
-                            <xsl:apply-templates select="//tei:cit" mode="quotationApparatus"/>
-                        </div>
-                    </xsl:if>
+                <div class="content fixed">
+                    <div class="content-inner">
+                        <div class="text-header">OVERSKRIFT</div>
+                        <div class="text-wrapper">
+                            <div class="text-inner">
+                                <div class="metadata" id="metadata-section">
+                                    <h1>Metadata</h1>
+                                    <div>
+                                        <p> Denne fil, <code><xsl:value-of
+                                                  select="tei:teiHeader//tei:publicationStmt/tei:idno[1]"
+                                                />.xml</code>, er en DSL-basis-version (v. 0.1) af
+                                                  <strong><xsl:value-of
+                                                  select="tei:teiHeader//tei:title"/></strong>
+                                            finansieret af <xsl:value-of
+                                                select="tei:teiHeader//tei:titleStmt/tei:funder"
+                                            /></p>
+                                        <p> Redaktør: <xsl:value-of
+                                                select="tei:teiHeader//tei:editor/tei:name/@xml:id"
+                                            /></p>
+                                        <p> Dokumentets historik: </p>
+                                    </div>
+                                    <div>
+                                        <xsl:apply-templates select="tei:teiHeader/tei:encodingDesc"
+                                        />
+                                    </div>
+                                    <div>
+                                        <xsl:apply-templates select="tei:teiHeader/tei:profileDesc"
+                                        />
+                                    </div>
+                                    <div>
+                                        <xsl:apply-templates
+                                            select="tei:teiHeader/tei:fileDesc/tei:sourceDesc"/>
+                                    </div>
+                                    <div class="text-container">
+                                        <xsl:apply-templates select="tei:text"/>
+                                    </div>
+                                    <xsl:if test="//tei:note">
+                                        <div>
+                                            <h2>Fodnoter</h2>
+                                            <xsl:apply-templates
+                                                select="//tei:note[@place = 'bottom']"
+                                                mode="footnoteApparatus"/>
+                                        </div>
+                                    </xsl:if>
+                                    <xsl:if test="//tei:app">
+                                        <div>
+                                            <h2>Kritisk apparat</h2>
+                                            <xsl:apply-templates select="//tei:app"
+                                                mode="apparatusCriticus"/>
+                                        </div>
+                                    </xsl:if>
+                                    <xsl:if test="//tei:cit">
+                                        <div>
+                                            <h2>Citater</h2>
+                                            <xsl:apply-templates select="//tei:cit"
+                                                mode="quotationApparatus"/>
+                                        </div>
+                                    </xsl:if>
 
-                    <!--<xsl:if test="//tei:note[@type='add']">
+                                    <!--<xsl:if test="//tei:note[@type='add']">
                     <div>
                         <h3>Kommentarer</h3>
                         <xsl:apply-templates select="//tei:note[@type='add']"/>
                     </div>
                 </xsl:if>-->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </body>
         </html>

@@ -25,6 +25,11 @@
         <xsl:choose>
             <xsl:when test="@type = 'add'">
                 <h1 class="editorial">
+                    <xsl:if test="@n">
+                        <b>
+                            <xsl:value-of select="@n"/>&#8194;
+                        </b>
+                    </xsl:if>
                     <xsl:apply-templates/>
                 </h1>
             </xsl:when>
@@ -46,6 +51,11 @@
         <xsl:choose>
             <xsl:when test="@type = 'add'">
                 <h2 class="metadata">
+                    <xsl:if test="@n">
+                        <b>
+                            <xsl:value-of select="@n"/>&#8194;
+                        </b>
+                    </xsl:if>
                     <xsl:apply-templates/>
                 </h2>
             </xsl:when>
