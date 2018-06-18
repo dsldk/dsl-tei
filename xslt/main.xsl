@@ -138,7 +138,7 @@
                             </xsl:if>
                             <xsl:if test="//tei:titlePage">
                                 <li>
-                                    <a href="#titlepage-section">Title page</a>
+                                    <a href="#titlepage-section">Titelblad</a>
                                 </li>
                             </xsl:if>
 
@@ -189,7 +189,7 @@
                 </div>
                 <div class="content fixed">
                     <div class="content-inner">
-                        <div class="text-header">OVERSKRIFT</div>
+                        <div class="text-header"><!--Her skal være et eller andet--></div>
                         <div class="text-wrapper">
                             <div class="text-inner">
                                 <div class="metadata" id="metadata-section">
