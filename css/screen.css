@@ -7,7 +7,7 @@ html{
 }
 body{
     font-family: Georgia, Times New Roman, sans-serif;
-    font-size: 16px;
+    font-size: 17px;
     letter-spacing: 0.2px;
     line-height: 1.5;
     margin-bottom: 0px;
@@ -78,12 +78,17 @@ li > p {
 
 li.divider{
     height: 1px;
-    margin: 7px 0;
+    margin: 5px 0;
     overflow: hidden;
     background: rgbd(0,0,0,.07);
 }
 .summary {
     width: 300px;
+    left: 0;
+    overflow: scroll;
+    position: absolute;
+    transition: none;
+    z-index: 1;  
 }
 .summary .toc li a{
     background: 0 0;
@@ -91,8 +96,8 @@ li.divider{
     color: #364149;
     display: block;
     overflow: scroll;
-    padding: 10px 13px;
-    position: relative;
+    padding: 6px 0 0 0;
+    text-decoration: none;
     text-overflow: ellipsis;
     white-space: nowrap;
     /*width: 300px;*/
@@ -100,9 +105,11 @@ li.divider{
 
 .summary .toc > li:nth-child(1) a{
     font-weight: 500;
-    height: 50px;
-    padding-top: 15px !important;
+    border-bottom: 1px solid rgba(0,0,0,.07);
+    height: 34px;
+    /*padding-top: 1px !important;*/
     text-decoration: none;
+    top: 0;
 }
 
 .text-container{
@@ -110,9 +117,9 @@ li.divider{
     padding: 0.5em 0.7em 0.5em 0.7em;
 }
 
-.editorial {
+h1.editorial {
     color: gray;
-    font-family: Arial, sans-serif;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 .speech{
     position: relative;
@@ -154,7 +161,7 @@ li.divider{
 }
 
 .content {
-   max-width: 800px;
+   max-width: 850px;
    margin: 0 auto;
    padding: 20px 0 920px;
 }
@@ -166,7 +173,8 @@ li.divider{
 }
 
 .content-inner{
-   max-width: 600px; 
+   max-width: 700px; 
+   padding: 0 0 0 40px;
 }
 .caption{
     font-family: Helvetica, Arial, sans-serif;
@@ -217,7 +225,7 @@ li.divider{
     font-size: 12px;
     font-weight: normal;
     left: -45px;
-    padding: 0.8em 0 0 0;
+    padding: 1.3em 0 0 0;
     position: absolute;
     width: 29px;
     color: #999;
@@ -250,7 +258,7 @@ li.divider{
     border-right: 1px solid rgba(0,0,0,.07);
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     left: -1;
-    position: absolute;
+    position: fixed;
     top: 0;
     bottom: 0;
     transition: none !important;
