@@ -20,6 +20,10 @@
         </xd:desc>
     </xd:doc>
     <xsl:template match="tei:lb">
-	<!--<br/>-->
+        <!--<br/>-->
+    </xsl:template>
+    <xsl:template
+        match="tei:docAuthor/tei:lb | tei:docImprint/tei:lb | tei:imprimatur/tei:lb | tei:titlePart/tei:lb[not(@rend)]">
+        <br/>
     </xsl:template>
 </xsl:stylesheet>

@@ -118,6 +118,7 @@
                 <div class="summary">
                     <nav role="navigation">
                         <ul class="toc">
+                            <!-- Title -->
                             <xsl:choose>
                                 <xsl:when test="//tei:fileDesc//tei:title">
                                     <li class="">
@@ -131,6 +132,7 @@
                                     <li>Title missing</li>
                                 </xsl:otherwise>
                             </xsl:choose>
+                            <!-- Metadata section -->
                             <xsl:if test="//tei:teiHeader">
                                 <li class="chapter">
                                     <a href="#metadata-section">Metadata</a>
@@ -152,6 +154,7 @@
                                     </a>
                                 </li>
                             </xsl:for-each>
+                            <!-- Text body -->
                             <xsl:for-each select="//tei:body/tei:div">
                                 <xsl:variable name="section-id">
                                     <xsl:value-of select="@xml:id"/>
@@ -159,12 +162,31 @@
                                 <li>
                                     <a href="#{$section-id}">
                                         <xsl:if test="@n">
-                                            <b>
-                                               <xsl:value-of select="@n"/>&#8194; 
-                                            </b>
+                                            <b><xsl:value-of select="@n"/>&#8194;</b>
                                         </xsl:if>
                                         <xsl:value-of select="tei:head[@type = 'add']"/>
                                     </a>
+                                    <!-- If there's a subsection -->
+                                    <xsl:if test="tei:div">
+                                        <!--<button onclick="myFunction()" class="dropbtn"></button>-->
+                                        <!--<i class="fa fa-caret-down"/>-->
+                                        <ul class="drop-down-menu">
+                                            <xsl:for-each select="tei:div">
+                                                <xsl:variable name="subsection-id">
+                                                  <xsl:value-of select="@xml:id"/>
+                                                </xsl:variable>
+                                                <li>
+                                                  <a href="#{$subsection-id}">
+                                                  <xsl:if test="@n">
+                                                  <b>
+                                                  <xsl:value-of select="@n"/>&#8194; </b>
+                                                  </xsl:if>
+                                                  <xsl:value-of select="tei:head[@type = 'add']"/>
+                                                  </a>
+                                                </li>
+                                            </xsl:for-each>
+                                        </ul>
+                                    </xsl:if>
                                 </li>
                             </xsl:for-each>
 

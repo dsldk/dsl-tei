@@ -20,8 +20,10 @@
         </xd:desc>
     </xd:doc>
     <xsl:template match="tei:imprimatur">
-        <small>
-            <xsl:apply-templates/>
-        </small>
+        <p>
+            <small>
+                <xsl:apply-templates/>
+            </small>
+        </p>
     </xsl:template>
 </xsl:stylesheet>

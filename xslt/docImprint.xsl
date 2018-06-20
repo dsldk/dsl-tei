@@ -20,7 +20,7 @@
         </xd:desc>
     </xd:doc>
     <xsl:template match="tei:docImprint">
-        <xsl:for-each select="child::node()">
+        <xsl:for-each select=".">
             <p>
                 <xsl:apply-templates/>
                 <br/>

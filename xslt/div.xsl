@@ -31,12 +31,14 @@
         </div>
     </xsl:template>
 
-    <xsl:template match="tei:div/tei:div">
-
+    <!--<xsl:template match="tei:div/tei:div">
+        <xsl:attribute name="id">
+            <xsl:value-of select="@xml:id"/>
+        </xsl:attribute>
         <xsl:apply-templates
             select="tei:div | tei:head | tei:p | tei:lg | tei:list | tei:epigraph | tei:sp | tei:table | tei:cit"
         />
-    </xsl:template>
+    </xsl:template>-->
 
     <xsl:template match="tei:div[@type = 'advert']">
         <div class="metadata">
