@@ -82,10 +82,14 @@
 			</xsl:text>
         </span>
     </xsl:template>-->
-
-    <xsl:template match="tei:note[@place='bottom']">
+    
+    <!-- Handle marginal notes -->
+    <xsl:template match="tei:note[@place = 'right | left']"> 
+    
+    </xsl:template>
+    <xsl:template match="tei:note[@place = 'bottom']">
         <xsl:choose>
-            <xsl:when test="@type = 'add'"/>           
+            <xsl:when test="@type = 'add'"/>
             <xsl:otherwise>
                 <xsl:variable name="identifier">
                     <xsl:text>Note</xsl:text>
@@ -97,7 +101,8 @@
                             <xsl:value-of select="@n"/>
                         </xsl:when>
                         <xsl:otherwise>
-                            <xsl:number count="tei:note[@place='bottom']" from="tei:body" level="any"/>
+                            <xsl:number count="tei:note[@place = 'bottom']" from="tei:body"
+                                level="any"/>
                             <!--<xsl:number/>-->
                         </xsl:otherwise>
                     </xsl:choose>
@@ -115,13 +120,13 @@
             </xsl:when>
             <xsl:otherwise>
                 <!--<xsl:number count="tei:note[not(@type)]" from="tei:body" level="any"/>-->
-                <xsl:number count="tei:note[@place='bottom']" from="tei:body" level="any"/>
+                <xsl:number count="tei:note[@place = 'bottom']" from="tei:body" level="any"/>
             </xsl:otherwise>
         </xsl:choose>
     </xsl:template>
-    <xsl:template match="tei:note[@place='bottom']" mode="footnoteApparatus">
+    <xsl:template match="tei:note[@place = 'bottom']" mode="footnoteApparatus">
         <xsl:choose>
-            <xsl:when test="@type = 'add'"/>               
+            <xsl:when test="@type = 'add'"/>
             <xsl:otherwise>
                 <xsl:variable name="identifier">
                     <xsl:text>Note</xsl:text>
@@ -134,14 +139,17 @@
                         </xsl:when>
                         <xsl:otherwise>
                             <!--<xsl:number count="tei:note[not(@type)]" from="tei:body" level="any"/>-->
-                            <xsl:number count="tei:note[@place='bottom']" from="tei:body" level="any"/>
+                            <xsl:number count="tei:note[@place = 'bottom']" from="tei:body"
+                                level="any"/>
                         </xsl:otherwise>
                     </xsl:choose>
                 </xsl:variable>
                 <p class="note">
                     <span class="noteLabel" id="{$identifier}">
                         <strong>
-                            <a href="#back{$identifier}"><xsl:call-template name="noteN"/></a>
+                            <a href="#back{$identifier}">
+                                <xsl:call-template name="noteN"/>
+                            </a>
                             <xsl:text>. </xsl:text>
                         </strong>
                     </span>
@@ -153,7 +161,7 @@
         </xsl:choose>
 
     </xsl:template>
-    
+
     <!--Notes in rdg elements should be rendered in italics-->
     <xsl:template match="tei:rdg/tei:note">
         <em>

@@ -23,6 +23,16 @@
         <xsl:variable name="para-number">
             <xsl:number/>
         </xsl:variable>
+        <!-- If there are marginal notes, render these as a ul -->
+        <xsl:if test="tei:note">
+            <!--<ul class="sidenotes">
+                <xsl:for-each select="tei:note[@place='left|right']">
+                    <li>YO!
+                        <xsl:apply-templates></xsl:apply-templates>
+                    </li>
+                </xsl:for-each>
+            </ul>-->
+        </xsl:if>
         <xsl:choose>
             <xsl:when test="@rend = 'center'">
                 <p class="prose-center">
