@@ -113,6 +113,9 @@
                     <xsl:attribute name="type">text/css</xsl:attribute>
                     <xsl:attribute name="media">print</xsl:attribute>
                 </link>
+                <link>
+                    <xsl:attribute name="src">../js/dropdown.js</xsl:attribute>
+                </link>
             </head>
             <body>
                 <div class="summary">
@@ -168,9 +171,10 @@
                                     </a>
                                     <!-- If there's a subsection -->
                                     <xsl:if test="tei:div">
-                                        <!--<button onclick="myFunction()" class="dropbtn"></button>-->
-                                        <!--<i class="fa fa-caret-down"/>-->
-                                        <ul class="drop-down-menu">
+                                        <button class="dropbtn">Dropdown <i
+                                                class="fa fa-caret-down"/>
+                                        </button>
+                                        <ul class="dropdown-container">
                                             <xsl:for-each select="tei:div">
                                                 <xsl:variable name="subsection-id">
                                                   <xsl:value-of select="@xml:id"/>
