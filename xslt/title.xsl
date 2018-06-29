@@ -24,12 +24,18 @@
         <xsl:apply-templates/>
     </xsl:template>
     <xsl:template match="tei:body/tei:div//tei:p/tei:title">
+        <em>
+            <xsl:apply-templates/>
+        </em>
+    </xsl:template>
+    <!-- Removed this one, as it seems rather useless -->
+    <!--<xsl:template match="tei:body/tei:div//tei:p/tei:title">
         <p class="title">
             <strong>
                 <xsl:apply-templates/>
             </strong>
         </p>
-    </xsl:template>
+    </xsl:template>-->
     <xsl:template match="tei:head/tei:title">
         <em>
             <xsl:apply-templates/>
