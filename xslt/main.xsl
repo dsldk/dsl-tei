@@ -171,10 +171,10 @@
                                     </a>
                                     <!-- If there's a subsection -->
                                     <xsl:if test="tei:div">
-                                        <button class="dropbtn">Dropdown <i
-                                                class="fa fa-caret-down"/>
-                                        </button>
                                         <ul class="dropdown-container">
+                                            <button class="dropbtn">
+                                                <i class="fa fa-caret-down"/>
+                                            </button>
                                             <xsl:for-each select="tei:div">
                                                 <xsl:variable name="subsection-id">
                                                   <xsl:value-of select="@xml:id"/>

@@ -138,7 +138,10 @@ li.divider{
     background-color: green;
     color: white;
 }
-
+.fa-caret-down{
+  float: right;
+  padding-right: 8px;
+}
 .dropbtn{
   padding: 6px 8px 6px 16px;
   text-decoration: none;
@@ -158,8 +161,8 @@ li.divider{
 }
 
 .dropdown-container{
-  display: none;
-  background-color: #262626;
+  /*display: none;*/
+  /*background-color: #262626;*/
   padding-left: 8px;
 }
 
