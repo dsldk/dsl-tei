@@ -84,7 +84,7 @@
     </xsl:template>-->
 
     <!-- Handle marginal notes -->
-    <xsl:template match="tei:note[@place = 'right']">
+    <xsl:template match="tei:note[@place = 'right'] | tei:note[@place = 'left']">
         <span class="marginal-note">
             <span class="marginal-note-mark">$<!--<xsl:value-of select="@n"/>|--></span>
             <span class="marginal-note-content">

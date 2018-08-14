@@ -285,6 +285,14 @@ h1.editorial {
     color: #999;
 }
 
+.marginal-note-content{
+   right: -125px;
+   font-size: 13px;
+   /*background-color: red;*/
+   position: absolute;
+   text-align: left;
+   width: 100px;
+}
 /*This places the text-and-note container in relative position to ??*/
 .text-and-note{
     position: relative;
