@@ -21,6 +21,16 @@
     </xd:doc>
     <xsl:template match="tei:hi">
         <xsl:choose>
+            <xsl:when test="@rend = 'sub'">
+                <sub>
+                    <xsl:apply-templates/>
+                </sub>
+            </xsl:when>
+            <xsl:when test="@rend = 'sup'">
+                <sup>
+                    <xsl:apply-templates/>
+                </sup>
+            </xsl:when>
             <xsl:when test="@rend = 'spaced'">
                 <span class="spaced">
                     <xsl:apply-templates/>
