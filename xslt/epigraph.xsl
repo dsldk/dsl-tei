@@ -20,6 +20,8 @@
         </xd:desc>
     </xd:doc>
     <xsl:template match="tei:epigraph">
-        <xsl:apply-templates/>
+	    <div class="epigraph">
+		    <xsl:apply-templates/>
+	    </div>
     </xsl:template>
 </xsl:stylesheet>
