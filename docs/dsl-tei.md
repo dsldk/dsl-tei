@@ -648,6 +648,21 @@ undertitel:
 	  <titlePart type="sub">Poema Heroico-comicum</titlePart>
 	</docTitle>
 
+#### Beskrivende titler
+
+I Niels Jespersens Graduale findes et eksempel på en beskrivende
+titel:
+
+	<docTitle>
+          <titlePart><pb n="E1"/>GRADVAL.</titlePart>
+          <titlePart type="desc"> En Almindelig <lb/> Sangbog / som Hoybaarne
+            <lb/> Første oc Stormectige Herre / Her Frederich den <lb/> Anden /
+            Danmarckis Norgis Wendis oc Gottis Konning <ex>etcetera</ex>. <lb/> Haffuer
+            ladet Ordinere oc tilsammen scriffue paa La<lb rend="="/>tine oc Danske / at
+            bruge i Kirckerne / til des yder<lb rend="="/>mere endrectighed vdi Sang oc
+            Ceremo<lb rend="="/>nier / effter Ordinantzens<lb/> lydelse.</titlePart>
+	</docTitle>
+
 #### 4.1.1.2 Byline
 
 En *byline* gengiver i bred forstand værkets ophavsmand, hvad enten
