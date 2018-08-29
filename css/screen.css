@@ -332,7 +332,7 @@ h1.editorial {
     list-style: none;
 }
 
-.titlePage h1, .titlePage h2, .titlePage h3, .titlePage p {
+.titlePage h1, .titlePage h2, .titlePage h3, .titlePage h4, .titlePage p {
     text-align: center;
 }
 .poetry-center{
