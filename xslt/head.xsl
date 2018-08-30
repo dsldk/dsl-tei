@@ -23,16 +23,16 @@
     <xsl:template
         match="tei:front/tei:div/tei:head | tei:body/tei:div/tei:head | tei:back/tei:div/tei:head">
         <xsl:choose>
-            <xsl:when test="@type = 'add'">
-                <h1 class="editorial">
+		<xsl:when test="@type = 'add'">
+			<!--<h1 class="metadata">
                     <xsl:if test="@n">
                         <b>
                             <xsl:value-of select="@n"/>&#8194;
                         </b>
                     </xsl:if>
                     <xsl:apply-templates/>
-                </h1>
-            </xsl:when>
+		</h1>-->
+	    </xsl:when>
             <xsl:when test="@type = 'original'">
                 <h1>
                     <xsl:apply-templates/>
@@ -49,16 +49,16 @@
     <xsl:template
         match="tei:front/tei:div/tei:div/tei:head | tei:body/tei:div/tei:div/tei:head | tei:back/tei:div/tei:div/tei:head">
         <xsl:choose>
-            <xsl:when test="@type = 'add'">
-                <h2 class="metadata">
+		<xsl:when test="@type = 'add'">
+			<!--<h2 class="metadata">
                     <xsl:if test="@n">
                         <b>
                             <xsl:value-of select="@n"/>&#8194;
                         </b>
                     </xsl:if>
                     <xsl:apply-templates/>
-                </h2>
-            </xsl:when>
+		</h2>-->
+	    </xsl:when>
             <xsl:when test="@type = 'original'">
                 <h2>
                     <xsl:apply-templates/>
@@ -75,11 +75,11 @@
     <xsl:template
         match="tei:front/tei:div/tei:div/tei:div/tei:head | tei:body/tei:div/tei:div/tei:div/tei:head | tei:back/tei:div/tei:div/tei:div/tei:head">
         <xsl:choose>
-            <xsl:when test="@type = 'add'">
-                <h3 class="metadata">
+		<xsl:when test="@type = 'add'">
+			<!--<h3 class="metadata">
                     <xsl:apply-templates/>
-                </h3>
-            </xsl:when>
+		</h3>-->
+	    </xsl:when>
             <xsl:when test="@type = 'original'">
                 <h3>
                     <xsl:apply-templates/>
@@ -96,11 +96,11 @@
     <xsl:template
         match="tei:front/tei:div/tei:div/tei:div/tei:div/tei:head | tei:body/tei:div/tei:div/tei:div/tei:div/tei:div/tei:head | tei:back/tei:div/tei:div/tei:div/tei:div/tei:head">
         <xsl:choose>
-            <xsl:when test="@type = 'add'">
-                <h4 class="metadata">
+		<xsl:when test="@type = 'add'">
+			<!--<h4 class="metadata">
                     <xsl:apply-templates/>
-                </h4>
-            </xsl:when>
+		</h4>-->
+	    </xsl:when>
             <xsl:when test="@type = 'original'">
                 <h4>
                     <xsl:apply-templates/>
@@ -117,11 +117,11 @@
     <xsl:template
         match="tei:front/tei:div/tei:div/tei:div/tei:div/tei:div/tei:head | tei:body/tei:div/tei:div/tei:div/tei:div/tei:div/tei:div/tei:head | tei:back/tei:div/tei:div/tei:div/tei:div/tei:div/tei:head">
         <xsl:choose>
-            <xsl:when test="@type = 'add'">
-                <h4 class="metadata">
+		<xsl:when test="@type = 'add'">
+			<!--<h4 class="metadata">
                     <xsl:apply-templates/>
-                </h4>
-            </xsl:when>
+		</h4>-->
+	    </xsl:when>
             <xsl:when test="@type = 'original'">
                 <h4>
                     <xsl:apply-templates/>
