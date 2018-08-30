@@ -38,11 +38,11 @@
                     <xsl:apply-templates/>
                 </h1>
             </xsl:when>
-            <xsl:otherwise>
+	    <!--<xsl:otherwise>
                 <h1>
                     <xsl:apply-templates/>
                 </h1>
-            </xsl:otherwise>
+	    </xsl:otherwise>-->
         </xsl:choose>
     </xsl:template>
     <!-- Level 2 head -->
@@ -64,11 +64,11 @@
                     <xsl:apply-templates/>
                 </h2>
             </xsl:when>
-            <xsl:otherwise>
+	    <!--<xsl:otherwise>
                 <h2>
                     <xsl:apply-templates/>
                 </h2>
-            </xsl:otherwise>
+	    </xsl:otherwise>-->
         </xsl:choose>
     </xsl:template>
     <!-- Level 3 head -->
@@ -85,11 +85,11 @@
                     <xsl:apply-templates/>
                 </h3>
             </xsl:when>
-            <xsl:otherwise>
+	    <!--<xsl:otherwise>
                 <h3>
                     <xsl:apply-templates/>
                 </h3>
-            </xsl:otherwise>
+	    </xsl:otherwise>-->
         </xsl:choose>
     </xsl:template>
     <!-- Level 4 head -->
@@ -106,11 +106,11 @@
                     <xsl:apply-templates/>
                 </h4>
             </xsl:when>
-            <xsl:otherwise>
+	    <!--<xsl:otherwise>
                 <h4>
                     <xsl:apply-templates/>
                 </h4>
-            </xsl:otherwise>
+	    </xsl:otherwise>-->
         </xsl:choose>
     </xsl:template>
     <!-- Level 5 head -->
@@ -127,11 +127,11 @@
                     <xsl:apply-templates/>
                 </h4>
             </xsl:when>
-            <xsl:otherwise>
+	    <!--<xsl:otherwise>
                 <h4>
                     <xsl:apply-templates/>
                 </h4>
-            </xsl:otherwise>
+	    </xsl:otherwise>-->
         </xsl:choose>
     </xsl:template>
     
