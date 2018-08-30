@@ -29,6 +29,7 @@
     <xsl:include href="epigraph.xsl"/>
     <xsl:include href="ex.xsl"/>
     <xsl:include href="extent.xsl"/>
+    <xsl:include href="figure.xsl"/>
     <xsl:include href="front.xsl"/>
     <xsl:include href="gap.xsl"/>
     <xsl:include href="handDesc.xsl"/>
