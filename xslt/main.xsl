@@ -220,6 +220,7 @@
                         <div class="text-wrapper">
                             <div class="text-inner">
                                 <div class="metadata" id="metadata-section">
+
                                     <h1>Metadata</h1>
                                     <div>
                                         <p> Denne fil, <code><xsl:value-of
@@ -247,39 +248,40 @@
                                         <xsl:apply-templates
                                             select="tei:teiHeader/tei:fileDesc/tei:sourceDesc"/>
                                     </div>
-                                    <div class="text-container">
-                                        <xsl:apply-templates select="tei:text"/>
-                                    </div>
-                                    <xsl:if test="//tei:note">
-                                        <div>
-                                            <h2>Fodnoter</h2>
-                                            <xsl:apply-templates
-                                                select="//tei:note[@place = 'bottom']"
-                                                mode="footnoteApparatus"/>
-                                        </div>
-                                    </xsl:if>
-                                    <xsl:if test="//tei:app">
-                                        <div>
-                                            <h2>Kritisk apparat</h2>
-                                            <xsl:apply-templates select="//tei:app"
-                                                mode="apparatusCriticus"/>
-                                        </div>
-                                    </xsl:if>
-                                    <xsl:if test="//tei:cit">
-                                        <div>
-                                            <h2>Citater</h2>
-                                            <xsl:apply-templates select="//tei:cit"
-                                                mode="quotationApparatus"/>
-                                        </div>
-                                    </xsl:if>
 
-                                    <!--<xsl:if test="//tei:note[@type='add']">
+                                </div>
+                                <div class="text-container">
+                                    <xsl:apply-templates select="tei:text"/>
+                                </div>
+                                <xsl:if test="//tei:note">
+                                    <div>
+                                        <h2>Fodnoter</h2>
+                                        <xsl:apply-templates select="//tei:note[@place = 'bottom']"
+                                            mode="footnoteApparatus"/>
+                                    </div>
+                                </xsl:if>
+                                <xsl:if test="//tei:app">
+                                    <div>
+                                        <h2>Kritisk apparat</h2>
+                                        <xsl:apply-templates select="//tei:app"
+                                            mode="apparatusCriticus"/>
+                                    </div>
+                                </xsl:if>
+                                <xsl:if test="//tei:cit">
+                                    <div>
+                                        <h2>Citater</h2>
+                                        <xsl:apply-templates select="//tei:cit"
+                                            mode="quotationApparatus"/>
+                                    </div>
+                                </xsl:if>
+
+                                <!--<xsl:if test="//tei:note[@type='add']">
                     <div>
                         <h3>Kommentarer</h3>
                         <xsl:apply-templates select="//tei:note[@type='add']"/>
                     </div>
                 </xsl:if>-->
-                                </div>
+
                             </div>
                         </div>
                     </div>
