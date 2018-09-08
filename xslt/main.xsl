@@ -51,6 +51,7 @@
     <xsl:include href="msIdentifier.xsl"/>
     <xsl:include href="note.xsl"/>
     <xsl:include href="objectDesc.xsl"/>
+    <xsl:include href="orig.xsl"/>
     <xsl:include href="p.xsl"/>
     <xsl:include href="pb.xsl"/>
     <xsl:include href="persName.xsl"/>
@@ -59,6 +60,7 @@
     <xsl:include href="profileDesc.xsl"/>
     <xsl:include href="projectDesc.xsl"/>
     <xsl:include href="q.xsl"/>
+    <xsl:include href="ref.xsl"/>
     <xsl:include href="ref.xsl"/>
     <xsl:include href="samplingDecl.xsl"/>
     <xsl:include href="sealDesc.xsl"/>
