@@ -819,12 +819,14 @@ Tekstinddelingselementet `div` kan indeholde følgende elementer:
 ### 4.3.1 Overskrifter
 
 DSL-TEI håndterer to slags overskrifter vha. elementet `head`
-(*heading*): 1. eksisterende overskrifter og 2. supplerende
-overskrifter.
+(*heading*). Herunder opmærkes 1. eksisterende overskrifter med
+elementet `orig` og 2. normaliserede overskrifter med elementet `reg`
+(*regularization*).
 
-Eksisterende overskrifter angives
-
-	<head type="orig">...</head>
+	<head>
+	  <orig>Genesis Mose Første Bog.</orig>
+	  <reg>Første Mosebog</reg>
+	</head>
 
 Eksisterende underoverskrifter angives således:
 
