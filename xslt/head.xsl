@@ -43,6 +43,11 @@
                     <xsl:apply-templates/>
                 </h1>
             </xsl:when>
+            <xsl:when test="tei:orig">
+                <h1>
+                    <xsl:apply-templates/>
+                </h1>
+            </xsl:when>
 	    <!--<xsl:otherwise>
                 <h1>
                     <xsl:apply-templates/>
@@ -74,6 +79,11 @@
                     <xsl:apply-templates/>
                 </h2>
             </xsl:when>
+            <xsl:when test="tei:orig">
+                <h2>
+                    <xsl:apply-templates/>
+                </h2>
+            </xsl:when>
 	    <!--<xsl:otherwise>
                 <h2>
                     <xsl:apply-templates/>
@@ -96,6 +106,11 @@
                 </h3>
             </xsl:when>
             <xsl:when test="not(@type)">
+                <h3>
+                    <xsl:apply-templates/>
+                </h3>
+            </xsl:when>
+            <xsl:when test="tei:orig">
                 <h3>
                     <xsl:apply-templates/>
                 </h3>
@@ -126,6 +141,11 @@
                     <xsl:apply-templates/>
                 </h4>
             </xsl:when>
+            <xsl:when test="tei:orig">
+                <h4>
+                    <xsl:apply-templates/>
+                </h4>
+            </xsl:when>
 	    <!--<xsl:otherwise>
                 <h4>
                     <xsl:apply-templates/>
@@ -148,6 +168,11 @@
                 </h5>
             </xsl:when>
             <xsl:when test="not(@type)">
+                <h5>
+                    <xsl:apply-templates/>
+                </h5>
+            </xsl:when>
+            <xsl:when test="tei:orig">
                 <h5>
                     <xsl:apply-templates/>
                 </h5>
