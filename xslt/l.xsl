@@ -23,84 +23,84 @@
     <xsl:template match="tei:l">
         <xsl:choose>
             <xsl:when test="@rend = 'align-last-right'">
-                <p class="align-last-right">
+                <div class="align-last-right">
                     <xsl:apply-templates/>
-                </p>
+                </div>
             </xsl:when>
             <xsl:when test="@rend = 'indent1'">
-                <p class="indent1">
+                <div class="indent1">
                     <xsl:apply-templates/>
-                </p>
+                </div>
             </xsl:when>
             <xsl:when test="@rend = 'indent2'">
-                <p class="indent2">
+                <div class="indent2">
                     <xsl:apply-templates/>
-                </p>
+                </div>
             </xsl:when>
             <xsl:when test="@rend = 'indent3'">
-                <p class="indent3">
+                <div class="indent3">
                     <xsl:apply-templates/>
-                </p>
+                </div>
             </xsl:when>
             <xsl:when test="@rend = 'indent4'">
-                <p class="indent4">
+                <div class="indent4">
                     <xsl:apply-templates/>
-                </p>
+                </div>
             </xsl:when>
             <xsl:when test="@rend = 'indent5'">
-                <p class="indent5">
+                <div class="indent5">
                     <xsl:apply-templates/>
-                </p>
+                </div>
             </xsl:when>
             <xsl:when test="@rend = 'indent6'">
-                <p class="indent6">
+                <div class="indent6">
                     <xsl:apply-templates/>
-                </p>
+                </div>
             </xsl:when>
             <xsl:when test="@rend = 'indent7'">
-                <p class="indent7">
+                <div class="indent7">
                     <xsl:apply-templates/>
-                </p>
+                </div>
             </xsl:when>
             <xsl:when test="@rend = 'indent8'">
-                <p class="indent8">
+                <div class="indent8">
                     <xsl:apply-templates/>
-                </p>
+                </div>
             </xsl:when>
             <xsl:when test="@rend = 'indent9'">
-                <p class="indent9">
+                <div class="indent9">
                     <xsl:apply-templates/>
-                </p>
+                </div>
             </xsl:when>
             <xsl:when test="@rend = 'indent10'">
-                <p class="indent10">
+                <div class="indent10">
                     <xsl:apply-templates/>
-                </p>
+                </div>
             </xsl:when>
             <xsl:when test="@rend = 'indent11'">
-                <p class="indent11">
+                <div class="indent11">
                     <xsl:apply-templates/>
-                </p>
+                </div>
             </xsl:when>
             <xsl:when test="@rend = 'indent12'">
-                <p class="indent12">
+                <div class="indent12">
                     <xsl:apply-templates/>
-                </p>
+                </div>
             </xsl:when>
             <xsl:when test="@rend = 'indent13'">
-                <p class="indent13">
+                <div class="indent13">
                     <xsl:apply-templates/>
-                </p>
+                </div>
             </xsl:when>
             <xsl:when test="@rend = 'indent14'">
-                <p class="indent14">
+                <div class="indent14">
                     <xsl:apply-templates/>
-                </p>
+                </div>
             </xsl:when>
             <xsl:when test="@rend = 'indent15'">
-                <p class="indent15">
+                <div class="indent15">
                     <xsl:apply-templates/>
-                </p>
+                </div>
             </xsl:when>
             <xsl:otherwise>
                 <div class="verse-line"><xsl:apply-templates/></div>
