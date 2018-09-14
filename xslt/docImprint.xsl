@@ -20,26 +20,11 @@
         </xd:desc>
     </xd:doc>
     <xsl:template match="tei:docImprint">
-        <xsl:for-each select=".">
-            <p>
-                <xsl:apply-templates/>
-                <br/>
-            </p>
-        </xsl:for-each>
-        <!--<p>
-            <xsl:for-each select="tei:publisher">
-                <xsl:apply-templates/>
-                <br/>
-            </xsl:for-each>
-        </p>
-        <p>
-            <xsl:for-each select="tei:pubPlace">
-                <xsl:apply-templates/>
-                <br/>
-            </xsl:for-each>
-        </p>
-        <p>
-            <xsl:apply-templates select="tei:docDate"/>
-        </p>-->
+        <xsl:for-each select="child::node()">
+          <p>
+             <xsl:apply-templates/>
+             <br/>
+          </p>
+	</xsl:for-each>
     </xsl:template>
 </xsl:stylesheet>
