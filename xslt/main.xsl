@@ -233,9 +233,16 @@
                                             finansieret af <xsl:value-of
                                                 select="tei:teiHeader//tei:titleStmt/tei:funder"
                                             /></p>
-                                        <p> Redaktør: <xsl:value-of
+                                        <p> Redaktør: 
+                                            <xsl:for-each select="tei:teiHeader//tei:titleStmt/tei:editor">
+                                                <xsl:value-of select="tei:name//tei:forename"/>
+                                                <xsl:text> </xsl:text>
+                                                <xsl:value-of select="tei:name//tei:surname"/>
+                                                <xsl:if test="position() != last()">, </xsl:if>
+                                                <xsl:if test="position() = last() and child::node() != 'empty'">. </xsl:if>
+                                            </xsl:for-each><!--<xsl:value-of
                                                 select="tei:teiHeader//tei:editor/tei:name/@xml:id"
-                                            /></p>
+                                            />--></p>
                                         <p> Dokumentets historik: </p>
                                     </div>
                                     <div>
