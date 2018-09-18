@@ -61,7 +61,7 @@
     <xsl:include href="projectDesc.xsl"/>
     <xsl:include href="q.xsl"/>
     <xsl:include href="ref.xsl"/>
-    <xsl:include href="ref.xsl"/>
+    <xsl:include href="reg.xsl"/>
     <xsl:include href="samplingDecl.xsl"/>
     <xsl:include href="sealDesc.xsl"/>
     <xsl:include href="signed.xsl"/>
