@@ -20,6 +20,27 @@
         </xd:desc>
     </xd:doc>
     <xsl:template match="tei:figure">
-        <div class="figure"><xsl:apply-templates/></div>
+        <div class="figure">
+            <xsl:if test="tei:pb">
+                <xsl:apply-templates select="tei:pb"/>
+            </xsl:if>
+            <p class="editorial">
+                <strong>Illustration </strong>
+                <xsl:value-of select="tei:desc"/>
+            </p>
+            <xsl:if test="tei:head | tei:p">
+                <p class="editorial">
+                    <strong>Tekst </strong>
+                </p>
+                <xsl:choose>
+                    <xsl:when test="tei:head">
+                        <xsl:apply-templates select="tei:head | tei:pb"/>
+                    </xsl:when>
+                    <xsl:when test="tei:p">
+                        <xsl:apply-templates select="tei:p | tei:pb"/>
+                    </xsl:when>
+                </xsl:choose>
+            </xsl:if>
+        </div>
     </xsl:template>
 </xsl:stylesheet>

@@ -12,6 +12,7 @@
     <xsl:include href="bibl.xsl"/>
     <xsl:include href="body.xsl"/>
     <xsl:include href="byline.xsl"/>
+    <xsl:include href="c.xsl"/>
     <xsl:include href="cit.xsl"/>
     <xsl:include href="closer.xsl"/>
     <xsl:include href="condition.xsl"/>

@@ -26,7 +26,7 @@
                 <xsl:value-of select="@xml:id"/>
             </xsl:attribute>
             <xsl:apply-templates
-                select="tei:head | tei:div | tei:p | tei:lg | tei:list | tei:epigraph | tei:sp | tei:table | tei:cit"
+                select="tei:figure | tei:head | tei:div | tei:p | tei:lg | tei:list | tei:epigraph | tei:sp | tei:table | tei:cit"
             />
         </div>
     </xsl:template>
@@ -100,7 +100,7 @@
             <h3>
                 <xsl:apply-templates select="tei:head"/>
             </h3>
-            <xsl:apply-templates select="tei:div | tei:lg | tei:p | tei:signed"/>
+            <xsl:apply-templates select="tei:div | tei:figure | tei:lg | tei:p | tei:signed"/>
         </div>
     </xsl:template>
 
