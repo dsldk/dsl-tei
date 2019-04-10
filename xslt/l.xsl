@@ -27,6 +27,11 @@
                     <xsl:apply-templates/>
                 </div>
             </xsl:when>
+            <xsl:when test="@rend = 'indent'">
+                <div class="indent">
+                    <xsl:apply-templates/>
+                </div>
+            </xsl:when>
             <xsl:when test="@rend = 'indent1'">
                 <div class="indent1">
                     <xsl:apply-templates/>
