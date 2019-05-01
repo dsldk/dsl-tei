@@ -27,7 +27,7 @@
                         <xsl:value-of select="@xml:id"/>:
                     </strong>
                     <xsl:text> </xsl:text>
-                    <xsl:apply-templates select="tei:msDesc"/>
+                    <xsl:apply-templates select="tei:msDesc | tei:bibl"/>
                 </span>
             </p>
         </div>

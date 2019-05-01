@@ -27,7 +27,11 @@
                 <xsl:attribute name="id">
                     <xsl:value-of select="@n"/>
                 </xsl:attribute>
-                <xsl:value-of select="@ed"/>
+                <a>
+                    <xsl:attribute name="title">
+                        <xsl:value-of select="@ed"/>
+                    </xsl:attribute>
+                </a>
                 <xsl:value-of select="@n"/>
             </span>
         </span>
