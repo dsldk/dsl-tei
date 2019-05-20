@@ -41,6 +41,11 @@
             <xsl:apply-templates/>
         </em>
     </xsl:template>
+    <xsl:template match="tei:orig/tei:title">
+        <em>
+            <xsl:apply-templates/>
+        </em>
+    </xsl:template>
     <xsl:template match="tei:quote/tei:title">
         <strong>
             <xsl:apply-templates/>

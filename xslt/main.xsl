@@ -157,7 +157,7 @@
                                 </xsl:variable>
                                 <li>
                                     <a href="#{$section-id}">
-                                        <xsl:value-of select="tei:head[@type = 'add']"/>
+					    <xsl:value-of select="tei:head[@type = 'add'] | tei:head/tei:reg"/>
                                     </a>
                                 </li>
                             </xsl:for-each>
@@ -171,7 +171,7 @@
                                         <xsl:if test="@n">
                                             <b><xsl:value-of select="@n"/>&#8194;</b>
                                         </xsl:if>
-                                        <xsl:value-of select="tei:head[@type = 'add']"/>
+					<xsl:value-of select="tei:head[@type = 'add'] | tei:head/tei:reg"/>
                                     </a>
                                     <!-- If there's a subsection -->
                                     <xsl:if test="tei:div">
@@ -189,7 +189,7 @@
                                                   <b>
                                                   <xsl:value-of select="@n"/>&#8194; </b>
                                                   </xsl:if>
-                                                  <xsl:value-of select="tei:head[@type = 'add']"/>
+						  <xsl:value-of select="tei:head[@type = 'add'] | tei:head/tei:reg"/>
                                                   </a>
                                                 </li>
                                             </xsl:for-each>
