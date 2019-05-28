@@ -157,7 +157,8 @@
                                 </xsl:variable>
                                 <li>
                                     <a href="#{$section-id}">
-					    <xsl:value-of select="tei:head[@type = 'add'] | tei:head/tei:reg"/>
+                                        <xsl:value-of
+                                            select="tei:head[@type = 'add'] | tei:head/tei:reg"/>
                                     </a>
                                 </li>
                             </xsl:for-each>
@@ -171,7 +172,8 @@
                                         <xsl:if test="@n">
                                             <b><xsl:value-of select="@n"/>&#8194;</b>
                                         </xsl:if>
-					<xsl:value-of select="tei:head[@type = 'add'] | tei:head/tei:reg"/>
+                                        <xsl:value-of
+                                            select="tei:head[@type = 'add'] | tei:head/tei:reg"/>
                                     </a>
                                     <!-- If there's a subsection -->
                                     <xsl:if test="tei:div">
@@ -189,8 +191,48 @@
                                                   <b>
                                                   <xsl:value-of select="@n"/>&#8194; </b>
                                                   </xsl:if>
-						  <xsl:value-of select="tei:head[@type = 'add'] | tei:head/tei:reg"/>
+                                                  <xsl:value-of
+                                                  select="tei:head[@type = 'add'] | tei:head/tei:reg"
+                                                  />
                                                   </a>
+                                                </li>
+                                            </xsl:for-each>
+                                        </ul>
+                                    </xsl:if>
+                                </li>
+                            </xsl:for-each>
+                            <xsl:for-each select="//tei:back/tei:div">
+                                <xsl:variable name="section-id">
+                                    <xsl:value-of select="@xml:id"/>
+                                </xsl:variable>
+                                <li>
+                                    <a href="#{$section-id}">
+                                        <xsl:if test="@n">
+                                            <b><xsl:value-of select="@n"/>&#8194;</b>
+                                        </xsl:if>
+                                        <xsl:value-of
+                                            select="tei:head[@type = 'add'] | tei:head/tei:reg"/>
+                                    </a>
+                                    <!-- If there's a subsection -->
+                                    <xsl:if test="tei:div">
+                                        <ul class="dropdown-container">
+                                            <button class="dropbtn">
+                                                <i class="fa fa-caret-down"/>
+                                            </button>
+                                            <xsl:for-each select="tei:div">
+                                                <xsl:variable name="subsection-id">
+                                                    <xsl:value-of select="@xml:id"/>
+                                                </xsl:variable>
+                                                <li>
+                                                    <a href="#{$subsection-id}">
+                                                        <xsl:if test="@n">
+                                                            <b>
+                                                                <xsl:value-of select="@n"/>&#8194; </b>
+                                                        </xsl:if>
+                                                        <xsl:value-of
+                                                            select="tei:head[@type = 'add'] | tei:head/tei:reg"
+                                                        />
+                                                    </a>
                                                 </li>
                                             </xsl:for-each>
                                         </ul>
@@ -234,13 +276,15 @@
                                             finansieret af <xsl:value-of
                                                 select="tei:teiHeader//tei:titleStmt/tei:funder"
                                             /></p>
-                                        <p> Redaktør: 
-                                            <xsl:for-each select="tei:teiHeader//tei:titleStmt/tei:editor">
+                                        <p> Redaktør: <xsl:for-each
+                                                select="tei:teiHeader//tei:titleStmt/tei:editor">
                                                 <xsl:value-of select="tei:name//tei:forename"/>
                                                 <xsl:text> </xsl:text>
                                                 <xsl:value-of select="tei:name//tei:surname"/>
                                                 <xsl:if test="position() != last()">, </xsl:if>
-                                                <xsl:if test="position() = last() and child::node() != 'empty'">. </xsl:if>
+                                                <xsl:if
+                                                  test="position() = last() and child::node() != 'empty'"
+                                                  >. </xsl:if>
                                             </xsl:for-each><!--<xsl:value-of
                                                 select="tei:teiHeader//tei:editor/tei:name/@xml:id"
                                             />--></p>
