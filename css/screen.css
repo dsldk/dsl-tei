@@ -110,7 +110,7 @@ li.divider{
     border-bottom: none;
     color: #364149;
     display: block;
-    overflow: scroll;
+    overflow: auto;
     padding: 5px 0 0 0;
     text-decoration: none;
     text-overflow: ellipsis;
