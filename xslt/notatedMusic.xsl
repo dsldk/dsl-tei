@@ -21,7 +21,7 @@
     
     <xsl:template match="tei:notatedMusic">
         <!-- MEI-filer læses fra github indtil videre. Ændres til endelig placering -->
-        <xsl:variable name="mei_base" select="'https://raw.githubusercontent.com/dsldk/salmer_mei/master/data/'"/>
+	<xsl:variable name="mei_base" select="'https://raw.githubusercontent.com/dsldk/middelaldertekster/master/data/mei/'"/>
         <!-- Hvis alle filer ligger i samme mappe, brug -->
         <!-- <xsl:variable name="mei_dir" select="''"/> -->
         <!-- i stedet.                                  -->
@@ -133,9 +133,9 @@
         <xsl:if test="//tei:notatedMusic">
             
             <!-- TO DO: Change relative paths to whatever is the right place... -->
-            <xsl:variable name="mei_js_base" select="'js/'"/>
-            <xsl:variable name="mei_css_base" select="'style/'"/>
-            <xsl:variable name="mei_xslt_base" select="'xsl/'"/>
+	    <xsl:variable name="mei_js_base" select="'tools/js/'"/>
+	    <xsl:variable name="mei_css_base" select="'tools/style/'"/>
+	    <xsl:variable name="mei_xslt_base" select="'tools/xsl/'"/>
             
             <!-- External JS libraries -->
             <link rel="stylesheet" href="http://code.jquery.com/ui/1.12.1/themes/smoothness/jquery-ui.css"/>
