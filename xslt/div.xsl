@@ -26,7 +26,7 @@
                 <xsl:value-of select="@xml:id"/>
             </xsl:attribute>
             <xsl:apply-templates
-                select="tei:figure | tei:head | tei:div | tei:p | tei:lg | tei:list | tei:epigraph | tei:sp | tei:table | tei:cit"
+                select="tei:figure | tei:head | tei:div | tei:p | tei:lg | tei:list | tei:epigraph | tei:sp | tei:table | tei:cit | tei:notatedMusic"
             />
         </div>
     </xsl:template>
