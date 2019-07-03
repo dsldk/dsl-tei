@@ -1277,7 +1277,7 @@ følgende måde:
 
 	... <ref target="14091009001">14091009001</ref> ...
 
-__Normalisering af henvisninger__. I visse tilfælde kan det være
+**Normalisering af henvisninger**. I visse tilfælde kan det være
 praktisk at lade originale henvisninger supplere med moderne
 konventioner. Til dette formål anvendes hhv. elementerne `orig` til
 originalformen og `reg` til den normaliserede form. I nedenstående
