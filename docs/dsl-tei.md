@@ -1277,19 +1277,24 @@ følgende måde:
 
 	... <ref target="14091009001">14091009001</ref> ...
 
-Normalisering af henvisninger. I visse tilfælde kan det være praktisk
-at lade originale henvisninger supplere med moderne konventioner. I
-nedenstående eksempel fra Thomissøns, _Den danske Psalmebog_ (1569) 
-ledsages den oprindelige Bibelhenvisning _Luc. 21._ (opmærket med
-`orig`) af en normaliseret form (opmærket med `reg`):
+__Normalisering af henvisninger__. I visse tilfælde kan det være
+praktisk at lade originale henvisninger supplere med moderne
+konventioner. Til dette formål anvendes hhv. elementerne `orig` til
+originalformen og `reg` til den normaliserede form. I nedenstående
+eksempel fra Hans Thomissøn, _Den danske Psalmebog_ (1569) ledsages
+den oprindelige Bibelhenvisning _Luc. 21._ (opmærket med `orig`) af en
+normaliseret og konventionel form _Luk. 21_ (opmærket med `reg`):
 
 ```
-... Jesu Christi tilkommelse oc Dommedag ere nær / <lb/>(<ref target="#luk-21">
-                                <orig>Luc. 21.</orig>
-                                <reg>Luk. 21</reg>
-                            </ref>) Derfor effterdi at ...
+... Jesu Christi tilkommelse oc Dommedag ere nær / 
+			(<ref target="#luk-21">
+                            <orig>Luc. 21.</orig>
+                            <reg>Luk. 21</reg>
+                         </ref>) Derfor effterdi at ...
 
 ```
+
+
 
 
 #### 4.3.5.13 Sideskift i forlæg
