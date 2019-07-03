@@ -1,3 +1,7 @@
+# Bibelhenvisninger
+
+Henvisninger på dansk til Bibelen følger standarden fra 1998.
+
 ## Det Gamle Testamente  
   
 Første Mosebog (1 Mos)    
