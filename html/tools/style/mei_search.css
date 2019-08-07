@@ -114,12 +114,12 @@ a.paging, a.paging:visited, a.paging:active {
 }
 
 #pnames, #contour {
-    width: 130px;
+    width: 220px;
     text-align: left;
 }
 
 #pitch_form label, #contour_form label {
-    width: 100px;
+    width: 125px;
     display: inline-block;
 }
 
@@ -134,16 +134,27 @@ a.paging, a.paging:visited, a.paging:active {
 }
 
 #pQueryOut {
-    background-color: #f4f4fa;
-    width: 392px;
-    height: 80px;
+/*   
+    background-color: #f4f4fa; 
     margin: 5px auto;
+    border: 2px solid #000;  
+*/
+    background-color: #fff; 
+    border: 2px solid #333;
+    border-bottom: none;
+    margin: 0 -1px -1px 1px;
+    width: 392px;
+    height: 70px;
     padding: 0 8px;
-    border: 2px solid #000
 }
 
 #pQueryOut svg {
-    margin-top: -12px;
+    margin-top: -5px;
+}
+
+#pQueryOut svg path, #pQueryOut svg {
+    fill: #000;
+    stroke: #000;
 }
 
 #pQueryOut svg .rest {
@@ -167,9 +178,9 @@ a.paging, a.paging:visited, a.paging:active {
 
 #piano .keys {
     width: 392px;
-    padding: 2px 0 0 2px;
+    padding: 1px 0 0 2px;
     overflow: hidden;
-    background: #000;
+    background: #333;
     border-radius: 0 0 4px 4px;
 }
 
