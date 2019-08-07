@@ -25,7 +25,12 @@
             <xsl:attribute name="href">
                 <xsl:value-of select="@target"/>
             </xsl:attribute>
-            <xsl:apply-templates/>
+            <xsl:if test="tei:reg">
+                <xsl:attribute name="title">
+                    <xsl:value-of select="tei:reg"/>
+                </xsl:attribute>
+            </xsl:if>
+            <xsl:apply-templates select="text() | tei:orig"/>
         </a>
     </xsl:template>
 </xsl:stylesheet>
