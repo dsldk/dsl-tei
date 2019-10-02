@@ -1,5 +1,7 @@
 # dsl-tei
 
+En rettelse
+
 I dette repositorium, <https://github.com/dsldk/dsl-tei>, findes materiale til 
 brug i udarbejdelse af udgivelser i Det Danske Sprog- og Litteraturselskab, DSL.
 
