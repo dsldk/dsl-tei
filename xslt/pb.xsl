@@ -21,7 +21,7 @@
     </xd:doc>
     <xsl:template match="tei:pb">
         <span class="legacy-page-break">
-            <span class="page-break-mark">|<!--<xsl:value-of select="@n"/>|--></span>
+            <span class="page-break-mark">|</span>
             <!--This section was used for-->
             <span class="page-break-value">
                 <xsl:attribute name="id">
