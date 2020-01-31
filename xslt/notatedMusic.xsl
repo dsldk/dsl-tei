@@ -55,11 +55,11 @@
             <div>
             <xsl:choose>
                 <xsl:when test="doc-available(concat($mei_base,$mei_dir,$file))">
-                    <div id="{$id}_options" class="mei_options">
-                        <xsl:comment>MEI options menu will be inserted here</xsl:comment>
-                    </div>
                     <div id="{$id}" class="mei">
                         <xsl:comment>SVG will be inserted here</xsl:comment>
+                    </div>
+                    <div id="{$id}_options" class="mei_options">
+                        <xsl:comment>MEI options menu will be inserted here</xsl:comment>
                     </div>
                 </xsl:when>
                 <xsl:otherwise>
