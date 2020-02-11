@@ -121,6 +121,7 @@
                 <link>
                     <xsl:attribute name="src">../js/dropdown.js</xsl:attribute>
                 </link>
+                <xsl:call-template name="notatedMusic_head"/>
             </head>
             <body>
                 <div class="summary">
