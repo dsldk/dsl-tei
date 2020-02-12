@@ -18,11 +18,7 @@
             <xd:copyright>2019, Society for Danish Language and Literature</xd:copyright>
         </xd:desc>
     </xd:doc>
-<<<<<<< HEAD
-    
-=======
  
->>>>>>> origin/notatedmusic
     <xsl:template match="tei:notatedMusic">
         <!-- Læse filer fra salmeserveren: -->
         <!--<xsl:variable name="mei_base" select="'http://salmer.dsl.dk/data/'"/>-->
@@ -57,36 +53,6 @@
                 </xsl:if>
             </xsl:variable>
             <div>
-<<<<<<< HEAD
-                <xsl:choose>
-                    <xsl:when test="doc-available(concat($mei_base,$mei_dir,$file))">
-                        <div id="{$id}" class="mei">
-                            <xsl:comment>SVG will be inserted here</xsl:comment>
-                        </div>
-                        <div id="{$id}_options" class="mei_options">
-                            <xsl:comment>MEI options menu will be inserted here</xsl:comment>
-                        </div>
-                    </xsl:when>
-                    <xsl:otherwise>
-                        <div style="border: 1px solid black"> 
-                            <small>
-                                <xsl:value-of select="concat($mei_base,$mei_dir,$file)"/> not found</small>
-                        </div>
-                    </xsl:otherwise>
-                </xsl:choose>
-            </div>
-        </xsl:if>
-    </xsl:template>
-    
-    <xsl:template name="notatedMusic_head">
-        <!-- Include additional header elements if the TEI file contains notated music. -->
-        <xsl:if test="//tei:notatedMusic">
-            
-            <!-- TO DO: Change relative paths to whatever is the right place... -->
-            <xsl:variable name="mei_js_base" select="'http://salmer.dsl.dk/js/'"/>
-            <xsl:variable name="mei_css_base" select="'http://salmer.dsl.dk/style/'"/>
-            
-=======
             <xsl:choose>
                 <xsl:when test="doc-available(concat($mei_base,$mei_dir,$file))">
                     <div id="{$id}" class="mei">
@@ -115,7 +81,6 @@
             <xsl:variable name="mei_js_base" select="'http://salmer.dsl.dk/js/'"/>
             <xsl:variable name="mei_css_base" select="'http://salmer.dsl.dk/style/'"/>
 
->>>>>>> origin/notatedmusic
             <!-- External JS libraries -->
             <link rel="stylesheet" href="http://code.jquery.com/ui/1.12.1/themes/smoothness/jquery-ui.css"/>
             <!-- Note highlighting only works with jQuery 3+ -->
