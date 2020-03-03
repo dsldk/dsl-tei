@@ -88,7 +88,7 @@
             <script type="text/javascript" src="http://code.jquery.com/ui/1.12.1/jquery-ui.js"><!-- jquery UI --></script>
             
             <!-- Local JS libraries -->
-            <script type="text/javascript" src="{$mei_js_base}libs/verovio/2.0.2-95c61b2/verovio-toolkit.js"> </script>
+            <script type="text/javascript" src="{$mei_js_base}libs/verovio/2.5.0/verovio-toolkit.js"> </script>
             <script type="text/javascript" src="{$mei_js_base}MeiAjax.js"> </script>
             <!-- MIDI -->        
             <!-- 
