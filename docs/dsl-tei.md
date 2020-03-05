@@ -472,6 +472,10 @@ Under `profileDesc`
 `textClass`
 :	genre, tema
 
+`correspDesc`
+: beskrivelse af afsender-/modtageroplysninger i korrespondance
+
+
 ### 2.3.1 Tid og sted for etablering af teksten (`creation`)
 
 Elementet `creation` indeholder to elementer 
@@ -542,6 +546,24 @@ et eller flere `term`-elementer, som hver især indeholder et nøgleord.
 	    <term> jura </term>
 	  </keywords>
 	</textClass>
+
+### 2.3.4 Korrespondance
+
+Opmærkning af korrespondance skal indeholde et `correspDesc` 
+
+```
+<correspDesc>
+  <correspAction type="sent">
+    <persName>Brahe, Tycho (1546-1601)</persName>
+    <placeName>Helsingborg</placeName>
+    <date when="1571-05-18"/>
+  </correspAction>
+  <correspAction type="received">
+    <persName>Anders Sørensen Vedel</persName>
+    <placeName>empty</placeName>
+  </correspAction>
+</correspDesc>
+```
 
 ## 2.4 `revisionDesc`
 
@@ -1035,6 +1057,22 @@ På tekstniveau forekommer følgende elementer:
 `title`
 :	titel på et værk, se 4.X.X.X
 
+`opener`
+: samleelement til annotering af åbningsformular i breve
+
+`closer`
+: samleelement til annotering af afslutningsformular i breve
+
+`dateline`
+: datering og stedfæstelse typisk i begyndelsen eller slutningen af breve
+
+`salute`
+: hilsen i begyndelsen eller slutningen af breve
+
+`signed`
+: underskrift i breve
+
+
 #### 4.3.5.1 Fremhævet tekst og andre typografiske afvigelser
 
 Til gengivelse af fremhævet tekst benyttes elementet `hi`
@@ -1294,9 +1332,6 @@ normaliseret og konventionel form _Luk. 21_ (opmærket med `reg`):
 
 ```
 
-
-
-
 #### 4.3.5.13 Sideskift i forlæg
 
 Sideskift i forlæg markeres med det lukkede element `pb` (*page-break*).
@@ -1331,6 +1366,10 @@ Et eksempel fra Georg Brandes *Hovedstrømninger*, bd. 1:
 
 	Martensens »Speculative Dogmatik« afløses af den 
 	»<bibl ref="martensen-den-christelige-dogmatik">Christelige Dogmatik</bibl>«.
+
+#### 4.3.5.15 Breve
+
+
 
 #### 4.3.5.X Værktitler
 
