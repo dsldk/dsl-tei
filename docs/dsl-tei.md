@@ -1072,6 +1072,8 @@ På tekstniveau forekommer følgende elementer:
 `signed`
 : underskrift i breve
 
+`postscript`
+: indeholder et postscriptum til et brev
 
 #### 4.3.5.1 Fremhævet tekst og andre typografiske afvigelser
 
