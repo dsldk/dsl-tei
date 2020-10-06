@@ -1286,12 +1286,14 @@ Marginalnoter mærkes på samme måde med `@place` udfyldt med hhv.
 #### 4.3.5.10 Personnavne
 
 Personnavne opmærkes i den løbende tekst vha. elementet `persName` med
-attributtet `@ref` (*reference*) udfyldt med en unik id. Et eksempel fra Georg
-Brandes, Hovedstrømninger 1
+attributtet `@key` (_externally-defined means of identifying the
+entity (or entities) being named, using a coded value of some
+kind_) udfyldt med en unik id. Et eksempel fra Georg Brandes,
+Hovedstrømninger 1
 
 	I alle vore litterære Bevægelser i dette Aarhundredes Begyndelse, 
-	i <persName ref="adam-oehlenschlager">Oehlenschlägers</persName> 
-	Poesier, i <persName ref="n-f-s-grundtvig">Grundtvigs</persName>
+	i <persName key="adam-oehlenschlager">Oehlenschlägers</persName> 
+	Poesier, i <persName key="n-f-s-grundtvig">Grundtvigs</persName>
 	Prædikener, i ... 
 
 **Fiktive personer**. Såfremt der er behov for at opmærke **fiktive
