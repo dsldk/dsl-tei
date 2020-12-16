@@ -1373,6 +1373,22 @@ Et eksempel fra Georg Brandes *Hovedstrømninger*, bd. 1:
 
 #### 4.3.5.15 Breve
 
+Med elementet `correspDesc` beskrives de handlinger, der karakteriserer
+brevveksling
+
+```xml
+<correspDesc>
+  <correspAction type="sent">
+    <persName>Brahe, Tycho (1546-1601)</persName>
+    <placeName>Rostock</placeName>
+    <date when="1568-01-14"/>
+  </correspAction>
+  <correspAction type="received">
+    <persName>Johannes Aalborg</persName>
+    <placeName>empty</placeName>
+  </correspAction>
+</correspDesc>
+```
 
 
 #### 4.3.5.X Værktitler
