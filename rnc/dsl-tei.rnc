@@ -165,6 +165,12 @@ persName =
            }
          | element surname { xsd:NCName })+
     }
+placeName =
+    element placeName {
+        attribute key { xsd:NCName }?,
+        attribute ref { text }?,
+        text
+    }
 extent =
     element extent {
         (text
@@ -198,16 +204,22 @@ bibl =
         attribute xml:id { xsd:NCName }?,
         (text | hi | persName | title)+
     }
-placeName =
-    element placeName {
-        attribute key { xsd:NCName }?,
-        attribute ref { xsd:NCName }?,
-        text
-    }
+
 \list =
     element list {
         attribute rend { xsd:NCName },
         element item { (text | app | ex | hi | \list | pb)+ }+
+    }
+head =
+    element head {
+        (text
+         | hi
+         | pb
+         | element orig { (text | app | hi | lb | pb | persName | placeName)+ }
+         | element reg {
+                      attribute xml:lang { xsd:NCName }?,
+                      text
+         })+
     }
 hi =
     element hi {
@@ -219,28 +231,17 @@ hi =
         attribute type { xsd:NCName }?,
         attribute xml:id { xsd:NCName }?,
         attribute xml:lang { xsd:NCName }?,
-        (cit
+        (app 
+         | cit
          | \div
          | \list
          | p
          | lb
+         | lg
          | pb
          | figure
          | table
-         | element head {
-               (text
-                | hi
-                | pb
-                | element orig { (text | app | hi | lb | pb | persName | placeName)+ }
-                | element reg {
-                      attribute xml:lang { xsd:NCName }?,
-                      text
-                  })+
-           }
-         | element lg {
-               attribute rend { xsd:NCName }?,
-               ( app | l)+
-           }
+         | head
          | opener)*,
         closer?
     }
@@ -252,12 +253,12 @@ cit =
 opener =
     element opener {
     attribute rend { xsd:NCName }?,
-    (text | app | hi | pb | persName | placeName )+
+    (text | app | hi | lb | pb | persName | placeName )+
     }
 closer =
     element closer {
     attribute rend { xsd:NCName }?,
-    (text | app | dateline | salute | hi | lb | pb | persName | placeName )+
+    (text | app | dateline | salute | signed | hi | lb | pb | persName | placeName )+
     }
 dateline =
     element dateline {
@@ -271,7 +272,12 @@ salute =
     | lb
     | pb)+
     }
-
+signed =
+    element signed {
+    (text
+    | lb
+    | pb)+
+    }
 q = element q { (text | hi)+ }
 ex = element ex { xsd:NCName }
 l =
@@ -292,6 +298,11 @@ l =
          | placeName
          | element damage { xsd:NCName })+
     }
+lg = 
+    element lg {
+        attribute rend { xsd:NCName }?,
+        (app | l)+
+    }
 pb =
     element pb {
         attribute ed { xsd:NCName }?,
@@ -310,6 +321,7 @@ p =
          | figure
          | hi
          | lb
+         | lg
          | note
          | pb
          | persName
