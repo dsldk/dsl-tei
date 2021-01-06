@@ -106,7 +106,7 @@ start =
                  | element langUsage {
                        element language {
                            attribute ident { xsd:NCName }
-                       }
+                       }+
                    }
                  | element textClass {
                        element keywords {
@@ -163,13 +163,16 @@ persName =
                attribute type { xsd:NCName },
                xsd:NCName
            }
-         | element surname { xsd:NCName })+
+         | element surname { xsd:NCName }
+         | app
+         | foreign
+         | hi)+
     }
 placeName =
     element placeName {
         attribute key { xsd:NCName }?,
         attribute ref { text }?,
-        text
+        (text | app | foreign | hi)+
     }
 extent =
     element extent {
@@ -204,45 +207,34 @@ bibl =
         attribute xml:id { xsd:NCName }?,
         (text | hi | persName | title)+
     }
-
 \list =
     element list {
         attribute rend { xsd:NCName },
         element item { (text | app | ex | hi | \list | pb)+ }+
     }
-head =
-    element head {
-        (text
-         | hi
-         | pb
-         | element orig { (text | app | hi | lb | pb | persName | placeName)+ }
-         | element reg {
-                      attribute xml:lang { xsd:NCName }?,
-                      text
-         })+
+head = element head { (text | app | hi | pb | orig | reg)+ }
+orig = element orig { (text | app | hi | lb | pb | persName | placeName)+ }
+reg =
+    element reg {
+        attribute xml:lang { xsd:NCName }?,
+        text
+    }
+foreign =
+    element foreign {
+        attribute xml:lang { xsd:NCName },
+        (text | ex | foreign | hi | lb | pb | persName | placeName)+
     }
 hi =
     element hi {
         attribute rend { xsd:NCName }?,
-        (text | app | pb | persName | placeName)+
+        (text | app | foreign | hi | pb | persName | placeName)+
     }
 \div =
     element div {
         attribute type { xsd:NCName }?,
         attribute xml:id { xsd:NCName }?,
         attribute xml:lang { xsd:NCName }?,
-        (app 
-         | cit
-         | \div
-         | \list
-         | p
-         | lb
-         | lg
-         | pb
-         | figure
-         | table
-         | head
-         | opener)*,
+        (app | cit | \div | \list | p | lb | lg | pb | figure | table | head | opener)*,
         closer?
     }
 cit =
@@ -252,32 +244,17 @@ cit =
     }
 opener =
     element opener {
-    attribute rend { xsd:NCName }?,
-    (text | app | hi | lb | pb | persName | placeName )+
+        attribute rend { xsd:NCName }?,
+        (text | app | foreign | hi | lb | pb | persName | placeName)+
     }
 closer =
     element closer {
-    attribute rend { xsd:NCName }?,
-    (text | app | dateline | salute | signed | hi | lb | pb | persName | placeName )+
+        attribute rend { xsd:NCName }?,
+        (text | app | foreign | dateline | salute | signed | hi | lb | pb | persName | placeName)+
     }
-dateline =
-    element dateline {
-    (text
-    | lb
-    | pb)+
-    }
-salute =
-    element salute {
-    (text
-    | lb
-    | pb)+
-    }
-signed =
-    element signed {
-    (text
-    | lb
-    | pb)+
-    }
+dateline = element dateline { (text | lb | persName | placeName | pb)+ }
+salute = element salute { (text | lb | pb)+ }
+signed = element signed { (text | lb | pb)+ }
 q = element q { (text | hi)+ }
 ex = element ex { xsd:NCName }
 l =
@@ -290,6 +267,7 @@ l =
          | cit
          | ex
          | figure
+         | foreign
          | hi
          | lb
          | note
@@ -298,7 +276,7 @@ l =
          | placeName
          | element damage { xsd:NCName })+
     }
-lg = 
+lg =
     element lg {
         attribute rend { xsd:NCName }?,
         (app | l)+
@@ -319,6 +297,7 @@ p =
          | cit
          | ex
          | figure
+         | foreign
          | hi
          | lb
          | lg
@@ -326,15 +305,15 @@ p =
          | pb
          | persName
          | placeName
-         | element damage { xsd:NCName })+
+         | element damage { text })+
     }
 lb = element lb { empty }
 app =
     element app {
         element lem {
             attribute wit { text }?,
-            attribute resp { text}?,
-            (text | app | ex | hi | l | lb | pb | persName | placeName)+
+            attribute resp { text }?,
+            (text | app | ex | foreign | hi | l | lb | p | pb | persName | placeName)+
         },
         element rdg {
             attribute wit { text }?,
@@ -346,26 +325,26 @@ note =
     element note {
         attribute type { xsd:NCName }?,
         attribute xml:id { xsd:NCName }?,
-        (text | q)+
+        (text | ex | hi | p | q)+
     }
 figure =
     element figure {
         attribute n { xsd:integer }?,
         attribute rend { xsd:NCName }?,
         (p
-        | element desc {text}
-        | element graphic {
-            attribute url {text}
-            })+
-        }
+         | element desc { text }
+         | element graphic {
+               attribute url { text }
+           })+
+    }
 table =
     element table {
         element row {
             element cell {
-            attribute role { xsd:NCName }?,
-            attribute cols { xsd:integer }?,
-            attribute rows { xsd:integer }?,
-            (text | app | hi | pb)+
+                attribute role { xsd:NCName }?,
+                attribute cols { xsd:integer }?,
+                attribute rows { xsd:integer }?,
+                (text | app | hi | pb)+
             }+
         }+
     }
