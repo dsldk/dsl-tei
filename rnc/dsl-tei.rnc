@@ -46,15 +46,15 @@ start =
                                        element repository { text }?,
                                        element collection { text }?,
                                        idno,
-                                       element msName { text }+
+                                       element msName { text }*
                                    },
                                    (element physDesc {
                                         element objectDesc {
                                             element supportDesc {
                                                 attribute material { xsd:NCName },
                                                 element support { ab+ },
-                                                extent,
-                                                element condition { ab+ }
+                                                extent?,
+                                                element condition { ab+ }?
                                             },
                                             element layoutDesc { ab+ }?
                                         },
@@ -68,7 +68,7 @@ start =
                                                 attribute type { xsd:NCName },
                                                 ab
                                             }+
-                                        }
+                                        }?
                                     },
                                     element history { ab+ },
                                     element additional { listBibl })?
@@ -90,7 +90,7 @@ start =
                         attribute xml:id { xsd:NCName }?,
                         element desc { xsd:NCName }
                     }
-                }
+                }?
             }?,
             element profileDesc {
                 element correspDesc {
