@@ -8,10 +8,8 @@ start =
                     title+,
                     element author { text }?,
                     element editor {
-                        element name {
-                            attribute xml:id { xsd:NCName },
-                            persName
-                        }
+                        attribute xml:id { xsd:NCName },
+                        text
                     }+,
                     element funder { text }
                 },
@@ -50,6 +48,7 @@ start =
                                    },
                                    (element physDesc {
                                         element objectDesc {
+                                            attribute form { xsd:NCName },
                                             element supportDesc {
                                                 attribute material { xsd:NCName },
                                                 element support { ab+ },
@@ -59,7 +58,9 @@ start =
                                             element layoutDesc { ab+ }?
                                         },
                                         element handDesc {
-                                            element handNote { ab+ }
+                                            element handNote { 
+                                                attribute scribe { xsd:NCName }?,
+                                                ab+ }
                                         },
                                         element additions { ab+ },
                                         element sealDesc {
@@ -79,8 +80,8 @@ start =
                 }
             },
             element encodingDesc {
-                (element samplingDecl { ab },
-                 element projectDesc { ab })?,
+                element samplingDecl { ab }?,
+                element projectDesc { ab }?,
                 element appInfo {
                     element application {
                         attribute ident { xsd:NCName },
@@ -155,6 +156,7 @@ title =
     }
 persName =
     element persName {
+        attribute cert { xsd:NCName }?,
         attribute key { xsd:NCName }?,
         attribute ref { text }?,
         attribute type { xsd:NCName }?,
@@ -170,6 +172,7 @@ persName =
     }
 placeName =
     element placeName {
+        attribute cert { xsd:NCName }?,
         attribute key { xsd:NCName }?,
         attribute ref { text }?,
         (text | app | foreign | hi)+
@@ -193,7 +196,7 @@ date =
         attribute notAfter { xsd:date }?,
         attribute notBefore { xsd:date }?,
         attribute when { xsd:NMTOKEN }?,
-        text
+        (text | note)+
     }
 idno =
     element idno {
@@ -205,7 +208,7 @@ listBibl = element listBibl { bibl+ }
 bibl =
     element bibl {
         attribute xml:id { xsd:NCName }?,
-        (text | hi | persName | title)+
+        (text | hi | persName | placeName | title)+
     }
 \list =
     element list {
