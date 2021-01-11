@@ -11,7 +11,7 @@ start =
                         attribute xml:id { xsd:NCName },
                         text
                     }+,
-                    element funder { text }
+                    element funder { text }+
                 },
                 (extent
                  | element editionStmt {
@@ -151,6 +151,7 @@ start =
     }
 title =
     element title {
+        attribute key { xsd:NCName }?,
         attribute xml:lang { xsd:NCName }?,
         text
     }
@@ -203,7 +204,7 @@ idno =
         attribute type { xsd:NCName }?,
         text
     }
-ab = element ab { (text | bibl | q)+ }
+ab = element ab { (text | ex | hi | bibl | note | persName | placeName | q)+ }
 listBibl = element listBibl { bibl+ }
 bibl =
     element bibl {
@@ -230,7 +231,7 @@ foreign =
 hi =
     element hi {
         attribute rend { xsd:NCName }?,
-        (text | app | foreign | hi | pb | persName | placeName)+
+        (text | app | foreign | hi | note | pb | persName | placeName | title)+
     }
 \div =
     element div {
@@ -258,7 +259,7 @@ closer =
 dateline = element dateline { (text | lb | persName | placeName | pb)+ }
 salute = element salute { (text | lb | pb)+ }
 signed = element signed { (text | lb | pb)+ }
-q = element q { (text | hi)+ }
+q = element q { (text | hi | persName | placeName | title)+ }
 ex = element ex { xsd:NCName }
 l =
     element l {
@@ -308,6 +309,7 @@ p =
          | pb
          | persName
          | placeName
+         | title
          | element damage { text })+
     }
 lb = element lb { empty }
@@ -316,7 +318,7 @@ app =
         element lem {
             attribute wit { text }?,
             attribute resp { text }?,
-            (text | app | ex | foreign | hi | l | lb | p | pb | persName | placeName)+
+            (text | app | ex | foreign | hi | l | lb | note | p | pb | persName | placeName | title)+
         },
         element rdg {
             attribute wit { text }?,
@@ -328,7 +330,7 @@ note =
     element note {
         attribute type { xsd:NCName }?,
         attribute xml:id { xsd:NCName }?,
-        (text | ex | hi | p | q)+
+        (text | ex | hi | p | persName | placeName | q | title)+
     }
 figure =
     element figure {
