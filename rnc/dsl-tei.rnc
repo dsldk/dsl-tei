@@ -133,9 +133,11 @@ start =
                 (element titlePage {
                      attribute xml:id { xsd:NCName }?,
                      element docTitle {
+                        attribute rend { xsd:NCName }?,
                          element titlePart {
                              attribute type { xsd:NCName }?,
-                             (text | hi | \list | pb)+
+                             attribute rend { xsd:NCName }?,
+                             (text | hi | lb | \list | pb)+
                          }+
                      },
                      (element byline { text }
