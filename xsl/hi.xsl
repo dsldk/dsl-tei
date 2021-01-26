@@ -41,6 +41,11 @@
                     <xsl:apply-templates/>
                 </span>
             </xsl:when>
+            <xsl:when test="@rend = 'italic'">
+                <em>
+                    <xsl:apply-templates/>
+                </em>
+            </xsl:when>
             <xsl:when test="@rend = 'italics'">
                 <em>
                     <xsl:apply-templates/>
