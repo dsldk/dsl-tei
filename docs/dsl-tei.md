@@ -898,16 +898,18 @@ Elementet `lg` kan udvides med attributtet `@rend` og værdierne
 `center` og `right` for hhv. centreret og højrestillet tekst.
 
 
------------------------------------------------------------------
+--------------------------------------------------------------------------------
 **Attribut: `@rend`**      **Værdi**    **Betydning**
--------------------------- ------------ ---------------------------
+-------------------------- ------------ ----------------------------------------
                            center        Teksten i `lg` centreres
+
+                           center-it     Teksten i `lg` centreres og kursiveres
 
                            indent[1-10]  Teksten i `lg` indrykkes
 
                            right         Teksten i `lg` højrestilles
 
------------------------------------------------------------------
+---------------------------------------------------------------------------------
 
 For at gengive typografisk ekspressivitet kan et `l`-element forsynes
 med attributtet `@rend`.
@@ -1295,6 +1297,13 @@ Hovedstrømninger 1
 	i <persName key="adam-oehlenschlager">Oehlenschlägers</persName> 
 	Poesier, i <persName key="n-f-s-grundtvig">Grundtvigs</persName>
 	Prædikener, i ... 
+
+Fra Tycho Brahe
+
+```xml
+<l>At <persName key="ptolemaios_klaudios_100">Ptolemæe</persName> tuis, <persName ref="Alfonso 10.">Alphonse</persName>, <persName ref="Copernicus">Copernice</persName> vestris </l>
+
+```
 
 **Fiktive personer**. Såfremt der er behov for at opmærke **fiktive
 personer**, anvendes `persName` med to attributter: 1. `@key` udfyldt
