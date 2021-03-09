@@ -121,7 +121,7 @@
                     <xsl:attribute name="rel">stylesheet</xsl:attribute>
                     <xsl:attribute name="href">../css/screen.css</xsl:attribute>
                     <xsl:attribute name="type">text/css</xsl:attribute>-->
-                    <!--<xsl:attribute name="media">screen</xsl:attribute>-->
+                <!--<xsl:attribute name="media">screen</xsl:attribute>-->
                 <!--</link>-->
                 <link rel="stylesheet" href="../css/styles.css" type="text/css" media=""/>
                 <!--<link>
@@ -133,6 +133,9 @@
                 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"/>
                 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"/>
                 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"/>
+                <!--For Math rendition-->
+                <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"/>
+                <script id="MathJax-script" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"/>
                 <link>
                     <xsl:attribute name="src">../js/dropdown.js</xsl:attribute>
                 </link>
@@ -281,7 +284,8 @@
                     <div class="container">
                         <a class="navbar-brand" href="#">
                             <xsl:value-of
-                                select="tei:teiHeader/tei:fileDesc/tei:titleStmt/tei:title[not(@xml:lang='en')]"/>
+                                select="tei:teiHeader/tei:fileDesc/tei:titleStmt/tei:title[not(@xml:lang = 'en')]"
+                            />
                         </a>
                         <button class="navbar-toggler" type="button" data-toggle="collapse"
                             data-target="#navbarSupportedContent"
@@ -357,6 +361,71 @@
                     </nav>-->
 
 
+                <div class="container bg-light p-3">
+                    <div class="row">
+                        <div class="col">
+                            <h2 class="date-place text-left">
+                                <xsl:value-of select="//tei:creation/tei:date/text()"/>
+                                <xsl:text>. </xsl:text>
+                                <xsl:choose>
+                                    <xsl:when
+                                        test="//tei:creation//tei:placeName[(text() != 'nil') or (text() != 'empty')]">
+                                        <xsl:text> </xsl:text>
+                                        <xsl:value-of
+                                            select="//tei:creation/tei:placeName[(text() != 'nil') or (text() != 'empty')]"
+                                        />
+                                    </xsl:when>
+                                    <xsl:otherwise>
+                                        <xsl:text> </xsl:text>
+                                        <xsl:value-of
+                                            select="//tei:correspAction[@type = 'sent']/tei:placeName"
+                                        />
+                                    </xsl:otherwise>
+                                </xsl:choose>
+                                <!-- Correspondance info here -->
+                                <xsl:if test="//tei:correspDesc">Fra <xsl:value-of
+                                        select="//tei:correspAction[@type = 'sent']/tei:persName"/>
+                                    til <xsl:value-of
+                                        select="//tei:correspAction[@type = 'received']/tei:persName"
+                                    /></xsl:if>
+                                <hr/>
+                            </h2>
+
+                        </div>
+                    </div>
+                    <div/>
+                    <div class="row">
+                        <div class="col small pb-2">
+                            <dl class="row">
+                                <xsl:for-each select="//tei:witness">
+                                    <dt class="col-sm-2">
+                                        <xsl:value-of select="@xml:id"/>
+                                    </dt>
+                                    <dd class="col-sm-10">
+
+                                        <!--Identify the source (manuscript or book)-->
+                                        <xsl:for-each
+                                            select="tei:msDesc/tei:msIdentifier/*[text() != 'empty']">
+                                            <xsl:value-of select="."/>
+                                            <xsl:if test="position() != last()">, </xsl:if>
+                                            <xsl:if
+                                                test="position() = last() and child::node() != 'empty'"
+                                                >. </xsl:if>
+                                        </xsl:for-each>
+
+                                        <!--Display physical description-->
+                                        <xsl:apply-templates select="tei:msDesc/tei:physDesc/tei:ab"/>
+
+                                    </dd>
+
+
+
+                                </xsl:for-each>
+                            </dl>
+
+                        </div>
+                    </div>
+                </div>
                 <div class="container">
                     <!--<div class="content-inner">-->
                     <!--<h1 class="text-center">
@@ -417,7 +486,18 @@
 
                                 </div>-->
                     <!--<div class="text-container">-->
-                    <xsl:apply-templates select="tei:text/*/*"/>
+                    <div class="col">
+                        <div class="my-5">
+                            <xsl:apply-templates select="tei:text/*/*"/>
+                        </div>
+                        <xsl:if test="//tei:app">
+                            <hr/>
+                            <div class="mt-5">
+                                <!--<h2>Kritisk apparat</h2>-->
+                                <xsl:apply-templates select="//tei:app" mode="apparatusCriticus"/>
+                            </div>
+                        </xsl:if>
+                    </div>
                     <!--</div>-->
                     <!--<xsl:if test="//tei:note">
                         <div>
@@ -426,19 +506,12 @@
                                 mode="footnoteApparatus"/>
                         </div>
                     </xsl:if>-->
-                    <xsl:if test="//tei:app">
-                        <hr/>
-                        <div>
-                            <h2>Kritisk apparat</h2>
-                            <xsl:apply-templates select="//tei:app" mode="apparatusCriticus"/>
-                        </div>
-                    </xsl:if>
-                    <xsl:if test="//tei:cit">
+                    <!--<xsl:if test="//tei:cit">
                         <div>
                             <h2>Citater</h2>
                             <xsl:apply-templates select="//tei:cit" mode="quotationApparatus"/>
                         </div>
-                    </xsl:if>
+                    </xsl:if>-->
 
                     <!--<xsl:if test="//tei:note[@type='add']">
                     <div>

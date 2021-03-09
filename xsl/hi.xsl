@@ -59,6 +59,9 @@
             <xsl:when test="@rend = 'initial'">
               <xsl:apply-templates/>
             </xsl:when>
+            <xsl:when test="@rend = 'underline'">
+                <u><xsl:apply-templates/></u>
+            </xsl:when>
         </xsl:choose>
     </xsl:template>
 </xsl:stylesheet>
