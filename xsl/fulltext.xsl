@@ -426,7 +426,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="container">
+                <div class="container text-section">
                     <!--<div class="content-inner">-->
                     <!--<h1 class="text-center">
                         <xsl:choose>
