@@ -524,7 +524,7 @@
                                                 </msDesc>
                                         </witness>
                                         <witness>
-                                                <bibl></bibl>
+                                                <bibl/>
                                         </witness>
                                 </listWit>
                         </sourceDesc>
@@ -544,6 +544,17 @@
                         </appInfo>
                 </encodingDesc>
                 <profileDesc>
+                        <correspDesc>
+                                <correspAction type="sent">
+                                        <persName>Brahe, Tycho (1546-1601)</persName>
+                                        <placeName>Rostock</placeName>
+                                        <date when="1568-01-14"/>
+                                </correspAction>
+                                <correspAction type="received">
+                                        <persName>Johannes Aalborg</persName>
+                                        <placeName>empty</placeName>
+                                </correspAction>
+                        </correspDesc>                        
                         <creation>
                                 <date when="1425-07-12" notBefore="1425-07-12" notAfter="1425-07-12"
                                         cert="high">1425. 12. juli</date>
@@ -573,45 +584,60 @@
                 <front>
                         <titlePage>
                                 <docTitle>
-                                        <titlePart>Hovedstrømninger i 19de Aarhundredes Litteratur.</titlePart>
-                                        <titlePart type="sub">Forelæsninger holdte ved Kjøbenhavns Universitet i
-                                                Efteraarshalvaaret 1871</titlePart>
+                                        <titlePart>Hovedstrømninger i 19de Aarhundredes
+                                                Litteratur.</titlePart>
+                                        <titlePart type="sub">Forelæsninger holdte ved Kjøbenhavns
+                                                Universitet i Efteraarshalvaaret 1871</titlePart>
                                         <titlePart type="sub">Emigrantlitteraturen.</titlePart>
                                 </docTitle>
                                 <byline>af Georg Brandes.</byline>
                         </titlePage>
                         <div type="dedication">
-                                <p>Hr. Professor <persName>H. Brøchner</persName> tilegnes dette Skrift med Taknemmelighed
-                                        og Venskab af Forfatteren.</p>
+                                <p>Hr. Professor <persName>H. Brøchner</persName> tilegnes dette
+                                        Skrift med Taknemmelighed og Venskab af Forfatteren.</p>
                         </div>
                         <div type="preface">
                                 <head>FORORD.</head>
-                                <p>Disse Forelæsninger have vakt en ufortjent Opmærksomhed, som af deres Forfatter kun kunde
-                                        betragtes som smigrende og kjærkommen, ifald de ikke samtidigt i adskillige Kredse havde
-                                        fremkaldt en mindst ligesaa ufortjent Uvillie, under hvis Tryk det ikke er let at arbeide
-                                        i et saa lille Samfund som vort. For at fjerne hvad der i denne Uvillie skriver sig fra
-                                        Misforstaaelser, fra Fordreielser og Overdrivelser, forsætlige og uforsætlige, har jeg mod
-                                        min tidligere Bestemmelse besluttet mig til at udgive disse Forelæsninger saa hurtigt
-                                        efter at de ere holdte, for idetmindste ikke at blive ilde omtalt for hvad jeg ingensinde
-                                        hverken har sagt eller ment. </p>
+                                <p>Disse Forelæsninger have vakt en ufortjent Opmærksomhed, som af
+                                        deres Forfatter kun kunde betragtes som smigrende og
+                                        kjærkommen, ifald de ikke samtidigt i adskillige Kredse
+                                        havde fremkaldt en mindst ligesaa ufortjent Uvillie, under
+                                        hvis Tryk det ikke er let at arbeide i et saa lille Samfund
+                                        som vort. For at fjerne hvad der i denne Uvillie skriver sig
+                                        fra Misforstaaelser, fra Fordreielser og Overdrivelser,
+                                        forsætlige og uforsætlige, har jeg mod min tidligere
+                                        Bestemmelse besluttet mig til at udgive disse Forelæsninger
+                                        saa hurtigt efter at de ere holdte, for idetmindste ikke at
+                                        blive ilde omtalt for hvad jeg ingensinde hverken har sagt
+                                        eller ment. </p>
                                 <p rend="right"> G. B.</p>
                         </div>
                         <epigraph>
                                 <cit>
                                         <quote>
-                                                <p><note type="add">*»Ein wächserner ... Feuer.«* Citat fra ... ...???</note>»Ein
-                                                        wächserner Hausgötze, den man ausser Acht gelassen hatte, stand neben einem Feuer,
-                                                        worin edle campanische Gefässe gehärtet wurden und fing an zu schmelzen.</p>
-                                                <p>Er beklagte sich bitterlich bei dem Elemente. Sieh, sprach er, wie grausam Du gegen
-                                                        mich verfährst. Jenen giebst Du Dauer, und mich zerstörst Du!</p>
-                                                <p>Das Feuer aber antwortete: Beklage Dich vielmehr über Deine Natur; denn ich, was mich
-                                                        betrifft, bin überall Feuer.«</p></quote>
+                                                <p><note type="add">*»Ein wächserner ... Feuer.«*
+                                                  Citat fra ... ...???</note>»Ein wächserner
+                                                  Hausgötze, den man ausser Acht gelassen hatte,
+                                                  stand neben einem Feuer, worin edle campanische
+                                                  Gefässe gehärtet wurden und fing an zu
+                                                  schmelzen.</p>
+                                                <p>Er beklagte sich bitterlich bei dem Elemente.
+                                                  Sieh, sprach er, wie grausam Du gegen mich
+                                                  verfährst. Jenen giebst Du Dauer, und mich
+                                                  zerstörst Du!</p>
+                                                <p>Das Feuer aber antwortete: Beklage Dich vielmehr
+                                                  über Deine Natur; denn ich, was mich betrifft, bin
+                                                  überall Feuer.«</p></quote>
                                         <bibl><persName>W. Heinse</persName>.</bibl>
                                 </cit>
                         </epigraph>
                 </front>
                 <body>
                         <div xml:lang="la">
+                                <head>
+                                        <orig>Original kapiteloverskrift</orig>
+                                        <reg>Normaliseret kapitaloverskrift</reg>
+                                </head>
                                 <p n="a#1">In nomine sancte et individue trinitatis patris et filii
                                         et spiritus sancti amen/ <persName>Petrus</persName> dei
                                         gratia archiepiscopus Lundensis Swecie primas et apostolice
@@ -638,10 +664,12 @@
                                         ecclesiarum coepiscopis suffraganeis et assessoribus nostris
                                         presentibus ex parte domini <persName>Henrici</persName>
                                         Sleswicensis episcopi <persName>Hermanno Dene</persName>
-                                        canonico et <persName type="fictional" key="skdgkjsl-kslj">Iohanne Selle</persName> perpetuo
-                                        vicario <placeName key="skdskd-kejk">Sleswicensis ecclesie</placeName> ejusdem
-                                        episcopi valetudinem senium et legitimum impedimentum
-                                        pretendentibus licet nullo ex parte <app>
+                                        canonico et <persName type="fictional" key="skdgkjsl-kslj"
+                                                >Iohanne Selle</persName> perpetuo vicario
+                                                <placeName key="skdskd-kejk">Sleswicensis
+                                                ecclesie</placeName> ejusdem episcopi valetudinem
+                                        senium et legitimum impedimentum pretendentibus licet nullo
+                                        ex parte <app>
                                                 <lem>domini</lem>
                                                 <rdg wit="#B">tilføjet over linjen, B</rdg>
                                         </app> Revaliensis episcopi hic impresenciarum comparente
@@ -650,12 +678,17 @@
                                                 <persName>Petrum</persName> quondam Lundensem
                                         archiepiscopum predecessorem nostrum in concilio provinciali
                                         Helsingburgis per ipsum celebrato <cit>
-                                                <quote>articulos dette er citat i løbende tekst</quote>
+                                                <quote>articulos dette er citat i løbende
+                                                  tekst</quote>
                                                 <bibl>Dipl. Dan. 3. rk. II nr. 153</bibl>
-				</cit> innovamus ♦</p>
-				<cit><quote>dette er et citat som blok</quote><bibl>Chaucer</bibl></cit>
+                                        </cit> innovamus ♦</p>
+                                <cit>
+                                        <quote>dette er et citat som blok</quote>
+                                        <bibl>Chaucer</bibl>
+                                </cit>
                                 <p n="a#3">&lt;1&gt; Primo ut siquis in hoc sacrilegii genus
-                                        irrepserit quod aliquem <bibl xml:id="sldke-djk">ælsdklæk</bibl> episcopum provincie Daciane
+                                        irrepserit quod aliquem <bibl xml:id="sldke-djk"
+                                                >ælsdklæk</bibl> episcopum provincie Daciane
                                         hostiliter fuerit insecutus vel percusserit aut ceperit seu
                                         banniverit sive socius fuerit facientis aut fieri mandaverit
                                         vel factum ratum habuerit sive concilium dederit aut favorem
@@ -663,15 +696,16 @@
                                         sive eciam extorquere presumpserit ab ipsis episcopis aut
                                         suis consanguineis affinibus vel amicis per minas vel
                                         cruciatus corporis seu alio quocumque modo literas
-                                        promissionis caucionis <bibl xml:id="sldk-djk">ælsdklæk</bibl> aut alius obligacionis sub quacumque
-                                        forma uerborum eciam si beneplacitum continere videntur
-                                        concedentes de excusando vel quittando eos pro capcione
-                                        violencia vel iniuriis ipsis episcopis factis quas cauciones
-                                        tamquam per vim et metum extortas auctoritate presentis
-                                        concilii decernimus esse irritas et inanes sicut reus
-                                        criminis lese majestatis perpetuo sit infamis et perpetuo
-                                        anathematis mucrone percussus ♦ Itaque nec ipsius filii per
-                                        masculinam lineam descendentes usque in secundam
+                                        promissionis caucionis <bibl xml:id="sldk-djk"
+                                                >ælsdklæk</bibl> aut alius obligacionis sub
+                                        quacumque forma uerborum eciam si beneplacitum continere
+                                        videntur concedentes de excusando vel quittando eos pro
+                                        capcione violencia vel iniuriis ipsis episcopis factis quas
+                                        cauciones tamquam per vim et metum extortas auctoritate
+                                        presentis concilii decernimus esse irritas et inanes sicut
+                                        reus criminis lese majestatis perpetuo sit infamis et
+                                        perpetuo anathematis mucrone percussus ♦ Itaque nec ipsius
+                                        filii per masculinam lineam descendentes usque in secundam
                                         generationem reddantur ipso facto inhabiles ad ecclesiastica
                                         beneficia per totam Lundensem provinciam in omnibus
                                         dyoecibus et civitatibus obtinenda necnon sint inhabiles ad
@@ -720,8 +754,9 @@
                                         detinetur usque ad ipsius inde liberationem necnon ubi
                                         huiusmodi malefactores domicilia habuerint morantur vel
                                         transitum fecerint et per triduum post eorum inde recessum
-                                        sileatur similiter a divinis et <bibl xml:id="sldko-djk">ælsdklæk</bibl> huiusmodi malefactores per
-                                        totam huiusmodi dyocesin usque ad satisfactionem debitam
+                                        sileatur similiter a divinis et <bibl xml:id="sldko-djk"
+                                                >ælsdklæk</bibl> huiusmodi malefactores per totam
+                                        huiusmodi dyocesin usque ad satisfactionem debitam
                                         excommunicati denuncientur nominatim de quibus constiterit
                                         manifeste</p>
                                 <p n="a#5">&lt;3&gt; ¶ Insuper ut omnes et singuli qui bona
@@ -832,11 +867,11 @@
                                         quorumcumque in quibus degunt fundatoribus institutoribus
                                         dotatoribus patronis aliisque quibuscumque benefactoribus
                                         vivis et defunctis eciam quod pro serenissima domina
-                                                <persName key="valdemar-ksd">Woldemari</persName> regis filia
-                                                <persName>Margareta</persName> bone memorie istorum
-                                        regnorum quondam regina et ecclesie Daciane dilectrice
-                                        speciali ad dominum deum continue fundant preces humiles et
-                                        devotas ♦</p>
+                                                <persName key="valdemar-ksd">Woldemari</persName>
+                                        regis filia <persName>Margareta</persName> bone memorie
+                                        istorum regnorum quondam regina et ecclesie Daciane
+                                        dilectrice speciali ad dominum deum continue fundant preces
+                                        humiles et devotas ♦</p>
                                 <p n="a#14">&lt;11&gt; Item ut universi clerici vitam et mores
                                         reforment in melius et ea que ad ipsorum statum et
                                         honestatem pertinent cum magna cautela custodiant nec solum
@@ -1277,32 +1312,33 @@
 
                                 <div>
                                         <p n="b#1">I faderens, sønnens, helligåndens, den hellige,
-                                                udelelige treenigheds navn, amen. Peder<note xml:id="hjk-lkj">Peder
-                                                  Jensen Lykke, ærkebiskop i Lund 1418-1436</note>
-                                                af guds nåde ærkebiskop af Lund, Sveriges primas og
-                                                det apostoliske sædes legat med hilsen i alles
-                                                frelser til alle og enhver, prælater, abbeder,
-                                                dekaner, provster, ærkedegne, kantorer, priorer,
-                                                kapitler, klosterkonventer, sognepræster,
-                                                kirkeforstandere, gejstlighed og gejstlige og alle
-                                                andre Kristi hengivne såvel regelbunde som
-                                                verdensgejstlige i byen, stiftet og Peder<note xml:id="hjk-lkji">Peder
-                                                        Jensen Lykke, ærkebiskop i Lund 1418-1436</note>
-                                                af guds nåde ærkebiskop af Lund kirkeprovinsen
-                                                Lund.</p>
+                                                udelelige treenigheds navn, amen. Peder<note
+                                                  xml:id="hjk-lkj">Peder Jensen Lykke, ærkebiskop i
+                                                  Lund 1418-1436</note> af guds nåde ærkebiskop af
+                                                Lund, Sveriges primas og det apostoliske sædes legat
+                                                med hilsen i alles frelser til alle og enhver,
+                                                prælater, abbeder, dekaner, provster, ærkedegne,
+                                                kantorer, priorer, kapitler, klosterkonventer,
+                                                sognepræster, kirkeforstandere, gejstlighed og
+                                                gejstlige og alle andre Kristi hengivne såvel
+                                                regelbunde som verdensgejstlige i byen, stiftet og
+                                                  Peder<note xml:id="hjk-lkji">Peder Jensen Lykke,
+                                                  ærkebiskop i Lund 1418-1436</note> af guds nåde
+                                                ærkebiskop af Lund kirkeprovinsen Lund.</p>
                                         <p n="b#2">På hyrdegerningen hviler hint omsorgens åg, at
                                                 når der er rettet op på udskejelserne, skikkene er
                                                 forbedret og dyderne er plantet, skal den med
-                                                forsigtighedens årvågne hakke udrydde  Peder<note xml:id="hejk-lkj">Peder
-                                                        Jensen Lykke, ærkebiskop i Lund 1418-1436</note>
-                                                af guds nåde ærkebiskop af Lundlasterne i den
-                                                herrens vingård, den er betroet. Med godkendelse af
-                                                det hellige koncil, som vi – omend uværdige – leder,
-                                                fornyr vi derfor med vore brødre, de ærværdige
-                                                herrer Lave<note>Lave Stigsen Glob, biskop i Viborg
-                                                  ?-1427</note> i Viborg, Peder<note>Peder Friis,
-                                                  biskop i Børglum 1396-1425</note> i Børglum,
-                                                  Jens<note>Jens Andersen Lodehat, biskop i Roskilde
+                                                forsigtighedens årvågne hakke udrydde Peder<note
+                                                  xml:id="hejk-lkj">Peder Jensen Lykke, ærkebiskop i
+                                                  Lund 1418-1436</note> af guds nåde ærkebiskop af
+                                                Lundlasterne i den herrens vingård, den er betroet.
+                                                Med godkendelse af det hellige koncil, som vi –
+                                                omend uværdige – leder, fornyr vi derfor med vore
+                                                brødre, de ærværdige herrer Lave<note>Lave Stigsen
+                                                  Glob, biskop i Viborg ?-1427</note> i Viborg,
+                                                  Peder<note>Peder Friis, biskop i Børglum
+                                                  1396-1425</note> i Børglum, Jens<note>Jens
+                                                  Andersen Lodehat, biskop i Roskilde
                                                   1416-1431</note> i Roskilde, Navne<note>Navne
                                                   Jensen (Gyrstinge), biskop i Odense
                                                   1420-1440</note> i Odense, Kristian<note>Kristian
@@ -1859,7 +1895,8 @@
                                 <div>
                                         <head>pverslk</head>
                                         <p>ksdkjsdklf</p>
-                                        <p>esklfælælskkæl</p> <p n="b#40">Til vidnesbyrd om alle og enhver af disse
+                                        <p>esklfælælskkæl</p>
+                                        <p n="b#40">Til vidnesbyrd om alle og enhver af disse
                                                 fornævnte er vort segl vedhængt nærværende brev
                                                 sammen med fornævnte vore ærværdige brødre med- og
                                                 lydbiskoppers segl.</p>
@@ -1868,14 +1905,15 @@
                                         <div>
                                                 <head>lskdlækslædk</head>
                                                 <div>
-                                                        <head>d.fmsdfms</head>
-                                                        <p>ksdkjsdklf</p>
-                                                        <p>esklfælælskkæl</p> <p n="b#40">Til vidnesbyrd om alle og enhver af disse
-                                                                fornævnte er vort segl vedhængt nærværende brev
-                                                                sammen med fornævnte vore ærværdige brødre med- og
-                                                                lydbiskoppers segl.</p>
-                                                        <p n="b#41">Givet og forhandlet i København 12. juli
-                                                                1425.</p>
+                                                  <head>d.fmsdfms</head>
+                                                  <p>ksdkjsdklf</p>
+                                                  <p>esklfælælskkæl</p>
+                                                  <p n="b#40">Til vidnesbyrd om alle og enhver af
+                                                  disse fornævnte er vort segl vedhængt nærværende
+                                                  brev sammen med fornævnte vore ærværdige brødre
+                                                  med- og lydbiskoppers segl.</p>
+                                                  <p n="b#41">Givet og forhandlet i København 12.
+                                                  juli 1425.</p>
                                                 </div>
                                         </div>
                                 </div>

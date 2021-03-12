@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
+<?xml-model href="https://text.dsl.dk/docs/schemas/dsl-tei.rnc"?>
 <TEI xmlns="http://www.tei-c.org/ns/1.0">
    <teiHeader>
       <fileDesc>
@@ -211,7 +212,7 @@
          </textClass>        
       </profileDesc>
       <revisionDesc>
-         <change when="2011-02-02T14:24:07.029+01:00" who="#th"> Filen etableret af #th
+         <change when="2011-02-02" who="#th"> Filen etableret af #th
             2011-02-02T14:24:07.029+01:00</change>
          <change when="99999999" who="#nil">Kladde: 1. korrektur mangler. </change>
          <change when="99999999" who="#nil">Kladde: 2. korrektur mangler. </change>

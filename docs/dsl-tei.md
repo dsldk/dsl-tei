@@ -898,16 +898,16 @@ Elementet `lg` kan udvides med attributtet `@rend` og værdierne
 `center` og `right` for hhv. centreret og højrestillet tekst.
 
 
---------------------------------------------------------------------------------
-**Attribut: `@rend`**      **Værdi**    **Betydning**
+--------------------------------------- -----------------------------------------
+|**Attribut: `@rend`**    |  **Værdi**    **Betydning**
 -------------------------- ------------ ----------------------------------------
-                           center        Teksten i `lg` centreres
+                          | center        Teksten i `lg` centreres
 
-                           center-it     Teksten i `lg` centreres og kursiveres
+                          | center-it     Teksten i `lg` centreres og kursiveres
 
-                           indent[1-10]  Teksten i `lg` indrykkes
+                          | indent[1-10]  Teksten i `lg` indrykkes
 
-                           right         Teksten i `lg` højrestilles
+                          | right         Teksten i `lg` højrestilles
 
 ---------------------------------------------------------------------------------
 

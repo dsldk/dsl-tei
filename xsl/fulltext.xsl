@@ -426,73 +426,13 @@
                     </div>
                 </div>
                 <div class="container text-section">
-                    <!--<div class="content-inner">-->
-                    <!--<h1 class="text-center">
-                        <xsl:choose>
-                            <xsl:when test="tei:teiHeader/tei:fileDesc/tei:titleStmt/tei:title">
-                                <xsl:value-of
-                                    select="tei:teiHeader/tei:fileDesc/tei:titleStmt/tei:title"/>
-                            </xsl:when>
-                            <xsl:otherwise>
-                                <li>Title missing</li>
-                            </xsl:otherwise>
-                        </xsl:choose>
-                    </h1>-->
-                    <!--Her skal være et eller andet-->
-
-                    <!--<div class="text-wrapper">
-                        <div class="text-inner">-->
-                    <!--<div class="metadata" id="metadata-section">
-
-                                    <h1>Metadata</h1>
-                                    <div>
-                                        <p> Denne fil, <code><xsl:value-of
-                                                  select="tei:teiHeader//tei:publicationStmt/tei:idno[1]"
-                                                />.xml</code>, er en DSL-basis-version (v. 0.1) af
-                                                  <strong><xsl:value-of
-                                                  select="tei:teiHeader//tei:title"/></strong>
-                                            finansieret af <xsl:value-of
-                                                select="tei:teiHeader//tei:titleStmt/tei:funder"
-                                            /></p>
-                                        <p> Redaktør: <xsl:for-each
-                                                select="tei:teiHeader//tei:titleStmt/tei:editor">
-                                                <xsl:value-of select="tei:name//tei:forename"/>
-                                                <xsl:text> </xsl:text>
-                                                <xsl:value-of select="tei:name//tei:surname"/>
-                                                <xsl:if test="position() != last()">, </xsl:if>
-                                                <xsl:if
-                                                  test="position() = last() and child::node() != 'empty'"
-                                                  >. </xsl:if>
-                                            </xsl:for-each>-->
-                    <!--<xsl:value-of
-                                                select="tei:teiHeader//tei:editor/tei:name/@xml:id"
-                                            />-->
-                    <!--</p>
-                                        <p> Dokumentets historik: </p>
-                                    </div>
-                                    <div>
-                                        <xsl:apply-templates select="tei:teiHeader/tei:encodingDesc"
-                                        />
-                                    </div>
-                                    <div>
-                                        <xsl:apply-templates select="tei:teiHeader/tei:profileDesc"
-                                        />
-                                    </div>
-                                    <div>
-                                        <xsl:apply-templates
-                                            select="tei:teiHeader/tei:fileDesc/tei:sourceDesc"/>
-                                    </div>
-
-                                </div>-->
-                    </div>
-                <div class="container">
                     <div class="col">
                         <div class="my-5">
                             <xsl:apply-templates select="tei:text/*/*"/>
                         </div>
                         <xsl:if test="//tei:app">
                             <hr/>
-                            <div class="mt-5">
+                            <div class="notes mt-5">
                                 <!--<h2>Kritisk apparat</h2>-->
                                 <xsl:apply-templates select="//tei:app" mode="apparatusCriticus"/>
                             </div>

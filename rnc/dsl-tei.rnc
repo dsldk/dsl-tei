@@ -141,7 +141,7 @@ start =
                          }+
                      },
                      (element byline { text }
-                      | element docImprint { hi+ })
+                      | element docImprint { (text | hi | lb | pb)+ })
                  },
                  \div+)?,
                 element epigraph { cit }?,

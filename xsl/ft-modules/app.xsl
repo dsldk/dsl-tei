@@ -122,7 +122,8 @@
                         <!-- If there is a note pertaining to the reading display it here -->
                         <xsl:if test="tei:note">
                             &#160;<xsl:apply-templates select="tei:note"/>
-                        </xsl:if></xsl:for-each>
+                        </xsl:if>
+                        </xsl:for-each>
 
                     </xsl:when>
 
