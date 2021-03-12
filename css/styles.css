@@ -255,6 +255,10 @@ h1.editorial {
   text-indent: 0;
 }
 
+.note {
+  text-indent; 0;
+} 
+
 .text-section p {
   margin-top: 0;
   margin-bottom: 0;
