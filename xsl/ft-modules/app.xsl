@@ -85,8 +85,8 @@
                         <xsl:apply-templates select="tei:lem"/>
                         <xsl:text>] </xsl:text>
                         <xsl:choose>
-                          <xsl:when test="tei:lem/@resp"><em><xsl:value-of select='tei:lem/@resp/tokenize(., "#")'/></em><!--<xsl:if test="position() != last()">, </xsl:if>--><xsl:if test="position() = last()">, </xsl:if></xsl:when>
-                          <xsl:when test="tei:lem/@wit"><em><xsl:value-of select='tei:lem/@wit/tokenize(., "#")'/></em><!--<xsl:if test="position() != last()">, </xsl:if>--><xsl:if test="position() = last()">, </xsl:if></xsl:when>
+                          <xsl:when test="tei:lem/@resp"><em><xsl:value-of select='tei:lem/@resp/tokenize(., "#")'/></em>, </xsl:when>
+                          <xsl:when test="tei:lem/@wit"><em><xsl:value-of select='tei:lem/@wit/tokenize(., "#")'/></em>, </xsl:when>
                         </xsl:choose>
                     </xsl:when>
                     <!--<xsl:when test="$lemmaLength > 3">
