@@ -74,40 +74,24 @@
                     <!--<xsl:attribute name="id">
                         <xsl:value-of select="$identifier"/>
                     </xsl:attribute>-->
-                    <a href="#back{$identifier}"><xsl:call-template name="appN"/></a>
+                    <a href="#back{$identifier}">
+                        <xsl:call-template name="appN"/>
+                    </a>
                     <xsl:text>. </xsl:text>
                 </strong>
             </span>
             <span class="noteBody">
-                <!--<xsl:variable name="lemmaLength" select="count(tei:lem//text()/tokenize(., '\W+')[.!=''])"/>-->
                 <xsl:choose>
                     <xsl:when test="tei:lem">
                         <xsl:apply-templates select="tei:lem"/>
                         <xsl:text>] </xsl:text>
                         <xsl:choose>
-                          <xsl:when test="tei:lem/@resp"><em><xsl:value-of select='tei:lem/@resp/tokenize(., "#")'/></em>, </xsl:when>
-                          <xsl:when test="tei:lem/@wit"><em><xsl:value-of select='tei:lem/@wit/tokenize(., "#")'/></em>, </xsl:when>
+                            <xsl:when test="tei:lem/@resp"><em><xsl:value-of
+                                        select='tei:lem/@resp/tokenize(., "#")'/></em>, </xsl:when>
+                            <xsl:when test="tei:lem/@wit"><em><xsl:value-of
+                                        select='tei:lem/@wit/tokenize(., "#")'/></em>, </xsl:when>
                         </xsl:choose>
                     </xsl:when>
-                    <!--<xsl:when test="$lemmaLength > 3">
-                        <xsl:if test="tei:lem/tei:supplied">
-                            <xsl:text>&lt;</xsl:text>
-                        </xsl:if>
-                        <xsl:if test="tei:lem/tei:damage">
-                            <xsl:text>[</xsl:text>
-                        </xsl:if>
-                        <xsl:value-of select="tei:lem//text()/tokenize(., '\W+')[position()=1]"/>
-                        <xsl:text> - </xsl:text>
-                        <xsl:value-of select="tei:lem//text()/tokenize(., '\W+')[position()=last()]"/>
-                        <xsl:if test="tei:lem/tei:supplied">
-                            <xsl:text>&gt;</xsl:text>
-                        </xsl:if>
-                        <xsl:if test="tei:lem/tei:damage">
-                            <xsl:text>]</xsl:text>
-                        </xsl:if>
-                        <xsl:text>]</xsl:text>
-                        <xsl:text>  </xsl:text>
-                    </xsl:when>-->
                     <xsl:otherwise>
                         <xsl:apply-templates select="tei:lem"/>
                         <xsl:text>]</xsl:text>
@@ -116,38 +100,36 @@
                 </xsl:choose>
                 <xsl:choose>
                     <xsl:when test="tei:rdg">
-                        <xsl:apply-templates select="tei:rdg"/>
+                        <xsl:for-each select="tei:rdg">
+                            <xsl:apply-templates select="."/>
+                        <!-- If there are @resp or @wit attributes render them here-->
                         <xsl:choose>
-                            <xsl:when test="tei:rdg/@resp"><em><xsl:value-of select='tei:rdg/@resp/tokenize(., "#")'/></em><xsl:if test="position() != last()"> </xsl:if><xsl:if test="position() = last()"></xsl:if></xsl:when>
-                            <xsl:when test="tei:rdg/@wit"><em><xsl:value-of select='tei:rdg/@wit/tokenize(., "#")'/></em><xsl:if test="position() != last()"> </xsl:if><xsl:if test="position() = last()"></xsl:if></xsl:when>
+                            <xsl:when test="@resp">
+                                <em>
+                                    <xsl:value-of select='@resp/tokenize(., "#")'/>
+                                </em>
+                                <xsl:if test="position() != last()">, </xsl:if>
+                                <xsl:if test="position() = last()"/>
+                            </xsl:when>
+                            <xsl:when test="@wit">
+                                <em>
+                                    <xsl:value-of select='@wit/tokenize(., "#")'/>
+                                </em>
+                                <xsl:if test="position() != last()">, </xsl:if>
+                                <xsl:if test="position() = last()"/>
+                            </xsl:when>
                         </xsl:choose>
+                        <!-- If there is a note pertaining to the reading display it here -->
+                        <xsl:if test="tei:note">
+                            &#160;<xsl:apply-templates select="tei:note"/>
+                        </xsl:if></xsl:for-each>
+
                     </xsl:when>
+
+
                 </xsl:choose>
-                
-                <!--<xsl:for-each select="tei:rdg">
-                    <xsl:apply-templates select="."/>
-                    <xsl:choose>
-                        <xsl:when test="@wit"><xsl:text> </xsl:text><em><xsl:value-of select="@wit/tokenize(.,'#')"/></em><xsl:if test="position() != last()">, </xsl:if><xsl:if test="position() = last()"></xsl:if>
-                        </xsl:when>
-                        <xsl:when test="@resp"><xsl:text> </xsl:text><em><xsl:value-of select="@resp/tokenize(.,'#')"/></em><xsl:if test="position() != last()">, </xsl:if><xsl:if test="position() = last()"></xsl:if>
-                        </xsl:when>
-                    </xsl:choose>--><!--<xsl:if test="position() != last()">, </xsl:if><xsl:if test="position() = last()"></xsl:if>-->
-                    <!--<xsl:if test="position() != last()">; </xsl:if>
-                    <xsl:if test="position() = last()">. </xsl:if>-->
-                <!--</xsl:for-each>-->
+
                 <xsl:text> </xsl:text>
-                <!--
-                    <xsl:choose>
-                    <xsl:when test="count(tei:rdg) > 1">
-                    <xsl:apply-templates select="tei:rdg" />
-                    <xsl:text>, </xsl:text>
-                    </xsl:when>
-                    <xsl:otherwise>
-                    <xsl:apply-templates select="tei:rdg"/>
-                    <xsl:text>. </xsl:text>
-                    </xsl:otherwise>
-                    </xsl:choose>
-                -->
             </span>
         </p>
     </xsl:template>
@@ -156,15 +138,14 @@
         <xsl:text> </xsl:text>
         <!--<xsl:if test="@wit">
             <em>-->
-                <!-- Since values in the must be prefixed with a # 
+        <!-- Since values in the must be prefixed with a # 
                  we use tokenize() to obtain the substring after # -->
-                <!--<xsl:value-of select="@wit/tokenize(., '#')"/>
+        <!--<xsl:value-of select="@wit/tokenize(., '#')"/>
             </em>
         </xsl:if>-->
-        <xsl:if test="tei:note">
-            <!--<xsl:text>, </xsl:text>-->
+        <!--<xsl:if test="tei:note">
             <xsl:apply-templates select="tei:note"/>
-        </xsl:if>
+        </xsl:if>-->
 
         <!--Det er formentlig bedre at lade redaktøren selv
             skrive om læsningen skyldes 'DD' eller fx Aa1.  
