@@ -360,7 +360,6 @@
                         </div>
                     </nav>-->
 
-
                 <div class="container bg-light p-3">
                     <div class="row">
                         <div class="col">
@@ -485,7 +484,8 @@
                                     </div>
 
                                 </div>-->
-                    <!--<div class="text-container">-->
+                    </div>
+                <div class="container">
                     <div class="col">
                         <div class="my-5">
                             <xsl:apply-templates select="tei:text/*/*"/>
