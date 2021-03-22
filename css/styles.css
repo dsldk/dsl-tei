@@ -235,6 +235,10 @@ h1.editorial {
    border: 0.05em solid gray;
 }
 
+.mark, mark {
+  padding: 0;
+}
+
 .text-header{
     background: #fafafa;
     color: #7e888b;
