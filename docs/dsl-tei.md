@@ -895,7 +895,9 @@ et `lb`-element (*line break*). Selv hvor der kun optræder en enkelt
 verslinje, anbefales det at bruge `lg` som wrapper.
 
 Elementet `lg` kan udvides med attributtet `@rend` og værdierne
-`center` og `right` for hhv. centreret og højrestillet tekst.
+`center` og `right` for hhv. centreret og højrestillet tekst. Når en
+strofe har overskrift benyttes et `head`-element umiddelbart under
+`lg`.
 
 
 --------------------------------------- -----------------------------------------
