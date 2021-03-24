@@ -82,7 +82,44 @@
     <xsl:include href="title.xsl"/>
     <xsl:include href="ft-modules/titlePage.xsl"/>
 
-    <xsl:output method="html" encoding="UTF-8" indent="yes"/>
+    <xsl:output method="html" encoding="UTF-8" indent="yes" use-character-maps="no-control-characters"/>
+<xsl:character-map
+                   name="no-control-characters">
+   <xsl:output-character character="&#127;" string=" "/>
+   <xsl:output-character character="&#128;" string=" "/>
+   <xsl:output-character character="&#129;" string=" "/>
+   <xsl:output-character character="&#130;" string=" "/>
+   <xsl:output-character character="&#131;" string=" "/>
+   <xsl:output-character character="&#132;" string=" "/>
+   <xsl:output-character character="&#133;" string=" "/>
+   <xsl:output-character character="&#134;" string=" "/>
+   <xsl:output-character character="&#135;" string=" "/>
+   <xsl:output-character character="&#136;" string=" "/>
+   <xsl:output-character character="&#137;" string=" "/>
+   <xsl:output-character character="&#138;" string=" "/>
+   <xsl:output-character character="&#139;" string=" "/>
+   <xsl:output-character character="&#140;" string=" "/>
+   <xsl:output-character character="&#141;" string=" "/>
+   <xsl:output-character character="&#142;" string=" "/>
+   <xsl:output-character character="&#143;" string=" "/>
+   <xsl:output-character character="&#144;" string=" "/>
+   <xsl:output-character character="&#145;" string=" "/>
+   <xsl:output-character character="&#146;" string=" "/>
+   <xsl:output-character character="&#147;" string=" "/>
+   <xsl:output-character character="&#148;" string=" "/>
+   <xsl:output-character character="&#149;" string=" "/>
+   <xsl:output-character character="&#150;" string=" "/>
+   <xsl:output-character character="&#151;" string=" "/>
+   <xsl:output-character character="&#152;" string=" "/>
+   <xsl:output-character character="&#153;" string=" "/>
+   <xsl:output-character character="&#154;" string=" "/>
+   <xsl:output-character character="&#155;" string=" "/>
+   <xsl:output-character character="&#156;" string=" "/>
+   <xsl:output-character character="&#157;" string=" "/>
+   <xsl:output-character character="&#158;" string=" "/>
+   <xsl:output-character character="&#159;" string=" "/>
+</xsl:character-map>
+
     <xsl:strip-space elements="*"/>
     <xsl:preserve-space elements="tei:p"/>
     <xsl:variable name="basename"
