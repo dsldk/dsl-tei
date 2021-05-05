@@ -1206,7 +1206,19 @@ Forslag til gengivelse i kritisk apparat:
 
 > &lt;caput&gt;] *Gertz*. *Uocem* caput *post* occupat *quasi per
 > haplographiam omissam add. Gertz.*
-	
+
+Bemærkninger i tilknytning til læsemåder indsættes i det pågældende
+rdg-element, som i nedenstående eksempel i H.C. Ørsted, _Aanden i Naturen_:
+
+```xml
+strax at sætte os paa vor egen Tids Standpunkt. Have <app>
+<lem>vi gjennemskuet</lem>
+  <rdg wit="#B #C"><note>(således også i Forhandlinger)</note></rdg>
+  <rdg wit="#A">vig jennemskuet</rdg>
+</app>, hvad deraf
+```
+
+
 #### 4.3.5.4 Læsioner
 
 Hvis tekstvidnet er beskadiget, anvendes elementet `damage`, typisk
