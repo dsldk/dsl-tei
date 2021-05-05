@@ -1211,13 +1211,24 @@ Bemærkninger i tilknytning til læsemåder indsættes i det pågældende
 rdg-element, som i nedenstående eksempel i H.C. Ørsted, _Aanden i Naturen_:
 
 ```xml
-strax at sætte os paa vor egen Tids Standpunkt. Have <app>
+...strax at sætte os paa vor egen Tids Standpunkt. Have <app>
 <lem>vi gjennemskuet</lem>
   <rdg wit="#B #C"><note>(således også i Forhandlinger)</note></rdg>
   <rdg wit="#A">vig jennemskuet</rdg>
-</app>, hvad deraf
+</app>, hvad deraf...
 ```
 
+Hvis man ønsker at foranstille noten, er man af praktiske grunde nødt
+til at benytte følgende praksis, hvor sigler udelades fra
+rdg-elementet (her med siglen "ms."):
+
+```xml
+... havde fuldendt <app>
+  <lem>Størstedelen</lem>
+  <rdg wit="#A #C">størstedelen</rdg>
+  <rdg><note>afviger i ms.</note></rdg>
+  </app> af sit ...
+```
 
 #### 4.3.5.4 Læsioner
 
