@@ -62,6 +62,15 @@
             <xsl:when test="@rend = 'underline'">
                 <u><xsl:apply-templates/></u>
             </xsl:when>
+            <xsl:when test="@rend = 'smaller'">
+                <span class="smaller"><xsl:apply-templates/></span>
+            </xsl:when>
+            <xsl:when test="@rend = 'small'">
+                <small><xsl:apply-templates/></small>
+            </xsl:when>
+            <xsl:when test="@rend = 'strong'">
+                <strong><xsl:apply-templates/></strong>
+            </xsl:when>
         </xsl:choose>
     </xsl:template>
 </xsl:stylesheet>

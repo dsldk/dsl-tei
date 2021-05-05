@@ -115,14 +115,16 @@
                                 <em>
                                     <xsl:value-of select='@wit/tokenize(., "#")'/>
                                 </em>
-                                <xsl:if test="position() != last()">, </xsl:if>
+                                <xsl:if test="position() != last()"> </xsl:if>
                                 <xsl:if test="position() = last()"/>
                             </xsl:when>
                         </xsl:choose>
                         <!-- If there is a note pertaining to the reading display it here -->
                         <xsl:if test="tei:note">
-                            &#160;<xsl:apply-templates select="tei:note"/>
+                          <xsl:text> </xsl:text><xsl:apply-templates select="tei:note"/>
                         </xsl:if>
+                        <xsl:if test="position() != last()">, </xsl:if>
+                        <xsl:if test="position() = last()"/>
                         </xsl:for-each>
 
                     </xsl:when>
@@ -139,7 +141,7 @@
         <xsl:text> </xsl:text>
         <!--<xsl:if test="@wit">
             <em>-->
-        <!-- Since values in the must be prefixed with a # 
+        <!-- Since values in the must be prefixed with a 
                  we use tokenize() to obtain the substring after # -->
         <!--<xsl:value-of select="@wit/tokenize(., '#')"/>
             </em>

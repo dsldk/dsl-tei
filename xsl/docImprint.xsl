@@ -33,4 +33,13 @@
             </p>
         </xsl:for-each>-->
     </xsl:template>
+    <xsl:template match="tei:publisher">
+      <p class="center"><xsl:apply-templates/></p>
+    </xsl:template>
+    <xsl:template match="tei:pubPlace">
+      <p class="center"><xsl:apply-templates/></p>
+    </xsl:template>
+    <xsl:template match="tei:docDate">
+      <p class="center"><xsl:apply-templates/></p>
+    </xsl:template>
 </xsl:stylesheet>

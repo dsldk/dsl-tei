@@ -25,4 +25,5 @@
             <xsl:apply-templates/>
         </div>
     </xsl:template>
+    <xsl:template match="tei:byline"><p class="center"><xsl:apply-templates/></p></xsl:template>
 </xsl:stylesheet>

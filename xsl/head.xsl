@@ -48,6 +48,16 @@
                     <xsl:apply-templates select="tei:orig"/>
                 </h1>
             </xsl:when>
+            <xsl:when test="@type = 'sub'">
+                <h2>
+                    <xsl:apply-templates/>
+                </h2>
+            </xsl:when>
+            <xsl:when test="@type = 'subsub'">
+                <h2>
+                    <xsl:apply-templates/>
+                </h2>
+            </xsl:when>
             <xsl:when test="@type = 'chapter'">
                 <xsl:choose>
                     <xsl:when test="tei:orig[@rend = 'center']">

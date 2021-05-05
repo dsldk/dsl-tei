@@ -54,6 +54,17 @@
                     <xsl:apply-templates/>
                 </p>
             </xsl:when>
+            <xsl:when test="@rend = 'noindent'">
+                <p class="noindent">
+
+                    <!--<span class="p-number">
+                        <xsl:attribute name="id">
+                            <xsl:value-of select="$para-number"/>
+                        </xsl:attribute> ¶<xsl:value-of select="$para-number"/>
+                    </span>-->
+                    <xsl:apply-templates/>
+                </p>
+            </xsl:when>
             <xsl:when test="(@rend = 'left' ) or (@rend = 'left-margin') or (@rend = 'leftMargin' )">
                 <p class="left-margin">
                     <!--<span class="p-number">
