@@ -362,6 +362,12 @@ h1.editorial {
    text-align: left;
    width: 100px;
 }
+
+.notes {
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+}
+
 /*This places the text-and-note container in relative position to ??*/
 .text-and-note{
     position: relative;
@@ -439,6 +445,11 @@ h1.editorial {
 .poetry-right{
     text-align: right;
 }
+
+.postscript {
+  margin-top: 1.8rem;
+}
+
 .prose-center{
     text-align: center;
 }

@@ -82,43 +82,43 @@
     <xsl:include href="title.xsl"/>
     <xsl:include href="ft-modules/titlePage.xsl"/>
 
-    <xsl:output method="html" encoding="UTF-8" indent="yes" use-character-maps="no-control-characters"/>
-<xsl:character-map
-                   name="no-control-characters">
-   <xsl:output-character character="&#127;" string=" "/>
-   <xsl:output-character character="&#128;" string=" "/>
-   <xsl:output-character character="&#129;" string=" "/>
-   <xsl:output-character character="&#130;" string=" "/>
-   <xsl:output-character character="&#131;" string=" "/>
-   <xsl:output-character character="&#132;" string=" "/>
-   <xsl:output-character character="&#133;" string=" "/>
-   <xsl:output-character character="&#134;" string=" "/>
-   <xsl:output-character character="&#135;" string=" "/>
-   <xsl:output-character character="&#136;" string=" "/>
-   <xsl:output-character character="&#137;" string=" "/>
-   <xsl:output-character character="&#138;" string=" "/>
-   <xsl:output-character character="&#139;" string=" "/>
-   <xsl:output-character character="&#140;" string=" "/>
-   <xsl:output-character character="&#141;" string=" "/>
-   <xsl:output-character character="&#142;" string=" "/>
-   <xsl:output-character character="&#143;" string=" "/>
-   <xsl:output-character character="&#144;" string=" "/>
-   <xsl:output-character character="&#145;" string=" "/>
-   <xsl:output-character character="&#146;" string=" "/>
-   <xsl:output-character character="&#147;" string=" "/>
-   <xsl:output-character character="&#148;" string=" "/>
-   <xsl:output-character character="&#149;" string=" "/>
-   <xsl:output-character character="&#150;" string=" "/>
-   <xsl:output-character character="&#151;" string=" "/>
-   <xsl:output-character character="&#152;" string=" "/>
-   <xsl:output-character character="&#153;" string=" "/>
-   <xsl:output-character character="&#154;" string=" "/>
-   <xsl:output-character character="&#155;" string=" "/>
-   <xsl:output-character character="&#156;" string=" "/>
-   <xsl:output-character character="&#157;" string=" "/>
-   <xsl:output-character character="&#158;" string=" "/>
-   <xsl:output-character character="&#159;" string=" "/>
-</xsl:character-map>
+    <xsl:output method="html" encoding="UTF-8" indent="yes"
+        use-character-maps="no-control-characters"/>
+    <xsl:character-map name="no-control-characters">
+        <xsl:output-character character="&#127;" string=" "/>
+        <xsl:output-character character="&#128;" string=" "/>
+        <xsl:output-character character="&#129;" string=" "/>
+        <xsl:output-character character="&#130;" string=" "/>
+        <xsl:output-character character="&#131;" string=" "/>
+        <xsl:output-character character="&#132;" string=" "/>
+        <xsl:output-character character="&#133;" string=" "/>
+        <xsl:output-character character="&#134;" string=" "/>
+        <xsl:output-character character="&#135;" string=" "/>
+        <xsl:output-character character="&#136;" string=" "/>
+        <xsl:output-character character="&#137;" string=" "/>
+        <xsl:output-character character="&#138;" string=" "/>
+        <xsl:output-character character="&#139;" string=" "/>
+        <xsl:output-character character="&#140;" string=" "/>
+        <xsl:output-character character="&#141;" string=" "/>
+        <xsl:output-character character="&#142;" string=" "/>
+        <xsl:output-character character="&#143;" string=" "/>
+        <xsl:output-character character="&#144;" string=" "/>
+        <xsl:output-character character="&#145;" string=" "/>
+        <xsl:output-character character="&#146;" string=" "/>
+        <xsl:output-character character="&#147;" string=" "/>
+        <xsl:output-character character="&#148;" string=" "/>
+        <xsl:output-character character="&#149;" string=" "/>
+        <xsl:output-character character="&#150;" string=" "/>
+        <xsl:output-character character="&#151;" string=" "/>
+        <xsl:output-character character="&#152;" string=" "/>
+        <xsl:output-character character="&#153;" string=" "/>
+        <xsl:output-character character="&#154;" string=" "/>
+        <xsl:output-character character="&#155;" string=" "/>
+        <xsl:output-character character="&#156;" string=" "/>
+        <xsl:output-character character="&#157;" string=" "/>
+        <xsl:output-character character="&#158;" string=" "/>
+        <xsl:output-character character="&#159;" string=" "/>
+    </xsl:character-map>
 
     <xsl:strip-space elements="*"/>
     <xsl:preserve-space elements="tei:p"/>
@@ -396,26 +396,27 @@
                             </ul>
                         </div>
                     </nav>-->
+                <!-- Danish metadata section -->
 
                 <div class="container bg-light p-3">
                     <div class="row">
                         <div class="col">
                             <h2 class="date-place text-left">
-                                <xsl:value-of select="//tei:creation/tei:date/text()"/>
-                                <xsl:text>. </xsl:text>
+                                <xsl:value-of select="//tei:creation/tei:date[@xml:lang='da' or not(@xml:lang)]/text()"/>
+                                &#160;
                                 <xsl:choose>
                                     <xsl:when
                                         test="//tei:creation//tei:placeName[(text() != 'nil') or (text() != 'empty')]">
-                                        <xsl:text> </xsl:text>
+                                        
                                         <xsl:value-of
                                             select="//tei:creation/tei:placeName[(text() != 'nil') or (text() != 'empty')]"
-                                        />
+                                        />&#160;
                                     </xsl:when>
                                     <xsl:otherwise>
                                         <xsl:text> </xsl:text>
                                         <xsl:value-of
                                             select="//tei:correspAction[@type = 'sent']/tei:placeName"
-                                        />
+                                        />&#160;
                                     </xsl:otherwise>
                                 </xsl:choose>
                                 <!-- Correspondance info here -->
@@ -441,7 +442,7 @@
 
                                         <!--Identify the source (manuscript or book)-->
                                         <xsl:for-each
-                                            select="tei:msDesc/tei:msIdentifier/*[text() != 'empty']">
+                                            select="tei:msDesc[@xml:lang='da' or not(@xml:lang)]/tei:msIdentifier/*[text() != 'empty']">
                                             <xsl:value-of select="."/>
                                             <xsl:if test="position() != last()">, </xsl:if>
                                             <xsl:if
@@ -450,7 +451,7 @@
                                         </xsl:for-each>
 
                                         <!--Display physical description-->
-                                        <xsl:apply-templates select="tei:msDesc/tei:physDesc/tei:ab"/>
+                                        <xsl:apply-templates select="tei:msDesc[@xml:lang='da' or not(@xml:lang)]/tei:physDesc/tei:ab"/>
 
                                     </dd>
 
@@ -461,6 +462,77 @@
 
                         </div>
                     </div>
+
+                    <!-- English metadata section -->
+
+                    <div class="container bg-light p-3">
+                        <div class="row">
+                            <div class="col">
+                                <h2 class="date-place text-left">
+                                    <xsl:value-of
+                                        select="//tei:creation/tei:date[@xml:lang = 'en']/text()"/>
+                                    &#160;
+                                    <xsl:choose>
+                                        <xsl:when
+                                            test="//tei:creation//tei:placeName[@xml:lang = 'en'][(text() != 'nil') or (text() != 'empty')]">
+                                            <xsl:text> </xsl:text>
+                                            <xsl:value-of
+                                                select="//tei:creation/tei:placeName[@xml:lang = 'en'][(text() != 'nil') or (text() != 'empty')]"
+                                            />&#160;
+                                        </xsl:when>
+                                        <xsl:otherwise>
+                                            <xsl:text> </xsl:text>
+                                            <xsl:value-of
+                                                select="//tei:correspAction[@type = 'sent']/tei:placeName"
+                                            />&#160;
+                                        </xsl:otherwise>
+                                    </xsl:choose>
+                                    <!-- Correspondance info here -->
+                                    <xsl:if test="//tei:correspDesc">From <xsl:value-of
+                                            select="//tei:correspAction[@type = 'sent']/tei:persName"
+                                        /> to <xsl:value-of
+                                            select="//tei:correspAction[@type = 'received']/tei:persName"
+                                        /></xsl:if>
+                                    <hr/>
+                                </h2>
+
+                            </div>
+                        </div>
+                        <div/>
+                        <div class="row">
+                            <div class="col small pb-2">
+                                <dl class="row">
+                                    <xsl:for-each select="//tei:witness">
+                                        <dt class="col-sm-2">
+                                            <xsl:value-of select="@xml:id"/>
+                                        </dt>
+                                        <dd class="col-sm-10">
+
+                                            <!--Identify the source (manuscript or book)-->
+                                            <xsl:for-each
+                                                select="tei:msDesc[@xml:lang='en']/tei:msIdentifier/*[text() != 'empty']">
+                                                <xsl:value-of select="."/>
+                                                <xsl:if test="position() != last()">, </xsl:if>
+                                                <xsl:if
+                                                  test="position() = last() and child::node() != 'empty'"
+                                                  >. </xsl:if>
+                                            </xsl:for-each>
+
+                                            <!--Display physical description-->
+                                            <xsl:apply-templates
+                                                select="tei:msDesc[@xml:lang='en']/tei:physDesc/tei:ab"/>
+
+                                        </dd>
+
+
+
+                                    </xsl:for-each>
+                                </dl>
+
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
                 <div class="container text-section">
                     <div class="col">
