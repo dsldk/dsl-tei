@@ -38,7 +38,8 @@
               tei:cit | 
               tei:notatedMusic | 
               tei:opener | 
-              tei:dateline" />
+              tei:dateline |
+              tei:postscript" />
         </div>
     </xsl:template>
 

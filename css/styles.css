@@ -448,6 +448,7 @@ h1.editorial {
 
 .postscript {
   margin-top: 1.8rem;
+  margin-bottom: 4rem;
 }
 
 .prose-center{
@@ -560,6 +561,7 @@ div.verse-line{
 .closer {
     margin: 2rem 0 5rem 0;
 }
+
 .opener > .dateline {
   text-align: right;
 }
