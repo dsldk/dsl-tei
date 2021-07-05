@@ -1058,6 +1058,9 @@ På tekstniveau forekommer følgende elementer:
 `ref`
 :	(*reference*), krydshenvisning, se 4.3.5.12
 
+`term`
+: bruges med `@xml:lang` til at opmærke fx arabiske og hebræiske tegn
+
 `title`
 :	titel på et værk, se 4.X.X.X
 
@@ -1392,6 +1395,19 @@ Elementet kan indeholde tre attributter:
 * Understreget tekst
 * Gennemstreget tekst
 -->
+
+#### 4.3.5.XX Fremmede tegn
+
+Til opmærkning af arabiske og hebræiske tegn anvendes elementet `term`
+med `@xml:lang`. Fx hos Thomas Bartholin:
+
+```xml
+per <term xml:lang="ar">س</term>, non <term xml:lang="ar">ش</term> expressum ...
+```
+
+```xml
+Unde &amp; Hebræis <term xml:lang="he">קנה</term> de hasta ...
+```
 
 #### 4.3.5.14 Bibliografiske henvisninger
 
