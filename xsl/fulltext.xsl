@@ -535,18 +535,25 @@
 
                 </div>
                 <div class="container text-section">
-                    <div class="col">
-                        <div class="my-5">
-                            <xsl:apply-templates select="tei:text/*/*"/>
-                        </div>
-                        <xsl:if test="//tei:app">
-                            <hr/>
-                            <div class="notes mt-5">
-                                <!--<h2>Kritisk apparat</h2>-->
-                                <xsl:apply-templates select="//tei:app" mode="apparatusCriticus"/>
-                            </div>
-                        </xsl:if>
+                  <div class="col">
+                    <div class="my-5">
+                      <xsl:apply-templates select="tei:text/*/*"/>
                     </div>
+                    <xsl:if test="//tei:app">
+                      <hr/>
+                      <div class="notes mt-5">
+                        <!--<h2>Kritisk apparat</h2>-->
+                        <xsl:apply-templates select="//tei:app" mode="apparatusCriticus"/>
+                      </div>
+                    </xsl:if>
+                    <xsl:if test="//tei:cit">
+                      <hr/>
+                      <div class="notes mt-5">
+                          <!--<h2>Citater</h2>-->
+                        <xsl:apply-templates select="//tei:cit" mode="quotationApparatus"/>
+                      </div>
+                    </xsl:if>
+                  </div>
                     <!--</div>-->
                     <!--<xsl:if test="//tei:note">
                         <div>

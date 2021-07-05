@@ -44,12 +44,28 @@
     </xsl:template>
 
     <xsl:template match="tei:div/tei:div">
+      <xsl:choose>
+        <!-- For DD digitization -->
+        <xsl:when test="@type = ('ark','bib')">
+          <div class="smaller">
+            <xsl:apply-templates/>
+          </div>
+        </xsl:when>
+        <xsl:when test="@type = ('app','cit','kom')">
+          <div class="smaller my-3">
+            <xsl:apply-templates/>
+          </div>
+        </xsl:when>
+        <xsl:otherwise>
       <div class="subsection">
         <!--<xsl:apply-templates
             select="tei:div | tei:head | tei:p | tei:lg | tei:list | tei:epigraph | tei:sp | tei:table | tei:cit"
         />-->
         <xsl:apply-templates />
       </div>
+
+        </xsl:otherwise>
+      </xsl:choose>
     </xsl:template>
 
     <xsl:template match="tei:div[@type = 'advert']">
@@ -124,5 +140,11 @@
             <span class="caption">Table of contents: </span>
             <xsl:apply-templates/>
         </div>
+    </xsl:template>
+
+    <xsl:template match="tei:div/tei:div[@type = '(reg|ark|src)']">
+      <div class="smaller">
+        <xsl:apply-templates/>
+      </div>
     </xsl:template>
 </xsl:stylesheet>

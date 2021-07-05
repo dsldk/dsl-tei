@@ -244,6 +244,11 @@ h1.editorial {
   padding: 0;
 }
 
+.subsection{
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
 .text-header{
     background: #fafafa;
     color: #7e888b;
