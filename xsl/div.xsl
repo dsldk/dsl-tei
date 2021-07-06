@@ -47,13 +47,23 @@
       <xsl:choose>
         <!-- For DD digitization -->
         <xsl:when test="@type = ('ark','bib')">
-          <div class="smaller">
+          <div class="smaller my-3">
             <xsl:apply-templates/>
           </div>
         </xsl:when>
         <xsl:when test="@type = ('app','cit','kom')">
-          <div class="smaller my-3">
+          <div class="smaller my-4">
             <xsl:apply-templates/>
+          </div>
+        </xsl:when>
+        <xsl:when test="@type = 'reg'">
+          <div>
+            <em><xsl:apply-templates/></em>
+          </div>
+        </xsl:when>
+        <xsl:when test="@type = 'src'">
+          <div class="smaller">
+            <em><xsl:apply-templates/></em>
           </div>
         </xsl:when>
         <xsl:otherwise>
