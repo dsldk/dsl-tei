@@ -137,7 +137,7 @@
         </p>
     </xsl:template>
     <xsl:template match="tei:rdg">
-        <xsl:apply-templates select="text()"/>
+        <xsl:apply-templates select="text()|tei:hi|tei:q"/>
         <xsl:text> </xsl:text>
         <!--<xsl:if test="@wit">
             <em>-->
