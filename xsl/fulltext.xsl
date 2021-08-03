@@ -19,7 +19,7 @@
     <xsl:include href="date.xsl"/>
     <xsl:include href="dateline.xsl"/>
     <xsl:include href="dimensions.xsl"/>
-    <xsl:include href="div.xsl"/>
+    <xsl:include href="ft-modules/div.xsl"/>
     <xsl:include href="docAuthor.xsl"/>
     <xsl:include href="docEdition.xsl"/>
     <xsl:include href="docImprint.xsl"/>

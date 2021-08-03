@@ -88,11 +88,12 @@
                 </strong>
             </span>
             <span class="noteBody">
-              <xsl:apply-templates/>
+                <xsl:apply-templates/>
               <!--<xsl:apply-templates select="tei:quote"/>
                 <xsl:text>] </xsl:text>
               <xsl:apply-templates select="tei:bibl"/>-->
             </span>
+            <xsl:text> </xsl:text>
         </span>
     </xsl:template>
     <xsl:template match="tei:cit/tei:ref">

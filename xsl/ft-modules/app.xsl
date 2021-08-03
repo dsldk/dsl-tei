@@ -20,6 +20,9 @@
         </xd:desc>
     </xd:doc>
     <xsl:template match="tei:app">
+      <xsl:variable name="section_number">
+        <xsl:number count="//tei:text/*/tei:div"/>
+      </xsl:variable>
         <xsl:variable name="identifier">
             <xsl:text>App</xsl:text>
             <xsl:choose>
@@ -30,12 +33,12 @@
                     <xsl:value-of select="@n"/>
                 </xsl:when>
                 <xsl:otherwise>
-                    <xsl:number count="tei:app" level="any"/>
+                    <xsl:number count="tei:app" level="single"/>
                 </xsl:otherwise>
             </xsl:choose>
         </xsl:variable>
         <xsl:apply-templates select="tei:lem"/>
-        <a class="notelink" href="#{$identifier}" id="back{$identifier}">
+        <a class="notelink" href="#{$section_number}-{$identifier}" id="back{$section_number}-{$identifier}">
             <sup>
                 <xsl:call-template name="appN"/>
             </sup>
@@ -47,13 +50,17 @@
                 <xsl:value-of select="@n"/>
             </xsl:when>
             <xsl:otherwise>
-                <xsl:number from="tei:TEI" level="any"/>
+                <xsl:number count="tei:app" level="single"/>
+                <!--<xsl:number from="tei:TEI" level="any"/>-->
             </xsl:otherwise>
         </xsl:choose>
     </xsl:template>
     <!-- Template, der matcher app og opbygger note
         i det kritiske apparat-->
     <xsl:template match="tei:app" mode="apparatusCriticus">
+      <xsl:variable name="section_number">
+          <xsl:number count="//tei:text/*/tei:div"/>
+      </xsl:variable>
         <xsl:variable name="identifier">
             <xsl:text>App</xsl:text>
             <xsl:choose>
@@ -64,17 +71,18 @@
                     <xsl:value-of select="@n"/>
                 </xsl:when>
                 <xsl:otherwise>
-                    <xsl:number count="tei:app" level="any"/>
+                    <!--<xsl:number count="tei:app" level="any"/>-->
+                    <xsl:number count="tei:app" level="single"/>
                 </xsl:otherwise>
             </xsl:choose>
         </xsl:variable>
-        <p class="note">
-            <span class="noteLabel" id="{$identifier}">
+        <span class="note">
+            <span class="noteLabel" id="{$section_number}-{$identifier}">
                 <strong>
                     <!--<xsl:attribute name="id">
                         <xsl:value-of select="$identifier"/>
                     </xsl:attribute>-->
-                    <a href="#back{$identifier}">
+                    <a href="#back{$section_number}-{$identifier}">
                         <xsl:call-template name="appN"/>
                     </a>
                     <xsl:text>. </xsl:text>
@@ -134,7 +142,7 @@
 
                 <xsl:text> </xsl:text>
             </span>
-        </p>
+        </span>
     </xsl:template>
     <xsl:template match="tei:rdg">
         <xsl:apply-templates select="text()|tei:hi|tei:q"/>
