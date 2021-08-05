@@ -50,7 +50,7 @@
                 <xsl:value-of select="@n"/>
             </xsl:when>
             <xsl:otherwise>
-                <xsl:number count="tei:app" level="single"/>
+                <xsl:number count="tei:app" level="any" from="//tei:text/*/tei:div"/>
                 <!--<xsl:number from="tei:TEI" level="any"/>-->
             </xsl:otherwise>
         </xsl:choose>
