@@ -56,6 +56,7 @@
                     <xsl:apply-templates select=".//tei:cit" mode="quotationApparatus"/>
                 </div>
             </xsl:if>
+            <hr/>
         </div>
     </xsl:template>
     <!--Handle columns-->
