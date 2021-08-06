@@ -27,6 +27,12 @@ nav {
 .navbar-brand {
   font-size: 2rem;
 }
+
+.dropdown-menu {
+    max-height: 350px;
+    overflow-y: auto;
+}
+
 .dropdown-item {
   font-size: 1.8rem;
 }
