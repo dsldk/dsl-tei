@@ -63,6 +63,7 @@
     <xsl:include href="profileDesc.xsl"/>
     <xsl:include href="projectDesc.xsl"/>
     <xsl:include href="ft-modules/q.xsl"/>
+    <xsl:include href="quote.xsl"/>
     <xsl:include href="ref.xsl"/>
     <xsl:include href="reg.xsl"/>
     <xsl:include href="salute.xsl"/>
