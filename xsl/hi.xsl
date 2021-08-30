@@ -59,6 +59,12 @@
             <xsl:when test="@rend = 'initial'">
               <xsl:apply-templates/>
             </xsl:when>
+            <xsl:when test="@rend = 'linethrough'">
+              <span class="line-through"><xsl:apply-templates/></span>
+            </xsl:when>
+            <xsl:when test="@rend = 'line-through'">
+              <span class="line-through"><xsl:apply-templates/></span>
+            </xsl:when>
             <xsl:when test="@rend = 'underline'">
                 <u><xsl:apply-templates/></u>
             </xsl:when>

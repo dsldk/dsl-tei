@@ -226,6 +226,10 @@ h1.editorial {
     text-indent: 0;
 }
 
+.line-through{
+  text-decoration: line-through;
+}
+
 .smaller{
   font-size: 90%;
 }
