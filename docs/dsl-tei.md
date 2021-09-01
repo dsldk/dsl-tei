@@ -1278,6 +1278,10 @@ Til gengivelse af grafiske elementer i den løbende tekst anvendes
 elementet `figure`. Elementet forsynes altid med underelementet
 `figDesc`.
 
+Til adskillelse af afsnit og kapitler kan man anvende tre forskellige
+slags skillestreger, hhv. `<graphic style="shortline"/>`, `<graphic
+style="mediumline"/>` samt `<graphic style="longline"/>`.
+
 #### 4.3.5.8 Opløsning af abbreviaturer
 
 Til optagelse af forkortelser og deres opløsninger i typisk
