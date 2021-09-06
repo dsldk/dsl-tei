@@ -1279,8 +1279,8 @@ elementet `figure`. Elementet forsynes altid med underelementet
 `figDesc`.
 
 Til adskillelse af afsnit og kapitler kan man anvende tre forskellige
-slags skillestreger, hhv. `<graphic style="shortline"/>`, `<graphic
-style="mediumline"/>` samt `<graphic style="longline"/>`.
+slags skillestreger, hhv. `<milestone unit="section" rend="shortline"/>`, 
+`<milestone unit="section" rend="mediumline"/>` samt `<milestone unit="section" rend="longline"/>`.
 
 #### 4.3.5.8 Opløsning af abbreviaturer
 
