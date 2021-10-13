@@ -841,11 +841,13 @@ DSL-TEI håndterer to slags overskrifter vha. elementet `head`
 elementet `orig` og 2. normaliserede overskrifter med elementet `reg`
 (*regularization*).
 
+```xml
 	<head>
 	  <orig>Genesis Mose Første Bog.</orig>
 	  <reg>Første Mosebog</reg>
 	</head>
-
+```
+<!--
 Eksisterende underoverskrifter angives således:
 
 	<head type="orig-sub">...</head>
@@ -857,6 +859,7 @@ Supplerende overskrifter angives
 Supplerende underoverskrifter angives
 
 	<head type="add-sub">...</head>
+-->
 	<!--udfyldes-->
 
 ### 4.3.2 Prosa
