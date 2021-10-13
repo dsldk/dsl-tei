@@ -842,10 +842,10 @@ elementet `orig` og 2. normaliserede overskrifter med elementet `reg`
 (*regularization*).
 
 ```xml
-	<head>
-	  <orig>Genesis Mose Første Bog.</orig>
-	  <reg>Første Mosebog</reg>
-	</head>
+<head>
+  <orig>Genesis Mose Første Bog.</orig>
+  <reg>Første Mosebog</reg>
+</head>
 ```
 <!--
 Eksisterende underoverskrifter angives således:
