@@ -80,6 +80,21 @@ div.poetry{
     margin: 5em 2em 5em 2em;
     font-size: 95%;
 }
+div.poetry::before {
+    content: attr(data-num);
+    color: #767676;
+    font-family: "PT Serif", Georgia, "Times New Roman", serif;
+    font-style: normal;
+    margin-right: 1rem;
+    width: 1.5em;
+    font-size: 0.9rem;
+    text-align: right;
+    display: inline-block;
+    margin-left: -2.5em;
+    vertical-align: top;
+    margin-top: 1.15rem;
+}
+
 
 table, th, td {
     border: 0.05em solid gray;
@@ -615,6 +630,41 @@ div.verse-line{
     margin-left: -2.5em;
     vertical-align: top;
     margin-top: 1.15rem;
+}
+
+/* 
+ * Divider lines 
+ *
+ */
+
+.shortline {
+  margin-top: 4rem;
+  margin-bottom: 4rem;
+  width: 10%;
+  height:1px;
+  border-width:0;
+  color:gray;
+  background-color:gray
+}
+
+.mediumline {
+  margin-top: 4rem;
+  margin-bottom: 4rem;
+  width: 20%;
+  height:1px;
+  border-width:0;
+  color:gray;
+  background-color:gray
+}
+
+.longline {
+  margin-top: 4rem;
+  margin-bottom: 4rem;
+  width: 30%;
+  height:1px;
+  border-width:0;
+  color:gray;
+  background-color:gray
 }
 
 /*@media print {

@@ -32,6 +32,7 @@
     <xsl:include href="ft-modules/figure.xsl"/>
     <xsl:include href="foreign.xsl"/>
     <xsl:include href="gap.xsl"/>
+    <xsl:include href="ft-modules/graphic.xsl"/>
     <xsl:include href="handDesc.xsl"/>
     <xsl:include href="head.xsl"/>
     <xsl:include href="height.xsl"/>
@@ -47,6 +48,7 @@
     <xsl:include href="list.xsl"/>
     <xsl:include href="listBibl.xsl"/>
     <xsl:include href="listWit.xsl"/>
+    <xsl:include href="milestone.xsl"/>
     <xsl:include href="msDesc.xsl"/>
     <xsl:include href="msIdentifier.xsl"/>
     <!--<xsl:include href="notatedMusic.xsl"/>-->
@@ -55,7 +57,7 @@
     <xsl:include href="opener.xsl"/>
     <xsl:include href="orig.xsl"/>
     <xsl:include href="p.xsl"/>
-    <xsl:include href="pb.xsl"/>
+    <xsl:include href="ft-modules/pb.xsl"/>
     <xsl:include href="persName.xsl"/>
     <xsl:include href="physDesc.xsl"/>
     <xsl:include href="placeName.xsl"/>

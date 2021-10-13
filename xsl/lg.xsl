@@ -48,6 +48,11 @@
             </xsl:when>
             <xsl:otherwise>
                 <div class="poetry">
+                    <xsl:if test="@n">
+                        <xsl:attribute name="data-num">
+                            <xsl:value-of select="@n"/>
+                        </xsl:attribute>
+                    </xsl:if>
                     <xsl:apply-templates/>
                 </div>
             </xsl:otherwise>

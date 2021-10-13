@@ -100,7 +100,7 @@
             </xsl:otherwise>
         </xsl:choose>
     </xsl:template>
-    <xsl:template match="tei:graphic">
+    <!--<xsl:template match="tei:graphic">-->
         <!--<img src="{concat(concat(concat(concat('/images/', $basename), '/'), @url), '.jpg')}">
             <xsl:attribute name="alt">
                 <xsl:text>Illustration: </xsl:text>
@@ -116,5 +116,5 @@
                 </xsl:choose>
             </xsl:attribute>
         </img>-->
-    </xsl:template>
+    <!--</xsl:template>-->
 </xsl:stylesheet>

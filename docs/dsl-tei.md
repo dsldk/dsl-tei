@@ -7,7 +7,7 @@
 Nærværende rapport definerer et basisformat for det Danske Sprog- og
 Litteraturselskabs (DSL) digitale udgivelser. Med *basis* menes den
 grundlæggende opmærkning, som projekternes produkter forventes at
-indeholde. Formatet defineres på grundlag af et sæt retningslinjer for
+indeholde. Formatet defineres på grundlag af de retningslinjer for
 opmærkning af tekst- og metadata defineret af konsortiet Text Encoding
 Initiative (<https://www.tei-c.org>).[^a] 
 
@@ -15,9 +15,10 @@ Initiative (<https://www.tei-c.org>).[^a]
 version af TEI's retningslinjer, TEI P5, er den femte. 'P5' refererer
 således til *Proposal 5*.
 
-Hovedbegrundelsen for at definere et fælles opmærkningsformat er at
-skabe et fælles grundlag for værktøjer og procedurer, der bearbejder
-disse.
+Hovedbegrundelsen for et fælles opmærkningsformat for DSL's projekter
+er at skabe et grundlag for de værktøjer og procedurer, der bearbejder
+teksterne og dermed sikre bedre og billigere vedligeholdelse og
+videreudvikling af samme.
 
 # 1 Et `dsl-tei`-dokument
 

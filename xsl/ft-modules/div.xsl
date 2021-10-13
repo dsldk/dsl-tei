@@ -37,6 +37,7 @@
                     tei:sp |
                     tei:table |
                     tei:cit |
+                    tei:milestone |
                     tei:notatedMusic |
                     tei:opener |
                     tei:dateline |
