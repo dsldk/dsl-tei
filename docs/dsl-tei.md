@@ -899,16 +899,12 @@ strofe har overskrift benyttes et `head`-element umiddelbart under
 
 
 -------------------------------------------------------------------------------
-|**Attribut: `@rend`**    |  **Værdi** |   **Betydning**
+|**Attribut: `@rend`**    |  **Værdi** |   **Betydning**|
 -------------------------- ----------------------------------------------------
-                          | center     |    Teksten i `lg` centreres
-
-                          | center-it  |  Teksten i `lg` centreres og kursiveres
-
-                          | indent[1-10]|  Teksten i `lg` indrykkes
-
-                          | right       |  Teksten i `lg` højrestilles
-
+|                          | center     |    Teksten i `lg` centreres|
+|                          | center-it  |  Teksten i `lg` centreres og kursiveres |
+|                          | indent[1-10]|  Teksten i `lg` indrykkes|
+|                          | right       |  Teksten i `lg` højrestilles|
 ---------------------------------------------------------------------------------
 
 For at gengive typografisk ekspressivitet kan et `l`-element forsynes
