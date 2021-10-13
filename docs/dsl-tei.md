@@ -23,15 +23,9 @@ videreudvikling af samme.
 # 1 Et `dsl-tei`-dokument
 
 Et DSL-TEI-dokument er et XML-dokument med rodelementet `TEI` og
-attributtet `@xmlns` (*XML namespace*) udfyldt med værdien 
-`http://www.tei-c.org/ns/1.0`: 
-
-	<TEI xmlns="http://www.tei-c.org/ns/1.0">
-	  ...
-	</TEI>
-
-I overensstemmelse med TEI P5 indeholder rodelementet `TEI` følgende
-tre komponenter: 
+attributtet `@xmlns` (*XML namespace*), udfyldt med værdien 
+`http://www.tei-c.org/ns/1.0`. Rodelementet indholder følgende tre
+komponenter:
 
 1. `teiHeader` (*TEI header*) leverer metadata til beskrivelse af den
   digitale ressource i bibliografisk, kodnings- og udviklingsmæssig 
@@ -44,12 +38,13 @@ tre komponenter:
 
 Elementerne disponeres således: 
 
-	<TEI xmlns="http://www.tei-c.org/ns/1.0">
-	  <teiHeader>...</teiHeader>
-	  <facsimile>...</facsimile>
-	  <text>...</text>
-	</TEI>
-
+```xml
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+  <teiHeader>...</teiHeader>
+  <facsimile>...</facsimile>
+  <text>...</text>
+</TEI>
+```
 # 2 Metadata
 
 Elementet `teiHeader` samler metadata, der er nødvendige i udgivelsen af
