@@ -954,36 +954,37 @@ vers-opmærkning, jf. 4.3.3.
 `stage`
 :	regibemærkning
 
-#### 4.3.4.1 Citation af dramatisk litteratur
+#### 4.3.4.1 Citation af drama
 
-Når dramatisk litteratur citeres, anvendes elementet `cit` med de to
+Når drama citeres, anvendes elementet `cit` med de to
 sidestillede elementer: `quote` og `bibl`. Nedenstående eksempel er
 fra Georg Brandes, Hovedstrømninger, bd. 1:
-	
-	... </p>
-	<cit>
-	  </quote>
-	    <sp>
-	      <speaker>Herkules</speaker>
-	      <p>Hvor er Wieland? Der staaer han. Han, naa, han er 
-	         lille nok, saadan havde jeg netop forestillet mig 
-	         ham. Er I den Mand, som altid fører Hercules i Munden?</p>
-	    </sp>
-	    <sp>
-	      <speaker>Wieland</speaker>
-	      <stage>(vigende tilbage)</stage>
-	      <p>Jeg har Intet at gjøre med Jer, Colos.</p>
-	    </sp>
-	    <sp>
-	      <speaker>Herkules</speaker>
-              <p>Hvad nu, bliv kun!</p>
-	    </sp>
-	    ...
-	  </quote>
-	  <bibl></bibl>
-	</cit>
-	<p> ...
 
+```xml
+... </p>
+<cit>
+  </quote>
+  <sp>
+    <speaker>Herkules</speaker>
+    <p>Hvor er Wieland? Der staaer han. Han, naa, han er 
+    lille nok, saadan havde jeg netop forestillet mig 
+    ham. Er I den Mand, som altid fører Hercules i Munden?</p>
+   </sp>
+   <sp>
+    <speaker>Wieland</speaker>
+    <stage>(vigende tilbage)</stage>
+    <p>Jeg har Intet at gjøre med Jer, Colos.</p>
+   </sp>
+   <sp>
+     <speaker>Herkules</speaker>
+     <p>Hvad nu, bliv kun!</p>
+   </sp>
+    ...
+   </quote>
+  <bibl></bibl>
+</cit>
+<p> ...
+```
 ### 4.3.5 Lister
 
 Lister gengives ved elementet `list`, som underordner et eller
