@@ -860,7 +860,6 @@ Supplerende underoverskrifter angives
 
 	<head type="add-sub">...</head>
 -->
-	<!--udfyldes-->
 
 ### 4.3.2 Prosa
 
@@ -899,16 +898,16 @@ strofe har overskrift benyttes et `head`-element umiddelbart under
 `lg`.
 
 
---------------------------------------- -----------------------------------------
-|**Attribut: `@rend`**    |  **Værdi**    **Betydning**
--------------------------- ------------ ----------------------------------------
-                          | center        Teksten i `lg` centreres
+-------------------------------------------------------------------------------
+|**Attribut: `@rend`**    |  **Værdi** |   **Betydning**
+-------------------------- ----------------------------------------------------
+                          | center     |    Teksten i `lg` centreres
 
-                          | center-it     Teksten i `lg` centreres og kursiveres
+                          | center-it  |  Teksten i `lg` centreres og kursiveres
 
-                          | indent[1-10]  Teksten i `lg` indrykkes
+                          | indent[1-10]|  Teksten i `lg` indrykkes
 
-                          | right         Teksten i `lg` højrestilles
+                          | right       |  Teksten i `lg` højrestilles
 
 ---------------------------------------------------------------------------------
 
