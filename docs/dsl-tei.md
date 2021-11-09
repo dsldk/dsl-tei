@@ -104,10 +104,39 @@ efterfulgt af et eller flere `author`-, `editor`-, og
 		<titleStmt>
 		  <title> Mit Livs Legende </title>
 		  <author> Johannes Jørgensen </author>
-		  <editor xml:id="ei"> Elise Iuul </editor>
-		  <editor xml:id="hw"> Henrik Wivel </editor>
+		  <editor> Elise Iuul </editor>
+		  <editor> Henrik Wivel </editor>
 		  <funder> Carlsbergfondet </funder>
 		</titleStmt>
+
+#### 2.1.1.1 Redaktør og andre arbejdsfunktioner
+
+Elementet `editor` bruges i ukvalificeret form til angivelse af
+værkets redaktører. Til andre arbejdsfunktioner benyttes elementet i
+kvalificeret form med attributtet `@role`:
+
+- data engineer. Redaktører med ansvar for etablering og videre maskinel bearbejdning af data 
+  angives `<editor role="data_engineer">...</editor>`
+- digital version. Redaktører med ansvar for en digital
+  version af et trykt værk angives `<editor role="digital_version">...</editor>`
+- studentermedhjælper optages i `<editor role="student_assistant">...</editor>`
+- oversætter optages i `<editor role="translator">...</editor>`
+- andre medvirkende optages i `<editor role="contributor">...</editor>`
+
+Et eksempel fra Diplomatarium Danicum:
+
+```xml
+<titleStmt>
+  <title>Diplomatarium Danicum – 13831004002</title>
+  <editor>Herluf Nielsen</editor>
+  <editor role="digital_editor">Andrea Stengaard</editor>
+  <editor role="student_assistant">Gustav Juul Mikkelsen</editor>
+  <editor role="contributor">Aage Andersen</editor>
+  <editor role="data_engineer">hansen_thomas_1977</editor>
+  <funder>A.P. Møller og Hustru Chastine Mc-Kinney Møllers Fond til almene Formaal</funder>
+  <funder>Carlsbergfondet</funder>
+</titleStmt>
+```
 
 ### 2.1.2 Omfang (`extent`)
 
