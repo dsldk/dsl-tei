@@ -274,6 +274,10 @@ h1.editorial {
   margin-bottom: 1rem;
 }
 
+.table {
+  margin: 3rem 0 3rem 0;
+}
+
 .text-header{
     background: #fafafa;
     color: #7e888b;
