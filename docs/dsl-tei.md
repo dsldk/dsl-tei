@@ -1104,6 +1104,9 @@ På tekstniveau forekommer følgende elementer:
 `postscript`
 : indeholder et postscriptum til et brev
 
+`table`
+: indeholder en tabel med rækker og kolonner
+
 #### 4.3.5.1 Fremhævet tekst og andre typografiske afvigelser
 
 Til gengivelse af fremhævet tekst benyttes elementet `hi`
@@ -1472,3 +1475,42 @@ brevveksling
 Henvisninger til værker i løbende tekst opmærkes vha. elementet `title`,
 som yderligere kan udvides med attributten `@ref`. Eksempler kan
 findes i Hans Thomissøns Den danske Psalmebog. <!-- uddyb-->
+
+#### 4.3.5.X Tabeller
+
+Tabeller indeholder tekst til visning i tabulær form, dvs. i rækker og kolonner.
+Til opmærkning af tabeller anvendes elementerne:
+
+`table`
+: (tabel) indeholder tekst opmærket i tabulær form
+
+`row`
+: (række) indeholder en række i en tabel
+
+`cell`
+: (celle) indeholder en celle i en tabel
+
+
+Tabeller kan anvendes til opmærkning af middelalderlige regnskaber. I
+Diplomatarium Danicum
+
+```xml
+<table>
+  <row>
+    <cell rows="3"> Summen af guld, modtaget i nævnte tiende af samme kongerige
+      Danmark42) </cell>
+    <cell> 324 små floriner </cell>
+    <cell rows="2">i guld.</cell>
+  </row>
+  <row>
+    <cell> 55 masse. 12 aignel. </cell>
+  </row>
+  <row>
+    <cell cols="2"> 2 mark ½ ørtug guld i barre, iberegnet et guldhostiegemme 
+    i samme sum. </cell>
+  </row>
+</table>
+```
+
+
+
