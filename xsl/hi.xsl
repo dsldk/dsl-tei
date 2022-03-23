@@ -26,6 +26,9 @@
                     <xsl:apply-templates/>
                 </em>
             </xsl:when>
+            <xsl:when test="@rend = 'bold'">
+                <strong><xsl:apply-templates/></strong>
+            </xsl:when>
             <xsl:when test="@rend = 'sub'">
                 <sub>
                     <xsl:apply-templates/>
