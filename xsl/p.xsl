@@ -35,7 +35,7 @@
         </xsl:if>
         <xsl:choose>
             <xsl:when test="@rend = 'center'">
-                <p class="prose-center">
+                  <p class="text-center">
                     <!--<span class="p-number">
                         <xsl:attribute name="id">
                             <xsl:value-of select="$para-number"/>
