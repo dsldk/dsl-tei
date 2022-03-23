@@ -19,7 +19,5 @@
       <xd:copyright>2010, Society for Danish Language and Literature</xd:copyright>
     </xd:desc>
   </xd:doc>
-  <xsl:template match="tei:w">
-    <xsl:apply-templates/>
-  </xsl:template>
+  <xsl:template match="tei:w"><xsl:apply-templates/></xsl:template>
 </xsl:stylesheet>

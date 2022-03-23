@@ -84,6 +84,7 @@
     <xsl:include href="textClass.xsl"/>
     <xsl:include href="title.xsl"/>
     <xsl:include href="ft-modules/titlePage.xsl"/>
+    <xsl:include href="w.xsl"/>
 
     <xsl:output method="html" encoding="UTF-8" indent="yes"
         use-character-maps="no-control-characters"/>
