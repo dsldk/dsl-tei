@@ -19,9 +19,7 @@
             <xd:copyright>2010, Society for Danish Language and Literature</xd:copyright>
         </xd:desc>
     </xd:doc>
-    <xsl:template match="tei:placeName">
-        <xsl:apply-templates/>
-    </xsl:template>
+    <xsl:template match="tei:placeName"><xsl:apply-templates/></xsl:template>
     <!-- The following template handles the placeName element within the creation element -->
     <xsl:template match="tei:profileDesc/tei:creation/tei:placeName">
         <li>
