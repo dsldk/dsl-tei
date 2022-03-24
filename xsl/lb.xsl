@@ -30,13 +30,15 @@
         tei:closer//tei:lb | 
         tei:head//tei:lb |
         tei:imprimatur/tei:lb | 
+        tei:lem/tei:lb |
         tei:orig/tei:lb | 
         tei:opener//tei:lb | 
         tei:p/tei:lb[not(@n | @rend)] | 
         tei:salute//tei:lb | 
         tei:table/tei:lb | 
         tei:byline/tei:lb |
-        tei:titlePart/tei:lb[not(@rend)]">
+        tei:titlePart/tei:lb[not(@rend)] |
+        tei:w/tei:lb">
         <br/>
     </xsl:template>
 </xsl:stylesheet>
