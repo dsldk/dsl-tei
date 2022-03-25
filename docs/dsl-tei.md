@@ -114,13 +114,13 @@ Elementet `editor` bruges i ukvalificeret form til angivelse af værkets
 redaktører. Til andre arbejdsfunktioner benyttes elementet i kvalificeret form
 med attributtet `@role`:
 
-- data engineer. Redaktører med ansvar for etablering og videre maskinel bearbejdning af data 
-  angives `<editor role="data_engineer">...</editor>`
-- digital version. Redaktører med ansvar for en digital
-  version af et trykt værk angives `<editor role="digital_version">...</editor>`
-- studentermedhjælper optages i `<editor role="student_assistant">...</editor>`
-- oversætter optages i `<editor role="translator">...</editor>`
-- andre medvirkende optages i `<editor role="contributor">...</editor>`
+| @role: værdi    | beskrivelse                                                               |
+|-----------------|---------------------------------------------------------------------------|
+| data_engineer   | Redaktører med ansvar for etablering og videre maskinel bearbejdning af data angives `<editor role="data_engineer">...</editor>` |
+| digital_version   | Redaktører med ansvar for en digital version af et trykt værk angives `<editor role="digital_version">...</editor>` |
+| student_assistant | studentermedhjælper optages i `<editor role="student_assistant">...</editor>` | 
+| translator        | oversætter optages i `<editor role="translator">...</editor>` |
+| contributor       | andre medvirkende optages i `<editor role="contributor">...</editor>` |
 
 Et eksempel fra Diplomatarium Danicum:
 
