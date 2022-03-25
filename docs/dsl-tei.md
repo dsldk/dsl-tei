@@ -6,26 +6,25 @@
 
 Nærværende rapport definerer et basisformat for det Danske Sprog- og
 Litteraturselskabs (DSL) digitale udgivelser. Med *basis* menes den
-grundlæggende opmærkning, som projekternes produkter forventes at
-indeholde. Formatet defineres på grundlag af de retningslinjer for
-opmærkning af tekst- og metadata defineret af konsortiet Text Encoding
-Initiative (<https://www.tei-c.org>).[^a] 
+grundlæggende opmærkning, som projekternes produkter forventes at indeholde.
+Formatet defineres på grundlag af de retningslinjer for opmærkning af tekst- og
+metadata defineret af konsortiet Text Encoding Initiative
+(<https://www.tei-c.org>).[^a] 
 
-[^a]: [http://www.tei-c.org](http://www.tei-c.org). Den nuværende
-version af TEI's retningslinjer, TEI P5, er den femte. 'P5' refererer
-således til *Proposal 5*.
+[^a]: [http://www.tei-c.org](http://www.tei-c.org). Den nuværende version af
+  TEI's retningslinjer, TEI P5, er den femte. 'P5' refererer således til
+  *Proposal 5*.
 
-Hovedbegrundelsen for et fælles opmærkningsformat for DSL's projekter
-er at skabe et grundlag for de værktøjer og procedurer, der bearbejder
-teksterne og dermed sikre bedre og billigere vedligeholdelse og
-videreudvikling af samme.
+Hovedbegrundelsen for et fælles opmærkningsformat for DSL's projekter er at
+skabe et fælles grundlag for de redaktører, der udfærdiger og bearbejder
+teksterne og de værktøjer og procedurer, der appliceres på materialet. 
 
 # 1 Et dsl-tei-dokument
 
-Et DSL-TEI-dokument er et XML-dokument med rodelementet `TEI` og
-attributtet `@xmlns` (*XML namespace*), udfyldt med værdien 
-`http://www.tei-c.org/ns/1.0`. Rodelementet indholder følgende tre
-komponenter:
+Et dsl-tei-dokument er et XML-dokument med rodelementet `TEI` og attributtet
+`@xmlns` (*XML namespace*), udfyldt med værdien `http://www.tei-c.org/ns/1.0`.
+Rodelementet indholder de tre hovedkomponenter `teiHeader`, `facsimile` og
+`text`.
 
 |element   | beskrivelse                                                      |
 |----------|------------------------------------------------------------------|
