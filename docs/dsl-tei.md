@@ -228,8 +228,8 @@ forsynes `witness`-elementet enten med et underordnet `bibl`- eller
 
 | element     | beskrivelse              |
 |-------------|--------------------------|
-| bibl        | (*bibliographic citation*) indeholder en løst struktureret bibliografisk henvisning, hvis bestanddele kan opmærkes efter behov. Denne praksis benyttes typisk, når kilden er et moderne tryk, se 2.1.5. |
-| msDesc      | (*manuscript description*) indeholder en beskrivelse af ét manuskript eller tekstbærende genstand. Denne praksis benyttes til håndskrevne kilder, inkunabler og tidlige tryk, som findes i biblioteker og arkiver. Se 2.1.6. |
+| bibl        | (*bibliographic citation*) indeholder en løst struktureret bibliografisk henvisning, hvis bestanddele kan opmærkes efter behov. Denne praksis benyttes typisk, når kilden er et moderne tryk, se 2.1.4.2 |
+| msDesc      | (*manuscript description*) indeholder en beskrivelse af ét manuskript eller tekstbærende genstand. Denne praksis benyttes til håndskrevne kilder, inkunabler og tidlige tryk, som findes i biblioteker og arkiver. Se 2.1.4.3 |
 
 ```xml
 <sourceDesc>
@@ -244,7 +244,7 @@ forsynes `witness`-elementet enten med et underordnet `bibl`- eller
 </sourceDesc>
 ```
 
-### 2.1.5 Beskrivelse af trykte forlæg
+### 2.1.4.2 Beskrivelse af trykte forlæg
 
 Et `bibl`-element indeholder en bibliografisk henvisning, som kan
 struktureres efter behov. Elementet kan indeholde et `@xml:id` udfyldt
@@ -253,48 +253,55 @@ noter.
 
 <!-- skal udfyldes -->
 
-### 2.1.6 Beskrivelse af manuskripter
+### 2.1.4.3 Beskrivelse af håndskrifter
 
-Til udgivelse af tekster med håndskrevne forlæg hører en beskrivelse
-af håndskriftet: hvor det befinder sig, dets tilstand og historie. `msDesc` indeholder tre elementer:
+Til udgivelse af tekster med håndskrevne forlæg hører en beskrivelse af
+håndskriftet: hvor det befinder sig, dets tilstand og historie. `msDesc`
+indeholder tre elementer:
 
-1. `msIdentifier` (*manuscript identifier*), identifikation af håndskriftet
-2. `physDesc` (*physical description*), beskrivelse af håndskriftets fysiske tilstand
-3. `history`, en redegørelse for håndkskriftets proveniens
+| element       |                                                 |
+|---------------|-------------------------------------------------|
+| msIdentifier  | (*manuscript identifier*), identifikation af håndskriftet |
+| physDesc      | (*physical description*), beskrivelse af håndskriftets fysiske tilstand |
+| history       | en redegørelse for håndkskriftets proveniens |
 
 Manuskriptbeskrivelsen har denne struktur:
 
-	<msDesc>
-	  <msIdentifier> ... </msIdentifier>
-	  <physDesc> ... </physDesc>
-	  <history> ... </history>
-	</msDesc>
-	
+```xml
+<msDesc>
+ <msIdentifier> ... </msIdentifier>
+ <physDesc> ... </physDesc>
+ <history> ... </history>
+</msDesc>
+```	
 
-#### 2.1.6.1 Identifikation af håndskriftet (`msIdentifier`)
+#### 2.1.4.4 Identifikation af håndskriftet (msIdentifier)
 
 Til identifikation af et tekstvidne anvendes følgende fem elementer:
 
-1. `settlement`, stedet, hvor håndskriftet opbevares
-2. `repository`, institutionen, som opbevarer håndskriftet  
-3. `collection`, den samling, i hvilken håndskriftet indgår
-4. `idno`, det nummer, der identificerer håndskriftet i samlingen
-5. `msName` (*manuscript name*), en alternativ betegnelse for håndskriftet
+| element       |                                                 |
+|---------------|-------------------------------------------------|
+| settlement    | stedet, hvor håndskriftet opbevares |
+| repository    | institutionen, som opbevarer håndskriftet |  
+| collection    | den samling, i hvilken håndskriftet indgår | 
+| idno          | det nummer, der identificerer håndskriftet i samlingen |
+| msName        | (*manuscript name*), en alternativ betegnelse for håndskriftet |
 
 Et eksempel findes her:
-	
-	<msDesc>
-	  <msIdentifier>
-	    <settlement> København </settlement>
-	    <repository> Det Kongelige Bibliotek </repository>
-	    <collection> NKS </collection>
-	    <idno> 1234 </idno>
-   	    <msName> Æbelholtbogen </msName>
-	  </msIdentifier>
-	  ...
 
+```xml
+<msDesc>
+ <msIdentifier>
+   <settlement> København </settlement>
+   <repository> Det Kongelige Bibliotek </repository>
+   <collection> NKS </collection>
+   <idno> 1234 </idno>
+   <msName> Æbelholtbogen </msName>
+ </msIdentifier>
+  ...
+```
 	
-#### 2.1.6.2 Fysisk tilstand (`physDesc`)
+#### 2.1.6.2 Fysisk tilstand (physDesc)
 
 Beskrivelsen af et tekstvidnes fysiske tilstand falder i fire dele: 
 
