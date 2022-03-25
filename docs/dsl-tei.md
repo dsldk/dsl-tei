@@ -235,14 +235,10 @@ forsynes `witness`-elementet enten med et underordnet `bibl`- eller
 <sourceDesc>
   <listWit>
     <witness xml:id="E">
-     <bibl>
-       <title>Tychonis Brahe Astronomiæ instauratæ mechanica</title>, Wandesburgi
-              1598</bibl>
+     <bibl><title>Tychonis Brahe Astronomiæ instauratæ mechanica</title>, Wandesburgi 1598</bibl>
     </witness>
     <witness xml:id="F">
-      <bibl>
-        <title>Tychonis Brahe Astronomiæ instauratæ progymnasmata</title>, Norimbergæ
-              1602</bibl>
+      <bibl><title>Tychonis Brahe Astronomiæ instauratæ progymnasmata</title>, Norimbergæ 1602</bibl>
     </witness>
   </listWit>
 </sourceDesc>
