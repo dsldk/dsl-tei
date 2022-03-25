@@ -72,6 +72,10 @@ div.body{
   font-style: normal;
 }
 
+.noteBody em > em > em{
+  font-style: italic;
+}
+
 p{
     margin: 1em 0;
     position: relative;

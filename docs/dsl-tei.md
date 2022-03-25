@@ -93,7 +93,8 @@ filen. `fileDesc` indeholder følgende elementer:
 
 | element           | beskrivelse                                              |
 |-------------------|----------------------------------------------------------|
-|`titleStmt`        | (*title statement*), angivelse af titel, en eller flere forfattere og/eller redaktører samt evt. bevillingsgivere |
+|`titleStmt`        | (*title statement*), Xangivelse af titel, en eller flere 
+                      forfattere og/eller redaktører samt evt. bevillingsgivere |
 |`extent`           | beskriver omtrentlig størrelse på en tekst lagret på et medie (fx filstørrelse, antal ord) eller i en trykt udgivelse (fx antal sider) |
 |`publicationStmt`| (*publication statement*) angiver, hvem der har ansvaret for udgivelsen af den digitale tekst og vilkår for distribution af samme |
 |`sourceDesc`| (*source description*) beskriver den kilde, fra hvilken den digitale tekst er afledt, fx om den har digitalt eller analogt forlæg.|
