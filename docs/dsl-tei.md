@@ -76,44 +76,48 @@ Under `teiHeader` findes tilsvarende fire hovedelementer:
 
 De fire elementer fordeler sig således:
 
-	  <teiHeader>
-	    <fileDesc>...</fileDesc>
-	    <encodingDesc>...</encodingDesc>
-	    <profileDesc>...</profileDesc>
-	    <revisionDesc>...</revisionDesc>
-	  </teiHeader>
+```xml
+<teiHeader>
+  <fileDesc>...</fileDesc>
+  <encodingDesc>...</encodingDesc>
+  <profileDesc>...</profileDesc>
+  <revisionDesc>...</revisionDesc>
+</teiHeader>
+```
 
 ## 2.1 Filbeskrivelsen (`fileDesc`)
 
-Metadatasektionens første del er `fileDesc` (*file description*), som
-indeholder information til identifikation, katalogisering og
-fyldestgørende beskrivelse af filen. `fileDesc` indeholder følgende
-elementer:
+Metadatasektionens første del er `fileDesc` (_file description_), som indeholder
+information til identifikation, katalogisering og fyldestgørende beskrivelse af
+filen. `fileDesc` indeholder følgende elementer:
 
-1. `titleStmt` (*title statement*), angivelse af titel, en eller flere forfattere og/eller redaktører samt evt. bevillingsgivere
-2. `extent` beskriver omtrentlig størrelse på en tekst lagret på et medie (fx filstørrelse, antal ord) eller i en trykt udgivelse (fx antal sider)
-3. `publicationStmt` (*publication statement*) angiver, hvem der har ansvaret for udgivelsen af den digitale tekst og vilkår for distribution af samme
-4. `sourceDesc` (*source description*) beskriver den kilde, fra hvilken den digitale tekst er afledt, fx om den har digitalt eller analogt forlæg.
+| element           | beskrivelse                                              |
+|-------------------|----------------------------------------------------------|
+|`titleStmt`        | (*title statement*), angivelse af titel, en eller flere forfattere og/eller redaktører samt evt. bevillingsgivere |
+|`extent`           | beskriver omtrentlig størrelse på en tekst lagret på et medie (fx filstørrelse, antal ord) eller i en trykt udgivelse (fx antal sider) |
+|`publicationStmt`| (*publication statement*) angiver, hvem der har ansvaret for udgivelsen af den digitale tekst og vilkår for distribution af samme |
+|`sourceDesc`| (*source description*) beskriver den kilde, fra hvilken den digitale tekst er afledt, fx om den har digitalt eller analogt forlæg.|
 
 ### 2.1.1 Titel (`titleStmt`)
 
-Titelangivelsen (`titleStmt`) indeholder et `title`-element,
-efterfulgt af et eller flere `author`-, `editor`-, og
-`funder`-elementer. 
+Titelangivelsen (`titleStmt`) indeholder et `title`-element, efterfulgt af et
+eller flere `author`-, `editor`-, og `funder`-elementer. 
 
-		<titleStmt>
-		  <title> Mit Livs Legende </title>
-		  <author> Johannes Jørgensen </author>
-		  <editor> Elise Iuul </editor>
-		  <editor> Henrik Wivel </editor>
-		  <funder> Carlsbergfondet </funder>
-		</titleStmt>
+```xml
+<titleStmt>
+  <title> Mit Livs Legende </title>
+  <author> Johannes Jørgensen </author>
+  <editor> Elise Iuul </editor>
+  <editor> Henrik Wivel </editor>
+  <funder> Carlsbergfondet </funder>
+</titleStmt>
+```
 
 #### 2.1.1.1 Redaktør og andre arbejdsfunktioner
 
-Elementet `editor` bruges i ukvalificeret form til angivelse af
-værkets redaktører. Til andre arbejdsfunktioner benyttes elementet i
-kvalificeret form med attributtet `@role`:
+Elementet `editor` bruges i ukvalificeret form til angivelse af værkets
+redaktører. Til andre arbejdsfunktioner benyttes elementet i kvalificeret form
+med attributtet `@role`:
 
 - data engineer. Redaktører med ansvar for etablering og videre maskinel bearbejdning af data 
   angives `<editor role="data_engineer">...</editor>`
@@ -157,16 +161,18 @@ indeholder fem elementer:
 
 De fem elementtyper organiseres således:
 
-	<publicationStmt>
-	  <publisher>dsl|empty|nil</publisher>
-	  <pubPlace>kbh</pubPlace>
-	  <date>yyyy-mm-dd</date>
-	  <idno></idno>
-	  <availability status="restricted">
-	    <ab>Copyright 2015, Society for Danish Language and
+```xml
+<publicationStmt>
+  <publisher>dsl|empty|nil</publisher>
+  <pubPlace>kbh</pubPlace>
+  <date>yyyy-mm-dd</date>
+  <idno></idno>
+  <availability status="restricted">
+    <ab>Copyright 2015, Society for Danish Language and
 		Literature</ab>
-  	  </availability>
-	</publicationStmt>
+ 	  </availability>
+</publicationStmt>
+```
 
 ### 2.1.4 Udgivelsens kilder (`sourceDesc`)
 
