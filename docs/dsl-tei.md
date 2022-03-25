@@ -148,11 +148,13 @@ samler navn på udgiver, samt *hvor* og *hvornår* filen er publiceret.
 Endelig meddeles, under hvilke vilkår den udgives. `publicationStmt`
 indeholder fem elementer:
 
-1. `publisher` udgiver. Værdien af elementet sættes som udgangspunkt til `dsl`
-2. `pubPlace` udgivelsessted. Elementets grundværdi er `kbh`
-3. `date` udgivelsesdato angives i ISO 8601-formatet YYYY-MM-DD
-4. `idno` identifikationsnummer er en unik værdi. I DD opbygget efter formen *YYYYMMDDddd*.
-5. `availability` tilgængelighed. Elementet indeholder `@status="restricted"`
+| element         | beskrivelse                                                               |
+|-----------------|---------------------------------------------------------------------------|
+| publisher       | udgiver. Værdien af elementet sættes som udgangspunkt til `dsl` |
+| pubPlace        | udgivelsessted. Elementets grundværdi er `kbh` | 
+| date            | udgivelsesdato angives i ISO 8601-formatet YYYY-MM-DD |
+| idno            | identifikationsnummer er en unik værdi. I DD opbygget efter formen *YYYYMMDDddd*. |
+| availability    | tilgængelighed. Elementet indeholder `@status="restricted"` |
 
 De fem elementtyper organiseres således:
 
