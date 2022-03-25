@@ -43,13 +43,10 @@ Elementerne disponeres således:
 ```
 # 2 Metadata
 
-Elementet `teiHeader` samler metadata, der er nødvendige i udgivelsen af
-en tekst. Disse leverer 
-
-* bibliografisk beskrivelse af det digitale værk
-* redegørelse for anvendt praksis ved dokumentets kodning
-* klassifikation af sprog og genre
-* dokumentets ændringshistorik
+Elementet `teiHeader` samler metadata, der er nødvendige i udgivelsen af en
+tekst. Disse leverer bibliografisk beskrivelse af det digitale værk, redegørelse
+for anvendt praksis ved dokumentets kodning, klassifikation af sprog og genre
+samt dokumentets ændringshistorik.
 
 <!--
 Til `teiHeader` knytter sig atributtet `@type`, som i DSL-TEI skal have
@@ -65,10 +62,12 @@ værdien `text` tilladt i DSL-TEI.
 
 Under `teiHeader` findes tilsvarende fire hovedelementer:
 
-1. `fileDesc` (*file description*), indeholder komplet bibliografisk beskrivelse af dokumentets tekstdel
-2. `encodingDesc` (*encoding description*), beskriver forholdet mellem den digitale tekst og kildegrundlaget
-3. `profileDesc` (*text-profile description*), beskriver andre aspekter af teksten, fx sprogbrug, genre eller genstandsfelt
-4. `revisionDesc` (*revision description*), indeholder opsummering af ændringer af filen
+|element          | beskrivelse   |
+|-----------------|---------------|
+| fileDesc        | (*file description*), indeholder komplet bibliografisk beskrivelse af dokumentets tekstdel |
+| encodingDesc    | (*encoding description*), beskriver forholdet mellem den digitale tekst og kildegrundlaget |
+| profileDesc     | (*text-profile description*), beskriver andre aspekter af teksten, fx sprogbrug, genre eller genstandsfelt |
+| revisionDesc    | (*revision description*), indeholder opsummering af ændringer af filen |
 
 De fire elementer fordeler sig således:
 
