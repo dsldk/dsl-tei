@@ -137,11 +137,11 @@ Et eksempel fra Diplomatarium Danicum:
 </titleStmt>
 ```
 
-### 2.1.2 Omfang (`extent`)
+### 2.1.2 Omfang (extent)
 
 	<!-- skal udfyldes -->
 
-### 2.1.3 Om udgivelsen (`publicationStmt`)
+### 2.1.3 Om udgivelsen (publicationStmt)
 
 Udgivelsesangivelsen, `publicationStmt` (*publication statement*),
 samler navn på udgiver, samt *hvor* og *hvornår* filen er publiceret.
@@ -171,7 +171,7 @@ De fem elementtyper organiseres således:
 </publicationStmt>
 ```
 
-#### 2.1.3.1 Tilgængelig
+#### 2.1.3.1 Tilgængelighed
 
 Under `availability` angives eventuelle licensforhold. 
 
@@ -183,19 +183,15 @@ Under `availability` angives eventuelle licensforhold.
 </availability>
 ```
 
-### 2.1.4 Udgivelsens kilder (`sourceDesc`)
+### 2.1.4 Udgivelsens kilder (sourceDesc)
 
-Til beskrivelse af en udgaves kilder benyttes elementet `sourceDesc`
-(*source description*) med de underordnede elementer 
+Til beskrivelse af en udgaves kilder benyttes elementet `sourceDesc` (*source
+description*) med de underordnede elementer `listWit` og `listBibl`:
 
-1. **obligatorisk** `listWit` (*witness list*) indeholder ét eller 
-  flere obligatoriske tekstvidne-elementer (`witness`). Bemærk, at
-  hvert `witness`-element har et `@xml:id`-attribut til identifikation. 
-  Heri indsættes en bogstavværdi, fx `A`, `B`, `C`, som fungerer som 
-  reference i tekstkritiske noter.
-2. **fakultativt** `listBibl` (*bibliographic list*), indeholder 
-  supplerende bibliografiske oplysninger kan gives i ét eller flere 
-  `bibl`-elementer
+| element             | beskrivelse                                       |
+|---------------------|---------------------------------------------------|
+| listWit             | (*witness list*) indeholder ét eller flere obligatoriske tekstvidne-elementer (`witness`). Bemærk, at hvert `witness`-element har et `@xml:id`-attribut til identifikation.  Heri indsættes en bogstavværdi, fx `A`, `B`, `C`, som fungerer som reference i tekstkritiske noter. |
+| listBibl            | (*bibliographic list*), indeholder supplerende bibliografiske oplysninger kan gives i ét eller flere `bibl`-elementer |
 
 > *Note:* En underinddeling med obligatorisk `listWit` og fakultativt
 > `listBibl` sikrer, at de kilder, der konstituerer teksten, kan 
