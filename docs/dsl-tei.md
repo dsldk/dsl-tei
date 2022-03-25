@@ -171,6 +171,18 @@ De fem elementtyper organiseres således:
 </publicationStmt>
 ```
 
+#### 2.1.3.1 Tilgængelig
+
+Under `availability` angives eventuelle licensforhold. 
+
+```xml
+<availability status="restricted">
+  <licence n="CC BY-SA 4.0" target="http://creativecommons.org/licenses/by-sa/4.0/">
+   Distributed under a Creative Commons Attribution-ShareAlike 4.0
+   International License.</licence>
+</availability>
+```
+
 ### 2.1.4 Udgivelsens kilder (`sourceDesc`)
 
 Til beskrivelse af en udgaves kilder benyttes elementet `sourceDesc`
@@ -215,14 +227,27 @@ Elementerne disponeres således:
 Alt efter hvilken slags kilde der ligger til grund for teksten, kan
 `witness`-elementet rumme to slags elementer:
 
-1. `bibl` (*bibliographic citation*) indeholder en løst struktureret
-  bibliografisk henvisning, hvis bestanddele kan opmærkes efter 
-  behov. Denne praksis benyttes typisk, når kilden er et moderne tryk, se 2.1.5.
-2. `msDesc` (*manuscript description*) indeholder en beskrivelse af ét
-  manuskript eller tekstbærende genstand. Denne praksis benyttes til
-  håndskrevne kilder, inkunabler og tidlige tryk, som findes i
-  biblioteker og arkiver. Se 2.1.6.
+| element     | beskrivelse              |
+|-------------|--------------------------|
+| bibl        | (*bibliographic citation*) indeholder en løst struktureret bibliografisk henvisning, hvis bestanddele kan opmærkes efter behov. Denne praksis benyttes typisk, når kilden er et moderne tryk, se 2.1.5. |
+| msDesc      | (*manuscript description*) indeholder en beskrivelse af ét manuskript eller tekstbærende genstand. Denne praksis benyttes til håndskrevne kilder, inkunabler og tidlige tryk, som findes i biblioteker og arkiver. Se 2.1.6. |
 
+```xml
+<sourceDesc>
+  <listWit>
+    <witness xml:id="E">
+     <bibl>
+       <title>Tychonis Brahe Astronomiæ instauratæ mechanica</title>, Wandesburgi
+              1598</bibl>
+    </witness>
+    <witness xml:id="F">
+      <bibl>
+        <title>Tychonis Brahe Astronomiæ instauratæ progymnasmata</title>, Norimbergæ
+              1602</bibl>
+    </witness>
+  </listWit>
+</sourceDesc>
+```
 
 ### 2.1.5 Beskrivelse af trykte forlæg
 
