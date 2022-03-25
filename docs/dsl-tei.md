@@ -20,7 +20,7 @@ er at skabe et grundlag for de værktøjer og procedurer, der bearbejder
 teksterne og dermed sikre bedre og billigere vedligeholdelse og
 videreudvikling af samme.
 
-# 1 Et `dsl-tei`-dokument
+# 1 Et dsl-tei-dokument
 
 Et DSL-TEI-dokument er et XML-dokument med rodelementet `TEI` og
 attributtet `@xmlns` (*XML namespace*), udfyldt med værdien 
