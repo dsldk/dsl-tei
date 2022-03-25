@@ -201,6 +201,7 @@ description*) med de underordnede elementer `listWit` og `listBibl`:
 
 Elementerne disponeres således:
 
+```xml
 	<sourceDesc>
 	  <listWit>
 	    <witness xml:id="A">...</witness>
@@ -212,16 +213,18 @@ Elementerne disponeres således:
 	    <bibl>...</bibl>
 	    ...
 	</sourceDesc> 
+```
 
 > *Note:* Et originalt manuskript betegnes ved et stort bogstav, fx `A`.
 > Et manuskript afledt af originalen `A` betegnes `Aa`, og et manuskript
 > afledt af `Aa` betegnes `Aa1`. Koncepter betegnes ved små bogstaver.
 > Således er et koncept til `A` betegnet ved `a`. 
 
-#### To anvendelser af `witness`-elementet
+#### 2.1.4.1 To anvendelser af witness-elementet
 
-Alt efter hvilken slags kilde der ligger til grund for teksten, kan
-`witness`-elementet rumme to slags elementer:
+Alt efter om de anvendte tekstvidner er håndskrifter eller trykte forlæg
+forsynes `witness`-elementet enten med et underordnet `bibl`- eller
+`msDesc`-element:
 
 | element     | beskrivelse              |
 |-------------|--------------------------|
