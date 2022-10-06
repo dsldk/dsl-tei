@@ -244,7 +244,7 @@ forsynes `witness`-elementet enten med et underordnet `bibl`- eller
 </sourceDesc>
 ```
 
-### 2.1.4.2 Beskrivelse af trykte forlæg
+#### 2.1.4.2 Beskrivelse af trykte forlæg
 
 Et `bibl`-element indeholder en bibliografisk henvisning, som kan
 struktureres efter behov. Elementet kan indeholde et `@xml:id` udfyldt
@@ -253,7 +253,7 @@ noter.
 
 <!-- skal udfyldes -->
 
-### 2.1.4.3 Beskrivelse af håndskrifter
+#### 2.1.4.3 Beskrivelse af håndskrifter
 
 Til udgivelse af tekster med håndskrevne forlæg hører en beskrivelse af
 håndskriftet: hvor det befinder sig, dets tilstand og historie. `msDesc`
@@ -261,9 +261,9 @@ indeholder tre elementer:
 
 | element       |                                                 |
 |---------------|-------------------------------------------------|
-| msIdentifier  | (*manuscript identifier*), identifikation af håndskriftet |
-| physDesc      | (*physical description*), beskrivelse af håndskriftets fysiske tilstand |
-| history       | en redegørelse for håndkskriftets proveniens |
+| msIdentifier  | (*manuscript identifier*), identifikation af håndskriftet, jf.  2.1.4.4 |
+| physDesc      | (*physical description*), beskrivelse af håndskriftets fysiske tilstand, 2.1.4.5 |
+| history       | en redegørelse for håndskriftets proveniens, jf. 2.1.4.6 |
 
 Manuskriptbeskrivelsen har denne struktur:
 
@@ -301,7 +301,7 @@ Et eksempel findes her:
   ...
 ```
 	
-#### 2.1.6.2 Fysisk tilstand (physDesc)
+#### 2.1.4.5 Fysisk tilstand (physDesc)
 
 Beskrivelsen af et tekstvidnes fysiske tilstand falder i fire dele: 
 
@@ -428,7 +428,7 @@ påskrift, jf. Diplomatarium Danicum <http://diplomatarium.dk/dokument/141905180
 	  </ab>
 	</seal>
 
-#### 2.1.6.3 Proveniens (`history`)
+#### 2.1.4.6 Proveniens (history)
 
 Tekstvidnets historie angives under `history`-elementet. Hvis
 tekstvidnet vides at være tabt, registreret eller nævnt, angives dette
@@ -440,6 +440,7 @@ her.
 	</history>
 	...
 
+<!--
 #### 2.1.7 Bibliografiske oplysninger om teksten (`listBibl`) 
 
 Efter `listWit` følger et `listBibl`-element som sidste del af
@@ -453,6 +454,7 @@ citation*), jf. 2.1.5.
 	    ...
 	  </listBibl>
 	</sourceDesc>
+-->
 
 ## 2.2 Det digitale produkt (`encodingDesc`)
 
@@ -1385,12 +1387,9 @@ Hovedstrømninger 1
 	Poesier, i <persName key="n-f-s-grundtvig">Grundtvigs</persName>
 	Prædikener, i ... 
 
-Fra Tycho Brahe
+Bemærk at attributtet @key _skal_ være udfyldt, i det mindste med værdien 'nil'
+der indikerer at personen endnu ikke er identificeret.
 
-```xml
-<l>At <persName key="ptolemaios_klaudios_100">Ptolemæe</persName> tuis, <persName ref="Alfonso 10.">Alphonse</persName>, <persName ref="Copernicus">Copernice</persName> vestris </l>
-
-```
 
 **Fiktive personer**. Såfremt der er behov for at opmærke **fiktive
 personer**, anvendes `persName` med to attributter: 1. `@key` udfyldt
