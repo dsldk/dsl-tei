@@ -1363,16 +1363,30 @@ Dette gengives typisk således:
 #### 4.3.5.9 Noter
 
 Fodnoter i den løbende tekst beskrives vha. elementet `note`
-med attributtet `@place` udfyldt med værdien `bottom`. Et eksempel fra
+med attributtet `@place` udfyldt med værdien `foot`. Eventuelle henvisningstegn
+opmærkes vha. `ref` karakteriseret ved attributtet `@refMark` som i nedenstående
+eksempel H.C. Ørsted, Aanden i Naturen 1:
+
+```xml
+Enster<note place="foot"><ref type="refMark">*)</ref>
+                <p>Ordet er allerede blevet brugt af <hi rend="italic">Risbrigh</hi> 
+                og er udentvivl gammelt. Det fandtes i Ordet 
+                <hi rend="italic">Eensterskilling</hi>, som i forrige Aarhundrede 
+                endnu brugtes til at betegne en enkelt Skilling i Sølvmynt.</p>
+      </note> (Individ)
+```
+<!--
+
+Et eksempel fra
 Georg Brandes, Hovedstrømninger 1
 
 	... Tid Poesi og Malerkunst sine 
-	Personer?<note place="bottom">Hettner: »<bibl>Litteraturgeschichte 
+	Personer?<note place="foot">Hettner: »<bibl>Litteraturgeschichte 
 	des 18ten Jahrhunderts</bibl>« passim.</note> Hvad ...
 
 Marginalnoter mærkes på samme måde med `@place` udfyldt med hhv.
 `margin`, `margin-left` eller `margin-right`.
-
+-->
  
 #### 4.3.5.10 Personnavne
 
