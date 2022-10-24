@@ -1368,12 +1368,11 @@ opmærkes vha. `ref` karakteriseret ved attributtet `@refMark` som i nedenståen
 eksempel H.C. Ørsted, Aanden i Naturen 1:
 
 ```xml
-Enster<note place="foot"><ref type="refMark">*)</ref>
+... Enster<note place="foot"><ref type="refMark">*)</ref>
                 <p>Ordet er allerede blevet brugt af <hi rend="italic">Risbrigh</hi> 
                 og er udentvivl gammelt. Det fandtes i Ordet 
                 <hi rend="italic">Eensterskilling</hi>, som i forrige Aarhundrede 
-                endnu brugtes til at betegne en enkelt Skilling i Sølvmynt.</p>
-      </note> (Individ)
+                endnu brugtes til at betegne en enkelt Skilling i Sølvmynt.</p></note> (Individ) ...
 ```
 <!--
 
