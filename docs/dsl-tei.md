@@ -1349,7 +1349,7 @@ forekommer:
 
 	Oc weth<ex>e</ex>r kende hwn sigh ...
 
-Dette gengives typisk således:
+I Tekstnet gengives den opløste tekst i kursiv:
 
 > Oc weth*e*r kende hwn sigh ...
 
@@ -1374,6 +1374,11 @@ eksempel H.C. Ørsted, Aanden i Naturen 1:
                 <hi rend="italic">Eensterskilling</hi>, som i forrige Aarhundrede 
                 endnu brugtes til at betegne en enkelt Skilling i Sølvmynt.</p></note> (Individ) ...
 ```
+
+I Tekstnet realiseres fodnoter som popup-noter med deres originale
+referencetegn. Noten indledes med en titel bestående af Fodnote plus notens
+nummer. Herefter følger referencetegnet og notens tekst. 
+
 <!--
 
 Et eksempel fra
@@ -1494,8 +1499,8 @@ Et eksempel fra Georg Brandes *Hovedstrømninger*, bd. 1:
 
 #### 4.3.5.15 Breve
 
-Med elementet `correspDesc` beskrives de handlinger, der karakteriserer
-brevveksling
+Med elementet `correspDesc` beskrives brevvekslingens aktører samt eventuelle
+ledsagende steds- og tidsangivelser:
 
 ```xml
 <correspDesc>
