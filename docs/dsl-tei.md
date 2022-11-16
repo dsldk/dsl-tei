@@ -630,15 +630,16 @@ gives i omvendt kronologisk rækkefølge**, dvs. nyeste ændringer først.
 
 | element `change` | beskrivelse   |
 |------------------|---------------|
-| `n`              | revisionsnummer i formatet STØRRE.MINDRE.MINDST, hvor større ændringer omfatter overgangen fra kladde til endelig version, mindre ændringer omfatter tilføjelser af nyt eller hidtil manglende materiale, og mindst omfatter rettelse af småfejl |
+| `n`              | revisionsnummer i formatet STØRRE.MINDRE.MINDST, hvor **større** ændringer omfatter overgangen fra kladde til endelig version, **mindre** ændringer omfatter tilføjelser af nyt eller hidtil manglende materiale, og **mindst** omfatter rettelse af småfejl |
 | `when`           | datoangivelse i formatet yyyy-mm-dd |
 | `who`            | redaktørens initialer |
 | tekst            | kort beskrivelse af ændringen | 
 
 ```xml
 <revisionDesc>
-  <change n="0.1.2" when="2022-11-16" who="#th">Indsat blanktegn (&#xA0;) til indrykning af verslinjer</change>
-  <change n="0.1.1" when="2022-11-15" who="#th">Korrektur læst vha. aspell, og rettelser fra DSLs eksemplar indført.</change>
+  <change n="1.0.0" when="2022-11-16" who="#th">Første endelige version offentiliggjort</change>
+  <change n="0.1.2" when="2022-11-13" who="#th">Indsat blanktegn (&#xA0;) til indrykning af verslinjer</change>
+  <change n="0.1.1" when="2022-01-05" who="#th">Korrektur læst vha. aspell, og rettelser fra DSLs eksemplar indført.</change>
 </revisionDesc>
 ```
 
