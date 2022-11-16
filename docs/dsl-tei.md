@@ -633,7 +633,7 @@ gives i omvendt kronologisk rækkefølge**, dvs. nyeste ændringer først.
 | `n`              | revisionsnummer i formatet STØRRE.MINDRE.MINDST, hvor **større** ændringer omfatter overgangen fra kladde til endelig version, **mindre** ændringer omfatter tilføjelser af nyt eller hidtil manglende materiale, og **mindst** omfatter rettelse af småfejl |
 | `when`           | datoangivelse i formatet yyyy-mm-dd |
 | `who`            | redaktørens initialer |
-| tekst            | kort beskrivelse af ændringen | 
+| `text()`         | kort beskrivelse af ændringen | 
 
 ```xml
 <revisionDesc>
