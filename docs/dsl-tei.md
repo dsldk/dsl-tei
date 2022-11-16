@@ -624,16 +624,16 @@ Opmærkning af korrespondance skal indeholde et `correspDesc`
 
 ## 2.4 `revisionDesc`
 
-Under `revisionDesc` kan væsentlige ændringer registreres vha.
-`change`-elementer udfyldt på følgende måde:
+TEI-headerens sidste underelement er `revisionDesc`, hvor signifikante
+tekstændringer registreres i en række `change`-elementer. **Bemærk** at **ændringer
+gives i omvendt kronologisk rækkefølge**, dvs. nyeste ændringer først.
 
-	<revisionDesc>
- 	  <change when="2013-09-19" who="#pbh">Filen etableret</change>
-	  <change when="2015-10-05" who="#alk">1. korrektur</change>
-	  <change when="2015-10-19" who="#mh">2. korrektur</change>
-	  <change when="2015-10-20" who="#alk">3. korrektur</change>
-	</revisionDesc>
-
+```xml
+<revisionDesc>
+  <change n="0.1.2" when="2022-11-16" who="#th">Indsat blanktegn (&#xA0;) til indrykning af verslinjer</change>
+  <change n="0.1.1" when="2022-11-15" who="#th">Korrektur læst vha. aspell, og rettelser fra DSLs eksemplar indført.</change>
+</revisionDesc>
+```
 
 # 3 Faksimiler
 
