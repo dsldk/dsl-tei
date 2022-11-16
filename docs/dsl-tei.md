@@ -628,6 +628,13 @@ TEI-headerens sidste underelement er `revisionDesc`, hvor signifikante
 tekstændringer registreres i en række `change`-elementer. **Bemærk** at **ændringer
 gives i omvendt kronologisk rækkefølge**, dvs. nyeste ændringer først.
 
+| element `change` | beskrivelse   |
+|------------------|---------------|
+| `n`              | revisionsnummer  |
+| `when`           | datoangivelse i formatet yyyy-mm-dd |
+| `who`            | redaktørens initialer |
+| tekst            | kort beskrivelse af ændringen | 
+
 ```xml
 <revisionDesc>
   <change n="0.1.2" when="2022-11-16" who="#th">Indsat blanktegn (&#xA0;) til indrykning af verslinjer</change>
