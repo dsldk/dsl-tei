@@ -1153,14 +1153,14 @@ Til gengivelse af fremhævet tekst benyttes elementet `hi`
 (*highlighted*) med `@rend` (*rendition*), der beskriver tekstens
 visuelle udtryk. Følgende attributværdier er tilladt:
 
-`italic` 
+`italic` ellers `italics` 
 :	kursiv
 
 `small` 
 :	petit skriftsnit
 
 `spaced`
-:	spatieret
+:	spatieret, gengives med kursiv i endelig visning
 
 `strong`
 :	fed skrift
@@ -1170,6 +1170,9 @@ visuelle udtryk. Følgende attributværdier er tilladt:
 
 `supralinear`
 :	højtstillet tekst
+
+`underlined`
+: understreget tekst, gengives med kursiv i endelig visning
 
 #### 4.3.5.2 Citater
 
