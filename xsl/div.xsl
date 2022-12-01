@@ -45,6 +45,15 @@
 
     <xsl:template match="tei:div/tei:div">
       <xsl:choose>
+        <xsl:when test="@type = 'row'">
+          <div class="row">
+            <xsl:for-each select="tei:div[@type = 'col']">
+              <div class="col">
+                <xsl:apply-templates/>
+              </div>
+            </xsl:for-each>
+          </div>
+        </xsl:when>
         <!-- For DD digitization -->
         <xsl:when test="@type = ('ark','bib')">
           <div class="smaller my-3">
@@ -67,12 +76,9 @@
           </div>
         </xsl:when>
         <xsl:otherwise>
-      <div class="subsection">
-        <!--<xsl:apply-templates
-            select="tei:div | tei:head | tei:p | tei:lg | tei:list | tei:epigraph | tei:sp | tei:table | tei:cit"
-        />-->
-        <xsl:apply-templates />
-      </div>
+          <div class="subsection">
+            <xsl:apply-templates />
+          </div>
 
         </xsl:otherwise>
       </xsl:choose>
