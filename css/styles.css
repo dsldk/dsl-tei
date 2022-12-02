@@ -80,6 +80,12 @@ p{
     margin: 1em 0;
     position: relative;
 }
+
+p.indent {
+  text-indent: 2rem !important;
+}
+
+
 div.poetry{
     margin: 5em 2em 5em 2em;
     font-size: 95%;
