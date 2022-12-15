@@ -1171,7 +1171,7 @@ visuelle udtryk. Følgende attributværdier er tilladt:
 `supralinear`
 :	højtstillet tekst
 
-`underlined`
+`underline`
 : understreget tekst, gengives med kursiv i endelig visning
 
 #### 4.3.5.2 Citater
@@ -1228,78 +1228,85 @@ Et `app`-element samler to elementer:
   til sigler for de manuskripter, i hvilke læsningen optræder. Hver 
   sigelreference indledes med # og adskilles ved blanktegn.
 
-Denne praksis illustreres i Georg Brandes *Hovedstrømninger* bd. 2 
-med denne tekstkritiske note:
-
-	<app>
-	  <lem wit="#SS #Fu #1923-24">Alexandre</lem>
-	  <rdg wit="#A #B">Alexander</rdg>
-	</app>
-
-I overenstemmelse med DSL's udgivelsesprincipper udtrykkes dette på
-følgende måde
-
-> Alexandre] *SS*, *Fu*, *1923-24*, Alexander *A*, *B*.
-
-I nedenstående eksempel ([Dipl. Dan. 14250712001](http://diplomatarium.dk/dokument/14250712001)) 
-tilbyder et andet tekstvidne, *Aa*, et alternativ i form af 'tenebitur'
-til hovedvidnets læsning 'detinebitur':
-
-	... quibus episcopus captus 
-	  <app>
-	    <lem> detinebitur </lem>
-	    <rdg wit="#Aa"> tenebitur </rdg>
-	  </app> 
-	seu ipse ...
-
-Til forklaring af emendationer kan udgiveren supplere `rdg` med elementet `note`. 
-Nedenstående eksempel er fra Saxo Grammaticus 6,3,1 (bd. 1 s. 392)
-
-> Denique peragrata Suetia fabri penates ingressus uicinum 
-> limini locum occupat &lt;caput&gt; pilleolo, ne proderetur, 
-> obscurante.  
-
-Passagen opmærkes således:
-
-	Denique peragrata Suetia fabri penates ingressus uicinum
-	limini locum occupat 
-	  <app>
-	    <lem resp="#Gertz">
-	      <supplied>caput</supplied>
-	    </lem>
-	    <rdg>
-	      <note>uocem <q>caput</q> post <q>occupat</q> quasi
-	            per haplographiam omissam add. Gertz</note>
-	    </rdg>
-	  </app> pilleolo, ne proderetur, obscurante.
-
-Forslag til gengivelse i kritisk apparat:
-
-> &lt;caput&gt;] *Gertz*. *Uocem* caput *post* occupat *quasi per
-> haplographiam omissam add. Gertz.*
-
-Bemærkninger i tilknytning til læsemåder indsættes i det pågældende
-rdg-element, som i nedenstående eksempel i H.C. Ørsted, _Aanden i Naturen_:
-
 ```xml
-...strax at sætte os paa vor egen Tids Standpunkt. Have <app>
-<lem>vi gjennemskuet</lem>
-  <rdg wit="#B #C"><note>(således også i Forhandlinger)</note></rdg>
-  <rdg wit="#A">vig jennemskuet</rdg>
-</app>, hvad deraf...
+<app>
+<lem>den anden</lem>
+<rdg>C, <q>den andet</q> A B, <q>det andet</q> ms.</rdg>
+</app>
 ```
 
-Hvis man ønsker at foranstille noten, er man af praktiske grunde nødt
-til at benytte følgende praksis, hvor sigler udelades fra
-rdg-elementet (her med siglen "ms."):
+<!-- Denne praksis illustreres i Georg Brandes *Hovedstrømninger* bd. 2 --> 
+<!-- med denne tekstkritiske note: -->
 
-```xml
-... havde fuldendt <app>
-  <lem>Størstedelen</lem>
-  <rdg wit="#A #C">størstedelen</rdg>
-  <rdg><note>afviger i ms.</note></rdg>
-  </app> af sit ...
-```
+<!-- 	<app> -->
+<!-- 	  <lem wit="#SS #Fu #1923-24">Alexandre</lem> -->
+<!-- 	  <rdg wit="#A #B">Alexander</rdg> -->
+<!-- 	</app> -->
+
+<!-- I overenstemmelse med DSL's udgivelsesprincipper udtrykkes dette på -->
+<!-- følgende måde -->
+
+<!-- > Alexandre] *SS*, *Fu*, *1923-24*, Alexander *A*, *B*. -->
+
+<!-- I nedenstående eksempel ([Dipl. Dan. 14250712001](http://diplomatarium.dk/dokument/14250712001)) --> 
+<!-- tilbyder et andet tekstvidne, *Aa*, et alternativ i form af 'tenebitur' -->
+<!-- til hovedvidnets læsning 'detinebitur': -->
+
+<!-- 	... quibus episcopus captus --> 
+<!-- 	  <app> -->
+<!-- 	    <lem> detinebitur </lem> -->
+<!-- 	    <rdg wit="#Aa"> tenebitur </rdg> -->
+<!-- 	  </app> --> 
+<!-- 	seu ipse ... -->
+
+<!-- Til forklaring af emendationer kan udgiveren supplere `rdg` med elementet `note`. --> 
+<!-- Nedenstående eksempel er fra Saxo Grammaticus 6,3,1 (bd. 1 s. 392) -->
+
+<!-- > Denique peragrata Suetia fabri penates ingressus uicinum --> 
+<!-- > limini locum occupat &lt;caput&gt; pilleolo, ne proderetur, --> 
+<!-- > obscurante. -->  
+
+<!-- Passagen opmærkes således: -->
+
+<!-- 	Denique peragrata Suetia fabri penates ingressus uicinum -->
+<!-- 	limini locum occupat --> 
+<!-- 	  <app> -->
+<!-- 	    <lem resp="#Gertz"> -->
+<!-- 	      <supplied>caput</supplied> -->
+<!-- 	    </lem> -->
+<!-- 	    <rdg> -->
+<!-- 	      <note>uocem <q>caput</q> post <q>occupat</q> quasi -->
+<!-- 	            per haplographiam omissam add. Gertz</note> -->
+<!-- 	    </rdg> -->
+<!-- 	  </app> pilleolo, ne proderetur, obscurante. -->
+
+<!-- Forslag til gengivelse i kritisk apparat: -->
+
+<!-- > &lt;caput&gt;] *Gertz*. *Uocem* caput *post* occupat *quasi per -->
+<!-- > haplographiam omissam add. Gertz.* -->
+
+<!-- Bemærkninger i tilknytning til læsemåder indsættes i det pågældende -->
+<!-- rdg-element, som i nedenstående eksempel i H.C. Ørsted, _Aanden i Naturen_: -->
+
+<!-- ```xml -->
+<!-- ...strax at sætte os paa vor egen Tids Standpunkt. Have <app> -->
+<!-- <lem>vi gjennemskuet</lem> -->
+<!--   <rdg wit="#B #C"><note>(således også i Forhandlinger)</note></rdg> -->
+<!--   <rdg wit="#A">vig jennemskuet</rdg> -->
+<!-- </app>, hvad deraf... -->
+<!-- ``` -->
+
+<!-- Hvis man ønsker at foranstille noten, er man af praktiske grunde nødt -->
+<!-- til at benytte følgende praksis, hvor sigler udelades fra -->
+<!-- rdg-elementet (her med siglen "ms."): -->
+
+<!-- ```xml -->
+<!-- ... havde fuldendt <app> -->
+<!--   <lem>Størstedelen</lem> -->
+<!--   <rdg wit="#A #C">størstedelen</rdg> -->
+<!--   <rdg><note>afviger i ms.</note></rdg> -->
+<!--   </app> af sit ... -->
+<!-- ``` -->
 
 #### 4.3.5.4 Læsioner
 
