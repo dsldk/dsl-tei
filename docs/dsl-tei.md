@@ -96,9 +96,8 @@ eller flere `author`-, `editor`-, og `funder`-elementer.
 
 #### 2.1.1.1 Redaktør og andre arbejdsfunktioner
 
-Elementet `editor` bruges i ukvalificeret form til angivelse af værkets
-redaktører. Til andre arbejdsfunktioner benyttes elementet i kvalificeret form
-med attributtet `@role`:
+Elementet `editor` bruges med attributtet `@role` til præcisering af udgivernes
+redaktionelle ansvarsområder. Følgende attributværdier er tilladt:
 
 | @role: værdi    | beskrivelse                                                               |
 |-----------------|---------------------------------------------------------------------------|
