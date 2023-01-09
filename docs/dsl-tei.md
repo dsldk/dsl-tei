@@ -46,21 +46,8 @@ Elementerne disponeres således:
 Elementet `teiHeader` samler metadata, der er nødvendige i udgivelsen af en
 tekst. Disse leverer bibliografisk beskrivelse af det digitale værk, redegørelse
 for anvendt praksis ved dokumentets kodning, klassifikation af sprog og genre
-samt dokumentets ændringshistorik.
-
-<!--
-Til `teiHeader` knytter sig atributtet `@type`, som i DSL-TEI skal have
-værdien `text`.[^1] 
-
-		<teiHeader type="text"> ... </teiHeader>
-
-[^1]: If. TEI P5 har typebestemmelsen to mulige værdier, hhv. `corpus`
-til tekstkorpora eller `text` til udgivelser, hvis tekst har
-enhedspræg. Da DSL's korpusudgivelser ikke benytter TEI, er kun
-værdien `text` tilladt i DSL-TEI.
--->
-
-Under `teiHeader` findes tilsvarende fire hovedelementer:
+samt dokumentets ændringshistorik. Under `teiHeader` findes tilsvarende fire
+hovedelementer:
 
 |element          | beskrivelse   |
 |-----------------|---------------|
@@ -100,11 +87,10 @@ eller flere `author`-, `editor`-, og `funder`-elementer.
 
 ```xml
 <titleStmt>
-  <title> Mit Livs Legende </title>
-  <author> Johannes Jørgensen </author>
-  <editor> Elise Iuul </editor>
-  <editor> Henrik Wivel </editor>
-  <funder> Carlsbergfondet </funder>
+  <title>...</title>
+  <author>...</author>
+  <editor role="...">...</editor>
+  <funder>...</funder>
 </titleStmt>
 ```
 
@@ -122,14 +108,14 @@ med attributtet `@role`:
 | translator        | oversætter optages i `<editor role="translator">...</editor>` |
 | contributor       | andre medvirkende optages i `<editor role="contributor">...</editor>` |
 
-Et eksempel fra Diplomatarium Danicum:
+Elementerne kan udfyldes på følgende måde:
 
 ```xml
 <titleStmt>
-  <title>Diplomatarium Danicum – 13831004002</title>
-  <editor>Herluf Nielsen</editor>
-  <editor role="digital_editor">Andrea Stengaard</editor>
-  <editor role="student_assistant">Gustav Juul Mikkelsen</editor>
+  <title> Mit Livs Legende </title>
+  <author> Johannes Jørgensen </author>
+  <editor role="digital_editor">Andersine And</editor>
+  <editor role="student_assistant">Morten Vinge</editor>
   <editor role="contributor">Aage Andersen</editor>
   <editor role="data_engineer">hansen_thomas_1977</editor>
   <funder>A.P. Møller og Hustru Chastine Mc-Kinney Møllers Fond til almene Formaal</funder>
