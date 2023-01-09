@@ -288,7 +288,8 @@ Et eksempel findes her:
 	
 #### 2.1.4.5 Kildens fysiske tilstand 
 
-Beskrivelsen af et tekstvidnes fysiske tilstand (`physDesc`) 
+Beskrivelsen af et tekstvidnes fysiske tilstand (`physDesc`) leveres i et eller
+flere `ab`-elementer.
 
 ```xml
 <physDesc>
