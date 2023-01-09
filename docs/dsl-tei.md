@@ -286,9 +286,18 @@ Et eksempel findes her:
   ...
 ```
 	
-#### 2.1.4.5 Fysisk tilstand (physDesc)
+#### 2.1.4.5 Kildens fysiske tilstand 
 
-Beskrivelsen af et tekstvidnes fysiske tilstand falder i fire dele: 
+Beskrivelsen af et tekstvidnes fysiske tilstand (`physDesc`) 
+
+```xml
+<physDesc>
+  <ab>Brevkort skrevet egenhændigt af Niels Bohr. På bagsiden: <q>Hr. stud. mag. H.
+      Bohr, Bredgade 62, K., København</q> og <q>Juleaften</q></ab>
+</physDesc>
+```
+
+<!--falder i fire dele: 
 
 1. `objectDesc`, beskrivelse af det fysiske objekt 
 2. `handDesc`, beskrivelse af skriver, skriftform og lign. 
@@ -424,7 +433,7 @@ her.
 	  <ab>Tabt. Registreret i bla bla</ab>
 	</history>
 	...
-
+-->
 <!--
 #### 2.1.7 Bibliografiske oplysninger om teksten (`listBibl`) 
 
