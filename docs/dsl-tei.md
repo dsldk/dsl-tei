@@ -496,14 +496,14 @@ Elementet `samplingDecl` kan have følgende gyldige værdier:
 
 ### 2.2.2 `projectDesc`
 
-Under elementet `projectDesc` angives hvilket projekt, der danner
-ramme for etableringen af filen. Det anbefales, at værdien af dette
-element er fast defineret, fx i henhold til projektets gruppeid inden
-for DSL.
+Under elementet `projectDesc` angives Tekstnet-id for det projekt, som danner
+ramme om udgivelsen, fx `arkiv-for-dansk-litteratur`:
 
-	<projectDesc>
-	  <ab> dd-5 </ab>
-	</projectDesc> 
+```xml
+<projectDesc>
+  <ab> arkiv-for-dansk-litteratur </ab>
+</projectDesc> 
+```
 
 ### 2.2.3 `appInfo`
 
