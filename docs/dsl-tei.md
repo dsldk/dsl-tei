@@ -80,7 +80,7 @@ filen. `fileDesc` indeholder følgende elementer:
 | publicationStmt  | (*publication statement*) angiver, hvem der har ansvaret for udgivelsen af den digitale tekst og vilkår for distribution af samme |
 | sourceDesc       | (*source description*) beskriver den kilde, fra hvilken den digitale tekst er afledt, fx om den har digitalt eller analogt forlæg.|
 
-### 2.1.1 Titel (`titleStmt`)
+### 2.1.1 Titelangivelsen
 
 Titelangivelsen (`titleStmt`) indeholder et `title`-element, efterfulgt af et
 eller flere `author`-, `editor`-, og `funder`-elementer. 
