@@ -506,9 +506,11 @@ For at kunne følge med i hvordan teksten er behandlet angives under
 
 	<!-- udfyldes -->
 
-## 2.3 `profileDesc`
+## 2.3 Tekstprofil
 
-Under `profileDesc` 
+Under `profileDesc` (_text-profile description_) redegøres for de
+ikke-bibliografiske aspekter af teksten, herunder tid og sted for tekstens
+fremstilling, anvendte sprog, genre og aktører.
 
 | element       | beskrivelse                                     |
 |---------------|-------------------------------------------------|
@@ -523,21 +525,20 @@ Under `profileDesc`
 
 Elementet `creation` indeholder to elementer 
 
-`date`
-:	dato i ISO-format
+| element       | beskrivelse                                     |
+|---------------|-------------------------------------------------|
+| date          | Tidsangivelse i et passende format. Elementet suppleres altid af attributtet `@when` udfyldt 
+med værdi i formatet YYYY-MM-DD |
+| placeName     | navnet på det sted en tekst er affattet. Dette element anvendes ikke i korrespondance |
 
-`placeName`
-:	navnet på det sted, et brev er udstedt eller en tekst er affattet
 
-<!--udfyld -->
-
-### 2.3.2 Resumé af indholdet (`abstract`)
+### 2.3.2 Resumé af indholdet 
 
 Til brug i søgeresultatlister er det en fordel, at der under titlen
 optræder et resumé af tekstens indhold. Et sådan kan gives i elementet
 `abstract` med et eller flere underordnede `ab`-elementer.
 
-### 2.3.2 Sprog (`langUsage`)
+### 2.3.2 Sprog
 
 Elementet `langUsage` (*language usage*) samler et eller flere
 `language`-elementer. Hvert `language`-element har attributtet
