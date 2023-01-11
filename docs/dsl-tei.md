@@ -510,20 +510,13 @@ For at kunne følge med i hvordan teksten er behandlet angives under
 
 Under `profileDesc` 
 
-`creation`
-:	tid og sted for etablering af teksten
-
-`abstract`
-:	kort resumé af tekstens indhold
-
-`langUsage`
-:	sprog
-
-`textClass`
-:	genre, tema
-
-`correspDesc`
-: beskrivelse af afsender-/modtageroplysninger i korrespondance
+| element       | beskrivelse                                     |
+|---------------|-------------------------------------------------|
+| creation      |	tid og sted for etablering af teksten           |
+| abstract      | resumé af tekstens indhold |
+| langUsage     | sprog |
+| textClass     | genre, tema |
+| correspDesc   | beskrivelse af afsender-/modtageroplysninger i korrespondance |
 
 
 ### 2.3.1 Tid og sted for etablering af teksten (`creation`)
