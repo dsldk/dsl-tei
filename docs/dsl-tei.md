@@ -527,8 +527,7 @@ Elementet `creation` indeholder to elementer
 
 | element       | beskrivelse                                     |
 |---------------|-------------------------------------------------|
-| date          | Tidsangivelse i et passende format. Elementet suppleres altid af attributtet `@when` udfyldt 
-med værdi i formatet YYYY-MM-DD |
+| date          | Tidsangivelse i et passende format. Elementet suppleres altid af attributtet `@when` udfyldt med værdi i formatet YYYY-MM-DD |
 | placeName     | navnet på det sted en tekst er affattet. Dette element anvendes ikke i korrespondance |
 
 
