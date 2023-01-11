@@ -561,6 +561,8 @@ med BCP 47[^qa] og om muligt følger standarden ISO 639-1.[^qb]
 | xda | - | ældre nydansk |
 | xno | - | normannerfransk |
 
+
+
 ```xml
 <langUsage>
   <language ident="da" />
@@ -569,21 +571,23 @@ med BCP 47[^qa] og om muligt følger standarden ISO 639-1.[^qb]
 
 ### 2.3.3 Klassifikation
 
-Emne- og genreklassifikation kan ske på følgende måde vha. elementet
-`textClass`. `textClass` indeholder et `keywords`-element, som samler
-et eller flere `term`-elementer, som hver især indeholder et nøgleord. 
+Emne- og genreklassifikation kan ske på følgende måde i elementet `textClass`.
+`textClass` indeholder et `keywords`-element, som samler et eller flere
+`term`-elementer, som hver især indeholder et nøgleord. 
 
-	<textClass>
-	  <keywords>
-	    <term> jura </term>
-	  </keywords>
-	</textClass>
+```xml
+<textClass>
+  <keywords>
+	  <term> jura </term>
+	</keywords>
+</textClass>
+```
 
 ### 2.3.4 Korrespondance
 
 Opmærkning af korrespondance skal indeholde et `correspDesc` 
 
-```
+```xml
 <correspDesc>
   <correspAction type="sent">
     <persName>Brahe, Tycho (1546-1601)</persName>
@@ -597,9 +601,9 @@ Opmærkning af korrespondance skal indeholde et `correspDesc`
 </correspDesc>
 ```
 
-## 2.4 `revisionDesc`
+## 2.4 Ændringer af udgaven
 
-TEI-headerens sidste underelement er `revisionDesc`, hvor signifikante
+TEI-headerens sidste underelement er `revisionDesc` (_revision description_), hvor signifikante
 tekstændringer registreres i en række `change`-elementer. **Bemærk** at **ændringer
 gives i omvendt kronologisk rækkefølge**, dvs. nyeste ændringer først.
 
