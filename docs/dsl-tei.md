@@ -259,7 +259,7 @@ Manuskriptbeskrivelsen har denne struktur:
 
 #### 2.1.4.4 Identifikation af håndskriftet (msIdentifier)
 
-Til identifikation af et tekstvidne anvendes følgende fem elementer:
+Til identifikation af et tekstvidne anvendes følgende elementer:
 
 | element       |                                                 |
 |---------------|-------------------------------------------------|
@@ -271,17 +271,17 @@ Et eksempel findes her:
 
 ```xml
 <msDesc>
- <msIdentifier>
-   <settlement> København </settlement>
-   <repository> Det Kongelige Bibliotek</repository>
-   <idno> NKS 1234 (Æbelholtbogen) </idno>
- </msIdentifier>
+  <msIdentifier>
+    <settlement> København </settlement>
+    <repository> Det Kongelige Bibliotek</repository>
+    <idno> NKS 1234 (Æbelholtbogen) </idno>
+  </msIdentifier>
   ...
 ```
 	
-#### 2.1.4.5 Kildens fysiske tilstand 
+#### 2.1.4.5 Forlæggets fysiske tilstand 
 
-Beskrivelsen af et tekstvidnes fysiske tilstand (`physDesc`) leveres i et eller
+Beskrivelsen af et tekstvidnes fysiske fremtræden (`physDesc`) leveres i et eller
 flere `ab`-elementer.[^2145]
 
 [^2145]: Tidligere udgaver af denne specifikation har opereret med en mere
@@ -455,9 +455,11 @@ dokumenterer forholdet mellem den opmærkede tekst og dennes kilde. Her
 angives de for transkriptionen styrende principper. Elementet
 `encodingDesc` indholder følgende elementer:
 
-1. `samplingDecl` (*sampling declaration*) indeholder en angivelse af den metode, der er anvendt i transkriptionen af værket
-2. `projectDesc` (*project description*) beskriver formålet med opmærkningen af filen
-3. `appInfo` (*application information*) optager information om de applikationer, der har behandlet teksten i filen
+| element       | beskrivelse                                     |
+|---------------|-------------------------------------------------|
+| samplingDecl  | (*sampling declaration*) indeholder en angivelse af den metode, der er anvendt i transkriptionen af værket |
+| projectDesc   | (*project description*) beskriver formålet med opmærkningen af filen |
+| appInfo       | (*application information*) optager information om de applikationer, der har behandlet teksten i filen |
 
 ### 2.2.1 samplingDecl
 
