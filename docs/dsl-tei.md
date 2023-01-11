@@ -457,11 +457,10 @@ angives de for transkriptionen styrende principper. Elementet
 
 | element       | beskrivelse                                     |
 |---------------|-------------------------------------------------|
-| samplingDecl  | (*sampling declaration*) indeholder en angivelse af den metode, der er anvendt i transkriptionen af værket |
 | projectDesc   | (*project description*) beskriver formålet med opmærkningen af filen |
 | appInfo       | (*application information*) optager information om de applikationer, der har behandlet teksten i filen |
 
-### 2.2.1 samplingDecl
+<!-- ### 2.2.1 samplingDecl
 
 Elementet optager oplysninger om eventuelle udeladelser af dele af
 teksten, fx om der er tale om en fuld transkription eller et
@@ -487,9 +486,9 @@ Elementet `samplingDecl` kan have følgende gyldige værdier:
                              empty        sagen irrelevant
 
 -----------------------------------------------------------------
+-->
 
-
-### 2.2.2 `projectDesc`
+### 2.2.1 `projectDesc`
 
 Under elementet `projectDesc` angives Tekstnet-id for det projekt, som danner
 ramme om udgivelsen, fx `arkiv-for-dansk-litteratur`:
