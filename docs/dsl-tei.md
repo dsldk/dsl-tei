@@ -265,9 +265,7 @@ Til identifikation af et tekstvidne anvendes følgende fem elementer:
 |---------------|-------------------------------------------------|
 | settlement    | stedet, hvor håndskriftet opbevares |
 | repository    | institutionen, som opbevarer håndskriftet |  
-| collection    | den samling, i hvilken håndskriftet indgår | 
-| idno          | det nummer, der identificerer håndskriftet i samlingen |
-| msName        | (*manuscript name*), en alternativ betegnelse for håndskriftet |
+| idno          | standardiseret identifikation af håndskrift eller bog i en samling |
 
 Et eksempel findes her:
 
@@ -275,10 +273,8 @@ Et eksempel findes her:
 <msDesc>
  <msIdentifier>
    <settlement> København </settlement>
-   <repository> Det Kongelige Bibliotek </repository>
-   <collection> NKS </collection>
-   <idno> 1234 </idno>
-   <msName> Æbelholtbogen </msName>
+   <repository> Det Kongelige Bibliotek</repository>
+   <idno> NKS 1234 (Æbelholtbogen) </idno>
  </msIdentifier>
   ...
 ```
