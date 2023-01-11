@@ -75,7 +75,7 @@ filen. `fileDesc` indeholder følgende elementer:
 
 | element           | beskrivelse                                              |
 |-------------------|----------------------------------------------------------|
-| titleStmt        | (*title statement*), Xangivelse af titel, en eller flere forfattere og/eller redaktører samt evt. bevillingsgivere|
+| titleStmt        | (*title statement*), angivelse af titel, en eller flere forfattere og/eller redaktører samt evt. bevillingsgivere|
 | extent           | beskriver omtrentlig størrelse på en tekst lagret på et medie (fx filstørrelse, antal ord) eller i en trykt udgivelse (fx antal sider) |
 | publicationStmt  | (*publication statement*) angiver, hvem der har ansvaret for udgivelsen af den digitale tekst og vilkår for distribution af samme |
 | sourceDesc       | (*source description*) beskriver den kilde, fra hvilken den digitale tekst er afledt, fx om den har digitalt eller analogt forlæg.|
@@ -135,24 +135,21 @@ indeholder fem elementer:
 
 | element         | beskrivelse                                                               |
 |-----------------|---------------------------------------------------------------------------|
-| publisher       | udgiver. Værdien af elementet sættes som udgangspunkt til `dsl` |
-| pubPlace        | udgivelsessted. Elementets grundværdi er `kbh` | 
+| publisher       | udgiver. Værdien af elementet er som udgangspunkt Det Danske Sprog- og Litteraturselskab |
+| pubPlace        | udgivelsessted. Grundværdien er København, DSL's hjemsted | 
 | date            | udgivelsesdato angives i ISO 8601-formatet YYYY-MM-DD |
 | idno            | identifikationsnummer er en unik værdi. I DD opbygget efter formen *YYYYMMDDddd*. |
-| availability    | tilgængelighed. Elementet indeholder `@status="restricted"` |
+| availability    | tilgængelighed. Elementet indeholder attributtet `@status` som kan have en af tre gyldige værdier:1. `free`, 2. `unknown` eller 3. `restricted`. Om udfyldelse af elementet se 2.1.3.1. |
 
 De fem elementtyper organiseres således:
 
 ```xml
 <publicationStmt>
-  <publisher>dsl|empty|nil</publisher>
-  <pubPlace>kbh</pubPlace>
+  <publisher>Det Danske Sprog- og Litteraturselskab</publisher>
+  <pubPlace>København</pubPlace>
   <date>yyyy-mm-dd</date>
   <idno></idno>
-  <availability status="restricted">
-    <ab>Copyright 2015, Society for Danish Language and
-		Literature</ab>
- 	  </availability>
+  <availability status="">...</availability>
 </publicationStmt>
 ```
 
@@ -170,7 +167,7 @@ Under `availability` angives eventuelle licensforhold.
 
 ### 2.1.4 Udgivelsens kilder (sourceDesc)
 
-Til beskrivelse af en udgaves kilder benyttes elementet `sourceDesc` (*source
+Til beskrivelse af en udgaves forlæg benyttes elementet `sourceDesc` (*source
 description*) med de underordnede elementer `listWit` og `listBibl`:
 
 | element             | beskrivelse                                       |
