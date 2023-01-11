@@ -1,1 +1,12 @@
+*.md
+*.html
+!html/dsl-tei-ref.html
 
+xml/
+!xml/dsl-tei-ref.xml
+!xml/dsl-tei.rnc
+
+!xsl/
+
+xslt-site/
+*.pdf
