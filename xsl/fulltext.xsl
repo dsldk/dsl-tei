@@ -13,6 +13,7 @@
     <xsl:include href="c.xsl"/>
     <xsl:include href="cit.xsl"/>
     <xsl:include href="closer.xsl"/>
+    <xsl:include href="code.xsl"/>
     <xsl:include href="condition.xsl"/>
     <xsl:include href="creation.xsl"/>
     <xsl:include href="damage.xsl"/>
