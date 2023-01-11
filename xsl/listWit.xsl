@@ -19,22 +19,26 @@
             <xd:copyright>2010, Society for Danish Language and Literature</xd:copyright>
         </xd:desc>
     </xd:doc>
-    <xsl:template match="tei:pb">
-        <span class="legacy-page-break">
-            <span class="page-break-mark">|</span>
-            <!--This section was used for-->
-            <span class="page-break-value">
-                <xsl:attribute name="id">
-                    <xsl:value-of select="@n"/>
-                </xsl:attribute>
-                <a>
-                    <xsl:attribute name="title">
-                        <xsl:value-of select="@ed"/>
-                    </xsl:attribute>
-                </a>
-                <xsl:value-of select="@n"/>
-            </span>
-        </span>
+    <xsl:template match="tei:listWit">
+        <xsl:choose>
+            <xsl:when test="count(//tei:witness) gt 1">
+                <p>Forlæg: </p>
+                <ul style="list-style: none;">
+                    <xsl:for-each select="tei:witness">
+                        <li><xsl:apply-templates select="."/></li>
+                    </xsl:for-each>
+                </ul>
+            </xsl:when>
+            <xsl:otherwise>
+                <em>Tekstvidne: </em>
+                <ul style="list-style: none;">
+                    <xsl:for-each select="tei:witness">
+                        <li>
+                            <xsl:apply-templates select="."/>
+                        </li>
+                    </xsl:for-each>
+                </ul>
+            </xsl:otherwise>
+        </xsl:choose>
     </xsl:template>
-
 </xsl:stylesheet>

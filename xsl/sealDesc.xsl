@@ -19,22 +19,21 @@
             <xd:copyright>2010, Society for Danish Language and Literature</xd:copyright>
         </xd:desc>
     </xd:doc>
-    <xsl:template match="tei:pb">
-        <span class="legacy-page-break">
-            <span class="page-break-mark">|</span>
-            <!--This section was used for-->
-            <span class="page-break-value">
-                <xsl:attribute name="id">
-                    <xsl:value-of select="@n"/>
-                </xsl:attribute>
-                <a>
-                    <xsl:attribute name="title">
-                        <xsl:value-of select="@ed"/>
-                    </xsl:attribute>
-                </a>
-                <xsl:value-of select="@n"/>
-            </span>
-        </span>
+    <!-- Match a sealDesc with at least one seal element present or missing-->
+    <xsl:template match="tei:sealDesc[tei:seal[1]/@n != '0']">
+        <li>
+            <xsl:text>Segl: </xsl:text>
+            <ul>
+                <xsl:apply-templates select="tei:seal"/>
+            </ul>
+        </li>
     </xsl:template>
-
+    <!-- Match only a seal that actually existed, i.e. the value of which is not 0 -->
+    <xsl:template match="tei:seal[@n != '0']">
+            <li>
+                <xsl:value-of select="@n"/>
+                <xsl:text>. </xsl:text>
+                <xsl:apply-templates select="tei:ab/node()"/>
+            </li>
+    </xsl:template>
 </xsl:stylesheet>

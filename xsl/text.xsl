@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+<xsl:stylesheet xmlns="" xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
     xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tei="http://www.tei-c.org/ns/1.0"
-    exclude-result-prefixes="xs tei" version="2.0">
+    exclude-result-prefixes="xs xsl tei" version="2.0">
     <xd:doc xmlns:xd="http://www.oxygenxml.com/ns/doc/xsl" scope="stylesheet">
         <xd:desc>
             <xd:detail>Licensed by Thomas Hansen under the Creative Commons Attribution-Share Alike
@@ -19,22 +19,30 @@
             <xd:copyright>2010, Society for Danish Language and Literature</xd:copyright>
         </xd:desc>
     </xd:doc>
-    <xsl:template match="tei:pb">
-        <span class="legacy-page-break">
-            <span class="page-break-mark">|</span>
-            <!--This section was used for-->
-            <span class="page-break-value">
-                <xsl:attribute name="id">
-                    <xsl:value-of select="@n"/>
-                </xsl:attribute>
-                <a>
-                    <xsl:attribute name="title">
-                        <xsl:value-of select="@ed"/>
-                    </xsl:attribute>
-                </a>
-                <xsl:value-of select="@n"/>
-            </span>
-        </span>
+    <xsl:template match="tei:text">
+        <xsl:choose>
+            <xsl:when test="tei:front">
+                <xsl:apply-templates select="tei:front"/>
+            </xsl:when>
+            <!--<xsl:otherwise>
+                <h4>Front: n/a</h4>
+            </xsl:otherwise>-->
+        </xsl:choose>
+        <xsl:choose>
+            <xsl:when test="tei:body">
+                <xsl:apply-templates select="tei:body"/>
+            </xsl:when>
+            <xsl:otherwise>
+                <h4>Text body: n/a</h4>
+            </xsl:otherwise>
+        </xsl:choose>
+        <xsl:choose>
+            <xsl:when test="tei:back">
+                <xsl:apply-templates select="tei:back"/>
+            </xsl:when>
+            <!--<xsl:otherwise>
+                <h4>Back matter: n/a</h4>
+            </xsl:otherwise>-->
+        </xsl:choose>
     </xsl:template>
-
 </xsl:stylesheet>

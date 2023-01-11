@@ -19,22 +19,41 @@
             <xd:copyright>2010, Society for Danish Language and Literature</xd:copyright>
         </xd:desc>
     </xd:doc>
-    <xsl:template match="tei:pb">
-        <span class="legacy-page-break">
-            <span class="page-break-mark">|</span>
-            <!--This section was used for-->
-            <span class="page-break-value">
-                <xsl:attribute name="id">
-                    <xsl:value-of select="@n"/>
-                </xsl:attribute>
-                <a>
-                    <xsl:attribute name="title">
-                        <xsl:value-of select="@ed"/>
-                    </xsl:attribute>
-                </a>
-                <xsl:value-of select="@n"/>
-            </span>
-        </span>
+    <xsl:template match="//tei:teiHeader/tei:fileDesc/tei:titleStmt/tei:title">
+        <strong>Publikation: </strong>
+        <xsl:apply-templates/>
     </xsl:template>
-
+    <xsl:template match="tei:body/tei:div//tei:p/tei:title">
+        <em>
+            <xsl:apply-templates/>
+        </em>
+    </xsl:template>
+    <!-- Removed this one, as it seems rather useless -->
+    <!--<xsl:template match="tei:body/tei:div//tei:p/tei:title">
+        <p class="title">
+            <strong>
+                <xsl:apply-templates/>
+            </strong>
+        </p>
+    </xsl:template>-->
+    <xsl:template match="tei:bibl/tei:title">
+        <em>
+            <xsl:apply-templates/>
+        </em>
+    </xsl:template>
+    <xsl:template match="tei:head/tei:title">
+        <em>
+            <xsl:apply-templates/>
+        </em>
+    </xsl:template>
+    <xsl:template match="tei:orig/tei:title">
+        <em>
+            <xsl:apply-templates/>
+        </em>
+    </xsl:template>
+    <xsl:template match="tei:quote/tei:title">
+        <strong>
+            <xsl:apply-templates/>
+        </strong>
+    </xsl:template>
 </xsl:stylesheet>

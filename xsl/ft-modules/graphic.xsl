@@ -19,22 +19,22 @@
             <xd:copyright>2010, Society for Danish Language and Literature</xd:copyright>
         </xd:desc>
     </xd:doc>
-    <xsl:template match="tei:pb">
-        <span class="legacy-page-break">
-            <span class="page-break-mark">|</span>
-            <!--This section was used for-->
-            <span class="page-break-value">
-                <xsl:attribute name="id">
-                    <xsl:value-of select="@n"/>
-                </xsl:attribute>
-                <a>
-                    <xsl:attribute name="title">
-                        <xsl:value-of select="@ed"/>
-                    </xsl:attribute>
-                </a>
-                <xsl:value-of select="@n"/>
-            </span>
-        </span>
+    <xsl:template match="tei:figure/tei:graphic">
+        <img src="{concat(concat(concat(concat('/images/', $basename), '/'), @url), '.jpg')}">
+            <!--<img>-->
+            <xsl:attribute name="alt">
+                <xsl:text>Illustration: </xsl:text>
+                <xsl:value-of select="parent::tei:desc"/>
+                <xsl:text>Text: </xsl:text>
+                <xsl:choose>
+                    <xsl:when test="parent::tei:head">
+                        <xsl:apply-templates select="parent::tei:head | tei:pb"/>
+                    </xsl:when>
+                    <xsl:when test="parent::tei:p">
+                        <xsl:apply-templates select="parent::tei:p | tei:pb"/>
+                    </xsl:when>
+                </xsl:choose>
+            </xsl:attribute>
+        </img>
     </xsl:template>
-
 </xsl:stylesheet>

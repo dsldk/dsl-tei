@@ -19,22 +19,26 @@
             <xd:copyright>2010, Society for Danish Language and Literature</xd:copyright>
         </xd:desc>
     </xd:doc>
-    <xsl:template match="tei:pb">
-        <span class="legacy-page-break">
-            <span class="page-break-mark">|</span>
-            <!--This section was used for-->
-            <span class="page-break-value">
-                <xsl:attribute name="id">
-                    <xsl:value-of select="@n"/>
-                </xsl:attribute>
-                <a>
-                    <xsl:attribute name="title">
-                        <xsl:value-of select="@ed"/>
-                    </xsl:attribute>
-                </a>
-                <xsl:value-of select="@n"/>
-            </span>
-        </span>
+    <xsl:template match="tei:lb">
+        <!--<br/>-->
     </xsl:template>
-
+    <xsl:template
+        match="tei:docAuthor/tei:lb | 
+        tei:orig/tei:lb | 
+        tei:dateline//tei:lb | 
+        tei:docImprint//tei:lb | 
+        tei:closer//tei:lb | 
+        tei:head//tei:lb |
+        tei:imprimatur/tei:lb | 
+        tei:lem/tei:lb |
+        tei:orig/tei:lb | 
+        tei:opener//tei:lb | 
+        tei:p/tei:lb[not(@n | @rend)] | 
+        tei:salute//tei:lb | 
+        tei:table/tei:lb | 
+        tei:byline/tei:lb |
+        tei:titlePart/tei:lb[not(@rend)] |
+        tei:w/tei:lb">
+        <br/>
+    </xsl:template>
 </xsl:stylesheet>

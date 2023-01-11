@@ -1,0 +1,795 @@
+/* {
+    box-sizing: border-box;
+}*/
+
+html{
+    font-size: 62.5%;
+}
+body{
+    font-family: Georgia, Times New Roman, sans-serif;
+    font-size: 1.9rem; /*18px;*/
+    letter-spacing: 0.2px;
+    line-height: 1.5;
+    margin-bottom: 0px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 5em;
+    /*max-width: 53em;*/
+    /*width: 36em;*/
+    /*text-align: justify;*/
+    text-rendering: optimizeLegibility;
+}
+
+nav {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 2rem;
+}
+.navbar-brand {
+  font-size: 2rem;
+}
+
+.dropdown-menu {
+    max-height: 350px;
+    overflow-y: auto;
+}
+
+.dropdown-item {
+  font-size: 1.8rem;
+}
+
+a {
+    text-decoration: none;
+}
+a:active{
+    background: 0 0;
+    color: #008cff;
+}
+a:hover{
+    background: 0 0;
+    color: #008cff;
+}
+
+blockquote{
+    margin: 0.2em 0.7em 0.2em 0.7em;
+}
+h1, h2, h3, h4, h5 {
+    margin-top: 5rem;
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+div.metadata{
+    margin: 1.9em 0;
+    margin-bottom: 2.7em;
+    position: relative;
+}
+div.body{
+    margin: 10em 0;
+    position: relative;
+}
+
+.noteBody em > em {
+  font-style: normal;
+}
+
+.noteBody em > em > em{
+  font-style: italic;
+}
+
+p{
+    margin: 1em 0;
+    position: relative;
+}
+
+p.indent {
+  text-indent: 2rem !important;
+}
+
+
+div.poetry{
+    margin: 5em 2em 5em 2em;
+    font-size: 95%;
+}
+div.poetry::before {
+    content: attr(data-num);
+    color: #767676;
+    font-family: "PT Serif", Georgia, "Times New Roman", serif;
+    font-style: normal;
+    margin-right: 1rem;
+    width: 1.5em;
+    font-size: 0.9rem;
+    text-align: right;
+    display: inline-block;
+    margin-left: -2.5em;
+    vertical-align: top;
+    margin-top: 1.15rem;
+}
+
+
+table, th, td {
+    border: 0.05em solid gray;
+    border-spacing: 0;
+    border-collapse: collapse;
+    box-sizing: border-box;
+    /*width: 100%;*/
+    overflow: auto;
+}
+
+th, td {
+    padding: 15px;
+}
+/*ul.toc{
+    position: fixed;
+    overflow-y: scroll;
+    top: 0;
+    bottom 0;
+    list-style: none;
+
+}*/
+
+ul.simple-list{
+    list-style-type: none;
+}
+
+li > p {
+    margin: 0.5em;
+}
+
+li.divider{
+    height: 1px;
+    margin: 5px 0;
+    /*overflow: hidden;*/
+    background: rgbd(0,0,0,.07);
+}
+
+.container {
+  max-width: 70rem;
+}
+
+
+#metadata-section{
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;    
+}
+.summary {
+    width: 700px;
+    left: 0;
+    overflow: hidden;
+    position: absolute;
+    transition: none !important;
+    z-index: 1;  
+}
+.summary .toc li a{
+    background: 0 0;
+    border-bottom: none;
+    color: #364149;
+    display: block;
+    /*overflow: auto;*/
+    padding: 5px 0 0 0;
+    text-decoration: none;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    /*width: 300px;*/
+}
+
+.summary .toc > li:nth-child(1) a{
+    font-weight: 500;
+    border-bottom: 1px solid rgba(0,0,0,.07);
+    height: 33px;
+    /*padding-top: 1px !important;*/
+    text-decoration: none;
+    top: 0;
+}
+.summary .toc li ul li{
+    display: block;
+    text-decoration: none;
+}
+
+
+.summary li ul.drop-down-menu{
+    /*display: none;*/
+}
+
+/* Add an active class to the active dropdown button */
+.active {
+    background-color: green;
+    color: white;
+}
+.fa-caret-down{
+  float: right;
+  padding-right: 8px;
+}
+.dropbtn{
+  padding: 6px 8px 6px 16px;
+  text-decoration: none;
+  font-size: 20px;
+  color: #818181;
+  display: block;
+  border: none;
+  background: none;
+  width:100%;
+  text-align: left;
+  cursor: pointer;
+  outline: none;
+}
+
+.dropbtn:hover {
+  color: #f1f1f1;
+}
+
+.dropdown-container{
+  /*display: none;*/
+  /*background-color: #262626;*/
+  padding-left: 8px;
+}
+
+/*.text-container{
+    border-right: 0.03em solid gray;
+    padding: 0.5em 0.7em 0.5em 0.7em;
+}*/
+
+h1.editorial {
+    color: gray;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+.speech{
+    position: relative;
+}
+.epigraph{
+    margin-bottom: 3em;
+    margin-left: 20%;
+    position: relative;
+    /* display: block;*/
+}
+.bibl-ref{
+    float: right;
+    position: relative;
+    display: block;
+}
+
+.center{
+    text-align: center;
+    text-indent: 0;
+}
+
+.line-through{
+  text-decoration: line-through;
+}
+
+.smaller{
+  font-size: 90%;
+}
+
+.figure{
+    /*border-collapse: collapse;*/
+    /*box-sizing: border-box;*/
+    /*width: 100%;*/
+    /*overflow: auto;*/
+    padding: 0.5em;
+    border: 0.05em solid gray;
+
+}
+
+.figure-right{
+  display: inline-block;
+   padding: 0.5em;
+   border: 0.05em solid gray;
+}
+
+.mark, mark {
+  padding: 0;
+}
+
+.subsection{
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.table {
+  margin: 3rem 0 3rem 0;
+}
+
+.text-header{
+    background: #fafafa;
+    color: #7e888b;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: .85em;
+    height: 50px;
+    left: 300px;
+    overflow: visible;
+    padding: 0 8px;
+    position: fixed;
+    right: 0;
+    top: 0;
+    border-bottom: 1px solid rgba(0,0,0,.07);
+    z-index: 2;
+}
+
+.text-section p:first-of-type {
+  text-indent: 0;
+}
+
+.text-section p {
+  margin-top: 0;
+  margin-bottom: 0;
+  text-indent: 2.5rem;
+}
+
+.noindent{
+  text-indent: 0 !important;
+}
+
+.note {
+  text-indent: 0 !important;
+}
+.text-wrapper {
+    margin-top: 1.275em;
+    position: relative;
+    outline: 0;
+}
+
+.content {
+   max-width: 850px;
+   margin: 0 auto;
+   padding: 20px 0 920px;
+}
+.content{
+    bottom: 0;
+    left: 300px;
+    position: absolute;
+    top: 0;
+}
+
+.content-inner{
+   max-width: 700px; 
+   padding: 0 0 0 40px;
+}
+.caption{
+    font-family: Helvetica, Arial, sans-serif;
+    display: block;
+    /*left: -6em;*/
+    right: -11em;
+    width: 7em;
+    position: absolute;
+    top: 0;
+    font-size: 0.7em;
+    padding-top: 0.8em;
+    text-align: left;
+    color: #999;
+}
+
+.p-number{
+    display: block;
+    left: -4em;
+    width: 6em;
+    position: absolute;
+    top: 0;
+    font-size: 1em;
+    text-align: center;
+    color: #999;
+}
+.legacy-page-break{
+}
+
+/*.metadata{
+    color: gray;
+    font: Verdana, sans-serif;
+}*/
+
+.meta-head{
+    color: gray;
+    font: Verdana, sans-serif;
+}
+.page-break-mark{
+    font-size: 14px;
+    font-weight: normal;
+    color: #999;
+    /*margin: 0 0 0.5em 0;*/
+    padding: 0 0 0 0;
+}
+.page-break-value{
+    font-family: Helvetica, Arial, sans-serif;
+    vertical-align: inherit;
+    font-size: 12px;
+    font-weight: normal;
+    left: -50px;
+    padding: 0.5em 0 0 0;
+    position: absolute;
+    width: 29px;
+    color: #999;
+}
+
+.marginal-note-content{
+   right: -125px;
+   font-size: 13px;
+   /*background-color: red;*/
+   position: absolute;
+   text-align: left;
+   width: 100px;
+}
+
+.notes {
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+}
+
+/*This places the text-and-note container in relative position to ??*/
+.text-and-note{
+    position: relative;
+}
+
+.sidenotes{
+    color: gray;
+    font: .700em/1.44 Verdana, sans-serif;
+    list-style: none;
+    background: none;
+    position: absolute;
+    text-align: left;
+    top: 0;
+    right: -21.5em;
+    width: 20em;
+    /* margin: .2em 0 1.44em 0; */
+    margin: 0;
+    /*overflow: hidden;*/
+}
+.summary{
+    background: #fafafa;
+    border-right: 1px solid rgba(0,0,0,.07);
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    left: -1;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    transition: none !important;
+    width: 300px;
+    z-index:1;
+}
+
+.toc{
+    list-style: none;
+}
+
+.title-page {
+  padding: 8rem 4rem 8rem 4rem;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 12rem;
+  margin-bottom: 12rem;
+  width: 60rem;
+  border: 1px solid #BEC6C9;
+}
+
+.title-page p.center{
+  text-indent: 0;
+}
+
+.part-heading {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 2.7rem;
+  letter-spacing: 0.15rem;
+  padding-bottom: 9rem;
+  padding-top: 9rem;
+  text-align: center;
+}
+
+
+.center-col{
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  width: 50rem;
+}
+
+.title-page h1, .title-age h2, .title-page h3, .title-page h4, .title-page p {
+    text-align: center;
+}
+.poetry-center{
+    text-align: center;
+}
+.poetry-right{
+    text-align: right;
+}
+
+.postscript {
+  margin-top: 1.8rem;
+  margin-bottom: 4rem;
+}
+
+.prose-center{
+    text-align: center;
+}
+.prose-right{
+    text-align: right;
+}
+p.title{
+    margin-left: 1.5em;
+}
+div.indent{
+    text-indent: 1.5em;
+    margin: 0.2em 0 0.2em;
+}
+
+div.indent1{
+    text-indent: 1em;
+    margin: 0.2em 0 0.2em;
+}
+div.indent2{
+    text-indent: 2em;
+    margin: 0.2em 0 0.2em;
+}
+div.indent3{
+    text-indent: 3em;
+    margin: 0.2em 0 0.2em;
+
+}
+div.indent4{
+    text-indent: 4em;
+    margin: 0.2em 0 0.2em;
+
+}
+div.indent5{
+    text-indent: 5em;
+    margin: 0.2em 0 0.2em;
+
+}
+div.indent6{
+    text-indent: 6em;
+    margin: 0.2em 0 0.2em;
+
+}
+div.indent7{
+    text-indent: 7em;
+    margin: 0.2em 0 0.2em;
+
+}
+div.indent8{
+    text-indent: 8em;
+    margin: 0.2em 0 0.2em;
+
+}
+div.indent9{
+    text-indent: 9em;
+    margin: 0.2em 0 0.2em;
+
+}
+div.indent10{
+    text-indent: 10em;
+    margin: 0.2em 0 0.2em;
+
+}
+div.indent11{
+    text-indent: 11em;
+    margin: 0.2em 0 0.2em;
+
+}
+div.indent12{
+    text-indent: 12em;
+    margin: 0.2em 0 0.2em;
+
+}
+div.indent13{
+    text-indent: 13em;
+    margin: 0.2em 0 0.2em;
+
+}
+div.indent14{
+    text-indent: 14em;
+    margin: 0.2em 0 0.2em;
+
+}
+div.indent15{
+    text-indent: 15em;
+    margin: 0.2em 0 0.2em;
+
+}
+div.align-last-right{
+    margin: 0.2em 0 0.2em;
+    text-align:justify;
+    text-align-last:right;
+}
+div.verse-line{
+    margin: 0.2em 0 0.2em;
+}
+
+.drama{
+    margin: 1em 2em 0 2em;
+    
+}
+.drama-speaker{
+    text-align:center;
+    margin-bottom:-0.5em;
+}
+.drama-speech{
+    margin-bottom: 0.5em
+}
+.closer {
+    margin: 2rem 0 5rem 0;
+}
+
+.opener > .dateline {
+  text-align: right;
+}
+
+.opener > .salute {
+  margin-left: 2.5rem;
+}
+
+.closer > .dateline {
+  margin-left: 2.5rem;
+}
+
+.closer > .salute {
+  margin-left: 51%;
+}
+.closer > .signature {
+  margin-left: 51%;
+}
+.dateline {
+    margin: 0.7rem 3.5rem 1.5rem 5rem;
+    /* text-align: right; */
+}
+.verse-indent {
+    text-indent: 1.5rem;
+}
+.verse-line::before {
+    content: attr(data-num);
+    color: #767676;
+    font-family: "PT Serif", Georgia, "Times New Roman", serif;
+    font-style: normal;
+    margin-right: 1rem;
+    width: 1.5em;
+    font-size: 0.9rem;
+    text-align: right;
+    display: inline-block;
+    margin-left: -2.5em;
+    vertical-align: top;
+    margin-top: 1.15rem;
+}
+
+/* 
+ * Divider lines 
+ *
+ */
+
+.shortline {
+  margin-top: 4rem;
+  margin-bottom: 4rem;
+  width: 10%;
+  height:1px;
+  border-width:0;
+  color:gray;
+  background-color:gray
+}
+
+.mediumline {
+  margin-top: 4rem;
+  margin-bottom: 4rem;
+  width: 20%;
+  height:1px;
+  border-width:0;
+  color:gray;
+  background-color:gray
+}
+
+.longline {
+  margin-top: 4rem;
+  margin-bottom: 4rem;
+  width: 30%;
+  height:1px;
+  border-width:0;
+  color:gray;
+  background-color:gray
+}
+
+/*@media print {
+  body {
+    font-family: "PT Serif", Georgia, "Times New Roman", serif;
+  }
+  a {
+    text-decoration: none;
+  }
+  .container {
+  width: 75px;
+  float: none;
+  display: initial;
+  padding-left:  1rem;
+  padding-right: 1rem;
+  margin: 0 auto;
+}
+
+}*/
+@media print {
+  body { 
+    width:100% !important; 
+    margin: 25mm 22mm 25mm 22mm !important; 
+    padding:20mm !important; 
+    line-height: 1.4; 
+    word-spacing:1.1pt; 
+    letter-spacing:0.2pt; 
+    font-family: Georgia,"Times New Roman", serif; 
+    color: #000; 
+    background: none; 
+    font-size: 22pt; 
+  }
+  h1,h2,h3,h4,h5,h6 { 
+    font-family: Georgia, "Times New Roman", serif; 
+  }
+  h1 {
+    font-size:29pt;
+  }
+  h2 {
+    font-size:27pt;
+  }
+  h3{
+    font-size:25pt;
+  }
+  h4,h5,h6 {
+    font-size:22pt;
+  }
+  code { 
+    font: 10pt Courier, monospace; 
+  } 
+  blockquote { 
+    margin: 1.3em; padding: 1em;  font-size: 10pt; 
+  }
+  hr { 
+    background-color: #ccc; 
+  }
+  img { 
+    display: block; 
+    margin: 1em 0; 
+  }
+  a img { 
+    border: none; 
+  }
+  table { 
+    margin: 1px; 
+    text-align:left; 
+  }
+  th { 
+    border-bottom: 1px solid #333;  
+    font-weight: bold; 
+  }
+  td { 
+    border-bottom: 1px solid #333; 
+  }
+  th,td { 
+    padding: 4px 10px 4px 0; 
+  }
+  tfoot { 
+    font-style: italic; 
+  }
+  caption { 
+    background: #fff; 
+    margin-bottom:2em; 
+    text-align:left; 
+  }
+  thead {
+    display: table-header-group;
+  }
+  tr { 
+    page-break-inside: avoid;
+  } 
+  a { 
+    text-decoration: none; 
+    color: black; 
+  }
+  .verse-line::before {
+    content: attr(data-num);
+    color: #767676;
+    font-family: Georgia, "Times New Roman", serif;
+    font-style: normal;
+    margin-right: 1rem;
+    width: 1.5em;
+    font-size: 16pt;
+    text-align: right;
+    display: inline-block;
+    margin-left: -2.8em;
+    vertical-align: top;
+    margin-top: 1.2rem;
+}
+  /*#header, #commentform, #respond, #sidebar, #post-footer, #comments span, .comment-reply-link, 
+  .comment-edit-link, #footer, #related, .avatar, #article-sponsor { display: none; }
+  #comments { page-break-before: always; }
+*/
+}

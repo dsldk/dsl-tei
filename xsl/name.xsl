@@ -19,22 +19,21 @@
             <xd:copyright>2010, Society for Danish Language and Literature</xd:copyright>
         </xd:desc>
     </xd:doc>
-    <xsl:template match="tei:pb">
-        <span class="legacy-page-break">
-            <span class="page-break-mark">|</span>
-            <!--This section was used for-->
-            <span class="page-break-value">
-                <xsl:attribute name="id">
-                    <xsl:value-of select="@n"/>
-                </xsl:attribute>
-                <a>
-                    <xsl:attribute name="title">
-                        <xsl:value-of select="@ed"/>
-                    </xsl:attribute>
-                </a>
-                <xsl:value-of select="@n"/>
-            </span>
-        </span>
+    <xsl:template match="tei:name">
+        <xsl:choose>
+            <xsl:when test="@xml:id='alk'">knudsen_anders_1958</xsl:when>
+            <xsl:when test="@xml:id='fgj'">jensen_fg_19XX</xsl:when>
+            <xsl:when test="@xml:id='jon'">adams_j_19XX</xsl:when>
+            <xsl:when test="@xml:id='maria.arvidsson'">arvidsson_m_19XX</xsl:when>
+            <xsl:when test="@xml:id='mh'">hedemann_markus_1970</xsl:when>
+            <xsl:when test="@xml:id='pbh'">hansen_pb_1988</xsl:when>
+            <xsl:when test="@xml:id='pz'">zeeberg_peter_1957</xsl:when>
+            <xsl:when test="@xml:id='smb'">bak_sm_1984</xsl:when>
+            <xsl:when test="@xml:id='th'">hansen_thomas_1977</xsl:when>
+            <xsl:when test="@xml:id='th'">posselt_gert_1955</xsl:when>
+            <xsl:otherwise>
+                <xsl:value-of select="@xml:id"/>
+            </xsl:otherwise>
+        </xsl:choose>
     </xsl:template>
-
 </xsl:stylesheet>

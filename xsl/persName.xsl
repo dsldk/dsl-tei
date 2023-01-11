@@ -19,22 +19,18 @@
             <xd:copyright>2010, Society for Danish Language and Literature</xd:copyright>
         </xd:desc>
     </xd:doc>
-    <xsl:template match="tei:pb">
-        <span class="legacy-page-break">
-            <span class="page-break-mark">|</span>
-            <!--This section was used for-->
-            <span class="page-break-value">
-                <xsl:attribute name="id">
-                    <xsl:value-of select="@n"/>
-                </xsl:attribute>
-                <a>
-                    <xsl:attribute name="title">
-                        <xsl:value-of select="@ed"/>
-                    </xsl:attribute>
-                </a>
-                <xsl:value-of select="@n"/>
-            </span>
-        </span>
+    <xsl:template match="tei:persName[@key]">
+      <xsl:variable name="identifier">
+        <xsl:value-of select="@key"/>
+      </xsl:variable>
+      <mark class="name"
+        data-container="body"
+        data-toggle="popover"
+        data-template="&lt;div class='popover' role='tooltip'&gt;&lt;div class='arrow'&gt;&lt;/div&gt;&lt;h3 class='popover-header'&gt;&lt;/h3&gt;&lt;div class='popover-body'&gt;&lt;/div&gt;&lt;/div&gt;"
+        data-placement="auto"
+        data-html="true">
+        <xsl:attribute name="data-content">{{% person <xsl:value-of select='$identifier'/> %}}</xsl:attribute>
+        <xsl:apply-templates/>
+      </mark>
     </xsl:template>
-
 </xsl:stylesheet>

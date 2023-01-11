@@ -19,22 +19,22 @@
             <xd:copyright>2010, Society for Danish Language and Literature</xd:copyright>
         </xd:desc>
     </xd:doc>
-    <xsl:template match="tei:pb">
-        <span class="legacy-page-break">
-            <span class="page-break-mark">|</span>
-            <!--This section was used for-->
-            <span class="page-break-value">
-                <xsl:attribute name="id">
-                    <xsl:value-of select="@n"/>
-                </xsl:attribute>
-                <a>
-                    <xsl:attribute name="title">
-                        <xsl:value-of select="@ed"/>
-                    </xsl:attribute>
-                </a>
-                <xsl:value-of select="@n"/>
-            </span>
-        </span>
+    <xsl:template match="tei:height">
+        <xsl:choose>
+            <xsl:when test="text() = '99999999'">
+                <xsl:text>-- fejl: Angiv manuscriptHeight i cm. --</xsl:text>
+            </xsl:when>
+            <xsl:when test="text() = '0'">
+                <!-- when '0' leave empty -->
+            </xsl:when>
+            <xsl:otherwise>
+                <xsl:text>Højde: </xsl:text>
+                <!--<xsl:value-of select="replace(., '(\d)\.(\d)', '$1,$2')"/>-->
+                <xsl:value-of select="."/>
+                <xsl:text> </xsl:text>
+                <xsl:value-of select="../@unit"/>
+                <xsl:text>. </xsl:text>
+            </xsl:otherwise>           
+        </xsl:choose>
     </xsl:template>
-
 </xsl:stylesheet>

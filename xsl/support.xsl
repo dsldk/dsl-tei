@@ -19,22 +19,18 @@
             <xd:copyright>2010, Society for Danish Language and Literature</xd:copyright>
         </xd:desc>
     </xd:doc>
-    <xsl:template match="tei:pb">
-        <span class="legacy-page-break">
-            <span class="page-break-mark">|</span>
-            <!--This section was used for-->
-            <span class="page-break-value">
-                <xsl:attribute name="id">
-                    <xsl:value-of select="@n"/>
-                </xsl:attribute>
-                <a>
-                    <xsl:attribute name="title">
-                        <xsl:value-of select="@ed"/>
-                    </xsl:attribute>
-                </a>
-                <xsl:value-of select="@n"/>
-            </span>
-        </span>
+    <xsl:template match="tei:support">
+        <xsl:choose>
+            <xsl:when test="tei:ab[text() = 'nil']">
+                <xsl:text>--fejl, udfyld support/ab--</xsl:text>
+            </xsl:when>
+            <xsl:when test="tei:ab[text() = 'empty']">
+                <!-- when 'empty', leave empty -->
+            </xsl:when>
+            <xsl:otherwise>
+                <xsl:apply-templates/>
+            </xsl:otherwise>
+        </xsl:choose>
+        <xsl:apply-templates select="tei:ab"/>
     </xsl:template>
-
 </xsl:stylesheet>
