@@ -34,7 +34,7 @@
             </ul>-->
         </xsl:if>
         <xsl:choose>
-            <xsl:when test="@rend = 'center'">
+            <xsl:when test="(@rend = 'center') or (@rend = 'text-center')">
                   <p class="text-center">
                     <!--<span class="p-number">
                         <xsl:attribute name="id">
@@ -75,7 +75,7 @@
                     <xsl:apply-templates/>
                 </p>
             </xsl:when>
-            <xsl:when test="(@rend = 'right') or (@rend = 'rightMargin') or (@rend = 'right-margin')">
+            <xsl:when test="(@rend = 'right') or (@rend = 'rightMargin') or (@rend = 'right-margin') or (@rend = 'text-right')">
                 <p class="prose-right">
                     <!--<span class="p-number">
                         <xsl:attribute name="id">
