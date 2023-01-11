@@ -540,17 +540,13 @@ optræder et resumé af tekstens indhold. Et sådan kan gives i elementet
 ### 2.3.2 Sprog
 
 Elementet `langUsage` (*language usage*) samler et eller flere
-`language`-elementer. Hvert `language`-element har attributtet
-`@ident` (*identity*), hvis værdi er en sprogkode konstrueret i
-overensstemmelse med BCP 47[^qa] og om muligt følger standarden ISO
-639-1[^qb]
+`language`-elementer. Hvert `language`-element har attributtet `@ident`
+(*identity*), hvis værdi er en sprogkode konstrueret i overensstemmelse
+med BCP 47[^qa] og om muligt følger standarden ISO 639-1.[^qb]
 
 [^qa]: jf. <https://tools.ietf.org/html/bcp47>
 [^qb]: jf. <http://www-01.sil.org/iso639-3/codes.asp>
 
-	<langUsage>
-	  <language ident="da" />
-	</langUsage>
 
 | @ident værdi | ISO 639 | beskrivelse                                     |
 |----------------|-------|-----------|
@@ -565,6 +561,11 @@ overensstemmelse med BCP 47[^qa] og om muligt følger standarden ISO
 | xda | - | ældre nydansk |
 | xno | - | normannerfransk |
 
+```xml
+<langUsage>
+  <language ident="da" />
+</langUsage>
+```
 
 ### 2.3.3 Klassifikation
 
