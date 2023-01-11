@@ -552,8 +552,8 @@ overensstemmelse med BCP 47[^qa] og om muligt følger standarden ISO
 	  <language ident="da" />
 	</langUsage>
 
-| attribut ident | værdi | ISO 639 | beskrivelse                                     |
-|----------------|-------|---------|------------------------|
+| @ident værdi | ISO 639 | beskrivelse                                     |
+|----------------|-------|-----------|
 | da | ja | dansk |
 | de | ja | tysk |
 | en | ja | engelsk |
