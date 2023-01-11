@@ -208,13 +208,13 @@
         <div>
           <head>Fremhævelse</head>
           <p>Her er tekst i kursiv: <hi rend="italics">Tekst i kursiv.</hi></p>
-          <code>Her er tekst i kursiv: &lt;hi rend="italics"&gt;Tekst i kursiv.&lt;/hi&gt;</code>
-          <p>Herefter kommer tekst i fed: <hi rend="strong">Tekst i fed.</hi> Opmærkning: <code>&lt;hi rend="strong"&gt;</code> </p>
-          <p>Herefter kommer understillet tekst: <hi rend="sub">Understillet tekst.</hi> Opmærkning: <code>&lt;hi rend="sub"&gt;</code></p>
-          <p>Herefter kommer overstillet tekst: <hi rend="sup">Overstillet tekst.</hi> Opmærkning: <code>&lt;hi rend="sup"&gt;</code></p>
-          <p>Herefter kommer tekst med småt: <hi rend="small">Mindre tekst.</hi> Opmærkning: <code>&lt;hi rend="small"&gt;</code></p>
+          <!--<code>Her er tekst i kursiv: &lt;hi rend="italics"&gt;Tekst i kursiv.&lt;/hi&gt;</code>-->
+          <p>Herefter kommer tekst i fed: <hi rend="strong">Tekst i fed.</hi> </p>
+          <p>Herefter kommer understillet tekst: <hi rend="sub">Understillet tekst.</hi></p>
+          <p>Herefter kommer overstillet tekst: <hi rend="sup">Overstillet tekst.</hi></p>
+          <p>Herefter kommer tekst med småt: <hi rend="small">Mindre tekst.</hi></p>
           <p>Herefter kommer spærret/spatieret tekst: <hi rend="spaced">Spærret/spatieret tekst
-              gengives med kursiv.</hi> Opmærkning: <code>&lt;hi rend="spaced"&gt;</code></p>
+              gengives med kursiv.</hi></p>
         </div>
         <div>
           <head>
