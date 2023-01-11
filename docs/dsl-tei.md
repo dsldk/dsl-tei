@@ -578,7 +578,7 @@ Emne- og genreklassifikation kan ske på følgende måde i elementet `textClass`
 ```xml
 <textClass>
   <keywords>
-	  <term> jura </term>
+    <term> jura </term>
   </keywords>
 </textClass>
 ```
