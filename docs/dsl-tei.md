@@ -281,8 +281,8 @@ Et eksempel findes her:
 	
 #### 2.1.4.5 Forlæggets fysiske tilstand 
 
-Beskrivelsen af et tekstvidnes fysiske fremtræden (`physDesc`) leveres i et eller
-flere `ab`-elementer.[^2145]
+Beskrivelsen af et tekstvidnes fysiske fremtræden leveres under elementet
+`physDesc` (_physical description_) i et eller flere `ab`-elementer.[^2145]
 
 [^2145]: Tidligere udgaver af denne specifikation har opereret med en mere
   udførlig opmærkningsmodel.
@@ -535,7 +535,7 @@ Elementet `creation` indeholder to elementer:
 
 Til brug i søgeresultatlister er det en fordel, at der under titlen
 optræder et resumé af tekstens indhold. Et sådan kan gives i elementet
-`abstract` med et eller flere underordnede `ab`-elementer.
+`abstract` med et eller flere underordnede `ab`-elementer. Elementet bruges til 
 
 ### 2.3.2 Sprog
 
