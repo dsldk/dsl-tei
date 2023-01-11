@@ -523,7 +523,7 @@ fremstilling, anvendte sprog, genre og aktører.
 
 ### 2.3.1 Tid og sted for etablering af teksten (`creation`)
 
-Elementet `creation` indeholder to elementer 
+Elementet `creation` indeholder to elementer: 
 
 | element       | beskrivelse                                     |
 |---------------|-------------------------------------------------|
@@ -552,30 +552,18 @@ overensstemmelse med BCP 47[^qa] og om muligt følger standarden ISO
 	  <language ident="da" />
 	</langUsage>
 
------------------------------------------------------------------
-**Attribut: `@ident`**  **Værdi**  **ISO 639** **Betydning**
----------------------- ----------- ----------- ------------------------
-                        da          ja         dansk
-
-                        de          ja         tysk
-
-                        en          ja         engelsk
-
-                        fr          ja         fransk
-
-                        gda         -          gammeldansk
-
-                        gmh         -          middelhøjtysk
-
-                        gml         -          middelnedertysk
-
-                        la          ja         latin
-
-                        xda         -          ældre nydansk
-
-                        xno         -          normannerfransk
-
------------------------------------------------------------------
+| attribut ident | værdi | ISO 639 | beskrivelse                                     |
+|----------------|-------|---------|------------------------|
+| da | ja | dansk |
+| de | ja | tysk |
+| en | ja | engelsk |
+| fr | ja | fransk |
+| gda | - | gammeldansk |
+| gmh | - | middelhøjtysk |
+| gml | - | middelnedertysk |
+| la  | ja | latin |
+| xda | - | ældre nydansk |
+| xno | - | normannerfransk |
 
 
 ### 2.3.3 Klassifikation
