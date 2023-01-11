@@ -579,7 +579,7 @@ Emne- og genreklassifikation kan ske på følgende måde i elementet `textClass`
 <textClass>
   <keywords>
 	  <term> jura </term>
-	</keywords>
+  </keywords>
 </textClass>
 ```
 
