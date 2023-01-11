@@ -45,9 +45,7 @@ start =
                                 element msIdentifier {
                                     element settlement { text },
                                     element repository { text },
-                                    element collection { xsd:NCName },
-                                    idno,
-                                    element msName { text }
+                                    idno
                                 },
                                 element physDesc { ab },
                                 element history { ab },
