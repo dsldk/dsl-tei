@@ -19,15 +19,10 @@
             <xd:copyright>2010, Society for Danish Language and Literature</xd:copyright>
         </xd:desc>
     </xd:doc>
-    <xsl:template match="tei:q">
-        <em>
-            <xsl:apply-templates/>
-        </em>
-    </xsl:template>
-    <!-- <xsl:template match="tei:rdg/tei:q"> -->
-    <!--   <em><xsl:apply-templates/></em> -->
-    <!-- </xsl:template> -->
-    <xsl:template match="tei:rdg/tei:note/tei:q">
-        <!--<span class="apparatus-reading-quote">--><em><xsl:apply-templates/></em><!--</span>-->
+    <xsl:template match="tei:code"><code><xsl:value-of select="."/></code></xsl:template>
+    <xsl:template match="tei:div/tei:code">
+      <pre>
+        <code><xsl:value-of select="."/></code>
+      </pre>
     </xsl:template>
 </xsl:stylesheet>

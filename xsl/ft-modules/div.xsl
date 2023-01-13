@@ -43,21 +43,12 @@
                     tei:dateline |
                     tei:postscript"/>
             <!-- Apparatus criticus goes here -->
-            <xsl:if test=".//tei:app">
-                <hr/>
-                <div class="small notes mt-5">
-                    <!--<h2>Kritisk apparat</h2>-->
-                    <xsl:apply-templates select=".//tei:app" mode="apparatusCriticus"/>
-                </div>
-            </xsl:if>
-            <xsl:if test=".//tei:cit">
-                <!--<hr/>-->
-                <div class="small notes mt-5">
-                    <!--<h2>Citater</h2>-->
-                    <xsl:apply-templates select=".//tei:cit" mode="quotationApparatus"/>
-                </div>
-            </xsl:if>
-            <hr/>
+            <!-- <xsl:if test=".//tei:app"> -->
+            <!--   <hr/> -->
+            <!--   <div class="small notes mt-5"> -->
+            <!--     <xsl:apply-templates select=".//tei:app" mode="apparatusCriticus"/> -->
+            <!--   </div> -->
+            <!-- </xsl:if> -->
         </div>
     </xsl:template>
     <!--Handle columns-->

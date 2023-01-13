@@ -22,17 +22,47 @@
 
 
     <!-- Handle marginal notes -->
-    <xsl:template match="tei:note[@place = 'right'] | tei:note[@place = 'left']">
-        <span class="marginal-note">
-            <sup>
-                <span class="marginal-note-mark">M</span>
-            </sup>
-            <!--<span class="marginal-note-content">-->
-            <!--<xsl:apply-templates/>
-					</span>-->
-        </span>
+    <xsl:template match="tei:note[@place = 'right'] | tei:note[@place = 'left'] | tei:note[@place = 'margin']"></xsl:template>
+
+    <!--Make a note reference to legacy footnote in a headline-->
+    <xsl:template match="tei:head//tei:note[@place = 'bottom']">
+      <sup><a><xsl:number level="any"/></a></sup>
     </xsl:template>
-    <xsl:template match="tei:note[@place = 'bottom']">
+
+    <!--Make a note reference to legacy footnote in poetry-->
+    <xsl:template match="tei:l/tei:note[@place = 'bottom']">
+      <sup><a><xsl:number level="any"/></a></sup>
+    </xsl:template>
+
+    <!--Make a note reference to legacy footnote in prose-->
+    <xsl:template match="tei:p/tei:note[@place = 'bottom']">
+      <sup><a><xsl:number level="any"/></a></sup>
+    </xsl:template>
+
+    <!--Make named footnote block to be called within text-->
+    <xsl:template name="footnote-block">
+      <div class="footnote-block"><hr class="footnote-separator"/>
+        <xsl:for-each select="preceding-sibling::tei:head//tei:note[@place = 'bottom']">
+          <div class="footnote row">
+            <div class="col footnote-number"><xsl:number level="any"/>.</div>
+            <div class="col">
+              <xsl:apply-templates select="tei:p"/>
+            </div>
+          </div>
+        </xsl:for-each>
+          <xsl:for-each select=".//tei:note[@place = 'bottom']">
+            <div class="footnote row">
+              <div class="col footnote-number"><xsl:number level="any"/>.</div>
+              <div class="col">
+                <xsl:apply-templates select="tei:p"/>
+              </div>
+            </div>
+        </xsl:for-each>
+
+      </div>
+    </xsl:template>
+
+    <!--<xsl:template match="tei:note[@place = 'bottom']">
         <xsl:choose>
             <xsl:when test="@type = 'add'"/>
             <xsl:otherwise>
@@ -48,27 +78,25 @@
                         <xsl:otherwise>
                             <xsl:number count="tei:note[@place = 'bottom']" from="tei:body"
                                 level="any"/>
-                            <!--<xsl:number/>-->
                         </xsl:otherwise>
                     </xsl:choose>
                 </xsl:variable>
                 <a class="notelink" href="#{$identifier}" id="back{$identifier}">
-                    <sup>*<!--<xsl:call-template name="noteN"/>--></sup>
+                    <sup>*<xsl:call-template name="noteN"/></sup>
                 </a>
             </xsl:otherwise>
         </xsl:choose>
-    </xsl:template>
+    </xsl:template>-->
     <xsl:template name="noteN">
         <xsl:choose>
             <xsl:when test="@n">
                 <xsl:value-of select="@n"/>
             </xsl:when>
             <xsl:otherwise>
-                <!--<xsl:number count="tei:note[not(@type)]" from="tei:body" level="any"/>-->
                 <xsl:number count="tei:note[@place = 'bottom']" from="tei:body" level="any"/>
             </xsl:otherwise>
         </xsl:choose>
-    </xsl:template>
+      </xsl:template>
     <xsl:template match="tei:note[@place = 'bottom']" mode="footnoteApparatus">
         <xsl:choose>
             <xsl:when test="@type = 'add'"/>
@@ -112,8 +140,8 @@
       <!--Har escaped em'er da disse skal stå i en HTML-attribut-->
       &lt;em&gt;<!--<em>--><xsl:apply-templates/><!--</em>-->&lt;/em&gt;
     </xsl:template>
-    <xsl:template match="tei:note[tei:p]">
+    <!-- <xsl:template match="tei:note[tei:p]"> -->
         <!-- der skal foreløbig ikke ske noget med denne form for noter, 
             jf. ex i Munch-Petersen, det nøgne menneske: gamle mødre -->
-    </xsl:template>
+    <!-- </xsl:template> -->
 </xsl:stylesheet>

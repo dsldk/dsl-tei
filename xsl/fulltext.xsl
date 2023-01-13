@@ -5,7 +5,7 @@
     <xsl:include href="ab.xsl"/>
     <xsl:include href="abstract.xsl"/>
     <xsl:include href="additions.xsl"/>
-    <xsl:include href="ft-modules/app.xsl"/>
+    <xsl:include href="app.xsl"/>
     <xsl:include href="appInfo.xsl"/>
     <xsl:include href="application.xsl"/>
     <xsl:include href="bibl.xsl"/>
@@ -13,6 +13,7 @@
     <xsl:include href="c.xsl"/>
     <xsl:include href="cit.xsl"/>
     <xsl:include href="closer.xsl"/>
+    <xsl:include href="code.xsl"/>
     <xsl:include href="condition.xsl"/>
     <xsl:include href="creation.xsl"/>
     <xsl:include href="damage.xsl"/>
@@ -52,7 +53,7 @@
     <xsl:include href="msDesc.xsl"/>
     <xsl:include href="msIdentifier.xsl"/>
     <!--<xsl:include href="notatedMusic.xsl"/>-->
-    <xsl:include href="ft-modules/note.xsl"/>
+    <xsl:include href="note.xsl"/>
     <xsl:include href="objectDesc.xsl"/>
     <xsl:include href="opener.xsl"/>
     <xsl:include href="orig.xsl"/>
@@ -171,16 +172,6 @@
                     <xsl:attribute name="type">text/css</xsl:attribute>
                     <xsl:attribute name="media">print</xsl:attribute>
                 </link>-->
-                <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"/>
-                <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"/>
-                <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"/>
-                <!--For Math rendition-->
-                <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"/>
-                <script id="MathJax-script" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"/>
-                <link>
-                    <xsl:attribute name="src">../js/dropdown.js</xsl:attribute>
-                </link>
-                <!--<xsl:call-template name="notatedMusic_head"/>-->
             </head>
             <body>
 
@@ -584,6 +575,21 @@
                     </div>-->
 
                 </div>
+                <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"/>
+                <script  type="text/javascript" src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"/>
+                <script type="text/javascript" src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"/>
+                <script type="text/javascript" src="../js/tekstnet.js"></script>
+                <!--For Math rendition-->
+                <!-- <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"/> -->
+                <script id="MathJax-script" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"/>
+                <!-- <link> -->
+                <!--     <xsl:attribute name="src">../js/dropdown.js</xsl:attribute> -->
+                <!-- </link> -->
+                <!-- <script type="text/javascript" src="/js/jquery-3.5.1.min.js"></script> -->
+                <!-- <script type="text/javascript" src="/js/popper.min.js"></script> -->
+                <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.9.2/umd/popper.min.js" integrity="sha512-2rNj2KJ+D8s1ceNasTIex6z4HWyOnEYLVC3FigGOmyQCZc2eBXKgOxQmo3oKLHyfcj53uz4QMsRCWNbLd32Q1g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> -->
+                <!-- <script type="text/javascript" src="../js/bootstrap.min.js"></script> -->
+                <!-- <script id="MathJax-script" async="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script> -->
             </body>
         </html>
     </xsl:template>
