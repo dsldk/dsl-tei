@@ -48,10 +48,7 @@
             <xsl:attribute name="data-content">
               <!-- For display of lemma content _without_ non-textual
                    content use attribute-content mode -->
-              <xsl:apply-templates select='tei:lem' mode="attribute-content"/>] <xsl:choose>
-                <xsl:when test='tei:lem/@resp'> &lt;em&gt;<xsl:value-of select='tei:lem/@resp/tokenize(., "#")'/>&lt;/em&gt;<xsl:if test="position() != last()">, </xsl:if><xsl:if test="position() = last()"></xsl:if><!--<xsl:text>, </xsl:text>--></xsl:when>
-                <xsl:when test='tei:lem/@wit'> &lt;em&gt;<xsl:value-of select='tei:lem/@wit/tokenize(., "#")'/>&lt;/em&gt;<xsl:if test="position() != last()">, </xsl:if><xsl:if test="position() = last()"></xsl:if><!--<xsl:text>, </xsl:text>--></xsl:when>
-          </xsl:choose><!--<xsl:if test="position() != last()">, </xsl:if><xsl:if test="position() = last()"></xsl:if>--><xsl:apply-templates select='tei:rdg'/>{{% textual-criticism/see_sources %}}</xsl:attribute><xsl:attribute name="data-title">{{% textual-criticism/headline %}}<xsl:call-template name="appN"/></xsl:attribute>A</button>
+              <xsl:apply-templates select='tei:lem' mode="attribute-content"/>] <xsl:apply-templates select='tei:rdg'/></xsl:attribute><xsl:attribute name="data-title">Tekstkritisk note <xsl:call-template name="appN"/></xsl:attribute>A</button>
           <!--<span class="popup" onclick="toggle({$identifier});">-->
             <!--<sup><span class="apparatus-note-mark">A</span>--><!--<xsl:call-template name="appN"/>--><!--</sup>-->
           <!--<span class="popuptext" id="{$identifier}">
@@ -197,25 +194,10 @@
         </p>
     </xsl:template>
     <xsl:template match="tei:rdg">
-        <xsl:apply-templates/><xsl:choose>
-          <xsl:when test="@wit"><xsl:text> </xsl:text>&lt;em&gt;<xsl:value-of select="@wit/tokenize(.,'#')"/>&lt;/em&gt;
-          </xsl:when>
-          <xsl:when test="@resp"><xsl:text> </xsl:text>&lt;em&gt;<xsl:value-of select="@resp/tokenize(.,'#')"/>&lt;/em&gt;
-          </xsl:when>
-        </xsl:choose><xsl:if test="position() != last()">, </xsl:if><xsl:if test="position() = last()"></xsl:if>
-        <!--<xsl:if test="tei:note">
-            <xsl:text>, </xsl:text>
-            <xsl:apply-templates select="tei:note"/>
-        </xsl:if>-->
-
-        <!--Det er formentlig bedre at lade redaktøren selv
-            skrive om læsningen skyldes 'DD' eller fx Aa1.  
-            <xsl:text>, </xsl:text>
-            <em>
-            <xsl:value-of select="@resp | @wit"/>
-            </em>
-            <xsl:text>
-            </xsl:text>-->
+      &lt;span class="app-crit-reading"&gt;<xsl:apply-templates/>&lt;/span&gt;
+    </xsl:template>
+    <xsl:template match="tei:rdg/tei:q">
+      &lt;span class="app-crit-reading-quote"&gt;<xsl:apply-templates/>&lt;/span&gt;
     </xsl:template>
     <xsl:template match="tei:lem">
         <xsl:apply-templates />

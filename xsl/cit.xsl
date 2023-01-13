@@ -20,81 +20,10 @@
         </xd:desc>
     </xd:doc>
     <xsl:template match="tei:cit">
-        <xsl:variable name="citCount">
-            <xsl:number from="tei:text" level="any"/>
-        </xsl:variable>
-        <!--<div class="metadata">
-            <span class="caption">Citation: <xsl:value-of select="$citCount"/>/<xsl:value-of
-                    select="count(//tei:cit)"/></span>
-        </div>-->
-				<!--<blockquote>-->
-            <xsl:apply-templates/>
-				<!--</blockquote>-->
-    </xsl:template>
-    <xsl:template match="tei:p/tei:cit">
-        <xsl:variable name="identifier">
-            <xsl:text>Cit</xsl:text>
-            <xsl:choose>
-                <xsl:when test="@xml:id">
-                    <xsl:value-of select="@xml:id"/>
-                </xsl:when>
-                <xsl:when test="@n">
-                    <xsl:value-of select="@n"/>
-                </xsl:when>
-                <xsl:otherwise>
-                    <xsl:number count="tei:cit" level="any"/>
-                </xsl:otherwise>
-            </xsl:choose>
-        </xsl:variable>
-        <xsl:apply-templates select="tei:quote"/>
-        <a class="notelink" href="#{$identifier}">
-            <sup>
-                <xsl:call-template name="citN"/>
-            </sup>
-        </a>
-    </xsl:template>
-    <xsl:template name="citN">
-        <xsl:choose>
-            <xsl:when test="@n">
-                <xsl:value-of select="@n"/>
-            </xsl:when>
-            <xsl:otherwise>
-                <xsl:number from="tei:text" level="any" format="a"/>
-            </xsl:otherwise>
-        </xsl:choose>
-    </xsl:template>
-    <!-- Template, der matcher cit og opbygger note
-        som i det kritiske apparat-->
-    <xsl:template match="tei:cit" mode="quotationApparatus">
-        <xsl:variable name="identifier">
-            <xsl:text>Cit</xsl:text>
-            <xsl:choose>
-                <xsl:when test="@xml:id">
-                    <xsl:value-of select="@xml:id"/>
-                </xsl:when>
-                <xsl:when test="@n">
-                    <xsl:value-of select="@n"/>
-                </xsl:when>
-                <xsl:otherwise>
-                    <xsl:number count="tei:cit" level="any"/>
-                </xsl:otherwise>
-            </xsl:choose>
-        </xsl:variable>
-        <span class="note">
-            <span class="noteLabel">
-                <strong>
-                    <xsl:call-template name="citN"/>
-                    <xsl:text>. </xsl:text>
-                </strong>
-            </span>
-            <span class="noteBody">
-                <xsl:apply-templates/>
-              <!--<xsl:apply-templates select="tei:quote"/>
-                <xsl:text>] </xsl:text>
-              <xsl:apply-templates select="tei:bibl"/>-->
-            </span>
-            <xsl:text> </xsl:text>
-        </span>
+      <!-- <div class="citation"> -->
+      <div class="ml-5 my-5">
+        <xsl:apply-templates/>
+      </div>
     </xsl:template>
     <xsl:template match="tei:cit/tei:ref">
       <xsl:apply-templates/>

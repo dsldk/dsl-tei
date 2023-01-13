@@ -24,7 +24,7 @@
     </xsl:template>
     <!-- When bibl elements are part of a cit (citation) element the bibl ref should be right aligned -->
     <xsl:template match="tei:cit/tei:bibl">
-        <span class="signature">, <xsl:apply-templates/></span>
+        <div class="signature text-right"> <xsl:apply-templates/></div>
     </xsl:template>
     <!-- When bibl elements are part of bibliographical list they should be rendered as list items -->
     <xsl:template match="tei:listBibl/tei:bibl">

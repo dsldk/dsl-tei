@@ -40,7 +40,7 @@
                 </sup>
             </xsl:when>
             <xsl:when test="@rend = 'spaced'">
-                <span class="spaced">
+                <span class="text-spaced">
                     <xsl:apply-templates/>
                 </span>
             </xsl:when>

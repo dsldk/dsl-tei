@@ -147,7 +147,7 @@ bibl =
 cit =
     element cit {
         element quote { (text | p)+ },
-        bibl
+        bibl?
     }
 closer =
     element closer {

@@ -7,7 +7,6 @@
     <fileDesc>
       <titleStmt>
         <title>Tekstnet, referencedokument</title>
-        <title> Mit Livs Legende </title>
         <author> Johannes Jørgensen </author>
         <editor role="digital_editor">Andersine And</editor>
         <editor role="student_assistant">Morten Vinge</editor>
@@ -140,7 +139,7 @@
       <div>
         <head>
           <reg>Dedikation</reg>
-          <orig/>
+          <orig>Dedikation</orig>
         </head>
         <p>Hr. Professor <persName>H. Brøchner</persName> tilegnes dette Skrift med Taknemmelighed
           og Venskab af Forfatteren.</p>
@@ -148,7 +147,7 @@
       <div>
         <head>
           <reg>Forord</reg>
-          <orig>Forord.</orig>
+          <orig>Forord</orig>
         </head>
         <p>Disse Forelæsninger have vakt en ufortjent Opmærksomhed, som af deres Forfatter kun kunde
           betragtes som smigrende og kjærkommen, ifald de ikke samtidigt i adskillige Kredse havde
@@ -163,7 +162,7 @@
       <div>
         <head>
           <reg>Motto</reg>
-          <orig/>
+          <orig>Motto</orig>
         </head>
         <epigraph>
           <cit>
@@ -173,8 +172,11 @@
               <p>Er beklagte sich bitterlich bei dem Elemente. Sieh, sprach er, wie grausam Du gegen
                 mich verfährst. Jenen giebst Du Dauer, und mich zerstörst Du!</p>
               <p>Das Feuer aber antwortete: Beklage Dich vielmehr über Deine Natur; denn ich, was
-                mich betrifft, bin überall Feuer.«</p></quote>
-            <bibl><persName>W. Heinse</persName>.</bibl>
+                mich betrifft, bin überall Feuer.«</p>
+            </quote>
+            <bibl>
+              <persName>W. Heinse</persName>.
+            </bibl>
           </cit>
         </epigraph>
       </div>
@@ -202,47 +204,58 @@
           <head>Justering</head>
           <p>Som udgangspunkt er teksten på Tekstnet ventrestillet. Der er mulighed for specifikt at
             angive centreret og højrestillet tekst:</p>
-          <p rend="text-center">Centreret tekst</p>
-          <p rend="text-right">Højrestillet tekst</p>
+          <p rend="text-center">Her er teksten centreret.</p>
+          <p rend="text-right">Her er teksten højrestillet.</p>
         </div>
         <div>
           <head>Fremhævelse</head>
+          <p>Standarden giver mulighed for forskellige former for fremhævelse:</p>
           <p>Her er tekst i kursiv: <hi rend="italics">Tekst i kursiv.</hi></p>
           <!--<code>Her er tekst i kursiv: &lt;hi rend="italics"&gt;Tekst i kursiv.&lt;/hi&gt;</code>-->
           <p>Herefter kommer tekst i fed: <hi rend="strong">Tekst i fed.</hi> </p>
           <p>Herefter kommer understillet tekst: <hi rend="sub">Understillet tekst.</hi></p>
           <p>Herefter kommer overstillet tekst: <hi rend="sup">Overstillet tekst.</hi></p>
           <p>Herefter kommer tekst med småt: <hi rend="small">Mindre tekst.</hi></p>
-          <p>Herefter kommer spærret/spatieret tekst: <hi rend="spaced">Spærret/spatieret tekst
-              gengives med kursiv.</hi></p>
+          <p>Herefter kommer spærret/spatieret tekst: <hi rend="spaced">Spærret/spatieret tekst.</hi></p>
+        </div>
+        <div>
+          <head>Citater</head>
+          <p>Citater optræder med bredere venstremargin:</p>
+          <cit>
+            <quote>
+              <p>»Ein wächserner Hausgötze, den man ausser Acht gelassen hatte, stand neben einem
+                Feuer, worin edle campanische Gefässe gehärtet wurden und fing an zu schmelzen.</p>
+              <p>Er beklagte sich bitterlich bei dem Elemente. Sieh, sprach er, wie grausam Du gegen
+                mich verfährst. Jenen giebst Du Dauer, und mich zerstörst Du!</p>
+              <p>Das Feuer aber antwortete: Beklage Dich vielmehr über Deine Natur; denn ich, was
+                mich betrifft, bin überall Feuer.«</p>
+            </quote>
+            <bibl>
+              <persName>W. Heinse</persName>.
+            </bibl>
+          </cit>
         </div>
         <div>
           <head>
-            <orig>Tekstkritik</orig>
+            <orig>Tekstkritiske noter</orig>
           </head>
-          <p>Tekstkritisk noter gengives vha. en popup-funktion. Her kommer et eksempel på en
+          <p>Tekstkritiske noter gengives i Tekstnet i en popup-funktion. På den måde kan man – altimens man vurderer det spørgsmål noten behandler – bevare fokus på teksten. Her et eksempel på en
             tekstkritisk note: fratribus nostris <app>
               <lem>dominis</lem>
               <rdg wit="#B"><q>is</q> tilføjet over linjen, B</rdg>
-            </app> Revaliensis episcopi hic impresenciarum comparente sacro ipsum celebrato <cit>
-              <quote>articulos dette er citat i løbende tekst</quote>
-              <bibl>Dipl. Dan. 3. rk. II nr. 153</bibl>
-            </cit> innovamus ♦</p>
+            </app> Revaliensis. </p>
         </div>
         <div>
           <head>Fodnoter</head>
           <div>
-            <p>En fodnoter gengives efter det afsnit den optræder i. Denne løsning er valgt for at
-              give de bedste vilkår for at overskue både den tekst, der ledsages af kommentaren, og
-              selve den ledsagende tekst. Her kommer den første fodnote,<note place="bottom"><ref
-                  type="refMark">*</ref><p>Dette er teksten til den første fodnote.</p></note> her
+            <p>Fodnoter gengives efter det afsnit de optræder i. Den løsning er valgt for at
+              give de bedste vilkår for at overskue både den tekst, noten refererer til, og noten selv. 
+              Her kommer den første fodnote,<note place="bottom"><ref type="refMark">*</ref><p>Dette er teksten til den første fodnote.</p></note> her
               kommer den anden fodnote,<note place="bottom"><p>Den anden fodnote er længere end den
                   første, men det er vigtigt at der er tilstrækkeligt med margin omkring, således at
                   noterne kan skelnes fra hinanden</p><p>Dette er andet afsnit i noten.</p></note>
               og her følger mere tekst. </p>
-            <p>Efter fodnotesektionen fortsætter afsnittene; dette er det første efter fodnoterne. </p>
-            <p>Fodnoter forekommer også i overskrifter, hvilket der gives et eksempel på i det
-              følgende:</p>
+            <p>Efter fodnotesektionen følger flere afsnit. Fodnoter kan også forekomme i overskrifter. Det er der et eksempel på i det følgende:</p>
           </div>
           <div>
             <head>
@@ -261,17 +274,6 @@
               Brandes</persName> og <persName key="brahe_tycho_1546">Tycho Brahe</persName>.
             Stednavne som Vejle og Ansbjerg skal også med tiden tilknyttes et samlet stedregister,
             men et sådant er endnu ikke planlagt.</p>
-          <cit>
-            <quote>dette er et citat som blok</quote>
-            <bibl>Chaucer</bibl>
-          </cit>
-          <p n="a#3">&lt;1&gt; Primo ut siquis in hoc sacrilegii genus irrepserit quod aliquem <bibl
-              xml:id="sldke-djk">ælsdklæk</bibl> episcopum provincie Daciane hostiliter fuerit
-            insecutus vel percusserit aut ceperit seu banniverit sive socius fuerit facientis aut
-            fieri mandaverit vel factum ratum habuerit sive concilium dederit aut favorem seu postea </p>
-          <closer>
-            <dateline>Givet og forhandlet i København 12. juli 1425.</dateline>
-          </closer>
         </div>
       </div>
       <div>

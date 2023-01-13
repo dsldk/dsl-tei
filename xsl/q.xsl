@@ -24,9 +24,9 @@
             <xsl:apply-templates/>
         </em>
     </xsl:template>
-    <xsl:template match="tei:rdg/tei:q">
-      <em><xsl:apply-templates/></em>
-    </xsl:template>
+    <!-- <xsl:template match="tei:rdg/tei:q"> -->
+    <!--   <em><xsl:apply-templates/></em> -->
+    <!-- </xsl:template> -->
     <xsl:template match="tei:rdg/tei:note/tei:q">
       <!--<span class="apparatus-reading-quote">-->&lt;em&gt;<xsl:apply-templates/>&lt;/em&gt;<!--</span>-->
     </xsl:template>

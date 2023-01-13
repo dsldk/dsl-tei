@@ -94,6 +94,9 @@
                     </span>-->
                     <xsl:apply-templates/>
                 </p>
+                <xsl:if test="(preceding-sibling::tei:head//tei:note[@place = 'bottom']) or (.//tei:note[@place = 'bottom'])">
+                  <xsl:call-template name="footnote-block"/>
+                </xsl:if>
             </xsl:otherwise>
         </xsl:choose>
     </xsl:template>

@@ -20,6 +20,8 @@
         </xd:desc>
     </xd:doc>
     <xsl:template match="tei:quote">
+      <div class="quotation">
         <xsl:apply-templates/>
+      </div>
     </xsl:template>
 </xsl:stylesheet>
