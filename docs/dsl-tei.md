@@ -533,9 +533,19 @@ Elementet `creation` indeholder to elementer:
 
 ### 2.3.2 Resumé af indholdet 
 
-Til brug i søgeresultatlister er det en fordel, at der under titlen
-optræder et resumé af tekstens indhold. Et sådan kan gives i elementet
-`abstract` med et eller flere underordnede `ab`-elementer. Elementet bruges til 
+I større tekstsamlinger som brevudgaver forbedrer resuméer overblikket over
+stoffet uden at læserne er nødt til at åbne den enkelte tekst. Tilsvarende nytte
+gør resuméet i søgeresultatlister. I dsl-tei optages resuméet i elementet
+`abstract` med et eller flere underordnede `ab`-elementer. 
+
+```xml
+<abstract>
+  <ab>Kong Erik 7. af Pommern indskriver de bønder, der ikke på
+      rettertinget har godtgjort deres frihed, under ledingen og 
+      pålægger dem at udrede den inne, stud og leding samt andre 
+      kongelige byrder, som de skylder for flere år.</ab>
+</abstract>
+```
 
 ### 2.3.2 Sprog
 
