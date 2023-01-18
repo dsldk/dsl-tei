@@ -6,8 +6,12 @@ start =
             element fileDesc {
                 element titleStmt {
                     element title { text }+,
-                    element author { text },
+                    element author { 
+                        attribute xml:id {xsd:NCName}?, 
+                        text 
+                        },
                     element editor {
+                        attribute xml:id {xsd:NCName}?,
                         attribute role {
                             "contributor"
                             | "data_engineer"
@@ -22,12 +26,12 @@ start =
                         text
                     }+
                 },
-                element extent { text },
+                element extent { text }?,
                 element publicationStmt {
-                    element publisher { text },
-                    element pubPlace { xsd:NCName },
+                    publisher,
+                    pubPlace,
                     date,
-                    idno+,
+                    idno*,
                     element availability {
                         attribute status { "free" | "unknown" | "restricted" },
                         (ab
@@ -41,7 +45,7 @@ start =
                     element listWit {
                         element witness {
                             attribute xml:id { xsd:NCName },
-                            element msDesc {
+                             (element msDesc {
                                 element msIdentifier {
                                     element settlement { text },
                                     element repository { text },
@@ -52,7 +56,7 @@ start =
                                 element additional {
                                     element listBibl { bibl+ }
                                 }
-                            }
+                            } | (text | hi)+ )
                         }+
                     }
                 }
@@ -61,7 +65,7 @@ start =
                 element projectDesc {
                     attribute xml:id { xsd:NCName },
                     ab
-                }+,
+                }?,
                 element appInfo {
                     element application {
                         attribute ident { xsd:NCName },
@@ -71,7 +75,7 @@ start =
                         attribute xml:id { xsd:NCName },
                         element desc { xsd:NCName }
                     }
-                }
+                }?
             },
             element profileDesc {
                 element correspDesc {
@@ -81,8 +85,9 @@ start =
                         placeName,
                         date?
                     }+
-                },
-                element creation { date, placeName },
+                }?,
+                element creation { date, placeName? },
+                element abstract { ab }, 
                 element langUsage {
                     element language {
                         attribute ident { xsd:NCName }
@@ -107,36 +112,47 @@ start =
             element graphic {
                 attribute url { xsd:NCName }
             }
-        },
+        }?,
         element text {
             element front {
-                element titlePage {
-                    attribute xml:id { xsd:NCName },
-                    element docTitle {
-                        element titlePart {
-                            attribute type { "sub" }?,
-                            (text | hi | lb | \list | pb)+
-                        }+
-                    },
-                    (element byline { text }
-                     | element docImprint { (text | hi | lb | pb)+ })
-                },
+                titlePage?,
                 \div+
             },
             element body { \div+ }
         }
     }
+
+byline = element byline { (text | lb | persName)+ }
+titlePage = element titlePage {
+    attribute xml:id { "titelblad" },
+    docTitle,
+    byline,
+    docImprint
+}
+titlePart = element titlePart { (text | pb)+ }
+docDate = element docDate { (text | hi)+ }
+docImprint = element docImprint {
+    pubPlace*,
+    publisher*,
+    docDate?
+    }
+docTitle = element docTitle {
+    attribute rend { xsd:NCName },
+    titlePart
+}
+publisher = element publisher { (text | hi | ref)+ }
+pubPlace = element pubPlace { (text | hi | lb)+ }
 ab = element ab { text }
 app =
     element app {
         element lem {
             attribute resp { text }?,
-            xsd:NMTOKEN
+            attribute wit { text }?,
+            (text | ex | hi | ref)+
         },
         element rdg {
-            attribute wit { text },
-            (text
-             | element q { xsd:NMTOKEN })+
+            attribute wit { text }?,
+            (text | q )+
         }
     }
 bibl =
@@ -154,6 +170,7 @@ closer =
         attribute rend { xsd:NCName }?,
         (text | app | dateline | salute | signed | hi | lb | pb | persName | placeName)+
     }
+code = element code {text}
 dateline = element dateline { (text | lb | persName | placeName | pb)+ }
 date =
     element date {
@@ -163,31 +180,11 @@ date =
 \div =
     element div {
         attribute type { xsd:NCName }?,
-        (\div | head)*,
-        element epigraph { cit }?,
-        (cit
-         | p
-         | element table {
-               element row {
-                   element cell {
-                       attribute cols { xsd:integer }?,
-                       attribute role { xsd:NCName }?,
-                       attribute rows { xsd:integer }?,
-                       (text | app)+
-                   }+
-               }+
-           })*,
-        (element closer {
-             element dateline { text }
-         }
-         | element list {
-               attribute rend { xsd:NCName }?,
-               element item {
-                   attribute n { xsd:integer }?,
-                   xsd:NCName
-               }+
-           }*)
-    }
+        (cit | \div | epigraph | head | p | \list | table)*,
+        closer?
+   }
+
+epigraph = element epigraph { cit }
 ex = element ex { text }
 figure =
     element figure {
@@ -207,23 +204,25 @@ formula =
 head =
     element head {
         attribute type { xsd:NCName }?,
-        (text | reg | orig)+
+        (text | hi | lb | orig | pb | ref | reg)+
     }
 hi =
     element hi {
         attribute rend { "italic" | "italics" | "small" | "spaced" | "sub" | "sup" | "strong" }?,
-        text
+        (text | ex | hi | persName | placeName | ref)+
     }
 idno =
     element idno {
         attribute type { xsd:NCName }?,
         text
     }
+item =
+    element item { (text | app | ex | hi | \list | pb | persName | placeName | ref)+ }+
 l =
     element l {
         attribute n { text }?,
         attribute rend { xsd:NCName }?,
-        (text | app | bibl | cit | ex | figure | hi | lb | note | pb | persName | placeName)+
+        (text | app | bibl | cit | ex | figure | hi | lb | note | pb | persName | placeName | ref)+
     }
 label = element label { (text | hi)+ }
 lb = element lb { empty }
@@ -235,8 +234,7 @@ lg =
 \list =
     element list {
         attribute rend { xsd:NCName },
-        element item { (text | app | ex | hi | \list | pb)+ }+
-    }
+        (head | item )+ }+
 note =
     element note {
         attribute place { "bottom" | "margin" },
@@ -251,26 +249,31 @@ opener =
         attribute rend { xsd:NCName }?,
         (text | app | dateline | hi | lb | pb | persName | placeName | salute)+
     }
-orig = element orig { (text | lb | note | pb)+ }
+orig = element orig { (text | lb | note | pb | ref)+ }
 p =
     element p {
         attribute n { text }?,
         attribute rend { "indent" | "noindent" | "text-center" | "text-right" }?,
-        (text | app | bibl | cit | formula | hi | lb | note | pb | persName | placeName | lb)+
+        (text | app | bibl | cit | code | formula | hi | lb | note | pb | persName | placeName | ref)+
     }
 pb =
     element pb {
         attribute facs { xsd:NCName }?,
-        attribute n { xsd:NCName }?
+        attribute n { text }?
     }
 persName =
     element persName {
         attribute key { xsd:NCName }?,
         text
     }
-placeName = element placeName { xsd:NCName }
+placeName = 
+    element placeName {
+        attribute key { xsd:NCName}?,
+        text
+    }
 postscript = element postscript { (label | p)+ }
 q = element q { (text | hi | persName | placeName | title)+ }
+ref = element ref { attribute target { xsd:anyURI }}
 reg = element reg { text+ }
 salute = element salute { (text | lb | pb)+ }
 signed = element signed { (text | lb | pb)+ }
