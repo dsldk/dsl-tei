@@ -268,12 +268,11 @@
         </div>
         <div>
           <head>
-            <orig>Person- og stednavne</orig>
+            <orig>Kommentarer, person- og stednavne</orig>
           </head>
-          <p> I den løbende tekst forekommer personnavne: <persName key="brandes_georg_1842">Georg
-              Brandes</persName> og <persName key="brahe_tycho_1546">Tycho Brahe</persName>.
-            Stednavne som Vejle og Ansbjerg skal også med tiden tilknyttes et samlet stedregister,
-            men et sådant er endnu ikke planlagt.</p>
+          <p> Kommentarer opmærkes vha. <code>&lt;ref target=""/&gt;</code> og vises som en popup. Herefter følger en kommentar.<ref target="n1"/></p>
+          <p> Personnavne fremhæves i teksten og aktiverer en popup med en kort note om pågældende: <persName key="brandes_georg_1842">Georg Brandes</persName> og <persName key="brahe_tycho_1546">Tycho Brahe</persName>. Stednavne er endnu ikke implementeret.</p>
+            <!-- <code>Her er tekst i kursiv: &lt;hi rend="italics"&gt;Tekst i kursiv.&lt;/hi&gt;</code> -->
         </div>
       </div>
       <div>
