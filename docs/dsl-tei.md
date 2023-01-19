@@ -458,10 +458,10 @@ citation*), jf. 2.1.5.
 
 ## 2.2 Det digitale produkt (`encodingDesc`)
 
-TEI-headerens anden komponent er `encodingDesc`-elementet, som
-dokumenterer forholdet mellem den opmærkede tekst og dennes kilde. Her
-angives de for transkriptionen styrende principper. Elementet
-`encodingDesc` indholder følgende elementer:
+TEI-headerens anden komponent er `encodingDesc`-elementet, som dokumenterer
+forholdet mellem den opmærkede tekst og dennes kilde. Her angives de for
+transkriptionen styrende principper. Elementet `encodingDesc` indholder følgende
+elementer:
 
 | element       | beskrivelse                                     |
 |---------------|-------------------------------------------------|
@@ -1432,21 +1432,25 @@ med en unik id, og 2. `@type` udfyldt med værdien `fictional`.
 #### 4.3.5.11 Stednavne
 
 Stednavne opmærkes i den løbende tekst vha. elementet `placeName` med
-attributtet `@ref` udfyldt med en unik id. Et eksempel fra Georg
+attributtet `@key` udfyldt med en unik id. Et eksempel fra Georg
 Brandes, Hovedstrømninger 1
 
-	... Ideer fra <placeName ref="tyskland">Tydskland</placeName>, 
-	Revolutionens fra <placeName ref="frankrig">Frankrig</placeName>
-	...
+```xml
+... Ideer fra <placeName key="tyskland">Tydskland</placeName>, 
+Revolutionens fra <placeName key="frankrig">Frankrig</placeName> ...
+```
 
 
 #### 4.3.5.12 Krydshenvisninger
 
-Henvisninger til andre ressourcer indsættes i elementet `ref` på
+Henvisninger til andre ressourcer i Tekstnet indsættes i elementet `ref` på
 følgende måde:
 
-	... <ref target="14091009001">14091009001</ref> ...
+```xml
+... <ref target="14091009001" type="link">14091009001</ref> ...
+```
 
+<!--
 **Normalisering af henvisninger**. I visse tilfælde kan det være
 praktisk at lade originale henvisninger supplere med moderne
 konventioner. Til dette formål anvendes hhv. elementerne `orig` til
@@ -1462,6 +1466,16 @@ normaliseret og konventionel form _Luk. 21_ (opmærket med `reg`):
                             <reg>Luk. 21</reg>
                          </ref>) Derfor effterdi at ...
 
+```
+-->
+
+#### 4.3.5.12X Kommentarer
+
+Kommentarer opmærkes med henvisninger som peger på indholdet i en særskilt
+TOML-fil. Henvisningen placeres enten før eller efter den tekst, kommentaren
+knyttes til, og ser således ud:
+
+```xml
 ```
 
 #### 4.3.5.13 Sideskift i forlæg
