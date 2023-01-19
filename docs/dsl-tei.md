@@ -1,23 +1,31 @@
+---
+title: DSL-TEI, retningslinjer
+author: Thomas Hansen (<th@dsl.dk>)
+fontsize: 10pt
+fontfamily: palatino
+indent: true
+language: da-DK
+papersize: a4
+---
+
 # Indledning
 
-	<!--2017-03-21, th, denne version af retningslinjerne for brug af DSL-basis 
-	    er en ufuldstændig og ikke gennemredigeret kladde. Den bør derfor bruges
-	    forsigtigt -->
-
-Nærværende rapport definerer et basisformat for det Danske Sprog- og
-Litteraturselskabs (DSL) digitale udgivelser. Med *basis* menes den
-grundlæggende opmærkning, som projekternes produkter forventes at indeholde.
-Formatet defineres på grundlag af de retningslinjer for opmærkning af tekst- og
-metadata defineret af konsortiet Text Encoding Initiative
-(<https://www.tei-c.org>).[^a] 
+Nærværende dokument definerer et XML-baseret dataformat til opmærkning af Det
+Danske Sprog- og Litteraturselskabs (DSL) digitale tekstudgivelser. Til
+vejledningen hører dels RELAX NG-skemaet dsl-tei.rnc, referencedokumentet
+dsl-tei-ref.xml samt stylesheets til transformation fra XML til HTML. Formatet
+tilstræber konformitet med skemaet tei_all, defineret af konsortiet Text
+Encoding Initiative (<https://www.tei-c.org>)[^a], hvilket betyder at et validt
+dsl-tei-dokument også vil være gyldigt i forhold til tei_all.
 
 [^a]: [http://www.tei-c.org](http://www.tei-c.org). Den nuværende version af
   TEI's retningslinjer, TEI P5, er den femte. 'P5' refererer således til
   *Proposal 5*.
 
 Hovedbegrundelsen for et fælles opmærkningsformat for DSL's projekter er at
-skabe et fælles grundlag for de redaktører, der udfærdiger og bearbejder
-teksterne og de værktøjer og procedurer, der appliceres på materialet. 
+skabe et fælles grundlag for de medarbejdere og projekter, der etablerer og
+bearbejder teksterne, og de værktøjer og mere eller mindre automatiske
+procedurer, der appliceres på materialet. 
 
 # 1 Et dsl-tei-dokument
 
