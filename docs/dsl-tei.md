@@ -1029,7 +1029,7 @@ fra Georg Brandes, Hovedstrømninger, bd. 1:
 ```xml
 ... </p>
 <cit>
-  </quote>
+  <quote>
   <sp>
     <speaker>Herkules</speaker>
     <p>Hvor er Wieland? Der staaer han. Han, naa, han er 
@@ -1206,18 +1206,16 @@ post i et tekstkritisk apparat.
 
 Et `app`-element samler to elementer:
 
-1. `lem` (*lemma*) indeholder den tekst, til hvilken der findes en
-  variant. `lem` kan indholde attributtet `@wit` med en eller flere 
-  blanktegnsadskilte sigelværdier, som alle indledes med #. 
-2. `rdg` (*reading*) indeholder et alternativ til lemmaets tekst.
-  `rdg` kan indholde attributtet `@wit` med en eller flere referencer 
-  til sigler for de manuskripter, i hvilke læsningen optræder. Hver 
-  sigelreference indledes med # og adskilles ved blanktegn.
+|element   | beskrivelse                                                      |
+|----------|------------------------------------------------------------------|
+| lem      | (*lemma*) indeholder den tekst, til hvilken findes en variant    | 
+| rdg      | (*reading*) indeholder et eller flere alternativer til lemmaets tekst i `q` |
+
 
 ```xml
 <app>
-<lem>den anden</lem>
-<rdg>C, <q>den andet</q> A B, <q>det andet</q> ms.</rdg>
+  <lem>den anden</lem>
+  <rdg>C, <q>den andet</q> A B, <q>det andet</q> ms.</rdg>
 </app>
 ```
 
@@ -1540,26 +1538,6 @@ Et eksempel fra Georg Brandes *Hovedstrømninger*, bd. 1:
 
 	Martensens »Speculative Dogmatik« afløses af den 
 	»<bibl ref="martensen-den-christelige-dogmatik">Christelige Dogmatik</bibl>«.
-
-#### 4.3.5.17 Breve
-
-Med elementet `correspDesc` beskrives brevvekslingens aktører samt eventuelle
-ledsagende steds- og tidsangivelser:
-
-```xml
-<correspDesc>
-  <correspAction type="sent">
-    <persName>Brahe, Tycho (1546-1601)</persName>
-    <placeName>Rostock</placeName>
-    <date when="1568-01-14"/>
-  </correspAction>
-  <correspAction type="received">
-    <persName>Johannes Aalborg</persName>
-    <placeName>empty</placeName>
-  </correspAction>
-</correspDesc>
-```
-
 
 #### 4.3.5.X Værktitler
 
