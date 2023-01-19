@@ -1469,16 +1469,31 @@ normaliseret og konventionel form _Luk. 21_ (opmærket med `reg`):
 ```
 -->
 
-#### 4.3.5.12X Kommentarer
+#### 4.3.5.13 Kommentarer
 
-Kommentarer opmærkes med henvisninger som peger på indholdet i en særskilt
-TOML-fil. Henvisningen placeres enten før eller efter den tekst, kommentaren
-knyttes til, og ser således ud:
+Kommentarer opmærkes i to dele: I teksten indsættes en henvisning i et tomt
+`ref`-element med `@target` udfyldt med en værdi svarende til en tabel-header i
+en TOML-fil. Følgende notereference:
 
 ```xml
+Forholdet mellem Tænkningens og <ref target="n5"/>Indbildningskraftens 
+<ref target="n6"/>Naturopfatning.
 ```
+svarer til følgende tabeller i TOML-filen:
 
-#### 4.3.5.13 Sideskift i forlæg
+```toml
+[n5]
+lemma = "Indbildningskraftens"
+note = "forestillingsevnens, fantasiens."
+
+[n6]
+lemma = "Naturopfatning"
+note = "opfattelse af naturen."
+```
+Henvisningen placeres enten før eller efter den tekst, kommentaren
+knyttes til.
+
+#### 4.3.5.14 Sideskift i forlæg
 
 Sideskift i forlæg markeres med det lukkede element `pb` (*page-break*).
 Elementet kan indeholde tre attributter:
@@ -1501,7 +1516,7 @@ Elementet kan indeholde tre attributter:
 * Gennemstreget tekst
 -->
 
-#### 4.3.5.XX Fremmede tegn
+#### 4.3.5.15 Fremmede tegn
 
 Til opmærkning af arabiske og hebræiske tegn anvendes elementet `term`
 med `@xml:lang`. Fx hos Thomas Bartholin:
@@ -1514,7 +1529,7 @@ per <term xml:lang="ar">س</term>, non <term xml:lang="ar">ش</term> expressum .
 Unde &amp; Hebræis <term xml:lang="he">קנה</term> de hasta ...
 ```
 
-#### 4.3.5.14 Bibliografiske henvisninger
+#### 4.3.5.16 Bibliografiske henvisninger
 
 Henvisninger til værker i den løbende tekst mærkes med elementet
 `bibl` (*bibliographic citation*). Elementet kan rumme attributtet
@@ -1526,7 +1541,7 @@ Et eksempel fra Georg Brandes *Hovedstrømninger*, bd. 1:
 	Martensens »Speculative Dogmatik« afløses af den 
 	»<bibl ref="martensen-den-christelige-dogmatik">Christelige Dogmatik</bibl>«.
 
-#### 4.3.5.15 Breve
+#### 4.3.5.17 Breve
 
 Med elementet `correspDesc` beskrives brevvekslingens aktører samt eventuelle
 ledsagende steds- og tidsangivelser:
