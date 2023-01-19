@@ -22,10 +22,10 @@ dsl-tei-dokument også vil være gyldigt i forhold til tei_all.
   TEI's retningslinjer, TEI P5, er den femte. 'P5' refererer således til
   *Proposal 5*.
 
-Hovedbegrundelsen for et fælles opmærkningsformat for DSL's projekter er at
-skabe et fælles grundlag for de medarbejdere og projekter, der etablerer og
-bearbejder teksterne, og de værktøjer og mere eller mindre automatiske
-procedurer, der appliceres på materialet. 
+Begrundelsen for et fælles opmærkningsformat er at skabe fælles grundlag for de
+medarbejdere og projekter, der etablerer og bearbejder teksterne, og de
+værktøjer og mere eller mindre automatiske procedurer, der appliceres på
+materialet. 
 
 # 1 Et dsl-tei-dokument
 
@@ -36,9 +36,9 @@ Rodelementet indholder de tre hovedkomponenter `teiHeader`, `facsimile` og
 
 |element   | beskrivelse                                                      |
 |----------|------------------------------------------------------------------|
-|teiHeader | (*TEI header*) leverer metadata til beskrivelse af den digitale ressource i bibliografisk, kodnings- og udviklingsmæssig henseende. Jf. 2 Metadata.  |
-|facsimile |  indeholder en digital billedgengivelse af den tekst, der beskrives under `teiHeader` og formidles under `text`. Jf. 3 Faksimiler |
-|text      |  indeholder ét værk, hvad enten dette udgøres af en tekstmæssig enhed (fx én roman, novelle, brev) eller er en helhed bestående af flere tekster (fx en samling essays, digte, noveller). Jf. 4 Tekst. |
+|teiHeader | (*TEI header*) metadata til beskrivelse af den digitale ressource i bibliografisk, kodnings- og udviklingsmæssig henseende. Jf. 2 Metadata. |
+|facsimile | digital billedgengivelse af den tekst, der beskrives under `teiHeader` og formidles under `text`. Jf. 3 Faksimiler |
+|text      | et værk, enten som en enhed (fx én roman, novelle, brev) eller er en helhed af flere tekster (fx essays, digte, noveller). Jf. 4 Tekst. |
 
 Elementerne disponeres således: 
 
@@ -75,7 +75,7 @@ De fire elementer fordeler sig således:
 </teiHeader>
 ```
 
-## 2.1 Filbeskrivelsen (`fileDesc`)
+## 2.1 Filbeskrivelsen
 
 Metadatasektionens første del er `fileDesc` (_file description_), som indeholder
 information til identifikation, katalogisering og fyldestgørende beskrivelse af
@@ -107,9 +107,9 @@ eller flere `author`-, `editor`-, og `funder`-elementer.
 Elementet `editor` bruges med attributtet `@role` til præcisering af udgivernes
 redaktionelle ansvarsområder. Følgende attributværdier er tilladt:
 
-| @role: værdi    | beskrivelse                                                               |
-|-----------------|---------------------------------------------------------------------------|
-| data_engineer   | Redaktører med ansvar for etablering og videre maskinel bearbejdning af data angives `<editor role="data_engineer">...</editor>` |
+| @role: værdi      | beskrivelse                                                               |
+|-------------------|---------------------------------------------------------------------------|
+| data_engineer     | Redaktører med ansvar for etablering og videre maskinel bearbejdning af data angives `<editor role="data_engineer">...</editor>` |
 | digital_version   | Redaktører med ansvar for en digital version af et trykt værk angives `<editor role="digital_version">...</editor>` |
 | student_assistant | studentermedhjælper optages i `<editor role="student_assistant">...</editor>` | 
 | translator        | oversætter optages i `<editor role="translator">...</editor>` |
@@ -180,7 +180,7 @@ description*) med de underordnede elementer `listWit` og `listBibl`:
 
 | element             | beskrivelse                                       |
 |---------------------|---------------------------------------------------|
-| listWit             | (*witness list*) indeholder ét eller flere obligatoriske tekstvidne-elementer (`witness`). Bemærk, at hvert `witness`-element har et `@xml:id`-attribut til identifikation.  Heri indsættes en bogstavværdi, fx `A`, `B`, `C`, som fungerer som reference i tekstkritiske noter. |
+| listWit             | (*witness list*) ét eller flere obligatoriske tekstvidne-elementer (`witness`). `witness` har obligatorisk `@xml:id` til identifikation. Heri indsættes en bogstavværdi, fx `A`, `B`, `C`, som fungerer som reference i tekstkritiske noter |
 | listBibl            | (*bibliographic list*), indeholder supplerende bibliografiske oplysninger kan gives i ét eller flere `bibl`-elementer |
 
 > *Note:* En underinddeling med obligatorisk `listWit` og fakultativt
