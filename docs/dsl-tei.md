@@ -1482,7 +1482,9 @@ tilhørende kommentarfil. Følgende regler gælder:
 2. Værdien af henvisningens `@target` skal bestå af _n_ efterfulgt af et tal, fx
    `n1`, `n2`, `n3`, osv. 
 3. Af hensyn til overskueligheden i organiseres noterne så vidt muligt i
-   rækkefølge i såvel tekst som kommentarfil. Følgende henvisninger:
+   rækkefølge i såvel tekst som kommentarfil. 
+
+Følgende henvisninger:
 
 ```xml
 Forholdet mellem Tænkningens og <ref target="n5"/>Indbildningskraftens 
