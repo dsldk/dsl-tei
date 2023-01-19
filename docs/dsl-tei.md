@@ -1473,7 +1473,9 @@ normaliseret og konventionel form _Luk. 21_ (opmærket med `reg`):
 
 Kommentarer opmærkes i to dele: I teksten indsættes en henvisning i et tomt
 `ref`-element med `@target` udfyldt med en værdi svarende til en tabel-header i
-en TOML-fil. Følgende notereference:
+en TOML-fil. Værdien af `@target` består af _n_ efterfulgt af et tal. Noterne
+organiseres så vidt muligt i rækkefølge i såvel tekst som kommentarfil. Følgende
+henvisninger:
 
 ```xml
 Forholdet mellem Tænkningens og <ref target="n5"/>Indbildningskraftens 
