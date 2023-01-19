@@ -1150,15 +1150,15 @@ Til gengivelse af fremhævet tekst benyttes elementet `hi`
 (*highlighted*) med `@rend` (*rendition*), der beskriver tekstens
 visuelle udtryk. Følgende attributværdier er tilladt:
 
-| værdi    | beskrivelse                   |                                   |
-|----------|-------------------------------|
-| `italic` | kursiv                        |
-| `small`  | petit  |
-| `spaced` | spærret/spatieret |
-| `strong` | fed  |
-| `sub`    | understillet |
-| `sup`    | overstillet |
-| `underline` | understreget |
+| værdi       | beskrivelse                   |                     
+|-------------|-------------------------------|
+| `italic`    | kursiv                        |
+| `small`     | petit                         |
+| `spaced`    | spærret/spatieret             |
+| `strong`    | fed                           |
+| `sub`       | understillet                  |
+| `sup`       | overstillet                   |
+| `underline` | understreget               |
 
 #### 4.3.5.2 Citater
 
