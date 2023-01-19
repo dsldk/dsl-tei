@@ -1472,10 +1472,17 @@ normaliseret og konventionel form _Luk. 21_ (opmærket med `reg`):
 #### 4.3.5.13 Kommentarer
 
 Kommentarer opmærkes i to dele: I teksten indsættes en henvisning i et tomt
-`ref`-element med `@target` udfyldt med en værdi svarende til en tabel-header i
-en TOML-fil. Værdien af `@target` består af _n_ efterfulgt af et tal. Noterne
-organiseres så vidt muligt i rækkefølge i såvel tekst som kommentarfil. Følgende
-henvisninger:
+`ref`-element med `@target` og værdi svarende til en tabel-header i den
+tilhørende kommentarfil. Følgende regler gælder:
+
+1. Kommentarfilen navngives med samme filnavn som den dsl-tei-fil, den
+   ledsager, men med ekstensionen .toml. Til dsl-tei-filen
+   `oersted-hc_aanden-i-naturen-1.xml` svarer således kommentarfilen
+   `oersted-hc_aanden-i-naturen-1.toml`. 
+2. Værdien af henvisningens `@target` skal bestå af _n_ efterfulgt af et tal, fx
+   `n1`, `n2`, `n3`, osv. 
+3. Af hensyn til overskueligheden i organiseres noterne så vidt muligt i
+   rækkefølge i såvel tekst som kommentarfil. Følgende henvisninger:
 
 ```xml
 Forholdet mellem Tænkningens og <ref target="n5"/>Indbildningskraftens 
