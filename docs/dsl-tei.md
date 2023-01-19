@@ -1,23 +1,31 @@
+---
+title: DSL-TEI, retningslinjer
+author: Thomas Hansen (<th@dsl.dk>)
+fontsize: 10pt
+fontfamily: palatino
+indent: true
+language: da-DK
+papersize: a4
+---
+
 # Indledning
 
-	<!--2017-03-21, th, denne version af retningslinjerne for brug af DSL-basis 
-	    er en ufuldstændig og ikke gennemredigeret kladde. Den bør derfor bruges
-	    forsigtigt -->
-
-Nærværende rapport definerer et basisformat for det Danske Sprog- og
-Litteraturselskabs (DSL) digitale udgivelser. Med *basis* menes den
-grundlæggende opmærkning, som projekternes produkter forventes at indeholde.
-Formatet defineres på grundlag af de retningslinjer for opmærkning af tekst- og
-metadata defineret af konsortiet Text Encoding Initiative
-(<https://www.tei-c.org>).[^a] 
+Nærværende dokument definerer et XML-baseret dataformat til opmærkning af Det
+Danske Sprog- og Litteraturselskabs (DSL) digitale tekstudgivelser. Til
+vejledningen hører dels RELAX NG-skemaet dsl-tei.rnc, referencedokumentet
+dsl-tei-ref.xml samt stylesheets til transformation fra XML til HTML. Formatet
+tilstræber konformitet med skemaet tei_all, defineret af konsortiet Text
+Encoding Initiative (<https://www.tei-c.org>)[^a], hvilket betyder at et validt
+dsl-tei-dokument også vil være gyldigt i forhold til tei_all.
 
 [^a]: [http://www.tei-c.org](http://www.tei-c.org). Den nuværende version af
   TEI's retningslinjer, TEI P5, er den femte. 'P5' refererer således til
   *Proposal 5*.
 
-Hovedbegrundelsen for et fælles opmærkningsformat for DSL's projekter er at
-skabe et fælles grundlag for de redaktører, der udfærdiger og bearbejder
-teksterne og de værktøjer og procedurer, der appliceres på materialet. 
+Begrundelsen for et fælles opmærkningsformat er at skabe fælles grundlag for de
+medarbejdere og projekter, der etablerer og bearbejder teksterne, og de
+værktøjer og mere eller mindre automatiske procedurer, der appliceres på
+materialet. 
 
 # 1 Et dsl-tei-dokument
 
@@ -28,9 +36,9 @@ Rodelementet indholder de tre hovedkomponenter `teiHeader`, `facsimile` og
 
 |element   | beskrivelse                                                      |
 |----------|------------------------------------------------------------------|
-|teiHeader | (*TEI header*) leverer metadata til beskrivelse af den digitale ressource i bibliografisk, kodnings- og udviklingsmæssig henseende. Jf. 2 Metadata.  |
-|facsimile |  indeholder en digital billedgengivelse af den tekst, der beskrives under `teiHeader` og formidles under `text`. Jf. 3 Faksimiler |
-|text      |  indeholder ét værk, hvad enten dette udgøres af en tekstmæssig enhed (fx én roman, novelle, brev) eller er en helhed bestående af flere tekster (fx en samling essays, digte, noveller). Jf. 4 Tekst. |
+|teiHeader | (*TEI header*) metadata til beskrivelse af den digitale ressource i bibliografisk, kodnings- og udviklingsmæssig henseende. Jf. 2 Metadata. |
+|facsimile | digital billedgengivelse af den tekst, der beskrives under `teiHeader` og formidles under `text`. Jf. 3 Faksimiler |
+|text      | et værk, enten som en enhed (fx én roman, novelle, brev) eller er en helhed af flere tekster (fx essays, digte, noveller). Jf. 4 Tekst. |
 
 Elementerne disponeres således: 
 
@@ -67,7 +75,7 @@ De fire elementer fordeler sig således:
 </teiHeader>
 ```
 
-## 2.1 Filbeskrivelsen (`fileDesc`)
+## 2.1 Filbeskrivelsen
 
 Metadatasektionens første del er `fileDesc` (_file description_), som indeholder
 information til identifikation, katalogisering og fyldestgørende beskrivelse af
@@ -99,9 +107,9 @@ eller flere `author`-, `editor`-, og `funder`-elementer.
 Elementet `editor` bruges med attributtet `@role` til præcisering af udgivernes
 redaktionelle ansvarsområder. Følgende attributværdier er tilladt:
 
-| @role: værdi    | beskrivelse                                                               |
-|-----------------|---------------------------------------------------------------------------|
-| data_engineer   | Redaktører med ansvar for etablering og videre maskinel bearbejdning af data angives `<editor role="data_engineer">...</editor>` |
+| @role: værdi      | beskrivelse                                                               |
+|-------------------|---------------------------------------------------------------------------|
+| data_engineer     | Redaktører med ansvar for etablering og videre maskinel bearbejdning af data angives `<editor role="data_engineer">...</editor>` |
 | digital_version   | Redaktører med ansvar for en digital version af et trykt værk angives `<editor role="digital_version">...</editor>` |
 | student_assistant | studentermedhjælper optages i `<editor role="student_assistant">...</editor>` | 
 | translator        | oversætter optages i `<editor role="translator">...</editor>` |
@@ -172,7 +180,7 @@ description*) med de underordnede elementer `listWit` og `listBibl`:
 
 | element             | beskrivelse                                       |
 |---------------------|---------------------------------------------------|
-| listWit             | (*witness list*) indeholder ét eller flere obligatoriske tekstvidne-elementer (`witness`). Bemærk, at hvert `witness`-element har et `@xml:id`-attribut til identifikation.  Heri indsættes en bogstavværdi, fx `A`, `B`, `C`, som fungerer som reference i tekstkritiske noter. |
+| listWit             | (*witness list*) ét eller flere obligatoriske tekstvidne-elementer (`witness`). `witness` har obligatorisk `@xml:id` til identifikation. Heri indsættes en bogstavværdi, fx `A`, `B`, `C`, som fungerer som reference i tekstkritiske noter |
 | listBibl            | (*bibliographic list*), indeholder supplerende bibliografiske oplysninger kan gives i ét eller flere `bibl`-elementer |
 
 > *Note:* En underinddeling med obligatorisk `listWit` og fakultativt
@@ -450,10 +458,10 @@ citation*), jf. 2.1.5.
 
 ## 2.2 Det digitale produkt (`encodingDesc`)
 
-TEI-headerens anden komponent er `encodingDesc`-elementet, som
-dokumenterer forholdet mellem den opmærkede tekst og dennes kilde. Her
-angives de for transkriptionen styrende principper. Elementet
-`encodingDesc` indholder følgende elementer:
+TEI-headerens anden komponent er `encodingDesc`-elementet, som dokumenterer
+forholdet mellem den opmærkede tekst og dennes kilde. Her angives de for
+transkriptionen styrende principper. Elementet `encodingDesc` indholder følgende
+elementer:
 
 | element       | beskrivelse                                     |
 |---------------|-------------------------------------------------|
@@ -1142,26 +1150,15 @@ Til gengivelse af fremhævet tekst benyttes elementet `hi`
 (*highlighted*) med `@rend` (*rendition*), der beskriver tekstens
 visuelle udtryk. Følgende attributværdier er tilladt:
 
-`italic` ellers `italics` 
-:	kursiv
-
-`small` 
-:	petit skriftsnit
-
-`spaced`
-:	spatieret, gengives med kursiv i endelig visning
-
-`strong`
-:	fed skrift
-
-`sublinear`
-:	lavstillet tekst
-
-`supralinear`
-:	højtstillet tekst
-
-`underline`
-: understreget tekst, gengives med kursiv i endelig visning
+| værdi       | beskrivelse                   |                     
+|-------------|-------------------------------|
+| `italic`    | kursiv                        |
+| `small`     | petit                         |
+| `spaced`    | spærret/spatieret             |
+| `strong`    | fed                           |
+| `sub`       | understillet                  |
+| `sup`       | overstillet                   |
+| `underline` | understreget               |
 
 #### 4.3.5.2 Citater
 
@@ -1424,21 +1421,25 @@ med en unik id, og 2. `@type` udfyldt med værdien `fictional`.
 #### 4.3.5.11 Stednavne
 
 Stednavne opmærkes i den løbende tekst vha. elementet `placeName` med
-attributtet `@ref` udfyldt med en unik id. Et eksempel fra Georg
+attributtet `@key` udfyldt med en unik id. Et eksempel fra Georg
 Brandes, Hovedstrømninger 1
 
-	... Ideer fra <placeName ref="tyskland">Tydskland</placeName>, 
-	Revolutionens fra <placeName ref="frankrig">Frankrig</placeName>
-	...
+```xml
+... Ideer fra <placeName key="tyskland">Tydskland</placeName>, 
+Revolutionens fra <placeName key="frankrig">Frankrig</placeName> ...
+```
 
 
 #### 4.3.5.12 Krydshenvisninger
 
-Henvisninger til andre ressourcer indsættes i elementet `ref` på
+Henvisninger til andre ressourcer i Tekstnet indsættes i elementet `ref` på
 følgende måde:
 
-	... <ref target="14091009001">14091009001</ref> ...
+```xml
+... <ref target="14091009001" type="link">14091009001</ref> ...
+```
 
+<!--
 **Normalisering af henvisninger**. I visse tilfælde kan det være
 praktisk at lade originale henvisninger supplere med moderne
 konventioner. Til dette formål anvendes hhv. elementerne `orig` til
@@ -1455,10 +1456,46 @@ normaliseret og konventionel form _Luk. 21_ (opmærket med `reg`):
                          </ref>) Derfor effterdi at ...
 
 ```
+-->
 
-#### 4.3.5.13 Sideskift i forlæg
+#### 4.3.5.13 Kommentarer
 
-Sideskift i forlæg markeres med det lukkede element `pb` (*page-break*).
+Kommentarer opmærkes i to dele: I teksten indsættes en henvisning i et tomt
+`ref`-element med `@target` og værdi svarende til en tabel-header i den
+tilhørende kommentarfil med poster bestående af lemma og note. Følgende regler gælder:
+
+1. Kommentarfilen navngives med samme filnavn som den dsl-tei-fil, den
+   ledsager, men med ekstensionen .toml. Til dsl-tei-filen
+   `oersted-hc_aanden-i-naturen-1.xml` svarer således kommentarfilen
+   `oersted-hc_aanden-i-naturen-1.toml`. 
+2. Værdien af henvisningens `@target` skal bestå af _n_ efterfulgt af et tal, fx
+   `n1`, `n2`, `n3`, osv. 
+3. Af hensyn til overskueligheden i organiseres noterne så vidt muligt i
+   rækkefølge i såvel tekst som kommentarfil. 
+
+Følgende henvisninger:
+
+```xml
+Forholdet mellem Tænkningens og <ref target="n5"/>Indbildningskraftens 
+<ref target="n6"/>Naturopfatning.
+```
+svarer til følgende tabeller i TOML-filen:
+
+```toml
+[n5]
+lemma = "Indbildningskraftens"
+note = "forestillingsevnens, fantasiens."
+
+[n6]
+lemma = "Naturopfatning"
+note = "opfattelse af naturen."
+```
+Henvisningen placeres enten før eller efter den tekst, kommentaren
+knyttes til.
+
+#### 4.3.5.14 Sideskift i forlæg
+
+Sideskift i forlæg markeres med det lukkede element `pb` (*page beginning*).
 Elementet kan indeholde tre attributter:
 
 `@ed`
@@ -1479,7 +1516,7 @@ Elementet kan indeholde tre attributter:
 * Gennemstreget tekst
 -->
 
-#### 4.3.5.XX Fremmede tegn
+#### 4.3.5.15 Fremmede tegn
 
 Til opmærkning af arabiske og hebræiske tegn anvendes elementet `term`
 med `@xml:lang`. Fx hos Thomas Bartholin:
@@ -1492,7 +1529,7 @@ per <term xml:lang="ar">س</term>, non <term xml:lang="ar">ش</term> expressum .
 Unde &amp; Hebræis <term xml:lang="he">קנה</term> de hasta ...
 ```
 
-#### 4.3.5.14 Bibliografiske henvisninger
+#### 4.3.5.16 Bibliografiske henvisninger
 
 Henvisninger til værker i den løbende tekst mærkes med elementet
 `bibl` (*bibliographic citation*). Elementet kan rumme attributtet
@@ -1504,7 +1541,7 @@ Et eksempel fra Georg Brandes *Hovedstrømninger*, bd. 1:
 	Martensens »Speculative Dogmatik« afløses af den 
 	»<bibl ref="martensen-den-christelige-dogmatik">Christelige Dogmatik</bibl>«.
 
-#### 4.3.5.15 Breve
+#### 4.3.5.17 Breve
 
 Med elementet `correspDesc` beskrives brevvekslingens aktører samt eventuelle
 ledsagende steds- og tidsangivelser:
