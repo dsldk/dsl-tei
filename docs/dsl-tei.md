@@ -1150,26 +1150,15 @@ Til gengivelse af fremhævet tekst benyttes elementet `hi`
 (*highlighted*) med `@rend` (*rendition*), der beskriver tekstens
 visuelle udtryk. Følgende attributværdier er tilladt:
 
-`italic` ellers `italics` 
-:	kursiv
-
-`small` 
-:	petit skriftsnit
-
-`spaced`
-:	spatieret, gengives med kursiv i endelig visning
-
-`strong`
-:	fed skrift
-
-`sublinear`
-:	lavstillet tekst
-
-`supralinear`
-:	højtstillet tekst
-
-`underline`
-: understreget tekst, gengives med kursiv i endelig visning
+| værdi    | beskrivelse                   |                                   |
+|----------|-------------------------------|
+| `italic` | kursiv                        |
+| `small`  | petit  |
+| `spaced` | spærret/spatieret |
+| `strong` | fed  |
+| `sub`    | understillet |
+| `sup`    | overstillet |
+| `underline` | understreget |
 
 #### 4.3.5.2 Citater
 
@@ -1473,7 +1462,7 @@ normaliseret og konventionel form _Luk. 21_ (opmærket med `reg`):
 
 Kommentarer opmærkes i to dele: I teksten indsættes en henvisning i et tomt
 `ref`-element med `@target` og værdi svarende til en tabel-header i den
-tilhørende kommentarfil. Følgende regler gælder:
+tilhørende kommentarfil med poster bestående af lemma og note. Følgende regler gælder:
 
 1. Kommentarfilen navngives med samme filnavn som den dsl-tei-fil, den
    ledsager, men med ekstensionen .toml. Til dsl-tei-filen
@@ -1506,7 +1495,7 @@ knyttes til.
 
 #### 4.3.5.14 Sideskift i forlæg
 
-Sideskift i forlæg markeres med det lukkede element `pb` (*page-break*).
+Sideskift i forlæg markeres med det lukkede element `pb` (*page beginning*).
 Elementet kan indeholde tre attributter:
 
 `@ed`
