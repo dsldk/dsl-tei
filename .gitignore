@@ -2,9 +2,9 @@
 *.html
 !html/dsl-tei-ref.html
 
-xml/
-!xml/dsl-tei-ref.xml
-!xml/dsl-tei.rnc
+old/
+
+!xml/
 
 !xsl/
 
