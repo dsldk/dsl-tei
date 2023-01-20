@@ -1,7 +1,7 @@
 # dsl-tei
 
-Et skema med tilhørende vejledning og stylesheets til medarbejdere ved Det
-Danske Sprog- og Litteraturselskabs tekstudgivelsesprojekter.
+Et skema med tilhørende vejledning og stylesheets til medarbejdere ved [Det
+Danske Sprog- og Litteraturselskab](https://dsl.dk/)s tekstudgivelsesprojekter.
 
 Klon eller download dsl-tei, når du skal udgive tekster til en af Det Danske
 Sprog- og Litteraturselskabs tekstudgivelsesplatform
