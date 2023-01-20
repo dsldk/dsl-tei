@@ -31,7 +31,7 @@ materialet.
 
 Et dsl-tei-dokument er et XML-dokument med rodelementet `TEI` og attributtet
 `@xmlns` (*XML namespace*), udfyldt med værdien `http://www.tei-c.org/ns/1.0`.
-Rodelementet indholder de tre hovedkomponenter `teiHeader`, `facsimile` og
+Rodelementet indholder de tre komponenter 1. `teiHeader`, 2. `facsimile` og 3. 
 `text`.
 
 |element   | beskrivelse                                                      |
@@ -88,6 +88,17 @@ filen. `fileDesc` indeholder følgende elementer:
 | publicationStmt  | (*publication statement*) angiver, hvem der har ansvaret for udgivelsen af den digitale tekst og vilkår for distribution af samme |
 | sourceDesc       | (*source description*) beskriver den kilde, fra hvilken den digitale tekst er afledt, fx om den har digitalt eller analogt forlæg.|
 
+Elementerne fordeler sig sådan: 
+
+```xml
+<fileDesc>
+  <titleStmt>...</titleStmt>
+  <extent>...</extent>
+  <publicationStmt>...</publicationStmt>
+  <sourceDesc>...</sourceDesc>
+</fileDesc>
+```
+
 ### 2.1.1 Titelangivelsen
 
 Titelangivelsen (`titleStmt`) indeholder et `title`-element, efterfulgt af et
@@ -102,9 +113,9 @@ eller flere `author`-, `editor`-, og `funder`-elementer.
 </titleStmt>
 ```
 
-#### 2.1.1.1 Redaktør og andre arbejdsfunktioner
+#### 2.1.1.1 Redaktionelle ansvarsområder
 
-Elementet `editor` bruges med attributtet `@role` til præcisering af udgivernes
+Elementet `editor` bruges med `@role` til præcisering af udgivernes
 redaktionelle ansvarsområder. Følgende attributværdier er tilladt:
 
 | @role: værdi      | beskrivelse                                                               |
@@ -644,23 +655,24 @@ gives i omvendt kronologisk rækkefølge**, dvs. nyeste ændringer først.
 
 Elementet `facsimile` samler et eller flere `graphic`-elementer:
 
-	<facsimile>
-	  <graphic url="nil"/>
-	</facsimile>
-	
+```xml
+<facsimile>
+  <graphic url="nil"/>
+</facsimile>
+```	
 	<!-- udfyldes -->
 
 # 4 Tekst
 
-Den tredje hovedbestanddel af et TEI-dokument, elementet `text`,
-indeholder en tekst, som enten er en *enhed* (roman, novelle, brev og
-lignende), eller udgør en *helhed* som en essay- eller digtsamling. 
+Den tredje hovedbestanddel af et TEI-dokument, elementet `text`, indeholder en
+tekst, som enten er en *enhed* (roman, novelle, brev og lignende) eller udgør
+en *helhed* såsom en essay- eller digtsamling. 
 
-Tekster med trykt eller håndskrevet forlæg kan ofte opdeles i tre
-komponenter: Først optræder oplysninger om værkets titel, forfatter,
-udgivelsessted; dernæst følger teksten, og til sidst finder vi
-registre, noter og lignende.  For at kunne bearbejde disse komponenter
-særskilt er elementet `text` inddelt som følger:
+Tekster med trykt eller håndskrevet forlæg kan ofte opdeles i tre komponenter:
+Først optræder oplysninger om værkets titel, forfatter, udgivelsessted; dernæst
+følger teksten, og til sidst finder vi registre, noter og lignende.  For at
+kunne bearbejde disse komponenter særskilt er elementet `text` inddelt som
+følger:
 
 `front` 
 :	(*front matter*), præliminære oplysninger i form af titelblad, 
@@ -673,7 +685,7 @@ særskilt er elementet `text` inddelt som følger:
 :	(*back matter*), eventuelle appendices og fortegnelser, som 
 	følger efter teksten, se 4.3
 
-## 4.1 Indledende oplysninger (`front`)
+## 4.1 Indledende oplysninger 
 
 Til behandling af titelblade, forsider, dedikationer og forord i
 trykte forlæg anvendes `front`, under hvilket følgende elementer
@@ -683,10 +695,11 @@ kan forekomme:
 2. `div type="preface"`, forord til teksten
 3. `div type="toc", indholdsfortegnelse
 
-### 4.1.1 Titelblad (`titlePage`)
+### 4.1.1 Titelblad
 
 Et titelblad i et tryk eller håndskrift beskrives under elementet `titlePage`
-med følgende underelementer:
+med `@xml:id` udfyldt med værdien `titelblad`. Der er mulighed for følgende
+underelementer:
 
 1. `docTitle` (*document title*), beskrivelse af værkets titel, indeholder et eller flere elementer af typen `titlePart`
 2. `byline`, oplysninger om værkets ophav i form af forfatter, redaktør eller udgiver
@@ -809,53 +822,77 @@ opmærkes som en liste, dvs. `list`, jf. XXX
 
 ### 4.1.3 Forord
 
-Forord opmærkes som et `div`-element med `@type` udfyldt med værdien
-`preface`. <!--udfyld og giv eksempler-->
+Forord opmærkes i et ukvalificeret `div`-element: 
 
-## 4.2 Tekstens struktur (`body` og `div`)
+```xml
+<front>
+  ...
+  <div>
+    <head>
+      <reg>Forord</reg>
+      <orig/>
+    </head>
+    <div>
+      <p>Denne Bog tilhører dig.</p>
+      <p>Den Gang, da du endnu var stærk og lykkelig, gik vi en Dag, som vi, 
+      mens jeg var Dreng, saa ofte plejede, naar Skumringen faldt paa, en
+      »Ønskevandring« ned ad Byens Gade: ...
+      </p>
+      ...
+    </div>
+    ...
 
-Udgivelsens centrale del udgøres af elementet `body` (*text body*),
-som indeholder teksten, hvad enten den er inddelt i bøger eller sange
-eller dele og kapitler.  Virkemidlet til beskrivelse af en teksts
-disposition er elementet `div` (*division*), som er et rekursivt
-element, idet det kan inddeles med andre `div`-elementer til en
-hvilken som helst dybde.
+```
+
+## 4.2 Tekstens centrale del
+
+Udgivelsens centrale del udgøres af elementet `body` (*text body*), som
+indeholder teksten, hvad enten den er inddelt i bøger eller sange eller dele og
+kapitler. Virkemidlet til beskrivelse af en teksts disposition er elementet
+`div` (*division*), som er et rekursivt element, idet det kan inddeles med andre
+`div`-elementer til en hvilken som helst dybde.
 
 En tekst med tre kapitler kan fx struktureres sådan: 
 
-	<body>
-	  <div> ... </div>
-	  <div> ... </div>
-	  <div> ... </div>
-	</body>
+```xml
+<body>
+  <div> ... </div>
+	<div> ... </div>
+	<div> ... </div>
+</body>
+```
 
 En tekst med to dele, som hver indeholder et antal kapitler
 struktureres således:
 
-	<body>
-	  <div>
-	    <div> ... </div>
-	    <div> ... </div>
-	     ... 
-	  </div>
-	  <div>
-	    <div> ... </div>
-	    <div> ... </div>
-	    ...
-	  </div>
-	</body>
+```xml
+<body>
+  <div>
+	  <div> ... </div>
+	  <div> ... </div>
+	   ... 
+	</div>
+	<div>
+	  <div> ... </div>
+	  <div> ... </div>
+	  ...
+	</div>
+</body>
+```
 
 ### 4.2.1 Parallelle tekster
 
-Ved tekster, der som *Diplomatarium Danicum* ledsages af oversættelse,
-og synoptiske udgaver, rummer `body` to dele: først en `div` med
-grundteksten kendetegnet ved attributtet `@xml:id="basetext"`, dernæst
-en `div` med oversættelsen med `@xml:id="translation"`.
+Ved særlige typisk kortere teksttyper som breve og diplomer kan grundteksten
+ledsages af en oversættelse. I så fald rummer `body` to dele: 1. en `div` med
+grundteksten kendetegnet ved `@xml:id="basetext"` og 2. en `div` med
+oversættelsen med `@xml:id="translation"`.
 
-	<body>
-	  <div xml:id="basetext">...  </div>
-	  <div xml:id="translation"> ... </div>
-	</body>
+```xml
+<body>
+  <div xml:id="basetext">...  </div>
+  <div xml:id="translation"> ... </div>
+</body>
+```
 
 ### 4.2.2 Deltitelblade
 
@@ -872,33 +909,19 @@ Hovedstrømninger bd. 4
 	  </div>
 	  ...
 
-## 4.3 Andre strukturelle elementer
+## 4.3 Blokelementer under `div`
 
-Tekstinddelingselementet `div` kan indeholde følgende elementer:
+Blokelementet `div` kan foruden andre `div`-elementer indeholde følgende andre blokelementer:
 
-`div`
-:	(*text division*) indeholder en del af en tekst. Jf. 3.2.
+| element    | beskrivelse                                              |
+|------------|----------------------------------------------------------|
+| `head`     | (*heading*), overskrift, som enten i forvejen optræder i tekstens forlæg eller suppleres af udgiveren. |
+| `epigraph` | anvendes til mottoer i begyndelsen af en tekstdel, jf. 4.1.1.3 |
+| `list`     | (*list*), lister, nummererede/unummererede, se 3.3 |
+| `p`        | (*paragraph*), afsnit i prosa, se 3.3.2 |
+| `lg`       | (*line group*), strofe i poesi, se 3.3.3 |
+| `table`    | (*table*), tabel, se X.X.X |
 
-`head`
-:	(*heading*), overskrift, som enten i forvejen optræder i 
-	tekstens forlæg eller suppleres af udgiveren. Hvis overskriften 
-	suppleres af redaktionen, udvides `head`-elementet med `@type="add"`
-
-`epigraph`
-:	anvendes til mottoer i begyndelsen af en tekstdel, jf. 4.1.1.3
-
-`list`
-:	(*list*), lister, nummererede/unummererede, se 3.3
-
-`p`
-:	(*paragraph*), afsnit i prosa, se 3.3.2
-
-`lg`
-:	(*line group*), strofe i poesi, se 3.3.3
-
-
-`pb`
-:	(*page break*), sideskift
 
 ### 4.3.1 Overskrifter
 
@@ -909,8 +932,8 @@ elementet `orig` og 2. normaliserede overskrifter med elementet `reg`
 
 ```xml
 <head>
-  <orig>Genesis Mose Første Bog.</orig>
   <reg>Første Mosebog</reg>
+  <orig>Genesis Mose Første Bog.</orig>
 </head>
 ```
 <!--
@@ -929,12 +952,11 @@ Supplerende underoverskrifter angives
 
 ### 4.3.2 Prosa
 
-Under hierarkiet af `body`- og `div`-elementer segmenteres prosatekst
-i sideordnede afsnit vha. elementet `p` (*paragraph*). Om nødvendigt,
-kan et `p`-element gengive typografiske variationer i form af venstre-
-eller højrestillet tekst.  I så fald udvides `p` med attributtet
-`@rend` (*rendition*), som udfyldes med én af følgende gyldige
-værdier:
+Under hierarkiet af `body`- og `div`-elementer segmenteres prosatekst i
+sideordnede afsnit vha. elementet `p` (*paragraph*). Om nødvendigt, kan et
+`p`-element gengive typografiske variationer i form af venstre- eller
+højrestillet tekst.  I så fald udvides `p` med attributtet `@rend`
+(*rendition*), som udfyldes med én af følgende gyldige værdier:
 
 `center`
 :	centreret tekst
@@ -1199,18 +1221,21 @@ Her bør teksten emenderes, således at dittografien kun beskrives i
 
 #### 4.3.5.3 Tekstkritik
 
-Formålet med et tekstkritisk apparat er at vise læseren usikre
-læsemåder, og hvilke dele af teksten skyldes emendering. Hertil
-anvendes elementet: `app` (*apparatus entry*), som indeholder én 
-post i et tekstkritisk apparat. 
+Formålet med et tekstkritisk apparat er at vise læseren usikre læsemåder, og
+hvilke dele af teksten skyldes emendering. Hertil anvendes elementet: `app`
+(*apparatus entry*), som indeholder én post i et tekstkritisk apparat. 
 
-Et `app`-element samler to elementer:
+Et `app`-element indeholder de to underelementer `lem` og `rdg`:
 
 |element   | beskrivelse                                                      |
 |----------|------------------------------------------------------------------|
 | lem      | (*lemma*) indeholder den tekst, til hvilken findes en variant    | 
 | rdg      | (*reading*) indeholder et eller flere alternativer til lemmaets tekst i `q` |
 
+Ud fra den betragtning at teksten i elementet `rdg` ofte både indledes og
+afsluttes af redaktionelle bemærkninger og sigelhenvisninger har vi valgt at
+lade elementet være ustruktureret tekst med mulighed for at opmærke de konkrete
+læsemåder fra forlægget med `q` (*quote*). For eksempel:
 
 ```xml
 <app>
@@ -1218,6 +1243,8 @@ Et `app`-element samler to elementer:
   <rdg>C, <q>den andet</q> A B, <q>det andet</q> ms.</rdg>
 </app>
 ```
+
+
 
 <!-- Denne praksis illustreres i Georg Brandes *Hovedstrømninger* bd. 2 --> 
 <!-- med denne tekstkritiske note: -->
@@ -1299,11 +1326,13 @@ under lemmaet i en tekstkritisk note. I nedenstående eksempel ([Dipl.
 Dan. 14450205001 ](http://diplomatarium.dk/dokument/14450205001)) kan
 teksten suppleres vha. det andet tekstvidne *Aa*: 
 
+```xml
 	perpetui vicarii i sa<ex>m</ex>me stæth wore 
 	  <app>
 	    <lem>ski<damage>cket</damage>he</lem>
 	    <rdg wit="#A">Lakune A; <q>skickethe</q> Aa</rdg>
 	  </app> gothe beskethne me<ex>n</ex> ...
+```
 
 #### 4.3.5.5 Konjekturer
 
@@ -1311,12 +1340,14 @@ Til markering af tekst, som suppleres af redaktøren, anvendes
 elementet `supplied`. Nedenstående eksempel kommer fra [Dipl. Dan.
 14461229001](http://diplomatarium.dk/dokument/14461229001):
 
+```xml
 	... presentibus 
 	  <app>
 	    <lem>e<supplied>s</supplied>t</lem>
 	    <rdg> <q>et</q> Weibull, l.c</rdg>
 	  </app> 
 	appensum ...
+```
 
 #### 4.3.5.6 Udeladelser
 
@@ -1324,12 +1355,13 @@ Såfremt redaktøren ønsker at udelade tekst, kan dette gøres vha.
 elementet `gap`. Et eksempel fra *Diplomatarium Danicum*, hvor
 oversættelsen udelades i projektperioden 2017-2021:
 
+```xml
 	...
 	<p n="b#1">
           <gap>I perioden 1. januar 2017 til 30. juni 2021 vil
 	    redaktionen udelukkende udarbejde tekster.</gap>
         </p>
-
+```
 
 #### 4.3.5.7 Grafik
 
@@ -1343,13 +1375,14 @@ slags skillestreger, hhv. `<milestone unit="section" rend="shortline"/>`,
 
 #### 4.3.5.8 Opløsning af abbreviaturer
 
-Til optagelse af forkortelser og deres opløsninger i typisk
-middelalderlige håndskrifter og tidlige tryk anvendes elementet `ex`
-(*editorial expansion*), som udfyldes med tekst suppleret af redaktøren.
-I [Dipl. Dan. 14151114001](http://diplomatarium.dk/dokument/14151114001)
-forekommer:
+Til optagelse af forkortelser og deres opløsninger i typisk middelalderlige
+håndskrifter og tidlige tryk anvendes elementet `ex` (*editorial expansion*),
+som udfyldes med tekst suppleret af redaktøren.  I [Dipl. Dan.
+14151114001](http://diplomatarium.dk/dokument/14151114001) forekommer:
 
+```xml
 	Oc weth<ex>e</ex>r kende hwn sigh ...
+```
 
 I Tekstnet gengives den opløste tekst i kursiv:
 
@@ -1365,21 +1398,22 @@ I Tekstnet gengives den opløste tekst i kursiv:
 #### 4.3.5.9 Noter
 
 Fodnoter i den løbende tekst beskrives vha. elementet `note`
-med attributtet `@place` udfyldt med værdien `foot`. Eventuelle henvisningstegn
+med attributtet `@place` udfyldt med værdien `bottom`. Eventuelle henvisningstegn
 opmærkes vha. `ref` karakteriseret ved attributtet `@refMark` som i nedenstående
 eksempel H.C. Ørsted, Aanden i Naturen 1:
 
 ```xml
-... Enster<note place="foot"><ref type="refMark">*)</ref>
-                <p>Ordet er allerede blevet brugt af <hi rend="italic">Risbrigh</hi> 
+... Enster<note place="bottom">
+            <ref type="refMark">*)</ref>
+            <p>Ordet er allerede blevet brugt af <hi rend="italic">Risbrigh</hi> 
                 og er udentvivl gammelt. Det fandtes i Ordet 
                 <hi rend="italic">Eensterskilling</hi>, som i forrige Aarhundrede 
-                endnu brugtes til at betegne en enkelt Skilling i Sølvmynt.</p></note> (Individ) ...
+                endnu brugtes til at betegne en enkelt Skilling i Sølvmynt.</p>
+          </note> (Individ) ...
 ```
 
-I Tekstnet realiseres fodnoter som popup-noter med deres originale
-referencetegn. Noten indledes med en titel bestående af Fodnote plus notens
-nummer. Herefter følger referencetegnet og notens tekst. 
+I Tekstnet realiseres fodnoter efter det afsnit hvori de optræder.
+Henvisningstegn i forlægget normaliseres om nødvendigt til numre.
 
 <!--
 
