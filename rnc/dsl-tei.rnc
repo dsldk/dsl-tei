@@ -65,7 +65,7 @@ start =
                 element projectDesc {
                     attribute xml:id { xsd:NCName },
                     ab
-                }?,
+                }+,
                 element appInfo {
                     element application {
                         attribute ident { xsd:NCName },
@@ -87,7 +87,7 @@ start =
                     }+
                 }?,
                 element creation { date, placeName? },
-                element abstract { ab }, 
+                element abstract { ab }?, 
                 element langUsage {
                     element language {
                         attribute ident { xsd:NCName }
@@ -125,11 +125,13 @@ start =
 byline = element byline { (text | lb | persName)+ }
 titlePage = element titlePage {
     attribute xml:id { "titelblad" },
-    docTitle,
-    byline,
-    docImprint
+    docTitle?,
+    byline?,
+    docImprint?
 }
-titlePart = element titlePart { (text | pb)+ }
+titlePart = element titlePart { 
+    attribute type { "desc" | "sub"}?,
+    (text | hi | pb)+ }
 docDate = element docDate { (text | hi)+ }
 docImprint = element docImprint {
     pubPlace*,
@@ -137,8 +139,8 @@ docImprint = element docImprint {
     docDate?
     }
 docTitle = element docTitle {
-    attribute rend { xsd:NCName },
-    titlePart
+    attribute rend { xsd:NCName }?,
+    titlePart+
 }
 publisher = element publisher { (text | hi | ref)+ }
 pubPlace = element pubPlace { (text | hi | lb)+ }
@@ -180,7 +182,8 @@ date =
 \div =
     element div {
         attribute type { xsd:NCName }?,
-        (cit | \div | epigraph | head | p | \list | table)*,
+        opener?,
+        (cit | \div | epigraph | head | lg | \list | p | table)*,
         closer?
    }
 
@@ -208,7 +211,7 @@ head =
     }
 hi =
     element hi {
-        attribute rend { "italic" | "italics" | "small" | "spaced" | "sub" | "sup" | "strong" }?,
+        attribute rend { "font-italic" | "small" | "spaced" | "sub" | "sup" | "font-weight-bold" }?,
         (text | ex | hi | persName | placeName | ref)+
     }
 idno =
@@ -217,7 +220,9 @@ idno =
         text
     }
 item =
-    element item { (text | app | ex | hi | \list | pb | persName | placeName | ref)+ }+
+    element item { 
+    attribute n { text }?,
+    (text | app | ex | hi | \list | pb | persName | placeName | ref)+ }+
 l =
     element l {
         attribute n { text }?,
@@ -228,12 +233,13 @@ label = element label { (text | hi)+ }
 lb = element lb { empty }
 lg =
     element lg {
-        attribute rend { xsd:NCName }?,
+        attribute rend { "text-center" | "text-center-font-italic" | "text-right" | "text-right-font-italic" }?,
+        head?, 
         (app | l)+
     }
 \list =
     element list {
-        attribute rend { xsd:NCName },
+        attribute rend { "bulleted" | "numbered" | "simple" },
         (head | item )+ }+
 note =
     element note {

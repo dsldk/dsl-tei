@@ -3,10 +3,10 @@
 Et skema med tilhørende vejledning og stylesheets til medarbejdere ved [Det
 Danske Sprog- og Litteraturselskab](https://dsl.dk/)s tekstudgivelsesprojekter.
 
-Klon eller download dsl-tei, når du skal udgive tekster til Det Danske
-Sprog- og Litteraturselskabs udgivelsesplatform
-[Tekstnet](https://text.dsl.dk/). Skemaet implementerer en delmængde af
-standarden [TEI P5](https://tei-c.org/release/doc/tei-p5-doc/en/html/index.html).
+Klon eller download dsl-tei, når du skal udgive tekster til Det Danske Sprog- og
+Litteraturselskabs udgivelsesplatform [Tekstnet](https://text.dsl.dk/). Skemaet
+implementerer den del af standarden [TEI P5](https://tei-c.org/release/doc/tei-p5-doc/en/html/index.html) som af
+redaktionen anses for nødvendig for at publicere på Tekstnet.
 
 ## Sådan kommer du i gang
 
@@ -22,14 +22,15 @@ bugs, ønsker til ny funktionalitet og åbning af pull requests.
 
 ## Redaktion
 
-dsl-tei er udviklet af Thomas Hansen (th@dsl.dk) med bidrag fra Finn Gredal
-Jensen.
+dsl-tei er udviklet af Thomas Hansen (th@dsl.dk) med bidrag fra Axel Teich
+Gertinger og Finn Gredal Jensen.
 
 
 ## Copyright
 
-Kode og dokumentation copyright Det Danske Sprog- og Litteraturselskab.
-Dokumentation udgives under [Creative Commons](https://creativecommons.org/licenses/by/4.0/)
+Kode og dokumentation copyright Det Danske Sprog- og Litteraturselskab.  Koden
+udgives under [MIT-licens](https://github.com/dsldk/dsl-tei/blob/master/LICENSE.md),
+dokumentationen under [Creative Commons](https://creativecommons.org/licenses/by/4.0/).
 
 <!--
 
