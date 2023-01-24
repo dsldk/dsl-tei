@@ -955,22 +955,13 @@ Supplerende underoverskrifter angives
 Under hierarkiet af `body`- og `div`-elementer segmenteres prosatekst i
 sideordnede afsnit vha. elementet `p` (*paragraph*). Om nødvendigt, kan et
 `p`-element gengive typografiske variationer i form af venstre- eller
-højrestillet tekst.  I så fald udvides `p` med attributtet `@rend`
-(*rendition*), som udfyldes med én af følgende gyldige værdier:
+højrestillet tekst.  I så fald udvides `p` med `@rend` (*rendition*), som
+udfyldes med én af følgende gyldige værdier:
 
-`center`
-:	centreret tekst
-
-`right` 
-:	højrestillet tekst
-
-I Herman Bangs Breve,
-[19120106001](http://bangsbreve.dk/dokument/19120106001) højrestilles
-tidsfæstelsen i et brev således
-
-	...
-	<p rend="right">Søndag.</p>
-        <p>Jeg kom igaar ikke længere...
+| `@rend` værdi     | betydning               |
+|-------------------| ------------------------|
+|  text-center      | centreret tekst         | 
+|  text-right       | højrestillet tekst      | 
 
 
 ### 4.3.3 Vers
@@ -978,26 +969,26 @@ tidsfæstelsen i et brev således
 Til opmærkning af vers og strofer anvendes hhv. elementet `lg` (*line
 group*) og `l` (*line*). Når verslinjen er brudt, markeres dette vha.
 et `lb`-element (*line break*). Selv hvor der kun optræder en enkelt
-verslinje, anbefales det at bruge `lg` som wrapper.
+verslinje, skal der benyttes `lg` som wrapper.
 
-Elementet `lg` kan udvides med attributtet `@rend` og værdierne
-`center` og `right` for hhv. centreret og højrestillet tekst. Når en
-strofe har overskrift benyttes et `head`-element umiddelbart under
-`lg`.
+Elementet `lg` kan udvides med attributtet `@rend` for at angive centreret og
+højrestillet tekst, evt. kombineret med kursiv skrift.  Hvis en strofe har
+overskrift, benyttes et `head`-element umiddelbart under `lg`.
 
+| `@rend` værdi                 | betydning                   |
+|-------------------------------|-----------------------------|
+|  text-center                  | centreret tekst             | 
+|  text-center-font-italic      | centreret tekst i kursiv    | 
+|  text-right                   | højrestillet tekst          | 
+|  text-right-font-italic       | højrestillet tekst i kursiv | 
 
-|**Attribut: `@rend`**    |  **Værdi** |   **Betydning**|
-|-------------------------| -----------|-----------------------------------------|
-|                         | center     |    Teksten i `lg` centreres|
-|                         | center-it  |  Teksten i `lg` centreres og kursiveres |
-|                         | indent[1-10]|  Teksten i `lg` indrykkes|
-|                         | right       |  Teksten i `lg` højrestilles|
 
 For at gengive typografisk ekspressivitet kan et `l`-element forsynes
 med attributtet `@rend`.
 
 I Brandes *Hovedstrømninger bd. 5* citeres:
 
+```
 	Derpaa
 	 gik 
 	  vor	 
@@ -1007,10 +998,12 @@ I Brandes *Hovedstrømninger bd. 5* citeres:
 	      ned 
 	       ad 
 	        Trapperne
+```
 
 Effekten opnås gennem følgende opmærkning:
 
-	<lg>
+```xml
+  <lg>
           <l rend="indent1">Derpaa</l>
           <l rend="indent2">gik</l>
           <l rend="indent3">vor</l>
@@ -1021,6 +1014,7 @@ Effekten opnås gennem følgende opmærkning:
           <l rend="indent8">ad</l>
           <l rend="indent9">Trapperne</l>
         </lg>
+```
 
 NB! For at opnå kontrol med indrykningen transformeres hvert `l` til et
 HTML `p` forsynet med `@class="indent1"`.

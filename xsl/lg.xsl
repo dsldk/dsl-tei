@@ -20,24 +20,42 @@
         </xd:desc>
     </xd:doc>
     <xsl:template match="tei:lg">
-        <xsl:choose>
-            <xsl:when test="@rend = 'center-col-font-italic'">
-                <div class="poetry center-col font-italic">
-                    <xsl:apply-templates/>
-                </div>
+        <div>
+            <xsl:attribute name="class">
+                <xsl:choose>
+                    <xsl:when test="@rend = 'center-col'">poetry center-col</xsl:when>
+                    <xsl:when test="@rend = 'center-col-font-italic'">poetry center-col
+                        font-italic</xsl:when>
+                    <xsl:when test="(@rend = 'center') or (@rend = 'text-center')">text-center</xsl:when>
+                    <xsl:when test="(@rend = 'right') or (@rend = 'text-right')">poetry text-right</xsl:when>
+                    <xsl:otherwise>poetry</xsl:otherwise>
+                </xsl:choose>
+                <xsl:if test="@n">
+                    <xsl:attribute name="data-num">
+                        <xsl:value-of select="@n"/>
+                    </xsl:attribute>
+                </xsl:if>
+            </xsl:attribute>
+            <xsl:apply-templates/>
+        </div>
+        <!--       <xsl:choose>
+          <xsl:when test="@rend = 'center-col-font-italic'">
+            <xsl:attribute name="poetry center-col font-italic">
+              <xsl:apply-templates/>
+            </xsl:attribute>
             </xsl:when>
             <xsl:when test="@rend = 'center-col'">
-                <div class="poetry center-col">
+              <xsl:attribute name="poetry center-col">
+                    <xsl:apply-templates/>
+              </xsl:attribute>>
+            </xsl:when>
+            <xsl:when test="(@rend = 'center') or (@rend = 'text-center')">
+                <xsl:attribute name="poetry text-center">
                     <xsl:apply-templates/>
                 </div>
             </xsl:when>
-            <xsl:when test="@rend = 'center'">
-                <div class="poetry center">
-                    <xsl:apply-templates/>
-                </div>
-            </xsl:when>
-            <xsl:when test="@rend = 'right'">
-                <div class="poetry right">
+            <xsl:when test="(@rend = 'right') or (@rend = 'text-right')">
+                <div class="poetry text-right">
                     <xsl:apply-templates/>
                 </div>
             </xsl:when>
@@ -56,6 +74,7 @@
                     <xsl:apply-templates/>
                 </div>
             </xsl:otherwise>
-        </xsl:choose>
+          </xsl:choose>
+          </div>-->
     </xsl:template>
 </xsl:stylesheet>
