@@ -1115,6 +1115,9 @@ På tekstniveau forekommer følgende elementer:
 `figure`
 :	grafisk element i den løbende tekst, se 4.3.6.7
 
+`formula`
+: matematisk eller anden formel, se 4.3.6.7a
+
 `ex`
 :	opløsning af forkortelse, se 4.3.6.8
 
@@ -1366,6 +1369,26 @@ elementet `figure`. Elementet forsynes altid med underelementet
 Til adskillelse af afsnit og kapitler kan man anvende tre forskellige
 slags skillestreger, hhv. `<milestone unit="section" rend="shortline"/>`, 
 `<milestone unit="section" rend="mediumline"/>` samt `<milestone unit="section" rend="longline"/>`.
+
+#### 4.3.5.7a Formler
+
+Matematiske formler opmærkes i `formula` udvidet med `@notation`. Foreløbig
+tillades kun TeX-notation:
+
+```xml
+Integralet <formula notation="TeX">\(\int_0^\infty e^{it}t^{x-1}dt\)</formula> er jo et
+“Dirichlet’s Integral” (ses strax naar <formula notation="TeX">\(x-1\)</formula> sættes
+lig  <formula notation="TeX">\(-y\)</formula>; de Diri. Int. er nemlig af Form <formula
+notation="TeX">\(\int_0^\infty \frac{f(t)}{t^y}dt\)</formula></p>
+<p>Ligninger kan også optræde i blokke som her: <lb/><formula notation="TeX">$$s(x) =
+\int^x_0e^{it} \, {t^n dt} = \frac{1}{i}e^{ix} \cdot x^{n} +\dots+ (i)^{n + 1} \cdot
+n!$$</formula>
+<lb/>Dette giver en simpel delvis Integration <lb/><formula notation="TeX">$$s(x)
+\quad\text{altsaa lig}\quad \sum_{r=0}^n k_r \cdot e^{ix} \cdot x^r + (i)^{n + 1}
+\cdot n!$$</formula>
+<lb/>da nu vi skal integrere <formula notation="TeX">\(s(x)\)</formula> o.s.v. ...
+<formula notation="TeX">\(n+1\)</formula> Gange endnu.</p>
+```
 
 #### 4.3.5.8 Opløsning af abbreviaturer
 
