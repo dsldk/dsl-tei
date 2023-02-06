@@ -87,7 +87,6 @@ start =
                     }+
                 }?,
                 element creation { date, placeName? },
-                element abstract { ab }?, 
                 element langUsage {
                     element language {
                         attribute ident { xsd:NCName }
@@ -97,7 +96,8 @@ start =
                     element keywords {
                         element term { xsd:NCName }
                     }
-                }
+                },
+                element abstract { ab+ | p+ }?
             },
             element revisionDesc {
                 element change {
@@ -201,7 +201,7 @@ figure =
     }
 formula =
     element formula {
-        attribute notation { xsd:NCName },
+        attribute notation { "tex" },
         text
     }
 head =

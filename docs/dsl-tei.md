@@ -632,22 +632,23 @@ Opmærkning af korrespondance skal indeholde et `correspDesc`
 
 ## 2.4 Ændringer af udgaven
 
-TEI-headerens sidste underelement er `revisionDesc` (_revision description_), hvor signifikante
-tekstændringer registreres i en række `change`-elementer. **Bemærk** at **ændringer
-gives i omvendt kronologisk rækkefølge**, dvs. nyeste ændringer først.
+TEI-headerens sidste underelement er `revisionDesc` (_revision description_),
+hvor signifikante tekstændringer registreres i en række `change`-elementer,
+underinddelt i et eller flere `ab`-elementer. **Bemærk** at **ændringer gives i
+omvendt kronologisk rækkefølge**, dvs. nyeste ændringer først.
 
 | `change`          | beskrivelse   |
 |-------------------|---------------|
-| `@n`              | revisionsnummer i formatet STØRRE.MINDRE.MINDST, hvor **større** ændringer omfatter overgangen fra kladde til endelig version, **mindre** ændringer omfatter tilføjelser af nyt eller hidtil manglende materiale, og **mindst** omfatter rettelse af småfejl |
+| `@n`              | revisionsnummer i formatet STØRRE.MINDRE hvor **større** ændringer omfatter overgangen fra kladde til endelig version og tilføjelse af supplerende materiale, og **mindre** ændringer omfatter rettelse af småfejl |
 | `@when`           | datoangivelse i formatet yyyy-mm-dd |
 | `@who`            | redaktørens initialer |
 | `text()`          | kort beskrivelse af ændringen | 
 
 ```xml
 <revisionDesc>
-  <change n="1.0.0" when="2022-11-16" who="#th">Første endelige version offentiliggjort</change>
-  <change n="0.1.2" when="2022-11-13" who="#th">Indsat blanktegn (&#xA0;) til indrykning af verslinjer</change>
-  <change n="0.1.1" when="2022-01-05" who="#th">Korrektur læst vha. aspell, og rettelser fra DSLs eksemplar indført.</change>
+  <change n="1.0" when="2022-11-16" who="#th"><ab>Første endelige version offentiliggjort.</ab></change>
+  <change n="0.2" when="2022-11-13" who="#th"><ab>Indsat blanktegn (&#xA0;) til indrykning af verslinjer.</ab></change>
+  <change n="0.1" when="2022-01-05" who="#th"><ab>Korrektur læst vha. aspell, og rettelser fra DSLs eksemplar indført.</ab></change>
 </revisionDesc>
 ```
 
@@ -1115,6 +1116,9 @@ På tekstniveau forekommer følgende elementer:
 `figure`
 :	grafisk element i den løbende tekst, se 4.3.6.7
 
+`formula`
+: matematisk eller anden formel, se 4.3.6.7a
+
 `ex`
 :	opløsning af forkortelse, se 4.3.6.8
 
@@ -1366,6 +1370,26 @@ elementet `figure`. Elementet forsynes altid med underelementet
 Til adskillelse af afsnit og kapitler kan man anvende tre forskellige
 slags skillestreger, hhv. `<milestone unit="section" rend="shortline"/>`, 
 `<milestone unit="section" rend="mediumline"/>` samt `<milestone unit="section" rend="longline"/>`.
+
+#### 4.3.5.7a Formler
+
+Matematiske formler opmærkes i `formula` udvidet med `@notation`. Foreløbig
+tillades kun TeX-notation:
+
+```xml
+Integralet <formula notation="TeX">\(\int_0^\infty e^{it}t^{x-1}dt\)</formula> er jo et
+“Dirichlet’s Integral” (ses strax naar <formula notation="TeX">\(x-1\)</formula> sættes
+lig  <formula notation="TeX">\(-y\)</formula>; de Diri. Int. er nemlig af Form <formula
+notation="TeX">\(\int_0^\infty \frac{f(t)}{t^y}dt\)</formula></p>
+<p>Ligninger kan også optræde i blokke som her: <lb/><formula notation="TeX">$$s(x) =
+\int^x_0e^{it} \, {t^n dt} = \frac{1}{i}e^{ix} \cdot x^{n} +\dots+ (i)^{n + 1} \cdot
+n!$$</formula>
+<lb/>Dette giver en simpel delvis Integration <lb/><formula notation="TeX">$$s(x)
+\quad\text{altsaa lig}\quad \sum_{r=0}^n k_r \cdot e^{ix} \cdot x^r + (i)^{n + 1}
+\cdot n!$$</formula>
+<lb/>da nu vi skal integrere <formula notation="TeX">\(s(x)\)</formula> o.s.v. ...
+<formula notation="TeX">\(n+1\)</formula> Gange endnu.</p>
+```
 
 #### 4.3.5.8 Opløsning af abbreviaturer
 
