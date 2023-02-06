@@ -632,22 +632,23 @@ Opmærkning af korrespondance skal indeholde et `correspDesc`
 
 ## 2.4 Ændringer af udgaven
 
-TEI-headerens sidste underelement er `revisionDesc` (_revision description_), hvor signifikante
-tekstændringer registreres i en række `change`-elementer. **Bemærk** at **ændringer
-gives i omvendt kronologisk rækkefølge**, dvs. nyeste ændringer først.
+TEI-headerens sidste underelement er `revisionDesc` (_revision description_),
+hvor signifikante tekstændringer registreres i en række `change`-elementer,
+underinddelt i et eller flere `ab`-elementer. **Bemærk** at **ændringer gives i
+omvendt kronologisk rækkefølge**, dvs. nyeste ændringer først.
 
 | `change`          | beskrivelse   |
 |-------------------|---------------|
-| `@n`              | revisionsnummer i formatet STØRRE.MINDRE.MINDST, hvor **større** ændringer omfatter overgangen fra kladde til endelig version, **mindre** ændringer omfatter tilføjelser af nyt eller hidtil manglende materiale, og **mindst** omfatter rettelse af småfejl |
+| `@n`              | revisionsnummer i formatet STØRRE.MINDRE hvor **større** ændringer omfatter overgangen fra kladde til endelig version og tilføjelse af supplerende materiale, og **mindre** ændringer omfatter rettelse af småfejl |
 | `@when`           | datoangivelse i formatet yyyy-mm-dd |
 | `@who`            | redaktørens initialer |
 | `text()`          | kort beskrivelse af ændringen | 
 
 ```xml
 <revisionDesc>
-  <change n="1.0.0" when="2022-11-16" who="#th">Første endelige version offentiliggjort</change>
-  <change n="0.1.2" when="2022-11-13" who="#th">Indsat blanktegn (&#xA0;) til indrykning af verslinjer</change>
-  <change n="0.1.1" when="2022-01-05" who="#th">Korrektur læst vha. aspell, og rettelser fra DSLs eksemplar indført.</change>
+  <change n="1.0" when="2022-11-16" who="#th"><ab>Første endelige version offentiliggjort.</ab></change>
+  <change n="0.2" when="2022-11-13" who="#th"><ab>Indsat blanktegn (&#xA0;) til indrykning af verslinjer.</ab></change>
+  <change n="0.1" when="2022-01-05" who="#th"><ab>Korrektur læst vha. aspell, og rettelser fra DSLs eksemplar indført.</ab></change>
 </revisionDesc>
 ```
 
