@@ -646,11 +646,39 @@ omvendt kronologisk rækkefølge**, dvs. nyeste ændringer først.
 
 ```xml
 <revisionDesc>
-  <change n="1.0" when="2022-11-16" who="#th"><ab>Første endelige version offentiliggjort.</ab></change>
+  <change n="1.0" when="2022-11-16" who="#th"><ab>Første endelige version offentliggjort.</ab></change>
   <change n="0.2" when="2022-11-13" who="#th"><ab>Indsat blanktegn (&#xA0;) til indrykning af verslinjer.</ab></change>
   <change n="0.1" when="2022-01-05" who="#th"><ab>Korrektur læst vha. aspell, og rettelser fra DSLs eksemplar indført.</ab></change>
 </revisionDesc>
 ```
+
+### 2.4.1 Sådan retter du versionsnummeret
+
+Som udgangspunkt offentliggøres alle tekster i version 0.1. Denne første version
+kan betragtes som en testversion som stilles til rådighed i forventning om at
+teksten vil undergå rettelser og at supplerende materiale (kommentarer,
+tekstkritik, person- og stednavne samt ledsagende tekster) kan offentliggøres
+ved senere lejlighed. Bemærk at en tekst godt kan offentliggøres i en version
+1.0 uden tekstkritik, noter og anden funktionalitet. På den måde kan også
+tekster stilles til rådighed uden at de opfylder de kvalitetskrav der
+almindeligvis gælder ved DSL-udgivelser.
+
+Følgende kriterier gælder ved rettelse af tekstens versionsnummer:  
+
+**STØRRE** ændres ved:
+
+- afsluttet arbejdsgang herunder:
+  - korrektur
+  - kommentarer tilføjet
+  - forord, indledning, tekstredegørelse tilføjet
+- omdøbning af filnavn
+
+**MINDRE** ændres ved:
+
+- rettelse af småfejl
+- justering af formatering
+
+
 
 # 3 Faksimiler
 
