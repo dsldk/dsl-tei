@@ -1395,9 +1395,31 @@ Til gengivelse af grafiske elementer i den løbende tekst anvendes
 elementet `figure`. Elementet forsynes altid med underelementet
 `figDesc`.
 
-Til adskillelse af afsnit og kapitler kan man anvende tre forskellige
-slags skillestreger, hhv. `<milestone unit="section" rend="shortline"/>`, 
-`<milestone unit="section" rend="mediumline"/>` samt `<milestone unit="section" rend="longline"/>`.
+Typografisk adskillelse af afsnit ved symboler og skillestreger opmærkes med `figure` med
+attributtet `@type`. En asterisk mellem to afsnit opmærkes fx: 
+
+```
+  ... i sine vildeste Drømme! — — </p>
+</div>
+<figure type="asterisk"/>
+<div>
+  <p> Efter Pers Bortrejse havde Jakobe, nu da hun ikke længer 
+      paavirkedes umiddelbart af hans Person, ... 
+```
+
+Gyldige værdier af `figure`-elementets `@type`:
+
+| `@type`, værdi   | beskrivelse   |
+|------------------|---------------|
+| asterisk         | centreret \*  |
+| asterism         | centreret ⁂   |
+| fleuron          | centreret ❦   |
+| fleuron-reversed | centreret ☙   |
+| fleuron-rotated  | centreret ❧   |
+| shortline        | kort centreret skillestreg |
+| mediumline       | middellang centreret skillestreg |
+| longline         | lang centreret skillestreg |
+
 
 #### 4.3.5.7a Formler
 
@@ -1407,7 +1429,7 @@ tillades kun TeX-notation:
 ```xml
 Integralet <formula notation="TeX">\(\int_0^\infty e^{it}t^{x-1}dt\)</formula> er jo et
 “Dirichlet’s Integral” (ses strax naar <formula notation="TeX">\(x-1\)</formula> sættes
-lig  <formula notation="TeX">\(-y\)</formula>; de Diri. Int. er nemlig af Form <formula
+lig <formula notation="TeX">\(-y\)</formula>; de Diri. Int. er nemlig af Form <formula
 notation="TeX">\(\int_0^\infty \frac{f(t)}{t^y}dt\)</formula></p>
 <p>Ligninger kan også optræde i blokke som her: <lb/><formula notation="TeX">$$s(x) =
 \int^x_0e^{it} \, {t^n dt} = \frac{1}{i}e^{ix} \cdot x^{n} +\dots+ (i)^{n + 1} \cdot
@@ -1598,7 +1620,7 @@ Elementet kan indeholde tre attributter:
 
 Til opmærkning af arabiske og hebræiske tegn anvendes elementet `term`
 med `@xml:lang`. Fx hos Thomas Bartholin:
-
+<!--
 ```xml
 per <term xml:lang="ar">س</term>, non <term xml:lang="ar">ش</term> expressum ...
 ```
@@ -1606,6 +1628,7 @@ per <term xml:lang="ar">س</term>, non <term xml:lang="ar">ش</term> expressum .
 ```xml
 Unde &amp; Hebræis <term xml:lang="he">קנה</term> de hasta ...
 ```
+-->
 
 #### 4.3.5.16 Bibliografiske henvisninger
 
@@ -1660,6 +1683,4 @@ Diplomatarium Danicum
   </row>
 </table>
 ```
-
-
 
