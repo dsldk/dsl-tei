@@ -646,11 +646,39 @@ omvendt kronologisk rækkefølge**, dvs. nyeste ændringer først.
 
 ```xml
 <revisionDesc>
-  <change n="1.0" when="2022-11-16" who="#th"><ab>Første endelige version offentiliggjort.</ab></change>
+  <change n="1.0" when="2022-11-16" who="#th"><ab>Første endelige version offentliggjort.</ab></change>
   <change n="0.2" when="2022-11-13" who="#th"><ab>Indsat blanktegn (&#xA0;) til indrykning af verslinjer.</ab></change>
   <change n="0.1" when="2022-01-05" who="#th"><ab>Korrektur læst vha. aspell, og rettelser fra DSLs eksemplar indført.</ab></change>
 </revisionDesc>
 ```
+
+### 2.4.1 Sådan retter du versionsnummeret
+
+Som udgangspunkt offentliggøres alle tekster i version 0.1. Denne første version
+kan betragtes som en testversion som stilles til rådighed i forventning om at
+teksten vil undergå rettelser og at supplerende materiale (kommentarer,
+tekstkritik, person- og stednavne samt ledsagende tekster) kan offentliggøres
+ved senere lejlighed. Bemærk at en tekst godt kan offentliggøres i en version
+1.0 uden tekstkritik, noter og anden funktionalitet. På den måde kan også
+tekster stilles til rådighed uden at de opfylder de kvalitetskrav der
+almindeligvis gælder ved DSL-udgivelser.
+
+Følgende kriterier gælder ved rettelse af tekstens versionsnummer:  
+
+**STØRRE** ændres ved:
+
+- afsluttet arbejdsgang herunder:
+  - korrektur
+  - kommentarer tilføjet
+  - forord, indledning, tekstredegørelse tilføjet
+- omdøbning af filnavn
+
+**MINDRE** ændres ved:
+
+- rettelse af småfejl
+- justering af formatering
+
+
 
 # 3 Faksimiler
 
@@ -1367,9 +1395,31 @@ Til gengivelse af grafiske elementer i den løbende tekst anvendes
 elementet `figure`. Elementet forsynes altid med underelementet
 `figDesc`.
 
-Til adskillelse af afsnit og kapitler kan man anvende tre forskellige
-slags skillestreger, hhv. `<milestone unit="section" rend="shortline"/>`, 
-`<milestone unit="section" rend="mediumline"/>` samt `<milestone unit="section" rend="longline"/>`.
+Typografisk adskillelse af afsnit ved symboler og skillestreger opmærkes med `figure` med
+attributtet `@type`. En asterisk mellem to afsnit opmærkes fx: 
+
+```
+  ... i sine vildeste Drømme! — — </p>
+</div>
+<figure type="asterisk"/>
+<div>
+  <p> Efter Pers Bortrejse havde Jakobe, nu da hun ikke længer 
+      paavirkedes umiddelbart af hans Person, ... 
+```
+
+Gyldige værdier af `figure`-elementets `@type`:
+
+| `@type`, værdi   | beskrivelse   |
+|------------------|---------------|
+| asterisk         | centreret \*  |
+| asterism         | centreret ⁂   |
+| fleuron          | centreret ❦   |
+| fleuron-reversed | centreret ☙   |
+| fleuron-rotated  | centreret ❧   |
+| shortline        | kort centreret skillestreg |
+| mediumline       | middellang centreret skillestreg |
+| longline         | lang centreret skillestreg |
+
 
 #### 4.3.5.7a Formler
 
@@ -1379,7 +1429,7 @@ tillades kun TeX-notation:
 ```xml
 Integralet <formula notation="TeX">\(\int_0^\infty e^{it}t^{x-1}dt\)</formula> er jo et
 “Dirichlet’s Integral” (ses strax naar <formula notation="TeX">\(x-1\)</formula> sættes
-lig  <formula notation="TeX">\(-y\)</formula>; de Diri. Int. er nemlig af Form <formula
+lig <formula notation="TeX">\(-y\)</formula>; de Diri. Int. er nemlig af Form <formula
 notation="TeX">\(\int_0^\infty \frac{f(t)}{t^y}dt\)</formula></p>
 <p>Ligninger kan også optræde i blokke som her: <lb/><formula notation="TeX">$$s(x) =
 \int^x_0e^{it} \, {t^n dt} = \frac{1}{i}e^{ix} \cdot x^{n} +\dots+ (i)^{n + 1} \cdot
@@ -1570,7 +1620,7 @@ Elementet kan indeholde tre attributter:
 
 Til opmærkning af arabiske og hebræiske tegn anvendes elementet `term`
 med `@xml:lang`. Fx hos Thomas Bartholin:
-
+<!--
 ```xml
 per <term xml:lang="ar">س</term>, non <term xml:lang="ar">ش</term> expressum ...
 ```
@@ -1578,6 +1628,7 @@ per <term xml:lang="ar">س</term>, non <term xml:lang="ar">ش</term> expressum .
 ```xml
 Unde &amp; Hebræis <term xml:lang="he">קנה</term> de hasta ...
 ```
+-->
 
 #### 4.3.5.16 Bibliografiske henvisninger
 
@@ -1632,6 +1683,4 @@ Diplomatarium Danicum
   </row>
 </table>
 ```
-
-
 
