@@ -27,7 +27,7 @@
                     <xsl:apply-templates select="tei:stage"/>
                 </xsl:if>
             </p>
-            <xsl:apply-templates select="tei:p"/>
+            <xsl:apply-templates select="tei:p | tei:lg"/>
         </div>
     </xsl:template>
 </xsl:stylesheet>
