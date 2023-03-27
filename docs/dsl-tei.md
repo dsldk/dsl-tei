@@ -1011,25 +1011,22 @@ udfyldes med én af følgende gyldige værdier:
 
 ### 4.3.3 Vers
 
-Til opmærkning af vers og strofer anvendes hhv. elementet `lg` (*line
-group*) og `l` (*line*). Når verslinjen er brudt, markeres dette vha.
-et `lb`-element (*line break*). Selv hvor der kun optræder en enkelt
-verslinje, skal der benyttes `lg` som wrapper.
+Til opmærkning af vers og strofer anvendes elementet `lg` (*line group*) med de
+underordnede elementer `l` (*line*) til verslinjer og `head` til
+strofeoverskrifter. Når verslinjen er brudt, markeres dette vha.  et
+`lb`-element (*line break*). Selv hvor der kun optræder en enkelt verslinje,
+skal `lg` benyttes som wrapper.
 
 Elementet `lg` kan udvides med attributtet `@rend` for at angive centreret og
-højrestillet tekst, evt. kombineret med kursiv skrift.  Hvis en strofe har
-overskrift, benyttes et `head`-element umiddelbart under `lg`.
+højrestillet tekst.  
 
 | `@rend` værdi                 | betydning                   |
 |-------------------------------|-----------------------------|
 |  text-center                  | centreret tekst             | 
-|  text-center-font-italic      | centreret tekst i kursiv    | 
 |  text-right                   | højrestillet tekst          | 
-|  text-right-font-italic       | højrestillet tekst i kursiv | 
 
-
-For at gengive typografisk ekspressivitet kan et `l`-element forsynes
-med attributtet `@rend`.
+For at gengive typografisk ekspressivitet kan et `l`-element forsynes med
+attributtet `@rend`.
 
 I Brandes *Hovedstrømninger bd. 5* citeres:
 
@@ -1048,17 +1045,17 @@ I Brandes *Hovedstrømninger bd. 5* citeres:
 Effekten opnås gennem følgende opmærkning:
 
 ```xml
-  <lg>
-          <l rend="indent1">Derpaa</l>
-          <l rend="indent2">gik</l>
-          <l rend="indent3">vor</l>
-          <l rend="indent4">Helt</l>
-          <l rend="indent5">ganske</l>
-          <l rend="indent6">nedslaaet</l>
-          <l rend="indent7">ned</l>
-          <l rend="indent8">ad</l>
-          <l rend="indent9">Trapperne</l>
-        </lg>
+<lg>
+  <l rend="indent1">Derpaa</l>
+  <l rend="indent2">gik</l>
+  <l rend="indent3">vor</l>
+  <l rend="indent4">Helt</l>
+  <l rend="indent5">ganske</l>
+  <l rend="indent6">nedslaaet</l>
+  <l rend="indent7">ned</l>
+  <l rend="indent8">ad</l>
+  <l rend="indent9">Trapperne</l>
+</lg>
 ```
 
 NB! For at opnå kontrol med indrykningen transformeres hvert `l` til et
