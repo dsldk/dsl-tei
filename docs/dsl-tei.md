@@ -758,37 +758,49 @@ Et eksempel findes i Georg Brandes Hovedstrømninger
 
 #### 4.1.1.1 Titel (`docTitle`)
 
-`docTitle` samler et eller flere `titlePart`-elementer. Forekommer
-undertitler, angives disse med `titlePart type="sub"` (*subtitle*).
-Her et eksempel på enkel `docTitle` i Jakob Knudsen, *Sind*:
-	
-	<docTitle>
-	  <titlePart>Sind</titlePart>
-	</docTitle>
+Elementet `docTitle` samler et eller flere `titlePart`-elementer. Forekommer
+undertitler, angives disse med `titlePart type="sub"` (*subtitle*).  Her et
+eksempel på enkel `docTitle` i Jakob Knudsen, *Sind*:
 
-I Holbergs *Peder Paars* opdeles titlen derimod i hoved- og
-undertitel:
+```xml
+<docTitle>
+  <titlePart>Sind</titlePart>
+</docTitle>
+```
 
-	<docTitle>
-	  <titlePart>Peder Paars</titlePart>
-	  <titlePart type="sub">Poema Heroico-comicum</titlePart>
-	</docTitle>
+Til opmærkning af undertitler og længere beskrivende titler anvendes `titlePart`
+kvalificeret vha. `@type` og en af følgende værdier:
 
-#### Beskrivende titler
+
+| @type-værdi     | beskrivelse                                  | 
+|-----------------|----------------------------------------------|
+| desc            | (_descriptive_) angiver en beskrivende titel |
+| sub             | (_subtitle_) angiver undertitel              |
+
+
+I Holbergs *Peder Paars* opdeles titlen i hoved- og undertitel:
+
+```xml
+<docTitle>
+  <titlePart>Peder Paars</titlePart>
+  <titlePart type="sub">Poema Heroico-comicum</titlePart>
+</docTitle>
+```
 
 I Niels Jespersens Graduale findes et eksempel på en beskrivende
-titel:
+titel
 
-	<docTitle>
-          <titlePart><pb n="E1"/>GRADVAL.</titlePart>
-          <titlePart type="desc"> En Almindelig <lb/> Sangbog / som Hoybaarne
-            <lb/> Første oc Stormectige Herre / Her Frederich den <lb/> Anden /
-            Danmarckis Norgis Wendis oc Gottis Konning <ex>etcetera</ex>. <lb/> Haffuer
-            ladet Ordinere oc tilsammen scriffue paa La<lb rend="="/>tine oc Danske / at
-            bruge i Kirckerne / til des yder<lb rend="="/>mere endrectighed vdi Sang oc
-            Ceremo<lb rend="="/>nier / effter Ordinantzens<lb/> lydelse.</titlePart>
-	</docTitle>
-
+```xml
+<docTitle>
+  <titlePart><pb n="E1"/>GRADVAL.</titlePart>
+  <titlePart type="desc"> En Almindelig <lb/> Sangbog / som Hoybaarne
+    <lb/> Første oc Stormectige Herre / Her Frederich den <lb/> Anden /
+    Danmarckis Norgis Wendis oc Gottis Konning <ex>etcetera</ex>. <lb/> Haffuer
+    ladet Ordinere oc tilsammen scriffue paa La<lb rend="="/>tine oc Danske / at
+    bruge i Kirckerne / til des yder<lb rend="="/>mere endrectighed vdi Sang oc
+    Ceremo<lb rend="="/>nier / effter Ordinantzens<lb/> lydelse.</titlePart>
+</docTitle>
+```
 #### 4.1.1.2 Byline
 
 En *byline* gengiver i bred forstand værkets ophavsmand, hvad enten
