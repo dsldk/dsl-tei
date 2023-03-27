@@ -703,16 +703,11 @@ følger teksten, og til sidst finder vi registre, noter og lignende.  For at
 kunne bearbejde disse komponenter særskilt er elementet `text` inddelt som
 følger:
 
-`front` 
-:	(*front matter*), præliminære oplysninger i form af titelblad, 
-	forside og forord, se 4.1 
-
-`body` 
-:	(*text body*), den centrale komponent, indeholder selve teksten, se. 4.2
-
-`back` 
-:	(*back matter*), eventuelle appendices og fortegnelser, som 
-	følger efter teksten, se 4.3
+| element       | beskrivelse                                                        |
+|---------------|--------------------------------------------------------------------|
+|	`front`       | (*front matter*), præliminære oplysninger i form af titelblad, forside og forord, se 4.1 |
+| `body`        | (*text body*), den centrale komponent, indeholder selve teksten, se. 4.2 |
+| `back`        |	(*back matter*), eventuelle appendices og fortegnelser, som følger efter teksten, se 4.3 |
 
 ## 4.1 Indledende oplysninger 
 
@@ -735,7 +730,7 @@ underelementer:
 |  `docTitle`   | (*document title*), beskrivelse af værkets titel, indeholder et eller flere elementer af typen `titlePart` |
 | `byline` | oplysninger om værkets ophav i form af forfatter, redaktør eller udgiver |
 | `epigraph` | påskrift, typisk i form af et motto og/eller citat fra et andet værk |
-| `docImprint` | navn på udgiver, trykker eller distributør |
+| `docImprint` | (_document imprint_) navn på udgiver, trykker eller distributør |
 
 Et eksempel findes i Georg Brandes Hovedstrømninger
 
