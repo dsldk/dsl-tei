@@ -716,45 +716,48 @@ følger:
 
 ## 4.1 Indledende oplysninger 
 
-Til behandling af titelblade, forsider, dedikationer og forord i
-trykte forlæg anvendes `front`, under hvilket følgende elementer
-kan forekomme:
+Til behandling af titelblade, forsider, dedikationer og forord i trykte forlæg
+anvendes `front`, under hvilket følgende elementer kan forekomme:
 
-1. `titlePage`,	titelbladets struktur i form af titel, undertitel, byline og lign.
-2. `div type="preface"`, forord til teksten
-3. `div type="toc", indholdsfortegnelse
+| element       | beskrivelse                                                        |
+|---------------|--------------------------------------------------------------------|
+| `titlePage`   |	titelbladets struktur i form af titel, undertitel, byline og lign. |
+| `div`         | indledende afsnit, fx forord eller indholdsfortegnelse             |
 
 ### 4.1.1 Titelblad
 
 Et titelblad i et tryk eller håndskrift beskrives under elementet `titlePage`
-med `@xml:id` udfyldt med værdien `titelblad`. Der er mulighed for følgende
+med `@type` udfyldt med værdien `titelblad`. Der er mulighed for følgende
 underelementer:
 
-1. `docTitle` (*document title*), beskrivelse af værkets titel, indeholder et eller flere elementer af typen `titlePart`
-2. `byline`, oplysninger om værkets ophav i form af forfatter, redaktør eller udgiver
-3. `epigraph`, påskrift, typisk i form af et motto og/eller citat fra et andet værk
-4. `docImprint`, navn på udgiver, trykker eller distributør
+| element       | beskrivelse                                                        |
+|---------------|--------------------------------------------------------------------|
+|  `docTitle`   | (*document title*), beskrivelse af værkets titel, indeholder et eller flere elementer af typen `titlePart` |
+| `byline` | oplysninger om værkets ophav i form af forfatter, redaktør eller udgiver |
+| `epigraph` | påskrift, typisk i form af et motto og/eller citat fra et andet værk |
+| `docImprint` | navn på udgiver, trykker eller distributør |
 
 Et eksempel findes i Georg Brandes Hovedstrømninger
 
-	<titlePage>
-	  <pb n="[1]"/>
-	  <docTitle>
-	    <titlePart>Hovedstrømninger i det 19de Aarhundredes Litteratur.</titlePart>
-	    <titlePart type="desc">Forelæsninger holdte ved Kjøbenhavns Universitet i 
-	      Efteraarshalvaaret 1871</titlePart>
-	  </docTitle>
-	  <byline>af <lb/> G. Brandes.</byline>
-	  <docTitle>
-	    <titlePart type="sub">Emigrantlitteraturen.</titlePart>
-	  </docTitle>
-	  <docImprint>
-	    <pubPlace>Kjøbenhavn.</pubPlace>
-	    <publisher>Forlagt af den Gyldendalske Boghandel (F. Hegel).</publisher>
-	    <publisher>Græbes Bogtrykkeri.</publisher>
-	    <docDate>1872.</docDate>
-	  </docImprint>
-	</titlePage>
+```xml
+<titlePage>
+  <docTitle>
+    <titlePart>Hovedstrømninger i det 19de Aarhundredes Litteratur.</titlePart>
+    <titlePart type="desc">Forelæsninger holdte ved Kjøbenhavns Universitet i 
+      Efteraarshalvaaret 1871</titlePart>
+  </docTitle>
+  <byline>af <lb/> G. Brandes.</byline>
+  <docTitle>
+    <titlePart type="sub">Emigrantlitteraturen.</titlePart>
+  </docTitle>
+  <docImprint>
+    <pubPlace>Kjøbenhavn.</pubPlace>
+    <publisher>Forlagt af den Gyldendalske Boghandel (F. Hegel).</publisher>
+    <publisher>Græbes Bogtrykkeri.</publisher>
+    <docDate>1872.</docDate>
+  </docImprint>
+</titlePage>
+```
 
 #### 4.1.1.1 Titel (`docTitle`)
 

@@ -5,7 +5,9 @@ start =
         element teiHeader {
             element fileDesc {
                 element titleStmt {
-                    element title { text }+,
+                    element title { 
+                        attribute xml:lang {xsd:NCName}?,
+                        text }+,
                     element author { 
                         attribute xml:id {xsd:NCName}?, 
                         text 
@@ -45,7 +47,8 @@ start =
                     element listWit {
                         element witness {
                             attribute xml:id { xsd:NCName },
-                             (element msDesc {
+                            attribute xml:lang { xsd:NCName }?,
+                              ((element msDesc {
                                 element msIdentifier {
                                     element settlement { text },
                                     element repository { text },
@@ -56,7 +59,7 @@ start =
                                 element additional {
                                     element listBibl { bibl+ }
                                 }
-                            } | (text | hi)+ )
+                            } | (text | hi)+ ))
                         }+
                     }
                 }
@@ -183,7 +186,7 @@ date =
     element div {
         attribute type { xsd:NCName }?,
         opener?,
-        (cit | \div | epigraph | head | lg | \list | p | table)*,
+        (cit | \div | epigraph | head | lg | \list | p | sp | table)*,
         closer?
    }
 
@@ -283,6 +286,9 @@ ref = element ref { attribute target { xsd:anyURI }}
 reg = element reg { text+ }
 salute = element salute { (text | lb | pb)+ }
 signed = element signed { (text | lb | pb)+ }
+sp = element sp { (p | speaker | stage)+}
+speaker = element speaker { (text) }
+stage = element stage { (text | hi)+ }
 table =
     element table {
         element row {
