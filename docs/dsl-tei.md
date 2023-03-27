@@ -834,7 +834,7 @@ Holbergs *Peder Paars*
 
 Eksempel på opmærkning af prosa findes i Georg Brandes, Hovedstrømninger:
 
-```
+```xml
 <epigraph>
   <cit>
     <quote>
@@ -891,10 +891,10 @@ Forord opmærkes i et ukvalificeret `div`-element:
 
 ## 4.2 Tekstens centrale del
 
-Udgivelsens centrale del udgøres af elementet `body` (*text body*), som
-indeholder teksten, hvad enten den er inddelt i bøger eller sange eller dele og
-kapitler. Virkemidlet til beskrivelse af en teksts disposition er elementet
-`div` (*division*), som er et rekursivt element, idet det kan inddeles med andre
+Udgivelsens centrale del udgøres af `body` (*text body*), som indeholder
+teksten, hvad enten den er inddelt i bøger, sange, dele og/eller kapitler.
+Virkemidlet til beskrivelse af en teksts disposition er elementet `div`
+(*division*), som er et rekursivt element, idet det kan inddeles med andre
 `div`-elementer til en hvilken som helst dybde.
 
 En tekst med tre kapitler kan fx struktureres sådan: 
@@ -902,8 +902,8 @@ En tekst med tre kapitler kan fx struktureres sådan:
 ```xml
 <body>
   <div> ... </div>
-	<div> ... </div>
-	<div> ... </div>
+  <div> ... </div>
+  <div> ... </div>
 </body>
 ```
 
@@ -915,13 +915,13 @@ struktureres således:
   <div>
 	  <div> ... </div>
 	  <div> ... </div>
-	   ... 
+	  ... 
 	</div>
 	<div>
 	  <div> ... </div>
 	  <div> ... </div>
 	  ...
-	</div>
+  </div>
 </body>
 ```
 
