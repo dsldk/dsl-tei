@@ -806,7 +806,9 @@ der er tale om en forfatter, en fotograf eller en illustrator.
 Nedenfor ses byline fra Holbergs *Peder Paars* med pseudonymet Hans
 Mikkelsen:
 
-	<byline> af Hans Michelsen </byline>
+```xml
+<byline> af Hans Michelsen </byline>
+```
 
 #### 4.1.1.3 Påskrift
 
@@ -815,32 +817,35 @@ kombineret med `cit`, `quote` samt opmærkning til vers, jf. 4.3.3
 eller prosa, se 4.3.2. Nedenstående eksempel er en påskrift fra Ludvig
 Holbergs *Peder Paars*
 
-	<epigraph>
-	  <cit>
-	    <quote>
-	      <lg>
-	        <l>Nihil est, Antipho,</l>
-	        <l>Qvin male narrando possit Depravarier.</l>
-	        <l>Tu id qvod boni est Excerpis.</l>
-	      </lg>
-	    </quote>
-	    <bibl>Terent: Phorm: Act: 4. Sc: 4.</bibl>
-	  </cit>
-	</epigraph>
+```xml
+<epigraph>
+  <cit>
+    <quote>
+      <lg>
+        <l>Nihil est, Antipho,</l>
+        <l>Qvin male narrando possit Depravarier.</l>
+        <l>Tu id qvod boni est Excerpis.</l>
+      </lg>
+    </quote>
+    <bibl>Terent: Phorm: Act: 4. Sc: 4.</bibl>
+  </cit>
+</epigraph>
+```
 
-Eksempel på opmærkning af prosa findes i Georg Brandes,
-Hovedstrømninger:
+Eksempel på opmærkning af prosa findes i Georg Brandes, Hovedstrømninger:
 
-	<epigraph>
-	  <cit>
-	    <quote>
-	      <p>There is no philosophy possible, where fear of
-	         consequences is a stronger principle than love 
-	         of truth.</p>
-	    </quote>
-	    <bibl>John Stuart Mill</bibl>
-	  </cit>
-	</epigraph> 
+```
+<epigraph>
+  <cit>
+    <quote>
+      <p>There is no philosophy possible, where fear of
+         consequences is a stronger principle than love 
+         of truth.</p>
+    </quote>
+    <bibl>John Stuart Mill</bibl>
+  </cit>
+</epigraph> 
+```
 
 #### 4.1.1.4 Imprimatur
 
@@ -849,9 +854,10 @@ Nedenfor ses imprimatur fra Holbergs *Peder Paars*, som dog kun angiver
 trykåret:
 
 [^qw]: af lat. konjunktiv: *må trykkes*.
-	<docImprint>
-	  Tryckt Aar <date>1720</date>.
-	</docImprint>
+
+```xml
+<docImprint> Tryckt Aar <date>1720</date>. </docImprint>
+```
 
 ### 4.1.2 Indholdsfortegnelse
 
