@@ -1404,12 +1404,27 @@ oversættelsen udelades i projektperioden 2017-2021:
 
 #### 4.3.5.7 Grafik
 
-Til gengivelse af grafiske elementer i den løbende tekst anvendes
-elementet `figure`. Elementet forsynes altid med underelementet
-`figDesc`.
+Til gengivelse af grafiske elementer i den løbende tekst anvendes elementet
+`figure` eventuelt kvalificeret af `@rend="right"` til højrestilling af figuren.
+Til større grafiske elementer som billeder og figurer samler `figure` elementet
+`graphic`, som rummer reference til billedfilen, og evt. en eller flere `p` til
+billedtekst.
 
-Typografisk adskillelse af afsnit ved symboler og skillestreger opmærkes med `figure` med
-attributtet `@type`. En asterisk mellem to afsnit opmærkes fx: 
+Til billeder anvendes elementet som i følgende eksempel:
+
+```xml
+... udgivelser, der faldt sidst på året.</p>
+<figure rend="right">
+  <p><hi rend="strong">Illustration 1.</hi> Titelblad til <hi rend="italic">Aanden 
+      i Naturen</hi>, bind 1, 1. udgave, 1850 [1849]</p>
+  <graphic url="392"/>
+</figure>
+<p> ....</p>
+```
+
+`figure` anvendes også til markering af typografisk adskillelse af afsnit ved
+symboler og skillestreger. Her opmærkes med `figure` med attributtet `@type`. En
+asterisk mellem to afsnit opmærkes fx: 
 
 ```
   ... i sine vildeste Drømme! — — </p>
