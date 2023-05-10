@@ -941,18 +941,25 @@ oversættelsen med `@xml:id="translation"`.
 
 ### 4.2.2 Deltitelblade
 
-Deltitelblade opmærkes som `div`-elementer med attributten `@type`
-udfyldt med værdien `half-title`. Et eksempel fra Brandes
+Deltitelblade opmærkes i et `head`-element med attributten `@type`
+udfyldt med værdien `part`. Et eksempel fra Brandes
 Hovedstrømninger bd. 4
 
+```xml
 	...
 	    </epigraph>
 	  </front>
 	<body>
-	  <div type="half-title">
-	    <head><pb n="[3]" />Naturalismen i England</head>
-	  </div>
+	  <div>
+	    <head type="part">
+        <orig><pb n="[3]" />Naturalismen i England</orig>
+      </head>
+      <head>
+        <reg>...</reg>
+        <orig>...</orig>
+        ...	  
 	  ...
+```
 
 ## 4.3 Blokelementer under `div`
 
