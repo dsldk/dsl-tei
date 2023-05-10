@@ -26,9 +26,9 @@
                     <xsl:when test="@rend = 'center-col'">poetry center-col</xsl:when>
                     <xsl:when test="@rend = 'center-col-font-italic'">poetry center-col
                         font-italic</xsl:when>
-                    <xsl:when test="(@rend = 'center') or (@rend = 'text-center')">text-center</xsl:when>
-                    <xsl:when test="(@rend = 'right') or (@rend = 'text-right')">poetry text-right</xsl:when>
-                    <xsl:otherwise>poetry</xsl:otherwise>
+                    <xsl:when test="(@rend = 'center') or (@rend = 'text-center')">my-4 text-center</xsl:when>
+                    <xsl:when test="(@rend = 'right') or (@rend = 'text-right')">my-4 text-right</xsl:when>
+                    <xsl:otherwise>my-4</xsl:otherwise>
                 </xsl:choose>
                 <xsl:if test="@n">
                     <xsl:attribute name="data-num">
@@ -36,6 +36,9 @@
                     </xsl:attribute>
                 </xsl:if>
             </xsl:attribute>
+            <xsl:if test="tei:head">
+              <xsl:apply-templates select="tei:lg/tei:head"/>
+            </xsl:if>
             <xsl:apply-templates/>
         </div>
         <!--       <xsl:choose>

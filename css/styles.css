@@ -625,18 +625,35 @@ div.align-last-right{
 div.verse-line{
     margin: 0.2em 0 0.2em;
 }
+.drama {
+  margin: 1rem 0 1rem 0;
 
-.drama{
-    margin: 1em 2em 0 2em;
+}
+
+.drama-speaker {
+  font-variant: small-caps;
+}
+
+.drama-speech {
+  text-indent: 0 !important;
+}
+.stage {
+  font-family: $font-family-serif;
+  font-variant: none;
+  text-indent: 0 !important;
+}
+
+/* .drama{ */
+/*     margin: 1em 2em 0 2em; */
     
-}
-.drama-speaker{
-    text-align:center;
-    margin-bottom:-0.5em;
-}
-.drama-speech{
-    margin-bottom: 0.5em
-}
+/* } */
+/* .drama-speaker{ */
+/*     text-align:center; */
+/*     margin-bottom:-0.5em; */
+/* } */
+/* .drama-speech{ */
+/*     margin-bottom: 0.5em */
+/* } */
 .closer {
     margin: 2rem 0 5rem 0;
 }
@@ -685,7 +702,36 @@ div.verse-line{
  * Divider lines 
  *
  */
-
+.asterism, .asterisk, .fleuron, .fleuron-reversed, .fleuron-rotated {
+  margin-top: 2rem;
+  margin-bottom: 3rem;
+  border: none;
+}
+.asterisk::before {
+  content: '*';
+  display: block;
+  text-align: center;
+}
+.asterism::before {
+  content: '⁂';
+  display: block;
+  text-align: center;
+}
+.fleuron::before {
+  content: '❦';
+  display: block;
+  text-align: center;
+}
+.fleuron-reversed::before {
+  content: '☙';
+  display: block;
+  text-align: center;
+}
+.fleuron-rotated::before {
+  content: '❧';
+  display: block;
+  text-align: center;
+}
 .shortline {
   margin-top: 4rem;
   margin-bottom: 4rem;

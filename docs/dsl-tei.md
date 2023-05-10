@@ -703,92 +703,102 @@ følger teksten, og til sidst finder vi registre, noter og lignende.  For at
 kunne bearbejde disse komponenter særskilt er elementet `text` inddelt som
 følger:
 
-`front` 
-:	(*front matter*), præliminære oplysninger i form af titelblad, 
-	forside og forord, se 4.1 
-
-`body` 
-:	(*text body*), den centrale komponent, indeholder selve teksten, se. 4.2
-
-`back` 
-:	(*back matter*), eventuelle appendices og fortegnelser, som 
-	følger efter teksten, se 4.3
+| element       | beskrivelse                                                        |
+|---------------|--------------------------------------------------------------------|
+|	`front`       | (*front matter*), præliminære oplysninger i form af titelblad, forside og forord, se 4.1 |
+| `body`        | (*text body*), den centrale komponent, indeholder selve teksten, se. 4.2 |
+| `back`        |	(*back matter*), eventuelle appendices og fortegnelser, som følger efter teksten, se 4.3 |
 
 ## 4.1 Indledende oplysninger 
 
-Til behandling af titelblade, forsider, dedikationer og forord i
-trykte forlæg anvendes `front`, under hvilket følgende elementer
-kan forekomme:
+Til behandling af titelblade, forsider, dedikationer og forord i trykte forlæg
+anvendes `front`, under hvilket følgende elementer kan forekomme:
 
-1. `titlePage`,	titelbladets struktur i form af titel, undertitel, byline og lign.
-2. `div type="preface"`, forord til teksten
-3. `div type="toc", indholdsfortegnelse
+| element       | beskrivelse                                                        |
+|---------------|--------------------------------------------------------------------|
+| `titlePage`   |	titelbladets struktur i form af titel, undertitel, byline og lign. |
+| `div`         | indledende afsnit, fx forord eller indholdsfortegnelse             |
 
 ### 4.1.1 Titelblad
 
 Et titelblad i et tryk eller håndskrift beskrives under elementet `titlePage`
-med `@xml:id` udfyldt med værdien `titelblad`. Der er mulighed for følgende
+med `@type` udfyldt med værdien `titelblad`. Der er mulighed for følgende
 underelementer:
 
-1. `docTitle` (*document title*), beskrivelse af værkets titel, indeholder et eller flere elementer af typen `titlePart`
-2. `byline`, oplysninger om værkets ophav i form af forfatter, redaktør eller udgiver
-3. `epigraph`, påskrift, typisk i form af et motto og/eller citat fra et andet værk
-4. `docImprint`, navn på udgiver, trykker eller distributør
+| element       | beskrivelse                                                        |
+|---------------|--------------------------------------------------------------------|
+|  `docTitle`   | (*document title*), beskrivelse af værkets titel, indeholder et eller flere elementer af typen `titlePart` |
+| `byline` | oplysninger om værkets ophav i form af forfatter, redaktør eller udgiver |
+| `epigraph` | påskrift, typisk i form af et motto og/eller citat fra et andet værk |
+| `docImprint` | (_document imprint_) navn på udgiver, trykker eller distributør |
 
 Et eksempel findes i Georg Brandes Hovedstrømninger
 
-	<titlePage>
-	  <pb n="[1]"/>
-	  <docTitle>
-	    <titlePart>Hovedstrømninger i det 19de Aarhundredes Litteratur.</titlePart>
-	    <titlePart type="desc">Forelæsninger holdte ved Kjøbenhavns Universitet i 
-	      Efteraarshalvaaret 1871</titlePart>
-	  </docTitle>
-	  <byline>af <lb/> G. Brandes.</byline>
-	  <docTitle>
-	    <titlePart type="sub">Emigrantlitteraturen.</titlePart>
-	  </docTitle>
-	  <docImprint>
-	    <pubPlace>Kjøbenhavn.</pubPlace>
-	    <publisher>Forlagt af den Gyldendalske Boghandel (F. Hegel).</publisher>
-	    <publisher>Græbes Bogtrykkeri.</publisher>
-	    <docDate>1872.</docDate>
-	  </docImprint>
-	</titlePage>
+```xml
+<titlePage>
+  <docTitle>
+    <titlePart>Hovedstrømninger i det 19de Aarhundredes Litteratur.</titlePart>
+    <titlePart type="desc">Forelæsninger holdte ved Kjøbenhavns Universitet i 
+      Efteraarshalvaaret 1871</titlePart>
+  </docTitle>
+  <byline>af <lb/> G. Brandes.</byline>
+  <docTitle>
+    <titlePart type="sub">Emigrantlitteraturen.</titlePart>
+  </docTitle>
+  <docImprint>
+    <pubPlace>Kjøbenhavn.</pubPlace>
+    <publisher>Forlagt af den Gyldendalske Boghandel (F. Hegel).</publisher>
+    <publisher>Græbes Bogtrykkeri.</publisher>
+    <docDate>1872.</docDate>
+  </docImprint>
+</titlePage>
+```
 
 #### 4.1.1.1 Titel (`docTitle`)
 
-`docTitle` samler et eller flere `titlePart`-elementer. Forekommer
-undertitler, angives disse med `titlePart type="sub"` (*subtitle*).
-Her et eksempel på enkel `docTitle` i Jakob Knudsen, *Sind*:
-	
-	<docTitle>
-	  <titlePart>Sind</titlePart>
-	</docTitle>
+Elementet `docTitle` samler et eller flere `titlePart`-elementer. Forekommer
+undertitler, angives disse med `titlePart type="sub"` (*subtitle*).  Her et
+eksempel på enkel `docTitle` i Jakob Knudsen, *Sind*:
 
-I Holbergs *Peder Paars* opdeles titlen derimod i hoved- og
-undertitel:
+```xml
+<docTitle>
+  <titlePart>Sind</titlePart>
+</docTitle>
+```
 
-	<docTitle>
-	  <titlePart>Peder Paars</titlePart>
-	  <titlePart type="sub">Poema Heroico-comicum</titlePart>
-	</docTitle>
+Til opmærkning af undertitler og længere beskrivende titler anvendes `titlePart`
+kvalificeret vha. `@type` og en af følgende værdier:
 
-#### Beskrivende titler
+
+| @type-værdi     | beskrivelse                                  | 
+|-----------------|----------------------------------------------|
+| desc            | (_descriptive_) angiver en beskrivende titel |
+| sub             | (_subtitle_) angiver undertitel              |
+
+
+I Holbergs *Peder Paars* opdeles titlen i hoved- og undertitel:
+
+```xml
+<docTitle>
+  <titlePart>Peder Paars</titlePart>
+  <titlePart type="sub">Poema Heroico-comicum</titlePart>
+</docTitle>
+```
 
 I Niels Jespersens Graduale findes et eksempel på en beskrivende
-titel:
+titel
 
-	<docTitle>
-          <titlePart><pb n="E1"/>GRADVAL.</titlePart>
-          <titlePart type="desc"> En Almindelig <lb/> Sangbog / som Hoybaarne
-            <lb/> Første oc Stormectige Herre / Her Frederich den <lb/> Anden /
-            Danmarckis Norgis Wendis oc Gottis Konning <ex>etcetera</ex>. <lb/> Haffuer
-            ladet Ordinere oc tilsammen scriffue paa La<lb rend="="/>tine oc Danske / at
-            bruge i Kirckerne / til des yder<lb rend="="/>mere endrectighed vdi Sang oc
-            Ceremo<lb rend="="/>nier / effter Ordinantzens<lb/> lydelse.</titlePart>
-	</docTitle>
-
+```xml
+<docTitle>
+  <titlePart><pb n="E1"/>GRADVAL.</titlePart>
+  <titlePart type="desc"> En Almindelig <lb/> Sangbog / som Hoybaarne
+    <lb/> Første oc Stormectige Herre / Her Frederich den <lb/> Anden /
+    Danmarckis Norgis Wendis oc Gottis Konning <ex>etcetera</ex>. <lb/> Haffuer
+    ladet Ordinere oc tilsammen scriffue paa La<lb rend="="/>tine oc Danske / at
+    bruge i Kirckerne / til des yder<lb rend="="/>mere endrectighed vdi Sang oc
+    Ceremo<lb rend="="/>nier / effter Ordinantzens<lb/> lydelse.</titlePart>
+</docTitle>
+```
 #### 4.1.1.2 Byline
 
 En *byline* gengiver i bred forstand værkets ophavsmand, hvad enten
@@ -796,7 +806,9 @@ der er tale om en forfatter, en fotograf eller en illustrator.
 Nedenfor ses byline fra Holbergs *Peder Paars* med pseudonymet Hans
 Mikkelsen:
 
-	<byline> af Hans Michelsen </byline>
+```xml
+<byline> af Hans Michelsen </byline>
+```
 
 #### 4.1.1.3 Påskrift
 
@@ -805,32 +817,35 @@ kombineret med `cit`, `quote` samt opmærkning til vers, jf. 4.3.3
 eller prosa, se 4.3.2. Nedenstående eksempel er en påskrift fra Ludvig
 Holbergs *Peder Paars*
 
-	<epigraph>
-	  <cit>
-	    <quote>
-	      <lg>
-	        <l>Nihil est, Antipho,</l>
-	        <l>Qvin male narrando possit Depravarier.</l>
-	        <l>Tu id qvod boni est Excerpis.</l>
-	      </lg>
-	    </quote>
-	    <bibl>Terent: Phorm: Act: 4. Sc: 4.</bibl>
-	  </cit>
-	</epigraph>
+```xml
+<epigraph>
+  <cit>
+    <quote>
+      <lg>
+        <l>Nihil est, Antipho,</l>
+        <l>Qvin male narrando possit Depravarier.</l>
+        <l>Tu id qvod boni est Excerpis.</l>
+      </lg>
+    </quote>
+    <bibl>Terent: Phorm: Act: 4. Sc: 4.</bibl>
+  </cit>
+</epigraph>
+```
 
-Eksempel på opmærkning af prosa findes i Georg Brandes,
-Hovedstrømninger:
+Eksempel på opmærkning af prosa findes i Georg Brandes, Hovedstrømninger:
 
-	<epigraph>
-	  <cit>
-	    <quote>
-	      <p>There is no philosophy possible, where fear of
-	         consequences is a stronger principle than love 
-	         of truth.</p>
-	    </quote>
-	    <bibl>John Stuart Mill</bibl>
-	  </cit>
-	</epigraph> 
+```xml
+<epigraph>
+  <cit>
+    <quote>
+      <p>There is no philosophy possible, where fear of
+         consequences is a stronger principle than love 
+         of truth.</p>
+    </quote>
+    <bibl>John Stuart Mill</bibl>
+  </cit>
+</epigraph> 
+```
 
 #### 4.1.1.4 Imprimatur
 
@@ -839,9 +854,10 @@ Nedenfor ses imprimatur fra Holbergs *Peder Paars*, som dog kun angiver
 trykåret:
 
 [^qw]: af lat. konjunktiv: *må trykkes*.
-	<docImprint>
-	  Tryckt Aar <date>1720</date>.
-	</docImprint>
+
+```xml
+<docImprint> Tryckt Aar <date>1720</date>. </docImprint>
+```
 
 ### 4.1.2 Indholdsfortegnelse
 
@@ -875,10 +891,10 @@ Forord opmærkes i et ukvalificeret `div`-element:
 
 ## 4.2 Tekstens centrale del
 
-Udgivelsens centrale del udgøres af elementet `body` (*text body*), som
-indeholder teksten, hvad enten den er inddelt i bøger eller sange eller dele og
-kapitler. Virkemidlet til beskrivelse af en teksts disposition er elementet
-`div` (*division*), som er et rekursivt element, idet det kan inddeles med andre
+Udgivelsens centrale del udgøres af `body` (*text body*), som indeholder
+teksten, hvad enten den er inddelt i bøger, sange, dele og/eller kapitler.
+Virkemidlet til beskrivelse af en teksts disposition er elementet `div`
+(*division*), som er et rekursivt element, idet det kan inddeles med andre
 `div`-elementer til en hvilken som helst dybde.
 
 En tekst med tre kapitler kan fx struktureres sådan: 
@@ -886,8 +902,8 @@ En tekst med tre kapitler kan fx struktureres sådan:
 ```xml
 <body>
   <div> ... </div>
-	<div> ... </div>
-	<div> ... </div>
+  <div> ... </div>
+  <div> ... </div>
 </body>
 ```
 
@@ -899,13 +915,13 @@ struktureres således:
   <div>
 	  <div> ... </div>
 	  <div> ... </div>
-	   ... 
+	  ... 
 	</div>
 	<div>
 	  <div> ... </div>
 	  <div> ... </div>
 	  ...
-	</div>
+  </div>
 </body>
 ```
 
@@ -925,18 +941,25 @@ oversættelsen med `@xml:id="translation"`.
 
 ### 4.2.2 Deltitelblade
 
-Deltitelblade opmærkes som `div`-elementer med attributten `@type`
-udfyldt med værdien `half-title`. Et eksempel fra Brandes
+Deltitelblade opmærkes i et `head`-element med attributten `@type`
+udfyldt med værdien `part`. Et eksempel fra Brandes
 Hovedstrømninger bd. 4
 
+```xml
 	...
 	    </epigraph>
 	  </front>
 	<body>
-	  <div type="half-title">
-	    <head><pb n="[3]" />Naturalismen i England</head>
-	  </div>
+	  <div>
+	    <head type="part">
+        <orig><pb n="[3]" />Naturalismen i England</orig>
+      </head>
+      <head>
+        <reg>...</reg>
+        <orig>...</orig>
+        ...	  
 	  ...
+```
 
 ## 4.3 Blokelementer under `div`
 
@@ -995,25 +1018,22 @@ udfyldes med én af følgende gyldige værdier:
 
 ### 4.3.3 Vers
 
-Til opmærkning af vers og strofer anvendes hhv. elementet `lg` (*line
-group*) og `l` (*line*). Når verslinjen er brudt, markeres dette vha.
-et `lb`-element (*line break*). Selv hvor der kun optræder en enkelt
-verslinje, skal der benyttes `lg` som wrapper.
+Til opmærkning af vers og strofer anvendes elementet `lg` (*line group*) med de
+underordnede elementer `l` (*line*) til verslinjer og `head` til
+strofeoverskrifter. Når verslinjen er brudt, markeres dette vha.  et
+`lb`-element (*line break*). Selv hvor der kun optræder en enkelt verslinje,
+skal `lg` benyttes som wrapper.
 
 Elementet `lg` kan udvides med attributtet `@rend` for at angive centreret og
-højrestillet tekst, evt. kombineret med kursiv skrift.  Hvis en strofe har
-overskrift, benyttes et `head`-element umiddelbart under `lg`.
+højrestillet tekst.  
 
 | `@rend` værdi                 | betydning                   |
 |-------------------------------|-----------------------------|
 |  text-center                  | centreret tekst             | 
-|  text-center-font-italic      | centreret tekst i kursiv    | 
 |  text-right                   | højrestillet tekst          | 
-|  text-right-font-italic       | højrestillet tekst i kursiv | 
 
-
-For at gengive typografisk ekspressivitet kan et `l`-element forsynes
-med attributtet `@rend`.
+For at gengive typografisk ekspressivitet kan et `l`-element forsynes med
+attributtet `@rend`.
 
 I Brandes *Hovedstrømninger bd. 5* citeres:
 
@@ -1032,17 +1052,17 @@ I Brandes *Hovedstrømninger bd. 5* citeres:
 Effekten opnås gennem følgende opmærkning:
 
 ```xml
-  <lg>
-          <l rend="indent1">Derpaa</l>
-          <l rend="indent2">gik</l>
-          <l rend="indent3">vor</l>
-          <l rend="indent4">Helt</l>
-          <l rend="indent5">ganske</l>
-          <l rend="indent6">nedslaaet</l>
-          <l rend="indent7">ned</l>
-          <l rend="indent8">ad</l>
-          <l rend="indent9">Trapperne</l>
-        </lg>
+<lg>
+  <l rend="indent1">Derpaa</l>
+  <l rend="indent2">gik</l>
+  <l rend="indent3">vor</l>
+  <l rend="indent4">Helt</l>
+  <l rend="indent5">ganske</l>
+  <l rend="indent6">nedslaaet</l>
+  <l rend="indent7">ned</l>
+  <l rend="indent8">ad</l>
+  <l rend="indent9">Trapperne</l>
+</lg>
 ```
 
 NB! For at opnå kontrol med indrykningen transformeres hvert `l` til et
@@ -1391,12 +1411,27 @@ oversættelsen udelades i projektperioden 2017-2021:
 
 #### 4.3.5.7 Grafik
 
-Til gengivelse af grafiske elementer i den løbende tekst anvendes
-elementet `figure`. Elementet forsynes altid med underelementet
-`figDesc`.
+Til gengivelse af grafiske elementer i den løbende tekst anvendes elementet
+`figure` eventuelt kvalificeret af `@rend="right"` til højrestilling af figuren.
+Til større grafiske elementer som billeder og figurer samler `figure` elementet
+`graphic`, som rummer reference til billedfilen, og evt. en eller flere `p` til
+billedtekst.
 
-Typografisk adskillelse af afsnit ved symboler og skillestreger opmærkes med `figure` med
-attributtet `@type`. En asterisk mellem to afsnit opmærkes fx: 
+Til billeder anvendes elementet som i følgende eksempel:
+
+```xml
+... udgivelser, der faldt sidst på året.</p>
+<figure rend="right">
+  <p><hi rend="strong">Illustration 1.</hi> Titelblad til <hi rend="italic">Aanden 
+      i Naturen</hi>, bind 1, 1. udgave, 1850 [1849]</p>
+  <graphic url="392"/>
+</figure>
+<p> ....</p>
+```
+
+`figure` anvendes også til markering af typografisk adskillelse af afsnit ved
+symboler og skillestreger. Her opmærkes med `figure` med attributtet `@type`. En
+asterisk mellem to afsnit opmærkes fx: 
 
 ```
   ... i sine vildeste Drømme! — — </p>

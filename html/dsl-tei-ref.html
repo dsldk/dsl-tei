@@ -1,7 +1,7 @@
 <html>
    <head>
       <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-      <title>Tekstnet, referencedokument</title>
+      <title>Tekstnet, referencedokument Tekstnet, reference document</title>
       <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
       <link rel="stylesheet" href="../css/styles.css" type="text/css" media="">
    </head>
@@ -21,48 +21,24 @@
                <h2 class="date-place text-left">1425. 12. juli
                   &nbsp;
                   København&nbsp;
-                  Fra Brahe, Tycho (1546-1601)
-                  til Johannes Aalborg
+                  <br>Fra Afsendernavn
+                  til Modtagernavn
                   <hr>
+                  <p>På denne plads gives et resumé af den udgivne tekst. Ved udgivelse af diplomer svarer
+                     dette felt til regesten.</p>
                </h2>
             </div>
          </div>
-         <div></div>
          <div class="row">
             <div class="col small pb-2">
                <dl class="row">
                   <dt class="col-sm-2">A</dt>
-                  <dd class="col-sm-10">Lund test, Lunde Kapitels Arkiv. 
-                     <p>Beskrivelse af tekstvidnets fysiske tilstand.</p>
-                  </dd>
+                  <dd class="col-sm-10">Lund test, Lunde Kapitels Arkiv. </dd>
                   <dt class="col-sm-2">Aa</dt>
-                  <dd class="col-sm-10">Stockholm, Riksarkivet, Registrum ecclesie Lundensis (Lundebogen), p. 250. 
-                     <p>Beskrivelse af tekstvidnets fysiske tilstand.</p>
-                  </dd>
+                  <dd class="col-sm-10">Stockholm, Riksarkivet, Registrum ecclesie Lundensis (Lundebogen), p.
+                     250. Beskrivelse af tekstvidnets fysiske tilstand. Redegørelse for tekstvidnets
+                     proveniens. Tryk: Pontan. Rerum Danicarum Libri IX 579-584. </dd>
                </dl>
-            </div>
-         </div>
-         <div class="container bg-light p-3">
-            <div class="row">
-               <div class="col">
-                  <h2 class="date-place text-left">
-                     &nbsp;
-                      Rostock&nbsp;
-                     From Brahe, Tycho (1546-1601) to Johannes Aalborg
-                     <hr>
-                  </h2>
-               </div>
-            </div>
-            <div></div>
-            <div class="row">
-               <div class="col small pb-2">
-                  <dl class="row">
-                     <dt class="col-sm-2">A</dt>
-                     <dd class="col-sm-10"></dd>
-                     <dt class="col-sm-2">Aa</dt>
-                     <dd class="col-sm-10"></dd>
-                  </dl>
-               </div>
             </div>
          </div>
       </div>
@@ -140,9 +116,8 @@
                   <div class="subsection">
                      <h2>Fremhævelse</h2>
                      <p>Standarden giver mulighed for forskellige former for fremhævelse:</p>
-                     <p>Her er tekst i kursiv: </p>
-                     <p>Herefter kommer tekst i fed: 
-                        </p>
+                     <p>Her er tekst i kursiv: <em>Tekst i kursiv.</em></p>
+                     <p>Herefter kommer tekst i fed: <strong>Tekst i fed.</strong></p>
                      <p>Herefter kommer understillet tekst: <sub>Understillet tekst.</sub></p>
                      <p>Herefter kommer overstillet tekst: <sup>Overstillet tekst.</sup></p>
                      <p>Herefter kommer tekst med småt: <small>Mindre tekst.</small></p>
@@ -152,16 +127,14 @@
                   <div class="subsection">
                      <h2>Poesi</h2>
                      <p>Venstrestillet strofe med overskrift:</p>
-                     <div class="poetry">
-                        <p class="center"><strong>Overskrift</strong></p>
-                        <div class="verse-line">jeg arbejder ikke</div>
+                     <div class="my-4"><strong>Overskrift</strong><div class="verse-line">jeg arbejder ikke</div>
                         <div class="verse-line">med mine hænder,</div>
                         <div class="verse-line">ikke for samfundets forbedring –</div>
                         <div class="verse-line">jeg driver dagene væk</div>
                         <div class="verse-line" data-num="5">ved at tænke endeløse tanker.</div>
                      </div>
                      <p>En centreret strofe:</p>
-                     <div class="text-center">
+                     <div class="my-4 text-center">
                         <div class="verse-line">jeg arbejder ikke</div>
                         <div class="verse-line">med mine hænder,</div>
                         <div class="verse-line">ikke for samfundets forbedring –</div>
@@ -169,12 +142,40 @@
                         <div class="verse-line" data-num="5">ved at tænke endeløse tanker.</div>
                      </div>
                      <p>En højrestillet strofe:</p>
-                     <div class="poetry text-right">
+                     <div class="my-4 text-right">
                         <div class="verse-line">jeg arbejder ikke</div>
                         <div class="verse-line">med mine hænder,</div>
                         <div class="verse-line">ikke for samfundets forbedring –</div>
                         <div class="verse-line">jeg driver dagene væk</div>
                         <div class="verse-line" data-num="5">ved at tænke endeløse tanker.</div>
+                     </div>
+                  </div>
+                  <div class="subsection">
+                     <h2>Dramatik</h2>
+                     <div class="subsection">
+                        <p>Dramatik opmærkes som sekvenser af <code>sp</code>- (<em>speech</em>)
+                           og <code>stage</code>-elementer. Sidstnævnte skal ved præsentation af dramatis personae
+                           anvendes med <code>@type="setting"</code>, ellers med <code>@type="delivery"</code>.</p>
+                     </div>
+                     <div class="subsection">
+                        <h3>Scene 8</h3>
+                        <p class="stage"><em>Borgmesterinden, 2 rådsherreinder, Henrik</em></p>
+                        <div class="drama">
+                           <p class="drama-speaker">Herkules </p>
+                           <p class="drama-speech">Hvor er Wieland? Der staaer han. Han, naa, han er lille nok, saadan havde jeg netop
+                              forestillet mig ham. Er I den Mand, som altid fører Hercules i Munden?</p>
+                        </div>
+                        <div class="drama">
+                           <p class="drama-speaker">Wieland  <span class="stage">(<em>vigende tilbage</em>)</span></p>
+                           <p class="drama-speech">Jeg har Intet at gjøre med Jer, Colos.</p>
+                        </div>
+                        <div class="drama">
+                           <p class="drama-speaker">Herkules </p>
+                           <p class="drama-speech">Hvad nu, bliv kun!</p>
+                        </div>
+                        <p class="stage">(<em>Han synger og truer når de vender sig fra ham. De danser begge
+                              meget absurd, Jean råber mellemstunder »La cadence, mon pere! La cadence!« Når dansen
+                              er ude, går de ind.</em>)</p>
                      </div>
                   </div>
                   <div class="subsection">
@@ -253,15 +254,37 @@
                         <mark class="name" data-container="body" data-toggle="popover" data-template="<div class='popover' role='tooltip'&gt;<div class='arrow'&gt;</div&gt;<h3 class='popover-header'&gt;</h3&gt;<div class='popover-body'&gt;</div&gt;</div&gt;" data-placement="auto" data-html="true" data-content="{{% person brandes_georg_1842 %}}">Georg Brandes</mark> og <mark class="name" data-container="body" data-toggle="popover" data-template="<div class='popover' role='tooltip'&gt;<div class='arrow'&gt;</div&gt;<h3 class='popover-header'&gt;</h3&gt;<div class='popover-body'&gt;</div&gt;</div&gt;" data-placement="auto" data-html="true" data-content="{{% person brahe_tycho_1546 %}}">Tycho Brahe</mark>. Stednavne er endnu ikke
                         implementeret.</p>
                   </div>
+                  <div class="subsection">
+                     <h2>Typografiske udtryksmidler</h2>
+                     <p>Tekstdele kan adskilles med typografiske udtryksmidler.</p>
+                     <p>Asterisk:</p>
+                     <hr class="asterisk">
+                     <p>Asterisme:</p>
+                     <hr class="asterism">
+                     <p>Kort linje:</p>
+                     <hr class="shortline">
+                     <p>Middellang linje:</p>
+                     <hr class="mediumline">
+                     <p>Lang linje</p>
+                     <hr class="longline">
+                     <p>Fleuron:</p>
+                     <hr class="fleuron">
+                     <p>Fleuron, venstredrejet:</p>
+                     <hr class="fleuron-reversed">
+                     <p>Fleuron, højredrejet:</p>
+                     <hr class="fleuron-rotated">
+                  </div>
                </div>
                <div id="">
                   <h1>2. Lister</h1>
-                  <p>Eksempel på simpel liste</p>
+                  <p>Eksempel på simpel liste, hvilket her vil sige en liste uden nummerering eller andet
+                     præg:</p>
                   <ul class="simple-list">
                      <li>1 første</li>
                      <li>2 andet</li>
                      <li>3 tredje</li>
                   </ul>
+                  <p>Eksempel på nummereret liste</p>
                   <ol>
                      <li>første</li>
                      <li>andet</li>
@@ -441,23 +464,23 @@
                      <h2>Matematik</h2>
                      <p>Et eksempel på matematik indlejret i den løbende tekst (inline) er dette: Integralet
                         
-                        <formula xmlns="http://www.tei-c.org/ns/1.0" notation="TeX">\(\int_0^\infty e^{it}t^{x-1}dt\)</formula> er jo et
+                        <formula xmlns="http://www.tei-c.org/ns/1.0" notation="tex">\(\int_0^\infty e^{it}t^{x-1}dt\)</formula> er jo et
                         “Dirichlet’s Integral” (ses strax naar 
-                        <formula xmlns="http://www.tei-c.org/ns/1.0" notation="TeX">\(x-1\)</formula> sættes
+                        <formula xmlns="http://www.tei-c.org/ns/1.0" notation="tex">\(x-1\)</formula> sættes
                         lig  
-                        <formula xmlns="http://www.tei-c.org/ns/1.0" notation="TeX">\(-y\)</formula>; de Diri.&nbsp;Int.&nbsp;er nemlig af Form 
-                        <formula xmlns="http://www.tei-c.org/ns/1.0" notation="TeX">\(\int_0^\infty \frac{f(t)}{t^y}dt\)</formula>
+                        <formula xmlns="http://www.tei-c.org/ns/1.0" notation="tex">\(-y\)</formula>; de Diri.&nbsp;Int.&nbsp;er nemlig af Form 
+                        <formula xmlns="http://www.tei-c.org/ns/1.0" notation="tex">\(\int_0^\infty \frac{f(t)}{t^y}dt\)</formula>
                      </p>
-                     <p>Ligninger kan også optræde i blokke som her: <br><formula xmlns="http://www.tei-c.org/ns/1.0" notation="TeX">$$s(x) =
+                     <p>Ligninger kan også optræde i blokke som her: <br><formula xmlns="http://www.tei-c.org/ns/1.0" notation="tex">$$s(x) =
                            \int^x_0e^{it} \, {t^n dt} = \frac{1}{i}e^{ix} \cdot x^{n} +\dots+ (i)^{n + 1} \cdot
                            n!$$</formula>
-                        <br>Dette giver en simpel delvis Integration <br><formula xmlns="http://www.tei-c.org/ns/1.0" notation="TeX">$$s(x)
+                        <br>Dette giver en simpel delvis Integration <br><formula xmlns="http://www.tei-c.org/ns/1.0" notation="tex">$$s(x)
                            \quad\text{altsaa lig}\quad \sum_{r=0}^n k_r \cdot e^{ix} \cdot x^r + (i)^{n + 1}
                            \cdot n!$$</formula>
                         <br>da nu vi skal integrere 
-                        <formula xmlns="http://www.tei-c.org/ns/1.0" notation="TeX">\(s(x)\)</formula> o.s. ...
+                        <formula xmlns="http://www.tei-c.org/ns/1.0" notation="tex">\(s(x)\)</formula> o.s. ...
                         
-                        <formula xmlns="http://www.tei-c.org/ns/1.0" notation="TeX">\(n+1\)</formula> Gange endnu.</p>
+                        <formula xmlns="http://www.tei-c.org/ns/1.0" notation="tex">\(n+1\)</formula> Gange endnu.</p>
                   </div>
                   <div class="subsection">
                      <h2>Noder</h2>
@@ -467,9 +490,25 @@
                      <h2>Kode</h2>
                      <p>Eksempel mangler</p>
                   </div>
+                  <div class="subsection">
+                     <h2>Grafer</h2>
+                     <p>Eksempel på afbildning af træ</p>
+                     <eTree xmlns="http://www.tei-c.org/ns/1.0" n="ex1"><label>PP</label><eTree><label>P</label><eLeaf><label>with</label></eLeaf>
+                        </eTree>
+                        <eTree><label>NP</label><eTree><label>Art</label><eLeaf><label>the</label></eLeaf>
+                           </eTree>
+                           <eTree><label>N</label><eLeaf><label>periscope</label></eLeaf>
+                           </eTree>
+                        </eTree>
+                     </eTree>
+                  </div>
                </div>
                <div id="">
                   <h1>Breve</h1>
+                  <div class="subsection">
+                     <p>Ved udgivelse af korrespondance skal hvert brev være indeholdt i et
+                        <code>&lt;div&gt;</code>-element</p>
+                  </div>
                   <div class="subsection">
                      <div class="opener">
                         <div class="dateline">23-12-06 <br> Skrevet i Toget</div>

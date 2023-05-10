@@ -220,11 +220,9 @@
     </xsl:template>
 
     <xsl:template match="tei:lg/tei:head">
-        <p class="center">
             <strong>
                 <xsl:apply-templates/>
             </strong>
-        </p>
     </xsl:template>
     <xsl:template match="tei:table/tei:head">
       <caption>

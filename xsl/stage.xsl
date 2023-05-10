@@ -25,7 +25,24 @@
     </xsl:template>-->
     
     <xsl:template match="tei:stage">
-        <xsl:text> </xsl:text>
-        <em><xsl:apply-templates/></em>
+      <xsl:choose>
+        <xsl:when test="@type='setting'">
+          <p class="stage"><em><xsl:apply-templates/></em></p>
+        </xsl:when>
+        <xsl:when test="@type='delivery'">
+          <p class="stage">(<em><xsl:apply-templates/></em>)</p>
+        </xsl:when>
+        <xsl:otherwise>
+          <xsl:text> </xsl:text><span class="stage">(<em><xsl:apply-templates/></em>)</span>
+        </xsl:otherwise>
+      </xsl:choose>
+        <!-- <xsl:text> </xsl:text> -->
+        <!-- <span class="stage">(<em><xsl:apply-templates/></em>)</span> -->
+    <!-- </xsl:template> -->
+    <!-- <xsl:template match="tei:div/tei:stage"> -->
+      <!-- <p class="stage">(<em><xsl:apply-templates/></em>)</p> -->
+    <!-- </xsl:template> -->
+    <!-- <xsl:template match="tei:stage[@type='setting']"> -->
+      <!-- <p class="stage"><em><xsl:apply-templates/></em></p> -->
     </xsl:template>
 </xsl:stylesheet>

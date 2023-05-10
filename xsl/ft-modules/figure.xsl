@@ -24,6 +24,42 @@
 		</xsl:variable>-->
     <xsl:template match="tei:figure">
         <xsl:choose>
+          <xsl:when test="@type = 'asterisk'">
+          <hr class="asterisk"/>
+        </xsl:when>
+        <xsl:when test="@type = 'asterism'">
+          <hr class="asterism"/>
+        </xsl:when>
+        <xsl:when test="@type = 'fleuron'">
+          <hr class="fleuron"/>
+        </xsl:when>
+        <xsl:when test="@type = 'fleuron-reversed'">
+          <hr class="fleuron-reversed"/>
+        </xsl:when>
+        <xsl:when test="@type = 'fleuron-rotated'">
+          <hr class="fleuron-rotated"/>
+        </xsl:when>
+        <xsl:when test="@type='shortline'">
+          <hr class="shortline"/>
+        </xsl:when>
+        <xsl:when test="@type='shortLine'">
+          <hr class="shortline"/>
+        </xsl:when>
+        <xsl:when test="@type='mediumline'">
+          <hr class="mediumline"/>
+        </xsl:when>
+        <xsl:when test="@type='mediumLine'">
+          <hr class="mediumline"/>
+        </xsl:when>
+        <xsl:when test="@type='longline'">
+          <hr class="longline"/>
+        </xsl:when>
+        <xsl:when test="@type='longLine'">
+          <hr class="longline"/>
+        </xsl:when>
+        <xsl:when test="@type='sixdots'">
+          <hr class="sixdots"/>
+        </xsl:when>
             <xsl:when test="@rend = 'right'">
                 <div class="figure-right">
                     <xsl:variable name="illustration-type">

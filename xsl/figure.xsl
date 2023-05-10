@@ -23,82 +23,118 @@
         <xsl:value-of select="/tei:TEI/tei:teiHeader/tei:fileDesc/tei:titleStmt/tei:title/@xml:id"/>
 		</xsl:variable>-->
     <xsl:template match="tei:figure">
-        <xsl:choose>
-            <xsl:when test="@rend = 'right'">
-                <div class="figure-right">
-                    <xsl:variable name="illustration-type">
-                        <xsl:value-of select="tei:desc"/>
-                    </xsl:variable>
-                    <xsl:variable name="illustration-text">
-                        <xsl:apply-templates select="tei:head | tei:p"/>
-                    </xsl:variable>
-                    <xsl:if test="tei:pb">
-                        <xsl:apply-templates select="tei:pb"/>
-                    </xsl:if>
-                    <xsl:apply-templates select="tei:graphic"/>
-                    <div class="image-text">
-                        <small>
-                          <strong>{{% images/figure %}} <xsl:value-of select="@n"/>&#160; </strong>
-                            <span>
-                                <xsl:value-of select="$illustration-type"/>
-                            </span>
-                            <xsl:if test="$illustration-text != ''">
-                              <!--<strong> {{% images/figure_text %}} </strong>-->
-                                <span class="illustration-text">
-                                   &#160;<xsl:value-of select="$illustration-text"/>
-                                </span>
-                            </xsl:if>
-                        </small>
-                    </div>
+      <xsl:choose>
+        <xsl:when test="@type = 'asterisk'">
+          <hr class="asterisk"/>
+        </xsl:when>
+        <xsl:when test="@type = 'asterism'">
+          <hr class="asterism"/>
+        </xsl:when>
+        <xsl:when test="@type = 'fleuron'">
+          <hr class="fleuron"/>
+        </xsl:when>
+        <xsl:when test="@type = 'fleuron-reversed'">
+          <hr class="fleuron-reversed"/>
+        </xsl:when>
+        <xsl:when test="@type = 'fleuron-rotated'">
+          <hr class="fleuron-rotated"/>
+        </xsl:when>
+        <xsl:when test="@type='shortline'">
+          <hr class="shortline"/>
+        </xsl:when>
+        <xsl:when test="@type='shortLine'">
+          <hr class="shortline"/>
+        </xsl:when>
+        <xsl:when test="@type='mediumline'">
+          <hr class="mediumline"/>
+        </xsl:when>
+        <xsl:when test="@type='mediumLine'">
+          <hr class="mediumline"/>
+        </xsl:when>
+        <xsl:when test="@type='longline'">
+          <hr class="longline"/>
+        </xsl:when>
+        <xsl:when test="@type='longLine'">
+          <hr class="longline"/>
+        </xsl:when>
+        <xsl:when test="@type='sixdots'">
+          <hr class="sixdots"/>
+        </xsl:when>
+        <xsl:when test="@rend = 'right'">
+          <div class="figure-right">
+            <xsl:variable name="illustration-type">
+              <xsl:value-of select="tei:desc"/>
+            </xsl:variable>
+            <xsl:variable name="illustration-text">
+              <xsl:apply-templates select="tei:head | tei:p"/>
+            </xsl:variable>
+            <xsl:if test="tei:pb">
+              <xsl:apply-templates select="tei:pb"/>
+            </xsl:if>
+            <xsl:apply-templates select="tei:graphic"/>
+            <div class="image-text">
+              <small>
+                <strong>{{% images/figure %}} <xsl:value-of select="@n"/>&#160; </strong>
+                <span>
+                  <xsl:value-of select="$illustration-type"/>
+                </span>
+                <xsl:if test="$illustration-text != ''">
+                  <!--<strong> {{% images/figure_text %}} </strong>-->
+                  <span class="illustration-text">
+                    &#160;<xsl:value-of select="$illustration-text"/>
+                  </span>
+                </xsl:if>
+              </small>
+            </div>
 
-                </div>
-            </xsl:when>
-            <xsl:otherwise>
-                <div class="figure">
-                    <xsl:variable name="illustration-type">
-                        <xsl:value-of select="tei:desc"/>
-                    </xsl:variable>
-                    <xsl:variable name="illustration-text">
-                        <xsl:apply-templates select="tei:head | tei:p"/>
-                    </xsl:variable>
-                    <xsl:if test="tei:pb">
-                        <xsl:apply-templates select="tei:pb"/>
-                    </xsl:if>
-                    <!--<p class="editorial">
-                <strong>Illustration </strong>
-                <xsl:value-of select="tei:desc"/>
-            </p>
-            <xsl:if test="tei:head | tei:p">
-                <p class="editorial">
-                    <strong>Tekst </strong>
-                </p>
-                <xsl:choose>
-                    <xsl:when test="tei:head">
-                        <xsl:apply-templates select="tei:head | tei:pb"/>
-                    </xsl:when>
-                    <xsl:when test="tei:p">
-                        <xsl:apply-templates select="tei:p | tei:pb"/>
-                    </xsl:when>
-                </xsl:choose>
-						</xsl:if>-->
-                    <xsl:apply-templates select="tei:graphic"/>
-                    <div class="image-text">
-                        <small>
-                          <strong> {{% images/figure %}} <xsl:value-of select="@n"/>&#160; </strong>
-                            <span>
-                                <xsl:value-of select="$illustration-type"/>
-                            </span>
-                            <xsl:if test="$illustration-text != ''">
-                              <!--<strong> {{% images/figure_text %}} </strong>-->
-                                <span class="illustration-text">
-                                  <xsl:value-of select="$illustration-text"/>
-                                </span>
-                            </xsl:if>
-                        </small>
-                    </div>
-                </div>
-            </xsl:otherwise>
-        </xsl:choose>
+          </div>
+        </xsl:when>
+        <xsl:otherwise>
+          <div class="figure">
+            <xsl:variable name="illustration-type">
+              <xsl:value-of select="tei:desc"/>
+            </xsl:variable>
+            <xsl:variable name="illustration-text">
+              <xsl:apply-templates select="tei:head | tei:p"/>
+            </xsl:variable>
+            <xsl:if test="tei:pb">
+              <xsl:apply-templates select="tei:pb"/>
+            </xsl:if>
+            <!--<p class="editorial">
+              <strong>Illustration </strong>
+              <xsl:value-of select="tei:desc"/>
+              </p>
+              <xsl:if test="tei:head | tei:p">
+              <p class="editorial">
+              <strong>Tekst </strong>
+              </p>
+              <xsl:choose>
+              <xsl:when test="tei:head">
+              <xsl:apply-templates select="tei:head | tei:pb"/>
+              </xsl:when>
+              <xsl:when test="tei:p">
+              <xsl:apply-templates select="tei:p | tei:pb"/>
+              </xsl:when>
+              </xsl:choose>
+            </xsl:if>-->
+            <xsl:apply-templates select="tei:graphic"/>
+            <div class="image-text">
+              <small>
+                <strong> {{% images/figure %}} <xsl:value-of select="@n"/>&#160; </strong>
+                <span>
+                  <xsl:value-of select="$illustration-type"/>
+                </span>
+                <xsl:if test="$illustration-text != ''">
+                  <!--<strong> {{% images/figure_text %}} </strong>-->
+                  <span class="illustration-text">
+                    <xsl:value-of select="$illustration-text"/>
+                  </span>
+                </xsl:if>
+              </small>
+            </div>
+          </div>
+        </xsl:otherwise>
+      </xsl:choose>
     </xsl:template>
     <xsl:template match="tei:graphic">
         <img src="{concat(concat(concat(concat('/images/', $basename), '/'), @url), '.jpg')}">

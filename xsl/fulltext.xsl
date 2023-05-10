@@ -393,142 +393,178 @@
                     </nav>-->
                 <!-- Danish metadata section -->
 
-                <div class="container bg-light p-3">
-                    <div class="row">
+                    <div class="container bg-light p-3">
+                      <div class="row">
                         <div class="col">
-                            <h2 class="date-place text-left">
-                                <xsl:value-of select="//tei:creation/tei:date[@xml:lang='da' or not(@xml:lang)]/text()"/>
+                          <h2 class="date-place text-left">
+                            <xsl:value-of select="//tei:creation/tei:date[@xml:lang='da' or not(@xml:lang)]/text()"/>
+                            &#160;
+                            <xsl:choose>
+                              <xsl:when test="//tei:creation//tei:placeName[(text() != 'nil') or (text() != 'empty')]">
+                                <xsl:value-of select="//tei:creation/tei:placeName[(text() != 'nil') or (text() != 'empty')]" />&#160;
+                              </xsl:when>
+                              <xsl:otherwise>
+                                <xsl:text> </xsl:text>
+                                <xsl:value-of select="//tei:correspAction[@type = 'sent']/tei:placeName" />&#160;
+                              </xsl:otherwise>
+                            </xsl:choose>
+                            <!-- Correspondance info here -->
+                            <xsl:if test="//tei:correspDesc">
+                              <br/>Fra <xsl:value-of select="//tei:correspAction[@type = 'sent']/tei:persName"/>
+                              til <xsl:value-of select="//tei:correspAction[@type = 'received']/tei:persName" />
+                            </xsl:if>
+                            <hr/>
+                            <xsl:choose>
+                              <xsl:when test="//tei:abstract[@xml:lang='da' or not(@xml:lang)]">
+                                <xsl:apply-templates select="//tei:abstract[@xml:lang='da' or not(@xml:lang)]"/>
+                              </xsl:when>
+                            </xsl:choose>
+                          </h2>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col small pb-2">
+                          <dl class="row">
+                            <xsl:for-each select="//tei:witness">
+                              <dt class="col-sm-2">
+                                <xsl:value-of select="@xml:id"/>
+                              </dt>
+                              <dd class="col-sm-10">
+                                <xsl:choose>
+                                  <xsl:when test="tei:msDesc">
+                                    <xsl:for-each select="tei:msDesc[@xml:lang='da' or not(@xml:lang)]/tei:msIdentifier/*[text() != 'empty']">
+                                      <xsl:value-of select="."/>
+                                      <xsl:if test="position() != last()">, </xsl:if>
+                                      <xsl:if test="position() = last() and child::node() != 'empty'" >. </xsl:if>
+                                      <!--Display physical description-->
+                                      <xsl:apply-templates select="tei:msDesc[@xml:lang='da' or not(@xml:lang)]/tei:physDesc/tei:ab"/>
+                                    </xsl:for-each>
+                                  </xsl:when>
+                                  <xsl:otherwise>
+                                    <xsl:apply-templates/>
+                                  </xsl:otherwise>
+                                </xsl:choose>
+                              </dd>
+                            </xsl:for-each>
+                          </dl>
+                        </div>
+                      </div>
+                      <!-- English metadata section -->
+                      <xsl:if test="//@xml:lang='enX'">
+                        <div class="container bg-light p-3">
+                          <h1 class="text-left">Metadata: engelsk</h1>
+                          <div class="row">
+                            <div class="col">Titel:</div>
+                            <div class="col">
+                              <xsl:value-of select="//tei:fileDesc/tei:titleStmt/tei:title[@xml:lang = 'en']"/>
+                            </div>
+                          </div>
+                          <!-- <xsl:choose> -->
+                            <!--   <xsl:when test="//tei:fileDesc//"></xsl:when> -->
+                            <!-- </xsl:choose> -->
+                          <div class="row">
+                            <div class="col">
+                              <h2 class="date-place text-left">
+                                <xsl:value-of
+                                select="//tei:creation/tei:date[@xml:lang = 'en']/text()"/>
                                 &#160;
                                 <xsl:choose>
-                                    <xsl:when
-                                        test="//tei:creation//tei:placeName[(text() != 'nil') or (text() != 'empty')]">
-                                        
-                                        <xsl:value-of
-                                            select="//tei:creation/tei:placeName[(text() != 'nil') or (text() != 'empty')]"
-                                        />&#160;
-                                    </xsl:when>
-                                    <xsl:otherwise>
-                                        <xsl:text> </xsl:text>
-                                        <xsl:value-of
-                                            select="//tei:correspAction[@type = 'sent']/tei:placeName"
-                                        />&#160;
-                                    </xsl:otherwise>
-                                </xsl:choose>
-                                <!-- Correspondance info here -->
-                                <xsl:if test="//tei:correspDesc">Fra <xsl:value-of
-                                        select="//tei:correspAction[@type = 'sent']/tei:persName"/>
-                                    til <xsl:value-of
-                                        select="//tei:correspAction[@type = 'received']/tei:persName"
-                                    /></xsl:if>
-                                <hr/>
-                            </h2>
-
-                        </div>
+                                  <xsl:when
+                                  test="//tei:creation//tei:placeName[@xml:lang = 'en'][(text() != 'nil') or (text() != 'empty')]">
+                                  <xsl:text> </xsl:text>
+                                  <xsl:value-of
+                                  select="//tei:creation/tei:placeName[@xml:lang = 'en'][(text() != 'nil') or (text() != 'empty')]"
+                                  />&#160;
+                                </xsl:when>
+                                <xsl:otherwise>
+                                  <xsl:text> </xsl:text>
+                                  <xsl:value-of
+                                  select="//tei:correspAction[@type = 'sent']/tei:placeName"
+                                  />&#160;
+                                </xsl:otherwise>
+                              </xsl:choose>
+                              <!-- Correspondance info here -->
+                              <xsl:if test="//tei:correspDesc">From <xsl:value-of
+                              select="//tei:correspAction[@type = 'sent']/tei:persName"
+                              /> to <xsl:value-of
+                              select="//tei:correspAction[@type = 'received']/tei:persName"
+                              /></xsl:if>
+                          <hr/>
+                        </h2>
+                      </div>
                     </div>
-                    <div/>
-                    <div class="row">
-                        <div class="col small pb-2">
-                            <dl class="row">
-                                <xsl:for-each select="//tei:witness">
-                                    <dt class="col-sm-2">
-                                        <xsl:value-of select="@xml:id"/>
-                                    </dt>
-                                    <dd class="col-sm-10">
+                  </div>
+                </xsl:if>
 
-                                        <!--Identify the source (manuscript or book)-->
-                                        <xsl:for-each
-                                            select="tei:msDesc[@xml:lang='da' or not(@xml:lang)]/tei:msIdentifier/*[text() != 'empty']">
-                                            <xsl:value-of select="."/>
-                                            <xsl:if test="position() != last()">, </xsl:if>
-                                            <xsl:if
-                                                test="position() = last() and child::node() != 'empty'"
-                                                >. </xsl:if>
-                                        </xsl:for-each>
+                <!--<div class="container bg-light p-3">-->
+                  <!--    <div class="row">-->
+                    <!--        <div class="col">-->
+                      <!--            <h2 class="date-place text-left">-->
+                        <!--                <xsl:value-of-->
+                          <!--                    select="//tei:creation/tei:date[@xml:lang = 'en']/text()"/>-->
+                          <!--                &#160;-->
+                          <!--                <xsl:choose>-->
+                            <!--                    <xsl:when-->
+                              <!--                        test="//tei:creation//tei:placeName[@xml:lang = 'en'][(text() != 'nil') or (text() != 'empty')]">-->
+                              <!--                        <xsl:text> </xsl:text>-->
+                              <!--                        <xsl:value-of-->
+                                <!--                            select="//tei:creation/tei:placeName[@xml:lang = 'en'][(text() != 'nil') or (text() != 'empty')]"-->
+                                <!--                        />&#160;-->
+                                <!--                    </xsl:when>-->
+                                <!--                    <xsl:otherwise>-->
+                                  <!--                        <xsl:text> </xsl:text>-->
+                                  <!--                        <xsl:value-of-->
+                                    <!--                            select="//tei:correspAction[@type = 'sent']/tei:placeName"-->
+                                    <!--                        />&#160;-->
+                                    <!--                    </xsl:otherwise>-->
+                                    <!--                </xsl:choose>-->
+                                    <!--                <!-1- Correspondance info here -1->-->
+                                    <!--                <xsl:if test="//tei:correspDesc">From <xsl:value-of-->
+                                      <!--                        select="//tei:correspAction[@type = 'sent']/tei:persName"-->
+                                      <!--                    /> to <xsl:value-of-->
+                                      <!--                        select="//tei:correspAction[@type = 'received']/tei:persName"-->
+                                      <!--                    /></xsl:if>-->
+                                      <!--                <hr/>-->
+                                      <!--            </h2>-->
 
-                                        <!--Display physical description-->
-                                        <xsl:apply-templates select="tei:msDesc[@xml:lang='da' or not(@xml:lang)]/tei:physDesc/tei:ab"/>
+                                      <!--        </div>-->
+                                      <!--    </div>-->
+                                      <!--    <div/>-->
+                                      <!--    <div class="row">-->
+                                        <!--        <div class="col small pb-2">-->
+                                          <!--            <dl class="row">-->
+                                            <!--                <xsl:for-each select="//tei:witness">-->
+                                            <!--                    <dt class="col-sm-2">-->
+                                              <!--                        <xsl:value-of select="@xml:id"/>-->
+                                              <!--                    </dt>-->
+                                              <!--                    <dd class="col-sm-10">-->
 
-                                    </dd>
+                                                <!--                        <!-1-Identify the source (manuscript or book)-1->-->
+                                                <!--                        <xsl:for-each-->
+                                                  <!--                            select="tei:msDesc[@xml:lang='en']/tei:msIdentifier/*[text() != 'empty']">-->
+                                                  <!--                            <xsl:value-of select="."/>-->
+                                                  <!--                            <xsl:if test="position() != last()">, </xsl:if>-->
+                                                  <!--                            <xsl:if-->
+                                                    <!--                              test="position() = last() and child::node() != 'empty'"-->
+                                                    <!--                              >. </xsl:if>-->
+                                                    <!--                        </xsl:for-each>-->
 
+                                                    <!--                        <!-1-Display physical description-1->-->
+                                                    <!--                        <xsl:apply-templates-->
+                                                      <!--                            select="tei:msDesc[@xml:lang='en']/tei:physDesc/tei:ab"/>-->
 
-
-                                </xsl:for-each>
-                            </dl>
-
-                        </div>
-                    </div>
-
-                    <!-- English metadata section -->
-
-                    <div class="container bg-light p-3">
-                        <div class="row">
-                            <div class="col">
-                                <h2 class="date-place text-left">
-                                    <xsl:value-of
-                                        select="//tei:creation/tei:date[@xml:lang = 'en']/text()"/>
-                                    &#160;
-                                    <xsl:choose>
-                                        <xsl:when
-                                            test="//tei:creation//tei:placeName[@xml:lang = 'en'][(text() != 'nil') or (text() != 'empty')]">
-                                            <xsl:text> </xsl:text>
-                                            <xsl:value-of
-                                                select="//tei:creation/tei:placeName[@xml:lang = 'en'][(text() != 'nil') or (text() != 'empty')]"
-                                            />&#160;
-                                        </xsl:when>
-                                        <xsl:otherwise>
-                                            <xsl:text> </xsl:text>
-                                            <xsl:value-of
-                                                select="//tei:correspAction[@type = 'sent']/tei:placeName"
-                                            />&#160;
-                                        </xsl:otherwise>
-                                    </xsl:choose>
-                                    <!-- Correspondance info here -->
-                                    <xsl:if test="//tei:correspDesc">From <xsl:value-of
-                                            select="//tei:correspAction[@type = 'sent']/tei:persName"
-                                        /> to <xsl:value-of
-                                            select="//tei:correspAction[@type = 'received']/tei:persName"
-                                        /></xsl:if>
-                                    <hr/>
-                                </h2>
-
-                            </div>
-                        </div>
-                        <div/>
-                        <div class="row">
-                            <div class="col small pb-2">
-                                <dl class="row">
-                                    <xsl:for-each select="//tei:witness">
-                                        <dt class="col-sm-2">
-                                            <xsl:value-of select="@xml:id"/>
-                                        </dt>
-                                        <dd class="col-sm-10">
-
-                                            <!--Identify the source (manuscript or book)-->
-                                            <xsl:for-each
-                                                select="tei:msDesc[@xml:lang='en']/tei:msIdentifier/*[text() != 'empty']">
-                                                <xsl:value-of select="."/>
-                                                <xsl:if test="position() != last()">, </xsl:if>
-                                                <xsl:if
-                                                  test="position() = last() and child::node() != 'empty'"
-                                                  >. </xsl:if>
-                                            </xsl:for-each>
-
-                                            <!--Display physical description-->
-                                            <xsl:apply-templates
-                                                select="tei:msDesc[@xml:lang='en']/tei:physDesc/tei:ab"/>
-
-                                        </dd>
+                                                      <!--                    </dd>-->
 
 
 
-                                    </xsl:for-each>
-                                </dl>
+                                                      <!--                </xsl:for-each>-->
+                                                      <!--            </dl>-->
 
-                            </div>
-                        </div>
-                    </div>
+                                                      <!--        </div>-->
+                                                      <!--    </div>-->
+                                                      <!--</div>-->
 
-                </div>
+                                                  </div>
                 <div class="container text-section">
                   <div class="col">
                     <div class="my-5">

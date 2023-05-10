@@ -22,7 +22,7 @@
     <xsl:template match="tei:witness">
       <!--<div>
             <p>-->
-                <span><strong><xsl:value-of select="@xml:id"/></strong><xsl:text> </xsl:text><xsl:apply-templates select="tei:msDesc | tei:bibl"/></span>
+              <span><strong><xsl:value-of select="@xml:id"/></strong><xsl:text> </xsl:text><!--<xsl:apply-templates select="tei:msDesc | tei:bibl"/>--><xsl:apply-templates/></span>
                 <!--</p>
         </div>-->
     </xsl:template>
