@@ -1628,6 +1628,15 @@ note = "opfattelse af naturen."
 Henvisningen placeres enten før eller efter den tekst, kommentaren
 knyttes til.
 
+Links i kommentarer skrives som i eksemplet her:
+
+```toml
+lemma = "o.s.v."
+note = "jf. nr. <a href='/books/dipdan/1400/dd_14000121002'>213</a>."
+```
+
+Bemærk at attributværdien af `@href` omkranses af enkelte citationstegn.
+
 #### 4.3.5.14 Sideskift i forlæg
 
 Sideskift i forlæg markeres med det lukkede element `pb` (*page beginning*).
