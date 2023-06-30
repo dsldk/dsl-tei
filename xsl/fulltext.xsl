@@ -570,13 +570,14 @@
                     <div class="my-5">
                       <xsl:apply-templates select="tei:text/*/*"/>
                     </div>
-                    <!--<xsl:if test="//tei:app">
+                    <xsl:if test="//tei:app">
                       <hr/>
                       <div class="notes mt-5">
-                        <h2>Kritisk apparat</h2>
+                        <h2>Kritisk apparat (fuldtekstvisning)</h2>
                         <xsl:apply-templates select="//tei:app" mode="apparatusCriticus"/>
                       </div>
                     </xsl:if>
+                      <!--
                     <xsl:if test="//tei:cit">
                       <hr/>
                       <div class="notes mt-5">
@@ -586,13 +587,13 @@
                     </xsl:if>-->
                   </div>
                     <!--</div>-->
-                    <!--<xsl:if test="//tei:note">
+                  <!--<xsl:if test="//tei:note">
                         <div>
                             <h2>Fodnoter</h2>
                             <xsl:apply-templates select="//tei:note[@place = 'bottom']"
                                 mode="footnoteApparatus"/>
                         </div>
-                    </xsl:if>-->
+                  </xsl:if>-->
                     <!--<xsl:if test="//tei:cit">
                         <div>
                             <h2>Citater</h2>
