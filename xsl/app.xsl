@@ -129,55 +129,15 @@
             </span>
             <span class="noteBody">
                 <!--<xsl:variable name="lemmaLength" select="count(tei:lem//text()/tokenize(., '\W+')[.!=''])"/>-->
-                <xsl:choose>
-                    <xsl:when test="tei:lem">
-                        <xsl:apply-templates select="tei:lem"/>
-                        <xsl:text>] </xsl:text>
-                            <em>
-                                <!-- Since values in the must be prefixed with a # 
-                                    we use tokenize() to obtain the substring after # -->
-                                <xsl:value-of select="@wit/tokenize(., '#')"/>
-                            </em>
-                            <xsl:text>, </xsl:text>
-                            <em>
-                                <!-- Since values in the must be prefixed with a # 
-                                    we use tokenize() to obtain the substring after # -->
-                                <xsl:value-of select="@resp/tokenize(., '#')"/>
-                            </em>
-                            <xsl:text>, </xsl:text>
-                    </xsl:when>
-                    <!--<xsl:when test="$lemmaLength > 3">
-                        <xsl:if test="tei:lem/tei:supplied">
-                            <xsl:text>&lt;</xsl:text>
-                        </xsl:if>
-                        <xsl:if test="tei:lem/tei:damage">
-                            <xsl:text>[</xsl:text>
-                        </xsl:if>
-                        <xsl:value-of select="tei:lem//text()/tokenize(., '\W+')[position()=1]"/>
-                        <xsl:text> - </xsl:text>
-                        <xsl:value-of select="tei:lem//text()/tokenize(., '\W+')[position()=last()]"/>
-                        <xsl:if test="tei:lem/tei:supplied">
-                            <xsl:text>&gt;</xsl:text>
-                        </xsl:if>
-                        <xsl:if test="tei:lem/tei:damage">
-                            <xsl:text>]</xsl:text>
-                        </xsl:if>
-                        <xsl:text>]</xsl:text>
-                        <xsl:text>  </xsl:text>
-                    </xsl:when>-->
-                    <xsl:otherwise>
-                        <xsl:apply-templates select="tei:lem"/>
-                        <xsl:text>]</xsl:text>
-                        <xsl:text> </xsl:text>
-                    </xsl:otherwise>
-                </xsl:choose>
-
-                <xsl:for-each select="tei:rdg">
-                    <xsl:apply-templates select="."/>
+                        <xsl:apply-templates select="tei:lem"/><xsl:text>] </xsl:text>
+                        <em><xsl:apply-templates select="tei:rdg" mode="apparatusCriticus"/></em>
+                
+                <!--<xsl:for-each select="tei:rdg">
+                    <xsl:apply-templates select="self::node()" mode="apparatusCriticus"/>
                     <xsl:if test="position() != last()">; </xsl:if>
                     <xsl:if test="position() = last()">. </xsl:if>
                 </xsl:for-each>
-                <xsl:text> </xsl:text>
+                <xsl:text> </xsl:text>-->
                 <!--
                     <xsl:choose>
                     <xsl:when test="count(tei:rdg) > 1">
@@ -193,6 +153,10 @@
             </span>
         </p>
     </xsl:template>
+    <xsl:template match="tei:rdg" mode="apparatusCriticus">
+        <xsl:apply-templates mode="apparatusCriticus"/>
+    </xsl:template>
+    
     <xsl:template match="tei:rdg">
       &lt;span class="app-crit-reading"&gt;<xsl:apply-templates/>&lt;/span&gt;
     </xsl:template>
