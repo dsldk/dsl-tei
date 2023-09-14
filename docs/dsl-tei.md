@@ -1500,14 +1500,11 @@ I Tekstnet gengives den opløste tekst i kursiv:
 
 #### 4.3.5.9 Noter
 
-Fodnoter i den løbende tekst beskrives vha. elementet `note`
-med attributtet `@place` udfyldt med værdien `bottom`. Eventuelle henvisningstegn
-opmærkes vha. `ref` karakteriseret ved attributtet `@refMark` som i nedenstående
-eksempel H.C. Ørsted, Aanden i Naturen 1:
+Eksisterende fodnoter i den løbende tekst beskrives vha. elementet `note` med attributtet
+`@place` udfyldt med værdien `bottom`. Eventuelle henvisningstegn opmærkes ikke.
 
 ```xml
 ... Enster<note place="bottom">
-            <ref type="refMark">*)</ref>
             <p>Ordet er allerede blevet brugt af <hi rend="italic">Risbrigh</hi> 
                 og er udentvivl gammelt. Det fandtes i Ordet 
                 <hi rend="italic">Eensterskilling</hi>, som i forrige Aarhundrede 
@@ -1515,8 +1512,8 @@ eksempel H.C. Ørsted, Aanden i Naturen 1:
           </note> (Individ) ...
 ```
 
-I Tekstnet realiseres fodnoter efter det afsnit hvori de optræder.
-Henvisningstegn i forlægget normaliseres om nødvendigt til numre.
+I Tekstnet realiseres fodnoter som popup-elementer, markeret med 'F' efterfulgt
+af tal der angiver hvilket nummer i rækkefølgen af fodnoter, noten er.
 
 <!--
 
