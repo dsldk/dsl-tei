@@ -412,7 +412,7 @@ tilføjelser på tekstvidnet. Disse tilføjelser indskrives i et
 	  </ab>
 	</additions>
 
-Jf. <http://diplomatarium.dk/dokument/14070207001>
+Jf. <https://text.dsl.dk/books/dipdan/1407/dd_14070207001>
 
 ##### Seglbeskrivelse (`sealDesc`)
 
@@ -430,7 +430,7 @@ forvejen er beskrevet i de danske seglværker, angives dette.
 	</sealDesc>
 
 Nedenfor ses eksempel på segl hvis pergamentsrem bærer en
-påskrift, jf. Diplomatarium Danicum <http://diplomatarium.dk/dokument/14190518001>
+påskrift, jf. Diplomatarium Danicum <https://text.dsl.dk/books/1419/dd_14190518001>
 
 	<seal n="1" type="pendant">
 	  <ab>Bomærke af mørkt voks i perg.rem med tekst 
@@ -1369,7 +1369,7 @@ læsemåder fra forlægget med `q` (*quote*). For eksempel:
 
 Hvis tekstvidnet er beskadiget, anvendes elementet `damage`, typisk
 under lemmaet i en tekstkritisk note. I nedenstående eksempel ([Dipl.
-Dan. 14450205001 ](http://diplomatarium.dk/dokument/14450205001)) kan
+Dan. 14450205001 ](https://text.dsl.dk/books/dipdan/1445/dd_14450205001)) kan
 teksten suppleres vha. det andet tekstvidne *Aa*: 
 
 ```xml
@@ -1384,7 +1384,7 @@ teksten suppleres vha. det andet tekstvidne *Aa*:
 
 Til markering af tekst, som suppleres af redaktøren, anvendes
 elementet `supplied`. Nedenstående eksempel kommer fra [Dipl. Dan.
-14461229001](http://diplomatarium.dk/dokument/14461229001):
+14461229001](https://text.dsl.dk/books/dipdan/1446/dd_14461229001):
 
 ```xml
 	... presentibus 
@@ -1481,7 +1481,7 @@ n!$$</formula>
 Til optagelse af forkortelser og deres opløsninger i typisk middelalderlige
 håndskrifter og tidlige tryk anvendes elementet `ex` (*editorial expansion*),
 som udfyldes med tekst suppleret af redaktøren.  I [Dipl. Dan.
-14151114001](http://diplomatarium.dk/dokument/14151114001) forekommer:
+14151114001](https://text.dsl.dk/books/dipdan/1415/dd_14151114001) forekommer:
 
 ```xml
 	Oc weth<ex>e</ex>r kende hwn sigh ...
