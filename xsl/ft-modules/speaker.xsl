@@ -19,11 +19,9 @@
             <xd:copyright>2010, Society for Danish Language and Literature</xd:copyright>
         </xd:desc>
     </xd:doc>
-    <xsl:template match="tei:titlePage">
-        <div id="titlepage-section" class="titlePage">
-            <!--<span class="caption">Title: </span>-->
+
+    <xsl:template match="tei:speaker">      
             <xsl:apply-templates/>
-        </div>
+        <xsl:text> </xsl:text>
     </xsl:template>
-    <xsl:template match="tei:byline"><p class="center"><xsl:apply-templates/></p></xsl:template>
 </xsl:stylesheet>

@@ -19,11 +19,14 @@
             <xd:copyright>2010, Society for Danish Language and Literature</xd:copyright>
         </xd:desc>
     </xd:doc>
-    <xsl:template match="tei:titlePage">
-        <div id="titlepage-section" class="titlePage">
-            <!--<span class="caption">Title: </span>-->
+    <xsl:template match="tei:item">
+        <li>
+            <xsl:if test="@n">
+                <xsl:attribute name="value">
+                    <xsl:value-of select="@n"/>
+                </xsl:attribute>
+            </xsl:if>
             <xsl:apply-templates/>
-        </div>
+        </li>
     </xsl:template>
-    <xsl:template match="tei:byline"><p class="center"><xsl:apply-templates/></p></xsl:template>
 </xsl:stylesheet>

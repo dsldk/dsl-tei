@@ -20,9 +20,6 @@
         </xd:desc>
     </xd:doc>
     <xsl:template match="tei:app">
-      <xsl:variable name="section_number">
-        <xsl:number count="//tei:text/*/tei:div"/>
-      </xsl:variable>
         <xsl:variable name="identifier">
             <xsl:text>App</xsl:text>
             <xsl:choose>
@@ -33,16 +30,65 @@
                     <xsl:value-of select="@n"/>
                 </xsl:when>
                 <xsl:otherwise>
-                    <xsl:number count="tei:app" level="single"/>
+                  <xsl:number count="//tei:app" level="any"/>
                 </xsl:otherwise>
             </xsl:choose>
         </xsl:variable>
         <xsl:apply-templates select="tei:lem"/>
-        <a class="notelink" href="#{$section_number}-{$identifier}" id="back{$section_number}-{$identifier}">
-            <sup>
-                <xsl:call-template name="appN"/>
-            </sup>
-        </a>
+				<!--<span class="popup" href="#{$identifier}" id="back{$identifier}" onclick="myFunction()">-->
+          <button 
+            id="{$identifier}"
+            type="button" 
+            class="btn btn-outline-secondary btn-sm" 
+            data-container="body" 
+            data-toggle="popover"
+            data-template="&lt;div class='popover' role='tooltip'&gt;&lt;div class='arrow'&gt;&lt;/div&gt;&lt;h3 class='popover-header'&gt;&lt;/h3&gt;&lt;div class='popover-body'&gt;&lt;/div&gt;&lt;/div&gt;"
+            data-placement="auto"
+            data-html="true">
+            <xsl:attribute name="data-content">
+              <!-- For display of lemma content _without_ non-textual
+                   content use attribute-content mode -->
+              <xsl:apply-templates select='tei:lem' mode="attribute-content"/>] <xsl:apply-templates select='tei:rdg'/></xsl:attribute><xsl:attribute name="data-title">Tekstkritisk note <xsl:call-template name="appN"/></xsl:attribute>A</button>
+          <!--<span class="popup" onclick="toggle({$identifier});">-->
+            <!--<sup><span class="apparatus-note-mark">A</span>--><!--<xsl:call-template name="appN"/>--><!--</sup>-->
+          <!--<span class="popuptext" id="{$identifier}">
+            <span class="popup-note-label">{{% textual-criticism/headline %}} <xsl:call-template name="appN"/></span>
+            <xsl:apply-templates select="tei:lem"/>] 
+            <xsl:choose>
+              <xsl:when test="tei:lem/@resp">
+                <em><xsl:value-of select="tei:lem/@resp/tokenize(., '#')"/></em><xsl:text>, </xsl:text>
+              </xsl:when>
+              <xsl:when test="tei:lem/@wit">
+                <em><xsl:value-of select="tei:lem/@wit/tokenize(., '#')"/></em><xsl:text>, </xsl:text>
+              </xsl:when>
+            </xsl:choose>
+              
+            
+					    <xsl:apply-templates select="tei:rdg"/>
+              <span class="textsource-link"><br/><a href="../sources"> {{% textual-criticism/see_sources %}} </a></span>
+          </span>-->
+          
+        <!--</span>-->
+				<!--<span onclick="myFunction(myPopup);">A</span>
+				<div id="myPopup" style="display: none;">HEJ</div>-->
+      <!--<span class="text-crit-note" data-toggle="popover" data-html="true">
+        <xsl:attribute name="data-content">Her kommer noget indhold.-->
+          <!--<xsl:apply-templates select="tei:lem"/>]-->
+          <!--<xsl:choose>
+              <xsl:when test="tei:lem/@resp">
+                <em><xsl:value-of select="tei:lem/@resp/tokenize(., '#')"/></em><xsl:text>, </xsl:text>
+              </xsl:when>
+              <xsl:when test="tei:lem/@wit">
+                <em><xsl:value-of select="tei:lem/@wit/tokenize(., '#')"/></em><xsl:text>, </xsl:text>
+              </xsl:when>
+            </xsl:choose>-->
+            <!--
+            <xsl:apply-templates select="tei:rdg"/>
+            <span class="textsource-link"><br/>
+              <a href='../sources'> {{% textual-criticism/see_sources %}} </a>
+            </span>-->
+        <!--</xsl:attribute>
+      </span>-->
     </xsl:template>
     <xsl:template name="appN">
         <xsl:choose>
@@ -50,17 +96,13 @@
                 <xsl:value-of select="@n"/>
             </xsl:when>
             <xsl:otherwise>
-                <xsl:number count="tei:app" level="any" from="//tei:text/*/tei:div"/>
-                <!--<xsl:number from="tei:TEI" level="any"/>-->
+                <xsl:number from="tei:TEI" level="any"/>
             </xsl:otherwise>
         </xsl:choose>
     </xsl:template>
     <!-- Template, der matcher app og opbygger note
         i det kritiske apparat-->
     <xsl:template match="tei:app" mode="apparatusCriticus">
-      <xsl:variable name="section_number">
-          <xsl:number count="//tei:text/*/tei:div"/>
-      </xsl:variable>
         <xsl:variable name="identifier">
             <xsl:text>App</xsl:text>
             <xsl:choose>
@@ -71,103 +113,69 @@
                     <xsl:value-of select="@n"/>
                 </xsl:when>
                 <xsl:otherwise>
-                    <!--<xsl:number count="tei:app" level="any"/>-->
-                    <xsl:number count="tei:app" level="single"/>
+                    <xsl:number count="tei:app" level="any"/>
                 </xsl:otherwise>
             </xsl:choose>
         </xsl:variable>
-        <span class="note">
-            <span class="noteLabel" id="{$section_number}-{$identifier}">
+        <p class="note">
+            <span class="noteLabel" id="{$identifier}">
                 <strong>
                     <!--<xsl:attribute name="id">
                         <xsl:value-of select="$identifier"/>
                     </xsl:attribute>-->
-                    <a href="#back{$section_number}-{$identifier}">
-                        <xsl:call-template name="appN"/>
-                    </a>
+                    <a href="#back{$identifier}"><xsl:call-template name="appN"/></a>
                     <xsl:text>. </xsl:text>
                 </strong>
             </span>
             <span class="noteBody">
-                <xsl:choose>
-                    <xsl:when test="tei:lem">
-                        <xsl:apply-templates select="tei:lem"/>
-                        <xsl:text>] </xsl:text>
-                        <xsl:choose>
-                            <xsl:when test="tei:lem/@resp"><em><xsl:value-of
-                                        select='tei:lem/@resp/tokenize(., "#")'/></em>, </xsl:when>
-                            <xsl:when test="tei:lem/@wit"><em><xsl:value-of
-                                        select='tei:lem/@wit/tokenize(., "#")'/></em>, </xsl:when>
-                        </xsl:choose>
+                <!--<xsl:variable name="lemmaLength" select="count(tei:lem//text()/tokenize(., '\W+')[.!=''])"/>-->
+                        <xsl:apply-templates select="tei:lem"/><xsl:text>] </xsl:text>
+                        <em><xsl:apply-templates select="tei:rdg" mode="apparatusCriticus"/></em>
+                
+                <!--<xsl:for-each select="tei:rdg">
+                    <xsl:apply-templates select="self::node()" mode="apparatusCriticus"/>
+                    <xsl:if test="position() != last()">; </xsl:if>
+                    <xsl:if test="position() = last()">. </xsl:if>
+                </xsl:for-each>
+                <xsl:text> </xsl:text>-->
+                <!--
+                    <xsl:choose>
+                    <xsl:when test="count(tei:rdg) > 1">
+                    <xsl:apply-templates select="tei:rdg" />
+                    <xsl:text>, </xsl:text>
                     </xsl:when>
                     <xsl:otherwise>
-                        <xsl:apply-templates select="tei:lem"/>
-                        <xsl:text>]</xsl:text>
-                        <xsl:text>  </xsl:text>
+                    <xsl:apply-templates select="tei:rdg"/>
+                    <xsl:text>. </xsl:text>
                     </xsl:otherwise>
-                </xsl:choose>
-                <xsl:choose>
-                    <xsl:when test="tei:rdg">
-                        <xsl:for-each select="tei:rdg">
-                            <xsl:apply-templates select="."/>
-                        <!-- If there are @resp or @wit attributes render them here-->
-                        <xsl:choose>
-                            <xsl:when test="@resp">
-                                <em>
-                                    <xsl:value-of select='@resp/tokenize(., "#")'/>
-                                </em>
-                                <xsl:if test="position() != last()">, </xsl:if>
-                                <xsl:if test="position() = last()"/>
-                            </xsl:when>
-                            <xsl:when test="@wit">
-                                <em>
-                                    <xsl:value-of select='@wit/tokenize(., "#")'/>
-                                </em>
-                                <xsl:if test="position() != last()"> </xsl:if>
-                                <xsl:if test="position() = last()"/>
-                            </xsl:when>
-                        </xsl:choose>
-                        <!-- If there is a note pertaining to the reading display it here -->
-                        <xsl:if test="tei:note">
-                          <xsl:text> </xsl:text><xsl:apply-templates select="tei:note"/>
-                        </xsl:if>
-                        <xsl:if test="position() != last()">, </xsl:if>
-                        <xsl:if test="position() = last()"/>
-                        </xsl:for-each>
-
-                    </xsl:when>
-
-
-                </xsl:choose>
-
-                <xsl:text> </xsl:text>
+                    </xsl:choose>
+                -->
             </span>
-        </span>
+        </p>
     </xsl:template>
+    <xsl:template match="tei:rdg" mode="apparatusCriticus">
+        <xsl:apply-templates mode="apparatusCriticus"/>
+    </xsl:template>
+    
     <xsl:template match="tei:rdg">
-        <xsl:apply-templates select="text()|tei:hi|tei:q"/>
-        <xsl:text> </xsl:text>
-        <!--<xsl:if test="@wit">
-            <em>-->
-        <!-- Since values in the must be prefixed with a 
-                 we use tokenize() to obtain the substring after # -->
-        <!--<xsl:value-of select="@wit/tokenize(., '#')"/>
-            </em>
-        </xsl:if>-->
-        <!--<xsl:if test="tei:note">
-            <xsl:apply-templates select="tei:note"/>
-        </xsl:if>-->
-
-        <!--Det er formentlig bedre at lade redaktøren selv
-            skrive om læsningen skyldes 'DD' eller fx Aa1.  
-            <xsl:text>, </xsl:text>
-            <em>
-            <xsl:value-of select="@resp | @wit"/>
-            </em>
-            <xsl:text>
-            </xsl:text>-->
+      &lt;span class="app-crit-reading"&gt;<xsl:apply-templates/>&lt;/span&gt;
+    </xsl:template>
+    <xsl:template match="tei:rdg/tei:q">
+      &lt;span class="app-crit-reading-quote"&gt;<xsl:apply-templates/>&lt;/span&gt;
     </xsl:template>
     <xsl:template match="tei:lem">
-        <xsl:apply-templates/>
+        <xsl:apply-templates />
+    </xsl:template>
+    <!-- Use the template below for the lemma content i popover -->
+    <xsl:template match="tei:lem" mode="attribute-content">
+      <xsl:choose>
+        <xsl:when test="child::*">
+          <xsl:value-of select="child::*//text()"/>
+        </xsl:when>
+        <xsl:otherwise>
+          <xsl:apply-templates select="text()" />
+        </xsl:otherwise>
+      </xsl:choose>
+      <!--<xsl:apply-templates/>-->
     </xsl:template>
 </xsl:stylesheet>

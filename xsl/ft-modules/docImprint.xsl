@@ -19,11 +19,27 @@
             <xd:copyright>2010, Society for Danish Language and Literature</xd:copyright>
         </xd:desc>
     </xd:doc>
-    <xsl:template match="tei:titlePage">
-        <div id="titlepage-section" class="titlePage">
-            <!--<span class="caption">Title: </span>-->
-            <xsl:apply-templates/>
-        </div>
+    <xsl:template match="tei:docImprint">
+      <p class="center">
+        <br/>
+        <br/>
+        <xsl:apply-templates/>
+      </p>
+      <!--<xsl:for-each select="child::*">
+            <p class="center">
+                <br/>
+                <xsl:apply-templates/>
+                <br/>
+            </p>
+        </xsl:for-each>-->
     </xsl:template>
-    <xsl:template match="tei:byline"><p class="center"><xsl:apply-templates/></p></xsl:template>
+    <xsl:template match="tei:publisher">
+      <p class="center"><xsl:apply-templates/></p>
+    </xsl:template>
+    <xsl:template match="tei:pubPlace">
+      <p class="center"><xsl:apply-templates/></p>
+    </xsl:template>
+    <xsl:template match="tei:docDate">
+      <p class="center"><xsl:apply-templates/></p>
+    </xsl:template>
 </xsl:stylesheet>

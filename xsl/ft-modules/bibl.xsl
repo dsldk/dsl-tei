@@ -19,11 +19,21 @@
             <xd:copyright>2010, Society for Danish Language and Literature</xd:copyright>
         </xd:desc>
     </xd:doc>
-    <xsl:template match="tei:titlePage">
-        <div id="titlepage-section" class="titlePage">
-            <!--<span class="caption">Title: </span>-->
-            <xsl:apply-templates/>
-        </div>
+    <xsl:template match="tei:bibl">
+        <xsl:apply-templates/>
     </xsl:template>
-    <xsl:template match="tei:byline"><p class="center"><xsl:apply-templates/></p></xsl:template>
+    <!-- When bibl elements are part of a cit (citation) element the bibl ref should be right aligned -->
+    <xsl:template match="tei:cit/tei:bibl">
+        <div class="signature text-right"> <xsl:apply-templates/></div>
+    </xsl:template>
+    <!-- When bibl elements are part of bibliographical list they should be rendered as list items -->
+    <xsl:template match="tei:listBibl/tei:bibl">
+        <li>
+            <xsl:apply-templates/>
+        </li>
+    </xsl:template>
+    <!-- When bibl elements are part of witness element -->
+    <xsl:template match="tei:witness/tei:bibl">
+      <xsl:apply-templates select="text() | tei:title"/>
+    </xsl:template>
 </xsl:stylesheet>
