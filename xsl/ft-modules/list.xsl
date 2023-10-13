@@ -19,11 +19,28 @@
             <xd:copyright>2010, Society for Danish Language and Literature</xd:copyright>
         </xd:desc>
     </xd:doc>
-    <xsl:template match="tei:titlePage">
-        <div id="titlepage-section" class="titlePage">
-            <!--<span class="caption">Title: </span>-->
-            <xsl:apply-templates/>
-        </div>
+    <xsl:template match="tei:list">
+        <xsl:choose>
+            <xsl:when test="@rend = 'numbered'">
+                <ol>
+                    <xsl:apply-templates/>
+                </ol>
+            </xsl:when>
+            <xsl:when test="@rend = 'simple'">
+                <ul class="simple-list">
+									<xsl:apply-templates/>
+                </ul>
+            </xsl:when>
+            <xsl:when test="@rend = 'simple-center'">
+                <ul class="simple-list center">
+									<xsl:apply-templates/>
+                </ul>
+            </xsl:when>
+            <xsl:otherwise>
+                <ul>
+                    <xsl:apply-templates/>
+                </ul>
+            </xsl:otherwise>
+        </xsl:choose>      
     </xsl:template>
-    <xsl:template match="tei:byline"><p class="center"><xsl:apply-templates/></p></xsl:template>
 </xsl:stylesheet>

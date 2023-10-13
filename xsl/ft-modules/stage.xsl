@@ -19,11 +19,30 @@
             <xd:copyright>2010, Society for Danish Language and Literature</xd:copyright>
         </xd:desc>
     </xd:doc>
-    <xsl:template match="tei:titlePage">
-        <div id="titlepage-section" class="titlePage">
-            <!--<span class="caption">Title: </span>-->
-            <xsl:apply-templates/>
-        </div>
+    
+    <!--<xsl:template match="tei:speaker">
+        <xsl:apply-templates/>
+    </xsl:template>-->
+    
+    <xsl:template match="tei:stage">
+      <xsl:choose>
+        <xsl:when test="@type='setting'">
+          <p class="stage"><em><xsl:apply-templates/></em></p>
+        </xsl:when>
+        <xsl:when test="@type='delivery'">
+          <p class="stage">(<em><xsl:apply-templates/></em>)</p>
+        </xsl:when>
+        <xsl:otherwise>
+          <xsl:text> </xsl:text><span class="stage">(<em><xsl:apply-templates/></em>)</span>
+        </xsl:otherwise>
+      </xsl:choose>
+        <!-- <xsl:text> </xsl:text> -->
+        <!-- <span class="stage">(<em><xsl:apply-templates/></em>)</span> -->
+    <!-- </xsl:template> -->
+    <!-- <xsl:template match="tei:div/tei:stage"> -->
+      <!-- <p class="stage">(<em><xsl:apply-templates/></em>)</p> -->
+    <!-- </xsl:template> -->
+    <!-- <xsl:template match="tei:stage[@type='setting']"> -->
+      <!-- <p class="stage"><em><xsl:apply-templates/></em></p> -->
     </xsl:template>
-    <xsl:template match="tei:byline"><p class="center"><xsl:apply-templates/></p></xsl:template>
 </xsl:stylesheet>

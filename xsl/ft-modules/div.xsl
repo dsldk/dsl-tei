@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
     xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tei="http://www.tei-c.org/ns/1.0"
-    exclude-result-prefixes="xs tei" version="2.0">
+    exclude-result-prefixes="xs tei" version="1.0">
     <xd:doc xmlns:xd="http://www.oxygenxml.com/ns/doc/xsl" scope="stylesheet">
         <xd:desc>
             <xd:detail>Licensed by Thomas Hansen under the Creative Commons Attribution-Share Alike
@@ -20,17 +20,20 @@
         </xd:desc>
     </xd:doc>
     <xsl:template match="tei:div">
+        <xsl:variable name="id">
+            <xsl:number count="//tei:text/*/*" level="any" format="001" />
+        </xsl:variable>
         <div>
             <xsl:attribute name="id">
-                <xsl:value-of select="@xml:id"/>
+                <xsl:value-of select="$id"/>
             </xsl:attribute>
-            <xsl:apply-templates
-                select="
+            <xsl:apply-templates select="
                     tei:closer |
                     tei:figure |
                     tei:head |
                     tei:div |
                     tei:p |
+                    tei:lb |
                     tei:lg |
                     tei:list |
                     tei:epigraph |
@@ -66,31 +69,6 @@
 
     <xsl:template match="tei:div/tei:div">
         <xsl:choose>
-            <!-- For DD digitization -->
-            <xsl:when test="@type = ('ark', 'bib')">
-                <div class="smaller my-3">
-                    <xsl:apply-templates/>
-                </div>
-            </xsl:when>
-            <xsl:when test="@type = ('app', 'cit', 'kom')">
-                <div class="smaller my-4">
-                    <xsl:apply-templates/>
-                </div>
-            </xsl:when>
-            <xsl:when test="@type = 'reg'">
-                <div>
-                    <em>
-                        <xsl:apply-templates/>
-                    </em>
-                </div>
-            </xsl:when>
-            <xsl:when test="@type = 'src'">
-                <div class="smaller">
-                    <em>
-                        <xsl:apply-templates/>
-                    </em>
-                </div>
-            </xsl:when>
             <xsl:when test="@type = 'row'">
                 <div class="row">
                     <xsl:for-each select="tei:div[@type = 'col']">
@@ -127,6 +105,16 @@
                 <xsl:value-of select="@xml:id"/>
             </xsl:attribute>
             <span class="caption">Calendar: </span>
+            <xsl:apply-templates/>
+        </div>
+    </xsl:template>
+    <xsl:template match="tei:div[@type = 'comment']">
+        <div class="p-3 mb-2 comment">
+            <xsl:apply-templates/>
+        </div>
+    </xsl:template>
+    <xsl:template match="tei:div[@type = 'alert']">
+        <div class="p-3 mb-2 alert">
             <xsl:apply-templates/>
         </div>
     </xsl:template>

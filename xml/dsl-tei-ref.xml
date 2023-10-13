@@ -1,24 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!--<?oxygen RNGSchema="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="xml"?>-->
-<!--<?oxygen RNGSchema="file:///home/th/Development/dsl-tei/rnc/dsl-tei.rnc" type="compact"?>-->
-<!--<?oxygen RNGSchema="https://text.dsl.dk/docs/schemas/dsl-tei.rnc" type="compact"?>-->
-<TEI xmlns="http://www.tei-c.org/ns/1.0">
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <teiHeader>
     <fileDesc>
       <titleStmt>
         <title>Tekstnet, referencedokument</title>
-        <title xml:lang="en">Tekstnet, reference document</title>
-        <author>Johannes Textor</author>
+        <title>Tekstnet, reference document</title>
+        <author>Thomas Hansen</author>
         <editor role="editor">Henrik Wivel</editor>
         <editor role="digital_editor">Andersine And</editor>
         <editor role="student_assistant">Morten Vinge</editor>
         <editor role="contributor">Aage Andersen</editor>
         <editor role="data_engineer">hansen_thomas_1977</editor>
-        <funder xml:id="apm">A.P. Møller og Hustru Chastine Mc-Kinney Møllers Fond til almene
-          Formaal</funder>
+        <funder>A.P. Møller og Hustru Chastine Mc-Kinney Møllers Fond til almene Formaal</funder>
         <funder>Carlsbergfondet</funder>
       </titleStmt>
-      <extent>Skal dette bruges?</extent>
       <publicationStmt>
         <publisher>Det Danske Sprog- og Litteraturselskab</publisher>
         <pubPlace>København</pubPlace>
@@ -54,8 +49,8 @@
               </additional>
             </msDesc>
           </witness>
-          <witness xml:id="Aa">Stockholm, Riksarkivet, Registrum ecclesie Lundensis (Lundebogen), p.
-            250. Beskrivelse af tekstvidnets fysiske tilstand. Redegørelse for tekstvidnets
+          <witness xml:id="Aa"> Stockholm, Riksarkivet, Registrum ecclesie Lundensis (Lundebogen),
+            p. 250. Beskrivelse af tekstvidnets fysiske tilstand. Redegørelse for tekstvidnets
             proveniens. Tryk: Pontan. Rerum Danicarum Libri IX 579-584. </witness>
         </listWit>
       </sourceDesc>
@@ -116,22 +111,35 @@
   </facsimile>
   <text>
     <front>
-      <titlePage xml:id="titelblad">
+      <titlePage>
         <docTitle>
           <titlePart>Hovedstrømninger i 19de Aarhundredes Litteratur.</titlePart>
           <titlePart type="sub">Forelæsninger holdte ved Kjøbenhavns Universitet i
             Efteraarshalvaaret 1871</titlePart>
           <titlePart type="sub">Emigrantlitteraturen.</titlePart>
         </docTitle>
-        <byline>af Georg Brandes.</byline>
+        <byline>af<lb/> Georg Brandes.</byline>
+        <docImprint>
+          <pubPlace>København og Kristiania</pubPlace>
+          <publisher>Gyldendalske Boghandel<lb/>Nordisk Forlag</publisher>
+          <figure type="shortLine"/>
+          <docDate>1906</docDate>
+        </docImprint>
       </titlePage>
       <div>
         <head>
           <reg>Dedikation</reg>
           <orig>Dedikation</orig>
         </head>
-        <p>Hr. Professor <persName>H. Brøchner</persName> tilegnes dette Skrift med Taknemmelighed
-          og Venskab af Forfatteren.</p>
+        <div type="alert">
+          <p>Dedikationer forekommer som oftest under <code>&lt;front&gt;</code> og indsættes
+            umiddelbart herunder som <code>&lt;div&gt;</code>-elementer.</p>
+        </div>
+        <lb/>
+        <div>
+          <p>Hr. Professor <persName>H. Brøchner</persName> tilegnes dette Skrift med Taknemmelighed
+            og Venskab af Forfatteren.</p>
+        </div>
       </div>
       <div>
         <head>
@@ -207,17 +215,19 @@
               tekst.</hi></p>
         </div>
         <div>
-          <head>Poesi</head>
-          <p>Venstrestillet strofe med overskrift:</p>
+          <head>Lyrik</head>
+          <p>Lyrik gengives som udgangspunkt med venstreindrykning i forhold til prosa. Som
+            udgangspunkt er tekstjusteringen venstrestillet:</p>
+          <lb/>
           <lg>
-            <head>Overskrift</head>
             <l>jeg arbejder ikke</l>
             <l>med mine hænder,</l>
             <l>ikke for samfundets forbedring –</l>
             <l>jeg driver dagene væk</l>
             <l n="5">ved at tænke endeløse tanker.</l>
           </lg>
-          <p>En centreret strofe:</p>
+          <lb/>
+          <p rend="noindent">Tekstjusteringen kan også centreres:</p>
           <lg rend="text-center">
             <l>jeg arbejder ikke</l>
             <l>med mine hænder,</l>
@@ -225,7 +235,8 @@
             <l>jeg driver dagene væk</l>
             <l n="5">ved at tænke endeløse tanker.</l>
           </lg>
-          <p>En højrestillet strofe:</p>
+          <lb/>
+          <p rend="noindent">– eller den kan højrestilles:</p>
           <lg rend="text-right">
             <l>jeg arbejder ikke</l>
             <l>med mine hænder,</l>
@@ -233,13 +244,39 @@
             <l>jeg driver dagene væk</l>
             <l n="5">ved at tænke endeløse tanker.</l>
           </lg>
+          <lb/>
+          <p rend="noindent">Ved at benytte attributtet <code>@rend</code> udfyldt med værdier fra
+            <code>indent1</code> til <code>indent10</code> kan man vha. forskellige slags indrykning
+            gengive forskellige former for versemål. Det er også muligt at have titler, alt sammen
+            illustreret med et eksempel fra Ambrosius Stub:</p>
+          <lg>
+            <head>
+              <hi rend="italic">Den kiedsom Vinter gik sin Gang</hi>
+            </head>
+            <l rend="indent2">Den kiedsom Vinter gik sin gang,</l>
+            <l rend="indent2">Den Dag saa kort, den Nat saa lang</l>
+            <l rend="indent4">Forandrer sig</l>
+            <l rend="indent4">Saa lempelig;</l>
+            <l n="5">Den barske Vind, den mørke Skye – maa flye;</l>
+            <l rend="indent2">Vor Kakkelovn saa eene staaer,</l>
+            <l rend="indent2">Og hver Dags Kolde syge faaer;</l>
+            <l rend="indent2">Den tykke Vams, den foret Dragt</l>
+            <l rend="indent2">Er alt hengt hen,og reent foragt,</l>
+            <l n="10">Og Muffen er tillige giemt – og glemt;</l>
+            <l rend="indent2">Mand frygter ey, at Snee og Slud</l>
+            <l rend="indent2">Skal møde dem, som vil gaae ud;</l>
+            <l rend="indent4">Thi lad os gaae</l>
+            <l rend="indent4">At skue paae,</l>
+            <l>Hvor smukt Naturen sig beteer – og leer.</l>
+          </lg>
         </div>
         <div>
           <head>Dramatik</head>
           <div>
             <p>Dramatik opmærkes som sekvenser af <code>sp</code>- (<hi rend="italic">speech</hi>)
-              og <code>stage</code>-elementer. Sidstnævnte skal ved præsentation af dramatis personae
-              anvendes med <code>@type="setting"</code>, ellers med <code>@type="delivery"</code>.</p>
+              og <code>stage</code>-elementer. Sidstnævnte skal ved præsentation af dramatis
+              personae anvendes med <code>@type="setting"</code>, ellers med
+              <code>@type="delivery"</code>.</p>
           </div>
           <div>
             <head>Scene 8</head>
@@ -265,7 +302,7 @@
         </div>
         <div>
           <head>Citater</head>
-          <p>Citater optræder med bredere venstremargin:</p>
+          <p>Citater optræder med bredere venstremargin; her illustreret med prosa:</p>
           <cit>
             <quote>
               <p>»Ein wächserner Hausgötze, den man ausser Acht gelassen hatte, stand neben einem
@@ -277,6 +314,19 @@
             </quote>
             <bibl>
               <persName>W. Heinse</persName>. </bibl>
+          </cit>
+          <p rend="noindent">Også lyrik indrykkes når det citeres</p>
+          <cit>
+            <quote>
+              <lg>
+                <l>Her vil ties, her vil bies</l>
+                <l rend="indent2">Her vil bies, o svage Sind!</l>
+                <l>Vist skal du hente, kun ved at vente</l>
+                <l rend="indent2">Kun ved at vente, vor Sommer ind.</l>
+                <l>Her vil ties &amp;c. &amp;c.</l>
+              </lg>
+            </quote>
+            <bibl></bibl>
           </cit>
         </div>
         <div>
@@ -293,20 +343,22 @@
         <div>
           <head>Fodnoter</head>
           <div>
-            <p>Fodnoter gengives efter det afsnit de optræder i. Den løsning er valgt for at give de
-              bedste vilkår for at overskue både den tekst, noten refererer til, og noten selv. Her
-              kommer den første fodnote,<note place="bottom"><ref type="refMark">*</ref><p>Dette er
-                  teksten til den første fodnote.</p></note> her kommer den anden fodnote,<note
-                place="bottom"><p>Den anden fodnote er længere end den første, men det er vigtigt at
-                  der er tilstrækkeligt med margin omkring, således at noterne kan skelnes fra
-                  hinanden</p><p>Dette er andet afsnit i noten.</p></note> og her følger mere tekst. </p>
+            <p>Fodnoter gengives som popup-elementer. Her kommer den første fodnote,<note
+                place="bottom">
+                <p>Dette er teksten til den første fodnote.</p>
+              </note> her kommer den anden fodnote,<note place="bottom">
+                <p>Den anden fodnote er længere end den første, men det er vigtigt at der er
+                  tilstrækkeligt med margin omkring, således at noterne kan skelnes fra hinanden</p>
+                <p>Dette er andet afsnit i noten.</p>
+              </note> og her følger mere tekst. </p>
             <p>Efter fodnotesektionen følger flere afsnit. Fodnoter kan også forekomme i
               overskrifter. Det er der et eksempel på i det følgende:</p>
           </div>
           <div>
             <head>
-              <orig>Overskrift med fodnote<note place="bottom"><p>Dette er en note som skal følge
-                    efter første afsnit.</p></note>
+              <orig>Overskrift med fodnote<note place="bottom">
+                  <p>Dette er en note som skal følge efter første afsnit.</p>
+                </note>
               </orig>
             </head>
             <p>Her kommer første afsnit. Fodnoten i overskriften skal følge efter første afsnit.</p>
@@ -352,29 +404,41 @@
           <orig>2. Lister</orig>
           <reg>2. Lister</reg>
         </head>
-        <p>Eksempel på simpel liste, hvilket her vil sige en liste uden nummerering eller andet
-          præg:</p>
+        <p>En uordnet liste opnås ved elementet <code>&lt;list&gt;</code>:</p>
         <list>
-          <item n="1">første</item>
-          <item n="2">andet</item>
-          <item n="3">tredje</item>
+          <item>første</item>
+          <item>andet</item>
+          <item>tredje</item>
         </list>
-        <list rend="simple">
-          <item n="1">første</item>
-          <item n="2">andet</item>
-          <item n="3">tredje</item>
-        </list>
-        <p>Eksempel på nummereret liste</p>
+        <p rend="noindent">En nummereret liste opnås ved <code>&lt;list
+          rend="numbered"&gt;</code></p>
         <list rend="numbered">
           <item>første</item>
           <item>andet</item>
           <item>tredje</item>
         </list>
-        <p>Eksempel på liste med hængende indrykning</p>
-        <list rend="hanging-indent">
-          <item>Dette er det første menupunkt med hængende indrykning. Dette er det første menupunkt med hængende indrykning. Dette er det første menupunkt med hængende indrykning.</item>
-          <item>Dette er det andet menupunkt med hængende indrykning. Dette er det andet menupunkt med hængende indrykning. Dette er det andet menupunkt med hængende indrykning.</item>
+        <p rend="noindent">Den nummererede liste (<code>&lt;list rend="numbered"&gt;</code>)
+          benyttes også hvis rækkefølgen er prædefineret; tallet indsættes i så fald sådan
+          <code>&lt;item n="7"&gt;</code></p>
+        <list rend="numbered">
+          <item n="7">første</item>
+          <item n="10">andet</item>
+          <item n="3">tredje</item>
         </list>
+        <p rend="noindent">Hvis man ønsker en liste uden præg anvendes <code>&lt;list
+            rend="simple"&gt;</code></p>
+        <list rend="simple">
+          <item>første</item>
+          <item>andet</item>
+          <item>tredje</item>
+        </list>
+        <!--<p>Eksempel på liste med hængende indrykning</p>
+        <list rend="hanging-indent">
+          <item>Dette er det første menupunkt med hængende indrykning. Dette er det første menupunkt
+            med hængende indrykning. Dette er det første menupunkt med hængende indrykning.</item>
+          <item>Dette er det andet menupunkt med hængende indrykning. Dette er det andet menupunkt
+            med hængende indrykning. Dette er det andet menupunkt med hængende indrykning.</item>
+        </list>-->
       </div>
       <div>
         <head>
@@ -405,14 +469,14 @@
             <cell>4.</cell>
           </row>
           <row>
-            <cell>Simplex longitud. &#x2609; </cell>
+            <cell>Simplex longitud. ☉ </cell>
             <cell>7</cell>
             <cell>29</cell>
             <cell>24</cell>
             <cell>16.</cell>
           </row>
           <row>
-            <cell>Anomalia &#x2609; annua</cell>
+            <cell>Anomalia ☉ annua</cell>
             <cell>5</cell>
             <cell>17</cell>
             <cell>23</cell>
@@ -426,7 +490,7 @@
             <cell>58.</cell>
           </row>
           <row>
-            <cell>Simplex latitudo &#x263E; </cell>
+            <cell>Simplex latitudo ☾ </cell>
             <cell>9</cell>
             <cell>2</cell>
             <cell>19</cell>
@@ -487,14 +551,16 @@
           </row>
           <row>
             <cell>Differentia</cell>
-            <cell><app>
+            <cell>
+              <app>
                 <lem resp="ed. 1901">348</lem>
                 <rdg><q>248</q> E, D, V</rdg>
               </app>
             </cell>
             <cell>29</cell>
             <cell>39.</cell>
-            <cell><app>
+            <cell>
+              <app>
                 <lem resp="ed. 1901">346</lem>
                 <rdg><q>246</q> E, D, V</rdg>
               </app>
@@ -553,13 +619,50 @@
       </div>
       <div>
         <head>
-          <reg>5. Særlig notation</reg>
-          <orig>5. Særlig notation</orig>
+          <reg>5. Blokkommentarer og advarsler</reg>
+          <orig>5. Blokkommentarer og advarsler</orig>
         </head>
-        <p>Til opmærkning af matematiske formler anvendes TeX-notation.</p>
+        <div>
+          <p>I den løbende tekst indskydes blokkommentarer vha. <code>&lt;div
+              type="comment"&gt;</code>. For at understrege forskellen på kommentarer og
+            almindelig tekst, vil kommentarer fremtræde på let grånet baggrund som i eksemplet
+            herunder:</p>
+        </div>
+        <lb/>
+        <div type="comment">
+          <p>Lorem ipsum dolor sit amet, <hi rend="italic">consectetur</hi> adipiscing elit. Cras
+            pellentesque lacus sit amet quam laoreet condimentum. Donec suscipit justo non iaculis
+            tempus. Nam lobortis posuere massa, gravida faucibus massa eleifend id. In vehicula
+            mollis dolor sed efficitur. Donec vitae quam maximus, mollis arcu at, iaculis dui. Duis
+            auctor maximus fringilla. Integer in risus sit amet quam sagittis ullamcorper ut non
+            lacus. Aenean ut malesuada nisi. Suspendisse condimentum accumsan ligula, vel sodales
+            diam tincidunt egestas.</p>
+          <p>Integer <hi rend="strong">luctus ex metus</hi>. Proin dignissim nulla in sem hendrerit
+            interdum. Nullam vitae dui sit amet lorem dapibus dignissim. Fusce nec iaculis dui,
+            vitae interdum mi. Duis facilisis velit at velit bibendum, id suscipit ex facilisis.
+            Duis tristique eu sem at hendrerit.</p>
+        </div>
+        <lb/>
+        <div>
+          <p>Det er også muligt at indsætte advarselstekst vha. <code>&lt;div
+              type="alert"&gt;</code>.</p>
+        </div>
+        <lb/>
+        <div type="alert">
+          <p>Dette er en <hi rend="strong">advarsel</hi>. Husk altid at sætte advarsler eller
+            påmindelser i vha. <code>&lt;div type="alert"&gt;</code>.</p>
+        </div>
+      </div>
+      <div>
+        <head>
+          <reg>6. Særlig notation</reg>
+          <orig>6. Særlig notation</orig>
+        </head>
+        <p>Til opmærkning af matematiske formler anvendes <formula notation="tex"
+          >TeX</formula>-notation.</p>
         <div>
           <head>
-            <orig>Matematik</orig>
+            <orig>Formler</orig>
           </head>
           <p>Et eksempel på matematik indlejret i den løbende tekst (inline) er dette: Integralet
               <formula notation="tex">\(\int_0^\infty e^{it}t^{x-1}dt\)</formula> er jo et
@@ -583,7 +686,7 @@
           <head>Kode</head>
           <p>Eksempel mangler</p>
         </div>
-        <div>
+        <!--<div>
           <head>Grafer</head>
           <p>Eksempel på afbildning af træ</p>
           <eTree n="ex1">
@@ -610,7 +713,7 @@
               </eTree>
             </eTree>
           </eTree>
-        </div>
+        </div>-->
       </div>
       <div>
         <head>
@@ -619,7 +722,7 @@
         </head>
         <div>
           <p>Ved udgivelse af korrespondance skal hvert brev være indeholdt i et
-              <code>&lt;div&gt;</code>-element</p>
+            <code>&lt;div&gt;</code>-element</p>
         </div>
         <div>
           <opener>
@@ -627,7 +730,7 @@
             <salute>Kære Harald.</salute>
           </opener>
           <p>Vi har haft en dejlig Tur. Vi spiste til Middag i <placeName>Halmstad</placeName>. Fra
-              <placeName>Göteborg</placeName> fik jeg lige Tid til at skrive et Brevkort, men da jeg
+            <placeName>Göteborg</placeName> fik jeg lige Tid til at skrive et Brevkort, men da jeg
             ikke ved om det kom ordentlig af Sted, vil jeg sende endnu en Hilsen til Juleaften. Vil
             du hilse <persName key="bohr_chr_1855">Fader</persName>, <persName key="bohr_ellen_1860"
               >Moder</persName>, <persName key="bohr_jenny_1883">Jenny</persName>,

@@ -19,11 +19,27 @@
             <xd:copyright>2010, Society for Danish Language and Literature</xd:copyright>
         </xd:desc>
     </xd:doc>
-    <xsl:template match="tei:titlePage">
-        <div id="titlepage-section" class="titlePage">
-            <!--<span class="caption">Title: </span>-->
+    <xsl:template match="tei:l">
+        <div>
+            <xsl:attribute name="class">line</xsl:attribute>
+            <xsl:if test="@n">
+                <xsl:attribute name="data-num">
+                    <xsl:value-of select="@n"/>
+                </xsl:attribute>
+            </xsl:if>
+            <xsl:choose>
+                <xsl:when test="@rend='indent1'">&#xA0;&#xA0;</xsl:when>
+                <xsl:when test="@rend='indent2'">&#xA0;&#xA0;&#xA0;&#xA0;</xsl:when>
+                <xsl:when test="@rend='indent3'">&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;</xsl:when>
+                <xsl:when test="@rend='indent4'">&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;</xsl:when>
+                <xsl:when test="@rend='indent5'">&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;</xsl:when>
+                <xsl:when test="@rend='indent6'">&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;</xsl:when>
+                <xsl:when test="@rend='indent7'">&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;</xsl:when>
+                <xsl:when test="@rend='indent8'">&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;</xsl:when>
+                <xsl:when test="@rend='indent9'">&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;</xsl:when>
+                <xsl:when test="@rend='indent10'">&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;</xsl:when>
+            </xsl:choose>
             <xsl:apply-templates/>
         </div>
     </xsl:template>
-    <xsl:template match="tei:byline"><p class="center"><xsl:apply-templates/></p></xsl:template>
 </xsl:stylesheet>
