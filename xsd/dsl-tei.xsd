@@ -137,6 +137,7 @@
   <xs:element name="witness">
     <xs:complexType mixed="true">
       <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="unbounded"  ref="ns1:bibl"/>
         <xs:element minOccurs="0" maxOccurs="unbounded" ref="ns1:msDesc"/>
       </xs:sequence>
       <xs:attribute ref="xml:id" use="required"/>
@@ -258,8 +259,8 @@
   <xs:element name="creation">
     <xs:complexType>
       <xs:sequence>
-        <xs:element ref="ns1:date"/>
-        <xs:element ref="ns1:placeName"/>
+        <xs:element maxOccurs="unbounded" ref="ns1:date"/>
+        <xs:element minOccurs="0" maxOccurs="unbounded" ref="ns1:placeName"/>
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -399,6 +400,7 @@
   <xs:element name="date">
     <xs:complexType mixed="true">
       <xs:attribute name="when" type="xs:date"/>
+      <xs:attribute ref="xml:lang"/>
     </xs:complexType>
   </xs:element>
   <xs:element name="idno">
@@ -415,6 +417,7 @@
     <xs:complexType mixed="true">
       <xs:sequence>
         <xs:element minOccurs="0" maxOccurs="unbounded" ref="ns1:persName"/>
+        <xs:element minOccurs="0" maxOccurs="unbounded" ref="ns1:title"/>
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -446,6 +449,7 @@
         <xs:element ref="ns1:hi"/>
         <xs:element ref="ns1:lb"/>
         <xs:element ref="ns1:note"/>
+        <xs:element ref="ns1:pb"/>
         <xs:element ref="ns1:persName"/>
         <xs:element ref="ns1:placeName"/>
         <xs:element ref="ns1:code"/>
@@ -479,7 +483,7 @@
   <xs:element name="pb">
     <xs:complexType>
       <xs:attribute name="ed" use="required" type="xs:NCName"/>
-      <xs:attribute name="n" use="required" type="xs:NCName"/>
+      <xs:attribute name="n" use="required" type="xs:string"/>
       <xs:attribute name="facs" use="optional" type="xs:NCName"/>
     </xs:complexType>
   </xs:element>
@@ -536,6 +540,12 @@
   </xs:element>
   <xs:element name="l">
     <xs:complexType mixed="true">
+      <xs:sequence>
+        <xs:choice minOccurs="0" maxOccurs="unbounded">
+          <xs:element ref="ns1:lb"/>
+          <xs:element ref="ns1:pb"/>
+        </xs:choice>
+      </xs:sequence>
       <xs:attribute name="n" type="xs:integer"/>
       <xs:attribute name="rend" type="xs:NCName"/>
     </xs:complexType>
@@ -559,11 +569,14 @@
   </xs:element>
   <xs:element name="notatedMusic"/>
   <xs:element name="opener">
-    <xs:complexType>
-      <xs:sequence>
+    <xs:complexType mixed="true">
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
         <xs:element ref="ns1:dateline"/>
+        <xs:element ref="ns1:lb"/>
+        <xs:element ref="ns1:persName"/>
+        <xs:element ref="ns1:placeName"/>
         <xs:element ref="ns1:salute"/>
-      </xs:sequence>
+      </xs:choice>
     </xs:complexType>
   </xs:element>
   <xs:element name="dateline">
@@ -598,14 +611,21 @@
     </xs:complexType>
   </xs:element>
   <xs:element name="closer">
-    <xs:complexType>
+    <xs:complexType mixed="true">
       <xs:sequence>
+        <xs:element ref="ns1:dateline"/>
         <xs:element ref="ns1:salute"/>
         <xs:element ref="ns1:signed"/>
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="signed" type="xs:NCName"/>
+  <xs:element name="signed">
+    <xs:complexType mixed="true">
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element ref="ns1:persName"/>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
   <xs:element name="epigraph">
     <xs:complexType>
       <xs:sequence>
@@ -679,6 +699,7 @@
     <xs:complexType mixed="true">
       <xs:choice minOccurs="0" maxOccurs="unbounded">
         <xs:element ref="ns1:hi"/>
+        <xs:element ref="ns1:lb"/>
         <xs:element ref="ns1:orig"/>
         <xs:element ref="ns1:reg"/>
       </xs:choice>
@@ -703,6 +724,7 @@
         <xs:element ref="ns1:app"/>
         <xs:element ref="ns1:ex"/>
         <xs:element ref="ns1:hi"/>
+        <xs:element ref="ns1:lb"/>
         <xs:element ref="ns1:note"/>
         <xs:element ref="ns1:ref"/>
       </xs:choice>
