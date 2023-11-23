@@ -6,6 +6,7 @@ fontfamily: palatino
 indent: true
 language: da-DK
 papersize: a4
+
 ---
 
 # Indledning
@@ -34,11 +35,11 @@ Et dsl-tei-dokument er et XML-dokument med rodelementet `TEI` og attributtet
 Rodelementet indholder de tre komponenter 1. `teiHeader`, 2. `facsimile` og 3. 
 `text`.
 
-|element   | beskrivelse                                                      |
-|----------|------------------------------------------------------------------|
-|teiHeader | (*TEI header*) metadata til beskrivelse af den digitale ressource i bibliografisk, kodnings- og udviklingsmæssig henseende. Jf. 2 Metadata. |
-|facsimile | digital billedgengivelse af den tekst, der beskrives under `teiHeader` og formidles under `text`. Jf. 3 Faksimiler |
-|text      | et værk, enten som en enhed (fx én roman, novelle, brev) eller er en helhed af flere tekster (fx essays, digte, noveller). Jf. 4 Tekst. |
+|element   | kardinalitet | beskrivelse                                                      |
+|----------|--------------|----------------------------------------------------|
+|teiHeader | 1 | (*TEI header*) metadata til beskrivelse af den digitale ressource i bibliografisk, kodnings- og udviklingsmæssig henseende. Jf. 2 Metadata. |
+|facsimile | 0..1 | digital billedgengivelse af den tekst, der beskrives under `teiHeader` og formidles under `text`. Jf. 3 Faksimiler |
+|text      | 1 | et værk, enten som en enhed (fx én roman, novelle, brev) eller er en helhed af flere tekster (fx essays, digte, noveller). Jf. 4 Tekst. |
 
 Elementerne disponeres således: 
 
@@ -1237,7 +1238,7 @@ følgende elementer:
 
 |element   | kardinalitet | beskrivelse                                        |
 |----------|--------------|----------------------------------------------------|
-| `quote`  | 1            | selve citatet, som alt afhængig af om der er tale om prosa eller lyrik underordner elementerne `p` (1..n)- el. `lg` (1..n) |
+| `quote`  | 1            | selve citatet, som afhængig af om der er tale om prosa eller lyrik underordner elementerne `p` (_1..n_) el. `lg` (_1..n_) |
 | `bibl`   | 0..1         | (*bibliographic entry*) bibliografisk reference    |
 
 **Eksempler**
