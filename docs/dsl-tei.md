@@ -1218,9 +1218,10 @@ Til gengivelse af fremhævet tekst benyttes elementet `hi`
 (*highlighted*) med `@rend` (*rendition*), der beskriver tekstens
 visuelle udtryk. Følgende attributværdier er tilladt:
 
-| værdi       | beskrivelse        | bemærkninger    |           
-|-------------|--------------------|-----------------|
-| `initial`   | initialbogstav     | kun anvendelig under `<hi rend="smallcaps"><hi rend="initial">J</hi>ylland</hi>` |
+| værdi       | beskrivelse        | bemærkninger                             |           
+|-------------|--------------------|------------------------------------------|
+| `initial`   | initialbogstav     | kun anvendelig under \
+                                     `<hi rend="smallcaps"><hi rend="initial">J</hi>ylland</hi>` |
 | `italic`    | kursiv             |                 |
 | `small`     | petit              |                 |
 | `smallcaps` | kapitæler          |                 |
