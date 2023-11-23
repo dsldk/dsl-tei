@@ -1240,6 +1240,21 @@ følgende elementer:
 | `quote`  | 1            | selve citatet                                      |
 | `bibl`   | 0..1         | (*bibliographic entry*) bibliografisk reference    |
 
+**Eksempler**
+
+```xml
+<cit>
+  <quote>
+    <lg>
+      <l>Nihil est, Antipho,</l>
+      <l>Qvin male narrando possit Depravarier.</l>
+      <l>Tu id qvod boni est Excerpis.</l>
+    </lg>
+  </quote>
+  <bibl>Terent: Phorm: Act: 4. Sc: 4.</bibl>
+</cit>
+```
+
 <!--
 **Eksempler**
 
