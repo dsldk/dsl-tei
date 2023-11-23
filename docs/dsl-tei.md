@@ -1275,10 +1275,10 @@ hvilke dele af teksten skyldes emendering. Hertil anvendes elementet: `app`
 
 Et `app`-element indeholder de to underelementer `lem` og `rdg`:
 
-|element   | beskrivelse                                                      |
-|----------|------------------------------------------------------------------|
-| lem      | (*lemma*) indeholder den tekst, til hvilken findes en variant    | 
-| rdg      | (*reading*) indeholder et eller flere alternativer til lemmaets tekst i `q` |
+|element   | kardinalitet | beskrivelse                                                      |
+|----------|--------------|----------------------------------------------------|
+| lem      | 1            | (*lemma*) indeholder den tekst, til hvilken findes en variant    | 
+| rdg      | 1            | (*reading*) indeholder et eller flere alternativer til lemmaets tekst i `q` |
 
 Ud fra den betragtning at teksten i elementet `rdg` ofte både indledes og
 afsluttes af redaktionelle bemærkninger og sigelhenvisninger har vi valgt at
