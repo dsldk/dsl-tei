@@ -1449,8 +1449,8 @@ Gyldige værdier af `figure`-elementets `@type`:
 | `@type`, værdi   | beskrivelse   |
 |------------------|---------------|
 | asterisk         | centreret &#42; |
-| asterism         | centreret ⁂   |
-| fleuron          | centreret ❦   |
+| asterism         | centreret &#x2042;   |
+| fleuron          | centreret &#x10AF1; ❦   |
 | fleuron-reversed | centreret ☙   |
 | fleuron-rotated  | centreret ❧   |
 | shortline        | kort centreret skillestreg |
