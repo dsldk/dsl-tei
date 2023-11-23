@@ -1218,7 +1218,7 @@ Til gengivelse af fremhævet tekst benyttes elementet `hi`
 (*highlighted*) med `@rend` (*rendition*), der beskriver tekstens
 visuelle udtryk. Følgende attributværdier er tilladt:
 
-| værdi       | beskrivelse        | eksempel                                    |           
+| værdi       | betydning          | bemærkning                                    |           
 |-------------|--------------------|---------------------------------------------|
 | `initial`   | initialbogstav     | `<hi rend="smallcaps"><hi rend="initial">J</hi>eg ...</hi>` |
 | `italic`    | kursiv             |                 |
@@ -1448,7 +1448,7 @@ Gyldige værdier af `figure`-elementets `@type`:
 
 | `@type`, værdi   | beskrivelse   |
 |------------------|---------------|
-| asterisk         | centreret \*  |
+| asterisk         | centreret &#42; |
 | asterism         | centreret ⁂   |
 | fleuron          | centreret ❦   |
 | fleuron-reversed | centreret ☙   |
