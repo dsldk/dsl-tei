@@ -1220,8 +1220,8 @@ visuelle udtryk. Følgende attributværdier er tilladt:
 
 | værdi       | beskrivelse        | bemærkninger                             |           
 |-------------|--------------------|------------------------------------------|
-| `initial`   | initialbogstav     | kun anvendelig under \
-                                     `<hi rend="smallcaps"><hi rend="initial">J</hi>ylland</hi>` |
+| `initial`   | initialbogstav     | kun anvendelig under `<hi rend="smallcaps"><hi rend="initial">J</hi>ylland</hi>` \
+                                     her en test |
 | `italic`    | kursiv             |                 |
 | `small`     | petit              |                 |
 | `smallcaps` | kapitæler          |                 |
