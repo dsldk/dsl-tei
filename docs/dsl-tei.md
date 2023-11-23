@@ -1219,12 +1219,12 @@ Til gengivelse af fremhævet tekst benyttes elementet `hi`
 visuelle udtryk. Følgende attributværdier er tilladt:
 
 | værdi       | betydning          | bemærkning                                    |           
-|-------------|--------------------|---------------------------------------------|
-| `initial`   | initialbogstav     | `<hi rend="smallcaps"><hi rend="initial">J</hi>eg ...</hi>` |
-| `italic`    | kursiv             |                 |
+|-------------|--------------------|-----------------------------------------------|
+| `initial`   | initialbogstav     | Bruges kun i forbindelse med kapitæler, fx `<hi rend="smallcaps"><hi rend="initial">J</hi>eg ...</hi>` |
+| `italic`    | kursiv             | `den berømte <hi rend="italic">Stærkodder II,</hi>` |
 | `small`     | petit              |                 |
-| `smallcaps` | kapitæler          |                 |
-| `spaced`    | spærret/spatieret  |                 |
+| `smallcaps` | kapitæler          | `<hi rend="smallcaps">H. Johansen,</hi> Sagfører.`  |
+| `spaced`    | spærret/spatieret  | `Kirkens <hi rend="spaced">egne</hi> Rammer`        |
 | `strong`    | fed                |                 |
 | `sub`       | understillet       |                 |
 | `sup`       | overstillet        |                 |
@@ -1235,13 +1235,12 @@ visuelle udtryk. Følgende attributværdier er tilladt:
 Citater bringes i elementet `cit` (*cited quotation*), som indholder
 følgende elementer:
 
-`quote`
-:	citatet
+|element   | kardinalitet | beskrivelse                                        |
+|----------|--------------|----------------------------------------------------|
+| `quote`  | 1            | selve citatet                                      |
+| `bibl`   | 0..1         | (*bibliographic entry*) bibliografisk reference    |
 
-`bibl`
-:	(*bibliographic entry*) 
-
-
+<!--
 **Eksempler**
 
 I [Herman Bangs Breve,
@@ -1266,6 +1265,7 @@ Her bør teksten emenderes, således at dittografien kun beskrives i
 	         et sideskift i brevet</rdg>
 	  </app>
 	tænke paa
+-->
 
 #### 4.3.5.3 Tekstkritik
 
@@ -1450,7 +1450,7 @@ Gyldige værdier af `figure`-elementets `@type`:
 |------------------|---------------|
 | asterisk         | centreret &#42; |
 | asterism         | centreret &#x2042;   |
-| fleuron          | centreret &#x10AF1; ❦   |
+| fleuron          | centreret ❦   |
 | fleuron-reversed | centreret ☙   |
 | fleuron-rotated  | centreret ❧   |
 | shortline        | kort centreret skillestreg |
