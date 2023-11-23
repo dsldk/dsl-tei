@@ -1237,7 +1237,7 @@ følgende elementer:
 
 |element   | kardinalitet | beskrivelse                                        |
 |----------|--------------|----------------------------------------------------|
-| `quote`  | 1            | selve citatet, som alt afhængig af om der er tale om prosa eller lyrik bringes i `<p>` hhv. `<lg>` |
+| `quote`  | 1            | selve citatet, som alt afhængig af om der er tale om prosa eller lyrik underordner elementerne `p` (1..n)- el. `lg` (1..n) |
 | `bibl`   | 0..1         | (*bibliographic entry*) bibliografisk reference    |
 
 **Eksempler**
