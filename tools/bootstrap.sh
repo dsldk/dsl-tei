@@ -1,13 +1,8 @@
-#!/bin/bash -
-# Or possibly: #!/usr/bin/env bash
-# bootstrap.sh: a tool for configuration of the dsl-workspace
-# Author: Thomas Hansen, 2023-11-28
+#!/bin/sh
 
-PROGRAM=${0##*/}  # bash version of `basename`
-
-repository_url="git@github.com:dsldk/dsl-tei.git"
-tei_directory="dsl-tei"
 workspace_dir="dsl-workspace"
+tei_directory="dsl-tei"
+repository_url="git@github.com:dsldk/dsl-tei.git"
 danish_dictionary="da_DK"
 
 # Check if the directory exists
@@ -30,7 +25,14 @@ fi
 
 # Install Aspell with Danish dictionary
 echo "Installing Aspell with Danish dictionary..."
-sudo apt-get update
-sudo apt-get install aspell aspell-da
+if command -v apt-get &> /dev/null; then
+    sudo apt-get update
+    sudo apt-get install aspell aspell-da
+elif command -v brew &> /dev/null; then
+    brew install aspell
+    brew install aspell-da
+else
+    echo "Package manager not supported. Please install Aspell and the Danish dictionary manually."
+fi
 
 echo "Script execution completed."
