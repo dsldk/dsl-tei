@@ -2,7 +2,7 @@
 
 workspace_dir="dsl-workspace"
 tei_directory="dsl-tei"
-repository_url="https://github.com/example/repository.git"
+repository_url="git@github.com:dsldk/dsl-tei.git"
 danish_dictionary="da_DK"
 
 # Check if the directory exists
