@@ -21,9 +21,7 @@ redaktionen anses for nødvendig for at publicere på Tekstnet.
    Hvis du er OS X-bruger kører du i stedet:
 
    ```
-   wget -O
-   https://raw.githubusercontent.com/dsldk/dsl-tei/develop/tools/bootstrap.sh |
-   zsh
+   wget -O https://raw.githubusercontent.com/dsldk/dsl-tei/develop/tools/bootstrap.sh | zsh
    ```
 
 3. Læs vejledning i [opsætning af arbejdsområde](docs/up-and-running.md)
