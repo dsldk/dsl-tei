@@ -11,7 +11,7 @@ patterns = [
         r'[a-z]- [a-z]',                    # misplaced hyphen?
         r'[a-z][0-9]',                      # pagenumber within text?
         r'[0-9]\s*</p>',                    # pagenumber within text?
-        r'[a-z,;]\s*</p>\s*?<p>\s*[a-z]',   # wrong <p> ending?
+        r'[a-z,;-]\s*</p>\s*?<p>\s*[a-z]',   # wrong <p> ending?
         ]
 
 

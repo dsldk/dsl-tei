@@ -1,7 +1,7 @@
-<html>
+<!DOCTYPE HTML><html>
    <head>
       <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-      <title>Tekstnet, referencedokument Tekstnet, reference document</title>
+      <title>Tekstnet, referencedokument</title>
       <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
       <link rel="stylesheet" href="../css/styles.css" type="text/css" media="">
    </head>
@@ -9,7 +9,7 @@
       <nav class="navbar fixed-top navbar-expand-md navbar-light bg-light">
          <div class="container"><a class="navbar-brand" href="#">Tekstnet, referencedokument</a><button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button><div class="collapse navbar-collapse" id="navbarSupportedContent">
                <ul class="navbar-nav mr-auto">
-                  <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Indhold </a><div class="dropdown-menu" aria-labelledby="navbarDropdown"><a href="#titelblad" class="dropdown-item">Titelblad</a><a href="#" class="dropdown-item">Dedikation</a><a href="#" class="dropdown-item">Forord</a><a href="#" class="dropdown-item">Motto</a><a href="#" class="dropdown-item">1. Tekstopmærkning</a><a href="#" class="dropdown-item">2. Lister</a><a href="#" class="dropdown-item">3. Tabeller</a><a href="#" class="dropdown-item">4. Spalter</a><a href="#" class="dropdown-item">5. Særlig notation</a><a href="#" class="dropdown-item">Breve</a></div>
+                  <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Indhold </a><div class="dropdown-menu" aria-labelledby="navbarDropdown"><a href="#001" class="dropdown-item">Titelblad</a><a href="#002" class="dropdown-item">Dedikation</a><a href="#003" class="dropdown-item">Forord</a><a href="#004" class="dropdown-item">Motto</a><a href="#005" class="dropdown-item">1. Tekstopmærkning</a><a href="#006" class="dropdown-item">2. Lister</a><a href="#007" class="dropdown-item">3. Tabeller</a><a href="#008" class="dropdown-item">4. Spalter</a><a href="#009" class="dropdown-item">5. Blokkommentarer og advarsler</a><a href="#010" class="dropdown-item">6. Særlig notation</a><a href="#011" class="dropdown-item">Breve</a></div>
                   </li>
                </ul>
             </div>
@@ -19,13 +19,13 @@
          <div class="row">
             <div class="col">
                <h2 class="date-place text-left">1425. 12. juli
-                  &nbsp;
-                  København&nbsp;
-                  <br>Fra Afsendernavn
+                  &nbsp; København&nbsp; <br>Fra Afsendernavn
                   til Modtagernavn
                   <hr>
-                  <p>På denne plads gives et resumé af den udgivne tekst. Ved udgivelse af diplomer svarer
-                     dette felt til regesten.</p>
+                  <abstract xmlns="http://www.tei-c.org/ns/1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+                     <p xmlns="">På denne plads gives et resumé af den udgivne tekst. Ved udgivelse af diplomer svarer
+                        dette felt til regesten.</p>
+                  </abstract>
                </h2>
             </div>
          </div>
@@ -35,8 +35,8 @@
                   <dt class="col-sm-2">A</dt>
                   <dd class="col-sm-10">Lund test, Lunde Kapitels Arkiv. </dd>
                   <dt class="col-sm-2">Aa</dt>
-                  <dd class="col-sm-10">Stockholm, Riksarkivet, Registrum ecclesie Lundensis (Lundebogen), p.
-                     250. Beskrivelse af tekstvidnets fysiske tilstand. Redegørelse for tekstvidnets
+                  <dd class="col-sm-10"> Stockholm, Riksarkivet, Registrum ecclesie Lundensis (Lundebogen),
+                     p. 250. Beskrivelse af tekstvidnets fysiske tilstand. Redegørelse for tekstvidnets
                      proveniens. Tryk: Pontan. Rerum Danicarum Libri IX 579-584. </dd>
                </dl>
             </div>
@@ -45,20 +45,29 @@
       <div class="container text-section">
          <div class="col">
             <div class="my-5">
-               <div id="titelblad" class="title-page">
+               <div id="titlepage-section" class="titlePage">
                   <h1 class="center">Hovedstrømninger i 19de Aarhundredes Litteratur.</h1>
                   <h2 class="center">Forelæsninger holdte ved Kjøbenhavns Universitet i
                      Efteraarshalvaaret 1871</h2>
                   <h2 class="center">Emigrantlitteraturen.</h2>
-                  <p class="center">af Georg Brandes.</p>
+                  <p class="center">af<br> Georg Brandes.</p>
+                  <p class="center"><br><br><p class="center">København og Kristiania</p>
+                     <p class="center">Gyldendalske Boghandel<br>Nordisk Forlag</p>
+                     <hr class="shortline">
+                     <p class="center">1906</p>
+                  </p>
                </div>
-               <div id="">
+               <div id="002">
                   <h1>Dedikation</h1>
-                  <p>Hr. Professor 
-                     <persName xmlns="http://www.tei-c.org/ns/1.0">H. Brøchner</persName> tilegnes dette Skrift med Taknemmelighed
-                     og Venskab af Forfatteren.</p>
+                  <div class="p-3 mb-2 alert">
+                     <p>Dedikationer forekommer som oftest under <code xmlns="http://www.tei-c.org/ns/1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">&lt;front&gt;</code> og indsættes
+                        umiddelbart herunder som <code xmlns="http://www.tei-c.org/ns/1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">&lt;div&gt;</code>-elementer.</p>
+                  </div><br><div class="subsection">
+                     <p>Hr. Professor H. Brøchner tilegnes dette Skrift med Taknemmelighed
+                        og Venskab af Forfatteren.</p>
+                  </div>
                </div>
-               <div id="">
+               <div id="003">
                   <h1>Forord</h1>
                   <p>Disse Forelæsninger have vakt en ufortjent Opmærksomhed, som af deres Forfatter kun
                      kunde
@@ -75,10 +84,10 @@
                      hverken har sagt eller ment. </p>
                   <p class="prose-right"> G. B.</p>
                </div>
-               <div id="">
+               <div id="004">
                   <h1>Motto</h1>
-                  <div class="epigraph">
-                     <div class="ml-5 my-5">
+                  <epigraph xmlns="http://www.tei-c.org/ns/1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+                     <div xmlns="" class="ml-5 my-5">
                         <div class="quotation">
                            <p>»Ein wächserner Hausgötze, den man ausser Acht gelassen hatte, stand neben einem
                               Feuer, worin edle campanische Gefässe gehärtet wurden und fing an zu schmelzen.</p>
@@ -87,12 +96,11 @@
                            <p>Das Feuer aber antwortete: Beklage Dich vielmehr über Deine Natur; denn ich, was
                               mich betrifft, bin überall Feuer.«</p>
                         </div>
-                        <div class="signature text-right">
-                           <persName xmlns="http://www.tei-c.org/ns/1.0">W. Heinse</persName>. </div>
+                        <div class="signature text-right">W. Heinse. </div>
                      </div>
-                  </div>
+                  </epigraph>
                </div>
-               <div id="">
+               <div id="005">
                   <h1>Kapiteloverskrift</h1>
                   <h2>Underoverskrift til kapiteloverskrift</h2>
                   <div class="subsection">
@@ -125,37 +133,58 @@
                            tekst.</span></p>
                   </div>
                   <div class="subsection">
-                     <h2>Poesi</h2>
-                     <p>Venstrestillet strofe med overskrift:</p>
-                     <div class="my-4"><strong>Overskrift</strong><div class="verse-line">jeg arbejder ikke</div>
-                        <div class="verse-line">med mine hænder,</div>
-                        <div class="verse-line">ikke for samfundets forbedring –</div>
-                        <div class="verse-line">jeg driver dagene væk</div>
-                        <div class="verse-line" data-num="5">ved at tænke endeløse tanker.</div>
-                     </div>
-                     <p>En centreret strofe:</p>
-                     <div class="my-4 text-center">
-                        <div class="verse-line">jeg arbejder ikke</div>
-                        <div class="verse-line">med mine hænder,</div>
-                        <div class="verse-line">ikke for samfundets forbedring –</div>
-                        <div class="verse-line">jeg driver dagene væk</div>
-                        <div class="verse-line" data-num="5">ved at tænke endeløse tanker.</div>
-                     </div>
-                     <p>En højrestillet strofe:</p>
-                     <div class="my-4 text-right">
-                        <div class="verse-line">jeg arbejder ikke</div>
-                        <div class="verse-line">med mine hænder,</div>
-                        <div class="verse-line">ikke for samfundets forbedring –</div>
-                        <div class="verse-line">jeg driver dagene væk</div>
-                        <div class="verse-line" data-num="5">ved at tænke endeløse tanker.</div>
+                     <h2>Lyrik</h2>
+                     <p>Lyrik gengives som udgangspunkt med venstreindrykning i forhold til prosa. Som
+                        udgangspunkt er tekstjusteringen venstrestillet:</p><br><div class="mt-2 mb-4">
+                        <div class="line">jeg arbejder ikke</div>
+                        <div class="line">med mine hænder,</div>
+                        <div class="line">ikke for samfundets forbedring –</div>
+                        <div class="line">jeg driver dagene væk</div>
+                        <div class="line" data-num="5">ved at tænke endeløse tanker.</div>
+                     </div><br><p class="noindent">Tekstjusteringen kan også centreres:</p>
+                     <div class="line-group text-center">
+                        <div class="line">jeg arbejder ikke</div>
+                        <div class="line">med mine hænder,</div>
+                        <div class="line">ikke for samfundets forbedring –</div>
+                        <div class="line">jeg driver dagene væk</div>
+                        <div class="line" data-num="5">ved at tænke endeløse tanker.</div>
+                     </div><br><p class="noindent">– eller den kan højrestilles:</p>
+                     <div class="line-group text-right">
+                        <div class="line">jeg arbejder ikke</div>
+                        <div class="line">med mine hænder,</div>
+                        <div class="line">ikke for samfundets forbedring –</div>
+                        <div class="line">jeg driver dagene væk</div>
+                        <div class="line" data-num="5">ved at tænke endeløse tanker.</div>
+                     </div><br><p class="noindent">Ved at benytte attributtet <code xmlns="http://www.tei-c.org/ns/1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">@rend</code> udfyldt med værdier fra
+                        <code xmlns="http://www.tei-c.org/ns/1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">indent1</code> til <code xmlns="http://www.tei-c.org/ns/1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">indent10</code> kan man vha. forskellige slags indrykning
+                        gengive forskellige former for versemål. Det er også muligt at have titler, alt sammen
+                        illustreret med et eksempel fra Ambrosius Stub:</p>
+                     <div class="mt-2 mb-4">
+                        <h2 class="verse-head"><em>Den kiedsom Vinter gik sin Gang</em></h2>
+                        <div class="line">&nbsp;&nbsp;&nbsp;&nbsp;Den kiedsom Vinter gik sin gang,</div>
+                        <div class="line">&nbsp;&nbsp;&nbsp;&nbsp;Den Dag saa kort, den Nat saa lang</div>
+                        <div class="line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Forandrer sig</div>
+                        <div class="line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Saa lempelig;</div>
+                        <div class="line" data-num="5">Den barske Vind, den mørke Skye – maa flye;</div>
+                        <div class="line">&nbsp;&nbsp;&nbsp;&nbsp;Vor Kakkelovn saa eene staaer,</div>
+                        <div class="line">&nbsp;&nbsp;&nbsp;&nbsp;Og hver Dags Kolde syge faaer;</div>
+                        <div class="line">&nbsp;&nbsp;&nbsp;&nbsp;Den tykke Vams, den foret Dragt</div>
+                        <div class="line">&nbsp;&nbsp;&nbsp;&nbsp;Er alt hengt hen,og reent foragt,</div>
+                        <div class="line" data-num="10">Og Muffen er tillige giemt – og glemt;</div>
+                        <div class="line">&nbsp;&nbsp;&nbsp;&nbsp;Mand frygter ey, at Snee og Slud</div>
+                        <div class="line">&nbsp;&nbsp;&nbsp;&nbsp;Skal møde dem, som vil gaae ud;</div>
+                        <div class="line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Thi lad os gaae</div>
+                        <div class="line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;At skue paae,</div>
+                        <div class="line">Hvor smukt Naturen sig beteer – og leer.</div>
                      </div>
                   </div>
                   <div class="subsection">
                      <h2>Dramatik</h2>
                      <div class="subsection">
-                        <p>Dramatik opmærkes som sekvenser af <code>sp</code>- (<em>speech</em>)
-                           og <code>stage</code>-elementer. Sidstnævnte skal ved præsentation af dramatis personae
-                           anvendes med <code>@type="setting"</code>, ellers med <code>@type="delivery"</code>.</p>
+                        <p>Dramatik opmærkes som sekvenser af <code xmlns="http://www.tei-c.org/ns/1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">sp</code>- (<em>speech</em>)
+                           og <code xmlns="http://www.tei-c.org/ns/1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">stage</code>-elementer. Sidstnævnte skal ved præsentation af dramatis
+                           personae anvendes med <code xmlns="http://www.tei-c.org/ns/1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">@type="setting"</code>, ellers med
+                           <code xmlns="http://www.tei-c.org/ns/1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">@type="delivery"</code>.</p>
                      </div>
                      <div class="subsection">
                         <h3>Scene 8</h3>
@@ -180,7 +209,7 @@
                   </div>
                   <div class="subsection">
                      <h2>Citater</h2>
-                     <p>Citater optræder med bredere venstremargin:</p>
+                     <p>Citater optræder med bredere venstremargin; her illustreret med prosa:</p>
                      <div class="ml-5 my-5">
                         <div class="quotation">
                            <p>»Ein wächserner Hausgötze, den man ausser Acht gelassen hatte, stand neben einem
@@ -190,8 +219,20 @@
                            <p>Das Feuer aber antwortete: Beklage Dich vielmehr über Deine Natur; denn ich, was
                               mich betrifft, bin überall Feuer.«</p>
                         </div>
-                        <div class="signature text-right">
-                           <persName xmlns="http://www.tei-c.org/ns/1.0">W. Heinse</persName>. </div>
+                        <div class="signature text-right">W. Heinse. </div>
+                     </div>
+                     <p class="noindent">Også lyrik indrykkes når det citeres</p>
+                     <div class="ml-5 my-5">
+                        <div class="quotation">
+                           <div class="mt-2 mb-4">
+                              <div class="line">Her vil ties, her vil bies</div>
+                              <div class="line">&nbsp;&nbsp;&nbsp;&nbsp;Her vil bies, o svage Sind!</div>
+                              <div class="line">Vist skal du hente, kun ved at vente</div>
+                              <div class="line">&nbsp;&nbsp;&nbsp;&nbsp;Kun ved at vente, vor Sommer ind.</div>
+                              <div class="line">Her vil ties &amp;c. &amp;c.</div>
+                           </div>
+                        </div>
+                        <div class="signature text-right"></div>
                      </div>
                   </div>
                   <div class="subsection">
@@ -204,54 +245,23 @@
                   <div class="subsection">
                      <h2>Fodnoter</h2>
                      <div class="subsection">
-                        <p>Fodnoter gengives efter det afsnit de optræder i. Den løsning er valgt for at give
-                           de
-                           bedste vilkår for at overskue både den tekst, noten refererer til, og noten selv.
-                           Her
-                           kommer den første fodnote,<sup><a>1</a></sup> her kommer den anden fodnote,<sup><a>2</a></sup> og her følger mere tekst. </p>
-                        <div class="footnote-block">
-                           <hr class="footnote-separator">
-                           <div class="footnote row">
-                              <div class="col footnote-number">1.</div>
-                              <div class="col">
-                                 <p>Dette er
-                                    teksten til den første fodnote.</p>
-                              </div>
-                           </div>
-                           <div class="footnote row">
-                              <div class="col footnote-number">2.</div>
-                              <div class="col">
-                                 <p>Den anden fodnote er længere end den første, men det er vigtigt at
-                                    der er tilstrækkeligt med margin omkring, således at noterne kan skelnes fra
-                                    hinanden</p>
-                                 <p>Dette er andet afsnit i noten.</p>
-                              </div>
-                           </div>
-                        </div>
+                        <p>Fodnoter gengives som popup-elementer. Her kommer den første fodnote, her kommer den anden fodnote, og her følger mere tekst. </p>
                         <p>Efter fodnotesektionen følger flere afsnit. Fodnoter kan også forekomme i
                            overskrifter. Det er der et eksempel på i det følgende:</p>
                      </div>
                      <div class="subsection">
-                        <h3>Overskrift med fodnote<sup><a>3</a></sup></h3>
+                        <h3>Overskrift med fodnote</h3>
                         <p>Her kommer første afsnit. Fodnoten i overskriften skal følge efter første afsnit.</p>
-                        <div class="footnote-block">
-                           <hr class="footnote-separator">
-                           <div class="footnote row">
-                              <div class="col footnote-number">3.</div>
-                              <div class="col">
-                                 <p>Dette er en note som skal følge
-                                    efter første afsnit.</p>
-                              </div>
-                           </div>
-                        </div>
                      </div>
                   </div>
                   <div class="subsection">
                      <h2>Kommentarer, person- og stednavne</h2>
-                     <p> Kommentarer opmærkes vha. <code>&lt;ref target=""/&gt;</code> og vises som en popup.
-                        Herefter følger en kommentar.<button id="n1" type="button" class="btn btn-outline-secondary btn-sm" data-container="body" data-toggle="popover" data-template="<div class='popover' role='tooltip'&gt;<div class='arrow'&gt;</div&gt;<h3 class='popover-header'&gt;</h3&gt;<div class='popover-body'&gt;</div&gt;</div&gt;" data-placement="auto" data-html="true" data-content="{{% note n1 %}}">N</button></p>
+                     <p> Kommentarer opmærkes vha. <code xmlns="http://www.tei-c.org/ns/1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">&lt;ref target=""/&gt;</code> og vises som en popup.
+                        Herefter følger en kommentar.
+                        <ref xmlns="http://www.tei-c.org/ns/1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" target="n1"/>
+                     </p>
                      <p> Personnavne fremhæves i teksten og aktiverer en popup med en kort note om pågældende:
-                        <mark class="name" data-container="body" data-toggle="popover" data-template="<div class='popover' role='tooltip'&gt;<div class='arrow'&gt;</div&gt;<h3 class='popover-header'&gt;</h3&gt;<div class='popover-body'&gt;</div&gt;</div&gt;" data-placement="auto" data-html="true" data-content="{{% person brandes_georg_1842 %}}">Georg Brandes</mark> og <mark class="name" data-container="body" data-toggle="popover" data-template="<div class='popover' role='tooltip'&gt;<div class='arrow'&gt;</div&gt;<h3 class='popover-header'&gt;</h3&gt;<div class='popover-body'&gt;</div&gt;</div&gt;" data-placement="auto" data-html="true" data-content="{{% person brahe_tycho_1546 %}}">Tycho Brahe</mark>. Stednavne er endnu ikke
+                        Georg Brandes og Tycho Brahe. Stednavne er endnu ikke
                         implementeret.</p>
                   </div>
                   <div class="subsection">
@@ -275,23 +285,38 @@
                      <hr class="fleuron-rotated">
                   </div>
                </div>
-               <div id="">
+               <div id="006">
                   <h1>2. Lister</h1>
-                  <p>Eksempel på simpel liste, hvilket her vil sige en liste uden nummerering eller andet
-                     præg:</p>
-                  <ul class="simple-list">
-                     <li>1 første</li>
-                     <li>2 andet</li>
-                     <li>3 tredje</li>
+                  <p>En uordnet liste opnås ved elementet <code xmlns="http://www.tei-c.org/ns/1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">&lt;list&gt;</code>:</p>
+                  <ul>
+                     <li>første</li>
+                     <li>andet</li>
+                     <li>tredje</li>
                   </ul>
-                  <p>Eksempel på nummereret liste</p>
+                  <p class="noindent">En nummereret liste opnås ved <code xmlns="http://www.tei-c.org/ns/1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">&lt;list
+                        rend="numbered"&gt;</code></p>
                   <ol>
                      <li>første</li>
                      <li>andet</li>
                      <li>tredje</li>
                   </ol>
+                  <p class="noindent">Den nummererede liste (<code xmlns="http://www.tei-c.org/ns/1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">&lt;list rend="numbered"&gt;</code>)
+                     benyttes også hvis rækkefølgen er prædefineret; tallet indsættes i så fald sådan
+                     <code xmlns="http://www.tei-c.org/ns/1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">&lt;item n="7"&gt;</code></p>
+                  <ol>
+                     <li value="7">første</li>
+                     <li value="10">andet</li>
+                     <li value="3">tredje</li>
+                  </ol>
+                  <p class="noindent">Hvis man ønsker en liste uden præg anvendes <code xmlns="http://www.tei-c.org/ns/1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">&lt;list
+                        rend="simple"&gt;</code></p>
+                  <ul class="simple-list">
+                     <li>første</li>
+                     <li>andet</li>
+                     <li>tredje</li>
+                  </ul>
                </div>
-               <div id="">
+               <div id="007">
                   <h1>3. Tabeller</h1>
                   <p>Her er en tabel:</p>
                   <table class="table table-bordered">
@@ -399,17 +424,19 @@
                      </tr>
                      <tr>
                         <td>Differentia</td>
-                        <td>348<button id="App2" type="button" class="btn btn-outline-secondary btn-sm" data-container="body" data-toggle="popover" data-template="<div class='popover' role='tooltip'&gt;<div class='arrow'&gt;</div&gt;<h3 class='popover-header'&gt;</h3&gt;<div class='popover-body'&gt;</div&gt;</div&gt;" data-placement="auto" data-html="true" data-content="348] &#xA;      <span class=&#34;app-crit-reading&#34;&gt;&#xA;      <span class=&#34;app-crit-reading-quote&#34;&gt;248</span&gt;&#xA;    </span&gt;&#xA;    " data-title="Tekstkritisk note 2">A</button></td>
+                        <td>348<button id="App2" type="button" class="btn btn-outline-secondary btn-sm" data-container="body" data-toggle="popover" data-template="<div class='popover' role='tooltip'&gt;<div class='arrow'&gt;</div&gt;<h3 class='popover-header'&gt;</h3&gt;<div class='popover-body'&gt;</div&gt;</div&gt;" data-placement="auto" data-html="true" data-content="348] &#xA;      <span class=&#34;app-crit-reading&#34;&gt;&#xA;      <span class=&#34;app-crit-reading-quote&#34;&gt;248</span&gt;&#xA;     E, D, V</span&gt;&#xA;    " data-title="Tekstkritisk note 2">A</button></td>
                         <td>29</td>
                         <td>39.</td>
-                        <td>346<button id="App3" type="button" class="btn btn-outline-secondary btn-sm" data-container="body" data-toggle="popover" data-template="<div class='popover' role='tooltip'&gt;<div class='arrow'&gt;</div&gt;<h3 class='popover-header'&gt;</h3&gt;<div class='popover-body'&gt;</div&gt;</div&gt;" data-placement="auto" data-html="true" data-content="346] &#xA;      <span class=&#34;app-crit-reading&#34;&gt;&#xA;      <span class=&#34;app-crit-reading-quote&#34;&gt;246</span&gt;&#xA;    </span&gt;&#xA;    " data-title="Tekstkritisk note 3">A</button></td>
+                        <td>346<button id="App3" type="button" class="btn btn-outline-secondary btn-sm" data-container="body" data-toggle="popover" data-template="<div class='popover' role='tooltip'&gt;<div class='arrow'&gt;</div&gt;<h3 class='popover-header'&gt;</h3&gt;<div class='popover-body'&gt;</div&gt;</div&gt;" data-placement="auto" data-html="true" data-content="346] &#xA;      <span class=&#34;app-crit-reading&#34;&gt;&#xA;      <span class=&#34;app-crit-reading-quote&#34;&gt;246</span&gt;&#xA;     E, D, V</span&gt;&#xA;    " data-title="Tekstkritisk note 3">A</button></td>
                         <td>14</td>
                         <td>26.</td>
                      </tr>
                   </table>
                </div>
-               <div id="">
-                  <h1>4. Spalter</h1>
+               <div id="008">
+                  <h1>
+                     <reg xmlns="http://www.tei-c.org/ns/1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">4. Spalter</reg>
+                  </h1>
                   <div class="subsection">
                      <p>På denne side ses eksempler på brug af spalter. Første eksempel illustrerer brug af
                         halvspalter:</p>
@@ -457,30 +484,59 @@
                      </div>
                   </div>
                </div>
-               <div id="">
-                  <h1>5. Særlig notation</h1>
-                  <p>Til opmærkning af matematiske formler anvendes TeX-notation.</p>
+               <div id="009">
+                  <h1>5. Blokkommentarer og advarsler</h1>
                   <div class="subsection">
-                     <h2>Matematik</h2>
+                     <p>I den løbende tekst indskydes blokkommentarer vha. <code xmlns="http://www.tei-c.org/ns/1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">&lt;div
+                           type="comment"&gt;</code>. For at understrege forskellen på kommentarer og
+                        almindelig tekst, vil kommentarer fremtræde på let grånet baggrund som i eksemplet
+                        herunder:</p>
+                  </div><br><div class="p-3 mb-2 comment">
+                     <p>Lorem ipsum dolor sit amet, <em>consectetur</em> adipiscing elit. Cras
+                        pellentesque lacus sit amet quam laoreet condimentum. Donec suscipit justo non iaculis
+                        tempus. Nam lobortis posuere massa, gravida faucibus massa eleifend id. In vehicula
+                        mollis dolor sed efficitur. Donec vitae quam maximus, mollis arcu at, iaculis dui.
+                        Duis
+                        auctor maximus fringilla. Integer in risus sit amet quam sagittis ullamcorper ut non
+                        lacus. Aenean ut malesuada nisi. Suspendisse condimentum accumsan ligula, vel sodales
+                        diam tincidunt egestas.</p>
+                     <p>Integer <strong>luctus ex metus</strong>. Proin dignissim nulla in sem hendrerit
+                        interdum. Nullam vitae dui sit amet lorem dapibus dignissim. Fusce nec iaculis dui,
+                        vitae interdum mi. Duis facilisis velit at velit bibendum, id suscipit ex facilisis.
+                        Duis tristique eu sem at hendrerit.</p>
+                  </div><br><div class="subsection">
+                     <p>Det er også muligt at indsætte advarselstekst vha. <code xmlns="http://www.tei-c.org/ns/1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">&lt;div
+                           type="alert"&gt;</code>.</p>
+                  </div><br><div class="p-3 mb-2 alert">
+                     <p>Dette er en <strong>advarsel</strong>. Husk altid at sætte advarsler eller
+                        påmindelser i vha. <code xmlns="http://www.tei-c.org/ns/1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">&lt;div type="alert"&gt;</code>.</p>
+                  </div>
+               </div>
+               <div id="010">
+                  <h1>6. Særlig notation</h1>
+                  <p>Til opmærkning af matematiske formler anvendes 
+                     <formula xmlns="http://www.tei-c.org/ns/1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" notation="tex">TeX</formula>-notation.</p>
+                  <div class="subsection">
+                     <h2>Formler</h2>
                      <p>Et eksempel på matematik indlejret i den løbende tekst (inline) er dette: Integralet
                         
-                        <formula xmlns="http://www.tei-c.org/ns/1.0" notation="tex">\(\int_0^\infty e^{it}t^{x-1}dt\)</formula> er jo et
+                        <formula xmlns="http://www.tei-c.org/ns/1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" notation="tex">\(\int_0^\infty e^{it}t^{x-1}dt\)</formula> er jo et
                         “Dirichlet’s Integral” (ses strax naar 
-                        <formula xmlns="http://www.tei-c.org/ns/1.0" notation="tex">\(x-1\)</formula> sættes
+                        <formula xmlns="http://www.tei-c.org/ns/1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" notation="tex">\(x-1\)</formula> sættes
                         lig  
-                        <formula xmlns="http://www.tei-c.org/ns/1.0" notation="tex">\(-y\)</formula>; de Diri.&nbsp;Int.&nbsp;er nemlig af Form 
-                        <formula xmlns="http://www.tei-c.org/ns/1.0" notation="tex">\(\int_0^\infty \frac{f(t)}{t^y}dt\)</formula>
+                        <formula xmlns="http://www.tei-c.org/ns/1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" notation="tex">\(-y\)</formula>; de Diri.&nbsp;Int.&nbsp;er nemlig af Form 
+                        <formula xmlns="http://www.tei-c.org/ns/1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" notation="tex">\(\int_0^\infty \frac{f(t)}{t^y}dt\)</formula>
                      </p>
-                     <p>Ligninger kan også optræde i blokke som her: <br><formula xmlns="http://www.tei-c.org/ns/1.0" notation="tex">$$s(x) =
+                     <p>Ligninger kan også optræde i blokke som her: <br><formula xmlns="http://www.tei-c.org/ns/1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" notation="tex">$$s(x) =
                            \int^x_0e^{it} \, {t^n dt} = \frac{1}{i}e^{ix} \cdot x^{n} +\dots+ (i)^{n + 1} \cdot
                            n!$$</formula>
-                        <br>Dette giver en simpel delvis Integration <br><formula xmlns="http://www.tei-c.org/ns/1.0" notation="tex">$$s(x)
+                        <br>Dette giver en simpel delvis Integration <br><formula xmlns="http://www.tei-c.org/ns/1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" notation="tex">$$s(x)
                            \quad\text{altsaa lig}\quad \sum_{r=0}^n k_r \cdot e^{ix} \cdot x^r + (i)^{n + 1}
                            \cdot n!$$</formula>
                         <br>da nu vi skal integrere 
-                        <formula xmlns="http://www.tei-c.org/ns/1.0" notation="tex">\(s(x)\)</formula> o.s. ...
+                        <formula xmlns="http://www.tei-c.org/ns/1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" notation="tex">\(s(x)\)</formula> o.s. ...
                         
-                        <formula xmlns="http://www.tei-c.org/ns/1.0" notation="tex">\(n+1\)</formula> Gange endnu.</p>
+                        <formula xmlns="http://www.tei-c.org/ns/1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" notation="tex">\(n+1\)</formula> Gange endnu.</p>
                   </div>
                   <div class="subsection">
                      <h2>Noder</h2>
@@ -490,24 +546,12 @@
                      <h2>Kode</h2>
                      <p>Eksempel mangler</p>
                   </div>
-                  <div class="subsection">
-                     <h2>Grafer</h2>
-                     <p>Eksempel på afbildning af træ</p>
-                     <eTree xmlns="http://www.tei-c.org/ns/1.0" n="ex1"><label>PP</label><eTree><label>P</label><eLeaf><label>with</label></eLeaf>
-                        </eTree>
-                        <eTree><label>NP</label><eTree><label>Art</label><eLeaf><label>the</label></eLeaf>
-                           </eTree>
-                           <eTree><label>N</label><eLeaf><label>periscope</label></eLeaf>
-                           </eTree>
-                        </eTree>
-                     </eTree>
-                  </div>
                </div>
-               <div id="">
+               <div id="011">
                   <h1>Breve</h1>
                   <div class="subsection">
                      <p>Ved udgivelse af korrespondance skal hvert brev være indeholdt i et
-                        <code>&lt;div&gt;</code>-element</p>
+                        <code xmlns="http://www.tei-c.org/ns/1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">&lt;div&gt;</code>-element</p>
                   </div>
                   <div class="subsection">
                      <div class="opener">
@@ -518,13 +562,9 @@
                         Göteborg fik jeg lige Tid til at skrive et Brevkort, men da jeg
                         ikke ved om det kom ordentlig af Sted, vil jeg sende endnu en Hilsen til Juleaften.
                         Vil
-                        du hilse <mark class="name" data-container="body" data-toggle="popover" data-template="<div class='popover' role='tooltip'&gt;<div class='arrow'&gt;</div&gt;<h3 class='popover-header'&gt;</h3&gt;<div class='popover-body'&gt;</div&gt;</div&gt;" data-placement="auto" data-html="true" data-content="{{% person bohr_chr_1855 %}}">Fader</mark>, <mark class="name" data-container="body" data-toggle="popover" data-template="<div class='popover' role='tooltip'&gt;<div class='arrow'&gt;</div&gt;<h3 class='popover-header'&gt;</h3&gt;<div class='popover-body'&gt;</div&gt;</div&gt;" data-placement="auto" data-html="true" data-content="{{% person bohr_ellen_1860 %}}">Moder</mark>, <mark class="name" data-container="body" data-toggle="popover" data-template="<div class='popover' role='tooltip'&gt;<div class='arrow'&gt;</div&gt;<h3 class='popover-header'&gt;</h3&gt;<div class='popover-body'&gt;</div&gt;</div&gt;" data-placement="auto" data-html="true" data-content="{{% person bohr_jenny_1883 %}}">Jenny</mark>,
-                        
-                        <persName xmlns="http://www.tei-c.org/ns/1.0">Signe</persName>, <mark class="name" data-container="body" data-toggle="popover" data-template="<div class='popover' role='tooltip'&gt;<div class='arrow'&gt;</div&gt;<h3 class='popover-header'&gt;</h3&gt;<div class='popover-body'&gt;</div&gt;</div&gt;" data-placement="auto" data-html="true" data-content="{{% person adler_hanna_1859 %}}">Hanne</mark>,
-                        
-                        <persName xmlns="http://www.tei-c.org/ns/1.0">Agnes</persName>, 
-                        <persName xmlns="http://www.tei-c.org/ns/1.0">Marie</persName>, <mark class="name" data-container="body" data-toggle="popover" data-template="<div class='popover' role='tooltip'&gt;<div class='arrow'&gt;</div&gt;<h3 class='popover-header'&gt;</h3&gt;<div class='popover-body'&gt;</div&gt;</div&gt;" data-placement="auto" data-html="true" data-content="{{% person christensen_kirsten %}}">Christensen</mark> og 
-                        <persName xmlns="http://www.tei-c.org/ns/1.0">Niels</persName> fra mig
+                        du hilse Fader, Moder, Jenny,
+                        Signe, Hanne,
+                        Agnes, Marie, Christensen og Niels fra mig
                         og ønske dem og Dig selv en rigtig glædelig Jul.</p>
                      <div class="closer">
                         <div class="salute">De hjerteligste til Alle fra</div>
@@ -532,6 +572,13 @@
                      </div>
                   </div>
                </div>
+            </div>
+            <hr>
+            <div class="notes mt-5">
+               <h2>Kritisk apparat (fuldtekstvisning)</h2>
+               <p class="note"><span class="noteLabel" id="App1"><strong><a href="#backApp1">1</a>. </strong></span><span class="noteBody">dominis] <em>is tilføjet over linjen, B</em></span></p>
+               <p class="note"><span class="noteLabel" id="App2"><strong><a href="#backApp2">2</a>. </strong></span><span class="noteBody">348] <em>248 E, D, V</em></span></p>
+               <p class="note"><span class="noteLabel" id="App3"><strong><a href="#backApp3">3</a>. </strong></span><span class="noteBody">346] <em>246 E, D, V</em></span></p>
             </div>
          </div>
       </div><script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script><script type="text/javascript" src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script><script type="text/javascript" src="../js/tekstnet.js"></script><script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script></body>

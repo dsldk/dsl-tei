@@ -19,6 +19,7 @@
       <xd:copyright>2010, Society for Danish Language and Literature</xd:copyright>
     </xd:desc>
   </xd:doc>
+  <xsl:variable name="config" select="document('../../config.xml')"/>
   <xsl:variable name="worktitle">
     <xsl:value-of select="/tei:TEI/tei:teiHeader/tei:fileDesc/tei:titleStmt/tei:title/@xml:id"/>
   </xsl:variable>
@@ -28,7 +29,11 @@
       <xsl:when test="@facs">
         <span class="legacy-page-break">
           <span class="page-break-mark">
-            <a href="{concat(concat(concat(concat('/facs/', $worktitle), '/'), @n), '.jpg')}">
+            <!-- <a href="{concat(concat(concat(concat('/facs/', $worktitle), '/'), @n), '.jpg')}"> -->
+            <a target="_blank">
+              <xsl:attribute name="href"><xsl:value-of select="$config//test"/>
+                <xsl:value-of select="@facs"/>
+              </xsl:attribute>
               <xsl:attribute name="title">
                 <xsl:value-of select="@ed"/><xsl:text> </xsl:text>
                 <xsl:value-of select="@n"/>

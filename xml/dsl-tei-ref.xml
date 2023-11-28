@@ -1,10 +1,9 @@
-<?xml version="1.0" encoding="UTF-8"?>
 <TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <teiHeader>
     <fileDesc>
       <titleStmt>
         <title>Tekstnet, referencedokument</title>
-        <title>Tekstnet, reference document</title>
+        <title xml:lang="en">Tekstnet, reference document</title>
         <author>Thomas Hansen</author>
         <editor role="editor">Henrik Wivel</editor>
         <editor role="digital_editor">Andersine And</editor>
@@ -99,10 +98,10 @@
     </profileDesc>
     <revisionDesc>
       <change n="0.1.2" when="2023-01-01" who="#th">
-        <ab>anden version</ab>
+        <p>anden version</p>
       </change>
       <change n="0.1.1" when="2022-12-31" who="#th">
-        <ab>første version</ab>
+        <p>første version</p>
       </change>
     </revisionDesc>
   </teiHeader>
@@ -326,7 +325,7 @@
                 <l>Her vil ties &amp;c. &amp;c.</l>
               </lg>
             </quote>
-            <bibl></bibl>
+            <bibl/>
           </cit>
         </div>
         <div>
@@ -343,8 +342,7 @@
         <div>
           <head>Fodnoter</head>
           <div>
-            <p>Fodnoter gengives som popup-elementer. Her kommer den første fodnote,<note
-                place="bottom">
+            <p>Fodnoter gengives som popup-elementer. Her kommer den første fodnote,<note place="bottom">
                 <p>Dette er teksten til den første fodnote.</p>
               </note> her kommer den anden fodnote,<note place="bottom">
                 <p>Den anden fodnote er længere end den første, men det er vigtigt at der er
@@ -371,8 +369,7 @@
           <p> Kommentarer opmærkes vha. <code>&lt;ref target=""/&gt;</code> og vises som en popup.
             Herefter følger en kommentar.<ref target="n1"/></p>
           <p> Personnavne fremhæves i teksten og aktiverer en popup med en kort note om pågældende:
-              <persName key="brandes_georg_1842">Georg Brandes</persName> og <persName
-              key="brahe_tycho_1546">Tycho Brahe</persName>. Stednavne er endnu ikke
+              <persName key="brandes_georg_1842">Georg Brandes</persName> og <persName key="brahe_tycho_1546">Tycho Brahe</persName>. Stednavne er endnu ikke
             implementeret.</p>
           <!-- <code>Her er tekst i kursiv: &lt;hi rend="italics"&gt;Tekst i kursiv.&lt;/hi&gt;</code> -->
         </div>
@@ -658,8 +655,7 @@
           <reg>6. Særlig notation</reg>
           <orig>6. Særlig notation</orig>
         </head>
-        <p>Til opmærkning af matematiske formler anvendes <formula notation="tex"
-          >TeX</formula>-notation.</p>
+        <p>Til opmærkning af matematiske formler anvendes <formula notation="tex">TeX</formula>-notation.</p>
         <div>
           <head>
             <orig>Formler</orig>
@@ -667,8 +663,7 @@
           <p>Et eksempel på matematik indlejret i den løbende tekst (inline) er dette: Integralet
               <formula notation="tex">\(\int_0^\infty e^{it}t^{x-1}dt\)</formula> er jo et
             “Dirichlet’s Integral” (ses strax naar <formula notation="tex">\(x-1\)</formula> sættes
-            lig  <formula notation="tex">\(-y\)</formula>; de Diri. Int. er nemlig af Form <formula
-              notation="tex">\(\int_0^\infty \frac{f(t)}{t^y}dt\)</formula></p>
+            lig  <formula notation="tex">\(-y\)</formula>; de Diri. Int. er nemlig af Form <formula notation="tex">\(\int_0^\infty \frac{f(t)}{t^y}dt\)</formula></p>
           <p>Ligninger kan også optræde i blokke som her: <lb/><formula notation="tex">$$s(x) =
               \int^x_0e^{it} \, {t^n dt} = \frac{1}{i}e^{ix} \cdot x^{n} +\dots+ (i)^{n + 1} \cdot
               n!$$</formula>
@@ -732,11 +727,9 @@
           <p>Vi har haft en dejlig Tur. Vi spiste til Middag i <placeName>Halmstad</placeName>. Fra
             <placeName>Göteborg</placeName> fik jeg lige Tid til at skrive et Brevkort, men da jeg
             ikke ved om det kom ordentlig af Sted, vil jeg sende endnu en Hilsen til Juleaften. Vil
-            du hilse <persName key="bohr_chr_1855">Fader</persName>, <persName key="bohr_ellen_1860"
-              >Moder</persName>, <persName key="bohr_jenny_1883">Jenny</persName>,
+            du hilse <persName key="bohr_chr_1855">Fader</persName>, <persName key="bohr_ellen_1860">Moder</persName>, <persName key="bohr_jenny_1883">Jenny</persName>,
               <persName>Signe</persName>, <persName key="adler_hanna_1859">Hanne</persName>,
-              <persName>Agnes</persName>, <persName>Marie</persName>, <persName
-              key="christensen_kirsten">Christensen</persName> og <persName>Niels</persName> fra mig
+              <persName>Agnes</persName>, <persName>Marie</persName>, <persName key="christensen_kirsten">Christensen</persName> og <persName>Niels</persName> fra mig
             og ønske dem og Dig selv en rigtig glædelig Jul.</p>
           <closer>
             <salute>De hjerteligste til Alle fra</salute>

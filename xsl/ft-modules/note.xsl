@@ -32,7 +32,7 @@
 					</span>-->
         </span>
     </xsl:template>
-    <xsl:template match="tei:note[@place = 'bottom']">
+    <xsl:template match="tei:note[@place = 'bottom'] | tei:note[@place = 'margin']">
         <xsl:choose>
             <xsl:when test="@type = 'add'"/>
             <xsl:otherwise>
@@ -53,7 +53,7 @@
                     </xsl:choose>
                 </xsl:variable>
                 <a class="notelink" href="#{$identifier}" id="back{$identifier}">
-                    <sup>*<!--<xsl:call-template name="noteN"/>--></sup>
+                    <sup>N<!--<xsl:call-template name="noteN"/>--></sup>
                 </a>
             </xsl:otherwise>
         </xsl:choose>

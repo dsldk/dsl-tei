@@ -10,8 +10,21 @@ redaktionen anses for nødvendig for at publicere på Tekstnet.
 
 ## Sådan kommer du i gang
 
-1. Læs vejledning i [opsætning af arbejdsområde](docs/up-and-running.md)
-2. Læs [retningslinjerne](docs/dsl-tei.md)
+1. Åbn en terminal
+2. Hvis du er Linux Ubuntu- eller Debian-bruger, kan du for at installere det
+   grundlæggende køre:
+   
+   ```
+   wget -O https://raw.githubusercontent.com/dsldk/dsl-tei/develop/tools/bootstrap.sh | bash
+   ```
+   Hvis du er OS X-bruger kører du i stedet:
+
+   ```
+   wget -O https://raw.githubusercontent.com/dsldk/dsl-tei/develop/tools/bootstrap.sh | zsh
+   ```
+
+3. Læs vejledning i [opsætning af arbejdsområde](docs/up-and-running.md)
+4. Læs [retningslinjerne](docs/dsl-tei.md)
 
 
 ## Bugs og ønsker til nye features

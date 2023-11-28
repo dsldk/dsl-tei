@@ -25,6 +25,9 @@
   <xsl:include href="ft-modules/opener.xsl"/>
   <xsl:include href="ft-modules/orig.xsl"/>
   <xsl:include href="ft-modules/p.xsl"/>
+  <xsl:include href="ft-modules/pb.xsl"/>
+  <xsl:include href="ft-modules/persName.xsl"/>
+  <xsl:include href="ft-modules/placeName.xsl"/>
   <xsl:include href="ft-modules/quote.xsl"/>
   <xsl:include href="ft-modules/salute.xsl"/>
   <xsl:include href="ft-modules/signed.xsl"/>
@@ -32,6 +35,7 @@
   <xsl:include href="ft-modules/speaker.xsl"/>
   <xsl:include href="ft-modules/stage.xsl"/>
   <xsl:include href="ft-modules/table.xsl"/>
+  <xsl:include href="ft-modules/title.xsl"/>
   <xsl:include href="ft-modules/titlePage.xsl"/>
   <!--<xsl:include href="ab.xsl"/>
     <xsl:include href="abstract.xsl"/>
@@ -263,6 +267,7 @@
                   <xsl:when test="//tei:abstract[@xml:lang = 'da' or not(@xml:lang)]">
                     <xsl:apply-templates select="//tei:abstract[@xml:lang = 'da' or not(@xml:lang)]"
                     />
+                    
                   </xsl:when>
                 </xsl:choose>
               </h2>
