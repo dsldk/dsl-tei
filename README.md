@@ -17,7 +17,6 @@ redaktionen anses for nødvendig for at publicere på Tekstnet.
    ```
    wget -O https://raw.githubusercontent.com/dsldk/dsl-tei/develop/tools/bootstrap.sh | bash
    ```
-
    Hvis du er OS X-bruger kører du i stedet:
 
    ```
