@@ -1,5 +1,7 @@
 #!/bin/sh
 
+aspell_dict_dir="/usr/lib/aspell"
+aspell_ods_dict="dsl-tei/tools/ods"
 workspace_dir="dsl-workspace"
 tei_directory="dsl-tei"
 repository_url="git@github.com:dsldk/dsl-tei.git"
@@ -33,6 +35,13 @@ elif command -v brew &> /dev/null; then
     brew install aspell-da
 else
     echo "Package manager not supported. Please install Aspell and the Danish dictionary manually."
+fi
+
+if [ -d "$aspell_dict_dir" ]; then 
+    echo "Adding ODS dictionary to aspell dictionaries"
+    sudo cp "$workspace_dir/$aspell_ods_dict" "$aspell_dict_dir"
+else
+  echo "Aspell's dictionaries are not found at $aspell_dict_dir"
 fi
 
 echo "Script execution completed."
