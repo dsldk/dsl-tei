@@ -49,6 +49,7 @@ else
     echo "Package manager not supported. Please install Aspell and the Danish dictionary manually."
 fi
 
+# Copy aspell dictionary to aspell's usual dict dir: /usr/lib/aspell
 if [ -d "$aspell_dict_dir" ]; then 
     echo "Adding ODS dictionary to aspell dictionaries"
     sudo cp -- "$aspell_dict" "$aspell_dict_dir"
@@ -57,7 +58,6 @@ else
 fi
 
 # Copy Tekstnet tools to a directory in users PATH: /usr/local/bin
-
 if [ -d "$executables_dir" ]; then
     echo "Copying files to $executables_dir"
     sudo cp -- "$prooflist" "$executables_dir"
