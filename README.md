@@ -10,6 +10,15 @@ redaktionen anses for nødvendig for at publicere på Tekstnet.
 
 ## Sådan kommer du i gang
 
+__Forudsætninger__
+
+Du skal først:
+
+- have en brugerprofil på Github
+- have en gyldig SSH-nøgle uploadet til Github
+
+Herefter:
+
 1. Åbn en terminal
 2. Hvis du er Linux Ubuntu- eller Debian-bruger, kan du for at installere det
    grundlæggende køre:
