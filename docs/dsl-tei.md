@@ -2,7 +2,6 @@
 title: DSL-TEI, retningslinjer
 author: Thomas Hansen (<th@dsl.dk>)
 fontsize: 10pt
-fontfamily: palatino
 indent: true
 language: da-DK
 papersize: a4
@@ -35,10 +34,9 @@ Et dsl-tei-dokument er et XML-dokument med rodelementet `TEI` og attributtet
 Rodelementet indholder de tre komponenter 1. `teiHeader`, 2. `facsimile` og 3. 
 `text`.
 
-|element   | kardinalitet | beskrivelse                                                      |
-|----------|--------------|----------------------------------------------------|
+| element  | antal | beskrivelse                                    |
+|----------|---|----------------------------------------------------|
 |teiHeader | 1 | (*TEI header*) metadata til beskrivelse af den digitale ressource i bibliografisk, kodnings- og udviklingsmæssig henseende. Jf. 2 Metadata. |
-|facsimile | 0..1 | digital billedgengivelse af den tekst, der beskrives under `teiHeader` og formidles under `text`. Jf. 3 Faksimiler |
 |text      | 1 | et værk, enten som en enhed (fx én roman, novelle, brev) eller er en helhed af flere tekster (fx essays, digte, noveller). Jf. 4 Tekst. |
 
 Elementerne disponeres således: 
@@ -58,12 +56,12 @@ for anvendt praksis ved dokumentets kodning, klassifikation af sprog og genre
 samt dokumentets ændringshistorik. Under `teiHeader` findes tilsvarende fire
 hovedelementer:
 
-|element          | beskrivelse   |
-|-----------------|---------------|
-| fileDesc        | (*file description*), indeholder komplet bibliografisk beskrivelse af dokumentets tekstdel |
-| encodingDesc    | (*encoding description*), beskriver forholdet mellem den digitale tekst og kildegrundlaget |
-| profileDesc     | (*text-profile description*), beskriver andre aspekter af teksten, fx sprogbrug, genre eller genstandsfelt |
-| revisionDesc    | (*revision description*), indeholder opsummering af ændringer af filen |
+| element | antal | beskrivelse |
+|---------|----|---------------|
+| fileDesc | 1 | (*file description*), indeholder komplet bibliografisk beskrivelse af dokumentets tekstdel |
+| encodingDesc | 1 | (*encoding description*), beskriver forholdet mellem den digitale tekst og kildegrundlaget |
+| profileDesc | 1 | (*text-profile description*), beskriver andre aspekter af teksten, fx sprogbrug, genre eller genstandsfelt |
+| revisionDesc | 1 | (*revision description*), indeholder opsummering af ændringer af filen |
 
 De fire elementer fordeler sig således:
 
@@ -638,18 +636,24 @@ hvor signifikante tekstændringer registreres i en række `change`-elementer,
 underinddelt i et eller flere `ab`-elementer. **Bemærk** at **ændringer gives i
 omvendt kronologisk rækkefølge**, dvs. nyeste ændringer først.
 
-| `change`          | beskrivelse   |
-|-------------------|---------------|
-| `@n`              | revisionsnummer i formatet STØRRE.MINDRE hvor **større** ændringer omfatter overgangen fra kladde til endelig version og tilføjelse af supplerende materiale, og **mindre** ændringer omfatter rettelse af småfejl |
-| `@when`           | datoangivelse i formatet yyyy-mm-dd |
-| `@who`            | redaktørens initialer |
-| `text()`          | kort beskrivelse af ændringen | 
+| `change` | beskrivelse                                                                     |
+|----------|---------------------------------------------------------------------------------|
+| `@n`     | revisionsnummer i formatet STØRRE.MINDRE hvor **større** ændringer omfatter overgangen fra kladde til endelig version og tilføjelse af supplerende materiale, og **mindre** ændringer omfatter rettelse af småfejl |
+| `@when`  | datoangivelse i formatet yyyy-mm-dd |
+| `@who`   | redaktørens initialer |
+| `text()` | kort beskrivelse af ændringen | 
 
 ```xml
 <revisionDesc>
-  <change n="1.0" when="2022-11-16" who="#th"><ab>Første endelige version offentliggjort.</ab></change>
-  <change n="0.2" when="2022-11-13" who="#th"><ab>Indsat blanktegn (&#xA0;) til indrykning af verslinjer.</ab></change>
-  <change n="0.1" when="2022-01-05" who="#th"><ab>Korrektur læst vha. aspell, og rettelser fra DSLs eksemplar indført.</ab></change>
+  <change n="1.0" when="2022-11-16" who="#th">
+    <ab>Første endelige version offentliggjort.</ab>
+  </change>
+  <change n="0.2" when="2022-11-13" who="#th">
+    <ab>Indsat blanktegn (&#xA0;) til indrykning af verslinjer.</ab>
+  </change>
+  <change n="0.1" when="2022-01-05" who="#th">
+    <ab>Korrektur læst vha. aspell, og rettelser fra DSLs eksemplar indført.</ab>
+  </change>
 </revisionDesc>
 ```
 
@@ -680,7 +684,7 @@ Følgende kriterier gælder ved rettelse af tekstens versionsnummer:
 - justering af formatering
 
 
-
+<!--
 # 3 Faksimiler
 
 Elementet `facsimile` samler et eller flere `graphic`-elementer:
@@ -690,9 +694,9 @@ Elementet `facsimile` samler et eller flere `graphic`-elementer:
   <graphic url="nil"/>
 </facsimile>
 ```	
-	<!-- udfyldes -->
+-->
 
-# 4 Tekst
+# 3 Tekst
 
 Den tredje hovedbestanddel af et TEI-dokument, elementet `text`, indeholder en
 tekst, som enten er en *enhed* (roman, novelle, brev og lignende) eller udgør
@@ -704,21 +708,21 @@ følger teksten, og til sidst finder vi registre, noter og lignende.  For at
 kunne bearbejde disse komponenter særskilt er elementet `text` inddelt som
 følger:
 
-| element       | beskrivelse                                                        |
-|---------------|--------------------------------------------------------------------|
-|	`front`       | (*front matter*), præliminære oplysninger i form af titelblad, forside og forord, se 4.1 |
-| `body`        | (*text body*), den centrale komponent, indeholder selve teksten, se. 4.2 |
-| `back`        |	(*back matter*), eventuelle appendices og fortegnelser, som følger efter teksten, se 4.3 |
+| element | antal | beskrivelse                                                        |
+|---------|-------|--------------------------------------------------------------------|
+|	`front` | 1     | (*front matter*), præliminære oplysninger i form af titelblad, forside og forord, se 4.1 |
+| `body`  | 1     | (*text body*), den centrale komponent, indeholder selve teksten, se. 4.2 |
+| `back`  | 1     |	(*back matter*), eventuelle appendices og fortegnelser, som følger efter teksten, se 4.3 |
 
 ## 4.1 Indledende oplysninger 
 
 Til behandling af titelblade, forsider, dedikationer og forord i trykte forlæg
 anvendes `front`, under hvilket følgende elementer kan forekomme:
 
-| element       | beskrivelse                                                        |
-|---------------|--------------------------------------------------------------------|
-| `titlePage`   |	titelbladets struktur i form af titel, undertitel, byline og lign. |
-| `div`         | indledende afsnit, fx forord eller indholdsfortegnelse             |
+| element    | antal | beskrivelse                                                        |
+|------------|-------|--------------------------------------------------------------------|
+| `titlePage`| 1     |	titelbladets struktur i form af titel, undertitel, byline og lign. |
+| `div`      | 0..\* | indledende afsnit, fx forord eller indholdsfortegnelse             |
 
 ### 4.1.1 Titelblad
 
@@ -726,12 +730,12 @@ Et titelblad i et tryk eller håndskrift beskrives under elementet `titlePage`
 med `@type` udfyldt med værdien `titelblad`. Der er mulighed for følgende
 underelementer:
 
-| element       | beskrivelse                                                        |
-|---------------|--------------------------------------------------------------------|
-|  `docTitle`   | (*document title*), beskrivelse af værkets titel, indeholder et eller flere elementer af typen `titlePart` |
-| `byline` | oplysninger om værkets ophav i form af forfatter, redaktør eller udgiver |
-| `epigraph` | påskrift, typisk i form af et motto og/eller citat fra et andet værk |
-| `docImprint` | (_document imprint_) navn på udgiver, trykker eller distributør |
+| element    | antal | beskrivelse                                                        |
+|------------|-------|--------------------------------------------------------------------|
+|  `docTitle`| 1     | (*document title*), beskrivelse af værkets titel, indeholder et eller flere elementer af typen `titlePart` |
+| `byline`   | 0..1  | oplysninger om værkets ophav i form af forfatter, redaktør eller udgiver |
+| `epigraph` | 1 | påskrift, typisk i form af et motto og/eller citat fra et andet værk |
+| `docImprint` | 1   | (_document imprint_) navn på udgiver, trykker eller distributør |
 
 Et eksempel findes i Georg Brandes Hovedstrømninger
 
@@ -771,10 +775,10 @@ Til opmærkning af undertitler og længere beskrivende titler anvendes `titlePar
 kvalificeret vha. `@type` og en af følgende værdier:
 
 
-| @type-værdi     | beskrivelse                                  | 
-|-----------------|----------------------------------------------|
-| desc            | (_descriptive_) angiver en beskrivende titel |
-| sub             | (_subtitle_) angiver undertitel              |
+| @type-værdi    | beskrivelse                                                        | 
+|----------------|--------------------------------------------------------------------|
+| desc           | (_descriptive_) angiver en beskrivende titel                       |
+| sub            | (_subtitle_) angiver undertitel                                    |
 
 
 I Holbergs *Peder Paars* opdeles titlen i hoved- og undertitel:
@@ -964,44 +968,54 @@ Hovedstrømninger bd. 4
 
 ## 4.3 Blokelementer under `div`
 
-Blokelementet `div` kan foruden andre `div`-elementer indeholde følgende andre blokelementer:
+Blokelementet `div` kan indeholde følgende andre blokelementer:
 
-| element    | beskrivelse                                              |
-|------------|----------------------------------------------------------|
-| `head`     | (*heading*), overskrift, som enten i forvejen optræder i tekstens forlæg eller suppleres af udgiveren. |
-| `epigraph` | anvendes til mottoer i begyndelsen af en tekstdel, jf. 4.1.1.3 |
-| `list`     | (*list*), lister, nummererede/unummererede, se 3.3 |
-| `p`        | (*paragraph*), afsnit i prosa, se 3.3.2 |
-| `lg`       | (*line group*), strofe i poesi, se 3.3.3 |
-| `table`    | (*table*), tabel, se X.X.X |
+| element    | antal | beskrivelse                                                              |
+|------------|-------|--------------------------------------------------------------------------|
+| `div`      | 0..\* | (*division*), inddeling af en tekstdel                                   |
+| `head`     | 0..\* | (*heading*), overskrift, som enten i forvejen optræder i tekstens forlæg eller suppleres af udgiveren. |
+| `cit`      | 0..\* | (*citation*) citat, jf. 4.1.1.X                                          |
+| `epigraph` | 0..\* | anvendes til mottoer i begyndelsen af en tekstdel, jf. 4.1.1.3           |
+| `list`     | 0..\* | (*list*), lister, nummererede/unummererede, se 3.3                       |
+| `p`        | 0..\* | (*paragraph*), afsnit i prosa, se 3.3.2                                  |
+| `lg`       | 0..\* | (*line group*), strofe i poesi, se 3.3.3                                 |
+| `table`    | 0..\* | (*table*), tabel, se X.X.X                                               |
 
 
 ### 4.3.1 Overskrifter
 
-DSL-TEI håndterer to slags overskrifter vha. elementet `head`
-(*heading*). Herunder opmærkes 1. eksisterende overskrifter med
-elementet `orig` og 2. normaliserede overskrifter med elementet `reg`
-(*regularization*).
+Overskrifter til kapitler opmærkes med elementet `head` (*heading*) underinddelt
+i to elementer: 1. `reg` en normaliseret overskrift der sikrer at alle tekster i
+på Tekstnet fremtræder sammenligneligt i fx søgeresultater; 2. `orig` forlæggets 
+overskrift.
+
+| element | antal | beskrivelse                                              |
+|---------|-------|----------------------------------------------------------|
+| `reg`   | 1     | (*regularization*) normaliseret overskrift, hvor moderne retskrivning kan følges og kapitelnummerering skal indsættes              | 
+| `orig`  | 1     | (*original*) oprindelig overskrift                       |
 
 ```xml
 <head>
-  <reg>Første Mosebog</reg>
-  <orig>Genesis Mose Første Bog.</orig>
+  <reg>3. Tænkningens og Indbildningskraftens Naturopfatning</reg>
+  <orig>Over Forholdet mellem Tænkningens og Indbildningskraftens 
+        Naturopfatning</orig>
 </head>
 ```
-<!--
-Eksisterende underoverskrifter angives således:
 
-	<head type="orig-sub">...</head>
+Bemærk at eventuelle præciseringer af overskriften, dvs. såkaldte
+"underoverskrifter" som ikke tilhører en egen div-struktur, opmærkes i
+`orig`-elementet
 
-Supplerende overskrifter angives
+__Eksempler__
 
-	<head type="add">...</head>
-
-Supplerende underoverskrifter angives
-
-	<head type="add-sub">...</head>
--->
+```xml
+<head>
+  <reg>1. Det Aandelige i det Legemlige</reg>
+  <orig>Det Aandelige i det Legemlige <lb/>
+        <hi rend="small">En Samtale</hi>
+  </orig>
+</head>
+```
 
 ### 4.3.2 Prosa
 
@@ -1011,13 +1025,13 @@ sideordnede afsnit vha. elementet `p` (*paragraph*). Om nødvendigt, kan et
 højrestillet tekst.  I så fald udvides `p` med `@rend` (*rendition*), som
 udfyldes med én af følgende gyldige værdier:
 
-| `@rend` værdi     | betydning               |
-|-------------------| ------------------------|
-|  text-center      | centreret tekst         | 
-|  text-right       | højrestillet tekst      | 
+| `@rend` værdi | betydning                                               |
+|---------------|---------------------------------------------------------|
+|  text-center  | centreret tekst                                         | 
+|  text-right   | højrestillet tekst                                      | 
 
 
-### 4.3.3 Vers
+### 4.3.3 Lyrik
 
 Til opmærkning af vers og strofer anvendes elementet `lg` (*line group*) med de
 underordnede elementer `l` (*line*) til verslinjer og `head` til
@@ -1028,10 +1042,10 @@ skal `lg` benyttes som wrapper.
 Elementet `lg` kan udvides med attributtet `@rend` for at angive centreret og
 højrestillet tekst.  
 
-| `@rend` værdi                 | betydning                   |
-|-------------------------------|-----------------------------|
-|  text-center                  | centreret tekst             | 
-|  text-right                   | højrestillet tekst          | 
+| `@rend` værdi | betydning                                               |
+|---------------|---------------------------------------------------------|
+|  text-center  | centreret tekst                                         | 
+|  text-right   | højrestillet tekst                                      | 
 
 For at gengive typografisk ekspressivitet kan et `l`-element forsynes med
 attributtet `@rend`.
@@ -1093,7 +1107,6 @@ sidestillede elementer: `quote` og `bibl`. Nedenstående eksempel er
 fra Georg Brandes, Hovedstrømninger, bd. 1:
 
 ```xml
-... </p>
 <cit>
   <quote>
   <sp>
@@ -1115,7 +1128,6 @@ fra Georg Brandes, Hovedstrømninger, bd. 1:
    </quote>
   <bibl></bibl>
 </cit>
-<p> ...
 ```
 ### 4.3.5 Lister
 
@@ -1126,12 +1138,13 @@ så fald med attributten `@n` udfyldt med en værdi i form af eksempelvis
 et tal eller et litra. Et eksempel fra Hans Thomsens Den danske
 Psalmebog
 
-	<list rend="simple">
-	  <item n="1.">Til at ære / loffue oc prise Gud met saadanne <lb/>Gudelige loffsange.</item>
-	  <item n="2.">Til at lære / forfremme oc beuare her met <lb/>Guds ord iblant eder. 
-	  ...
-	</list>
-
+```xml
+<list rend="simple">
+  <item n="1.">Til at ære / loffue oc prise Gud met ... loffsange.</item>
+  <item n="2.">Til at lære / forfremme oc beuare ... </item> 
+	...
+</list>
+```
 
 ### 4.3.6 Elementer på tekstniveau
 
@@ -1150,10 +1163,8 @@ På tekstniveau forekommer følgende elementer:
 `app`
 :	(*apparatus entry*), tekskritisk note, se 4.3.6.3
 
-
 `damage`
 :	læsion i manuskript, se 4.3.6.4
-
 
 `supplied`
 :	tilføjelser (konjekturer), som skønnes nødvendige 
@@ -1219,27 +1230,27 @@ Til gengivelse af fremhævet tekst benyttes elementet `hi`
 (*highlighted*) med `@rend` (*rendition*), der beskriver tekstens
 visuelle udtryk. Følgende attributværdier er tilladt:
 
-| værdi       | betydning          | bemærkning                                    |           
-|-------------|--------------------|-----------------------------------------------|
-| `initial`   | initialbogstav     | Bruges kun i forbindelse med kapitæler, fx `<hi rend="smallcaps"><hi rend="initial">J</hi>eg ...</hi>` |
-| `italic`    | kursiv             | `den berømte <hi rend="italic">Stærkodder II,</hi>` |
-| `small`     | petit              |                 |
-| `smallcaps` | kapitæler          | `<hi rend="smallcaps">H. Johansen,</hi> Sagfører.`  |
-| `spaced`    | spærret/spatieret  | `Kirkens <hi rend="spaced">egne</hi> Rammer`        |
-| `strong`    | fed                |                 |
-| `sub`       | understillet       |                 |
-| `sup`       | overstillet        |                 |
-| `underline` | understreget       |                 |
+| @rend | beskrivelse                                                             |           
+|-------------|-------------------------------------------------------------------|
+| `initial`   | initialbogstav. Bruges kun i forb. m. kapitæler, fx `<hi rend="smallcaps"><hi rend="initial">J</hi>eg ...</hi>` |
+| `italic`    | kursiv fx `den berømte <hi rend="italic">Stærkodder II,</hi>`     |
+| `small`     | petit/småt skriftsnit                                             |
+| `smallcaps` | kapitæler fx `<hi rend="smallcaps">H. Johansen,</hi> Sagfører.`   |
+| `spaced`    | spærret/spatieret fx `Kirkens <hi rend="spaced">egne</hi> Rammer` |
+| `strong`    | fed                                                               |
+| `sub`       | understillet                                                      |
+| `sup`       | overstillet                                                       |
+| `underline` | understreget                                                      |
 
 #### 4.3.5.2 Citater
 
 Citater bringes i elementet `cit` (*cited quotation*), som indholder
 følgende elementer:
 
-|element   | kardinalitet | beskrivelse                                        |
-|----------|--------------|----------------------------------------------------|
-| `quote`  | 1            | selve citatet, som afhængig af om der er tale om prosa eller lyrik underordner elementerne `p` (1..\*) el. `lg` (1..\*) |
-| `bibl`   | 0..1         | (*bibliographic entry*) bibliografisk reference    |
+|element   | antal | beskrivelse                                        |
+|----------|-------|----------------------------------------------------|
+| `quote`  | 1     | selve citatet, som afhængig af om der er tale om prosa eller lyrik underordner elementerne `p` (1..\*) el. `lg` (1..\*) |
+| `bibl`   | 0..1  | (*bibliographic entry*) bibliografisk reference    |
 
 **Eksempler**
 
@@ -1291,10 +1302,10 @@ hvilke dele af teksten skyldes emendering. Hertil anvendes elementet: `app`
 
 Et `app`-element indeholder de to underelementer `lem` og `rdg`:
 
-|element   | kardinalitet | beskrivelse                                                      |
-|----------|--------------|----------------------------------------------------|
-| lem      | 1            | (*lemma*) indeholder den tekst, til hvilken findes en variant    | 
-| rdg      | 1            | (*reading*) indeholder et eller flere alternativer til lemmaets tekst i `q` |
+|element | antal | beskrivelse                                                      |
+|--------|---|----------------------------------------------------------------------|
+| lem    | 1 | (*lemma*) indeholder den tekst, til hvilken findes en variant        | 
+| rdg    | 1 | (*reading*) indeholder et eller flere alternativer til lemmaets tekst i `q` |
 
 Ud fra den betragtning at teksten i elementet `rdg` ofte både indledes og
 afsluttes af redaktionelle bemærkninger og sigelhenvisninger har vi valgt at
@@ -1462,9 +1473,9 @@ asterisk mellem to afsnit opmærkes fx:
 
 Gyldige værdier af `figure`-elementets `@type`:
 
-| `@type`, værdi   | beskrivelse   |
-|------------------|---------------|
-| asterisk         | centreret &#42; |
+| `@type`, værdi   | beskrivelse                                                                    |
+|------------------|--------------------------------------------------------------------------------|
+| asterisk         | centreret &#42;                                                                |
 | asterism         | centreret &#x2042;   |
 | fleuron          | centreret ❦   |
 | fleuron-reversed | centreret ☙   |
@@ -1480,41 +1491,23 @@ Matematiske formler opmærkes i `formula` udvidet med `@notation`. Foreløbig
 tillades kun TeX-notation:
 
 ```xml
-Integralet <formula notation="TeX">\(\int_0^\infty e^{it}t^{x-1}dt\)</formula> er jo et
-“Dirichlet’s Integral” (ses strax naar <formula notation="TeX">\(x-1\)</formula> sættes
-lig <formula notation="TeX">\(-y\)</formula>; de Diri. Int. er nemlig af Form <formula
-notation="TeX">\(\int_0^\infty \frac{f(t)}{t^y}dt\)</formula></p>
-<p>Ligninger kan også optræde i blokke som her: <lb/><formula notation="TeX">$$s(x) =
-\int^x_0e^{it} \, {t^n dt} = \frac{1}{i}e^{ix} \cdot x^{n} +\dots+ (i)^{n + 1} \cdot
-n!$$</formula>
-<lb/>Dette giver en simpel delvis Integration <lb/><formula notation="TeX">$$s(x)
-\quad\text{altsaa lig}\quad \sum_{r=0}^n k_r \cdot e^{ix} \cdot x^r + (i)^{n + 1}
-\cdot n!$$</formula>
-<lb/>da nu vi skal integrere <formula notation="TeX">\(s(x)\)</formula> o.s.v. ...
-<formula notation="TeX">\(n+1\)</formula> Gange endnu.</p>
+<p> Integralet 
+<formula notation="TeX">\(\int_0^\infty e^{it}t^{x-1}dt\)</formula> 
+er jo et "Dirichlet’s Integral" (ses strax naar 
+<formula notation="TeX">\(x-1\)</formula> sættes lig 
+<formula notation="TeX">\(-y\)</formula>; de Diri. Int. ... Form 
+</p>
 ```
 
 #### 4.3.5.8 Opløsning af abbreviaturer
 
 Til optagelse af forkortelser og deres opløsninger i typisk middelalderlige
 håndskrifter og tidlige tryk anvendes elementet `ex` (*editorial expansion*),
-som udfyldes med tekst suppleret af redaktøren.  I [Dipl. Dan.
-14151114001](https://text.dsl.dk/books/dipdan/1415/dd_14151114001) forekommer:
+som udfyldes med tekst suppleret af redaktøren.
 
 ```xml
-	Oc weth<ex>e</ex>r kende hwn sigh ...
+Oc weth<ex>e</ex>r kende hwn sigh ...
 ```
-
-I Tekstnet gengives den opløste tekst i kursiv:
-
-> Oc weth*e*r kende hwn sigh ...
-
-
-<!--Elementet implementeres typisk som `em`-elementer i HTML.
-
-	Oc weth<em>e</em>r kende hwn sigh ...
-
--->
 
 #### 4.3.5.9 Noter
 
@@ -1523,50 +1516,34 @@ Eksisterende fodnoter i den løbende tekst beskrives vha. elementet `note` med a
 
 ```xml
 ... Enster<note place="bottom">
-            <p>Ordet er allerede blevet brugt af <hi rend="italic">Risbrigh</hi> 
-                og er udentvivl gammelt. Det fandtes i Ordet 
-                <hi rend="italic">Eensterskilling</hi>, som i forrige Aarhundrede 
-                endnu brugtes til at betegne en enkelt Skilling i Sølvmynt.</p>
-          </note> (Individ) ...
+  <p>Ordet er allerede blevet brugt af <hi rend="italic">Risbrigh</hi> 
+  og er udentvivl gammelt. Det fandtes i Ordet 
+  <hi rend="italic">Eensterskilling</hi>, som i forrige Aarhundrede 
+  endnu brugtes til at betegne en enkelt Skilling i Sølvmynt.</p>
+  </note> (Individ) ...
 ```
-
-I Tekstnet realiseres fodnoter som popup-elementer, markeret med 'F' efterfulgt
-af tal der angiver hvilket nummer i rækkefølgen af fodnoter, noten er.
-
-<!--
-
-Et eksempel fra
-Georg Brandes, Hovedstrømninger 1
-
-	... Tid Poesi og Malerkunst sine 
-	Personer?<note place="foot">Hettner: »<bibl>Litteraturgeschichte 
-	des 18ten Jahrhunderts</bibl>« passim.</note> Hvad ...
-
-Marginalnoter mærkes på samme måde med `@place` udfyldt med hhv.
-`margin`, `margin-left` eller `margin-right`.
--->
  
 #### 4.3.5.10 Personnavne
 
 Personnavne opmærkes i den løbende tekst vha. elementet `persName` med
 attributtet `@key` (_externally-defined means of identifying the
 entity (or entities) being named, using a coded value of some
-kind_) udfyldt med en unik id. Et eksempel fra Georg Brandes,
-Hovedstrømninger 1
+kind_) udfyldt med en unik id. 
 
-	I alle vore litterære Bevægelser i dette Aarhundredes Begyndelse, 
-	i <persName key="adam-oehlenschlager">Oehlenschlägers</persName> 
-	Poesier, i <persName key="n-f-s-grundtvig">Grundtvigs</persName>
-	Prædikener, i ... 
-
+```xml
+I alle vore litterære Bevægelser i dette Aarhundredes Begyndelse, 
+i <persName key="adam-oehlenschlager">Oehlenschlägers</persName> 
+Poesier, i <persName key="n-f-s-grundtvig">Grundtvigs</persName>
+Prædikener, i ... 
+```
 Bemærk at attributtet @key _skal_ være udfyldt, i det mindste med værdien 'nil'
 der indikerer at personen endnu ikke er identificeret.
 
-
+<!--
 **Fiktive personer**. Såfremt der er behov for at opmærke **fiktive
 personer**, anvendes `persName` med to attributter: 1. `@key` udfyldt
 med en unik id, og 2. `@type` udfyldt med værdien `fictional`.
-
+-->
 
 #### 4.3.5.11 Stednavne
 
@@ -1654,26 +1631,15 @@ Bemærk at attributværdien af `@href` omkranses af enkelte citationstegn.
 
 #### 4.3.5.14 Sideskift i forlæg
 
-Sideskift i forlæg markeres med det lukkede element `pb` (*page beginning*).
-Elementet kan indeholde tre attributter:
+Sideskift i forlæg markeres med det lukkede element `pb` (_page beginning_).
+Elementet  kan indeholde tre attributter:
 
-`@ed`
-:	*edition* udfyldes med sigelværdien for det tekstvidne, der
-	transkriberes fra
+| attribut | antal | beskrivelse                                                                     |
+|----------|-------|---------------------------------------------------------------------------------|
+| `@ed`    | 1     | (*edition*) udfyldes med sigelværdien for det tekstvidne, der transkriberes fra |
+| `@n`     | 1     | (*number*) udfyldes med tekstvidnets sidetal. Hvis tekstvidnet ikke har paginering, indsættes sidetal i skarpe parenteser, jf. `n="[2]"`|
+| `@facs`  | 0..1  | (*facsimile*) udfyldes med en fil-id for den tilknyttede faksimile              |
 
-`@n`
-:	*number* udfyldes med tekstvidnets sidetal. Såfremt
-	tekstvidnet ikke indeholder paginering sættes sidetallet i
-	skarpe parenteser, jf. `n="[2]"`
-
-`@facs`
-:	*facsimile* udfyldes med en fil-id for den tilknyttede faksimile
-
-<!--
-* Skal initialer kunne opmærkes (argumenter for eller imod)
-* Understreget tekst
-* Gennemstreget tekst
--->
 
 #### 4.3.5.15 Fremmede tegn
 
@@ -1689,6 +1655,7 @@ Unde &amp; Hebræis <term xml:lang="he">קנה</term> de hasta ...
 ```
 -->
 
+<!--
 #### 4.3.5.16 Bibliografiske henvisninger
 
 Henvisninger til værker i den løbende tekst mærkes med elementet
@@ -1698,18 +1665,22 @@ eller 2. en ekstern database.
 
 Et eksempel fra Georg Brandes *Hovedstrømninger*, bd. 1:
 
-	Martensens »Speculative Dogmatik« afløses af den 
-	»<bibl ref="martensen-den-christelige-dogmatik">Christelige Dogmatik</bibl>«.
+```xml
+Martensens »Speculative Dogmatik« afløses af den 
+»<bibl ref="martensen-den-christelige-dogmatik">Christelige Dogmatik</bibl>«.
 
 #### 4.3.5.X Værktitler
 
 Henvisninger til værker i løbende tekst opmærkes vha. elementet `title`,
 som yderligere kan udvides med attributten `@ref`. Eksempler kan
-findes i Hans Thomissøns Den danske Psalmebog. <!-- uddyb-->
+findes i Hans Thomissøns Den danske Psalmebog. 
+-->
 
 #### 4.3.5.X Tabeller
 
-Tabeller indeholder tekst til visning i tabulær form, dvs. i rækker og kolonner.
+Tabeller opmærkes vha. elementet `table` som kan indeholde følgedende elementer: 
+
+indeholder tekst til visning i tabulær form, dvs. i rækker og kolonner.
 Til opmærkning af tabeller anvendes elementerne:
 
 `table`
@@ -1728,8 +1699,7 @@ Diplomatarium Danicum
 ```xml
 <table>
   <row>
-    <cell rows="3"> Summen af guld, modtaget i nævnte tiende af samme kongerige
-      Danmark42) </cell>
+    <cell rows="3"> Summen af guld ...</cell>
     <cell> 324 små floriner </cell>
     <cell rows="2">i guld.</cell>
   </row>
@@ -1737,8 +1707,7 @@ Diplomatarium Danicum
     <cell> 55 masse. 12 aignel. </cell>
   </row>
   <row>
-    <cell cols="2"> 2 mark ½ ørtug guld i barre, iberegnet et guldhostiegemme 
-    i samme sum. </cell>
+    <cell cols="2"> 2 mark ½ ørtug ... </cell>
   </row>
 </table>
 ```
