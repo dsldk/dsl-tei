@@ -15,7 +15,8 @@ __Forudsætninger__
 Du skal først:
 
 - have en brugerprofil på Github
-- have en gyldig SSH-nøgle uploadet til Github
+- have en gyldig SSH-nøgle uploadet til Github. [Se
+  vejledning](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent#generating-a-new-ssh-key)
 
 Herefter:
 
