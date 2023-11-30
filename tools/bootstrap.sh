@@ -17,7 +17,19 @@ aspell_dict_dir="/usr/lib/aspell"
 executables_dir="/usr/local/bin"
 prooflist="$tei_tools_dir/prooflist.sh"
 repository_url="git@github.com:dsldk/dsl-tei.git"
-danish_dictionary="da_DK"
+
+# Install Aspell with Danish dictionary
+echo "Installing Aspell with Danish dictionary..."
+if command -v apt-get &> /dev/null; then
+    sudo apt-get update
+    sudo apt-get install aspell aspell-da git
+elif command -v brew &> /dev/null; then
+    brew install aspell
+    brew install aspell-da
+    brew install git
+else
+    echo "Package manager not supported. Please install Aspell and the Danish dictionary manually."
+fi
 
 # Check if the directory exists
 if [ -d "$workspace_dir" ]; then
@@ -37,17 +49,6 @@ else
     git clone "$repository_url" "$tei_dir"
 fi
 
-# Install Aspell with Danish dictionary
-echo "Installing Aspell with Danish dictionary..."
-if command -v apt-get &> /dev/null; then
-    sudo apt-get update
-    sudo apt-get install aspell aspell-da
-elif command -v brew &> /dev/null; then
-    brew install aspell
-    brew install aspell-da
-else
-    echo "Package manager not supported. Please install Aspell and the Danish dictionary manually."
-fi
 
 # Copy aspell dictionary to aspell's usual dict dir: /usr/lib/aspell
 if [ -d "$aspell_dict_dir" ]; then 
