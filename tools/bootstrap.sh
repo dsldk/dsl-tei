@@ -1,9 +1,21 @@
 #!/bin/sh
 
-aspell_dict_dir="/usr/lib/aspell"
+#-----------------------------------------------------------------#
+# bootstrap.sh: Set-up a workspace and tools for editorial work   #
+#               in Tekstnet. Tools include:                       #
+#                  * prooflist.sh -- make a list of unknown words #
+# Author:       Thomas Hansen, 2023-11-29                         #
+#-----------------------------------------------------------------#
+
 aspell_ods_dict="dsl-tei/tools/ods"
+
 workspace_dir="dsl-workspace"
-tei_directory="dsl-tei"
+tei_dir="$workspace_dir/dsl-tei"
+tei_tools_dir="$tei_dir/tools"
+aspell_dict="$tei_tools_dir/ods"
+aspell_dict_dir="/usr/lib/aspell"
+executables_dir="/usr/local/bin"
+prooflist="$tei_tools_dir/prooflist.sh"
 repository_url="git@github.com:dsldk/dsl-tei.git"
 danish_dictionary="da_DK"
 
@@ -17,12 +29,12 @@ else
 fi
 
 # Check if dsl-tei directory exists within dsl-workspace
-if [ -d "$workspace_dir/$tei_directory" ]; then
-    echo "Directory '$tei_directory' already exists in '$workspace_dir'. Skipping Git clone."
+if [ -d "$tei_dir" ]; then
+    echo "Directory '$tei_dir' already exists. Skipping Git clone."
 else
     # Clone the Git repository into the workspace directory
     echo "Cloning the Git repository into '$workspace_dir'..."
-    git clone "$repository_url" "$workspace_dir/$tei_directory"
+    git clone "$repository_url" "$tei_dir"
 fi
 
 # Install Aspell with Danish dictionary
@@ -39,9 +51,15 @@ fi
 
 if [ -d "$aspell_dict_dir" ]; then 
     echo "Adding ODS dictionary to aspell dictionaries"
-    sudo cp "$workspace_dir/$aspell_ods_dict" "$aspell_dict_dir"
+    sudo cp -- "$aspell_dict" "$aspell_dict_dir"
 else
   echo "Aspell's dictionaries are not found at $aspell_dict_dir"
 fi
 
+# Copy Tekstnet tools to a directory in users PATH: /usr/local/bin
+
+if [ -d "$executables_dir" ]; then
+    echo "Copying files to $executables_dir"
+    sudo cp -- "$prooflist" "$executables_dir"
+fi
 echo "Script execution completed."
