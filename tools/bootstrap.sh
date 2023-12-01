@@ -16,6 +16,7 @@ aspell_dict="$tei_tools_dir/ods"
 aspell_dict_dir="/usr/lib/aspell"
 executables_dir="/usr/local/bin"
 prooflist="$tei_tools_dir/prooflist.sh"
+transformer="$tei_tools_dir/transform.py"
 repository_url="git@github.com:dsldk/dsl-tei.git"
 
 # Install Aspell with Danish dictionary
@@ -62,5 +63,6 @@ fi
 if [ -d "$executables_dir" ]; then
     echo "Copying files to $executables_dir"
     sudo cp -- "$prooflist" "$executables_dir"
+    sudo cp -- "$transformer" "$executables_dir"
 fi
 echo "Script execution completed."
