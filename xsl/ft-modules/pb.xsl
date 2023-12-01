@@ -19,7 +19,7 @@
       <xd:copyright>2010, Society for Danish Language and Literature</xd:copyright>
     </xd:desc>
   </xd:doc>
-  <xsl:variable name="config" select="document('../../config.xml')"/>
+        <!--<xsl:variable name="config" select="document('../../config.xml')"/>-->
   <xsl:variable name="worktitle">
     <xsl:value-of select="/tei:TEI/tei:teiHeader/tei:fileDesc/tei:titleStmt/tei:title/@xml:id"/>
   </xsl:variable>
