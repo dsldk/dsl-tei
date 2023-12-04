@@ -16,6 +16,7 @@ aspell_tekstnet_dict="$tei_tools_dir/tekstnet"
 aspell_dict_dir="/usr/lib/aspell"
 executables_dir="/usr/local/bin"
 prooflist="$tei_tools_dir/prooflist.sh"
+proofread="$tei_tools_dir/proofread.sh"
 transformer="$tei_tools_dir/transform.py"
 repository_url="git@github.com:dsldk/dsl-tei.git"
 
@@ -69,6 +70,7 @@ fi
 if [ -d "$executables_dir" ]; then
     echo "Copying files to $executables_dir"
     sudo cp -- "$prooflist" "$executables_dir"
+    sudo cp -- "$proofread" "$executables_dir"
     sudo cp -- "$transformer" "$executables_dir"
 fi
 echo "Script execution completed."
