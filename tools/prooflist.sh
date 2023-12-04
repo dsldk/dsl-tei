@@ -2,7 +2,9 @@
 
 #-----------------------------------------------------------------#
 # prooflist.sh: Generate list of words not in the ODS dictionary  #
-#               for proof-reading XML texts for Tekstnet          #
+#               for proof-reading XML texts for Tekstnet. Please  #
+#               note that the individual dictionary tekstnet must #
+#               be available in /usr/lib/aspell.                  #
 # Author:       Thomas Hansen, 2023-11-29                         #
 #-----------------------------------------------------------------#
 
@@ -15,7 +17,7 @@ fi
 
 make-list() {
     aspell list \
-        --master=ods \
+        --master=tekstnet \
         --lang=da \
         --mode=html < "$1" | sort -u > "${1%.*}"_not-ods.txt
 }

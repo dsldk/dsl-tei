@@ -4,15 +4,15 @@
 # bootstrap.sh: Set-up a workspace and tools for editorial work   #
 #               in Tekstnet. Tools include:                       #
 #                  * prooflist.sh -- make a list of unknown words #
+#                  * transform.py -- turn your XML into HTML      #
 # Author:       Thomas Hansen, 2023-11-29                         #
 #-----------------------------------------------------------------#
-
-aspell_ods_dict="dsl-tei/tools/ods"
 
 workspace_dir="dsl-workspace"
 tei_dir="$workspace_dir/dsl-tei"
 tei_tools_dir="$tei_dir/tools"
 aspell_dict="$tei_tools_dir/ods"
+aspell_tekstnet_dict="$tei_tools_dir/tekstnet"
 aspell_dict_dir="/usr/lib/aspell"
 executables_dir="/usr/local/bin"
 prooflist="$tei_tools_dir/prooflist.sh"
@@ -48,13 +48,19 @@ else
     # Clone the Git repository into the workspace directory
     echo "Cloning the Git repository into '$workspace_dir'..."
     git clone "$repository_url" "$tei_dir"
+    if [ $? -eq 0 ]; then
+      echo "Git clone successful."
+    else
+      echo "Git clone failed. Please check that you have got a valid SSH key."
+    fi
 fi
 
 
 # Copy aspell dictionary to aspell's usual dict dir: /usr/lib/aspell
 if [ -d "$aspell_dict_dir" ]; then 
-    echo "Adding ODS dictionary to aspell dictionaries"
+    echo "Adding DSL dictionaries to aspell's master dictionaries"
     sudo cp -- "$aspell_dict" "$aspell_dict_dir"
+    sudo cp -- "$aspell_tekstnet_dict" "$aspell_dict_dir"
 else
   echo "Aspell's dictionaries are not found at $aspell_dict_dir"
 fi
