@@ -30,7 +30,7 @@ Herefter:
    Hvis du er OS X-bruger kører du i stedet:
 
    ```
-   wget -O - https://raw.githubusercontent.com/dsldk/dsl-tei/master/tools/bootstrap.sh | zsh
+   curl -sSL https://raw.githubusercontent.com/dsldk/dsl-tei/master/tools/bootstrap.sh | zsh
    ```
 
 3. Læs vejledning i [opsætning af arbejdsområde](docs/up-and-running.md)
