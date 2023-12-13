@@ -390,8 +390,21 @@ h1.editorial {
     text-align: center;
     color: #999;
 }
-.legacy-page-break{
+
+.pageBegin {
+  visibility: visible;
+  position: absolute;
+  left: -20px;
+  text-indent: -5em;
+  font-family: $font-family-sans;
+  font-size: 12pt; 
 }
+
+.pageBegin a {
+  color: #999;
+  font-weight: 800;
+}
+
 
 /*.metadata{
     color: gray;
@@ -739,7 +752,7 @@ div.verse-line{
  */
 .asterism, .asterisk, .fleuron, .fleuron-reversed, .fleuron-rotated {
   margin-top: 2rem;
-  margin-bottom: 3rem;
+  margin-bottom: 4rem;
   border: none;
 }
 .asterisk::before {

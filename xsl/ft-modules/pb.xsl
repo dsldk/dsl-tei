@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
   xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tei="http://www.tei-c.org/ns/1.0"
-  exclude-result-prefixes="tei xs" version="2.0">
+  exclude-result-prefixes="tei xs" version="1.0">
   <xd:doc xmlns:xd="http://www.oxygenxml.com/ns/doc/xsl" scope="stylesheet">
     <xd:desc>
       <xd:detail>Licensed by Thomas Hansen under the Creative Commons Attribution-Share Alike
@@ -24,57 +24,29 @@
     <xsl:value-of select="/tei:TEI/tei:teiHeader/tei:fileDesc/tei:titleStmt/tei:title/@xml:id"/>
   </xsl:variable>
   <xsl:template match="tei:pb">
-    <xsl:choose>
-      <!--If a text has facsimiles (@facs) make a link to them-->
-      <xsl:when test="@facs">
-        <span class="legacy-page-break">
-          <span class="page-break-mark">
-            <!-- <a href="{concat(concat(concat(concat('/facs/', $worktitle), '/'), @n), '.jpg')}"> -->
-            <a target="_blank">
-              <xsl:attribute name="href"><xsl:value-of select="$config//test"/>
-                <xsl:value-of select="@facs"/>
-              </xsl:attribute>
-              <xsl:attribute name="title">
-                <xsl:value-of select="@ed"/><xsl:text> </xsl:text>
-                <xsl:value-of select="@n"/>
-            </xsl:attribute>|</a>
-          </span>
-        </span>
-      </xsl:when>
-      <!-- <xsl:when test="@facs"> -->
-        <!--<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">→</button>
-        -->
-<!-- Modal -->
-<!--<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">-->
-<!--  <div class="modal-dialog">-->
-<!--    <div class="modal-content">-->
-<!--      <div class="modal-header">-->
-<!--        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>-->
-<!--        <button type="button" class="close" data-dismiss="modal" aria-label="Close">-->
-<!--          <span aria-hidden="true"></span>-->
-<!--        </button>-->
-<!--      </div>-->
-<!--      <div class="modal-body">-->
-<!--            <!-1-<img src="/home/th/Development/dipdandig/dd/facs/test.jpg"/>-1->-->
-<!--            <xsl:value-of select="resolve-uri(.)"/>-->
-<!--      </div>-->
-<!--      <div class="modal-footer">-->
-<!--        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>-->
-<!--        <button type="button" class="btn btn-primary">Save changes</button>-->
-<!--      </div>-->
-<!--    </div>-->
-<!--  </div>-->
-<!--</div>-->
-      <!-- </xsl:when> -->
-      <xsl:otherwise>
-        <span class="legacy-page-break">
-          <span class="page-break-mark">
-            <xsl:attribute name="title">
-              <xsl:value-of select="@ed"/><xsl:text> </xsl:text>
-              <xsl:value-of select="@n"/>
-          </xsl:attribute>|</span>
-        </span>
-      </xsl:otherwise>
-    </xsl:choose>
+    <span class="pageBegin">
+      <xsl:attribute name="id">p<xsl:value-of select="@n"/></xsl:attribute>
+      <xsl:attribute name="class">pageBegin</xsl:attribute>
+      <xsl:attribute name="title">
+        <xsl:value-of select="@ed"/>
+        <xsl:value-of select="@n"/>
+      </xsl:attribute>
+      <xsl:choose>
+        <xsl:when test="@facs">
+          <a target="_blank">
+            <xsl:attribute name="href">
+              <xsl:value-of select="@facs"/>
+            </xsl:attribute>
+            <xsl:value-of select="@n"/>
+          </a>
+        </xsl:when>
+        <xsl:otherwise>
+          <xsl:value-of select="@n"/>
+        </xsl:otherwise>
+      </xsl:choose>
+    </span>
+    <span class="legacy-page-break">
+      <span class="page-break-mark">|</span>
+    </span>
   </xsl:template>
 </xsl:stylesheet>
