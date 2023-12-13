@@ -623,8 +623,9 @@
   <xs:element name="dateline">
     <xs:complexType mixed="true">
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element minOccurs="0" maxOccurs="unbounded" ref="ns1:ex"/>
-        <xs:element minOccurs="0" maxOccurs="unbounded" ref="ns1:lb"/>
+        <xs:element ref="ns1:ex"/>
+        <xs:element ref="ns1:lb"/>
+        <xs:element ref="ns1:pb"/>
       </xs:choice>
     </xs:complexType>
   </xs:element>
@@ -694,6 +695,11 @@
   <xs:element name="speaker" type="xs:NCName"/>
   <xs:element name="hi">
     <xs:complexType mixed="true">
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element ref="ns1:hi"/>
+        <xs:element ref="ns1:lb"/>
+        <xs:element ref="ns1:pb"/>
+      </xs:choice>
       <xs:attribute name="rend">
         <xs:simpleType>
           <xs:restriction base="xs:token">
@@ -737,6 +743,7 @@
       <xs:choice minOccurs="0" maxOccurs="unbounded">
         <xs:element ref="ns1:ex"/>
         <xs:element ref="ns1:hi"/>
+        <xs:element ref="ns1:pb"/>
       </xs:choice>
       <xs:attribute name="resp"/>
     </xs:complexType>
@@ -762,6 +769,7 @@
         <xs:element ref="ns1:hi"/>
         <xs:element ref="ns1:lb"/>
         <xs:element ref="ns1:orig"/>
+        <xs:element ref="ns1:pb"/>
         <xs:element ref="ns1:reg"/>
       </xs:choice>
       <xs:attribute name="rend" type="xs:NMTOKENS"/>
