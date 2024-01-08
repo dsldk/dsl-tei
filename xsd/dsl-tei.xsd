@@ -357,6 +357,7 @@
         <xs:element ref="ns1:docTitle"/>
         <xs:element ref="ns1:byline"/>
         <xs:element ref="ns1:docImprint"/>
+        <xs:element ref="ns1:epigraph"/>
         <xs:element ref="ns1:figure"/>
       </xs:choice>
     </xs:complexType>
@@ -551,6 +552,7 @@
           <xs:element ref="ns1:table"/>
         </xs:choice>
         <xs:element minOccurs="0" ref="ns1:closer"/>
+        <xs:element minOccurs="0" ref="ns1:postscript"/>
       </xs:sequence>
       <xs:attribute name="type">
         <xs:simpleType>
@@ -676,11 +678,21 @@
       </xs:choice>
     </xs:complexType>
   </xs:element>
+  <xs:element name="postscript">
+    <xs:complexType mixed="true">
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element ref="ns1:lg"/>
+        <xs:element ref="ns1:p"/>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
   <xs:element name="epigraph">
-    <xs:complexType>
-      <xs:sequence>
+    <xs:complexType mixed="true">
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
         <xs:element ref="ns1:cit"/>
-      </xs:sequence>
+        <xs:element ref="ns1:lg"/>
+        <xs:element ref="ns1:p"/>
+      </xs:choice>
     </xs:complexType>
   </xs:element>
   <xs:element name="sp">
