@@ -1480,9 +1480,7 @@ Gyldige værdier af `figure`-elementets `@type`:
 | fleuron          | centreret ❦   |
 | fleuron-reversed | centreret ☙   |
 | fleuron-rotated  | centreret ❧   |
-| shortline        | kort centreret skillestreg |
-| mediumline       | middellang centreret skillestreg |
-| longline         | lang centreret skillestreg |
+| line             | centreret skillestreg |
 
 
 #### 4.3.5.7a Formler
