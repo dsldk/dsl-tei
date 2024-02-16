@@ -21,6 +21,7 @@
   <xsl:include href="ft-modules/lb.xsl"/>
   <xsl:include href="ft-modules/lg.xsl"/>
   <xsl:include href="ft-modules/list.xsl"/>
+  <xsl:include href="ft-modules/notatedMusic.xsl"/>
   <xsl:include href="ft-modules/note.xsl"/>
   <xsl:include href="ft-modules/opener.xsl"/>
   <xsl:include href="ft-modules/orig.xsl"/>
@@ -196,6 +197,12 @@
           integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
           crossorigin="anonymous"/>
         <link rel="stylesheet" href="../css/styles.css" type="text/css" media=""/>
+         
+         <!-- Include scripts for music rendering if necessary -->
+         <xsl:if test="//tei:notatedMusic">
+            <xsl:apply-templates select="." mode="notatedMusic_head"/>
+         </xsl:if>
+         
       </head>
       <body>
         <nav class="navbar fixed-top navbar-expand-md navbar-light bg-light">

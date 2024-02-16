@@ -1,3 +1,4 @@
+<?oxygen RNGSchema="../../../schema/TEI_P5/tei_all.rng" type="xml"?>
 <TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <teiHeader>
     <fileDesc>
@@ -675,7 +676,12 @@
         </div>
         <div>
           <head>Noder</head>
-          <p>Eksempel mangler</p>
+          <p>Noder kan indlejres vha. reference til en MEI-fil:<lb/>
+             <code>&lt;notatedMusic&gt;&lt;ptr target="[url]"&gt;&lt;/notatedMusic&gt;</code>
+          </p>
+           <notatedMusic>
+              <ptr target="mei/dsl-mei-ref.xml"/>
+           </notatedMusic>
         </div>
         <div>
           <head>Kode</head>
