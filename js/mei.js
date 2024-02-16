@@ -1,19 +1,15 @@
 // Verovio options
 
-// pageWidth * scale % = calculated width 
 var $defaultVerovioOptions = {
-//    pageMarginTop:        0,
-//    pageMarginLeft:       30,
     header:               'none',
     footer:               'none',
     font:                 'Bravura',
-    adjustPageHeight:     1,
-    adjustPageWidth:      1,  
-    noJustification:      0,
+    adjustPageHeight:     true,
+    noJustification:      false,
     breaks:               'encoded',
-    systemDivider:        'none'
+    systemDivider:        'none',
+    minLastJustification: '0.5'
 };
-
  
 function loadMeiFromDoc() {
     /* Read MEI data from <script> elements in the HTML document with @id = the MEI file name (without extension) + '_data'.

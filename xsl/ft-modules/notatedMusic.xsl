@@ -71,8 +71,8 @@
        
     <xsl:template match="*" mode="notatedMusic_head">
        <!-- Include additional header elements if the TEI file contains notated music. -->
-       <script src="../js/verovio-toolkit-wasm-4.1.0.js"><!-- Verovio toolkit --></script>
-       <script src="../js/mei.js"><!-- MEI handling script --></script>
+       <script type="text/javascript" src="../js/verovio-toolkit-wasm-4.1.0.js"><!-- Verovio toolkit --></script>
+       <script type="text/javascript" src="../js/mei.js"><!-- MEI handling script --></script>
     </xsl:template>
     
 </xsl:stylesheet>
