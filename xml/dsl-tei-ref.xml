@@ -382,8 +382,8 @@
           <figure type="asterisk"/>
           <p>Asterisme <code>&lt;figure type="asterism"/&gt;</code>:</p>
           <figure type="asterism"/>
-          <p>Delestreg <code>&lt;figure type="line"/&gt;</code>:</p>
-          <figure type="line"/>
+          <p>Delestreg <code>&lt;figure type="divline"/&gt;</code>:</p>
+          <figure type="divline"/>
           <p>Fleuron <code>&lt;figure type="fleuron"/&gt;</code>:</p>
           <figure type="fleuron"/>
           <!--<p>Fleuron, venstredrejet <code>&lt;figure type="line"/&gt;</code>:</p>
