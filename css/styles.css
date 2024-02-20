@@ -780,30 +780,11 @@ div.verse-line{
   display: block;
   text-align: center;
 }
-.shortline {
-  margin-top: 4rem;
-  margin-bottom: 4rem;
-  width: 10%;
-  height:1px;
-  border-width:0;
-  color:gray;
-  background-color:gray
-}
 
-.mediumline {
+.line {
   margin-top: 4rem;
   margin-bottom: 4rem;
   width: 20%;
-  height:1px;
-  border-width:0;
-  color:gray;
-  background-color:gray
-}
-
-.longline {
-  margin-top: 4rem;
-  margin-bottom: 4rem;
-  width: 30%;
   height:1px;
   border-width:0;
   color:gray;
