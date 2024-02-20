@@ -39,8 +39,8 @@
         <xsl:when test="@type = 'fleuron-rotated'">
           <hr class="fleuron-rotated"/>
         </xsl:when>
-        <xsl:when test="@type='line'">
-          <hr class="line"/>
+        <xsl:when test="@type='divline'">
+          <hr class="divline"/>
         </xsl:when>
         <xsl:when test="@type='sixdots'">
           <hr class="sixdots"/>
