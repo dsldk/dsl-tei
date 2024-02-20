@@ -39,23 +39,8 @@
         <xsl:when test="@type = 'fleuron-rotated'">
           <hr class="fleuron-rotated"/>
         </xsl:when>
-        <xsl:when test="@type='shortline'">
-          <hr class="shortline"/>
-        </xsl:when>
-        <xsl:when test="@type='shortLine'">
-          <hr class="shortline"/>
-        </xsl:when>
-        <xsl:when test="@type='mediumline'">
-          <hr class="mediumline"/>
-        </xsl:when>
-        <xsl:when test="@type='mediumLine'">
-          <hr class="mediumline"/>
-        </xsl:when>
-        <xsl:when test="@type='longline'">
-          <hr class="longline"/>
-        </xsl:when>
-        <xsl:when test="@type='longLine'">
-          <hr class="longline"/>
+        <xsl:when test="@type='line'">
+          <hr class="line"/>
         </xsl:when>
         <xsl:when test="@type='sixdots'">
           <hr class="sixdots"/>

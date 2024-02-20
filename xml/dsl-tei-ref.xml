@@ -378,22 +378,18 @@
             <orig>Typografiske udtryksmidler</orig>
           </head>
           <p>Tekstdele kan adskilles med typografiske udtryksmidler.</p>
-          <p>Asterisk:</p>
+          <p>Asterisk <code>&lt;figure type="asterisk"/&gt;</code>:</p>
           <figure type="asterisk"/>
-          <p>Asterisme:</p>
+          <p>Asterisme <code>&lt;figure type="asterism"/&gt;</code>:</p>
           <figure type="asterism"/>
-          <p>Kort linje:</p>
-          <figure type="shortLine"/>
-          <p>Middellang linje:</p>
-          <figure type="mediumLine"/>
-          <p>Lang linje</p>
-          <figure type="longLine"/>
-          <p>Fleuron:</p>
+          <p>Delestreg <code>&lt;figure type="line"/&gt;</code>:</p>
+          <figure type="line"/>
+          <p>Fleuron <code>&lt;figure type="fleuron"/&gt;</code>:</p>
           <figure type="fleuron"/>
-          <p>Fleuron, venstredrejet:</p>
+          <!--<p>Fleuron, venstredrejet <code>&lt;figure type="line"/&gt;</code>:</p>
           <figure type="fleuron-reversed"/>
-          <p>Fleuron, højredrejet:</p>
-          <figure type="fleuron-rotated"/>
+          <p>Fleuron, højredrejet <code>&lt;figure type="line"/&gt;</code>:</p>
+          <figure type="fleuron-rotated"/>-->
         </div>
       </div>
       <div>
