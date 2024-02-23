@@ -61,7 +61,6 @@ function mdivId(id) {
 
 
 document.addEventListener("DOMContentLoaded", (event) => {
-   console.log("Document loaded");
    verovio.module.onRuntimeInitialized = () => {
         loadMeiFromDoc();
      }
