@@ -1,15 +1,24 @@
 // Verovio options
 
 var $defaultVerovioOptions = {
+    scale:                100,
+    pageWidth:            1800,
+    scaleToPageSize:      false,
     header:               'none',
     footer:               'none',
     font:                 'Bravura',
     adjustPageHeight:     true,
+    adjustPageWidth:      false,
     noJustification:      false,
+    pageMarginRight:      0,
+    pageMarginLeft:       40,
+    pageMarginTop:        10,
+    pageMarginBottom:     10,
     breaks:               'encoded',
     systemDivider:        'none',
-    minLastJustification: '0.5'
+    minLastJustification: 0.5
 };
+
  
 function loadMeiFromDoc() {
     /* Read MEI data from <script> elements in the HTML document with @id = the MEI file name (without extension) + '_data'.
@@ -36,6 +45,7 @@ function loadMeiFromDoc() {
     });
 }
 
+
 function dataId(id) {
     // Return the id of the <script> element that holds the relevant data (necessary for IDs also containing information about the <mdiv> section to extract).
     // If there is no data marked specifically for the desired <mdiv>, we assume that data is to be taken from the original data containing all the MDIVs  
@@ -51,7 +61,7 @@ function mdivId(id) {
 
 
 document.addEventListener("DOMContentLoaded", (event) => {
-  verovio.module.onRuntimeInitialized = () => {
-     loadMeiFromDoc();
-  }
+   verovio.module.onRuntimeInitialized = () => {
+        loadMeiFromDoc();
+     }
 });
