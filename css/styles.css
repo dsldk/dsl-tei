@@ -791,13 +791,6 @@ div.verse-line{
   background-color:gray
 }
 
-/* notatedMusic-related styles */
-
-.verovioSVG svg {
-   width: 100%;
-   height: auto;
-}
-
 /*@media print {
   body {
     font-family: "PT Serif", Georgia, "Times New Roman", serif;

@@ -1,0 +1,30 @@
+/* notatedMusic-related styles */
+
+.mei svg {
+   width: 100%;
+   height: auto;
+}
+
+/* Variant readings */
+.mei svg .lem * {
+   stroke: #36a;
+   fill: #36a; 
+}
+
+.mei svg .rdg * {
+   stroke: #f66;
+   fill: #f66; 
+}
+
+/* Editorial emendations */
+.mei svg .supplied *, .mei svg .choice *, .mei svg .reg *, .mei svg .unclear * {
+   stroke: #36a;
+   fill: #36a; 
+}
+
+/* Descriptive editorial markup */
+.mei svg .gap *, .mei svg .del *, .mei svg .corr *, .mei svg .add *, .mei svg .del * {
+   stroke: #f66;
+   fill: #f66; 
+}
+

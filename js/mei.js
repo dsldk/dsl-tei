@@ -1,24 +1,17 @@
 // Verovio options
 
 var $defaultVerovioOptions = {
-    scale:                100,
-    pageWidth:            1800,
-    scaleToPageSize:      false,
     header:               'none',
     footer:               'none',
     font:                 'Bravura',
     adjustPageHeight:     true,
-    adjustPageWidth:      false,
     noJustification:      false,
-    pageMarginRight:      0,
-    pageMarginLeft:       40,
-    pageMarginTop:        10,
-    pageMarginBottom:     10,
     breaks:               'encoded',
     systemDivider:        'none',
-    minLastJustification: 0.5
+    minLastJustification: '0.5',
+    pageMarginLeft:        28,
+    pageMarginRight:        0
 };
-
  
 function loadMeiFromDoc() {
     /* Read MEI data from <script> elements in the HTML document with @id = the MEI file name (without extension) + '_data'.
@@ -45,7 +38,6 @@ function loadMeiFromDoc() {
     });
 }
 
-
 function dataId(id) {
     // Return the id of the <script> element that holds the relevant data (necessary for IDs also containing information about the <mdiv> section to extract).
     // If there is no data marked specifically for the desired <mdiv>, we assume that data is to be taken from the original data containing all the MDIVs  
@@ -59,9 +51,29 @@ function mdivId(id) {
     return mdiv;
 }
 
+function repositionMei(svg) {
+   // Align first bar line or instrument names (if present) with the containing block's left border. 
+   // First, calculate the SVG's scaling factor by comparing its actual width with the SVG's default width, which is 2100px (Verovio's default).
+   // Ideally the value should be read from the SVG's actual width attribute.
+   var scaleFactor = svg.width() / 2100;
+   // Add a negative left margin according to the SVG's left margin and the scaling factor
+   var newMargin = 0 - $defaultVerovioOptions.pageMarginLeft * scaleFactor;
+   svg.css("margin-left",newMargin);
+}
+
+function repositionAllMei() {
+/* Align SVG with left border of its container */
+   $(".verovioSVG").each( function() {
+      repositionMei($(this));
+    });
+}
+
+window.addEventListener("resize", (event) => {
+   repositionAllMei();
+});
 
 document.addEventListener("DOMContentLoaded", (event) => {
-   verovio.module.onRuntimeInitialized = () => {
-        loadMeiFromDoc();
-     }
+  verovio.module.onRuntimeInitialized = () => {
+     loadMeiFromDoc();
+  }
 });
