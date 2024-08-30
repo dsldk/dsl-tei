@@ -190,7 +190,7 @@ description*) med de underordnede elementer `listWit` og `listBibl`:
 
 | element             | beskrivelse                                       |
 |---------------------|---------------------------------------------------|
-| listWit             | (*witness list*) ét eller flere obligatoriske tekstvidne-elementer (`witness`). `witness` har obligatorisk `@xml:id` til identifikation. Heri indsættes en bogstavværdi, fx `A`, `B`, `C`, som fungerer som reference i tekstkritiske noter |
+| listWit             | (*witness list*) ét eller flere obligatoriske `witness`-elementer, som hver især beskriver et tekstforlæg. `witness` har obligatorisk `@xml:id` til identifikation. Heri indsættes en bogstavværdi, fx `A`, `B`, `C`, som er reference i tekstkritiske noter |
 | listBibl            | (*bibliographic list*), indeholder supplerende bibliografiske oplysninger kan gives i ét eller flere `bibl`-elementer |
 
 > *Note:* En underinddeling med obligatorisk `listWit` og fakultativt
@@ -220,291 +220,38 @@ Elementerne disponeres således:
 > afledt af `Aa` betegnes `Aa1`. Koncepter betegnes ved små bogstaver.
 > Således er et koncept til `A` betegnet ved `a`. 
 
-#### 2.1.4.1 To anvendelser af witness-elementet
+#### 2.1.4.1 Tekstforlægget (witness)
 
-Alt efter om de anvendte tekstvidner er håndskrifter eller trykte forlæg
-forsynes `witness`-elementet enten med et underordnet `bibl`- eller
-`msDesc`-element:
+Et tekstforlæg beskrives i `witness` i prosaform og indledes altid med
 
-| element     | beskrivelse              |
-|-------------|--------------------------|
-| bibl        | (*bibliographic citation*) indeholder en løst struktureret bibliografisk henvisning, hvis bestanddele kan opmærkes efter behov. Denne praksis benyttes typisk, når kilden er et moderne tryk, se 2.1.4.2 |
-| msDesc      | (*manuscript description*) indeholder en beskrivelse af ét manuskript eller tekstbærende genstand. Denne praksis benyttes til håndskrevne kilder, inkunabler og tidlige tryk, som findes i biblioteker og arkiver. Se 2.1.4.3 |
+1. arkivalske eller bibliografiske oplysninger til identifikation af forlægget
+   (lokalitet, institution, klassifikation)
+2. en eventuel beskrivelse af forlæggets fysiske tilstand
+3. en eventuel redegørelse for forlæggets historie og proveniens
 
 ```xml
-<sourceDesc>
-  <listWit>
-    <witness xml:id="E">
-     <bibl><title>Tychonis Brahe Astronomiæ instauratæ mechanica</title>, Wandesburgi 1598</bibl>
-    </witness>
-    <witness xml:id="F">
-      <bibl><title>Tychonis Brahe Astronomiæ instauratæ progymnasmata</title>, Norimbergæ 1602</bibl>
-    </witness>
-  </listWit>
-</sourceDesc>
+<listWit>
+  <witness xml:id="A"><hi rend="italic">Aanden i Naturen</hi>, bd. 1, 
+                      1. udgave, 1850 [1849]</witness>
+  <witness xml:id="B"><hi rend="italic">Aanden i Naturen</hi>, bd. 1, 
+                      2. udgave, 1851</witness>
+  <witness xml:id="C"><hi rend="italic">Aanden i Naturen</hi>, 
+                      3. udgave, 1856</witness>
+  <witness xml:id="D"><hi rend="italic">Aanden i Naturen</hi>, 
+                      4. udgave, 1978</witness>
+  <witness xml:id="ms.">Det Kgl. Bibliotek, H.C. Ørsteds arkiv, 
+                      Ørsted 21 fol.</witness>
+</listWit>
 ```
 
-#### 2.1.4.2 Beskrivelse af trykte forlæg
-
-Et `bibl`-element indeholder en bibliografisk henvisning, som kan
-struktureres efter behov. Elementet kan indeholde et `@xml:id` udfyldt
-med en unik id, således at man kan referere til kilden i tekstkritiske
-noter.
-
-<!-- skal udfyldes -->
-
-#### 2.1.4.3 Beskrivelse af håndskrifter
-
-Til udgivelse af tekster med håndskrevne forlæg hører en beskrivelse af
-håndskriftet: hvor det befinder sig, dets tilstand og historie. `msDesc`
-indeholder tre elementer:
-
-| element       |                                                 |
-|---------------|-------------------------------------------------|
-| msIdentifier  | (*manuscript identifier*), identifikation af håndskriftet, jf.  2.1.4.4 |
-| physDesc      | (*physical description*), beskrivelse af håndskriftets fysiske tilstand, 2.1.4.5 |
-| history       | en redegørelse for håndskriftets proveniens, jf. 2.1.4.6 |
-
-Manuskriptbeskrivelsen har denne struktur:
-
 ```xml
-<msDesc>
- <msIdentifier> ... </msIdentifier>
- <physDesc> ... </physDesc>
- <history> ... </history>
-</msDesc>
-```	
-
-#### 2.1.4.4 Identifikation af håndskriftet (msIdentifier)
-
-Til identifikation af et tekstvidne anvendes følgende elementer:
-
-| element       |                                                 |
-|---------------|-------------------------------------------------|
-| settlement    | stedet, hvor håndskriftet opbevares |
-| repository    | institutionen, som opbevarer håndskriftet |  
-| idno          | standardiseret identifikation af håndskrift eller bog i en samling |
-
-Et eksempel findes her:
-
-```xml
-<msDesc>
-  <msIdentifier>
-    <settlement> København </settlement>
-    <repository> Det Kongelige Bibliotek</repository>
-    <idno> NKS 1234 (Æbelholtbogen) </idno>
-  </msIdentifier>
-  ...
-```
-	
-#### 2.1.4.5 Forlæggets fysiske tilstand 
-
-Beskrivelsen af et tekstvidnes fysiske fremtræden leveres under elementet
-`physDesc` (_physical description_) i et eller flere `ab`-elementer.[^2145]
-
-[^2145]: Tidligere udgaver af denne specifikation har opereret med en mere
-  udførlig opmærkningsmodel.
-
-
-```xml
-<physDesc>
-  <ab>Brevkort skrevet egenhændigt af Niels Bohr. På bagsiden: <q>Hr. stud. mag. H.
-      Bohr, Bredgade 62, K., København</q> og <q>Juleaften</q></ab>
-</physDesc>
-```
-
-<!--falder i fire dele: 
-
-1. `objectDesc`, beskrivelse af det fysiske objekt 
-2. `handDesc`, beskrivelse af skriver, skriftform og lign. 
-3. `additions`, tilføjelser til teksten
-4. `sealDesc`, beskrivelse af segl
-
-Elementerne fordeler sig således:
-
-	<physDesc>
-	  <objectDesc> ... </objectDesc>
-	  <handDesc> ... </handDesc>
-	  <additions> ... </additions>
-	  <sealDesc> ... </sealDesc>
-	</physDesc>
-
-##### Den tekstbærende genstand (`objectDesc`)
-
-`objectDesc` underordner elementet `supportDesc` (*support
-description*) med information om den genstand, som er bærer
-af teksten. Elementet har attributtet `@material` til angivelse af
-objektets materiale.
-
-	<objectDesc>
-	  <supportDesc material="...">
-	    ...
-	  </supportDesc>
-	</objectDesc>
-
-Attributtet `@material` kan have følgende gyldige værdier:
-
------------------------------------------------------------------
-**Attribut: `@material`**  **Værdi**    **Betydning**
--------------------------- ------------ ---------------------------
-                           mixed        objekt af blandet materiale
-
-                           paper        objekt af papir
-
-                           parch        objekt af pergament
-
-                           nil          materialet uafklaret
-
-                           empty        materialet irrelevant
-
------------------------------------------------------------------
-
-
-Under `supportDesc` findes tre elementer, der beskriver genstandens
-materiale, fysiske mål og tilstand:
-
-1. `support`, beskrivelse i prosaform af den tekstbærende genstand
-2. `extent`, den tekstbærende genstands fysiske mål i cm
-3. `condition`, den tekstbærende genstands tilstand
-
-Her ses et eksempel på udfyldt `supportDesc` fra Diplomatarium Danicum: 
-
-	<supportDesc material="parch">
-	  <support>
-	      <ab> Pergament </ab>
-	  </support>
-	  <extent>
-	    <dimensions unit="cm">
-	      <width>25</width>
-	      <height>11</height>
-	    </dimensions>
-	  </extent>
-	  <condition>
-	    <ab>Beskadiget af fugt i venstre side</ab>
-	  </condition>
-	</supportDesc>
-
-##### Skriftform og skriver (`handDesc`)
-
-`handDesc`-elementet beskriver tekstvidnets skriftlige udtryk herunder
-skrifttype og hvem der skrevet det. `handDesc` indeholder et 
-`handNote`-element, som igen underordner et eller flere `ab`-elementer.
-
-Eksempel:
-
-	<handDesc>
-	  <handNote>
-	    <ab> Afskrift fra det 18. årh. af Langebek </ab>
-	  </handNote>
-	</handDesc>
-
-##### Påskrifter og andre tilføjelser til teksten (`additions`)
-
-Elementet `additions` indeholder angivelse af væsentlige
-tilføjelser på tekstvidnet. Disse tilføjelser indskrives i et
-`ab`-element således at selve tilføjelsen står i et `q`-element
-(*quote*) på følgende måde:
-
-	<additions>
-	  <ab> På bagsiden påskriften: <q>Skipt</q>, derefter 
-	    med anden hånd: <q>paa Raasserydh</q>
-	  </ab>
-	</additions>
-
-Jf. <https://text.dsl.dk/books/dipdan/1407/dd_14070207001>
-
-##### Seglbeskrivelse (`sealDesc`)
-
-Ved beseglede tekstvidner beskrives seglene under elementet `sealDesc`
-(*seal description*). Hvert segl har sit eget `seal`-element, som
-identificeres med et nummer angivet som værdi i attributtet `@n`
-(number). Seglene tælles fra venstre mod højre. I det omfang seglet i
-forvejen er beskrevet i de danske seglværker, angives dette.
-
-	<sealDesc>
-	  <seal n="1" type="pendant">
-	    <ab> ...</ab>
-	  </seal>
-	    ...
-	</sealDesc>
-
-Nedenfor ses eksempel på segl hvis pergamentsrem bærer en
-påskrift, jf. Diplomatarium Danicum <https://text.dsl.dk/books/1419/dd_14190518001>
-
-	<seal n="1" type="pendant">
-	  <ab>Bomærke af mørkt voks i perg.rem med tekst 
-	    <q>allæ the gothg<damage><ex>er</ex></damage>ning<ex>e</ex> 
-	      som gyørthæ æræ oc</q>
-	  </ab>
-	</seal>
-
-#### 2.1.4.6 Proveniens (history)
-
-Tekstvidnets historie angives under `history`-elementet. Hvis
-tekstvidnet vides at være tabt, registreret eller nævnt, angives dette
-her.
-
-	...
-	<history>
-	  <ab>Tabt. Registreret i bla bla</ab>
-	</history>
-	...
--->
-<!--
-#### 2.1.7 Bibliografiske oplysninger om teksten (`listBibl`) 
-
-Efter `listWit` følger et `listBibl`-element som sidste del af
-`sourceDesc`. Her samles et eller flere `bibl`-elementer (*bibliographic
-citation*), jf. 2.1.5.
-
-	  </listWit>
-	  <listBibl>
-	    <bibl> Weibull, Dipl. Dioc. Lund. III 299-300 nr. 286 </bibl>
-	    <bibl> Vejledende Arkivreg. XVIII 284 nr. 364 </bibl>
-	    ...
-	  </listBibl>
-	</sourceDesc>
--->
-
-## 2.2 Det digitale produkt (`encodingDesc`)
-
-TEI-headerens anden komponent er `encodingDesc`-elementet, som dokumenterer
-forholdet mellem den opmærkede tekst og dennes kilde. Her angives de for
-transkriptionen styrende principper. Elementet `encodingDesc` indholder følgende
-elementer:
-
-| element       | beskrivelse                                     |
-|---------------|-------------------------------------------------|
-| projectDesc   | (*project description*) beskriver formålet med opmærkningen af filen |
-| appInfo       | (*application information*) optager information om de applikationer, der har behandlet teksten i filen |
-
-<!-- ### 2.2.1 samplingDecl
-
-Elementet optager oplysninger om eventuelle udeladelser af dele af
-teksten, fx om der er tale om en fuld transkription eller et
-sammendrag.
-
-En del af *Diplomatarium Danicum*s tekster udgøres af såkaldte
-hanserecesser, referater fra hansestædernes repræsentantskabsmøder.
-Herfra optages kun de passager af relevans for danske forhold.
-Andre tekster hvis indhold kun er af perifer interesse for udgivelsen
-kan optages i udtog.
-
-Elementet `samplingDecl` kan have følgende gyldige værdier:
-
------------------------------------------------------------------
-**Element: `samplingDecl`**  **Værdi**    **Betydning**
----------------------------  ------------ ---------------------------
-                             version      teksten er fuldstændig
-
-                             excerpt      teksten er et udtog
-
-                             nil          sagen uafklaret
-
-                             empty        sagen irrelevant
-
------------------------------------------------------------------
--->
+<listWit>
+  <witness xml:id="A">Uppsala, Uppsala universitetsbibliotek. Pergament.
+  På bagsiden påskriften: <hi rend="italic">Skipt</hi>, derefter med 
+  anden hånd: <hi rend="italic">paa Raasserydh</hi>. Segl: 1. perg.rem, 
+  2. perg.rem, 3. perg.rem, 4. perg.rem, 5. perg.rem, 6. perg.rem, 7. 
+  perg.rem, 8. perg.rem.</witness>
+</listWit>
 
 ### 2.2.1 `projectDesc`
 
