@@ -252,6 +252,7 @@ Et tekstforlæg beskrives i `witness` i prosaform og indledes altid med
   2. perg.rem, 3. perg.rem, 4. perg.rem, 5. perg.rem, 6. perg.rem, 7. 
   perg.rem, 8. perg.rem.</witness>
 </listWit>
+```
 
 ### 2.2.1 `projectDesc`
 
@@ -780,24 +781,40 @@ udfyldes med én af følgende gyldige værdier:
 
 ### 4.3.3 Lyrik
 
-Til opmærkning af vers og strofer anvendes elementet `lg` (*line group*) med de
+Til opmærkning af strofer anvendes elementet `lg` (*line group*) med de
 underordnede elementer `l` (*line*) til verslinjer og `head` til
 strofeoverskrifter. Når verslinjen er brudt, markeres dette vha.  et
 `lb`-element (*line break*). Selv hvor der kun optræder en enkelt verslinje,
 skal `lg` benyttes som wrapper.
 
-Elementet `lg` kan udvides med attributtet `@rend` for at angive centreret og
-højrestillet tekst.  
+Elementet `lg` kan udvides med attributtet `@rend` for at angive venstreindrykning af strofen:
 
-| `@rend` værdi | betydning                                               |
+| `lg/@rend`: værdi | betydning                                           |
 |---------------|---------------------------------------------------------|
-|  text-center  | centreret tekst                                         | 
-|  text-right   | højrestillet tekst                                      | 
+|  ml-0         | nulstiller venstremargin på `lg`                        | 
+|  ml-1         | sætter venstremargin til $spacer * .25                  | 
+|  ml-2         | sætter venstremargin til $spacer * .5                   | 
+|  ml-3         | sætter venstremargin til $spacer *                      | 
+|  ml-4         | sætter venstremargin til $spacer * 1.5                  | 
+|  ml-5         | sætter venstremargin til $spacer * 3                    | 
 
-For at gengive typografisk ekspressivitet kan et `l`-element forsynes med
+For at tillade gengivelse af typografisk ekspressivitet kan et `l`-element forsynes med
 attributtet `@rend`.
 
-I Brandes *Hovedstrømninger bd. 5* citeres:
+| `l/@rend`: værdi | betydning                                            |
+|------------------|------------------------------------------------------|
+| indent-1         | venstreindrykker teksten med 2 * &nbsp;              |
+| indent-2         | venstreindrykker teksten med 4 * &nbsp;              |
+| indent-3         | venstreindrykker teksten med 6 * &nbsp;              |
+| indent-4         | venstreindrykker teksten med 8 * &nbsp;              |
+| indent-5         | venstreindrykker teksten med 10 * &nbsp;             |
+| indent-6         | venstreindrykker teksten med 12 * &nbsp;             |
+| indent-7         | venstreindrykker teksten med 14 * &nbsp;             |
+| indent-8         | venstreindrykker teksten med 16 * &nbsp;             |
+| indent-9         | venstreindrykker teksten med 18 * &nbsp;             |
+| indent-10        | venstreindrykker teksten med 20 * &nbsp;             |
+
+__Eksempel__ I Brandes *Hovedstrømninger bd. 5* citeres:
 
 ```
 	Derpaa
@@ -815,20 +832,17 @@ Effekten opnås gennem følgende opmærkning:
 
 ```xml
 <lg>
-  <l rend="indent1">Derpaa</l>
-  <l rend="indent2">gik</l>
-  <l rend="indent3">vor</l>
-  <l rend="indent4">Helt</l>
-  <l rend="indent5">ganske</l>
-  <l rend="indent6">nedslaaet</l>
-  <l rend="indent7">ned</l>
-  <l rend="indent8">ad</l>
-  <l rend="indent9">Trapperne</l>
+  <l rend="indent-1">Derpaa</l>
+  <l rend="indent-2">gik</l>
+  <l rend="indent-3">vor</l>
+  <l rend="indent-4">Helt</l>
+  <l rend="indent-5">ganske</l>
+  <l rend="indent-6">nedslaaet</l>
+  <l rend="indent-7">ned</l>
+  <l rend="indent-8">ad</l>
+  <l rend="indent-9">Trapperne</l>
 </lg>
 ```
-
-NB! For at opnå kontrol med indrykningen transformeres hvert `l` til et
-HTML `p` forsynet med `@class="indent1"`.
 
 ### 4.3.4 Drama
 <!--tilføjet 2017-02-10 -->
