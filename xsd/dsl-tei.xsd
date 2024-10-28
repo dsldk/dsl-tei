@@ -135,7 +135,7 @@
   <xs:element name="sourceDesc">
     <xs:complexType>
       <xs:sequence>
-        <xs:element ref="ns1:listWit"/>
+        <xs:element ref="ns1:listWit" minOccurs="0" maxOccurs="1"/>
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -286,7 +286,7 @@
     </xs:complexType>
   </xs:element>
   <xs:element name="language">
-    <xs:complexType>
+    <xs:complexType mixed="true">
       <xs:attribute name="ident" use="required" type="xs:NCName"/>
     </xs:complexType>
   </xs:element>
@@ -406,7 +406,7 @@
   <xs:element name="castList">
     <xs:complexType>
       <xs:sequence>
-        <xs:element ref="ns1:head"/>
+        <xs:element ref="ns1:head" minOccurs="0"/>
         <xs:element name="castItem" maxOccurs="unbounded">
           <xs:complexType mixed="true">
             <xs:sequence>
@@ -552,6 +552,7 @@
       <xs:attribute name="ed" use="required" type="xs:NCName"/>
       <xs:attribute name="n" use="required" type="xs:string"/>
       <xs:attribute name="facs" use="optional" type="xs:NCName"/>
+      <xs:attribute ref="xml:id" use="optional"/>
     </xs:complexType>
   </xs:element>
   <xs:element name="figDesc">
@@ -596,6 +597,7 @@
           <xs:element ref="ns1:stage"/>
           <xs:element ref="ns1:sp"/>
           <xs:element ref="ns1:table"/>
+          <xs:element ref="ns1:trailer"/>
         </xs:choice>
         <xs:element minOccurs="0" ref="ns1:closer"/>
         <xs:element minOccurs="0" ref="ns1:postscript"/>
@@ -629,6 +631,7 @@
         <xs:element ref="ns1:app"/>
         <xs:element ref="ns1:hi"/>
         <xs:element ref="ns1:lb"/>
+        <xs:element ref="ns1:note"/>
         <xs:element ref="ns1:pb"/>
         <xs:element ref="ns1:ref"/>
         <xs:element ref="ns1:stage"/>
@@ -789,6 +792,7 @@
         <xs:element ref="ns1:speaker"/>
         <xs:element minOccurs="0" ref="ns1:stage"/>
         <xs:element ref="ns1:l"/>
+        <xs:element ref="ns1:lg"/>
         <xs:element ref="ns1:p"/>
       </xs:choice>
       <xs:attribute name="who"/>
@@ -809,12 +813,14 @@
   <xs:element name="hi">
     <xs:complexType mixed="true">
       <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element ref="ns1:app"/>
         <xs:element ref="ns1:hi"/>
         <xs:element ref="ns1:lb"/>
         <xs:element ref="ns1:pb"/>
         <xs:element ref="ns1:persName"/>
         <xs:element ref="ns1:placeName"/>
         <xs:element ref="ns1:ref"/>
+        <xs:element ref="ns1:title"/>
       </xs:choice>
       <xs:attribute name="rend">
         <xs:simpleType>
@@ -865,6 +871,7 @@
         <xs:element ref="ns1:pb"/>
         <xs:element ref="ns1:persName"/>
         <xs:element ref="ns1:placeName"/>
+        <xs:element ref="ns1:ref"/>
       </xs:choice>
       <xs:attribute name="resp"/>
     </xs:complexType>
@@ -957,6 +964,19 @@
           </xs:restriction>
         </xs:simpleType>
       </xs:attribute>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="trailer">
+    <xs:complexType mixed="true">
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element ref="ns1:app"/>
+        <xs:element ref="ns1:ex"/>
+        <xs:element ref="ns1:hi"/>
+        <xs:element ref="ns1:lb"/>
+        <xs:element ref="ns1:note"/>
+        <xs:element ref="ns1:pb"/>
+        <xs:element ref="ns1:ref"/>
+      </xs:choice>
     </xs:complexType>
   </xs:element>
 </xs:schema>
