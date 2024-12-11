@@ -112,7 +112,34 @@ eller flere `author`-, `editor`-, og `funder`-elementer.
 </titleStmt>
 ```
 
-#### 2.1.1.1 Redaktionelle ansvarsområder
+#### 2.1.1.1 Titel
+
+Elementet `title` udfyldes for litterære værkers vedkommende med selve
+værktitlen:
+
+```xml
+<title>En dansk Students Eventyr</title>
+```
+
+Bemærk at titlens ortografi som udgangspunkt følger originalens, men at
+et eventuelt slutpunktum ikke optages.
+
+Ved udgivelsen af breve, hvor det ordnende princip er selve brevets
+datering, anvendes dateringen inkl. stedsangivelse, hvis den findes:
+
+```xml
+<title>1872. 10. april. Tersløse</title>
+```
+
+Hvor datering og/eller stedsangivelse beror på et skøn, sættes datering og/eller
+stedsangivelse (eller dele heraf) i skarp parentes:
+
+```xml
+<title>1872. 10. april. [Tersløse]</title>
+```
+
+
+#### 2.1.1.2 Redaktionelle ansvarsområder
 
 Elementet `editor` bruges med `@role` til præcisering af udgivernes
 redaktionelle ansvarsområder. Følgende attributværdier er tilladt:
@@ -461,6 +488,28 @@ følger:
 |	`front` | 1     | (*front matter*), præliminære oplysninger i form af titelblad, forside og forord, se 4.1 |
 | `body`  | 1     | (*text body*), den centrale komponent, indeholder selve teksten, se. 4.2 |
 | `back`  | 1     |	(*back matter*), eventuelle appendices og fortegnelser, som følger efter teksten, se 4.3 |
+
+I dsl-tei struktureres en tekst overordnet i de dele der hører direkte under
+`front`, `body` og `back`, altså dele som fx titelblad, motto, dedikation og
+forord i begyndelsen af en tekst:
+
+```xml
+<front>
+  <titlePage>titelblad</titlePage>
+  <div>motto</div>
+  <div>dedikation</div>
+  <div>forord</div>
+</front>
+<body>
+  <div>kapitel 1</div>
+  <div>kapitel 2</div>
+</body>
+<back>
+  <div>efterskrift</div>
+  <div>...</div>
+</back>
+```
+
 
 ## 4.1 Indledende oplysninger 
 
@@ -1241,7 +1290,7 @@ Gyldige værdier af `figure`-elementets `@type`:
 | fleuron          | centreret ❦   |
 | fleuron-reversed | centreret ☙   |
 | fleuron-rotated  | centreret ❧   |
-| divline          | centreret skillestreg |
+| line             | centreret skillestreg |
 
 
 #### 4.3.5.7a Formler
