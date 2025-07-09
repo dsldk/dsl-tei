@@ -869,10 +869,11 @@ Elementet `lg` kan udvides med attributtet `@rend` for at angive venstreindrykni
 |  ml-5         | sætter venstremargin til $spacer * 3                    | 
 
 For at tillade gengivelse af typografisk ekspressivitet kan et `l`-element forsynes med
-attributtet `@rend`.
+attributtet `@rend` og en værdi der angiver graden af indrykning.
 
 | `l/@rend`: værdi | betydning                                            |
 |------------------|------------------------------------------------------|
+| indent           | venstreindrykker teksten med 4 * &nbsp;              |
 | indent-1         | venstreindrykker teksten med 2 * &nbsp;              |
 | indent-2         | venstreindrykker teksten med 4 * &nbsp;              |
 | indent-3         | venstreindrykker teksten med 6 * &nbsp;              |
