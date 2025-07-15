@@ -48,47 +48,7 @@
             <xsl:attribute name="data-content">
               <!-- For display of lemma content _without_ non-textual
                    content use attribute-content mode -->
-              <xsl:apply-templates select='tei:lem' mode="attribute-content"/>] <xsl:apply-templates select='tei:rdg'/></xsl:attribute><xsl:attribute name="data-title">Tekstkritisk note <xsl:call-template name="appN"/></xsl:attribute>A</button>
-          <!--<span class="popup" onclick="toggle({$identifier});">-->
-            <!--<sup><span class="apparatus-note-mark">A</span>--><!--<xsl:call-template name="appN"/>--><!--</sup>-->
-          <!--<span class="popuptext" id="{$identifier}">
-            <span class="popup-note-label">{{% textual-criticism/headline %}} <xsl:call-template name="appN"/></span>
-            <xsl:apply-templates select="tei:lem"/>] 
-            <xsl:choose>
-              <xsl:when test="tei:lem/@resp">
-                <em><xsl:value-of select="tei:lem/@resp/tokenize(., '#')"/></em><xsl:text>, </xsl:text>
-              </xsl:when>
-              <xsl:when test="tei:lem/@wit">
-                <em><xsl:value-of select="tei:lem/@wit/tokenize(., '#')"/></em><xsl:text>, </xsl:text>
-              </xsl:when>
-            </xsl:choose>
-              
-            
-					    <xsl:apply-templates select="tei:rdg"/>
-              <span class="textsource-link"><br/><a href="../sources"> {{% textual-criticism/see_sources %}} </a></span>
-          </span>-->
-          
-        <!--</span>-->
-				<!--<span onclick="myFunction(myPopup);">A</span>
-				<div id="myPopup" style="display: none;">HEJ</div>-->
-      <!--<span class="text-crit-note" data-toggle="popover" data-html="true">
-        <xsl:attribute name="data-content">Her kommer noget indhold.-->
-          <!--<xsl:apply-templates select="tei:lem"/>]-->
-          <!--<xsl:choose>
-              <xsl:when test="tei:lem/@resp">
-                <em><xsl:value-of select="tei:lem/@resp/tokenize(., '#')"/></em><xsl:text>, </xsl:text>
-              </xsl:when>
-              <xsl:when test="tei:lem/@wit">
-                <em><xsl:value-of select="tei:lem/@wit/tokenize(., '#')"/></em><xsl:text>, </xsl:text>
-              </xsl:when>
-            </xsl:choose>-->
-            <!--
-            <xsl:apply-templates select="tei:rdg"/>
-            <span class="textsource-link"><br/>
-              <a href='../sources'> {{% textual-criticism/see_sources %}} </a>
-            </span>-->
-        <!--</xsl:attribute>
-      </span>-->
+              <xsl:if test="tei:lem"><xsl:apply-templates select='tei:lem' mode="attribute-content"/>] </xsl:if><xsl:apply-templates select='tei:rdg'/></xsl:attribute><xsl:attribute name="data-title">Tekstkritisk note <xsl:call-template name="appN"/></xsl:attribute>A</button>
     </xsl:template>
     <xsl:template name="appN">
         <xsl:choose>

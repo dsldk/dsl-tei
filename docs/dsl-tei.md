@@ -138,6 +138,13 @@ stedsangivelse (eller dele heraf) i skarp parentes:
 <title>1872. 10. april. [Tersløse]</title>
 ```
 
+Ved enkeltudgivelse af noveller eller digte, som indgår i andre udgivelser,
+tilføjes til et ekstra `title`-element, kvalificeret med `@type="pow"` således:
+
+```xml
+<title type="pow">»Fyrtøiet« fra Eventyr, fortalte for Børn I:1</title>
+
+Denne _part of work_-titel indgår i HTML-elementet `title` på den færdige side. 
 
 #### 2.1.1.2 Redaktionelle ansvarsområder
 
@@ -814,6 +821,20 @@ __Eksempler__
 </head>
 ```
 
+Ved udgivelse af digt- og novellesamlinger skal hvert digt eller hver novelle
+forsynes med et ekstra `reg`-element, kvalificeret med `@type="pow"`:
+
+```xml
+<head>
+  <reg>1. Dødskamp</reg>
+  <reg type="pow">»Dødskamp« fra Skygger</reg>
+  <orig><pb ed="A" n="[9]"/>Dødskamp</orig>
+</head>
+```
+
+Dette _part of work_-element indgår i HTML-elementet `title` på den færdige side.
+
+
 ### 4.3.2 Prosa
 
 Under hierarkiet af `body`- og `div`-elementer segmenteres prosatekst i
@@ -848,10 +869,11 @@ Elementet `lg` kan udvides med attributtet `@rend` for at angive venstreindrykni
 |  ml-5         | sætter venstremargin til $spacer * 3                    | 
 
 For at tillade gengivelse af typografisk ekspressivitet kan et `l`-element forsynes med
-attributtet `@rend`.
+attributtet `@rend` og en værdi der angiver graden af indrykning.
 
 | `l/@rend`: værdi | betydning                                            |
 |------------------|------------------------------------------------------|
+| indent           | venstreindrykker teksten med 4 * &nbsp;              |
 | indent-1         | venstreindrykker teksten med 2 * &nbsp;              |
 | indent-2         | venstreindrykker teksten med 4 * &nbsp;              |
 | indent-3         | venstreindrykker teksten med 6 * &nbsp;              |
