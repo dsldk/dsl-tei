@@ -815,6 +815,7 @@
   <xs:element name="signed">
     <xs:complexType mixed="true">
       <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element ref="ns1:app"/>
         <xs:element ref="ns1:ex"/>
         <xs:element ref="ns1:hi"/>
         <xs:element ref="ns1:lb"/>
@@ -951,6 +952,7 @@
     <xs:complexType mixed="true">
       <xs:choice minOccurs="0" maxOccurs="unbounded">
         <xs:element ref="ns1:ex"/>
+        <xs:element ref="ns1:hi"/>
       </xs:choice>
     </xs:complexType>
   </xs:element>
