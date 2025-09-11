@@ -413,18 +413,28 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="castGroup">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="ns1:castItem" minOccurs="1" maxOccurs="unbounded"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="castItem">
+    <xs:complexType mixed="true">
+      <xs:sequence>
+        <xs:element ref="ns1:role"/>
+        <xs:element name="roleDesc" minOccurs="0" maxOccurs="1"/>
+        <xs:element ref="ns1:actor" minOccurs="0" maxOccurs="1"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
   <xs:element name="castList">
     <xs:complexType>
       <xs:sequence>
         <xs:element ref="ns1:head" minOccurs="0"/>
-        <xs:element name="castItem" maxOccurs="unbounded">
-          <xs:complexType mixed="true">
-            <xs:sequence>
-              <xs:element ref="ns1:role"/>
-              <xs:element name="roleDesc" minOccurs="0" maxOccurs="1"/>
-              <xs:element ref="ns1:actor" minOccurs="0" maxOccurs="1"/>
-            </xs:sequence>
-          </xs:complexType>
+        <xs:element ref="ns1:castGroup" minOccurs="0" maxOccurs="unbounded"/>
+        <xs:element ref="ns1:castItem" maxOccurs="unbounded">
         </xs:element>
       </xs:sequence>
     </xs:complexType>
@@ -876,6 +886,7 @@
             <xs:enumeration value="center"/>
             <xs:enumeration value="italic"/>
             <xs:enumeration value="italics"/>
+            <xs:enumeration value="normal"/>
             <xs:enumeration value="small"/>
             <xs:enumeration value="spaced"/>
             <xs:enumeration value="strong"/>
