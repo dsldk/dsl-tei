@@ -1,0 +1,1039 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+   <teiHeader>
+      <fileDesc>
+         <titleStmt>
+            <title>Vignetter til danske Digtere</title>
+            <author>H.C. Andersen</author>
+            <editor role="digital_version">Dan H. Andreasen</editor>
+            <editor role="digital_version">Holger Berg</editor>
+            <editor role="editor">Laurids Kristian Fahl</editor>
+            <editor role="editor">Gunilla Hermansson</editor>
+            <editor role="editor">Esther Kielberg</editor>
+            <editor role="editor">Jesper Gehlert Nielsen</editor>
+            <editor role="editor">Nicolas Reinicke-Wilkendorff</editor>
+            <editor role="digital_version">Thomas Hansen</editor>
+            <editor role="contributor">Finn Gredal Jensen</editor>
+            <editor role="supervision">Finn Hauberg Mortensen</editor>
+            <editor role="supervision">Flemming Lundgreen-Nielsen</editor>
+            <funder>Bikuben Fonden</funder>
+            <funder>H.C. Andersen 2005</funder>
+            <funder>Kongeriget Danmark</funder>
+         </titleStmt>
+         <publicationStmt>
+            <publisher>Det Danske Sprog- og Litteraturselskab</publisher>
+            <pubPlace>København</pubPlace>
+            <date>2025</date>
+            <availability status="restricted">
+               <licence target="https://creativecommons.org/licenses/by/4.0/legalcode">Attribution
+                  4.0 International (CC BY 4.0)</licence>
+               <ab>Copyright © 2025, Danske Sprog- og Litteraturselskab</ab>
+            </availability>
+         </publicationStmt>
+         <sourceDesc>
+            <listWit>
+               <witness xml:id="A">Samlingen udkom 24. december 1831 med årstallet 1832 på
+                  titelbladet. BFN 174 Tekstrettelser i forhold til trykforlægget </witness>
+               <witness xml:id="B">ANDERSEN: H.C. Andersens Samlede Værker, :</witness>
+            </listWit>
+         </sourceDesc>
+      </fileDesc>
+      <encodingDesc>
+         <projectDesc xml:id="tekstnet-plus">
+            <ab>Teksten er en fremstillet som led i projektet Tekstnet+</ab>
+         </projectDesc>
+      </encodingDesc>
+      <profileDesc>
+         <creation>
+            <date when="1831-01-01">1831</date>
+         </creation>
+         <langUsage>
+            <language ident="ynda"/>
+         </langUsage>
+         <textClass>
+            <keywords>
+               <term>prosa</term>
+            </keywords>
+         </textClass>
+         <abstract>
+            <p/>
+         </abstract>
+      </profileDesc>
+      <revisionDesc>
+         <change n="0.1.0" when="2025-01-08" who="#th">
+            <p>Foreløbig udgave: data modtaget fra H.C. Andersen Centret ved Syddansk Universitet og
+               bearbejdet til DSL-TEI til brug på Tekstnet. /Thomas Hansen.</p>
+         </change>
+      </revisionDesc>
+   </teiHeader>
+   <text>
+      <front>
+         <titlePage>
+            <docTitle>
+               <titlePart type="main">Vignetter til danske Digtere</titlePart>
+            </docTitle>
+            <docImprint>
+               <docDate>1832</docDate>
+            </docImprint>
+         </titlePage>
+      </front>
+      <body>
+         <div>
+            <head type="main">Forhæng for Vignetterne</head>
+            <lg>
+               <l>Det er slet ingen Characteristik,</l>
+               <l>(Nei, dertil mig den dybe Indsigt svigter);</l>
+               <l>Jeg skildrer Ingen her til Punkt og Prik,</l>
+               <l>Langt mindre giver Nogen en Kritik,</l>
+               <l>Nei, hvad jeg følte i et Øieblik,</l>
+               <l>Naar Hjertet drømte om den danske Digter,</l>
+               <l>Hvad kun et barnligt Sind kan fatte her,</l>
+               <l>Det bringer jeg om Een og Hver,</l>
+               <l>Og bringer kun den lyse Side,</l>
+               <l>Den mørke gik jeg heller let forbi;</l>
+               <l>Men om den derfor ganske vil gaae fri,</l>
+               <l>Thi der er’ mange, mange <ref target="n1"/>Critici,</l>
+               <l>Om disse muligt røre op heri,</l>
+               <l>Ja det maa Gud og disse Godtfolk vide.</l>
+               <l>Ei hver en Fugl har samme Flugt,</l>
+               <l>Men naar den synger, – naar den synger smukt</l>
+               <l>Sit Quirevit,</l>
+               <l>Om det er nok saa lidt,</l>
+               <l>Et Korn, en Blomst kan Sangen dog fortjene,</l>
+               <l>Og meget meer</l>
+               <l>Ei jeg, og neppe Nogen, seer</l>
+               <l>I disse Blade, skulde jeg vel mene.</l>
+               <l>Med Villie har jeg Ingen udelukt,</l>
+               <l>Men tidt man seer en Blomst, – den modne Frugt</l>
+               <l>Imidlertid er glemt bag Blad og Grene.</l>
+            </lg>
+            <lg>
+               <l>Før Du, min Læser, ellers træder ind,</l>
+               <l>En Bøn jeg sætter:</l>
+               <l>See Du kun saa paa mine smaae Vignetter:</l>
+               <l>Kom med et aabent, med et kjærligt Sind.</l>
+            </lg>
+         </div>
+         <div>
+            <head type="main">Vignetter</head>
+            <div>
+               <head type="section">Abrahamson</head>
+               <head type="sub">(født den 10 April 1744. † 1812.)</head>
+               <lg>
+                  <l>Paa <ref target="n2"/>Kampens Dag, da Danmarks Helte faldt,</l>
+                  <l>
+                     <ref target="n3"/>Dit danske Hjerte gjorde dig til Skjald.</l>
+                  <l>– Dit Vid os sang mod Livets bittre Suk:</l>
+                  <l>»<ref target="n4"/>Min Søn, vil Du i Verden frem, saa buk.«</l>
+               </lg>
+            </div>
+            <div>
+               <head type="section">Arreboe</head>
+               <head type="sub">(født den 2 Januar 1587. † 1637.)</head>
+               <lg>
+                  <l>Selv Stjernens Glands forsvinder ved det Fjerne,</l>
+                  <l>Men Stjernen er og bliver dog en Stjerne.</l>
+               </lg>
+            </div>
+            <div>
+               <head type="section">J. Baggesen</head>
+               <head type="sub">(født den 15 Februar 1764. † 1826.)</head>
+               <lg>
+                  <l>Hen ad den nøgne Kyst de Bølger trille,</l>
+                  <l>Forstaaer Du Vandrer deres dybe Chor:</l>
+                  <l>» <ref target="n5"/>Der var en Tid, <hi rend="italic">Corsøer</hi> var meget
+                        lille<ref target="n6"/>,</l>
+                  <l>Men <hi rend="italic">Baggesen</hi> blev født, og den blev stor.«</l>
+               </lg>
+            </div>
+            <div>
+               <head type="section">B. Bang</head>
+               <head type="sub">(født den 18 Juli <ref target="n7"/>1770.)</head>
+               <lg>
+                  <l>Der staaer en Blomst, tilsmilet af <ref target="n8"/>,</l>
+                  <l>Men den er skjult af Bøgens større Grene;</l>
+                  <l>Dog Farveskjæret, Duften i dens Indre,</l>
+                  <l>Er derfor jo endnu slet ikke mindre.</l>
+               </lg>
+            </div>
+            <div>
+               <head type="section">S. S. Blicher</head>
+               <head type="sub">(født den 11 October 1782.)</head>
+               <lg>
+                  <l>Hvor <ref target="n9"/> Bølge slaaer høit paa Strand</l>
+                  <l>Om de sorte Vrag i det hvide Sand,</l>
+                  <l>Hvor Landet staaer halvt som et Paradiis,</l>
+                  <l>Halvt viser kun Lyngens sorte Riis,</l>
+                  <l>Der bygger en <ref target="n10"/>Lærke, den synger godt,</l>
+                  <l>Den ligner – sig selv og <ref target="n11"/>Walter Scott;</l>
+                  <l>Den skildrer Jyden og Jydens Land,</l>
+                  <l>Man kalder den der <ref target="n12"/>.</l>
+               </lg>
+            </div>
+            <div>
+               <head type="section">
+                  <ref target="n13"/>J. C. Boye</head>
+               <head type="sub">(født den 27 December <ref target="n14"/>179*.)</head>
+               <lg>
+                  <l>Du leged’ glad bag Skovens grønne Grene,</l>
+                  <l>Og der sad Vid i Smilet paa din Kind;</l>
+                  <l>Da kyssed’ Dig den høie <ref target="n15"/>Melpomene,</l>
+                  <l>Og lulled’ Dig i Heltedrømme ind;</l>
+                  <l>Med Smiil og Graad Du saae paa Tidens Strøm,</l>
+                  <l>Og <ref target="n16"/> sang Du i din Drøm.</l>
+               </lg>
+            </div>
+            <div>
+               <head type="section">A. Bording</head>
+               <head type="sub">(født den 21 <ref target="n17"/>Februar 1619. † 1677.)</head>
+               <lg>
+                  <l>
+                     <ref target="n18"/>Den muntre Skjald i Muld er gjemt,</l>
+                  <l>
+                     <ref target="n19"/>Hans staaer reent forglemt;</l>
+                  <l>Gjør den igjen for Støvet fri,</l>
+                  <l>Endnu er’ Tonerne deri.</l>
+               </lg>
+            </div>
+            <div>
+               <head type="section">C. Bredahl</head>
+               <lg>
+                  <l>Hvor <ref target="n21"/>Holberg bygged’ ved Sø og Skov<ref target="n22"/>,</l>
+                  <l>
+                     <ref target="n23"/>Der gaaer en Bonde bag ved sin Plov;</l>
+                  <l>Han træller for Livet, for Viv og Smaae,</l>
+                  <l>Høit <ref target="n24"/>Lærkerne over hans Hoved slaae:</l>
+                  <l>»Paa Jorden er Skjalden en fattig Mand,</l>
+                  <l>Skjøndt Aanden har givet ham Skov og Land,</l>
+                  <l>Hvert Straa har Blomster, hvert Træ har Frugt,</l>
+                  <l>Det voxer til Danmarks Ære smukt.«</l>
+                  <l>
+                     <ref target="n25"/>Thi qviddrer den Smaafugl for ham paa <ref target="n26"
+                     />Vang,</l>
+                  <l>Men alt, hvad den har, er jo kun – en Sang.</l>
+               </lg>
+            </div>
+            <div>
+               <head type="section">
+                  <ref target="n27"/>Nordal Bruun</head>
+               <head type="sub">(født den 21 Marts 1745. † 1816.)</head>
+               <lg>
+                  <l>
+                     <ref target="n28"/>Franske Snørliv – – Dog du veed</l>
+                  <l>nok hvortil jeg sigter.</l>
+                  <l>»<ref target="n29"/>Boer Du paa det høie Fjeld,«</l>
+                  <l>synger Du som Digter.</l>
+               </lg>
+            </div>
+            <div>
+               <head type="section">H. C. Bunkeflod</head>
+               <head type="sub">(født den 30 Juni 1761. † 1805.)</head>
+               <lg>
+                  <l>
+                     <ref target="n30"/>Traaden brister, Rokken staaer, Spindevisen tier<ref
+                        target="n31"/>,</l>
+                  <l>Ungdoms Sangen bliver snart gamle Melodier.</l>
+               </lg>
+            </div>
+            <div>
+               <head type="section">T. C. Bruun</head>
+               <head type="sub">(født den 2 November 1750.)</head>
+               <lg>
+                  <l>
+                     <ref target="n32"/>
+                     <?oxy_comment_start author="revar" timestamp="20231222T155123+0100" comment="kommentar bryder rækkefølge" flag="done"?>Hos
+                     Ordets <ref target="n33"/>Polyper Du ikke gaaer fri,</l>
+                  <l>Du brændes paa Troens<?oxy_comment_end?><ref target="n34"/> Ex<hi rend="italic"
+                        >-Kalkbrænderi</hi>,</l>
+                  <l>Med Vid Du os sagde, at <ref target="n35"/>Pletter er’ Pletter –</l>
+                  <l>Du ligned’ i meget <ref target="n36"/> – Din Fætter.</l>
+               </lg>
+            </div>
+            <div>
+               <head type="section">N. T. Bruun</head>
+               <head type="sub">(født den 19 Januar 1778. † <ref target="n37"/>182*.)</head>
+               <lg>
+                  <l>Ei hver en Fugl i Skovens Hal</l>
+                  <l>Kan synge som en Nattergal;</l>
+                  <l>Du qviddred’ tidt: ei blot til Lyst,</l>
+                  <l>Hvad der fandt Vei til mangt et Bryst.</l>
+               </lg>
+            </div>
+            <div>
+               <head type="section">J. <ref target="n38"/>Evald</head>
+               <head type="sub">(født den 18 November 1743. † 1781.)</head>
+               <lg>
+                  <l>Din Smerte var en Sky, i Stormen vild,</l>
+                  <l>Til Dug den blev ved Poesiens Ild,</l>
+                  <l>En Dug, der kaldte Duft fra Blad og Straa,</l>
+                  <l>En Taare, hvori Himlens Billed laae.</l>
+               </lg>
+            </div>
+            <div>
+               <head type="section">
+                  <ref target="n39"/>P. Faye</head>
+               <head type="sub">(født den <ref target="n40"/>17 Februar 1760.)</head>
+               <lg>
+                  <l>Du sang din Ungdoms Lyst,</l>
+                  <l>Din Længsel og din Smerte,</l>
+                  <l>Hver kjendte i <hi rend="italic">Dit</hi> Bryst</l>
+                  <l>Sit <hi rend="italic">eget</hi> Hjerte.</l>
+               </lg>
+            </div>
+            <div>
+               <head type="section">P. Foersom</head>
+               <head type="sub">(født den 19 Februar <ref target="n41"/>1778. † 1817.)</head>
+               <lg>
+                  <l>
+                     <ref target="n42"/>Du bragte Shakspeares Træ paa Danmarks Scene,</l>
+                  <l>Vi vidste, det var <ref target="n43"/>Bretlands Egegrene,</l>
+                  <l>Men dansk var hvert et Blad, hver Fuglestemme,</l>
+                  <l>Det syntes, som det voxet var her hjemme.</l>
+               </lg>
+            </div>
+            <div>
+               <head type="section">R. Frankenau</head>
+               <head type="sub">(født den 6 Januar 1767. † 1814.)</head>
+               <lg>
+                  <l>Glemt staaer hans Grav bag Kloster-Kirkens Muur,</l>
+                  <l>Endt er hans Drøm om Glæde og om Smerte;</l>
+                  <l>Han var en Digter-Blomst i Guds Natur,</l>
+                  <l>Hvis friske Duft har <ref target="n44"/>qvæget mangt et Hjerte.</l>
+               </lg>
+            </div>
+            <div>
+               <head type="section">P. F. Friis</head>
+               <lg>
+                  <l>
+                     <ref target="n45"/>Du sang om Liremanden – <hi rend="italic">ham</hi> Verden
+                     gaaer forbi,</l>
+                  <l>»Vil <hi rend="italic">han</hi>, som Kunstner spille?«</l>
+                  <l>O, hør dog paa ham stille!</l>
+                  <l>– Du viste os, at Hjertet var fuldt af Melodie.</l>
+               </lg>
+            </div>
+            <div>
+               <head type="section">P. H. Friemann</head>
+               <head type="sub">(født den <ref target="n46"/>1 November 1752.)</head>
+               <lg>
+                  <l>»<ref target="n47"/>Den stille Bæk,« hvor Rosen gynger</l>
+                  <l>Og speiler sig, Din Lovsang synger;</l>
+                  <l>Hvad Du har sagt saa smukt om den,</l>
+                  <l>Den synger os om Dig igjen.</l>
+               </lg>
+            </div>
+            <div>
+               <head type="section">
+                  <orig>Gjengangerbrevenes Forfatter<note place="bottom">
+                        <p>Ovenstaaende Vignet var skrevet før denne Forfatters »<ref target="n48"
+                           />Anonyme Nytaarsgave for 1832« udkom; jeg seer der, at <ref target="n49"
+                           />hans Mening om mig er uforandret<ref target="n50"/>; denne min Note
+                           bringe ham nu min korte <ref target="n51"/>Epistel. </p>
+                        <lg>
+                           <l rend="indent1">
+                              <hi rend="italic">Til <ref target="n52"/>Gjengangerbrevenes
+                                 Forfatter</hi>
+                           </l>
+                           <l/>
+                           <l rend="indent1">Hold Dig ved Blomstens <hi rend="italic">Form</hi>, giv
+                              den Værdie,</l>
+                           <l rend="indent1">Jeg <hi rend="italic">Blinde</hi> skatter <hi
+                                 rend="italic">Duften</hi> mest deri.</l>
+                           <l rend="indent1">Med bitter Haan og Ring’agt Du mig slaaer,</l>
+                           <l rend="indent1">Bliv ved – – den unge Spire let forgaaer –</l>
+                           <l rend="indent1">Men var jeg meer end Skum paa Tidens Hav,</l>
+                           <l rend="indent1">– En Verden staaer, som Dommer ved vor Grav.</l>
+                        </lg>
+                     </note>
+                  </orig>
+               </head>
+               <head type="sub">(født 1830<ref target="n53"/>.)</head>
+               <lg>
+                  <l>
+                     <ref target="n54"/>
+                     <!--DATA-TERM: Man troede før … som Aand-->
+                     <!--DATA-DEFINITION: <i>Gjenganger-Breve</i> foregiver at være skrevet af den i 1826 afdøde Jens Baggesen; Hertz tilslutter sig i bogen J.L. Heibergs krav om en digtning, der vægter formen højest.-->Man
+                     troede før, at Aander ei <ref target="n55"/>bare Formens Baand,</l>
+                  <l>Du viste Dig ved Former, kom, vandt, men svandt – som Aand<ref target="n56"
+                     />.</l>
+               </lg>
+            </div>
+            <div>
+               <head type="section">N. F. S. Grundtvig</head>
+               <head type="sub">(født den 8 September 1783.)</head>
+               <lg>
+                  <l>Stolt synger Bølgen gjennem <ref target="n57"/>Issefjord,</l>
+                  <l>
+                     <ref target="n58"/>Om Kjæmpelivets Undergang i Nord,</l>
+                  <l>Fra <ref target="n59"/>Roeskild’-Kirke toner det paa <ref target="n60"
+                     />Vang.</l>
+                  <l>– Som Bølgen og som Org’let, er din Sang.</l>
+               </lg>
+            </div>
+            <div>
+               <head type="section">
+                  <ref target="n61"/>F. H. Guldberg</head>
+               <head type="sub">(født den 26 Marts 1771.)</head>
+               <lg>
+                  <l>Til Kirkegaarden skotter Børneflokken,</l>
+                  <l>De sorte Kors i Maaneskinnet staae,</l>
+                  <l>I Huset sidder Bedstemoer ved Rokken,</l>
+                  <l>
+                     <ref target="n62"/>Dit smukke Digt hun læser for de Smaae;</l>
+                  <l>De høre om »<ref target="n63"/>de Dødes stille Have«;</l>
+                  <l>– Som Blomster-Urner staae de skumle Grave.</l>
+               </lg>
+            </div>
+            <div>
+               <head type="section">F. J. Hansen</head>
+               <head type="sub">(født den 4 September 1810.)</head>
+               <lg>
+                  <l>Du synger ungdomsglad med Smiil paa Kind,</l>
+                  <l>Dig vinker Verden med sit Lys, sin Skygge,</l>
+                  <l>Lad Digter-Hjertet <ref target="n64"/>fast paa Himlen bygge,</l>
+                  <l>Vi kun som Børn i Himlen lukkes ind.</l>
+               </lg>
+            </div>
+            <div>
+               <head type="section">Haste</head>
+               <head type="sub">(født den 12 Januar 1765. † 1831.)</head>
+               <lg>
+                  <l>Den lille Svale fik ei Ørnens Flugt,</l>
+                  <l>Men kysset blev den dog af Digterguden;</l>
+                  <l>Sin Sang den qviddrer klagende, men smukt,</l>
+                  <l>I det den slaaer med Vingerne paa Ruden.</l>
+               </lg>
+            </div>
+            <div>
+               <head type="section">C. Hauch</head>
+               <head type="sub">(født den <ref target="n65"/>12 Marts 1791.)</head>
+               <lg>
+                  <l>I Nattedæmring saae du Guds Natur,</l>
+                  <l>
+                     <ref target="n66"/>Mens Skygger steeg paa <ref target="n67"/>Capitoliets
+                     Muur,</l>
+                  <l>Du kyndigt tegned’ dem med Kunstner-Haand,</l>
+                  <l>Og gav dit Billed’ ægte Romer-Aand<ref target="n68"/>.</l>
+               </lg>
+            </div>
+            <div>
+               <head type="section">P. A. Heiberg</head>
+               <head type="sub">(født den 16 November 1758.)</head>
+               <lg>
+                  <l>Komme <ref target="n69"/>hvo som komme vil,</l>
+                  <l>See i hans Lanterne;</l>
+                  <l>Viddet holder <ref target="n70"/>Ridderspil</l>
+                  <l>I en Tænker-Hjerne;</l>
+                  <l>
+                     <ref target="n71"/> skal I faae;</l>
+                  <l>
+                     <ref target="n72"/> og som Narre staae,</l>
+                  <l>:|: <ref target="n73"/>Selv med Baand og Stjerne. :|:</l>
+               </lg>
+            </div>
+            <div>
+               <head type="section">
+                  <ref target="n74"/>J. L. Heiberg</head>
+               <head type="sub">(født den 14 December 1791.)</head>
+               <lg>
+                  <l>Den lille <ref target="n75"/>Amor fra Hækken fløi,</l>
+                  <l>En Piil han tabte – Du fandt just den,</l>
+                  <l>Og det er denne Du bruger som Pen,</l>
+                  <l>Selv Spidsen har himmelsk Væde.</l>
+                  <l>Du drømte, som Mand, ved <ref target="n76"/>,</l>
+                  <l>Din Drøm blev al Danmarks Glæde.</l>
+               </lg>
+            </div>
+            <div>
+               <head type="section">L. Holberg</head>
+               <head type="sub">(født 1684. † 1754.)</head>
+               <lg>
+                  <l>Hil Dig, Du Viddets danske <ref target="n77"/>Digter-Konning,</l>
+                  <l>Som Bien fik Du Braad, bag Braadden – Honning.</l>
+               </lg>
+            </div>
+            <div>
+               <head type="section">B. S. Ingemann</head>
+               <head type="sub">(født den 28 Mai 1789.)</head>
+               <lg>
+                  <l>Hvad Du sang ved grønne Bred,</l>
+                  <l>Ved den blanke <ref target="n78"/>Vove,</l>
+                  <l>Leve vil, mens Kjærlighed</l>
+                  <l>Boer i Danmarks Skove;</l>
+                  <l>
+                     <ref target="n79"/>Psalmer tone fromt mod Sky</l>
+                  <l>Over Gravens Høie,</l>
+                  <l>Hjertets Blomster dufte <ref target="n80"/>blye,</l>
+                  <l>Som Violens Øie.</l>
+               </lg>
+            </div>
+            <div>
+               <head type="section">T. Kingo</head>
+               <head type="sub">(født den 15 December 1634. † <ref target="n81"/>1723.)</head>
+               <lg>
+                  <l>Hver Tanke gaaer fra Hjertet ud,</l>
+                  <l>Som Stjerner de <ref target="n82"/>oprinde,</l>
+                  <l>Men Solen, (Tanken om din Gud),</l>
+                  <l>I den de alle svinde.</l>
+               </lg>
+            </div>
+            <div>
+               <head type="section">L. Kruse</head>
+               <head type="sub">(født den 6 <ref target="n83"/>April 1778.)</head>
+               <lg>
+                  <l>Naar <ref target="n84"/>Skibet er en Spurv i Hvirvelvind,</l>
+                  <l>Naar Smerten suger Blod af Pigens Kind,</l>
+                  <l>Naar Hexen <ref target="n85"/>kogler i sit Klippeskjul,</l>
+                  <l>Og Maanen leer til <ref target="n86"/>Steile og til Hjul,</l>
+                  <l>Mens Stormen knækker Egens stærke Grene,</l>
+                  <l>Du maler os <ref target="n87"/>den vilde Natte-Scene.</l>
+               </lg>
+            </div>
+            <div>
+               <head type="section">C. Lund</head>
+               <head type="sub">(født den <ref target="n88"/>24 December 1763.)</head>
+               <lg>
+                  <l>Naar Græsset voxer paa din glemte Grav,</l>
+                  <l>Dog mangt et Hjerte mangen Gang</l>
+                  <l>Vil give venlig Gjenlyd af</l>
+                  <l>Din Ungdoms bedste Sang.</l>
+               </lg>
+            </div>
+            <div>
+               <head type="section">
+                  <ref target="n89"/>Lundby</head>
+               <head type="sub">(født den 2 September 1772. † 1830.)</head>
+               <lg>
+                  <l>Om <ref target="n90"/>, – ja om Haabet drømmer hver,</l>
+                  <l>Og Du besang, hvad vi kun drømme her. –</l>
+               </lg>
+            </div>
+            <div>
+               <head type="section">S. Meisling</head>
+               <head type="sub">(født den <ref target="n91"/>7 October 1787.)</head>
+               <lg>
+                  <l>Du blev i Hjemmet. I dit Hjem <ref target="n92"/>
+                     <!--DATA-DEFINITION: Meisling var en særdeles dygtig oversætter af især latinske og græske tekster og oversatte bl.a. Vergil: <i>Æneiden, et Heltedigt af Publius Virgilius Maro</i>, 1824-26, Ovid: <i>Forvandlinger, et fortællende Digt i femten Sange af Publius Ovidius Naso</i>, 1831, og Anacreon: <i>Anacreon’s Digte</i>, 1826.-->Du
+                     gav,</l>
+                  <l>Som faa af De, der reise for – at reise.</l>
+                  <l>Du gav fra <ref target="n93"/>Romas og fra <ref target="n94"/>Hellas Grav,</l>
+                  <l>Hvad <hi rend="italic">der</hi> som Aandens Mausoleer kneise;</l>
+                  <l>Med Flid og Omhu Du os Skatten bragte<ref target="n95"/>,</l>
+                  <l>At Du er Skjald, os <ref target="n96"/>Columbine sagde.</l>
+               </lg>
+            </div>
+            <div>
+               <head type="section">C. Molbech</head>
+               <head type="sub">(født den 8 October 1783.)</head>
+               <lg>
+                  <l>Du vandred’ ungdomsglad i Danmarks Egne,</l>
+                  <l>Du <ref target="n97"/>
+                     <!--DATA-DEFINITION: formentlig hentydning til Molbechs <i>Vaarblomster og Hedeurter. Metriske og prosaiske Blandinger</i>, 1810, der, som titlen siger, rummer både poesi og prosa.-->samled’
+                     Blomster til os allevegne,</l>
+                  <l>Din lille <ref target="n98"/>Hauge gaae vi ei forbi,</l>
+                  <l>Der blomstrer Prosa smukt som Poesie<ref target="n99"/>.</l>
+               </lg>
+            </div>
+            <div>
+               <head type="section">
+                  <ref target="n100"/>Hr. Mickel i Odense</head>
+               <head type="sub"><orig>(levede i Slutningen af det 15 Aarhundrede<note place="bottom">
+                        <p>See <ref target="n101"/> og Bidrag til den danske Digtekunsts
+                           Historie.</p>
+                     </note>.)</orig>
+               </head>
+               <lg>
+                  <l>Et fremmed Navn det hjelper strax,</l>
+                  <l>Saa kjendes man af Flere,</l>
+                  <l>Han var for os en dansk <ref target="n102"/>,</l>
+                  <l>Ja <ref target="n103"/>næstendeel lidt mere.</l>
+                  <l>Hans <ref target="n104"/>Rosenkrands er nu lagt hen,</l>
+                  <l>Men ægte Guldet er i den.</l>
+               </lg>
+            </div>
+            <div>
+               <head type="section">P. M. Möller</head>
+               <head type="sub">(født den 21 Marts 1794.)</head>
+               <lg>
+                  <l>Digtertræet staaer i <ref target="n105"/>Danas Have,</l>
+                  <l>Speiler stolt sig i den sølvblaae Strand,</l>
+                  <l>Liden Fugl fik Sangens bedste Gave,</l>
+                  <l>
+                     <ref target="n106"/>Tone-Nectar han forstaaer at lave,</l>
+                  <l>Synger <ref target="n107"/>Glæde over Danmarks Land.</l>
+               </lg>
+            </div>
+            <div>
+               <head type="section">Olufsen</head>
+               <head type="sub">(født den 20 Januar 1764. † 1827.)</head>
+               <lg>
+                  <l>
+                     <ref target="n108"/>En Daase gav Du Land og Stat,</l>
+                  <l>Men Snuus fik Folk af Dig privat.</l>
+               </lg>
+            </div>
+            <div>
+               <head type="section">T. Overskou</head>
+               <head type="sub">(født den 11 October <ref target="n109"/>1799.)</head>
+               <lg>
+                  <l>
+                     <ref target="n110"/>
+                     <!--DATA-TERM: Du slog dog … ham-->
+                     <!--DATA-DEFINITION: Overskou udsendte en række af sine første lystspil anonymt; først da han var slået igennem, hævede han anonymiteten.-->Du
+                     slog dog Kjøbenhavnerne en Plade,</l>
+                  <l>Slet ingen tænkte: det er ham<ref target="n111"/>;</l>
+                  <l>Snart <ref target="n112"/>Øster- og selv Vestergade</l>
+                  <l>
+                     <ref target="n113"/>Forstened’ stod som <hi rend="italic">Loths</hi> Madam<ref
+                        target="n114"/>.</l>
+                  <l>
+                     <ref target="n115"/>
+                     <!--DATA-TERM: Man sagde først … Krandsen-->
+                     <!--DATA-DEFINITION: Overskous første stykke, <i>Farens Dage</i>, som blev opført første gang på Det Kgl. Teater 1826, var udgivet i hans eget navn, men blev ikke nogen succes; først med indledningen af sit anonyme forfatterskab fandt han anerkendelse som forfatter.-->Man
+                     sagde først: gaae han af Dandsen!</l>
+                  <l>Nu tog Du Maske, vandt da Krandsen<ref target="n116"/>.</l>
+                  <l>– Er’ vor Tids Mennesker ei meer,</l>
+                  <l>Ved Dig vor Efterslægt dem seer.</l>
+               </lg>
+            </div>
+            <div>
+               <head type="section">Pram</head>
+               <head type="sub">(født den 4 September 1756. † 1821.)</head>
+               <lg>
+                  <l>Fra Helten klædt i <ref target="n117"/>Brynie blaae,</l>
+                  <l>Til hver en Blomst Dit Øie saae,</l>
+                  <l>Du bragte os et Billed’.</l>
+                  <l>Din Tanke Intet gik forbi,</l>
+                  <l>Hver Skizze selv Du gav Værdie,</l>
+                  <l>I det Du den opstilled.</l>
+                  <l>
+                     <ref target="n118"/> frisk og klar,</l>
+                  <l>Fra Dig sin bedste Skjønhed har.</l>
+               </lg>
+            </div>
+            <div>
+               <head type="section">Rahbek</head>
+               <head type="sub">(født den 18 December 1760. † 1830.)</head>
+               <lg>
+                  <l>Bien drømmer om sin Kube ved hver Blomst bag Skovens <ref target="n119"
+                     />Hang;</l>
+                  <l>Honning Du til Danmark samled’ paa den grønne <ref target="n120"
+                     />Digter-Vang;</l>
+                  <l>
+                     <ref target="n121"/>Bakkehuset vil forglemmes, men ei hvad dit Hjerte sang.</l>
+               </lg>
+            </div>
+            <div>
+               <head type="section">J. Rein</head>
+               <head type="sub">(født den 30 Januar 1760.)</head>
+               <lg>
+                  <l>Du tegned’ Blomsten som den groer paa <ref target="n122"/>Vang,</l>
+                  <l>
+                     <ref target="n123"/>Du smiilte gjennem Taarer, naar Du sang.</l>
+               </lg>
+            </div>
+            <div>
+               <head type="section">Riber</head>
+               <head type="sub">(født den 7 Januar 1760. † 1796.)</head>
+               <lg>
+                  <l>En Fløite skar Du Dig af Gjerdets Piil,</l>
+                  <l>Og sang Dit Hjertes og Naturens Smiil.</l>
+               </lg>
+            </div>
+            <div>
+               <head type="section">Rosenkilde</head>
+               <head type="sub">(født den 8 Januar 1786.)</head>
+               <lg>
+                  <l>I godt Humeur kom <ref target="n124"/> fra et Gilde:</l>
+                  <l>»Nu ogsaa jeg vil skabe en Poet«!</l>
+                  <l>Som sagt, saa skeet,</l>
+                  <l>
+                     <ref target="n125"/>
+                     <!--DATA-DEFINITION: måske hentydning til, at Rosenkilde som skuespiller var et stort komisk talent og spillede adskillige komiske figurer fra især Holberg og J.L. Heibergs stykker.-->Han
+                     havde neppe leet,</l>
+                  <l>Saa fik vi – <hi rend="italic">Rosenkilde</hi>
+                     <ref target="n126"/>.</l>
+               </lg>
+            </div>
+            <div>
+               <head type="section">L. C. Sander</head>
+               <head type="sub">(født den 13 November 1756. †     .)</head>
+               <lg>
+                  <l>Du sang <ref target="n127"/>Niels Ebbesen, at Dansken kunde prise</l>
+                  <l>Den Skjald, han elsked’ alt for <ref target="n128"/>Dødens Vuggevise.</l>
+               </lg>
+            </div>
+            <div>
+               <head type="section">
+                  <ref target="n129"/>Samsöe</head>
+               <head type="sub">(født den 21 Marts 1759. † 1796.)</head>
+               <lg>
+                  <l>Din Vaar os lod en deilig Sommer haabe,</l>
+                  <l>Men paa det røde Bær laa Dødens Draabe.</l>
+               </lg>
+            </div>
+            <div>
+               <head type="section">F. C. Sibbern</head>
+               <head type="sub">(født den 18 Juli 1785.)</head>
+               <lg>
+                  <l>Selv uden Mandens Navn og hvert Hentydnings-Stof,</l>
+                  <l>Jeg skulde næsten troe, man seer til hvem jeg sigter.</l>
+                  <l>– <ref target="n130"/>Gid hver en Digter var saameget Philosoph,</l>
+                  <l>Som denne Philosoph har viist, at han er Digter<ref target="n131"/>.</l>
+               </lg>
+            </div>
+            <div>
+               <head type="section">H. C. <ref target="n132"/>Sneedorf</head>
+               <head type="sub">(født den 22 Marts 1759. †     .)</head>
+               <lg>
+                  <l>Vel svigter <ref target="n133"/>den vingede Ganger tidt,</l>
+                  <l>Men Du satte Guldhjul for Gangerens Skridt.</l>
+                  <l>Ei Verdens Prosa Du gik forbi,</l>
+                  <l>Du viiste, der laa Poesie deri.</l>
+                  <l rend="indent1">»<ref target="n134"/>Hil være Herr Henrik!«</l>
+               </lg>
+            </div>
+            <div>
+               <head type="section">Sorterup</head>
+               <head type="sub">(† <ref target="n135"/>1722.)</head>
+               <lg>
+                  <l>Du digted’ for Dansken <ref target="n136"/>en Sang<ref target="n137"/>under
+                     Ø,</l>
+                  <l>Den burde hver Dannemand kjende,</l>
+                  <l>Den havde den Skjæbne, den aldrig vil døe,</l>
+                  <l>Med Dig vil det samme vist hænde.</l>
+               </lg>
+            </div>
+            <div>
+               <head type="section">
+                  <ref target="n138"/>Schack-Staffeldt</head>
+               <head type="sub">(født den <ref target="n139"/>31 Marts 1770. †     .)</head>
+               <lg>
+                  <l>Hvad Blomsten drømmer mangen Sommernat,</l>
+                  <l>Hvad Vinden hvidsker i det grønne Krat,</l>
+                  <l>Mens Morgenskyer Engene bedugge,</l>
+                  <l>Fortalte Alferne Dig ved din Vugge,</l>
+                  <l>Og hvad Du hørte kunde Du ei glemme,</l>
+                  <l>
+                     <ref target="n140"/>Thi lød din Sang for os, som Alfers Stemme.</l>
+               </lg>
+            </div>
+            <div>
+               <head type="section">E. Storm</head>
+               <head type="sub">(født den 21 August 1749. † 1794.)</head>
+               <lg>
+                  <l>»<ref target="n141"/>Herr drog over salten Sø,«</l>
+                  <l>Ja, det kan man kalde en Vise,</l>
+                  <l>Den bruser, som Bølgen om <ref target="n142"/>Sjølunds Ø,</l>
+                  <l>Den ene, kan Skjalden prise!</l>
+               </lg>
+            </div>
+            <div>
+               <head type="section">A. Stub</head>
+               <head type="sub">(født <ref target="n143"/>1707. † 1758.)</head>
+               <lg>
+                  <l>I Haven voxer Æbletræet smukt,</l>
+                  <l>Men der maa Solskin til at skabe Frugt,</l>
+                  <l>I Skyggen her <ref target="n144"/>dit Blomster Duft os gav,</l>
+                  <l>– Men ingen saae Dig, Du kun fandt en Grav.</l>
+               </lg>
+            </div>
+            <div>
+               <head type="section">C. Söeborg</head>
+               <lg>
+                  <l>Paa samme Green vel flere Fugle gynge,</l>
+                  <l>Men ei med lige Kraft de alle synge;</l>
+                  <l>Et simpelt Qvad tidt Hjertet længst har gjemt.</l>
+                  <l>» <ref target="n145"/>Om hundred’ Aar er ikke alting glemt<ref target="n146"
+                     />.«</l>
+               </lg>
+            </div>
+            <div>
+               <head type="section">Söetoft</head>
+               <head type="sub">(født den 31 Marts 1790.)</head>
+               <lg>
+                  <l>
+                     <ref target="n147"/>Phantasus den ungdomsglade,</l>
+                  <l>Kaldte, en Skjærsommernat,</l>
+                  <l>
+                     <ref target="n148"/>
+                     <!--DATA-DEFINITION: jf. Søtofts satiriske litteraturkomedie <i>Aandernes Maskerade. Vinternatsdrøm</i>, 1816.-->
+                     <hi rend="italic">Aanderne</hi> til <hi rend="italic">Maskerade</hi>,</l>
+                  <l>Og som Kredsen bedst var sat,</l>
+                  <l>Kom just Du til Skovens <ref target="n149"/>Hang</l>
+                  <l>Og som <hi rend="italic">Digter</hi> dem besang<ref target="n150"/>.</l>
+               </lg>
+            </div>
+            <div>
+               <head type="section">Th. Thaarup</head>
+               <head type="sub">(født den 21 August 1749. † <ref target="n151"/>1822.)</head>
+               <lg>
+                  <l>Hvor Rugen groer,</l>
+                  <l>Hvor Bøge skygge,</l>
+                  <l>Hvor danske Hjerter bygge,</l>
+                  <l>Din Sangfugl evig boer:</l>
+                  <l>Den synger glad sit Stykke:</l>
+                  <l>
+                     <ref target="n152"/>Den danske Bondes Lykke</l>
+                  <l>Og <ref target="n153"/>dine Psalme-Chor.</l>
+               </lg>
+            </div>
+            <div>
+               <head type="section">
+                  <ref target="n154"/>J. Thiele</head>
+               <head type="sub">(født den 13 December <ref target="n155"/>1796.)</head>
+               <lg>
+                  <l>
+                     <ref target="n156"/>Hvad ridsed’ i det dybe Sand,</l>
+                  <l>
+                     <ref target="n158"/>
+                     <!--DATA-DEFINITION: Thiele, der var 31 år yngre end Baggesen, var en af dem, som forsøgte sig med en løsning af gåden. Baggesen bragte Thieles – og flere andres – svar i sit tidsskrift <i>Danfana. Et Maanedsskrift</i>, januar 1816; det bærer titlen »Forsøg til en Forklaring af Gaaden: Det evige Sindbillede, ikke blot Litteraturens Oprindelse, men Philosophiens Maal og Ende« og består af sonetterne »Sphinx’s Tiltale«, s. 19, og »Til Sphinx«, s. 59, samt det 77 strofer lange digt »Forklaring af Gaaden«, s. 20-58. Baggesen kvitterede med digtet »Elegie. Til Just Thiele«, s. 60-66.-->Det
+                     løste Barnet for den ældre Mand,</l>
+                  <l>Du trykked’ Kys paa Rosens fine Blad,</l>
+                  <l>Og et <ref target="n159"/>Sonet paa hvert af disse sad<ref target="n160"/>.</l>
+               </lg>
+            </div>
+            <div>
+               <head type="section">J. C. Tode</head>
+               <head type="sub">(født den 24 Juni 1736. † 1806.)</head>
+               <lg>
+                  <l>Vi vil’ ei sige mange Ord,</l>
+                  <l>Ei hykle eller prale,</l>
+                  <l>Seer Hjertet glad Guds skjønne Jord,</l>
+                  <l>Vi høre Dig at tale.</l>
+               </lg>
+            </div>
+            <div>
+               <head type="section">
+                  <ref target="n161"/>P. M. Trojel P. K. Trojel</head>
+               <head type="sub">(født den 6 Juni 1743. † 1793.) (født 5 Mai 1754. † 1784.)</head>
+               <lg>
+                  <l>
+                     <ref target="n162"/>Hiin sang <ref target="n163"/>Dumhedens Gudinde,</l>
+                  <l>
+                     <ref target="n164"/>Denne, sang sin <ref target="n165"/>Skræders Priis.</l>
+                  <l>Verden maa dem Krandse binde,</l>
+                  <l>De for den bandt hver – et <ref target="n166"/>Riis.</l>
+               </lg>
+            </div>
+            <div>
+               <head type="section">Tullin</head>
+               <head type="sub">(født 1728. † 1765.)</head>
+               <lg>
+                  <l>Ved Spøg gleed Vintren hen i muntert Lag,</l>
+                  <l>Kun Snillet man til Tempelpræst udkaarer.</l>
+                  <l>
+                     <ref target="n167"/>Du bragte Skovens Grønt paa Maiens Dag<ref target="n168"
+                     />,</l>
+                  <l>Og lærte: der er ogsaa Fryd i Taarer.</l>
+               </lg>
+            </div>
+            <div>
+               <head type="section">Wessel</head>
+               <head type="sub">(født den 6 October 1742. † 1785.)</head>
+               <lg>
+                  <l>
+                     <ref target="n169"/>Du aad og drak, var sjelden glad,</l>
+                  <l>Gik dine Støvlehæle skjæve,</l>
+                  <l>Tilsidst Du Døden ønske gad –</l>
+                  <l>Til Straf skal Du nu evig leve<ref target="n170"/>!</l>
+               </lg>
+            </div>
+            <div>
+               <head type="section">C. Wilster</head>
+               <lg>
+                  <l>» <ref target="n171"/>De første Prygl vi i Skolen fik,</l>
+                  <l>Det var for det Verbum <ref target="n172"/>.«</l>
+                  <l>For Dig det bedre med dette gik,</l>
+                  <l>Du Hjerter vandt og vil dem bevare,</l>
+                  <l>Blot ved <ref target="n174"/>din Sang om det Verbum </l>
+                  <l>
+                     <ref target="n175"/>
+                  </l>
+               </lg>
+            </div>
+            <div>
+               <head type="section">C. Winther</head>
+               <head type="sub">(født den 29 Juli 1796.)</head>
+               <lg>
+                  <l>
+                     <ref target="n176"/>At snitte smukt i Træ<ref target="n177"/>, en Gud Dig
+                     lærte,</l>
+                  <l>Stolt staaer det her, dit Digternavn deri,</l>
+                  <l>Natur og Poesie er i dit Hjerte,</l>
+                  <l>Natur og Hjerte i din Poesie.</l>
+               </lg>
+            </div>
+            <div>
+               <head type="section">P. Wulff</head>
+               <head type="sub">(født den 26 November 1774.)</head>
+               <lg>
+                  <l>
+                     <ref target="n178"/>Tak for hver evig blaa ,</l>
+                  <l>Tak for din <ref target="n181"/> Sang, saa rask og skjøn.</l>
+                  <l>Du bandt »<ref target="n183"/>
+                     <!--DATA-TERM: en Krands … rinde-->
+                     <!--DATA-DEFINITION: citatet har ikke kunnet lokaliseres.-->en Krands af Tang,
+                     som Bølgen grøn,</l>
+                  <l>Og hang paa Vraget, hvorfra Perler rinde<ref target="n184"/>.«</l>
+               </lg>
+            </div>
+            <div>
+               <head type="section">Zetlitz</head>
+               <head type="sub">(født den 26 Januar 1761.)</head>
+               <lg>
+                  <l>Din muntre Skjæmt og Sangens raske Toner,</l>
+                  <l>Var’ mere værd end mange <ref target="n185"/>Førsters Kroner.</l>
+               </lg>
+            </div>
+            <div>
+               <head type="section">Zahle</head>
+               <lg>
+                  <l>Dig <ref target="n186"/>Musen gav en <ref target="n187"/>Lyre til at
+                     spille,</l>
+                  <l>Men Du – Du tier næsten ganske stille.</l>
+               </lg>
+            </div>
+            <div>
+               <head type="section">A. Oehlenschläger</head>
+               <head type="sub">(født den 14 November 1779.)</head>
+               <lg>
+                  <l>Sidst staaer Du her, iblandt dem allesammen,</l>
+                  <l>Men Mesteren staaer sidst jo, nærmest Rammen.</l>
+               </lg>
+               <lg>
+                  <l>
+                     <ref target="n188"/> Slot med Sølv og Guld Du satte,</l>
+                  <l>Dit Digter-Slot har dog langt større Skatte:</l>
+                  <l>En Verden med Bedrift med Fryd og Sorg.</l>
+                  <l>
+                     <ref target="n189"/>Vi følge til Thoras Borg;</l>
+                  <l>I Trondhjems Kirke <ref target="n190"/> mister,</l>
+                  <l>Bag Skovens <ref target="n191"/>Hang<ref target="n192"/> Hjerte brister,</l>
+                  <l>
+                     <ref target="n193"/> vi følge vil,</l>
+                  <l>I Skoven see vi paa dit <ref target="n194"/>.</l>
+                  <l>
+                     <ref target="n195"/>Vi dele med Fryd og Sorg,</l>
+                  <l>Ved Maan’skin gaae vi til din <ref target="n196"/>,</l>
+                  <l>Stolt <ref target="n197"/> sees paa Nattens Sky,</l>
+                  <l>Du har til Livet kaldt dem frem paany,</l>
+                  <l>De dele med Dig, hvad Du selv dem gav:</l>
+                  <l>Et evigt Navn, der trodser Død og Grav.</l>
+               </lg>
+            </div>
+         </div>
+         <div>
+            <head type="section">Baggrund til Vignetterne</head>
+            <lg>
+               <l>Hvad er det vel vi kalde Poesie?</l>
+               <l>En skuffet Drøm, nu det Uendelige!</l>
+               <l>Det Enkelte, det Heles Harmonie,</l>
+               <l>Vi jo med dette lille Ord udsige.</l>
+               <l>Vort Liv, ja jeg og Du, kort alle vi</l>
+               <l>Er’ Poesie!</l>
+            </lg>
+            <lg>
+               <l>Det stolte Fjeld, der over Skyen gaaer,</l>
+               <l>Hvor <ref target="n198"/>Fossen larmer over knuste Graner,</l>
+               <l>Hvor <ref target="n199"/>Gemsejægeren ei Spidsen naaer,</l>
+               <l>Hvor Tanken svinder og Guds Storhed aner;</l>
+               <l>Hiin herlige Natur saa høi og fri</l>
+               <l>Er Poesie!</l>
+            </lg>
+            <lg>
+               <l>I Gruben ved det blege Lampeskjær,</l>
+               <l>Den stille Bjergmand sidder med sin Stræben,</l>
+               <l>Han tænker trofast paa sin Hjertenskjær,</l>
+               <l>Og gamle Sange tone ham fra Læben.</l>
+               <l>Den hele Scene, Hjertets Drømmerie,</l>
+               <l>Er Poesie!</l>
+            </lg>
+            <lg>
+               <l>I Røg og Damp den vilde Kampplads staaer,</l>
+               <l>Her brænder Byen, hist man stormer Skandsen,</l>
+               <l>Dødskuglen gjennem Heltehjertet gaaer,</l>
+               <l>Imens det drømmer stolt om Laurbærkrandsen.</l>
+               <l>Selv dette røgomhylte Malerie,</l>
+               <l>Er Poesie!</l>
+            </lg>
+            <lg>
+               <l>See Slaveskibet! dybt i Rummet her</l>
+               <l>De lænkebundne, solgte Brødre sukke.</l>
+               <l>Nu er det <ref target="n200"/>Havblik, tyst – hvad pladsker der?</l>
+               <l>Et Liig, nu eet – og Bølgerne sig lukke.</l>
+               <l>Dødskysset da, som gjør den Fangne fri,</l>
+               <l>Er Poesie!</l>
+            </lg>
+            <lg>
+               <l>Naar hun, hvem Hjertet fast sig klynger ved,</l>
+               <l>Som er din Tanke og din hele Stræben,</l>
+               <l>Naar hun forstaaer din dybe Kjærlighed,</l>
+               <l>Og hendes Haandtryk siger meer end Læben,</l>
+               <l>Hvad da Du føler, fængslet, men dog fri,</l>
+               <l>Er Poesie!</l>
+            </lg>
+            <lg>
+               <l>Hver Barnets Drøm om Jordens Herlighed,</l>
+               <l>Den Gamles Minder, mens hun dreier Rokken,</l>
+               <l>Den glemte Qvindes stille Huuslighed,</l>
+               <l>Der sysler hjemme, tro, med Børneflokken,</l>
+               <l>Den Vildes Glæde ved et Speils Magie,</l>
+               <l>Er Poesie!</l>
+            </lg>
+            <lg>
+               <l>Naar Vennen Du betroer Din bittre <ref target="n201"/>Vee,</l>
+               <l>Og klynger Dig til ham med trofast Hjerte,</l>
+               <l>Dit varme <hi rend="italic">Du</hi> faaer kun et høfligt <hi rend="italic"
+                  >De</hi>,</l>
+               <l>Din Tillid selv forvandler sig til Smerte,</l>
+               <l>Selv det, naar han Dig fornem gaaer forbi,</l>
+               <l>Er Poesie!</l>
+            </lg>
+            <lg>
+               <l>
+                  <ref target="n202"/>Siberien med Taage, Iis og Snee,</l>
+               <l>Omslutter ham, der stred for Frihedsfaner,</l>
+               <l>Alene, i det grændseløse Vee,</l>
+               <l>Hans Liv henvisner mellem dunkle Graner,</l>
+               <l>Hans Drøm om Frihed – Ørk’nens Dyr er’ frie –</l>
+               <l>Er Poesie!</l>
+            </lg>
+            <lg>
+               <l>Der staaer en Klippe i det salte Hav,</l>
+               <l>Fra Skibet mangen Pilgrim den bestiger,</l>
+               <l>Man seer et Træ, en Skildvagt og en Grav,</l>
+               <l>Hvert Blik faaer Liv, men Læben intet siger.</l>
+               <l>Den dybe Stilhed her er Melodie,</l>
+               <l>Som Poesie!</l>
+            </lg>
+            <lg>
+               <l>Musikens Toner, Ungdoms glade Dands,</l>
+               <l>En Verden i et Frø og i en Stjerne,</l>
+               <l>Selv Graven med sin visne Blomsterkrands,</l>
+               <l>Vort Hjertes Higen mod et ukjendt Fjerne,</l>
+               <l>Mit Liv og hvad jeg fandt deri,</l>
+               <l>Er Poesie!</l>
+            </lg>
+            <lg>
+               <l>Jeg følte mig, som Ørnen, stærk og fri,</l>
+               <l>Min unge Sjæl var gladest blandt de Glade,</l>
+               <l>Men Hjertets bedste Drøm er nu forbi,</l>
+               <l>Og <ref target="n203"/>Livets Træ staaer uden Blomst og Blade.</l>
+               <l>Mit Kald, som Digter – Hjertets Melodie –</l>
+               <l>Var Poesie!</l>
+            </lg>
+         </div>
+
+      </body>
+      <!--<back>
+         <div>
+            <app>
+               <lem>kysset</lem>
+               <rdg>
+                  <q>kyset</q> A </rdg>
+            </app>
+         </div>
+      </back>-->
+   </text>
+</TEI>

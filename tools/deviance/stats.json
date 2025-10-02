@@ -1,0 +1,44 @@
+[
+  {
+    "timestamp": "2025-05-28T15:27:47.614080",
+    "total_words": 17624555,
+    "total_unknown_words": 380225,
+    "unique_unknown_words": 177065,
+    "deviation_percentage": 2.16
+  },
+  {
+    "timestamp": "2025-05-28T15:28:48.172577",
+    "total_words": 17624555,
+    "total_unknown_words": 380225,
+    "unique_unknown_words": 177065,
+    "deviation_percentage": 2.16
+  },
+  {
+    "timestamp": "2025-05-28T16:00:15.992202",
+    "total_words": 17624555,
+    "total_unknown_words": 379061,
+    "unique_unknown_words": 177043,
+    "deviation_percentage": 2.15
+  },
+  {
+    "timestamp": "2025-05-28T16:07:45.080946",
+    "total_words": 17624555,
+    "total_unknown_words": 379061,
+    "unique_unknown_words": 177043,
+    "deviation_percentage": 2.15
+  },
+  {
+    "timestamp": "2025-06-02T15:10:48.216558",
+    "total_words": 17624502,
+    "total_unknown_words": 378487,
+    "unique_unknown_words": 177015,
+    "deviation_percentage": 2.15
+  },
+  {
+    "timestamp": "2025-06-02T16:01:37.985890",
+    "total_words": 17624502,
+    "total_unknown_words": 347059,
+    "unique_unknown_words": 176112,
+    "deviation_percentage": 1.97
+  }
+]

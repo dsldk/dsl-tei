@@ -1,0 +1,9 @@
+[
+  {
+    "timestamp": "2025-06-02T15:10:10.784964",
+    "total_words": 17624502,
+    "total_unknown_words": 378487,
+    "unique_unknown_words": 177015,
+    "deviation_percentage": 2.15
+  }
+]
