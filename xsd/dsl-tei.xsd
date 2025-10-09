@@ -409,9 +409,10 @@
   </xs:element>
   <xs:element name="byline">
     <xs:complexType mixed="true">
-      <xs:sequence>
-        <xs:element minOccurs="0" maxOccurs="unbounded" ref="ns1:lb"/>
-      </xs:sequence>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element ref="ns1:lb"/>
+        <xs:element ref="ns1:ref"/>
+      </xs:choice>
     </xs:complexType>
   </xs:element>
   <xs:element name="castGroup">
@@ -433,11 +434,11 @@
   </xs:element>
   <xs:element name="castList">
     <xs:complexType>
-      <xs:sequence>
+      <xs:choice minOccurs="0" maxOccurs="unbounded"> 
         <xs:element ref="ns1:head" minOccurs="0"/>
-        <xs:element ref="ns1:castGroup" minOccurs="0" maxOccurs="unbounded"/>
-        <xs:element ref="ns1:castItem" maxOccurs="unbounded"> </xs:element>
-      </xs:sequence>
+        <xs:element ref="ns1:castGroup"/>
+        <xs:element ref="ns1:castItem"/>
+      </xs:choice>
     </xs:complexType>
   </xs:element>
   <xs:element name="set">
@@ -777,6 +778,7 @@
     <xs:complexType mixed="true">
       <xs:choice minOccurs="0" maxOccurs="unbounded">
         <xs:element ref="ns1:ref"/>
+        <xs:element ref="ns1:hi"/>
       </xs:choice>
     </xs:complexType>
   </xs:element>
@@ -784,6 +786,7 @@
     <xs:complexType mixed="true">
       <xs:choice minOccurs="0" maxOccurs="unbounded">
         <xs:element ref="ns1:app"/>
+        <xs:element ref="ns1:hi"/>
         <xs:element ref="ns1:pb"/>
         <xs:element ref="ns1:ref"/>
       </xs:choice>
@@ -1057,6 +1060,7 @@
         <xs:element ref="ns1:app"/>
         <xs:element ref="ns1:hi"/>
         <xs:element ref="ns1:lb"/>
+        <xs:element ref="ns1:note"/>
         <xs:element ref="ns1:pb"/>
         <xs:element ref="ns1:ref"/>
       </xs:choice>
