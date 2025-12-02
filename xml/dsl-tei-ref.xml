@@ -278,6 +278,22 @@
               <code>@type="delivery"</code>.</p>
           </div>
           <div>
+            <castList>
+              <castItem>
+                <role>JONATHAN SCHMIDT, Kjøbmand i Kjøbenhavn</role>
+                <actor>Hr. Foersom</actor>
+              </castItem>
+              <castItem>
+                <role>EDUARD HÜGEL, fransk Søofficeer, hans Skolekammerad</role>
+                <actor>Hr. Rechnitzer</actor>
+              </castItem>
+            </castList>
+            <set>
+              <head>Kroestue</head>
+              <p>Et sted i København</p>
+            </set>
+          </div>
+          <div>
             <head>Scene 8</head>
             <stage type="setting">Borgmesterinden, 2 rådsherreinder, Henrik</stage>
             <sp>
@@ -338,12 +354,15 @@
               <lem>dominis</lem>
               <rdg wit="#B"><q>is</q> tilføjet over linjen, B</rdg>
             </app> Revaliensis. </p>
-            <p>En tekstkritisk note kan også bestå blot af en læsning.<app><rdg>J<hi rend="sup">1-7</hi>.</rdg></app></p>
+          <p>En tekstkritisk note kan også bestå blot af en læsning.<app>
+              <rdg>J<hi rend="sup">1-7</hi>.</rdg>
+            </app></p>
         </div>
         <div>
           <head>Fodnoter</head>
           <div>
-            <p>Fodnoter gengives som popup-elementer. Her kommer den første fodnote,<note place="bottom">
+            <p>Fodnoter gengives som popup-elementer. Her kommer den første fodnote,<note
+                place="bottom">
                 <p>Dette er teksten til den første fodnote.</p>
               </note> her kommer den anden fodnote,<note place="bottom">
                 <p>Den anden fodnote er længere end den første, men det er vigtigt at der er
@@ -370,7 +389,8 @@
           <p> Kommentarer opmærkes vha. <code>&lt;ref target=""/&gt;</code> og vises som en popup.
             Herefter følger en kommentar.<ref target="n1"/></p>
           <p> Personnavne fremhæves i teksten og aktiverer en popup med en kort note om pågældende:
-              <persName key="brandes_georg_1842">Georg Brandes</persName> og <persName key="brahe_tycho_1546">Tycho Brahe</persName>. Stednavne er endnu ikke
+              <persName key="brandes_georg_1842">Georg Brandes</persName> og <persName
+              key="brahe_tycho_1546">Tycho Brahe</persName>. Stednavne er endnu ikke
             implementeret.</p>
           <!-- <code>Her er tekst i kursiv: &lt;hi rend="italics"&gt;Tekst i kursiv.&lt;/hi&gt;</code> -->
         </div>
@@ -652,7 +672,8 @@
           <reg>6. Særlig notation</reg>
           <orig>6. Særlig notation</orig>
         </head>
-        <p>Til opmærkning af matematiske formler anvendes <formula notation="tex">TeX</formula>-notation.</p>
+        <p>Til opmærkning af matematiske formler anvendes <formula notation="tex"
+          >TeX</formula>-notation.</p>
         <div>
           <head>
             <orig>Formler</orig>
@@ -660,7 +681,8 @@
           <p>Et eksempel på matematik indlejret i den løbende tekst (inline) er dette: Integralet
               <formula notation="tex">\(\int_0^\infty e^{it}t^{x-1}dt\)</formula> er jo et
             “Dirichlet’s Integral” (ses strax naar <formula notation="tex">\(x-1\)</formula> sættes
-            lig  <formula notation="tex">\(-y\)</formula>; de Diri. Int. er nemlig af Form <formula notation="tex">\(\int_0^\infty \frac{f(t)}{t^y}dt\)</formula></p>
+            lig  <formula notation="tex">\(-y\)</formula>; de Diri. Int. er nemlig af Form <formula
+              notation="tex">\(\int_0^\infty \frac{f(t)}{t^y}dt\)</formula></p>
           <p>Ligninger kan også optræde i blokke som her: <lb/><formula notation="tex">$$s(x) =
               \int^x_0e^{it} \, {t^n dt} = \frac{1}{i}e^{ix} \cdot x^{n} +\dots+ (i)^{n + 1} \cdot
               n!$$</formula>
@@ -673,11 +695,11 @@
         <div>
           <head>Noder</head>
           <p>Noder kan indlejres vha. reference til en MEI-fil:<lb/>
-             <code>&lt;notatedMusic&gt;&lt;ptr target="[url]"&gt;&lt;/notatedMusic&gt;</code>
+            <code>&lt;notatedMusic&gt;&lt;ptr target="[url]"&gt;&lt;/notatedMusic&gt;</code>
           </p>
-           <notatedMusic>
-              <ptr target="mei/dsl-mei-ref.xml"/>
-           </notatedMusic>
+          <notatedMusic>
+            <ptr target="mei/dsl-mei-ref.xml"/>
+          </notatedMusic>
         </div>
         <div>
           <head>Kode</head>
@@ -727,11 +749,13 @@
             <salute>Kære Harald.</salute>
           </opener>
           <p>Vi har haft en dejlig Tur. Vi spiste til Middag i <placeName>Halmstad</placeName>. Fra
-            <placeName>Göteborg</placeName> fik jeg lige Tid til at skrive et Brevkort, men da jeg
+              <placeName>Göteborg</placeName> fik jeg lige Tid til at skrive et Brevkort, men da jeg
             ikke ved om det kom ordentlig af Sted, vil jeg sende endnu en Hilsen til Juleaften. Vil
-            du hilse <persName key="bohr_chr_1855">Fader</persName>, <persName key="bohr_ellen_1860">Moder</persName>, <persName key="bohr_jenny_1883">Jenny</persName>,
+            du hilse <persName key="bohr_chr_1855">Fader</persName>, <persName key="bohr_ellen_1860"
+              >Moder</persName>, <persName key="bohr_jenny_1883">Jenny</persName>,
               <persName>Signe</persName>, <persName key="adler_hanna_1859">Hanne</persName>,
-              <persName>Agnes</persName>, <persName>Marie</persName>, <persName key="christensen_kirsten">Christensen</persName> og <persName>Niels</persName> fra mig
+              <persName>Agnes</persName>, <persName>Marie</persName>, <persName
+              key="christensen_kirsten">Christensen</persName> og <persName>Niels</persName> fra mig
             og ønske dem og Dig selv en rigtig glædelig Jul.</p>
           <closer>
             <salute>De hjerteligste til Alle fra</salute>
