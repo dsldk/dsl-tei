@@ -397,6 +397,7 @@
   <xs:element name="titlePart">
     <xs:complexType mixed="true">
       <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element ref="ns1:app"/>
         <xs:element ref="ns1:ex"/>
         <xs:element ref="ns1:hi"/>
         <xs:element ref="ns1:lb"/>
@@ -410,7 +411,9 @@
   <xs:element name="byline">
     <xs:complexType mixed="true">
       <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element ref="ns1:app"/>
         <xs:element ref="ns1:lb"/>
+        <xs:element ref="ns1:pb"/>
         <xs:element ref="ns1:ref"/>
       </xs:choice>
     </xs:complexType>
@@ -428,13 +431,13 @@
       <xs:sequence>
         <xs:element ref="ns1:role"/>
         <xs:element name="roleDesc" minOccurs="0" maxOccurs="1"/>
-        <xs:element ref="ns1:actor" minOccurs="0" maxOccurs="1"/>
+        <xs:element ref="ns1:actor" minOccurs="0" maxOccurs="unbounded"/>
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="castList">
     <xs:complexType>
-      <xs:choice minOccurs="0" maxOccurs="unbounded"> 
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
         <xs:element ref="ns1:head" minOccurs="0"/>
         <xs:element ref="ns1:castGroup"/>
         <xs:element ref="ns1:castItem"/>
@@ -523,6 +526,8 @@
         <xs:element ref="ns1:app"/>
         <xs:element ref="ns1:ex"/>
         <xs:element ref="ns1:hi"/>
+        <xs:element ref="ns1:lb"/>
+        <xs:element ref="ns1:pb"/>
       </xs:choice>
       <xs:attribute name="key" type="xs:NCName"/>
     </xs:complexType>
@@ -533,6 +538,8 @@
         <xs:element ref="ns1:app"/>
         <xs:element ref="ns1:ex"/>
         <xs:element ref="ns1:hi"/>
+        <xs:element ref="ns1:lb"/>
+        <xs:element ref="ns1:pb"/>
       </xs:choice>
       <xs:attribute name="key" type="xs:NCName"/>
     </xs:complexType>
@@ -611,7 +618,14 @@
           <xs:element ref="ns1:p"/>
         </xs:choice>
       </xs:sequence>
-      <xs:attribute name="type" use="optional" type="xs:NCName"/>
+      <xs:attribute name="type">
+        <xs:simpleType>
+          <xs:restriction base="xs:token">
+            <xs:enumeration value="asterisk"/>
+            <xs:enumeration value="line"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:attribute>
     </xs:complexType>
   </xs:element>
   <xs:element name="div">
@@ -663,13 +677,14 @@
         <xs:element minOccurs="0" maxOccurs="unbounded" ref="ns1:stage"/>
       </xs:choice>
       <xs:attribute name="n" type="xs:string"/>
-      <xs:attribute name="rend" type="xs:NCName"/>
+      <xs:attribute name="rend" type="xs:NMTOKENS"/>
     </xs:complexType>
   </xs:element>
   <xs:element name="l">
     <xs:complexType mixed="true">
       <xs:choice minOccurs="0" maxOccurs="unbounded">
         <xs:element ref="ns1:app"/>
+        <xs:element ref="ns1:ex"/>
         <xs:element ref="ns1:hi"/>
         <xs:element ref="ns1:lb"/>
         <xs:element ref="ns1:note"/>
@@ -731,6 +746,7 @@
   <xs:element name="item">
     <xs:complexType mixed="true">
       <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element ref="ns1:app"/>
         <xs:element ref="ns1:ex"/>
         <xs:element ref="ns1:hi"/>
         <xs:element ref="ns1:lb"/>
@@ -777,6 +793,7 @@
   <xs:element name="actor">
     <xs:complexType mixed="true">
       <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element ref="ns1:app"/>
         <xs:element ref="ns1:ref"/>
         <xs:element ref="ns1:hi"/>
       </xs:choice>
@@ -801,9 +818,10 @@
   </xs:element>
   <xs:element name="cell">
     <xs:complexType mixed="true">
-      <xs:sequence>
-        <xs:element minOccurs="0" maxOccurs="unbounded" ref="ns1:app"/>
-      </xs:sequence>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element ref="ns1:app"/>
+        <xs:element ref="ns1:hi"/>
+      </xs:choice>
       <xs:attribute name="cols" type="xs:integer"/>
       <xs:attribute name="role" type="xs:NCName"/>
       <xs:attribute name="rows" type="xs:integer"/>
@@ -897,10 +915,12 @@
         <xs:simpleType>
           <xs:restriction base="xs:token">
             <xs:enumeration value="center"/>
+            <xs:enumeration value="initial"/>
             <xs:enumeration value="italic"/>
             <xs:enumeration value="italics"/>
             <xs:enumeration value="normal"/>
             <xs:enumeration value="small"/>
+            <xs:enumeration value="smallcaps"/>
             <xs:enumeration value="spaced"/>
             <xs:enumeration value="strong"/>
             <xs:enumeration value="sub"/>
@@ -943,6 +963,7 @@
       <xs:choice minOccurs="0" maxOccurs="unbounded">
         <xs:element ref="ns1:ex"/>
         <xs:element ref="ns1:hi"/>
+        <xs:element ref="ns1:lb"/>
         <xs:element ref="ns1:pb"/>
         <xs:element ref="ns1:persName"/>
         <xs:element ref="ns1:placeName"/>
@@ -971,6 +992,7 @@
   <xs:element name="head">
     <xs:complexType mixed="true">
       <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element ref="ns1:app"/>
         <xs:element ref="ns1:hi"/>
         <xs:element ref="ns1:lb"/>
         <xs:element ref="ns1:orig"/>
@@ -987,6 +1009,7 @@
       <xs:choice minOccurs="0" maxOccurs="unbounded">
         <xs:element ref="ns1:app"/>
         <xs:element ref="ns1:ex"/>
+        <xs:element ref="ns1:figure"/>
         <xs:element ref="ns1:hi"/>
         <xs:element ref="ns1:lb"/>
         <xs:element ref="ns1:note"/>

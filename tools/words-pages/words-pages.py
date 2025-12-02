@@ -19,18 +19,17 @@ def count_words(text):
     return len(text.split())
 
 def process_file(xml_file, xslt_file):
-    """Process a single XML file and return word/page counts."""
+    """Process a single XML file and return word count."""
     text = extract_text_with_xslt(xml_file, xslt_file)
     word_count = count_words(text)
     page_count = math.ceil(word_count / WORDS_PER_PAGE)
     print(f"{xml_file}: {word_count} words, ~{page_count} pages")
-    return word_count, page_count
+    return word_count
 
 def process_path(input_path, xslt_file):
     """Process a path (file or directory) and print totals."""
     path = Path(input_path)
     total_words = 0
-    total_pages = 0
 
     files = []
     if path.is_file() and path.suffix.lower() == ".xml":
@@ -42,10 +41,10 @@ def process_path(input_path, xslt_file):
         return
 
     for xml_file in files:
-        words, pages = process_file(xml_file, xslt_file)
+        words = process_file(xml_file, xslt_file)
         total_words += words
-        total_pages += pages
 
+    total_pages = math.ceil(total_words / WORDS_PER_PAGE)
     print("\n=== TOTALS ===")
     print(f"Total words: {total_words}")
     print(f"Total pages (@{WORDS_PER_PAGE} words/page): ~{total_pages}")
