@@ -12,7 +12,7 @@ papersize: a4
 
 Nærværende dokument definerer et XML-baseret dataformat til opmærkning af Det
 Danske Sprog- og Litteraturselskabs (DSL) digitale tekstudgivelser. Til
-vejledningen hører dels RELAX NG-skemaet dsl-tei.rnc, referencedokumentet
+vejledningen hører dels XSD-skemaet dsl-tei.xsd, referencedokumentet
 dsl-tei-ref.xml samt stylesheets til transformation fra XML til HTML. Formatet
 tilstræber konformitet med skemaet tei_all, defineret af konsortiet Text
 Encoding Initiative (<https://www.tei-c.org>)[^a], hvilket betyder at et validt
@@ -27,41 +27,39 @@ medarbejdere og projekter, der etablerer og bearbejder teksterne, og de
 værktøjer og mere eller mindre automatiske procedurer, der appliceres på
 materialet. 
 
-# 1 Et dsl-tei-dokument
+## Et dsl-tei-dokument
 
 Et dsl-tei-dokument er et XML-dokument med rodelementet `TEI` og attributtet
 `@xmlns` (*XML namespace*), udfyldt med værdien `http://www.tei-c.org/ns/1.0`.
-Rodelementet indholder de tre komponenter 1. `teiHeader`, 2. `facsimile` og 3. 
-`text`.
+Rodelementet indholder de to obligatoriske komponenter `teiHeader` og `text`.
 
-| element  | antal | beskrivelse                                    |
-|----------|---|----------------------------------------------------|
-|teiHeader | 1 | (*TEI header*) metadata til beskrivelse af den digitale ressource i bibliografisk, kodnings- og udviklingsmæssig henseende. Jf. 2 Metadata. |
-|text      | 1 | et værk, enten som en enhed (fx én roman, novelle, brev) eller er en helhed af flere tekster (fx essays, digte, noveller). Jf. 4 Tekst. |
+| element     | antal | beskrivelse                                        |
+|-------------|-------|----------------------------------------------------|
+| `teiHeader` | 1     | (*TEI header*) metadata til beskrivelse af den digitale ressource i bibliografisk, kodnings- og udviklingsmæssig henseende. Jf. 2 Metadata. |
+| `text`      | 1     | et værk, enten som en enhed (fx én roman, novelle, brev) eller er en helhed af flere tekster (fx essays, digte, noveller). Jf. 4 Tekst. |
 
-Elementerne disponeres således: 
+Elementerne disponeres således:
 
 ```xml
 <TEI xmlns="http://www.tei-c.org/ns/1.0">
   <teiHeader>...</teiHeader>
-  <facsimile>...</facsimile>
   <text>...</text>
 </TEI>
 ```
-# 2 Metadata
+# 1 Metadata (teiHeader)
 
 Elementet `teiHeader` samler metadata, der er nødvendige i udgivelsen af en
 tekst. Disse leverer bibliografisk beskrivelse af det digitale værk, redegørelse
-for anvendt praksis ved dokumentets kodning, klassifikation af sprog og genre
+for anvendt praksis ved dokumentets opmærkning, klassifikation af sprog og genre
 samt dokumentets ændringshistorik. Under `teiHeader` findes tilsvarende fire
-hovedelementer:
+obligatoriske hovedelementer:
 
-| element | antal | beskrivelse |
-|---------|----|---------------|
-| fileDesc | 1 | (*file description*), indeholder komplet bibliografisk beskrivelse af dokumentets tekstdel |
-| encodingDesc | 1 | (*encoding description*), beskriver forholdet mellem den digitale tekst og kildegrundlaget |
-| profileDesc | 1 | (*text-profile description*), beskriver andre aspekter af teksten, fx sprogbrug, genre eller genstandsfelt |
-| revisionDesc | 1 | (*revision description*), indeholder opsummering af ændringer af filen |
+| element        | antal | beskrivelse                           |
+|----------------|-------|---------------------------------------|
+| `fileDesc`     | 1     | (*file description*), indeholder komplet bibliografisk beskrivelse af dokumentets tekstdel |
+| `encodingDesc` | 1     | (*encoding description*), beskriver forholdet mellem den digitale tekst og kildegrundlaget |
+| `profileDesc`  | 1     | (*text-profile description*), beskriver andre aspekter af teksten, fx sprogbrug, genre eller genstandsfelt |
+| `revisionDesc` | 1     | (*revision description*), indeholder opsummering af ændringer af filen |
 
 De fire elementer fordeler sig således:
 
@@ -80,12 +78,12 @@ Metadatasektionens første del er `fileDesc` (_file description_), som indeholde
 information til identifikation, katalogisering og fyldestgørende beskrivelse af
 filen. `fileDesc` indeholder følgende elementer:
 
-| element           | beskrivelse                                              |
-|-------------------|----------------------------------------------------------|
-| titleStmt        | (*title statement*), angivelse af titel, en eller flere forfattere og/eller redaktører samt evt. bevillingsgivere|
-| extent           | beskriver omtrentlig størrelse på en tekst lagret på et medie (fx filstørrelse, antal ord) eller i en trykt udgivelse (fx antal sider) |
-| publicationStmt  | (*publication statement*) angiver, hvem der har ansvaret for udgivelsen af den digitale tekst og vilkår for distribution af samme |
-| sourceDesc       | (*source description*) beskriver den kilde, fra hvilken den digitale tekst er afledt, fx om den har digitalt eller analogt forlæg.|
+| element             | beskrivelse                                              |
+|---------------------|----------------------------------------------------------|
+| `titleStmt`         | (*title statement*), angivelse af titel, en eller flere forfattere og/eller redaktører samt evt. bevillingsgivere |
+| `extent`            | beskriver omtrentlig størrelse på en tekst lagret på et medie (fx filstørrelse, antal ord) eller i en trykt udgivelse (fx antal sider) |
+| `publicationStmt`   | (*publication statement*) angiver, hvem der har ansvaret for udgivelsen af den digitale tekst og vilkår for distribution af samme |
+| `sourceDesc`        | (*source description*) beskriver den kilde, fra hvilken den digitale tekst er afledt, fx om den har digitalt eller analogt forlæg.|
 
 Elementerne fordeler sig sådan: 
 
@@ -480,6 +478,29 @@ Elementet `facsimile` samler et eller flere `graphic`-elementer:
 
 # 3 Tekst
 
+Den anden obligatoriske hovedbestanddel af et DSL-TEI-dokument, elementet
+`text`, indeholder udgivelsens centrale del, hvad enten det fx er en roman, et digt,
+brev, en novelle- eller digtsamling.
+
+Til at dokumentere en sådan tekst kan `text` derfor opdeles i tre dele:
+
+1. `front`, som er et valgfrit element, dokumenterer titelblad, forord og
+   eventuelle dedikationer.
+2. `body`, som er obligatorisk, rummer teksten, hvad enten den udgør en tydelig
+   enhed eller har et helhedspræg, såsom en essay- eller digtsamling.
+3. `back`, som er valgfrit, dokumenterer eventuelle anhang, fortegnelser eller
+   andet af relevans for udgivelsen.
+
+
+
+et 
+
+Opdeling og reference
+
+Da sidetal er knyttet til den trykte bogs fysiske format og dermed veksler fra
+udgave til udgave, struktureres udgivelser i DSL-TEI efter værkets kapitler
+
+
 Den tredje hovedbestanddel af et TEI-dokument, elementet `text`, indeholder en
 tekst, som enten er en *enhed* (roman, novelle, brev og lignende) eller udgør
 en *helhed* såsom en essay- eller digtsamling. 
@@ -492,7 +513,7 @@ følger:
 
 | element | antal | beskrivelse                                                        |
 |---------|-------|--------------------------------------------------------------------|
-|	`front` | 1     | (*front matter*), præliminære oplysninger i form af titelblad, forside og forord, se 4.1 |
+| `front` | 1     | (*front matter*), præliminære oplysninger i form af titelblad, forside og forord, se 4.1 |
 | `body`  | 1     | (*text body*), den centrale komponent, indeholder selve teksten, se. 4.2 |
 | `back`  | 1     |	(*back matter*), eventuelle appendices og fortegnelser, som følger efter teksten, se 4.3 |
 
@@ -698,7 +719,9 @@ Forord opmærkes i et ukvalificeret `div`-element:
 
 ```
 
-## 4.2 Tekstens centrale del
+## 4.2 Tekstens centrale del (body)
+
+I dsl-tei 
 
 Udgivelsens centrale del udgøres af `body` (*text body*), som indeholder
 teksten, hvad enten den er inddelt i bøger, sange, dele og/eller kapitler.
