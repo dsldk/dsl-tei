@@ -156,6 +156,10 @@
     <xsl:template match="tei:rdg" mode="apparatusCriticus">
         <xsl:apply-templates mode="apparatusCriticus"/>
     </xsl:template>
+    <xsl:template match="tei:rdg/tei:q" mode="apparatusCriticus">
+      <em><xsl:apply-templates mode="apparatusCriticus"/></em>
+    </xsl:template>
+    
     
     <xsl:template match="tei:rdg">
       &lt;span class="app-crit-reading"&gt;<xsl:apply-templates/>&lt;/span&gt;

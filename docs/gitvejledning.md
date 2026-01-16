@@ -30,18 +30,23 @@ git version 2.25.1
 \noindent betyder det, at Git allerede _er_ installeret. Hvis ikke kan du gøre
 følgende alt efter hvilket styresystem du benytter:
 
-__Linux (Ubuntu)__. I terminalen skriver du 
+### Linux (Ubuntu)
+
+I terminalen skriver du 
 
 ```bash
 $ sudo apt update
 $ sudo apt install git
 ```
 
-__macOS__. I terminalen er det nok at skrive `git`; herefter vil du
+### OsX
+
+I terminalen er det nok at skrive `git`; herefter vil du
 ledt igennem installation af de nødvendige udviklerværktøjer.
 
-__Windows 10__. Installer Git og Gitbash.
+### Windows
 
+Installer Git og Gitbash.
 
 ## Sådan bruger du Git
 

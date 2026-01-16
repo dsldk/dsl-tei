@@ -63,8 +63,8 @@
     <xsl:include href="docTitle.xsl"/>
     <xsl:include href="emph.xsl"/>
     <xsl:include href="encodingDesc.xsl"/>
-    <xsl:include href="epigraph.xsl"/>
-    <xsl:include href="ex.xsl"/>
+  <xsl:include href="epigraph.xsl"/>-->
+  <xsl:include href="ex.xsl"/><!--
     <xsl:include href="extent.xsl"/>
     <xsl:include href="ft-modules/figure.xsl"/>
     <xsl:include href="foreign.xsl"/>

@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified"
   targetNamespace="http://www.tei-c.org/ns/1.0" xmlns:ns1="http://www.tei-c.org/ns/1.0">
-  <xs:import namespace="http://www.w3.org/XML/1998/namespace"
-    schemaLocation="http://www.w3.org/2001/xml.xsd"/>
+  <xs:import namespace="http://www.w3.org/XML/1998/namespace" schemaLocation="xml.xsd"/>
   <xs:element name="TEI">
     <xs:complexType>
       <xs:sequence>
@@ -44,6 +43,13 @@
   <xs:element name="title">
     <xs:complexType mixed="true">
       <xs:attribute ref="xml:lang"/>
+      <xs:attribute name="type" use="optional">
+        <xs:simpleType>
+          <xs:restriction base="xs:token">
+            <xs:enumeration value="pow"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:attribute>
     </xs:complexType>
   </xs:element>
   <xs:element name="author">
@@ -53,7 +59,22 @@
   </xs:element>
   <xs:element name="editor">
     <xs:complexType mixed="true">
-      <xs:attribute name="role" use="required" type="xs:NCName"/>
+      <xs:attribute ref="xml:id"/>
+      <xs:attribute name="role" use="required">
+        <xs:simpleType>
+          <xs:restriction base="xs:token">
+            <xs:enumeration value="pub_editor"/>
+            <xs:enumeration value="editor"/>
+            <xs:enumeration value="data_engineer"/>
+            <xs:enumeration value="digital_version"/>
+            <xs:enumeration value="note_author"/>
+            <xs:enumeration value="student_assistant"/>
+            <xs:enumeration value="translator"/>
+            <xs:enumeration value="contributor"/>
+            <xs:enumeration value="supervision"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:attribute>
     </xs:complexType>
   </xs:element>
   <xs:element name="funder">
@@ -123,7 +144,7 @@
   <xs:element name="sourceDesc">
     <xs:complexType>
       <xs:sequence>
-        <xs:element ref="ns1:listWit"/>
+        <xs:element ref="ns1:listWit" minOccurs="0" maxOccurs="1"/>
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -136,10 +157,12 @@
   </xs:element>
   <xs:element name="witness">
     <xs:complexType mixed="true">
-      <xs:sequence>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element ref="ns1:hi"/>
         <xs:element minOccurs="0" maxOccurs="unbounded" ref="ns1:bibl"/>
         <xs:element minOccurs="0" maxOccurs="unbounded" ref="ns1:msDesc"/>
-      </xs:sequence>
+        <xs:element ref="ns1:title"/>
+      </xs:choice>
       <xs:attribute ref="xml:id" use="required"/>
     </xs:complexType>
   </xs:element>
@@ -272,7 +295,7 @@
     </xs:complexType>
   </xs:element>
   <xs:element name="language">
-    <xs:complexType>
+    <xs:complexType mixed="true">
       <xs:attribute name="ident" use="required" type="xs:NCName"/>
     </xs:complexType>
   </xs:element>
@@ -339,8 +362,8 @@
   <xs:element name="front">
     <xs:complexType>
       <xs:sequence>
-        <xs:element ref="ns1:titlePage"/>
-        <xs:element minOccurs="0" maxOccurs="unbounded" ref="ns1:div"/>
+        <xs:element ref="ns1:titlePage" minOccurs="0" maxOccurs="1"/>
+        <xs:element ref="ns1:div" minOccurs="0" maxOccurs="unbounded"/>
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -354,6 +377,8 @@
   <xs:element name="titlePage">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element ref="ns1:docAuthor"/>
+        <xs:element ref="ns1:docDate"/>
         <xs:element ref="ns1:docTitle"/>
         <xs:element ref="ns1:byline"/>
         <xs:element ref="ns1:docImprint"/>
@@ -372,19 +397,67 @@
   <xs:element name="titlePart">
     <xs:complexType mixed="true">
       <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element ref="ns1:app"/>
         <xs:element ref="ns1:ex"/>
         <xs:element ref="ns1:hi"/>
         <xs:element ref="ns1:lb"/>
+        <xs:element ref="ns1:lg"/>
         <xs:element ref="ns1:pb"/>
+        <xs:element ref="ns1:ref"/>
       </xs:choice>
       <xs:attribute name="type" type="xs:NCName"/>
     </xs:complexType>
   </xs:element>
   <xs:element name="byline">
     <xs:complexType mixed="true">
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element ref="ns1:app"/>
+        <xs:element ref="ns1:lb"/>
+        <xs:element ref="ns1:pb"/>
+        <xs:element ref="ns1:ref"/>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="castGroup">
+    <xs:complexType>
       <xs:sequence>
-        <xs:element minOccurs="0" maxOccurs="unbounded" ref="ns1:lb"/>
+        <xs:element ref="ns1:head" minOccurs="0"/>
+        <xs:element ref="ns1:castItem" minOccurs="1" maxOccurs="unbounded"/>
       </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="castItem">
+    <xs:complexType mixed="true">
+      <xs:sequence>
+        <xs:element ref="ns1:role"/>
+        <xs:element name="roleDesc" minOccurs="0" maxOccurs="1"/>
+        <xs:element ref="ns1:actor" minOccurs="0" maxOccurs="unbounded"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="castList">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element ref="ns1:head" minOccurs="0"/>
+        <xs:element ref="ns1:castGroup"/>
+        <xs:element ref="ns1:castItem"/>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="set">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" ref="ns1:head"/>
+        <xs:element maxOccurs="unbounded" ref="ns1:p"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="docAuthor">
+    <xs:complexType mixed="true">
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element ref="ns1:lb"/>
+        <xs:element ref="ns1:ref"/>
+      </xs:choice>
     </xs:complexType>
   </xs:element>
   <xs:element name="docImprint">
@@ -409,14 +482,21 @@
   </xs:element>
   <xs:element name="body">
     <xs:complexType>
-      <xs:sequence>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
         <xs:element maxOccurs="unbounded" ref="ns1:div"/>
-      </xs:sequence>
+        <xs:element ref="ns1:figure" minOccurs="0" maxOccurs="unbounded"/>
+      </xs:choice>
     </xs:complexType>
   </xs:element>
   <xs:element name="date">
     <xs:complexType mixed="true">
+      <xs:choice minOccurs="0" maxOccurs="1">
+        <xs:element ref="ns1:note"/>
+      </xs:choice>
       <xs:attribute name="when" type="xs:date"/>
+      <xs:attribute name="cert" type="xs:token"/>
+      <xs:attribute name="notBefore" type="xs:token"/>
+      <xs:attribute name="notAfter" type="xs:token"/>
       <xs:attribute ref="xml:lang"/>
     </xs:complexType>
   </xs:element>
@@ -432,10 +512,12 @@
   <xs:element name="ab" type="xs:string"/>
   <xs:element name="bibl">
     <xs:complexType mixed="true">
-      <xs:sequence>
-        <xs:element minOccurs="0" maxOccurs="unbounded" ref="ns1:persName"/>
-        <xs:element minOccurs="0" maxOccurs="unbounded" ref="ns1:title"/>
-      </xs:sequence>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element ref="ns1:hi"/>
+        <xs:element ref="ns1:persName"/>
+        <xs:element ref="ns1:ref"/>
+        <xs:element ref="ns1:title"/>
+      </xs:choice>
     </xs:complexType>
   </xs:element>
   <xs:element name="persName">
@@ -444,6 +526,8 @@
         <xs:element ref="ns1:app"/>
         <xs:element ref="ns1:ex"/>
         <xs:element ref="ns1:hi"/>
+        <xs:element ref="ns1:lb"/>
+        <xs:element ref="ns1:pb"/>
       </xs:choice>
       <xs:attribute name="key" type="xs:NCName"/>
     </xs:complexType>
@@ -454,7 +538,10 @@
         <xs:element ref="ns1:app"/>
         <xs:element ref="ns1:ex"/>
         <xs:element ref="ns1:hi"/>
+        <xs:element ref="ns1:lb"/>
+        <xs:element ref="ns1:pb"/>
       </xs:choice>
+      <xs:attribute name="key" type="xs:NCName"/>
     </xs:complexType>
   </xs:element>
   <xs:element name="p">
@@ -472,6 +559,8 @@
         <xs:element ref="ns1:code"/>
         <xs:element ref="ns1:formula"/>
         <xs:element ref="ns1:ref"/>
+        <xs:element ref="ns1:stage"/>
+        <xs:element ref="ns1:supplied"/>
       </xs:choice>
       <xs:attribute name="n" type="xs:integer"/>
       <xs:attribute name="rend" type="xs:string"/>
@@ -507,6 +596,7 @@
       <xs:attribute name="ed" use="required" type="xs:NCName"/>
       <xs:attribute name="n" use="required" type="xs:string"/>
       <xs:attribute name="facs" use="optional" type="xs:NCName"/>
+      <xs:attribute ref="xml:id" use="optional"/>
     </xs:complexType>
   </xs:element>
   <xs:element name="figDesc">
@@ -528,7 +618,14 @@
           <xs:element ref="ns1:p"/>
         </xs:choice>
       </xs:sequence>
-      <xs:attribute name="type" use="optional" type="xs:NCName"/>
+      <xs:attribute name="type">
+        <xs:simpleType>
+          <xs:restriction base="xs:token">
+            <xs:enumeration value="asterisk"/>
+            <xs:enumeration value="line"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:attribute>
     </xs:complexType>
   </xs:element>
   <xs:element name="div">
@@ -536,6 +633,7 @@
       <xs:sequence>
         <xs:choice minOccurs="0" maxOccurs="unbounded">
           <xs:element ref="ns1:byline"/>
+          <xs:element ref="ns1:castList"/>
           <xs:element ref="ns1:cit"/>
           <xs:element ref="ns1:div"/>
           <xs:element ref="ns1:epigraph"/>
@@ -547,9 +645,11 @@
           <xs:element ref="ns1:list"/>
           <xs:element ref="ns1:notatedMusic"/>
           <xs:element ref="ns1:opener"/>
+          <xs:element ref="ns1:set"/>
           <xs:element ref="ns1:stage"/>
           <xs:element ref="ns1:sp"/>
           <xs:element ref="ns1:table"/>
+          <xs:element ref="ns1:trailer"/>
         </xs:choice>
         <xs:element minOccurs="0" ref="ns1:closer"/>
         <xs:element minOccurs="0" ref="ns1:postscript"/>
@@ -565,26 +665,73 @@
         </xs:simpleType>
       </xs:attribute>
       <xs:attribute ref="xml:id" use="optional"/>
+      <xs:attribute ref="xml:lang" use="optional"/>
     </xs:complexType>
   </xs:element>
   <xs:element name="lg">
-    <xs:complexType>
-      <xs:sequence>
+    <xs:complexType mixed="true">
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element ref="ns1:closer"/>
         <xs:element minOccurs="0" ref="ns1:head"/>
         <xs:element maxOccurs="unbounded" ref="ns1:l"/>
-      </xs:sequence>
-      <xs:attribute name="rend" type="xs:NCName"/>
+        <xs:element minOccurs="0" maxOccurs="unbounded" ref="ns1:stage"/>
+      </xs:choice>
+      <xs:attribute name="n" type="xs:string"/>
+      <xs:attribute name="rend" type="xs:NMTOKENS"/>
     </xs:complexType>
   </xs:element>
   <xs:element name="l">
     <xs:complexType mixed="true">
       <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element ref="ns1:app"/>
+        <xs:element ref="ns1:ex"/>
         <xs:element ref="ns1:hi"/>
         <xs:element ref="ns1:lb"/>
+        <xs:element ref="ns1:note"/>
+        <xs:element ref="ns1:persName"/>
         <xs:element ref="ns1:pb"/>
+        <xs:element ref="ns1:placeName"/>
+        <xs:element ref="ns1:ref"/>
+        <xs:element ref="ns1:stage"/>
       </xs:choice>
       <xs:attribute name="n" type="xs:integer"/>
       <xs:attribute name="rend" type="xs:NCName"/>
+      <xs:attribute name="part">
+        <xs:simpleType>
+          <xs:restriction base="xs:token">
+            <xs:enumeration value="Y">
+              <xs:annotation>
+                <xs:documentation>(yes) the element is fragmented in some (unspecified)
+                  respect</xs:documentation>
+              </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="N">
+              <xs:annotation>
+                <xs:documentation>(no) the element is not fragmented, or no claim is made as to its
+                  completeness [Default]</xs:documentation>
+              </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="I">
+              <xs:annotation>
+                <xs:documentation>(initial) this is the initial part of a fragmented
+                  element</xs:documentation>
+              </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="M">
+              <xs:annotation>
+                <xs:documentation>(medial) this is a medial part of a fragmented
+                  element</xs:documentation>
+              </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="F">
+              <xs:annotation>
+                <xs:documentation>(final) this is the final part of a fragmented
+                  element</xs:documentation>
+              </xs:annotation>
+            </xs:enumeration>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:attribute>
     </xs:complexType>
   </xs:element>
   <xs:element name="list">
@@ -599,6 +746,7 @@
   <xs:element name="item">
     <xs:complexType mixed="true">
       <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element ref="ns1:app"/>
         <xs:element ref="ns1:ex"/>
         <xs:element ref="ns1:hi"/>
         <xs:element ref="ns1:lb"/>
@@ -616,6 +764,7 @@
         <xs:element ref="ns1:dateline"/>
         <xs:element minOccurs="0" maxOccurs="unbounded" ref="ns1:ex"/>
         <xs:element ref="ns1:lb"/>
+        <xs:element ref="ns1:pb"/>
         <xs:element ref="ns1:persName"/>
         <xs:element ref="ns1:placeName"/>
         <xs:element ref="ns1:salute"/>
@@ -625,9 +774,12 @@
   <xs:element name="dateline">
     <xs:complexType mixed="true">
       <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element ref="ns1:app"/>
         <xs:element ref="ns1:ex"/>
+        <xs:element ref="ns1:hi"/>
         <xs:element ref="ns1:lb"/>
         <xs:element ref="ns1:pb"/>
+        <xs:element ref="ns1:ref"/>
       </xs:choice>
     </xs:complexType>
   </xs:element>
@@ -636,6 +788,25 @@
       <xs:sequence>
         <xs:element maxOccurs="unbounded" ref="ns1:row"/>
       </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="actor">
+    <xs:complexType mixed="true">
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element ref="ns1:app"/>
+        <xs:element ref="ns1:ref"/>
+        <xs:element ref="ns1:hi"/>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="role">
+    <xs:complexType mixed="true">
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element ref="ns1:app"/>
+        <xs:element ref="ns1:hi"/>
+        <xs:element ref="ns1:pb"/>
+        <xs:element ref="ns1:ref"/>
+      </xs:choice>
     </xs:complexType>
   </xs:element>
   <xs:element name="row">
@@ -647,9 +818,10 @@
   </xs:element>
   <xs:element name="cell">
     <xs:complexType mixed="true">
-      <xs:sequence>
-        <xs:element minOccurs="0" maxOccurs="unbounded" ref="ns1:app"/>
-      </xs:sequence>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element ref="ns1:app"/>
+        <xs:element ref="ns1:hi"/>
+      </xs:choice>
       <xs:attribute name="cols" type="xs:integer"/>
       <xs:attribute name="role" type="xs:NCName"/>
       <xs:attribute name="rows" type="xs:integer"/>
@@ -671,10 +843,14 @@
   <xs:element name="signed">
     <xs:complexType mixed="true">
       <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element ref="ns1:app"/>
         <xs:element ref="ns1:ex"/>
+        <xs:element ref="ns1:hi"/>
         <xs:element ref="ns1:lb"/>
+        <xs:element ref="ns1:note"/>
         <xs:element ref="ns1:pb"/>
         <xs:element ref="ns1:persName"/>
+        <xs:element ref="ns1:ref"/>
       </xs:choice>
     </xs:complexType>
   </xs:element>
@@ -696,28 +872,55 @@
     </xs:complexType>
   </xs:element>
   <xs:element name="sp">
-    <xs:complexType>
-      <xs:sequence>
+    <xs:complexType mixed="true">
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element ref="ns1:figure"/>
         <xs:element ref="ns1:speaker"/>
         <xs:element minOccurs="0" ref="ns1:stage"/>
+        <xs:element ref="ns1:l"/>
+        <xs:element ref="ns1:lg"/>
+        <xs:element ref="ns1:list"/>
         <xs:element ref="ns1:p"/>
-      </xs:sequence>
+      </xs:choice>
+      <xs:attribute name="who"/>
     </xs:complexType>
   </xs:element>
-  <xs:element name="speaker" type="xs:NCName"/>
+  <xs:element name="speaker">
+    <xs:complexType mixed="true">
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element ref="ns1:app"/>
+        <xs:element ref="ns1:hi"/>
+        <xs:element ref="ns1:lb"/>
+        <xs:element ref="ns1:note"/>
+        <xs:element ref="ns1:pb"/>
+        <xs:element ref="ns1:persName"/>
+        <xs:element ref="ns1:placeName"/>
+        <xs:element ref="ns1:ref"/>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
   <xs:element name="hi">
     <xs:complexType mixed="true">
       <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element ref="ns1:app"/>
         <xs:element ref="ns1:hi"/>
         <xs:element ref="ns1:lb"/>
         <xs:element ref="ns1:pb"/>
+        <xs:element ref="ns1:persName"/>
+        <xs:element ref="ns1:placeName"/>
+        <xs:element ref="ns1:ref"/>
+        <xs:element ref="ns1:title"/>
       </xs:choice>
       <xs:attribute name="rend">
         <xs:simpleType>
           <xs:restriction base="xs:token">
             <xs:enumeration value="center"/>
+            <xs:enumeration value="initial"/>
             <xs:enumeration value="italic"/>
+            <xs:enumeration value="italics"/>
+            <xs:enumeration value="normal"/>
             <xs:enumeration value="small"/>
+            <xs:enumeration value="smallcaps"/>
             <xs:enumeration value="spaced"/>
             <xs:enumeration value="strong"/>
             <xs:enumeration value="sub"/>
@@ -732,19 +935,24 @@
     <xs:complexType mixed="true">
       <xs:sequence>
         <xs:choice minOccurs="0" maxOccurs="unbounded">
+          <xs:element ref="ns1:cit"/>
           <xs:element ref="ns1:ex"/>
           <xs:element ref="ns1:hi"/>
+          <xs:element ref="ns1:lg"/>
           <xs:element ref="ns1:p"/>
+          <xs:element ref="ns1:persName"/>
+          <xs:element ref="ns1:placeName"/>
           <xs:element ref="ns1:ref"/>
+          <xs:element ref="ns1:title"/>
         </xs:choice>
       </xs:sequence>
-      <xs:attribute name="place" use="required" type="xs:NCName"/>
+      <xs:attribute name="place" use="optional" type="xs:NCName"/>
     </xs:complexType>
   </xs:element>
   <xs:element name="app">
     <xs:complexType>
       <xs:sequence>
-        <xs:element ref="ns1:lem"/>
+        <xs:element ref="ns1:lem" minOccurs="0"/>
         <xs:element ref="ns1:rdg"/>
       </xs:sequence>
     </xs:complexType>
@@ -755,7 +963,11 @@
       <xs:choice minOccurs="0" maxOccurs="unbounded">
         <xs:element ref="ns1:ex"/>
         <xs:element ref="ns1:hi"/>
+        <xs:element ref="ns1:lb"/>
         <xs:element ref="ns1:pb"/>
+        <xs:element ref="ns1:persName"/>
+        <xs:element ref="ns1:placeName"/>
+        <xs:element ref="ns1:ref"/>
       </xs:choice>
       <xs:attribute name="resp"/>
     </xs:complexType>
@@ -764,6 +976,7 @@
     <xs:complexType mixed="true">
       <xs:choice minOccurs="0" maxOccurs="unbounded">
         <xs:element ref="ns1:q"/>
+        <xs:element ref="ns1:hi"/>
       </xs:choice>
       <xs:attribute name="wit"/>
     </xs:complexType>
@@ -772,16 +985,19 @@
     <xs:complexType mixed="true">
       <xs:choice minOccurs="0" maxOccurs="unbounded">
         <xs:element ref="ns1:ex"/>
+        <xs:element ref="ns1:hi"/>
       </xs:choice>
     </xs:complexType>
   </xs:element>
   <xs:element name="head">
     <xs:complexType mixed="true">
       <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element ref="ns1:app"/>
         <xs:element ref="ns1:hi"/>
         <xs:element ref="ns1:lb"/>
         <xs:element ref="ns1:orig"/>
         <xs:element ref="ns1:pb"/>
+        <xs:element ref="ns1:ref"/>
         <xs:element ref="ns1:reg"/>
       </xs:choice>
       <xs:attribute name="rend" type="xs:NMTOKENS"/>
@@ -793,14 +1009,28 @@
       <xs:choice minOccurs="0" maxOccurs="unbounded">
         <xs:element ref="ns1:app"/>
         <xs:element ref="ns1:ex"/>
+        <xs:element ref="ns1:figure"/>
         <xs:element ref="ns1:hi"/>
         <xs:element ref="ns1:lb"/>
         <xs:element ref="ns1:note"/>
+        <xs:element ref="ns1:persName"/>
+        <xs:element ref="ns1:placeName"/>
         <xs:element ref="ns1:pb"/>
+        <xs:element ref="ns1:ref"/>
       </xs:choice>
     </xs:complexType>
   </xs:element>
-  <xs:element name="reg" type="xs:string"/>
+  <xs:element name="reg">
+    <xs:complexType mixed="true">
+      <xs:attribute name="type" use="optional">
+        <xs:simpleType>
+          <xs:restriction base="xs:token">
+            <xs:enumeration value="pow"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:attribute>
+    </xs:complexType>
+  </xs:element>
   <xs:element name="salute">
     <xs:complexType mixed="true">
       <xs:choice minOccurs="0" maxOccurs="unbounded">
@@ -809,6 +1039,22 @@
         <xs:element ref="ns1:hi"/>
         <xs:element ref="ns1:lb"/>
         <xs:element ref="ns1:note"/>
+        <xs:element ref="ns1:pb"/>
+        <xs:element ref="ns1:ref"/>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="supplied">
+    <xs:complexType mixed="true">
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element ref="ns1:app"/>
+        <xs:element ref="ns1:ex"/>
+        <xs:element ref="ns1:hi"/>
+        <xs:element ref="ns1:lb"/>
+        <xs:element ref="ns1:note"/>
+        <xs:element ref="ns1:persName"/>
+        <xs:element ref="ns1:placeName"/>
+        <xs:element ref="ns1:pb"/>
         <xs:element ref="ns1:ref"/>
       </xs:choice>
     </xs:complexType>
@@ -822,24 +1068,47 @@
     </xs:complexType>
   </xs:element>
   <xs:element name="quote">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element minOccurs="0" maxOccurs="unbounded" ref="ns1:p"/>
-        <xs:element minOccurs="0" maxOccurs="unbounded" ref="ns1:lg"/>
-        <xs:element minOccurs="0" maxOccurs="unbounded" ref="ns1:l"/>
-      </xs:sequence>
+    <xs:complexType mixed="true">
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element ref="ns1:p"/>
+        <xs:element ref="ns1:sp"/>
+        <xs:element ref="ns1:lg"/>
+        <xs:element ref="ns1:l"/>
+      </xs:choice>
     </xs:complexType>
   </xs:element>
   <xs:element name="stage">
     <xs:complexType mixed="true">
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element ref="ns1:app"/>
+        <xs:element ref="ns1:hi"/>
+        <xs:element ref="ns1:lb"/>
+        <xs:element ref="ns1:note"/>
+        <xs:element ref="ns1:pb"/>
+        <xs:element ref="ns1:ref"/>
+      </xs:choice>
       <xs:attribute name="type">
         <xs:simpleType>
           <xs:restriction base="xs:token">
             <xs:enumeration value="delivery"/>
             <xs:enumeration value="setting"/>
+            <xs:enumeration value="mixed"/>
           </xs:restriction>
         </xs:simpleType>
       </xs:attribute>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="trailer">
+    <xs:complexType mixed="true">
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element ref="ns1:app"/>
+        <xs:element ref="ns1:ex"/>
+        <xs:element ref="ns1:hi"/>
+        <xs:element ref="ns1:lb"/>
+        <xs:element ref="ns1:note"/>
+        <xs:element ref="ns1:pb"/>
+        <xs:element ref="ns1:ref"/>
+      </xs:choice>
     </xs:complexType>
   </xs:element>
 </xs:schema>
